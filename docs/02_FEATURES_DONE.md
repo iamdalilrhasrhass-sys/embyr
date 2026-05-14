@@ -2,52 +2,60 @@
 
 Dernière mise à jour : 14 Mai 2026
 
-## Modules OK (backend + frontend branché)
+## Modules OK (backend + frontend vérifié)
 
-| Module | API | Frontend | Notes |
-|--------|-----|----------|-------|
-| Auth (register/login) | ✅ | ✅ | Cookie httpOnly, JWT 7j |
-| Dashboard | ✅ | ✅ | Profil, complétion |
-| Découvrir (Match) | ✅ | ✅ | Swipe + feed |
-| Messages | ✅ | ✅ | Conversations, envoi |
-| Profils | ✅ | ✅ | Liste + détail |
-| Favoris | ✅ | ✅ | Add/remove/lister |
-| Blacklist | ✅ | ✅ | Blocage mutuel |
-| Stripe Checkout | ✅ | ✅ | Paiement CB |
-| Stripe Webhook | ✅ | ✅ | Activation premium |
-| Admin | ✅ | ✅ | Users, reports, ambassadors |
-| Ambassadrices | ✅ | ✅ | Candidature, parrainage |
-| Vérification | ✅ | ✅ | Upload justificatif |
-| Notifications | ✅ | ✅ | Préférences |
-| Pages légales | ✅ | ✅ | CGU, confidentialité, mentions |
-| Pricing | ✅ | ✅ | Plans premium |
-| Forum (modèle) | ✅ | ✅ | Catégories + threads + posts |
-| Albums | ✅ | ✅ | CRUD, photos, privé/public |
-| Témoignages | ✅ | ✅ | Envoi, approbation |
-| Salons | ✅ | ✅ | Liste, messages, premium |
-| Annonces | ✅ | ✅ | CRUD, filtres |
-| Vidéos | ✅ | ✅ | Upload URL, liste |
-| Certification | ✅ | ✅ | Demande, statut |
-| Drawer navigation | ✅ | ✅ | Embyr braise theme |
-| Bottom navigation | ✅ | ✅ | Mobile 5 items |
-| PWA | ✅ | ✅ | Manifest + icônes |
-| Mobile responsive | ✅ | ✅ | safe-area, 100dvh, 44px |
+| Module | Backend | Frontend | Testé |
+|--------|---------|----------|-------|
+| Auth (register/login) | ✅ | ✅ | ✅ curl |
+| Dashboard/Profil | ✅ | ✅ | ✅ curl |
+| Découvrir (Match) | ✅ | ✅ | — |
+| Messages | ✅ | ✅ | — |
+| Membres | ✅ | ✅ | — |
+| Favoris | ✅ | ✅ | ✅ 200 |
+| Blacklist | ✅ | ✅ | ✅ 200 |
+| Stripe Checkout | ✅ | ✅ | — |
+| Stripe Webhook | ✅ | ✅ | — |
+| Admin | ✅ | ✅ | — |
+| Ambassadrices | ✅ | ✅ | — |
+| Vérification | ✅ | ✅ | — |
+| Notifications | ✅ | ✅ | ✅ 200 |
+| Pages légales (8) | ✅ | ✅ | ✅ 200 |
+| Pricing | ✅ | ✅ | — |
+| Forum | ✅ | ✅ | ✅ 200 |
+| Forum [id] | ✅ | ✅ | ✅ build |
+| Albums | ✅ | ✅ | ✅ 200 |
+| Témoignages | ✅ | ✅ | ✅ 200 |
+| Salons | ✅ | ✅ | ✅ 200 |
+| Salons [id] | ✅ | ✅ | ✅ build |
+| Annonces | ✅ | ✅ | ✅ 200 |
+| Vidéos | ✅ | ✅ | ✅ 200 |
+| Certification | ✅ | ✅ | ✅ 200 |
+| Paramètres | ✅ | ✅ | ✅ 200 |
+| Mode Discret | ✅ | ✅ | ✅ 200 |
+| Affichage | ✅ | ✅ | ✅ 200 |
+| FAQ | ✅ | ✅ | ✅ 200 |
+| Sites Partenaires | ✅ | ✅ | ✅ 200 |
+| Installer App | ✅ | ✅ | ✅ 200 |
+| Aperçu Visiteur | ✅ | ✅ | ✅ 200 |
+| PWA | ✅ | ✅ | ✅ manifest |
 
-## APIs créées (ajouts du 14 Mai 2026)
+## APIs créées le 14 Mai 2026
 
-- `GET/POST /api/albums` — lister/créer albums
-- `GET/PATCH/DELETE /api/albums/[id]` — détail/modifier/supprimer
-- `GET/POST /api/testimonials` — lister/envoyer témoignages
-- `PATCH/DELETE /api/testimonials/[id]` — approuver/supprimer
-- `GET /api/salons` — lister salons
-- `GET /api/salons/[id]` — détail salon + messages
-- `POST /api/salons/[id]/messages` — envoyer message salon
-- `GET/POST /api/classifieds` — lister/créer annonces
-- `DELETE /api/classifieds/[id]` — supprimer annonce
-- `GET/POST /api/videos` — lister/créer vidéos
-- `DELETE /api/videos/[id]` — supprimer vidéo
-- `GET/POST /api/certification` — statut/demande certification
-- `GET/POST /api/forum` — lister/créer discussions
+- `GET/POST /api/albums`
+- `GET/PATCH/DELETE /api/albums/[id]`
+- `GET/POST /api/testimonials`
+- `PATCH/DELETE /api/testimonials/[id]`
+- `GET /api/salons`
+- `GET /api/salons/[id]`
+- `POST /api/salons/[id]/messages`
+- `GET/POST /api/classifieds`
+- `DELETE /api/classifieds/[id]`
+- `GET/POST /api/videos`
+- `DELETE /api/videos/[id]`
+- `GET/POST /api/certification`
+- `GET/POST /api/forum`
+- `GET/POST /api/forum/[id]`
+- `POST /api/forum/[id]/posts`
 
 ## Modèles Prisma ajoutés
 
