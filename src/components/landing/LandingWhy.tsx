@@ -7,7 +7,7 @@ const pillars = [
   { icon: "🛡️", title: "Vérification Selfie", desc: "Chaque profil peut obtenir le badge Vérifié en photo avec un code unique. Zéro tolérance pour les faux comptes.", color: "from-[var(--color-premium-rose)]/20 to-[var(--color-premium-purple)]/5" },
   { icon: "👑", title: "Premium Par Design", desc: "Une expérience pensée pour les adultes exigeants. Interface iridescente, animations fluides, confidentialité absolue.", color: "from-[var(--color-premium-purple)]/20 to-[var(--color-premium-purple)]/5" },
   { icon: "🤝", title: "Modération Humaine", desc: "Des modérateurs réels examinent chaque signalement. Pas d'algorithme opaque — des vraies personnes qui protègent la communauté.", color: "from-pink-500/20 to-pink-500/5" },
-  { icon: "⚧️", title: "Communauté Inclusive", desc: "Embyr célèbre toutes les femmes. Trans, cis, non-binaires — vous êtes chez vous ici. Une plateforme pensée pour vous.", color: "from-[#5BCEFA]/20 to-[#F5A9B8]/10" },
+  { icon: "⚧️", title: "Communauté Inclusive", desc: "Embyr célèbre tous les hommes gay. Gays, bis, queers — vous êtes chez vous ici. Une plateforme pensée pour vous.", color: "from-[#5BCEFA]/20 to-[#F5A9B8]/10" },
 ];
 
 function PillarCard({ icon, title, desc, color, index }: any) {
@@ -111,7 +111,7 @@ export default function LandingWhy() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-center text-gray-400 mb-20 max-w-lg mx-auto text-lg"
       >
-        Une plateforme de rencontres qui célèbre <span className="text-white/80 font-medium">toutes les femmes</span>.
+        Une plateforme de rencontres qui célèbre <span className="text-white/80 font-medium">la communauté gay</span>.
       </motion.p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

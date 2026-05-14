@@ -205,9 +205,13 @@ model Message {
   conversationId    String
   senderId          String
   receiverId        String
-  content           String
+  content           String?
+  type              String        @default("text")
   status            MessageStatus @default(SENT)
   moderationStatus  String?       @default("clean")
+  mediaUrl          String?
+  mediaType         String?
+  durationSeconds   Int?
   createdAt         DateTime      @default(now())
   readAt            DateTime?
 

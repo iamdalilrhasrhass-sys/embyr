@@ -29,11 +29,30 @@ export function verifyToken(token: string): {
   }
 }
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
+
+export async function requireUser() {
+  const user = await getCurrentUser();
+  if (!user) {
+    throw new Response(JSON.stringify({ error: "Non autorisé" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+  return user;
+}
 
 export async function getCurrentUser() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("token")?.value;
+  let token = (await cookies()).get("token")?.value;
+
+  if (!token) {
+    try {
+      const headersList = await headers();
+      const auth = headersList.get("authorization");
+      if (auth?.startsWith("Bearer ")) token = auth.slice(7);
+    } catch {}
+  }
+
   if (!token) return null;
   const payload = verifyToken(token);
   if (!payload) return null;

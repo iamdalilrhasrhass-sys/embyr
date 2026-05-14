@@ -45,7 +45,7 @@ export default function LandingInclusive() {
             ⚧️
           </motion.span>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#5BCEFA] via-white to-[#F5A9B8]">
-            Toutes les femmes
+            Communauté gay
           </span>
           <br />
           <span className="text-white/80">ont leur place ici</span>
@@ -59,7 +59,7 @@ export default function LandingInclusive() {
         >
           Embyr est née d'une conviction simple : les rencontres premium doivent célébrer{" "}
           <span className="text-white/90 font-semibold">toutes les identités</span>.{" "}
-          Trans, cis, non-binaires — chaque femme mérite une plateforme qui la respecte, la protège et la met en valeur. Sans exception.
+          Gays, bis, queers — chaque homme mérite une plateforme qui le respecte, le protège et le met en valeur. Sans exception.
         </motion.p>
 
         {/* Three elegant value cards */}

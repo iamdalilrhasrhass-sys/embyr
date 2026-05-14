@@ -48,10 +48,10 @@ export default function MembresPage() {
           {/* Header */}
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-1" style={{
-              background: "linear-gradient(135deg, #F5F5F5 60%, var(--color-premium-purple) 80%, var(--color-premium-rose) 100%)",
+              background: "linear-gradient(135deg, #E2E8F0 60%, var(--color-premium-purple) 80%, #06B6D4 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             }}>
-              Profils
+              Membres
             </h1>
             <p className="text-white/30 text-sm">
               {profiles.length} profil{profiles.length !== 1 ? "s" : ""} à découvrir
@@ -82,7 +82,6 @@ export default function MembresPage() {
               className="px-3 py-2 rounded-xl text-xs bg-white/[0.04] border border-white/[0.06] text-white/60 focus:outline-none focus:border-white/20 transition-colors appearance-none"
             >
               <option value="">Genre</option>
-              <option value="woman">Femme</option>
               <option value="man">Homme</option>
               <option value="non_binary">Non-binaire</option>
             </select>
@@ -152,15 +151,14 @@ export default function MembresPage() {
               )}
             </div>
           ) : (
-            /* Grille : 1 col mobile, 2 tablet, 3 desktop */
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {profiles.map((p: any) => {
                 const photoUrl = p.publicPhotos?.[0] || p.avatar || null;
                 return (
                   <Link
                     key={p.id || p.userId}
-                    href={`/profiles/${p.id || p.userId}`}
-                    className="group rounded-2xl overflow-hidden border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm hover:border-white/[0.08] hover:bg-white/[0.02] transition-all duration-300"
+                    href={`/membres/${p.id || p.userId}`}
+                    className="group rounded-2xl overflow-hidden border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm hover:border-indigo-500/20 hover:bg-white/[0.02] transition-all duration-300"
                   >
                     {/* Photo */}
                     <div className="aspect-[3/4] relative overflow-hidden">
@@ -169,7 +167,6 @@ export default function MembresPage() {
                         alt={p.username || p.displayName || "Membre"}
                         className="w-full h-full"
                       />
-                      {/* Badge premium discret */}
                       {!isPremium && (
                         <div className="absolute top-2 right-2 z-10">
                           <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-black/40 text-white/50 backdrop-blur-sm border border-white/5">
@@ -177,7 +174,6 @@ export default function MembresPage() {
                           </span>
                         </div>
                       )}
-                      {/* Online badge */}
                       {p.isOnline && (
                         <div className="absolute top-2 left-2 z-10 flex items-center gap-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
@@ -196,7 +192,7 @@ export default function MembresPage() {
                           <span className="text-[11px]" title="Vérifié">🛡️</span>
                         )}
                         {p.isPremium && (
-                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-fuchsia-500/10 text-fuchsia-400/80 border border-fuchsia-500/10">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400/80 border border-indigo-500/10">
                             Premium
                           </span>
                         )}
@@ -204,9 +200,6 @@ export default function MembresPage() {
                       <p className="text-[11px] text-white/35">
                         {[p.age && `${p.age} ans`, p.city].filter(Boolean).join(" • ")}
                       </p>
-                      {p.lastActive && (
-                        <p className="text-[10px] text-white/20">Actif{typeof p.lastActive === "string" ? " " + p.lastActive : " récemment"}</p>
-                      )}
                       <div className="pt-2">
                         <span className="inline-flex items-center gap-1 text-[11px] text-white/30 group-hover:text-white/60 group-hover:bg-white/[0.04] px-2 py-1 -ml-2 rounded-lg transition-all">
                           Voir le profil

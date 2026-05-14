@@ -1,0 +1,169 @@
+[
+  {
+    "page": "landing",
+    "url": "https://embir.xyz/",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "Entrer dans le cercle",
+      "Voir Premium",
+      "Choisir",
+      "Choisir",
+      "Choisir",
+      "Choisir",
+      "Créer mon compte gratuitement",
+      "connectez-vous"
+    ]
+  },
+  {
+    "page": "membres",
+    "url": "https://embir.xyz/membres",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "☰",
+      "Appliquer",
+      "🔥Découvrir",
+      "👥Membres",
+      "💬Messages",
+      "👤Profil",
+      "💬Salons"
+    ]
+  },
+  {
+    "page": "premium",
+    "url": "https://embir.xyz/premium",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": true,
+    "is404": false,
+    "ctas": [
+      "☰",
+      "🔥Découvrir",
+      "👥Membres",
+      "💬Messages",
+      "👤Profil",
+      "💬Salons"
+    ]
+  },
+  {
+    "page": "pricing",
+    "url": "https://embir.xyz/pricing",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "Choisir 1 semaine",
+      "Choisir 1 semaine",
+      "Choisir 1 mois",
+      "Choisir 1 mois",
+      "Choisir 3 mois",
+      "Choisir 3 mois",
+      "Choisir 12 mois",
+      "Choisir 12 mois",
+      "Acheter",
+      "Acheter"
+    ]
+  },
+  {
+    "page": "auth-login",
+    "url": "https://embir.xyz/auth/login",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "Oublié ?",
+      "Se connecter",
+      "S'inscrire"
+    ]
+  },
+  {
+    "page": "auth-register",
+    "url": "https://embir.xyz/auth/register",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "Conditions Générales d'Utilisation",
+      "politique de confidentialité",
+      "Créer mon compte",
+      "Se connecter"
+    ]
+  },
+  {
+    "page": "m-landing",
+    "url": "https://embir.xyz/",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "Entrer dans le cercle",
+      "Voir Premium",
+      "Choisir",
+      "Choisir",
+      "Choisir",
+      "Choisir",
+      "Créer mon compte gratuitement",
+      "connectez-vous"
+    ]
+  },
+  {
+    "page": "m-membres",
+    "url": "https://embir.xyz/membres",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "☰",
+      "Appliquer",
+      "🔥Découvrir",
+      "👥Membres",
+      "💬Messages",
+      "👤Profil",
+      "💬Salons"
+    ]
+  },
+  {
+    "page": "m-premium",
+    "url": "https://embir.xyz/premium",
+    "title": "Embyr — Club Privé Premium",
+    "httpStatus": "200",
+    "errors": [],
+    "overflow": false,
+    "isEmpty": false,
+    "is404": false,
+    "ctas": [
+      "☰",
+      "🔥Découvrir",
+      "👥Membres",
+      "💬Messages",
+      "👤Profil",
+      "💬Salons"
+    ]
+  }
+]

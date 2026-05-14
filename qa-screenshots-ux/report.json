@@ -1,0 +1,355 @@
+[
+  {
+    "page": "01-landing",
+    "url": "https://embir.xyz/",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "Rejoindre Embyr",
+        "href": "/auth/register",
+        "visible": true
+      },
+      {
+        "text": "Découvrir les profils→",
+        "href": "/profiles",
+        "visible": true
+      },
+      {
+        "text": "Découvrir",
+        "href": "/pricing",
+        "visible": true
+      },
+      {
+        "text": "Choisir→",
+        "href": "/pricing",
+        "visible": true
+      },
+      {
+        "text": "Économiser",
+        "href": "/pricing",
+        "visible": true
+      },
+      {
+        "text": "Découvrir les profils→",
+        "href": "/profiles",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/01-landing.png"
+  },
+  {
+    "page": "02-membres",
+    "url": "https://embir.xyz/membres",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "Les photos sont légèrement floutées. Passe Premium pour voir",
+        "href": "/premium",
+        "visible": true
+      },
+      {
+        "text": "Appliquer",
+        "href": "",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/02-membres.png"
+  },
+  {
+    "page": "03-premium",
+    "url": "https://embir.xyz/premium",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/03-premium.png"
+  },
+  {
+    "page": "04-login",
+    "url": "https://embir.xyz/auth/login",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "Oublié ?",
+        "href": "#",
+        "visible": true
+      },
+      {
+        "text": "Se connecter",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "S'inscrire",
+        "href": "/auth/register",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/04-login.png"
+  },
+  {
+    "page": "05-register",
+    "url": "https://embir.xyz/auth/register",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "Conditions Générales d'Utilisation",
+        "href": "/legal/cgu",
+        "visible": true
+      },
+      {
+        "text": "politique de confidentialité",
+        "href": "/legal/confidentialite",
+        "visible": true
+      },
+      {
+        "text": "Créer mon compte",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Se connecter",
+        "href": "/auth/login",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/05-register.png"
+  },
+  {
+    "page": "06-pricing",
+    "url": "https://embir.xyz/pricing",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "Choisir 1 semaine",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 1 semaine",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 1 mois",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 1 mois",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 3 mois",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 3 mois",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 12 mois",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Choisir 12 mois",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Acheter",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Acheter",
+        "href": "",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/06-pricing.png"
+  },
+  {
+    "page": "07-profiles-redirect",
+    "url": "https://embir.xyz/profiles",
+    "status": 200,
+    "finalUrl": "https://embir.xyz/membres",
+    "redirectWorks": true,
+    "screenshot": "/root/embyr/qa-screenshots-ux/07-profiles-redirect.png",
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "page": "m01-landing-mobile",
+    "url": "https://embir.xyz/",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": true,
+    "ctas": [
+      {
+        "text": "Rejoindre Embyr",
+        "href": "/auth/register",
+        "visible": true
+      },
+      {
+        "text": "Découvrir les profils→",
+        "href": "/profiles",
+        "visible": true
+      },
+      {
+        "text": "Découvrir",
+        "href": "/pricing",
+        "visible": true
+      },
+      {
+        "text": "Choisir→",
+        "href": "/pricing",
+        "visible": true
+      },
+      {
+        "text": "Économiser",
+        "href": "/pricing",
+        "visible": true
+      },
+      {
+        "text": "Découvrir les profils→",
+        "href": "/profiles",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/m01-landing-mobile.png"
+  },
+  {
+    "page": "m02-membres-mobile",
+    "url": "https://embir.xyz/membres",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "☰",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "Les photos sont légèrement floutées. Passe Premium pour voir",
+        "href": "/premium",
+        "visible": true
+      },
+      {
+        "text": "Appliquer",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "🔥Découvrir",
+        "href": "/decouvrir",
+        "visible": true
+      },
+      {
+        "text": "👥Membres",
+        "href": "/profiles",
+        "visible": true
+      },
+      {
+        "text": "💬Messages",
+        "href": "/messages",
+        "visible": true
+      },
+      {
+        "text": "👤Profil",
+        "href": "/dashboard",
+        "visible": true
+      },
+      {
+        "text": "💬Salons",
+        "href": "/salons",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/m02-membres-mobile.png"
+  },
+  {
+    "page": "m03-premium-mobile",
+    "url": "https://embir.xyz/premium",
+    "status": 200,
+    "errors": [],
+    "overflow": false,
+    "ctas": [
+      {
+        "text": "☰",
+        "href": "",
+        "visible": true
+      },
+      {
+        "text": "🔥Découvrir",
+        "href": "/decouvrir",
+        "visible": true
+      },
+      {
+        "text": "👥Membres",
+        "href": "/profiles",
+        "visible": true
+      },
+      {
+        "text": "💬Messages",
+        "href": "/messages",
+        "visible": true
+      },
+      {
+        "text": "👤Profil",
+        "href": "/dashboard",
+        "visible": true
+      },
+      {
+        "text": "💬Salons",
+        "href": "/salons",
+        "visible": true
+      }
+    ],
+    "isEmpty": false,
+    "screenshot": "/root/embyr/qa-screenshots-ux/m03-premium-mobile.png"
+  }
+]
