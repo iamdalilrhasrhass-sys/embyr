@@ -26,6 +26,112 @@ body {
   color: rgba(255, 255, 255, 0.9);
 }
 
+
+/* ═══════════════ EMBYR NATIVE CLASSES ═══════════════ */
+.emb-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(6, 182, 212, 0.16), transparent 34%),
+    radial-gradient(circle at 82% 5%, rgba(124, 58, 237, 0.18), transparent 30%),
+    linear-gradient(180deg, #05030b 0%, #030208 100%);
+  color: white;
+}
+.emb-section {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 1rem;
+}
+@media (min-width: 768px) {
+  .emb-section {
+    padding: 7rem 1.5rem;
+  }
+}
+.emb-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.emb-glass {
+  border: 1px solid rgba(103, 232, 249, 0.16);
+  background: linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+  backdrop-filter: blur(20px);
+  box-shadow: 0 28px 90px rgba(0,0,0,0.35);
+}
+.emb-gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #a5f3fc 42%, #38bdf8 68%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.emb-title {
+  font-size: clamp(2.5rem, 6.4vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: -0.07em;
+}
+.emb-subtitle {
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.64);
+}
+.emb-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.35rem;
+  font-weight: 850;
+  color: white;
+  background: linear-gradient(135deg, #06b6d4, #3730a3 55%, #7c3aed);
+  box-shadow: 0 18px 60px rgba(6, 182, 212, 0.22);
+}
+.emb-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.35rem;
+  font-weight: 750;
+  color: rgba(255,255,255,0.82);
+  border: 1px solid rgba(103,232,249,0.16);
+  background: rgba(255,255,255,0.045);
+}
+.emb-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(103,232,249,0.14);
+  background: rgba(255,255,255,0.055);
+  backdrop-filter: blur(18px);
+}
+.emb-card:hover {
+  transform: translateY(-3px);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 24px 80px rgba(6,182,212,0.10);
+}
+.emb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid rgba(6,182,212,0.18);
+  background: rgba(6,182,212,0.08);
+  color: rgba(255,255,255,0.7);
+}
+@media (max-width: 767px) {
+  .emb-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .emb-title {
+    letter-spacing: -0.045em;
+  }
+}
+
+
 /* ── AURORA EMBYR — Angulaire, sharp, électrique ── */
 .emb-aurora {
   position: relative;

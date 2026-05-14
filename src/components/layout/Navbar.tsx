@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import EmbyrLogo from "@/components/brand/EmbyrLogo";
 import { useState, useEffect } from "react";
 import { isFreeNightAccess } from "@/lib/freeAccess";
 
@@ -31,8 +32,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="text-2xl font-bold tracking-tighter">
-              Emb<span className="text-[var(--color-premium-rose)]">yr</span>
+<Link href="/" className="shrink-0">
+              <EmbyrLogo size="md" />
             </Link>
             {isFree && (
               <span className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-[#1c0f2b] text-[var(--color-premium-purple)] border border-[var(--color-premium-purple)]/50 shadow-[0_0_15px_rgba(168,85,247,0.3)]">

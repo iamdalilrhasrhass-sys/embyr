@@ -196,7 +196,7 @@ export default function PricingPage() {
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-6">3 mois</td>
-                    <td className="p-6 text-gray-400">39,99 €</td>
+                    <td className="p-6 text-gray-400">34,99 €</td>
                     <td className="p-6 font-bold text-white">29,99 €</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">

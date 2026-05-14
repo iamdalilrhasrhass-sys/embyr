@@ -1,270 +1,214 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { AuroraBubbles, VibeCard } from "@/components/VibeEffects";
-
-const floatingWords = ["Réel", "Premium", "Sans pubs", "Vie privée", "Vérifié"];
-
-const PARTICLES = 60;
-function generateParticles() {
-  return Array.from({ length: PARTICLES }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    delay: Math.random() * 8,
-    duration: Math.random() * 6 + 8,
-    color: i % 3 === 0 ? "#ff6b35" : i % 3 === 1 ? "#e91e63" : "#c87f5a",
-  }));
-}
+import EmbyrLogo from "@/components/brand/EmbyrLogo";
+import EmbyrProductMockup from "@/components/landing/EmbyrProductMockup";
+import Particles3D from "@/components/ui/Particles3D";
+import Link from "next/link";
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const particles = useRef(generateParticles());
-
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
-  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.2]);
-
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#0a0612] text-white overflow-x-hidden relative">
-      {/* Background gradients */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[#e91e63]/10 blur-[120px]" />
-        <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#ff6b35]/8 blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[30%] w-[400px] h-[400px] rounded-full bg-[#c87f5a]/6 blur-[80px]" />
-      </div>
+    <main className="emb-page">
+      {/* ── HERO ── */}
+      <section className="emb-section relative flex min-h-screen flex-col items-center justify-center text-center">
+        <Particles3D count={50} className="absolute inset-0 z-[2]" />
+        <div className="emb-container relative z-10">
+          <EmbyrLogo size="lg" className="mb-8 justify-center" />
+          <h1 className="emb-title max-w-4xl text-balance">
+            Un cercle privé pour des
+            <br />
+            <span className="emb-gradient-text">connexions plus intenses</span>
+          </h1>
+          <p className="emb-subtitle mx-auto mt-6 max-w-2xl text-balance">
+            Embyr propose une expérience confidentielle, premium et mobile-first
+            pour découvrir des profils masculins qui veulent vraiment échanger.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link href="/inscription" className="emb-button-primary">
+              Entrer dans le cercle
+            </Link>
+            <Link href="/premium" className="emb-button-secondary">
+              Voir Premium
+            </Link>
+          </div>
 
-      {/* Aurora 3D floating orbs */}
-      <div className="fixed inset-0 pointer-events-none z-[2]">
-        <AuroraBubbles />
-      </div>
+          {/* Badges */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+            {["Club privé", "Profils vérifiés", "Messagerie premium", "Confidentialité"].map((b) => (
+              <span key={b} className="emb-badge">✦ {b}</span>
+            ))}
+          </div>
 
-      {/* Floating embers */}
-      {particles.current.map((p) => (
-        <motion.div
-          key={p.id}
-          className="fixed pointer-events-none z-[1] rounded-full"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: p.size,
-            height: p.size,
-            background: p.color,
-            boxShadow: `0 0 ${p.size * 3}px ${p.color}`,
-          }}
-          animate={{ y: [0, -60, 0], opacity: [0, 1, 0] }}
-          transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
-        />
-      ))}
-
-      {/* Hero */}
-      <motion.div style={{ scale: heroScale, opacity: heroOpacity }} className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#ff6b35]/20 bg-[#ff6b35]/[0.04] backdrop-blur-xl"
-        >
-          <motion.div
-            animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-2 h-2 rounded-full bg-[#ff6b35] shadow-[0_0_12px_rgba(255,107,53,0.6)]"
-          />
-          <span className="text-sm text-[#ff6b35]/80 tracking-wide font-medium">Lancement — Mai 2026</span>
-        </motion.div>
-
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-center leading-[0.95] tracking-tight mb-6"
-          style={{ fontFamily: "Arial, sans-serif" }}
-        >
-          <span className="block text-white/60 text-2xl md:text-4xl mb-4 tracking-widest uppercase">Connexion,</span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b35] via-[#e91e63] to-[#c87f5a]">pas juste un</span>
-          <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#e91e63] to-[#ff6b35]">plan cul.</span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-lg md:text-xl text-white/50 text-center max-w-xl mb-10 leading-relaxed"
-        >
-          La première plateforme de rencontres gay sans pubs, avec des <span className="text-[#ff6b35]/80">profils vérifiés</span> et une <span className="text-[#e91e63]/80">vraie modération</span>.
-          <br />
-          <span className="text-sm text-white/30">-75% vs Grindr Unlimited.</span>
-        </motion.p>
-
-        {/* Floating words */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {floatingWords.map((word, i) => (
-            <motion.span
-              key={word}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 + i * 0.1 }}
-              className="px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md text-sm text-white/40 hover:text-white/70 transition-colors"
-            >
-              {word}
-            </motion.span>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-4"
-        >
-          <motion.a
-            whileHover={{ scale: 1.03, boxShadow: "0 0 40px rgba(255,107,53,0.4)" }}
-            whileTap={{ scale: 0.97 }}
-            href="/join"
-            className="relative px-10 py-4 rounded-full font-bold text-lg text-white shadow-[0_0_30px_rgba(233,30,99,0.3)] overflow-hidden group cursor-pointer inline-block text-center"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#e91e63] to-[#ff6b35]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="relative z-10">Rejoins Embyr — À partir de 39,99€/an</span>
-          </motion.a>
-
-          <motion.a
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            href="#why"
-            className="px-10 py-4 rounded-full font-medium text-white/70 border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.06] transition-colors text-center"
-          >
-            Pourquoi Embyr →
-          </motion.a>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 flex flex-col items-center gap-2 text-white/20"
-        >
-          <span className="text-xs tracking-[0.3em] uppercase">Défiler</span>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-white/30 to-transparent" />
-        </motion.div>
-      </motion.div>
-
-      {/* Why Embyr section */}
-      <section id="why" className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-black text-center mb-16"
-        >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)]">Pourquoi Embyr</span>
-          <br />
-          <span className="text-white/60 text-xl md:text-2xl">Différent par conception.</span>
-        </motion.h2>
-
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl w-full">
-          {[
-            { title: "Zéro pubs tierces", desc: "Ton expérience n'est pas un panneau publicitaire. On se finance par les abonnements, pas tes données.", icon: "🚫" },
-            { title: "Vraie modération", desc: "Racisme, grossophobie, sérophobie = bannissement. Une file de modération dédiée.", icon: "🛡️" },
-            { title: "Prix justes", desc: "-50% vs Grindr. Aucun piège, aucun micro-paiement. Un abonnement débloque tout.", icon: "💰" },
-          ].map((item, i) => (
-            <VibeCard key={item.title}>
-              <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              whileHover={{ scale: 1.02, borderColor: "rgba(255,107,53,0.3)" }}
-              className="relative group p-8 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl transition-all duration-300"
-            >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#ff6b35]/5 to-[#e91e63]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-white/50 leading-relaxed">{item.desc}</p>
-            </motion.div>
-            </VibeCard>
-          ))}
+          {/* Mockup */}
+          <div className="mt-16">
+            <EmbyrProductMockup />
+          </div>
         </div>
       </section>
 
-      {/* Pricing section */}
-      <section id="pricing" className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-black text-center mb-6"
-        >
-          Prix justes.
-          <br />
-          <span className="text-white/40 text-xl md:text-2xl">-75% vs Grindr Unlimited.</span>
-        </motion.h2>
+      {/* ── LE CERCLE PRIVÉ ── */}
+      <section className="emb-section bg-[radial-gradient(circle_at_50%_0%,rgba(6,182,212,0.06),transparent_50%)]">
+        <div className="emb-container">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <div className="mb-3 inline-flex rounded-full border border-cyan-300/20 bg-cyan-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
+              Le cercle privé
+            </div>
+            <h2 className="text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+              Plus qu&rsquo;une plateforme,
+              <br />
+              <span className="emb-gradient-text">un espace sélect</span>
+            </h2>
+            <p className="mt-4 text-white/55">
+              Embyr réunit des hommes qui partagent une envie de connexions authentiques,
+              dans un cadre confidentiel et premium. Pas de foule, pas de bruit.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl w-full mt-6">
-          {[
-            { name: "Pass 7 Jours", price: "6,99 €", period: "one-shot", best: false },
-            { name: "Mensuel", price: "9,99 €", period: "/mois", best: true },
-            { name: "Annuel", price: "59,99 €", period: "/an", best: false },
-          ].map((plan, i) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              whileHover={{ scale: 1.03 }}
-              className={`relative group p-8 rounded-2xl border backdrop-blur-xl transition-all duration-300 text-center ${
-                plan.best
-                  ? "border-[#ff6b35]/30 bg-[#ff6b35]/[0.04] shadow-[0_0_40px_rgba(255,107,53,0.15)]"
-                  : "border-white/5 bg-white/[0.02]"
-              }`}
-            >
-              {plan.best && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-[#e91e63] to-[#ff6b35] text-xs font-bold uppercase tracking-wider">
-                  Meilleur choix
-                </div>
-              )}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#ff6b35]/5 to-[#e91e63]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-              <div className="text-4xl font-black mb-1 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)]">{plan.price}</div>
-              <div className="text-white/30 text-sm mb-4">{plan.period}</div>
-              <div className="text-white/40 text-sm space-y-2">
-                <div>✓ Swipes illimités</div>
-                <div>✓ Badge Vérifié</div>
-                <div>✓ Zéro pub. Jamais.</div>
-                <div>✓ Support prioritaire</div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {[
+              { title: "Confidentiel", desc: "Vos échanges restent privés. Aucune donnée revendue, aucun profilage public.", icon: "🔒" },
+              { title: "Sélect", desc: "Profils vérifiés manuellement. Une communauté masculine premium et respectueuse.", icon: "✦" },
+              { title: "Intense", desc: "Messagerie illimitée, vocaux, appels, visios. Des échanges qui comptent.", icon: "⚡" },
+            ].map((item) => (
+              <div key={item.title} className="emb-card rounded-2xl p-8 text-center">
+                <div className="mb-4 text-3xl">{item.icon}</div>
+                <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/50">{item.desc}</p>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
-
-        {/* Founder plan */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-8 p-8 rounded-2xl border border-[#c87f5a]/20 bg-[#c87f5a]/[0.03] backdrop-blur-xl text-center max-w-lg w-full"
-        >
-          <h3 className="text-xl font-bold mb-2 text-[#c87f5a]">Fondateur Annuel</h3>
-          <div className="text-3xl font-black mb-1">39,99 €/an</div>
-          <p className="text-white/40 text-sm">Limité à 5000 membres. Verrouille ton prix à vie.</p>
-        </motion.div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-white/5 py-12 mt-20 text-center">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff6b35]/30 via-[#e91e63]/30 to-transparent opacity-50" />
-        <p className="text-white/30 text-sm">© 2026 Embyr. Connexion, pas juste un plan cul.</p>
-      </footer>
+      {/* ── COMMENT ÇA MARCHE ── */}
+      <section className="emb-section">
+        <div className="emb-container">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <h2 className="text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+              Comment ça marche
+            </h2>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-4">
+            {[
+              { step: "1", title: "Créez votre profil", desc: "En 2 minutes. Vérifié manuellement.", icon: "👤" },
+              { step: "2", title: "Découvrez", desc: "Parcourez des profils masculins vérifiés.", icon: "🔍" },
+              { step: "3", title: "Échangez", desc: "Messages, vocaux, appels. Sans limite.", icon: "💬" },
+              { step: "4", title: "Connectez", desc: "Des connexions plus intenses, en privé.", icon: "🤝" },
+            ].map((s) => (
+              <div key={s.step} className="text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-500/10 text-xl">
+                  {s.icon}
+                </div>
+                <div className="mt-1 text-xs font-bold text-cyan-300/70">Étape {s.step}</div>
+                <h4 className="mt-2 font-bold text-white">{s.title}</h4>
+                <p className="mt-1 text-sm text-white/45">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MESSAGERIE PRIVÉE ── */}
+      <section className="emb-section bg-[radial-gradient(circle_at_50%_100%,rgba(124,58,237,0.06),transparent_50%)]">
+        <div className="emb-container text-center">
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+            Messagerie <span className="emb-gradient-text">privée</span>
+          </h2>
+          <p className="emb-subtitle mx-auto mt-4 max-w-2xl">
+            Messages texte illimités, messages vocaux, appels privés et visios.
+            Tout est chiffré et confidentiel.
+          </p>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {[
+              { title: "Messages", desc: "Texte illimité entre membres Premium", icon: "💬" },
+              { title: "Vocaux", desc: "Messages audio privés, envoyez votre voix", icon: "🎤" },
+              { title: "Appels & Visios", desc: "Appels et visios privés en un clic", icon: "📹" },
+            ].map((m) => (
+              <div key={m.title} className="emb-card rounded-2xl p-8">
+                <div className="mb-3 text-3xl">{m.icon}</div>
+                <h4 className="font-bold text-white">{m.title}</h4>
+                <p className="mt-2 text-sm text-white/50">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PREMIUM ── */}
+      <section className="emb-section" id="premium">
+        <div className="emb-container text-center">
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+            Premium
+          </h2>
+          <p className="emb-subtitle mx-auto mt-4 max-w-2xl">
+            Débloquez toutes les fonctionnalités et entrez dans le cercle privé.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-4">
+            {[
+              { duration: "1 mois", price: "14,99 €", period: "/mois" },
+              { duration: "3 mois", price: "29,99 €", period: "/3 mois" },
+              { duration: "6 mois", price: "49,99 €", period: "/6 mois" },
+              { duration: "À vie", price: "99,99 €", period: "unique" },
+            ].map((p) => (
+              <div key={p.duration} className="emb-card rounded-2xl p-6 text-center">
+                <div className="text-sm font-bold text-cyan-300">{p.duration}</div>
+                <div className="mt-2 text-3xl font-black text-white">{p.price}</div>
+                <div className="text-xs text-white/40">{p.period}</div>
+                <ul className="mt-4 space-y-2 text-left text-sm text-white/55">
+                  <li>✓ Profils complets</li>
+                  <li>✓ Messages illimités</li>
+                  <li>✓ Vocaux Premium</li>
+                  <li>✓ Appels & Visios</li>
+                  <li>✓ Favoris illimités</li>
+                </ul>
+                <Link href="/premium" className="emb-button-primary mt-4 w-full text-center">
+                  Choisir
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SÉCURITÉ / CONFIDENTIALITÉ ── */}
+      <section className="emb-section bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.04),transparent_50%)]">
+        <div className="emb-container text-center">
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+            Sécurité & <span className="emb-gradient-text">confidentialité</span>
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-4">
+            {[
+              { title: "Chiffré", desc: "Toutes les communications sont chiffrées de bout en bout." },
+              { title: "Anonyme", desc: "Votre identité reste protégée. Pas de profilage public." },
+              { title: "Modéré", desc: "Équipe de modération humaine. Tolérance zéro abus." },
+              { title: "RGPD", desc: "Données hébergées en Europe. Droit à l'oubli." },
+            ].map((s) => (
+              <div key={s.title} className="text-center">
+                <h4 className="font-bold text-white">{s.title}</h4>
+                <p className="mt-2 text-sm text-white/45">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA FINAL ── */}
+      <section className="emb-section pb-20">
+        <div className="emb-container text-center">
+          <div className="mx-auto max-w-2xl rounded-3xl border border-cyan-300/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.04),rgba(6,182,212,0.04))] p-12 backdrop-blur-xl">
+            <EmbyrLogo size="md" className="mb-6 justify-center" />
+            <h2 className="text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">
+              Prêt à entrer dans le cercle ?
+            </h2>
+            <p className="emb-subtitle mx-auto mt-3 max-w-md">
+              Rejoignez Embyr et découvrez une nouvelle façon de connecter.
+            </p>
+            <Link href="/inscription" className="emb-button-primary mt-8">
+              Créer mon compte gratuitement
+            </Link>
+            <p className="mt-3 text-xs text-white/30">
+              Ou <Link href="/connexion" className="text-cyan-300/70 hover:text-cyan-300">connectez-vous</Link> si vous avez déjà un compte.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
