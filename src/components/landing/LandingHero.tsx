@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Particles3D from "@/components/ui/Particles3D";
 
 const particles = Array.from({length: 60}, (_, i) => ({
   id: i,
@@ -14,7 +15,7 @@ const particles = Array.from({length: 60}, (_, i) => ({
   opacity: Math.random() * 0.6 + 0.1,
 }));
 
-const floatingWords = ["Élégance", "Audace", "Liberté", "Passion", "⚧️ Fierté"];
+const floatingWords = ["Fierté", "Communauté", "Liberté", "Respect", "🏳️‍🌈 Amour"];
 
 export default function LandingHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,12 +32,14 @@ export default function LandingHero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Aurora background layers */}
-      <div className="absolute inset-0 bg-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_30%,rgba(120,50,255,0.12),transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_70%,rgba(0,200,255,0.08),transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_20%_40%,rgba(255,60,140,0.06),transparent_70%)]" />
+    <section ref={containerRef} className="emb-aurora relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Grid géométrique + aurora */}
+      <div className="emb-aurora-bg" />
+      <div className="emb-grid" />
+      <div className="emb-noise" />
+
+      {/* 3D Particle field */}
+      <Particles3D count={55} className="absolute inset-0 z-[2]" />
 
       {/* Animated nebula blobs following mouse */}
       <motion.div
@@ -110,11 +113,11 @@ export default function LandingHero() {
           className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-tighter mb-8"
           style={{ fontFamily: "Arial, sans-serif" }}
         >
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-[var(--color-premium-rose)] to-white animate-pulse">RENCONTRES</span>
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-premium-rose)] via-[var(--color-premium-purple)] to-pink-300">
-            RÉELLES
+          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] via-white to-[#818CF8]">ENTRE NOUS</span>
+          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] via-white to-[#38BDF8]">
+            FIERS ET LIBRES
           </span>
-          <span className="block text-white/30 text-4xl sm:text-5xl md:text-6xl font-light mt-4">Sans compromis</span>
+          <span className="block text-white/30 text-4xl sm:text-5xl md:text-6xl font-light mt-4">sans limites</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -124,8 +127,8 @@ export default function LandingHero() {
           transition={{ duration: 0.9, delay: 0.7 }}
           className="text-lg md:text-xl text-gray-300/80 max-w-xl mx-auto mb-14 leading-relaxed"
         >
-          Profils <span className="text-[var(--color-premium-rose)] font-semibold">vérifiés</span>, modération <span className="text-[var(--color-premium-purple)] font-semibold">humaine</span>, design <span className="text-pink-300 font-semibold">premium</span>. <br />
-          La plateforme qui célèbre <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#5BCEFA] via-white to-[#F5A9B8] font-semibold">toutes les femmes</span>.
+          Là où l'authenticité est notre force. <br />
+          Profils <span className="text-[#38BDF8] font-semibold">vérifiés</span>, communauté <span className="text-[#818CF8] font-semibold">bienveillante</span>, espace <span className="text-[#38BDF8] font-semibold">safe</span>.
         </motion.p>
 
         {/* CTAs */}

@@ -26,8 +26,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body className="antialiased" style={{ background: "var(--eb-bg-base)", color: "var(--eb-text-primary)", fontFamily: "var(--eb-font-body)" }}>
-        {children}
+      <body className="antialiased relative" style={{ background: "#06030F", color: "rgba(255,255,255,0.9)", fontFamily: "Arial, sans-serif" }}>
+        {/* Fixed ambient layer — EMBYR style */}
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="emb-aurora-bg" />
+          <div className="emb-grid" />
+          <div className="emb-noise" />
+        </div>
+        <div className="relative z-[1]">
+          {children}
+        </div>
       </body>
     </html>
   );

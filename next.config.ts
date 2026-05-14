@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
       { source: "/connexion", destination: "/auth/login", permanent: true },
       { source: "/inscription", destination: "/auth/register", permanent: true },
       { source: "/profil", destination: "/dashboard/profile", permanent: true },
-      { source: "/members", destination: "/profiles", permanent: true },
-      { source: "/membres", destination: "/profiles", permanent: true },
+      { source: "/members", destination: "/membres", permanent: true },
+      { source: "/profiles", destination: "/membres", permanent: true },
       { source: "/login", destination: "/auth/login", permanent: true },
       { source: "/register", destination: "/auth/register", permanent: true },
     ];

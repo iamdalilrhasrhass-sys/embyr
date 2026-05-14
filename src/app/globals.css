@@ -1,62 +1,274 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════
+   EMBYR — IDENTITÉ VISUELLE
+   Fier, angulaire, géométrique, électrique, masculin
+   Palette : indigo, cyan, électrique, argent
+   ═══════════════════════════════════════════ */
+
 @theme {
-  --color-premium-dark: #060610;
-  --color-premium-darker: #0A0818;
-  --color-premium-violet: #13102A;
-  --color-premium-rose: #EC4899;
-  --color-premium-purple: #6366F1;
-  --color-premium-champagne: #FBBF24;
-  --color-premium-white: #F1F5F9;
-  --color-premium-gray: #94A3B8;
+  --color-emb-dark: #06030F;
+  --color-emb-cyan: #06B6D4;
+  --color-emb-indigo: #6366F1;
+  --color-emb-electric: #38BDF8;
+  --color-emb-silver: #94A3B8;
+  --color-emb-pride-pink: #F43F8F;
+  --color-emb-pride-yellow: #FBBF24;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-  body {
-    background: #060610;
-    color: #F1F5F9;
-    overflow-x: hidden;
-    @apply bg-[var(--color-premium-dark)] text-[var(--color-premium-white)] antialiased selection:bg-indigo-500/40 selection:text-white;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #06030F;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-@layer utilities {
-  .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.3)];
-  }
-  .glass-card-hover {
-    @apply hover:bg-white/[0.06] hover:border-indigo-400/20 hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] transition-all duration-500 ease-out;
-  }
-  .glass-premium {
-    @apply bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-2xl border border-white/[0.08] shadow-[0_12px_48px_rgba(0,0,0,0.4)];
-  }
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400;
-  }
-  .bg-gradient-premium {
-    @apply bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-500;
-  }
-  .premium-glow {
-    box-shadow: 0 0 60px rgba(99, 102, 241, 0.15), 0 0 30px rgba(6, 182, 212, 0.1), inset 0 0 20px rgba(99, 102, 241, 0.05);
-  }
-  .premium-hover {
-    @apply transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02];
-  }
-  .noise-overlay {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .soft-grid-bg {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
-  }
+/* ── AURORA EMBYR — Angulaire, sharp, électrique ── */
+.emb-aurora {
+  position: relative;
+  overflow: hidden;
+}
+.emb-aurora > .emb-aurora-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.emb-aurora > .emb-aurora-bg::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background:
+    conic-gradient(from 0deg at 50% 50%, rgba(6,182,212,0.06) 0%, transparent 25%, rgba(99,102,241,0.08) 50%, transparent 75%, rgba(6,182,212,0.06) 100%);
+  animation: embAurora 40s linear infinite;
+}
+.emb-aurora::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(99,102,241,0.02) 40px, rgba(99,102,241,0.02) 41px);
+}
+
+@keyframes embAurora {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ── GRILLE GÉOMÉTRIQUE EMBYR ── */
+.emb-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── DIAMANTS EMBYR ── */
+.emb-diamond {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(6,182,212,0.08);
+  border: 1px solid rgba(6,182,212,0.15);
+  transform: rotate(45deg);
+  animation: embPulse 4s ease-in-out infinite;
+}
+
+@keyframes embPulse {
+  0%, 100% { opacity: 0.3; transform: rotate(45deg) scale(1); }
+  50% { opacity: 0.8; transform: rotate(45deg) scale(1.3); }
+}
+
+/* ── CHAÎNES / CONNEXIONS EMBYR ── */
+.emb-chain {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.15), transparent);
+  animation: embChain 3s ease-in-out infinite;
+}
+
+@keyframes embChain {
+  0%, 100% { opacity: 0.2; transform: scaleX(0.8); }
+  50% { opacity: 0.6; transform: scaleX(1.2); }
+}
+
+/* ── ÉCLAIR / LIGHTNING EMBYR ── */
+.emb-bolt {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(180deg, transparent, rgba(56,189,248,0.15), transparent);
+  transform: skewX(-15deg);
+  animation: embBolt 2s ease-in-out infinite;
+}
+
+@keyframes embBolt {
+  0%, 100% { opacity: 0; transform: skewX(-15deg) scaleY(0.5); }
+  50% { opacity: 0.5; transform: skewX(-15deg) scaleY(1.2); }
+}
+
+/* ── VERRE EMBYR — angulaire, sharp edges ── */
+.emb-glass {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(99,102,241,0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+}
+.emb-glass-premium {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(6,182,212,0.12);
+  backdrop-filter: blur(24px);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(6,182,212,0.03);
+}
+
+/* ── CARTES EMBYR — bordures nettes, coins moins arrondis ── */
+.emb-card {
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(99,102,241,0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.emb-card:hover {
+  border-color: rgba(6,182,212,0.2);
+  box-shadow: 0 0 30px rgba(6,182,212,0.04), 0 4px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+/* ── BOUTON EMBYR ── */
+.emb-btn {
+  position: relative;
+  border-radius: 14px;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 14px;
+  background: linear-gradient(135deg, #6366F1, #06B6D4);
+  color: white;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.emb-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #38BDF8, #6366F1, #06B6D4);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+  filter: blur(8px);
+}
+.emb-btn:hover {
+  transform: scale(1.03);
+}
+.emb-btn:hover::before {
+  opacity: 0.5;
+}
+
+/* ── BOUTON EMBYR OUTLINE ── */
+.emb-btn-outline {
+  border-radius: 14px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(99,102,241,0.15);
+  color: rgba(255,255,255,0.7);
+  transition: all 0.4s;
+  letter-spacing: 0.02em;
+}
+.emb-btn-outline:hover {
+  border-color: rgba(6,182,212,0.3);
+  color: white;
+  background: rgba(6,182,212,0.04);
+}
+
+/* ── TEXTES EMBYR ── */
+.emb-text-gradient {
+  background: linear-gradient(135deg, #38BDF8 20%, #6366F1 50%, #06B6D4 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.emb-text-bold {
+  background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── BADGE EMBYR ── */
+.emb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: rgba(6,182,212,0.04);
+  border: 1px solid rgba(6,182,212,0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── BORDURE EMBYR FIERTÉ ── */
+.emb-pride-border {
+  position: relative;
+}
+.emb-pride-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #EF4444, #F97316, #FBBF24, #22C55E, #3B82F6, #6366F1, #A855F7);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── DIVISEUR EMBYR ── */
+.emb-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.15), rgba(99,102,241,0.15), transparent);
+}
+
+/* ── SCROLLBAR EMBYR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(6,182,212,0.4); }
+
+/* ── ANIMATIONS ── */
+@keyframes embSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.emb-animate-in {
+  animation: embSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.emb-delay-1 { animation-delay: 0.15s; }
+.emb-delay-2 { animation-delay: 0.3s; }
+.emb-delay-3 { animation-delay: 0.45s; }
+.emb-delay-4 { animation-delay: 0.6s; }
+.emb-delay-5 { animation-delay: 0.75s; }
+
+/* ── NOISE ── */
+.emb-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── SAFE AREA ── */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }

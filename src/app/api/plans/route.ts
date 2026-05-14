@@ -11,7 +11,7 @@ export async function GET() {
       period: "jour",
       features: ["Accès complet", "Messagerie illimitée"],
       popular: false,
-      stripeConfigured: !!process.env.STRIPE_PRICE_24H,
+      stripeConfigured: !!process.env.STRIPE_PRICE_DECOUVERTE_24H,
     },
     {
       id: "premium",
@@ -21,7 +21,7 @@ export async function GET() {
       period: "mois",
       features: ["Messagerie illimitée", "Albums privés", "Visiteurs", "Mode discret"],
       popular: true,
-      stripeConfigured: !!process.env.STRIPE_PRICE_PREMIUM,
+      stripeConfigured: !!process.env.STRIPE_PRICE_PREMIUM_1M,
     },
     {
       id: "vip",
@@ -31,7 +31,7 @@ export async function GET() {
       period: "an",
       features: ["Tout Premium", "Économie -61%", "Badge VIP", "Support prioritaire"],
       popular: false,
-      stripeConfigured: !!process.env.STRIPE_PRICE_VIP,
+      stripeConfigured: !!process.env.STRIPE_PRICE_PREMIUM_12M,
     },
   ];
 
