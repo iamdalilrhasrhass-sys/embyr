@@ -1,16 +1,27 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [profile, setProfile] = useState<any>(null);
+  const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
     fetch("/api/profile/me")
-      .then(res => res.json())
-      .then(data => setProfile(data))
-      .catch(() => {});
+      .then(res => {
+        if (res.status === 401) { router.push("/auth/login?redirect=/dashboard"); return null; }
+        return res.json();
+      })
+      .then(data => {
+        if (data) setProfile(data);
+        setAuthChecked(true);
+      })
+      .catch(() => { router.push("/auth/login?redirect=/dashboard"); });
   }, []);
+
+  if (!authChecked) return <div className="min-h-screen flex items-center justify-center text-white/40">Vérification...</div>;
 
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-6 py-10">
