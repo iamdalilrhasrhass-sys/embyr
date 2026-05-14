@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Reveal } from "@/components/motion/Reveal";
-import { TiltCard } from "@/components/motion/TiltCard";
+import ScrollReveal from "@/components/motion/ScrollReveal";
+import TiltCard from "@/components/motion/TiltCard";
 
 export default function Register() {
   const router = useRouter();
@@ -55,7 +55,7 @@ export default function Register() {
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[var(--color-premium-rose)]/10 rounded-full blur-[100px] animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-[var(--color-premium-purple)]/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
-      <Reveal direction="up" className="w-full max-w-md z-10 py-12">
+      <ScrollReveal direction="up" className="w-full max-w-md z-10 py-12">
         <TiltCard tiltScale={0.3}>
           <div className="glass-premium w-full p-8 md:p-10 rounded-[2.5rem] relative overflow-hidden border border-[var(--color-premium-rose)]/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--color-premium-rose)]/10 rounded-full blur-[50px]"></div>
@@ -144,7 +144,7 @@ export default function Register() {
             </p>
           </div>
         </TiltCard>
-      </Reveal>
+      </ScrollReveal>
     </div>
   );
 }

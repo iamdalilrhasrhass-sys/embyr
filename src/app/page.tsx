@@ -1,5 +1,9 @@
 import EmbyrLogo from "@/components/brand/EmbyrLogo";
 import EmbyrProductMockup from "@/components/landing/EmbyrProductMockup";
+import ScrollReveal from "@/components/motion/ScrollReveal";
+import TiltCard from "@/components/motion/TiltCard";
+import AuroraBackground from "@/components/motion/AuroraBackground";
+import FloatingMockup from "@/components/motion/FloatingMockup";
 import Particles3D from "@/components/ui/Particles3D";
 import Link from "next/link";
 
@@ -7,7 +11,8 @@ export default function Home() {
   return (
     <main className="emb-page">
       {/* ── HERO ── */}
-      <section className="emb-section relative flex min-h-screen flex-col items-center justify-center text-center">
+      <section className="emb-section relative flex min-h-screen flex-col items-center justify-center text-center overflow-hidden">
+        <AuroraBackground variant="embyr" />
         <Particles3D count={50} className="absolute inset-0 z-[2]" />
         <div className="emb-container relative z-10">
           <EmbyrLogo size="lg" className="mb-8 justify-center" />
@@ -38,7 +43,9 @@ export default function Home() {
 
           {/* Mockup */}
           <div className="mt-16">
-            <EmbyrProductMockup />
+            <FloatingMockup>
+                <EmbyrProductMockup />
+              </FloatingMockup>
           </div>
         </div>
       </section>
@@ -67,11 +74,11 @@ export default function Home() {
               { title: "Sélect", desc: "Profils vérifiés manuellement. Une communauté masculine premium et respectueuse.", icon: "✦" },
               { title: "Intense", desc: "Messagerie illimitée, vocaux, appels, visios. Des échanges qui comptent.", icon: "⚡" },
             ].map((item) => (
-              <div key={item.title} className="emb-card rounded-2xl p-8 text-center">
+              <TiltCard key={item.title} className="emb-card rounded-2xl p-8 text-center">
                 <div className="mb-4 text-3xl">{item.icon}</div>
                 <h3 className="text-lg font-bold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/50">{item.desc}</p>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -92,14 +99,14 @@ export default function Home() {
               { step: "3", title: "Échangez", desc: "Messages, vocaux, appels. Sans limite.", icon: "💬" },
               { step: "4", title: "Connectez", desc: "Des connexions plus intenses, en privé.", icon: "🤝" },
             ].map((s) => (
-              <div key={s.step} className="text-center">
+              <TiltCard key={s.step} className="text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-500/10 text-xl">
                   {s.icon}
                 </div>
                 <div className="mt-1 text-xs font-bold text-cyan-300/70">Étape {s.step}</div>
                 <h4 className="mt-2 font-bold text-white">{s.title}</h4>
                 <p className="mt-1 text-sm text-white/45">{s.desc}</p>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -121,11 +128,11 @@ export default function Home() {
               { title: "Vocaux", desc: "Messages audio privés, envoyez votre voix", icon: "🎤" },
               { title: "Appels & Visios", desc: "Appels et visios privés en un clic", icon: "📹" },
             ].map((m) => (
-              <div key={m.title} className="emb-card rounded-2xl p-8">
+              <TiltCard key={m.title} className="emb-card rounded-2xl p-8">
                 <div className="mb-3 text-3xl">{m.icon}</div>
                 <h4 className="font-bold text-white">{m.title}</h4>
                 <p className="mt-2 text-sm text-white/50">{m.desc}</p>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -147,7 +154,7 @@ export default function Home() {
               { duration: "6 mois", price: "49,99 €", period: "/6 mois" },
               { duration: "À vie", price: "99,99 €", period: "unique" },
             ].map((p) => (
-              <div key={p.duration} className="emb-card rounded-2xl p-6 text-center">
+              <TiltCard key={p.duration} className="emb-card rounded-2xl p-6 text-center">
                 <div className="text-sm font-bold text-cyan-300">{p.duration}</div>
                 <div className="mt-2 text-3xl font-black text-white">{p.price}</div>
                 <div className="text-xs text-white/40">{p.period}</div>
@@ -161,7 +168,7 @@ export default function Home() {
                 <Link href="/premium" className="emb-button-primary mt-4 w-full text-center">
                   Choisir
                 </Link>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -192,7 +199,7 @@ export default function Home() {
       {/* ── CTA FINAL ── */}
       <section className="emb-section pb-20">
         <div className="emb-container text-center">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-cyan-300/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.04),rgba(6,182,212,0.04))] p-12 backdrop-blur-xl">
+          <TiltCard className="mx-auto max-w-2xl rounded-3xl border border-cyan-300/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.04),rgba(6,182,212,0.04))] p-12 backdrop-blur-xl">
             <EmbyrLogo size="md" className="mb-6 justify-center" />
             <h2 className="text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">
               Prêt à entrer dans le cercle ?
@@ -206,7 +213,7 @@ export default function Home() {
             <p className="mt-3 text-xs text-white/30">
               Ou <Link href="/connexion" className="text-cyan-300/70 hover:text-cyan-300">connectez-vous</Link> si vous avez déjà un compte.
             </p>
-          </div>
+          </TiltCard>
         </div>
       </section>
     </main>

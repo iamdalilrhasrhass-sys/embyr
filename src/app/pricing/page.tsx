@@ -1,9 +1,9 @@
 "use client";
 import { PRICING, FAST_OPTIONS, PREMIUM_FEATURES, formatPriceEUR } from "@/lib/pricing";
 import { useState } from "react";
-import { Reveal } from "@/components/motion/Reveal";
+import ScrollReveal from "@/components/motion/ScrollReveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { TiltCard } from "@/components/motion/TiltCard";
+import TiltCard from "@/components/motion/TiltCard";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 
 export default function PricingPage() {
@@ -44,7 +44,7 @@ export default function PricingPage() {
         
         {/* A. Hero pricing */}
         <div className="text-center mb-20">
-          <Reveal>
+          <ScrollReveal>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
               <span className="glass-premium text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg">
                 Jusqu'à 25 % moins cher que les plateformes classiques
@@ -60,39 +60,39 @@ export default function PricingPage() {
             <p className="text-xl md:text-2xl text-[var(--color-premium-gray)] max-w-3xl mx-auto leading-relaxed">
               Accédez aux fonctionnalités essentielles de Embyr avec des prix clairs, accessibles et sans engagement.
             </p>
-          </Reveal>
+          </ScrollReveal>
         </div>
 
         {/* B. Bloc fonctionnalités premium */}
-        <Reveal delay={0.2}>
+        <ScrollReveal delay={0.2}>
           <div className="mb-24 max-w-4xl mx-auto">
             <div className="glass-premium rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden border border-[var(--color-premium-rose)]/30 shadow-[0_0_50px_rgba(244,63,143,0.15)]">
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-premium opacity-20 blur-[100px] animate-pulse-slow"></div>
               <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-white drop-shadow-md">Tout ce qui est inclus dans <span className="text-gradient">Premium</span></h2>
-              <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 relative z-10">
                 {PREMIUM_FEATURES.map((feature, idx) => (
-                  <StaggerItem key={idx}>
+                  <div key={idx}>
                     <div className="flex items-start group">
                       <svg className="w-6 h-6 text-[var(--color-premium-rose)] mt-0.5 mr-3 shrink-0 group-hover:scale-125 transition-transform drop-shadow-[0_0_8px_rgba(244,63,143,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-[var(--color-premium-white)]/90 text-lg">{feature}</span>
                     </div>
-                  </StaggerItem>
+                  </div>
                 ))}
-              </StaggerGroup>
+              </div>
             </div>
           </div>
-        </Reveal>
+        </ScrollReveal>
 
         {/* C. Grille principale des abonnements */}
         <div className="mb-24">
-          <Reveal>
+          <ScrollReveal>
             <h2 className="text-4xl font-bold mb-12 text-center drop-shadow-md">Abonnements Premium</h2>
-          </Reveal>
-          <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {PRICING.map((plan) => (
-              <StaggerItem key={plan.id}>
+              <div key={plan.id}>
                 <TiltCard tiltScale={0.5} className="h-full">
                   <div 
                     className={`h-full glass-premium rounded-3xl p-8 relative flex flex-col transition-all duration-500 hover:-translate-y-2 ${
@@ -136,21 +136,21 @@ export default function PricingPage() {
                     </MagneticButton>
                   </div>
                 </TiltCard>
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerGroup>
+          </div>
         </div>
 
         {/* D. Offres 24h et options */}
-        <Reveal delay={0.2}>
+        <ScrollReveal delay={0.2}>
           <div className="mb-24 max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 drop-shadow-md">Offres rapides et Visibilité</h2>
               <p className="text-[var(--color-premium-gray)] text-lg">Besoin d’un accès rapide ? Embyr propose aussi des options courtes, simples et moins chères.</p>
             </div>
-            <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {FAST_OPTIONS.map((opt) => (
-                <StaggerItem key={opt.id}>
+                <div key={opt.id}>
                   <div className="glass-premium rounded-3xl p-6 flex flex-col justify-between hover:bg-white/10 transition-colors h-full group premium-hover">
                     <div>
                       <h4 className="font-bold text-xl mb-2">{opt.name}</h4>
@@ -164,14 +164,14 @@ export default function PricingPage() {
                       {loading === opt.id ? "..." : "Acheter"}
                     </button>
                   </div>
-                </StaggerItem>
+                </div>
               ))}
-            </StaggerGroup>
+            </div>
           </div>
-        </Reveal>
+        </ScrollReveal>
 
         {/* E. Comparaison */}
-        <Reveal>
+        <ScrollReveal>
           <div className="mb-24 max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center drop-shadow-md">Comparez et choisissez l'évidence</h2>
             <div className="glass-premium rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
@@ -228,10 +228,10 @@ export default function PricingPage() {
               </table>
             </div>
           </div>
-        </Reveal>
+        </ScrollReveal>
 
         {/* F. Bloc paiement sécurisé */}
-        <Reveal delay={0.2} direction="up">
+        <ScrollReveal delay={0.2} direction="up">
           <div className="mb-24 max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center p-5 rounded-full bg-white/5 mb-6 border border-white/10 premium-glow">
               <svg className="w-10 h-10 text-[var(--color-premium-rose)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -239,7 +239,7 @@ export default function PricingPage() {
               </svg>
             </div>
             
-        <Reveal delay={0.3}>
+        <ScrollReveal delay={0.3}>
           <div className="mt-16 bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-premium-rose)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="z-10 text-left mb-6 md:mb-0">
@@ -258,7 +258,7 @@ export default function PricingPage() {
               </div>
             </div>
           </div>
-        </Reveal>
+        </ScrollReveal>
 
 
         <h2 className="text-3xl font-bold mb-4 drop-shadow-md">Paiement 100% sécurisé</h2>
@@ -269,13 +269,13 @@ export default function PricingPage() {
               Les conditions de renouvellement sont affichées avant paiement.
             </p>
           </div>
-        </Reveal>
+        </ScrollReveal>
 
         {/* G. FAQ pricing */}
-        <Reveal>
+        <ScrollReveal>
           <div className="max-w-4xl mx-auto mb-10">
             <h2 className="text-4xl font-bold mb-12 text-center drop-shadow-md">Questions fréquentes</h2>
-            <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { q: "Est-ce sans engagement ?", a: "Les conditions de renouvellement sont clairement affichées lors du paiement. Vous pouvez gérer vos préférences d'abonnement à tout moment depuis votre compte." },
                 { q: "Que se passe-t-il entre 00h00 et 07h00 ?", a: "Selon les règles de la plateforme, l'accès aux fonctionnalités essentielles est gratuit durant ces horaires pour faciliter les échanges nocturnes." },
@@ -284,16 +284,16 @@ export default function PricingPage() {
                 { q: "Les profils sont-ils vérifiés ?", a: "La sécurité est notre priorité. Nos modérateurs et nos outils de détection vérifient continuellement la qualité des profils pour vous assurer une expérience premium." },
                 { q: "Est-ce réservé aux majeurs ?", a: "Oui, l'accès à Embyr est strictement réservé aux personnes majeures de plus de 18 ans." },
               ].map((faq, idx) => (
-                <StaggerItem key={idx}>
+                <div key={idx}>
                   <div className="glass-premium p-8 rounded-3xl h-full border border-white/5 hover:border-white/20 transition-colors">
                     <h3 className="font-bold text-xl mb-3 text-[var(--color-premium-rose)]">{faq.q}</h3>
                     <p className="text-[var(--color-premium-gray)] leading-relaxed">{faq.a}</p>
                   </div>
-                </StaggerItem>
+                </div>
               ))}
-            </StaggerGroup>
+            </div>
           </div>
-        </Reveal>
+        </ScrollReveal>
 
       </div>
     </div>

@@ -1,59 +1,49 @@
-"use client";
+'use client';
+import { ReactNode, useRef } from 'react';
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ReactNode, useRef } from "react";
-
-interface TiltCardProps {
+type TiltCardProps = {
   children: ReactNode;
   className?: string;
+  intensity?: number;
   tiltScale?: number;
-}
+};
 
-export function TiltCard({ children, className = "", tiltScale = 1 }: TiltCardProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+export default function TiltCard({
+  children,
+  className = '',
+  intensity = 6,
+}: TiltCardProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
 
-  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 15, mass: 0.1 });
-  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 });
+  function onMove(event: React.MouseEvent<HTMLDivElement>) {
+    const node = ref.current;
+    if (!node) return;
+    if (window.innerWidth < 768) return;
+    const rect = node.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * intensity;
+    const rotateX = -((y / rect.height) - 0.5) * intensity;
+    node.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+  }
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [`${5 * tiltScale}deg`, `-${5 * tiltScale}deg`]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [`-${5 * tiltScale}deg`, `${5 * tiltScale}deg`]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
+  function onLeave() {
+    const node = ref.current;
+    if (!node) return;
+    node.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+  }
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      className={className}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      className={[
+        'transition-transform duration-300 ease-out will-change-transform',
+        className,
+      ].join(' ')}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
