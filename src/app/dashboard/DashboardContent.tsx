@@ -205,7 +205,7 @@ export default function DashboardContent() {
           <Link href="/" className="flex items-center gap-3">
             <div
               className="w-7 h-7 rounded-[6px] flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #E91E63, #FF6B35)" }}
+              style={{ background: "linear-gradient(135deg, #6366F1, #06B6D4)" }}
             >
               <span className="font-display font-bold text-[10px] text-white">F</span>
             </div>
@@ -297,7 +297,7 @@ export default function DashboardContent() {
                     onClick={handlePhoneSubmit}
                     disabled={phoneStep === "sending" || !phone}
                     className="px-4 py-2 rounded-xl text-[7px] font-mono tracking-wider cursor-pointer disabled:opacity-30"
-                    style={{ background: "linear-gradient(135deg, #E91E63, #FF6B35)", color: "white" }}
+                    style={{ background: "linear-gradient(135deg, #6366F1, #06B6D4)", color: "white" }}
                   >
                     {phoneStep === "sending" ? "..." : "Envoyer"}
                   </button>
@@ -319,7 +319,7 @@ export default function DashboardContent() {
                       onClick={handleVerifyCode}
                       disabled={phoneStep === "verifying" || smsCode.length < 6}
                       className="px-4 py-2 rounded-xl text-[7px] font-mono tracking-wider cursor-pointer disabled:opacity-30"
-                      style={{ background: "linear-gradient(135deg, #E91E63, #FF6B35)", color: "white" }}
+                      style={{ background: "linear-gradient(135deg, #6366F1, #06B6D4)", color: "white" }}
                     >
                       {phoneStep === "verifying" ? "..." : "Vérifier"}
                     </button>
@@ -362,7 +362,7 @@ export default function DashboardContent() {
               <button
                 onClick={() => handleToggleSms(!prefs.smsEnabled)}
                 className={`relative w-10 h-5 rounded-full transition-all duration-300 cursor-pointer ${prefs.smsEnabled ? "bg-gradient-to-r from-violet to-pink" : "bg-white/8"}`}
-                style={{ background: prefs.smsEnabled ? "linear-gradient(135deg, #E91E63, #FF6B35)" : "rgba(255,255,255,0.06)" }}
+                style={{ background: prefs.smsEnabled ? "linear-gradient(135deg, #6366F1, #06B6D4)" : "rgba(255,255,255,0.06)" }}
               >
                 <motion.div
                   className="absolute top-0.5 w-4 h-4 bg-white rounded-full"
@@ -383,7 +383,7 @@ export default function DashboardContent() {
                 </div>
               </div>
               <div className="w-10 h-5 rounded-full flex items-center justify-center cursor-not-allowed"
-                style={{ background: "linear-gradient(135deg, #E91E63, #FF6B35)", opacity: 0.5 }}>
+                style={{ background: "linear-gradient(135deg, #6366F1, #06B6D4)", opacity: 0.5 }}>
                 <motion.div className="w-4 h-4 bg-white rounded-full" style={{ x: 20 }} />
               </div>
             </div>
@@ -409,7 +409,7 @@ export default function DashboardContent() {
               <button
                 onClick={() => router.push("/")}
                 className="px-6 py-2 rounded-xl text-[8px] font-mono tracking-wider transition-all duration-300 cursor-pointer"
-                style={{ background: "linear-gradient(135deg, #E91E63, #FF6B35)", color: "white" }}
+                style={{ background: "linear-gradient(135deg, #6366F1, #06B6D4)", color: "white" }}
               >
                 Voir les formules →
               </button>

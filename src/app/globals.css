@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-premium-dark: #0A0300;
-  --color-premium-darker: #120700;
-  --color-premium-violet: #1A0A04;
-  --color-premium-rose: #FF6B35;
-  --color-premium-purple: #E91E63;
-  --color-premium-champagne: #FFB74D;
-  --color-premium-white: #FFFAF5;
-  --color-premium-gray: #C4A89E;
+  --color-premium-dark: #060610;
+  --color-premium-darker: #0A0818;
+  --color-premium-violet: #13102A;
+  --color-premium-rose: #EC4899;
+  --color-premium-purple: #6366F1;
+  --color-premium-champagne: #FBBF24;
+  --color-premium-white: #F1F5F9;
+  --color-premium-gray: #94A3B8;
 }
 
 @layer base {
@@ -17,31 +17,31 @@
     overflow-x: hidden;
   }
   body {
-    background: #0A0300;
-    color: #FFFAF5;
+    background: #060610;
+    color: #F1F5F9;
     overflow-x: hidden;
-    @apply bg-[var(--color-premium-dark)] text-[var(--color-premium-white)] antialiased selection:bg-[var(--color-premium-rose)] selection:text-white;
+    @apply bg-[var(--color-premium-dark)] text-[var(--color-premium-white)] antialiased selection:bg-indigo-500/40 selection:text-white;
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)];
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.3)];
   }
   .glass-card-hover {
-    @apply hover:bg-white/10 hover:border-[var(--color-premium-rose)]/30 hover:shadow-[0_8px_32px_rgba(244,63,143,0.15)] transition-all duration-500 ease-out;
+    @apply hover:bg-white/[0.06] hover:border-indigo-400/20 hover:shadow-[0_8px_40px_rgba(99,102,241,0.12)] transition-all duration-500 ease-out;
   }
   .glass-premium {
-    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    @apply bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-2xl border border-white/[0.08] shadow-[0_12px_48px_rgba(0,0,0,0.4)];
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400;
   }
   .bg-gradient-premium {
-    @apply bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)];
+    @apply bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-500;
   }
   .premium-glow {
-    box-shadow: 0 0 40px rgba(255, 107, 53, 0.2), inset 0 0 20px rgba(233, 30, 99, 0.1);
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.15), 0 0 30px rgba(6, 182, 212, 0.1), inset 0 0 20px rgba(99, 102, 241, 0.05);
   }
   .premium-hover {
     @apply transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02];
@@ -56,7 +56,7 @@
   }
   .soft-grid-bg {
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
   }
 }

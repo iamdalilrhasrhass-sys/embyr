@@ -126,16 +126,16 @@ export default function LandingPricing() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="mt-16 p-10 rounded-3xl border border-amber-400/10 bg-gradient-to-r from-amber-500/[0.04] via-purple-500/[0.04] to-pink-500/[0.04] backdrop-blur-2xl text-center relative overflow-hidden"
+        className="mt-16 p-10 rounded-3xl border border-indigo-400/10 bg-gradient-to-r from-indigo-500/[0.04] via-violet-500/[0.04] to-cyan-500/[0.04] backdrop-blur-2xl text-center relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/[0.04] rounded-full blur-[80px]" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/[0.04] rounded-full blur-[80px]" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-400/[0.04] rounded-full blur-[80px]" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/[0.04] rounded-full blur-[80px]" />
 
         <div className="relative z-10">
           <motion.div
             animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="inline-flex px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 to-pink-500/20 border border-amber-400/10 text-amber-300 text-xs font-bold tracking-wide mb-6"
+            className="inline-flex px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 border border-indigo-400/10 text-indigo-300 text-xs font-bold tracking-wide mb-6"
           >
             ✦ ÉDITION LIMITÉE — 200 PLACES ✦
           </motion.div>
@@ -145,7 +145,7 @@ export default function LandingPricing() {
             VIP gratuit à vie, badge exclusif, accès anticipé aux nouvelles fonctionnalités.
           </p>
 
-          <Link href="/profiles" className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-all duration-500 hover:scale-105">
+          <Link href="/profiles" className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all duration-500 hover:scale-105">
             Découvrir les profils
             <span className="text-xl">→</span>
           </Link>

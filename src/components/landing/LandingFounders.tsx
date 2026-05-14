@@ -16,7 +16,7 @@ export default function LandingFounders() {
 
   return (
     <section ref={ref} className="py-32 px-4 max-w-4xl mx-auto text-center relative">
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-amber-400/[0.02] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-indigo-400/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -26,7 +26,7 @@ export default function LandingFounders() {
         style={{ fontFamily: "Arial, sans-serif" }}
       >
         Profils{" "}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-yellow-200 to-pink-300">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-yellow-200 to-pink-300">
           Fondatrices
         </span>
       </motion.h2>
@@ -54,31 +54,31 @@ export default function LandingFounders() {
             <motion.div
               animate={hovered === f.number ? { rotateY: 10, rotateX: -5, scale: 1.05, z: 50 } : { rotateY: 0, rotateX: 0, scale: 1, z: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="p-8 rounded-3xl border border-amber-400/10 bg-gradient-to-b from-amber-500/[0.04] to-pink-500/[0.02] backdrop-blur-2xl relative overflow-hidden"
+              className="p-8 rounded-3xl border border-indigo-400/10 bg-gradient-to-b from-indigo-500/[0.04] to-pink-500/[0.02] backdrop-blur-2xl relative overflow-hidden"
             >
               <motion.div
                 animate={hovered === f.number ? { opacity: 1 } : { opacity: 0 }}
-                className="absolute inset-0 bg-gradient-to-br from-amber-400/[0.06] via-purple-500/[0.03] to-pink-500/[0.04] rounded-3xl"
+                className="absolute inset-0 bg-gradient-to-br from-indigo-400/[0.06] via-purple-500/[0.03] to-pink-500/[0.04] rounded-3xl"
               />
 
               <div className="relative z-10">
                 <motion.div
                   animate={hovered === f.number ? { y: -5, scale: 1.1 } : { y: 0, scale: 1 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-amber-400/20 to-pink-400/20 border-2 border-amber-400/20 flex items-center justify-center text-4xl mb-6"
+                  className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-indigo-400/20 to-pink-400/20 border-2 border-indigo-400/20 flex items-center justify-center text-4xl mb-6"
                 >
                   {f.badge}
                 </motion.div>
 
                 <div className="text-white font-bold text-lg">{f.title}</div>
-                <div className="text-xs text-amber-400/70 mt-1 mb-1">Badge Fondatrice</div>
+                <div className="text-xs text-indigo-400/70 mt-1 mb-1">Badge Fondatrice</div>
                 <div className="text-xs text-gray-500">{f.status}</div>
               </div>
 
               {/* Animated corner glow */}
               <motion.div
                 animate={hovered === f.number ? { opacity: 0.6 } : { opacity: 0 }}
-                className="absolute -top-10 -right-10 w-20 h-20 bg-amber-400/20 rounded-full blur-2xl"
+                className="absolute -top-10 -right-10 w-20 h-20 bg-indigo-400/20 rounded-full blur-2xl"
               />
             </motion.div>
           </motion.div>

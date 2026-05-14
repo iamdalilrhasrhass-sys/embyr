@@ -38,7 +38,7 @@ export default function DashboardPage() {
           <div className="text-2xl mb-3">⭐</div>
           <h3 className="text-lg font-bold mb-1 text-white">Abonnement</h3>
           <p className="text-white/40 text-sm">Statut: {profile?.isPremium ? 'Premium' : 'Découverte'}</p>
-          <span className="inline-block mt-3 text-xs text-amber-400 group-hover:translate-x-1 transition-transform">Voir les offres →</span>
+          <span className="inline-block mt-3 text-xs text-indigo-400 group-hover:translate-x-1 transition-transform">Voir les offres →</span>
         </Link>
       </div>
       

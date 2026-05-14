@@ -120,7 +120,7 @@ export function Stagger({ children, className = '', delay = 0.1 }: {
 }
 
 // ─── Floating Aurora Bubbles ─────────────────
-export function AuroraBubbles({ count = 20, colors = ['#FF6B35', '#E91E63', '#D81B60', '#F59E0B'] }: {
+export function AuroraBubbles({ count = 20, colors = ['#6366F1', '#8B5CF6', '#06B6D4', '#A78BFA'] }: {
   count?: number;
   colors?: string[];
 }) {
