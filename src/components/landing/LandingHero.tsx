@@ -43,19 +43,19 @@ export default function LandingHero() {
 
       {/* Animated nebula blobs following mouse */}
       <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
+        className="absolute w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none max-w-[100vw] hidden sm:block"
         style={{ background: "radial-gradient(circle, rgba(139,92,246,0.15), transparent 70%)" }}
         animate={{ x: mousePos.x - 300, y: mousePos.y - 300 }}
         transition={{ type: "spring", damping: 30, stiffness: 80 }}
       />
       <motion.div
-        className="absolute w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none"
+        className="absolute w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none max-w-[95vw] hidden sm:block"
         style={{ background: "radial-gradient(circle, rgba(6,182,212,0.1), transparent 70%)" }}
         animate={{ x: mousePos.x * 0.5 - 200, y: mousePos.y * 0.7 - 200 }}
         transition={{ type: "spring", damping: 40, stiffness: 60 }}
       />
       <motion.div
-        className="absolute w-[350px] h-[350px] rounded-full blur-[90px] pointer-events-none"
+        className="absolute w-[350px] h-[350px] rounded-full blur-[90px] pointer-events-none max-w-[90vw] hidden sm:block"
         style={{ background: "radial-gradient(circle, rgba(244,63,143,0.08), transparent 70%)" }}
         animate={{ x: mousePos.x * 0.3 - 175, y: mousePos.y * 0.5 - 175 }}
         transition={{ type: "spring", damping: 50, stiffness: 50 }}
