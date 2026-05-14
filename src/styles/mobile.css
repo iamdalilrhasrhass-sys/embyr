@@ -1,0 +1,35 @@
+[data-site="embyr"] {
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+[data-site="embyr"] button,
+[data-site="embyr"] a[role="button"],
+[data-site="embyr"] input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media screen and (max-width: 768px) {
+  [data-site="embyr"] input, [data-site="embyr"] textarea, [data-site="embyr"] select {
+    font-size: 16px !important;
+  }
+}
+
+.bottom-nav-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  min-height: calc(64px + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-drawer {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,90,31,0.15) transparent;
+}

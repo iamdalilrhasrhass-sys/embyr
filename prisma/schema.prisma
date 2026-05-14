@@ -1,0 +1,653 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  MODERATOR
+  AMBASSADOR
+}
+
+enum GenderIdentity {
+  FEMME_TRANS
+  TRAVESTI
+  PERSONNE_FEMININE
+  HOMME
+  FEMME
+  COUPLE
+  AUTRE
+}
+
+enum LookingFor {
+  RENCONTRE_SERIEUSE
+  DISCUSSION
+  RENCONTRE_DISCARTE
+  AMITIE
+  RELATION_LIBRE
+  AUTRE
+}
+
+enum MediaStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  FLAGGED
+}
+
+enum MessageStatus {
+  SENT
+  READ
+  DELETED
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+  PENDING
+}
+
+enum ModerationSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ReportStatus {
+  PENDING
+  INVESTIGATING
+  RESOLVED
+  DISMISSED
+}
+
+model User {
+  id                 String   @id @default(cuid())
+  email              String   @unique
+  phone              String?  @unique
+  phoneVerified      Boolean  @default(false)
+  passwordHash       String
+  emailVerified      Boolean  @default(false)
+  emailToken         String?
+  role               UserRole @default(USER)
+  isAdultConfirmed   Boolean  @default(false)
+  consentSensitiveData Boolean @default(false)
+  bannedAt           DateTime?
+  banReason          String?
+  deletedAt          DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  lastLoginAt        DateTime?
+
+  profile           Profile?
+  media             Media[]
+  sentMessages      Message[]          @relation("SentMessages")
+  receivedMessages  Message[]          @relation("ReceivedMessages")
+  conversations1    Conversation[]     @relation("ConversationUser1")
+  conversations2    Conversation[]     @relation("ConversationUser2")
+  likesGiven        Like[]             @relation("LikesGiven")
+  likesReceived     Like[]             @relation("LikesReceived")
+  favoritesGiven    Favorite[]         @relation("FavoritesGiven")
+  favoritesReceived Favorite[]         @relation("FavoritesReceived")
+  visitsMade        ProfileVisit[]     @relation("VisitsMade")
+  visitsReceived    ProfileVisit[]     @relation("VisitsReceived")
+  blocksMade        Block[]            @relation("BlocksMade")
+  blocksReceived    Block[]            @relation("BlocksReceived")
+  reportsMade       UserReport[]       @relation("ReportsMade")
+  reportsReceived   UserReport[]       @relation("ReportsReceived")
+  subscriptions     Subscription[]
+  ambassador        Ambassador?
+  consents          Consent[]
+  moderationCases   ModerationCase[]
+  forumPosts        ForumPost[]
+  forumThreads      ForumThread[]
+  referrals         Referral[]
+  matchesAs1        Match[]            @relation("MatchUser1")
+  matchesAs2        Match[]            @relation("MatchUser2")
+  notificationPreference NotificationPreference?
+  smsVerifications  SmsVerification[]
+  albums            Album[]
+  testimonialsSent  Testimonial[]        @relation("TestimonialFrom")
+  testimonialsReceived Testimonial[]     @relation("TestimonialTo")
+  salonMessages     SalonMessage[]
+  classifieds       Classified[]
+  videos            Video[]
+  certificationRequests CertificationRequest[]
+  albumAccessRequests AlbumAccessRequest[]
+}
+
+model Profile {
+  id                     String         @id @default(cuid())
+  userId                 String         @unique
+  username               String         @unique
+  displayName            String?
+  age                    Int
+  birthdate              DateTime?
+  city                   String?
+  country                String?
+  latitude               Float?
+  longitude              Float?
+  genderIdentity         GenderIdentity?
+  lookingFor             LookingFor?
+  relationshipType       String?
+  description            String?
+  publicVisibility       Boolean        @default(true)
+  onlineStatus           Boolean        @default(false)
+  lastSeenAt             DateTime?
+  lastActiveAt           DateTime?
+  isVerified             Boolean        @default(false)
+  isPremium              Boolean        @default(false)
+  premiumUntil           DateTime?
+  popularityScore        Int            @default(0)
+  trustScore             Int            @default(50)
+  profileCompletionScore Int            @default(0)
+  
+  // Nouveaux champs MVP Premium / Ambassadeur
+  isFounder           Boolean   @default(false)
+  canReceiveMessages  Boolean   @default(true)
+  profileSource       String    @default("user_registration")
+  consentGivenAt      DateTime?
+  imageRightsConfirmed Boolean  @default(false)
+  ageVerified         Boolean   @default(false)
+  referralCode        String?   @unique
+  referralEarnings    Decimal   @default(0)
+  lastContactedAt     DateTime?
+
+  availableUntil         DateTime?
+  availabilityLabel      String?
+  intentions             String[]       @default([])
+  isDiscreet             Boolean        @default(false)
+  courtesyBadges         String[]       @default([])
+
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  media     Media[]
+  ambassador Ambassador?
+}
+
+model Media {
+  id              String      @id @default(cuid())
+  userId          String
+  profileId       String
+  type            String      // public_photo / private_photo
+  url             String
+  storageKey      String
+  status          MediaStatus @default(PENDING)
+  moderationScore Float?      @default(0)
+  createdAt       DateTime    @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model Conversation {
+  id            String   @id @default(cuid())
+  user1Id       String
+  user2Id       String
+  lastMessageAt DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user1    User      @relation("ConversationUser1", fields: [user1Id], references: [id], onDelete: Cascade)
+  user2    User      @relation("ConversationUser2", fields: [user2Id], references: [id], onDelete: Cascade)
+  messages Message[]
+}
+
+model Message {
+  id                String        @id @default(cuid())
+  conversationId    String
+  senderId          String
+  receiverId        String
+  content           String
+  status            MessageStatus @default(SENT)
+  moderationStatus  String?       @default("clean")
+  createdAt         DateTime      @default(now())
+  readAt            DateTime?
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver     User         @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+}
+
+model Like {
+  id         String   @id @default(cuid())
+  fromUserId String
+  toUserId   String
+  createdAt  DateTime @default(now())
+
+  fromUser User @relation("LikesGiven", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User @relation("LikesReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+
+  @@unique([fromUserId, toUserId])
+}
+
+model Favorite {
+  id         String   @id @default(cuid())
+  fromUserId String
+  toUserId   String
+  createdAt  DateTime @default(now())
+
+  fromUser User @relation("FavoritesGiven", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User @relation("FavoritesReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+
+  @@unique([fromUserId, toUserId])
+}
+
+model ProfileVisit {
+  id         String   @id @default(cuid())
+  visitorId  String
+  visitedId  String
+  hidden     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  visitor User @relation("VisitsMade", fields: [visitorId], references: [id], onDelete: Cascade)
+  visited User @relation("VisitsReceived", fields: [visitedId], references: [id], onDelete: Cascade)
+}
+
+model Block {
+  id        String   @id @default(cuid())
+  blockerId String
+  blockedId String
+  createdAt DateTime @default(now())
+
+  blocker User @relation("BlocksMade", fields: [blockerId], references: [id], onDelete: Cascade)
+  blocked User @relation("BlocksReceived", fields: [blockedId], references: [id], onDelete: Cascade)
+
+  @@unique([blockerId, blockedId])
+}
+
+model UserReport {
+  id             String       @id @default(cuid())
+  reporterId     String
+  reportedUserId String
+  targetType     String       // profile / message / media / forum
+  targetId       String?
+  reason         String
+  details        String?
+  status         ReportStatus @default(PENDING)
+  createdAt      DateTime     @default(now())
+  resolvedAt     DateTime?
+
+  reporter User @relation("ReportsMade", fields: [reporterId], references: [id], onDelete: Cascade)
+  reported User @relation("ReportsReceived", fields: [reportedUserId], references: [id], onDelete: Cascade)
+}
+
+model Plan {
+  id          String  @id @default(cuid())
+  name        String
+  duration    Int
+  priceCents  Int
+  currency    String  @default("EUR")
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id                    String             @id @default(cuid())
+  userId                String
+  planId                String?
+  status                SubscriptionStatus @default(PENDING)
+  provider              String             @default("mock")
+  providerSubscriptionId String?
+  startedAt             DateTime?
+  expiresAt             DateTime?
+  canceledAt            DateTime?
+  createdAt             DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan Plan? @relation(fields: [planId], references: [id])
+}
+
+model Ambassador {
+  id                   String  @id @default(cuid())
+  userId               String  @unique
+  profileId            String? @unique
+  publicName           String
+  slug                 String  @unique
+  bio                  String?
+  socialLinks          String?
+  referralCode         String  @unique
+  lifetimePremium      Boolean @default(true)
+  status               String  @default("active")
+  createdAt            DateTime @default(now())
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profile   Profile?  @relation(fields: [profileId], references: [id])
+  referrals Referral[]
+}
+
+model Referral {
+  id                String    @id @default(cuid())
+  ambassadorId      String
+  referredUserId    String    @unique
+  source            String?
+  createdAt         DateTime  @default(now())
+  convertedToPremiumAt DateTime?
+
+  ambassador Ambassador @relation(fields: [ambassadorId], references: [id], onDelete: Cascade)
+  referredUser  User  @relation(fields: [referredUserId], references: [id], onDelete: Cascade)
+}
+
+model Consent {
+  id         String   @id @default(cuid())
+  userId     String
+  type       String   // cgu / privacy / sensitive_data / cookies
+  acceptedAt DateTime @default(now())
+  ip         String?
+  userAgent  String?
+  version    String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ModerationCase {
+  id           String             @id @default(cuid())
+  userId       String
+  targetType   String
+  targetId     String?
+  reason       String
+  severity     ModerationSeverity @default(MEDIUM)
+  status       String             @default("open")
+  aiSummary    String?
+  adminDecision String?
+  createdAt    DateTime           @default(now())
+  resolvedAt   DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ForumCategory {
+  id        String       @id @default(cuid())
+  name      String
+  slug      String       @unique
+  isPremium Boolean      @default(false)
+  createdAt DateTime     @default(now())
+  threads   ForumThread[]
+}
+
+model ForumThread {
+  id         String     @id @default(cuid())
+  categoryId String
+  authorId   String
+  title      String
+  isPinned   Boolean    @default(false)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  category ForumCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  author   User         @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  posts    ForumPost[]
+}
+
+model ForumPost {
+  id        String   @id @default(cuid())
+  threadId  String
+  authorId  String
+  content   String
+  createdAt DateTime @default(now())
+
+  thread ForumThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  author User        @relation(fields: [authorId], references: [id], onDelete: Cascade)
+}
+
+// ── Modules sociaux (ajoutés 2026-05-14) ──
+
+model Album {
+  id          String         @id @default(cuid())
+  userId      String
+  title       String
+  description String?
+  visibility  String         @default("public") // public | private
+  coverUrl    String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  user   User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  photos AlbumPhoto[]
+  accessRequests AlbumAccessRequest[]
+}
+
+model AlbumPhoto {
+  id        String   @id @default(cuid())
+  albumId   String
+  url       String
+  width     Int?
+  height    Int?
+  createdAt DateTime @default(now())
+
+  album Album @relation(fields: [albumId], references: [id], onDelete: Cascade)
+}
+
+model AlbumAccessRequest {
+  id          String   @id @default(cuid())
+  albumId     String
+  requesterId String
+  status      String   @default("pending") // pending | accepted | rejected
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  album     Album @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  requester User  @relation(fields: [requesterId], references: [id], onDelete: Cascade)
+}
+
+model Testimonial {
+  id         String   @id @default(cuid())
+  fromUserId String
+  toUserId   String
+  content    String
+  status     String   @default("pending") // pending | approved | hidden
+  createdAt  DateTime @default(now())
+
+  fromUser User @relation("TestimonialFrom", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User @relation("TestimonialTo", fields: [toUserId], references: [id], onDelete: Cascade)
+}
+
+model Salon {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  isPremium   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  messages SalonMessage[]
+}
+
+model SalonMessage {
+  id        String   @id @default(cuid())
+  salonId   String
+  userId    String
+  content   String
+  createdAt DateTime @default(now())
+
+  salon Salon @relation(fields: [salonId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Classified {
+  id          String   @id @default(cuid())
+  userId      String
+  title       String
+  content     String
+  category    String?
+  city        String?
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime?
+  isActive    Boolean  @default(true)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  userId      String
+  title       String
+  url         String
+  thumbnailUrl String?
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model CertificationRequest {
+  id        String   @id @default(cuid())
+  userId    String
+  status    String   @default("pending") // pending | approved | rejected
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model FeatureFlag {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model NightFreeAccess {
+  id        String   @id @default(cuid())
+  enabled   Boolean  @default(true)
+  startTime String   @default("00:00")
+  endTime   String   @default("07:00")
+  timezone  String   @default("Europe/Paris")
+  updatedAt DateTime @updatedAt
+}
+
+model AmbassadorLead {
+  id              String   @id @default(cuid())
+  name            String
+  email           String   @unique
+  age             Int?
+  city            String?
+  country         String?
+  instagram       String?
+  followers       Int?
+  platform        String?
+  publicUrl       String?
+  language        String?
+  audienceEstimate Int?
+  contactMethod   String?
+  contactValue    String?
+  notes           String?
+  status          String   @default("PENDING")
+  priorityScore   Int      @default(0)
+  referralCode    String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model MarketingEvent {
+  id        String   @id @default(cuid())
+  userId    String
+  eventType String
+  metadata  String?
+  createdAt DateTime @default(now())
+}
+
+model NotificationPreference {
+  id           String  @id @default(cuid())
+  userId       String  @unique
+  smsEnabled   Boolean @default(true)
+  inAppEnabled Boolean @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SmsVerification {
+  id        String   @id @default(cuid())
+  userId    String
+  phone     String
+  code      String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, code])
+}
+
+model StripeEvent {
+  id        String   @id
+  type      String
+  status    String   @default("processed")
+  processedAt DateTime @default(now())
+
+  @@index([id], type: Hash)
+}
+model Prospect {
+  id              String    @id @default(cuid())
+  pseudo          String
+  sourcePlatform  String
+  profileStyle    String?
+  city            String?
+  country         String?
+  publicUrl       String?
+  potential       String    @default("moyen")
+  status          String    @default("a_rechercher")
+  internalNotes   String?
+  lastContactedAt DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Match {
+  id        String   @id @default(cuid())
+  user1Id   String
+  user2Id   String
+  score     Int      @default(0)
+  status    String   @default("pending") // pending/mutual/rejected
+  createdAt DateTime @default(now())
+
+  user1 User @relation("MatchUser1", fields: [user1Id], references: [id], onDelete: Cascade)
+  user2 User @relation("MatchUser2", fields: [user2Id], references: [id], onDelete: Cascade)
+
+  @@unique([user1Id, user2Id])
+}
+
+model PhotoVerification {
+  id                  String   @id @default(cuid())
+  userId              String
+  code                String
+  photoPath           String
+  status              String   @default("pending") // pending/approved/rejected
+  submittedAt         DateTime @default(now())
+  reviewedAt          DateTime?
+  reviewedBy          String?
+  rejectionReason     String?
+  deletionScheduledAt DateTime?
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String   // match/new_message/verification/ambassador
+  title     String
+  body      String
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+}
+
+model AcquisitionEvent {
+  id           String   @id @default(cuid())
+  userId       String?
+  source       String   // referral/direct/google/social
+  campaign     String?
+  referralCode String?
+  eventType    String   // visit/register/checkout/paid
+  metadata     String?  // JSON
+  createdAt    DateTime @default(now())
+}

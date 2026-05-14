@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-premium-dark: #0A0300;
+  --color-premium-darker: #120700;
+  --color-premium-violet: #1A0A04;
+  --color-premium-rose: #FF6B35;
+  --color-premium-purple: #E91E63;
+  --color-premium-champagne: #FFB74D;
+  --color-premium-white: #FFFAF5;
+  --color-premium-gray: #C4A89E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    background: #0A0300;
+    color: #FFFAF5;
+    overflow-x: hidden;
+    @apply bg-[var(--color-premium-dark)] text-[var(--color-premium-white)] antialiased selection:bg-[var(--color-premium-rose)] selection:text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)];
+  }
+  .glass-card-hover {
+    @apply hover:bg-white/10 hover:border-[var(--color-premium-rose)]/30 hover:shadow-[0_8px_32px_rgba(244,63,143,0.15)] transition-all duration-500 ease-out;
+  }
+  .glass-premium {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)];
+  }
+  .bg-gradient-premium {
+    @apply bg-gradient-to-r from-[var(--color-premium-rose)] to-[var(--color-premium-purple)];
+  }
+  .premium-glow {
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.2), inset 0 0 20px rgba(233, 30, 99, 0.1);
+  }
+  .premium-hover {
+    @apply transition-transform duration-500 ease-out hover:-translate-y-1 hover:scale-[1.02];
+  }
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .soft-grid-bg {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
 }
