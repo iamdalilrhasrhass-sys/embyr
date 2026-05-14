@@ -4,7 +4,18 @@ import { hashPassword, signToken } from "@/lib/auth";
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password } = await request.json();
+    const { email, password, name, city, birthDate, gender } = await request.json();
+
+    // Map gender strings to GenderIdentity enum
+    const genderMap: Record<string, string> = {
+      female: "FEMME", femme: "FEMME",
+      male: "HOMME", homme: "HOMME",
+      trans_woman: "FEMME_TRANS", femme_trans: "FEMME_TRANS",
+      travesti: "TRAVESTI",
+      personne_feminine: "PERSONNE_FEMININE",
+      couple: "COUPLE", autre: "AUTRE", non_binaire: "AUTRE",
+    };
+    const genderIdentity = gender ? (genderMap[gender.toLowerCase()] || "AUTRE") : undefined;
 
     if (!email || !password) {
       return Response.json({ error: "Email et mot de passe requis" }, { status: 400 });
@@ -16,12 +27,24 @@ export async function POST(request: NextRequest) {
     }
 
     if (password.length < 8) {
-      return Response.json({ error: "Mot de passe trop court (8 caractères minimum)" }, { status: 400 });
+      return Response.json({ error: "Mot de passe trop court (8 caracteres minimum)" }, { status: 400 });
+    }
+
+    // Calculer l'age depuis la date de naissance
+    let calculatedAge = 18;
+    if (birthDate) {
+      const birth = new Date(birthDate);
+      const today = new Date();
+      calculatedAge = today.getFullYear() - birth.getFullYear();
+      const monthDiff = today.getMonth() - birth.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        calculatedAge--;
+      }
     }
 
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
-      return Response.json({ error: "Un compte existe déjà avec cet email" }, { status: 409 });
+      return Response.json({ error: "Un compte existe deja avec cet email" }, { status: 409 });
     }
 
     const passwordHash = await hashPassword(password);
@@ -35,7 +58,12 @@ export async function POST(request: NextRequest) {
         profile: {
           create: {
             username: `user_${Date.now().toString(36)}`,
-            age: 18,
+            displayName: name || null,
+            age: calculatedAge,
+            birthdate: birthDate ? new Date(birthDate) : null,
+            city: city || null,
+            genderIdentity: (genderIdentity as any) || null,
+            profileCompletionScore: (name ? 20 : 0) + (city ? 10 : 0) + (birthDate ? 10 : 0),
           },
         },
         consents: {
@@ -51,14 +79,7 @@ export async function POST(request: NextRequest) {
     const token = signToken({ userId: user.id, email: user.email });
 
     const response = Response.json(
-      {
-        user: {
-          id: user.id,
-          email: user.email,
-          emailVerified: user.emailVerified,
-        },
-        token,
-      },
+      { user: { id: user.id, email: user.email, emailVerified: user.emailVerified }, token },
       { status: 201 }
     );
 
