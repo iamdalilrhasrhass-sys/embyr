@@ -36,7 +36,7 @@ export default function AmbassadeurPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              {icon:"👑",title:"Premium Gratuit à Vie",desc:"Accès complet, pour toujours. Une valeur de 499€/an.",hl:"Valeur 499€ → 0€"},
+              {icon:"👑",title:"Avantages Fondateur",desc:"Accès prioritaire aux futures options Premium. Inclus pour les premiers membres actifs.",hl:"Badge Fondateur offert"},
               {icon:"💎",title:"Badge Fondateur Braise",desc:"Le badge le plus rare d'Embyr. Visible sur ton profil.",hl:"Badge le plus rare"},
               {icon:"🚀",title:"Visibilité Maximale",desc:"Ton profil en premier. +300% de vues.",hl:"+300% visibilité"},
               {icon:"🎟️",title:"Accès Anticipé",desc:"Teste les features avant tout le monde.",hl:"Influence la roadmap"},

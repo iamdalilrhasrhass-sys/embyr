@@ -22,8 +22,8 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   const navLinks = [
-    { href: "/profiles", label: "Profils" },
-    { href: "/pricing", label: "Tarifs" },
+    { href: "/membres", label: "Membres" },
+    { href: "/premium", label: "Premium bientôt" },
     { href: "/auth/login", label: "Connexion" },
   ];
 
@@ -32,26 +32,23 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
-<Link href="/" className="shrink-0">
+            <Link href="/" className="shrink-0">
               <EmbyrLogo size="md" />
             </Link>
-            {isFree && (
-              <span className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-[#1c0f2b] text-[var(--color-premium-purple)] border border-[var(--color-premium-purple)]/50 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
-                <span className="w-1.5 h-1.5 bg-[var(--color-premium-purple)] rounded-full animate-pulse mr-2"></span>
-                🌙 Night Club : Gratuit jusqu'à 07h00
-              </span>
-            )}
+            <span className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-green-500/10 text-green-400 border border-green-500/20">
+              <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse mr-2"></span>
+              🎁 Gratuit au lancement
+            </span>
           </div>
 
           {/* Desktop */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <Link href="/profiles" className="hover:text-[var(--color-premium-rose)] transition-colors px-3 py-2 rounded-md font-medium">Profils</Link>
-              <Link href="/pricing" className="hover:text-[var(--color-premium-rose)] transition-colors px-3 py-2 rounded-md font-medium">Tarifs</Link>
-              <Link href="/pricing" className="hover:text-[var(--color-premium-rose)] transition-colors px-3 py-2 rounded-md font-medium text-[var(--color-premium-rose)] font-bold">Premium</Link>
+              <Link href="/membres" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium">Membres</Link>
+              <Link href="/premium" className="hover:text-purple-400 text-gray-300 transition-colors px-3 py-2 rounded-md font-medium">Premium bientôt</Link>
               <Link href="/auth/login" className="hover:text-white text-gray-300 transition-colors px-3 py-2 font-medium">Connexion</Link>
-              <Link href="/auth/register" className="bg-gradient-premium hover:opacity-90 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(244,63,143,0.3)]">
-                Creer un compte
+              <Link href="/auth/register" className="emb-button-primary text-sm px-5 py-2.5">
+                Créer un compte gratuit
               </Link>
             </div>
           </div>
@@ -81,8 +78,8 @@ export default function Navbar() {
             <Link href="/dashboard" onClick={closeMenu} className="glass-premium px-8 py-4 rounded-full text-lg font-bold border border-white/20">
               Mon compte
             </Link>
-            <Link href="/auth/register" onClick={closeMenu} className="bg-gradient-premium text-white px-8 py-4 rounded-full text-lg font-bold shadow-[0_0_20px_rgba(244,63,143,0.4)]">
-              S&apos;inscrire
+            <Link href="/auth/register" onClick={closeMenu} className="emb-button-primary text-lg px-8 py-4 rounded-full">
+              S&apos;inscrire gratuitement
             </Link>
           </div>
         </div>

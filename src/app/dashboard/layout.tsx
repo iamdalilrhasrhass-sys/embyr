@@ -45,10 +45,9 @@ export default function DashboardLayout({
             {[
               { href: "/dashboard", label: "Accueil" },
               { href: "/dashboard/profile", label: "Mon Profil" },
-              { href: "/decouvrir", label: "Découvrir" },
-              { href: "/profiles", label: "Profils" },
+              { href: "/membres", label: "Membres" },
               { href: "/messages", label: "Messages" },
-              { href: "/pricing", label: "Premium" },
+              { href: "/premium", label: "Premium bientôt" },
             ].map((link) => (
               <a
                 key={link.href}
@@ -78,8 +77,7 @@ export default function DashboardLayout({
           {[
             { href: "/dashboard", label: "Accueil" },
             { href: "/dashboard/profile", label: "Profil" },
-            { href: "/decouvrir", label: "Découvrir" },
-            { href: "/profiles", label: "Profils" },
+            { href: "/membres", label: "Membres" },
             { href: "/messages", label: "Messages" },
           ].map((link) => (
             <a

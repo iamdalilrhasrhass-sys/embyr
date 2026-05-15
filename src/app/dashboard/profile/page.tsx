@@ -13,7 +13,8 @@ export default function EditProfile() {
     username: "",
     age: "",
     city: "",
-    genderIdentity: "HOMME_GAY",
+    genderIdentity: "",
+    lookingFor: "",
     description: ""
   });
 
@@ -28,7 +29,8 @@ export default function EditProfile() {
           username: data.username || "",
           age: data.age?.toString() || "",
           city: data.city || "",
-          genderIdentity: data.genderIdentity || "HOMME_GAY",
+          genderIdentity: data.genderIdentity || "",
+          lookingFor: data.lookingFor || "",
           description: data.description || ""
         });
         setLoading(false);
@@ -63,7 +65,7 @@ export default function EditProfile() {
 
   if (loading) return (
     <div className="flex items-center justify-center min-h-[60vh]">
-      <div className="w-8 h-8 border-2 border-white/10 border-t-[var(--color-premium-rose)] rounded-full animate-spin" />
+      <div className="w-8 h-8 border-2 border-white/10 border-t-cyan-400 rounded-full animate-spin" />
     </div>
   );
 
@@ -72,7 +74,12 @@ export default function EditProfile() {
       <h1 className="text-3xl font-bold mb-2" style={{ fontFamily: "Arial, sans-serif" }}>
         Modifier mon Profil
       </h1>
-      <p className="text-white/40 text-sm mb-8">Complète ton profil pour être visible</p>
+      <p className="text-white/40 text-sm mb-2">
+        Ton profil doit être complété pour être visible dans les membres.
+      </p>
+      <p className="text-white/30 text-xs mb-8">
+        Plus ton profil est complet, plus il sera visible.
+      </p>
       
       <form onSubmit={handleSave} className="space-y-6">
         {error && (
@@ -82,7 +89,7 @@ export default function EditProfile() {
         )}
         {saved && (
           <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-sm">
-            Profil mis à jour avec succès.
+            Profil enregistré. Tu peux maintenant découvrir les membres.
           </div>
         )}
         
@@ -90,30 +97,43 @@ export default function EditProfile() {
         <div className="p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Pseudo</label>
+              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Pseudo *</label>
               <input type="text" value={formData.username} onChange={e => setFormData({...formData, username: e.target.value})}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-premium-rose)]/50 transition-colors" required />
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400/50 transition-colors" required />
             </div>
             <div>
-              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Âge</label>
+              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Âge *</label>
               <input type="number" min="18" value={formData.age} onChange={e => setFormData({...formData, age: e.target.value})}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-premium-rose)]/50 transition-colors" required />
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400/50 transition-colors" required />
             </div>
             <div>
               <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Ville</label>
               <input type="text" value={formData.city} onChange={e => setFormData({...formData, city: e.target.value})}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-premium-rose)]/50 transition-colors" />
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400/50 transition-colors" />
             </div>
             <div>
-              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Catégorie</label>
+              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Genre</label>
               <select value={formData.genderIdentity} onChange={e => setFormData({...formData, genderIdentity: e.target.value})}
-                className="w-full bg-[var(--color-premium-dark)] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-premium-rose)]/50 transition-colors">
-                <option value="HOMME_GAY">Gay</option>
-                <option value="HOMME_BI">Bi</option>
-                <option value="HOMME_QUEER">Queer</option>
-                <option value="HOMME_BI_MARIE">Bi Marié</option>
-                <option value="COUPLE">Couple</option>
+                className="w-full bg-[var(--color-premium-dark)] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400/50 transition-colors">
+                <option value="">Sélectionne</option>
+                <option value="FEMME_HETERO">Femme hétéro</option>
+                <option value="FEMME_BI">Femme bi</option>
+                <option value="HOMME_HETERO">Homme hétéro</option>
+                <option value="HOMME_GAY">Homme gay</option>
+                <option value="HOMME_BI">Homme bi</option>
+                <option value="NON_BINAIRE">Non-binaire</option>
                 <option value="AUTRE">Autre</option>
+              </select>
+            </div>
+            <div className="md:col-span-2">
+              <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Je recherche</label>
+              <select value={formData.lookingFor} onChange={e => setFormData({...formData, lookingFor: e.target.value})}
+                className="w-full bg-[var(--color-premium-dark)] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400/50 transition-colors">
+                <option value="">Sélectionne</option>
+                <option value="HOMME">Homme</option>
+                <option value="FEMME">Femme</option>
+                <option value="NON_BINAIRE">Non-binaire</option>
+                <option value="TOUS">Tous</option>
               </select>
             </div>
           </div>
@@ -121,7 +141,7 @@ export default function EditProfile() {
           <div>
             <label className="block text-xs font-medium text-white/50 uppercase tracking-wider mb-2">Description</label>
             <textarea rows={4} value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})}
-              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-premium-rose)]/50 transition-colors resize-none"
+              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400/50 transition-colors resize-none"
               placeholder="Parle de toi, ce que tu recherches..." />
           </div>
         </div>
@@ -143,7 +163,7 @@ export default function EditProfile() {
         <div className="pt-2">
           <button type="submit" disabled={saving}
             className="w-full md:w-auto px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-all duration-300"
-            style={{ background: saving ? "rgba(255,255,255,0.08)" : "linear-gradient(135deg, var(--color-premium-rose), var(--color-premium-purple))" }}>
+            style={{ background: saving ? "rgba(255,255,255,0.08)" : "linear-gradient(135deg, #06B6D4, #6366F1)" }}>
             {saving ? "Sauvegarde..." : "Enregistrer les modifications"}
           </button>
         </div>

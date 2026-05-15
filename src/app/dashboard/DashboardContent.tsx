@@ -402,16 +402,16 @@ export default function DashboardContent() {
               className="max-w-sm rounded-2xl p-6 text-center"
               style={{ background: "linear-gradient(135deg, rgba(139,92,246,0.035), rgba(236,72,153,0.025))", border: "1px solid rgba(139,92,246,0.02)" }}
             >
-              <div className="font-serif text-base italic text-white/85 mb-2">Passe à Premium ✦</div>
+              <div className="font-serif text-base italic text-white/85 mb-2">Premium arrive bientôt ✦</div>
               <p className="font-body text-[9px] text-white/80 mb-4 font-light">
-                Messagerie illimitée, albums privés, mode discret et +.
+                Avantages exclusifs pour les membres fondateurs.
               </p>
               <button
-                onClick={() => router.push("/")}
+                onClick={() => router.push("/premium")}
                 className="px-6 py-2 rounded-xl text-[8px] font-mono tracking-wider transition-all duration-300 cursor-pointer"
                 style={{ background: "linear-gradient(135deg, #6366F1, #06B6D4)", color: "white" }}
               >
-                Voir les formules →
+                En savoir plus →
               </button>
             </motion.div>
           )}

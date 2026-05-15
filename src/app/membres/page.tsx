@@ -9,15 +9,21 @@ export default function MembresPage() {
   const [profiles, setProfiles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [filters, setFilters] = useState({ city: "", gender: "", lookingFor: "", minAge: "", maxAge: "" });
+  const [filters, setFilters] = useState({ city: "", gender: "", minAge: "", maxAge: "", withPhoto: false });
   const { isPremium } = usePremium();
+  const [myId, setMyId] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/auth/me").then(r => r.json()).then(d => {
+      if (d.id) setMyId(d.id);
+    }).catch(() => {});
+  }, []);
 
   const fetchProfiles = useCallback(() => {
     const params = new URLSearchParams();
     params.set("limit", "20");
     if (filters.city) params.set("city", filters.city);
     if (filters.gender) params.set("gender", filters.gender);
-    if (filters.lookingFor) params.set("lookingFor", filters.lookingFor);
     if (filters.minAge) params.set("minAge", filters.minAge);
     if (filters.maxAge) params.set("maxAge", filters.maxAge);
     setLoading(true); setError("");
@@ -34,7 +40,7 @@ export default function MembresPage() {
   useEffect(() => { fetchProfiles(); }, []);
 
   const resetFilters = () => {
-    setFilters({ city: "", gender: "", lookingFor: "", minAge: "", maxAge: "" });
+    setFilters({ city: "", gender: "", minAge: "", maxAge: "", withPhoto: false });
   };
 
   const hasFilters = Object.values(filters).some((v) => v);
@@ -48,7 +54,7 @@ export default function MembresPage() {
           {/* Header */}
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-1" style={{
-              background: "linear-gradient(135deg, #E2E8F0 60%, var(--color-premium-purple) 80%, #06B6D4 100%)",
+              background: "linear-gradient(135deg, #E2E8F0 60%, #06B6D4 80%, #6366F1 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             }}>
               Membres
@@ -58,20 +64,16 @@ export default function MembresPage() {
             </p>
           </div>
 
-          {/* Bannière freemium discrète */}
+          {/* Bannière accès gratuit */}
           {!isPremium && !loading && (
-            <Link
-              href="/premium"
-              className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:bg-white/[0.04] hover:border-white/10 transition-all group"
-            >
-              <span className="text-white/50 group-hover:text-white/70 transition-colors">
-                Les photos sont légèrement floutées.{" "}
-                <span className="text-[var(--color-premium-rose)]/80 group-hover:text-[var(--color-premium-rose)] underline underline-offset-2">
-                  Passe Premium
-                </span>{" "}
-                pour voir les profils en détail.
+            <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-green-500/10 bg-green-500/[0.02] backdrop-blur-sm">
+              <span className="text-white/50">
+                🎁 Accès gratuit au lancement.{" "}
+                <span className="text-green-400/80">
+                  Tous les profils sont visibles.
+                </span>
               </span>
-            </Link>
+            </div>
           )}
 
           {/* Filtres */}
@@ -82,6 +84,7 @@ export default function MembresPage() {
               className="px-3 py-2 rounded-xl text-xs bg-white/[0.04] border border-white/[0.06] text-white/60 focus:outline-none focus:border-white/20 transition-colors appearance-none"
             >
               <option value="">Genre</option>
+              <option value="woman">Femme</option>
               <option value="man">Homme</option>
               <option value="non_binary">Non-binaire</option>
             </select>
@@ -108,7 +111,7 @@ export default function MembresPage() {
             <button
               onClick={fetchProfiles}
               className="px-4 py-2 rounded-xl text-xs font-medium text-white"
-              style={{ background: "linear-gradient(135deg, var(--color-premium-purple), var(--color-premium-rose))" }}
+              style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}
             >
               Appliquer
             </button>
@@ -124,7 +127,7 @@ export default function MembresPage() {
             <div className="text-center py-20">
               <p className="text-white/40 mb-4">{error}</p>
               <button onClick={fetchProfiles} className="px-5 py-2.5 rounded-xl text-sm font-medium text-white"
-                style={{ background: "linear-gradient(135deg, var(--color-premium-purple), var(--color-premium-rose))" }}>
+                style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}>
                 Réessayer
               </button>
             </div>
@@ -141,19 +144,36 @@ export default function MembresPage() {
               ))}
             </div>
           ) : profiles.length === 0 ? (
-            <div className="text-center py-20 space-y-3">
-              <div className="text-4xl opacity-20">🔍</div>
-              <p className="text-white/40">{hasFilters ? "Aucun profil trouvé. Élargis tes critères." : "Aucun profil pour le moment."}</p>
-              {hasFilters && (
-                <button onClick={resetFilters} className="px-4 py-2 rounded-xl text-xs text-white/50 hover:text-white/80 transition-colors">
-                  Réinitialiser les filtres
-                </button>
-              )}
+            <div className="text-center py-20 space-y-6">
+              <div className="text-5xl opacity-20">🌱</div>
+              <h2 className="text-xl font-bold text-white/70">Les premiers membres arrivent</h2>
+              <p className="text-white/40 max-w-md mx-auto">
+                {hasFilters
+                  ? "Aucun profil ne correspond à tes critères. Élargis ta recherche."
+                  : "Complète ton profil pour apparaître dans la communauté et découvrir les nouveaux membres dès leur arrivée."
+                }
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {!hasFilters && (
+                  <Link href="/dashboard/profile"
+                    className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white"
+                    style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}>
+                    Compléter mon profil
+                  </Link>
+                )}
+                {hasFilters && (
+                  <button onClick={resetFilters}
+                    className="px-5 py-2.5 rounded-xl text-sm font-semibold border border-white/10 text-white/60 hover:text-white/90 transition-colors">
+                    Réinitialiser les filtres
+                  </button>
+                )}
+              </div>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {profiles.map((p: any) => {
                 const photoUrl = p.publicPhotos?.[0] || p.avatar || null;
+                const isNew = p.createdAt && (Date.now() - new Date(p.createdAt).getTime()) < 7 * 24 * 60 * 60 * 1000;
                 return (
                   <Link
                     key={p.id || p.userId}
@@ -167,17 +187,24 @@ export default function MembresPage() {
                         alt={p.username || p.displayName || "Membre"}
                         className="w-full h-full"
                       />
-                      {!isPremium && (
-                        <div className="absolute top-2 right-2 z-10">
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-black/40 text-white/50 backdrop-blur-sm border border-white/5">
-                            {photoUrl ? "Photos premium" : "Aperçu"}
+                      {isNew && (
+                        <div className="absolute top-2 left-2 z-10">
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400/90 border border-cyan-500/20">
+                            Nouveau
                           </span>
                         </div>
                       )}
                       {p.isOnline && (
-                        <div className="absolute top-2 left-2 z-10 flex items-center gap-1">
+                        <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                           <span className="text-[9px] text-green-400/80">En ligne</span>
+                        </div>
+                      )}
+                      {p.id && p.id === myId && (
+                        <div className="absolute top-2 left-2 z-10">
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400/90 border border-purple-500/20">
+                            Mon profil
+                          </span>
                         </div>
                       )}
                     </div>
@@ -200,7 +227,7 @@ export default function MembresPage() {
                       <p className="text-[11px] text-white/35">
                         {[p.age && `${p.age} ans`, p.city].filter(Boolean).join(" • ")}
                       </p>
-                      <div className="pt-2">
+                      <div className="pt-2 flex items-center gap-2">
                         <span className="inline-flex items-center gap-1 text-[11px] text-white/30 group-hover:text-white/60 group-hover:bg-white/[0.04] px-2 py-1 -ml-2 rounded-lg transition-all">
                           Voir le profil
                           <span className="group-hover:translate-x-0.5 transition-transform">→</span>
