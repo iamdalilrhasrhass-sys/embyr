@@ -10,8 +10,8 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], weight: ["500", "700"] });
 
 export const metadata: Metadata = {
-  title: "Embyr — Rencontre plus librement. Gratuitement.",
-  description: "Plateforme de rencontre moderne et élégante, gratuite pendant sa phase de lancement. Crée ton profil et rejoins la communauté fondatrice.",
+  title: "Embyr — Rencontre gay. Gratuite. Sans pression.",
+  description: "App de rencontre gay nouvelle génération. Gratuite au lancement. Crée ton profil, rencontre des mecs, sans pression.",
   manifest: "/manifest.json",
   themeColor: "#06030F",
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Embyr" },

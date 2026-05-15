@@ -3,7 +3,7 @@ import AppShell from "@/components/layout/AppShell";
 import Link from "next/link";
 
 export default function InviterPage() {
-  const message = "Je viens de rejoindre Embyr, une nouvelle plateforme de rencontre moderne et gratuite pendant son lancement. Tu peux créer ton profil ici : https://embir.xyz";
+  const message = "Je viens de rejoindre Embyr, une nouvelle app de rencontre gay gratuite pendant son lancement. Rejoins les premiers membres : https://embir.xyz";
   const lien = "https://embir.xyz";
 
   const copier = (texte: string, label: string) => {

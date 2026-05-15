@@ -13,8 +13,8 @@ export default function Footer() {
               Emb<span className="text-cyan-400">yr</span>
             </span>
             <p className="mt-4 text-sm text-[var(--color-premium-gray)] leading-relaxed">
-              Plateforme de rencontre moderne et élégante. Gratuite pendant
-              sa phase de lancement. Profils réels, communauté respectueuse.
+              App de rencontre gay nouvelle génération. Gratuite pendant
+              sa phase de lancement. Profils réels, messagerie gratuite.
             </p>
             <p className="mt-4 text-xs font-bold text-red-400">18+ UNIQUEMENT</p>
           </div>
