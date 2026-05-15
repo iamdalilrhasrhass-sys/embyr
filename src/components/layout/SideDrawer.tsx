@@ -9,7 +9,6 @@ const NAV_SECTIONS = [
     title: "Explorer",
     items: [
       { href: "/dashboard", icon: "🏠", label: "Tableau de bord" },
-      { href: "/decouvrir", icon: "🔥", label: "Découvrir" },
       { href: "/membres", icon: "👥", label: "Membres" },
       { href: "/messages", icon: "💬", label: "Messages" },
     ],
@@ -26,7 +25,7 @@ const NAV_SECTIONS = [
   {
     title: "Mon univers",
     items: [
-      { href: "/dashbord/profil", icon: "⚙️", label: "Mon profil" },
+      { href: "/dashboard/profile", icon: "⚙️", label: "Mon profil" },
       { href: "/albums", icon: "🖼️", label: "Albums" },
       { href: "/favoris", icon: "💎", label: "Favoris" },
       { href: "/blacklist", icon: "🚫", label: "Blacklist" },
@@ -38,9 +37,9 @@ const NAV_SECTIONS = [
   {
     title: "Premium",
     items: [
-      { href: "/premium", icon: "⭐", label: "Accès Premium", premium: true },
+      { href: "/premium", icon: "⭐", label: "Premium bientôt" },
       { href: "/mode-discret", icon: "🕶️", label: "Mode Discret" },
-      { href: "/ambassadrice", icon: "👑", label: "Ambassadrice" },
+      { href: "/ambassadeur", icon: "👑", label: "Ambassadeur" },
     ],
   },
   {
@@ -86,11 +85,11 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
                     key={ii}
                     href={item.href}
                     onClick={onClose}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm transition-all hover:bg-[var(--eb-bg-elev-2)] ${item.premium ? "text-[var(--eb-accent)] font-medium" : "text-[var(--eb-text-secondary)]"}`}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm transition-all hover:bg-[var(--eb-bg-elev-2)] ${item.label === "Premium bientôt" ? "text-[var(--eb-accent)] font-medium" : "text-[var(--eb-text-secondary)]"}`}
                   >
                     <span className="text-base w-5 text-center">{item.icon}</span>
                     <span>{item.label}</span>
-                    {item.premium && <span className="ml-auto text-[10px] bg-[var(--eb-accent)]/20 text-[var(--eb-accent)] px-2 py-0.5 rounded-full font-medium">PRO</span>}
+                    {item.label === "Premium bientôt" && <span className="ml-auto text-[10px] bg-[var(--eb-accent)]/20 text-[var(--eb-accent)] px-2 py-0.5 rounded-full font-medium">BIENTÔT</span>}
                   </Link>
                 ))}
               </div>
