@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       { source: "/profil", destination: "/dashboard/profile", permanent: true },
       { source: "/members", destination: "/membres", permanent: true },
       { source: "/profiles", destination: "/membres", permanent: true },
+      { source: "/decouvrir", destination: "/membres", permanent: true },
       { source: "/login", destination: "/auth/login", permanent: true },
       { source: "/register", destination: "/auth/register", permanent: true },
     ];

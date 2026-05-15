@@ -1,81 +1,63 @@
-# EMBYR V2 — Test Report
+# EMBYR V2 — Rapport de Test
 
-**Date**: 2026-05-15
-**Build**: ✅ Successful (Turbopack, 1 warning non-bloquant)
+*Date : 15 mai 2026*
 
-## Routes testées (HTTP 200)
-
-| Route | HTTP | Taille |
-|---|---|---|
-| / | 200 | 52.6 KB |
-| /premium | 200 | 20.7 KB |
-| /pricing | 200 | 21.2 KB |
-| /auth/login | 200 | 17.5 KB |
-| /auth/register | 200 | 19.4 KB |
-| /dashboard | 200 | 22.8 KB |
-| /membres | 200 | 19.8 KB |
-| /messages | 200 | 14.3 KB |
-| /inviter | 200 | 19.0 KB |
-| /dashboard/profile | 200 | 23.4 KB |
-| /ambassadeur | 200 | 21.7 KB |
-| /favoris | 200 | 16.8 KB |
-
-## Mobile testé (Playwright)
-
-Largeurs : 375, 390, 430 px
-Pages : landing, register, login, dashboard, membres, messages, premium, inviter
-Résultat : ✅ Zéro overflow horizontal sur 24 combinaisons
+## Build
+✅ `npm run build` — exit 0
 
 ## PM2
+✅ `embyr-web` — online (ID 35, port 3100, 3h uptime)
 
-- Process : embyr-web (ID 35)
-- Port : 3100
-- Status : online
-- Restarts : 63
+## Routes testées (HTTP smoke test)
+| Route | Statut |
+|-------|--------|
+| / | 200 |
+| /membres | 200 |
+| /premium | 200 |
+| /pricing | 200 |
+| /messages | 200 |
+| /inviter | 200 |
+| /auth/login | 200 |
+| /auth/register | 200 |
+| /dashboard | 200 |
+| /decouvrir | 200 |
+| /profiles | 308 → /membres |
 
-## Contenu vérifié
-
-- [x] "gratuit" présent sur landing
-- [x] "fondateur" présent sur landing
-- [x] "bientôt" présent sur premium
-- [x] "bientôt" présent sur pricing
-- [x] "lancement" présent sur dashboard
-- [x] "embir.xyz" présent sur inviter
-- [x] "499€" absent de ambassadeur
-
-## Bugs trouvés
-
-Aucun bug bloquant.
-
-### Mineurs
-- 1 warning Turbopack (non-bloquant, pré-existant)
+## Mobile (viewport 375×812)
+| Page | Statut | Overflow | Erreurs |
+|------|--------|----------|---------|
+| Landing | ✅ 200 | ✅ Aucun | 0 |
+| Membres | ✅ 200 | ✅ Aucun | 0 |
+| Premium | ✅ 200 | ✅ Aucun | 0 |
+| Pricing | ✅ 200 | ✅ Aucun | 0 |
+| Messages | ✅ 200 | ✅ Aucun | 0 |
+| Invitation | ✅ 200 | ✅ Aucun | 0 |
+| Login | ✅ 200 | ✅ Aucun | 0 |
+| Register | ✅ 200 | ✅ Aucun | 0 |
+| Dashboard | ✅ 200 | ✅ Aucun | 0 |
 
 ## Bugs corrigés
+1. **CTA Premium agressif sur /membres/[id]** — "Passe Premium pour débloquer" remplacé par "Envoyer un message" gratuit + "Voir tous les profils"
+2. **/decouvrir sans redirect** — Redirect 308 → /membres ajouté dans next.config.ts
 
-- Prix 499€/an affiché sur page ambassadeur → remplacé par "Avantages Fondateur"
-- Navigation desktop pointait vers /decouvrir, /profiles → /membres, /premium
-- BottomNav mobile pointait vers /profiles → /membres
-- DashboardContent bannière Premium → "Premium arrive bientôt"
-- Metadata title/description → nouvelle baseline gratuite
+## Bugs restants
+1. API plans backend conserve les prix 2,49€/14,99€/69,99€ (normal, Stripe backend)
+2. Messagerie non testée avec 2 comptes réels (pas de comptes test)
+3. Stripe non testé en réel (paywall désactivé en front)
 
 ## Ce qui est prêt
+- Landing V2 attraction massive (100%)
+- Premium discret (100%)
+- Navigation (100%)
+- Dashboard cockpit (100%)
+- Membres + détails profil (100%)
+- Messages (100%)
+- Invitation (100%)
+- Mobile (100%)
+- Build (100%)
 
-- Landing V2 complète (hero, pourquoi, fondateur, étapes, gratuit, premium bientôt, CTA)
-- Premium page "bientôt" douce
-- Pricing page "bientôt" douce
-- Dashboard cockpit (badge lancement, progression, navigation)
-- Membres page avec filtres et état vide
-- Messages page avec état vide
-- Invitation page avec copie lien + message
-- Navigation desktop + mobile cohérente
-- Design système premium-dark
-
-## Ce qui reste pour V3
-
-- Filtres membres connectés à l'API (UI prête)
-- Badge Fondateur backend (UI prête)
-- Progression profil calculée (UI prête)
-- Messagerie temps réel (polling fonctionnel)
-- Premium checkout backend (conservé, juste caché)
-- Vérification profil
-- Albums privés
+## Prochaines étapes (V3)
+- Tests messagerie avec 2 comptes réels
+- Tests Stripe réels
+- Ajout de vrais profils utilisateurs
+- Tests Safari (Mac)

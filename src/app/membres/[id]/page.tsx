@@ -104,23 +104,13 @@ export default function MembreDetailPage() {
               </div>
 
               <div className="flex gap-2">
-                {isPremium ? (
                   <button
                     onClick={() => router.push(`/messages?to=${id}`)}
                     className="flex-1 py-3 rounded-xl text-sm font-semibold text-white"
-                    style={{ background: "linear-gradient(135deg, var(--color-premium-purple), #06B6D4)" }}
+                    style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}
                   >
                     💬 Envoyer un message
                   </button>
-                ) : (
-                  <Link
-                    href="/premium"
-                    className="flex-1 py-3 rounded-xl text-sm font-semibold text-white text-center"
-                    style={{ background: "linear-gradient(135deg, var(--color-premium-purple), #06B6D4)" }}
-                  >
-                    🔓 Débloquer les photos
-                  </Link>
-                )}
                 <button
                   onClick={toggleFav}
                   className="w-12 rounded-xl flex items-center justify-center text-base"
@@ -135,15 +125,14 @@ export default function MembreDetailPage() {
 
               {!isPremium && (
                 <Link
-                  href="/premium"
-                  className="block px-4 py-3 rounded-xl text-center text-xs border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group"
+                  href="/membres"
+                  className="block px-4 py-3 rounded-xl text-center text-xs border border-cyan-500/10 bg-cyan-500/[0.02] group"
                 >
                   <span className="text-white/40 group-hover:text-white/60 transition-colors">
-                    Les photos sont floutées.{" "}
-                    <span className="text-indigo-400/70 group-hover:text-indigo-400">
-                      Passe Premium
-                    </span>{" "}
-                    pour les débloquer.
+                    🎁 Accès gratuit.{" "}
+                    <span className="text-cyan-400/70 group-hover:text-cyan-400">
+                      Voir tous les profils
+                    </span>
                   </span>
                 </Link>
               )}
