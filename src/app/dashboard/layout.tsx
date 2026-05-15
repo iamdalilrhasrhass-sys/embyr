@@ -92,7 +92,7 @@ export default function DashboardLayout({
       </nav>
 
       {/* Main content */}
-      <main className="flex-1 relative z-10">
+      <main className="flex-1 relative z-10 pb-16 md:pb-0">
         {children}
       </main>
 

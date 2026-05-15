@@ -255,7 +255,7 @@ export default function Home() {
             </Link>
             <p className="mt-3 text-xs text-white/30">
               Déjà membre ?{" "}
-              <Link href="/auth/login" className="text-cyan-300/70 hover:text-cyan-300">
+              <Link href="/auth/login" className="text-cyan-300/70 hover:text-cyan-300 underline underline-offset-2" style={{padding:"6px 8px",minHeight:"44px",display:"inline-block"}}>
                 Connecte-toi
               </Link>
             </p>

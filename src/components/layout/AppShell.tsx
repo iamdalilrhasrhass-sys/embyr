@@ -18,7 +18,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           <div className="w-10" />
         </div>
         {/* Content */}
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-20 md:pb-0" style={{ paddingBottom: "calc(80px + env(safe-area-inset-bottom, 0px))" }}>{children}</main>
         <BottomNav />
       </div>
     </div>

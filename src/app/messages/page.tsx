@@ -69,9 +69,9 @@ export default function Messages() {
   return (
     <main className="min-h-screen bg-black text-white flex">
       <Navbar />
-      <div className="flex w-full pt-16 h-screen">
-        {/* Sidebar */}
-        <div className="w-80 border-r border-white/5 p-4 overflow-y-auto hidden md:block">
+      <div className="flex w-full pt-16 min-h-screen pb-20 md:pb-0" style={{ paddingBottom: "calc(80px + env(safe-area-inset-bottom, 0px))" }}>
+        {/* Sidebar — desktop always, mobile when no active conv */}
+        <div className={`w-80 border-r border-white/5 p-4 overflow-y-auto ${!activeConv ? 'block' : 'hidden'} md:block`}>
           <h2 className="text-lg font-bold mb-4">Messages</h2>
           {conversations.length === 0 && (
             <div className="text-center py-10">
@@ -116,7 +116,8 @@ export default function Messages() {
             </div>
           ) : (
             <>
-              <div className="p-4 border-b border-white/5 font-semibold">
+              <div className="p-4 border-b border-white/5 font-semibold flex items-center gap-3">
+                <button onClick={() => setActiveConv(null)} className="md:hidden text-white/60 hover:text-white transition-colors">← Retour</button>
                 {(() => {
                   const other = activeConv.user1Id === myId ? activeConv.user2 : activeConv.user1;
                   return other?.profile?.displayName || other?.profile?.username || "Utilisateur";
@@ -138,11 +139,10 @@ export default function Messages() {
                 ))}
                 <div ref={msgEnd} />
               </div>
-              <div className="p-4 border-t border-white/5 flex gap-3">
+              <div className="p-4 border-t border-white/5 flex gap-3 items-end">
                 <input value={text} onChange={e => setText(e.target.value)} onKeyDown={e => e.key === "Enter" && handleSend()}
-                  placeholder="Écris un message..." className="flex-1 bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/40" />
-                <button onClick={handleSend} className="px-6 py-3 rounded-xl text-white font-bold"
-                  style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}>Envoyer</button>
+                  placeholder="Écris un message..." className="flex-1 bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/40 text-base" style={{minHeight:"44px"}} />
+                <button onClick={handleSend} className="px-6 py-3 rounded-xl text-white font-bold flex-shrink-0" style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)", minHeight:"44px" }}>Envoyer</button>
               </div>
             </>
           )}
