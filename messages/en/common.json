@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "For gays and the queer community",
+    "title1": "Meet",
+    "title2": "men.",
+    "subtitle": "Embyr is a new gay dating app, made for those who want something real. No pressure, no judgment. Free during launch.",
+    "cta": "Create my free profile",
+    "secondary": "Browse members"
+  },
+  "nav": {
+    "home": "Home",
+    "members": "Members",
+    "messages": "Messages",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Sign Up",
+    "invite": "Invite",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Log in",
+    "registerBtn": "Sign up",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to Embyr",
+    "launchBadge": "Free launch",
+    "completeProfile": "Complete your profile",
+    "browseMembers": "Browse members",
+    "inviteFriends": "Invite friends"
+  },
+  "members": {
+    "title": "Members",
+    "search": "Search...",
+    "noResults": "No members found",
+    "online": "Online",
+    "recentlyActive": "Recently active"
+  },
+  "messages": {
+    "title": "Messages",
+    "noMessages": "No messages yet",
+    "startChat": "Start a conversation",
+    "translate": "See translation"
+  },
+  "footer": {
+    "tagline": "Free gay dating app",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "cgu": "Terms",
+    "security": "Security",
+    "moderation": "Moderation"
+  },
+  "invite": {
+    "title": "Invite your friends",
+    "description": "Share Embyr with your friends and grow the community.",
+    "copyLink": "Copy link",
+    "copied": "Link copied!"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back"
+  }
+}

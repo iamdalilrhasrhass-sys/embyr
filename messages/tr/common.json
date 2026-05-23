@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Geyler ve queer topluluğu için",
+    "title1": "Tanışmalar",
+    "title2": "erkekler arasında.",
+    "subtitle": "Embyr, gerçek bağlantılar arayanlar için tasarlanmış yeni bir gey tanışma uygulaması. Baskı yok, yargılama yok. Lansman süresince ücretsiz.",
+    "cta": "Profilimi ücretsiz oluştur",
+    "secondary": "Üyeleri keşfet"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "members": "Üyeler",
+    "messages": "Mesajlar",
+    "dashboard": "Panel",
+    "login": "Giriş",
+    "register": "Kayıt",
+    "invite": "Davet Et",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Giriş",
+    "register": "Kayıt",
+    "email": "E-posta",
+    "password": "Şifre",
+    "loginBtn": "Giriş Yap",
+    "registerBtn": "Kaydol",
+    "noAccount": "Henüz hesabın yok mu?",
+    "hasAccount": "Zaten bir hesabın var mı?"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Embyr'a hoş geldin",
+    "launchBadge": "Ücretsiz lansman",
+    "completeProfile": "Profilini tamamla",
+    "browseMembers": "Üyeleri gör",
+    "inviteFriends": "Arkadaşlarını davet et"
+  },
+  "members": {
+    "title": "Üyeler",
+    "search": "Ara...",
+    "noResults": "Hiçbir üye bulunamadı",
+    "online": "Çevrimiçi",
+    "recentlyActive": "Son zamanlarda aktif"
+  },
+  "messages": {
+    "title": "Mesajlar",
+    "noMessages": "Henüz mesaj yok",
+    "startChat": "Bir sohbet başlat",
+    "translate": "Çeviriyi gör"
+  },
+  "footer": {
+    "tagline": "Ücretsiz gey tanışma uygulaması",
+    "legal": "Yasal Uyarılar",
+    "privacy": "Gizlilik",
+    "cookies": "Çerezler",
+    "cgu": "Kullanım Koşulları",
+    "security": "Güvenlik",
+    "moderation": "Moderasyon"
+  },
+  "invite": {
+    "title": "Arkadaşlarını davet et",
+    "description": "Embyr'ı arkadaşlarınla paylaş ve topluluğu büyüt.",
+    "copyLink": "Bağlantıyı kopyala",
+    "copied": "Bağlantı kopyalandı!"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar dene",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "back": "Geri"
+  }
+}

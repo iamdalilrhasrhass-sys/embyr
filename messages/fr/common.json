@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Pour les gays et la communauté queer",
+    "title1": "Des rencontres",
+    "title2": "entre hommes.",
+    "subtitle": "Embyr est une nouvelle app de rencontre gay, pensée pour ceux qui veulent du vrai. Pas de pression, pas de jugement. Gratuite pendant le lancement.",
+    "cta": "Créer mon profil gratuitement",
+    "secondary": "Découvrir les membres"
+  },
+  "nav": {
+    "home": "Accueil",
+    "members": "Membres",
+    "messages": "Messages",
+    "dashboard": "Dashboard",
+    "login": "Connexion",
+    "register": "Inscription",
+    "invite": "Inviter",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "email": "Email",
+    "password": "Mot de passe",
+    "loginBtn": "Se connecter",
+    "registerBtn": "S'inscrire",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Déjà un compte ?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Bienvenue sur Embyr",
+    "launchBadge": "Lancement gratuit",
+    "completeProfile": "Complète ton profil",
+    "browseMembers": "Voir les membres",
+    "inviteFriends": "Inviter des amis"
+  },
+  "members": {
+    "title": "Membres",
+    "search": "Rechercher...",
+    "noResults": "Aucun membre trouvé",
+    "online": "En ligne",
+    "recentlyActive": "Actif récemment"
+  },
+  "messages": {
+    "title": "Messages",
+    "noMessages": "Pas encore de messages",
+    "startChat": "Commence une conversation",
+    "translate": "Voir la traduction"
+  },
+  "footer": {
+    "tagline": "App de rencontre gay gratuite",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "cookies": "Cookies",
+    "cgu": "CGU",
+    "security": "Sécurité",
+    "moderation": "Modération"
+  },
+  "invite": {
+    "title": "Invite tes amis",
+    "description": "Partage Embyr avec tes amis et agrandis la communauté.",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié !"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "back": "Retour"
+  }
+}

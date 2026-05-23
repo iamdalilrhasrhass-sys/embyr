@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "För homosexuella och queergemenskapen",
+    "title1": "Dejting",
+    "title2": "mellan män.",
+    "subtitle": "Embyr är en ny gaydejtingapp, skapad för dig som vill ha äkta kontakt. Ingen press, inget dömande. Gratis under lanseringen.",
+    "cta": "Skapa min profil gratis",
+    "secondary": "Upptäck medlemmarna"
+  },
+  "nav": {
+    "home": "Hem",
+    "members": "Medlemmar",
+    "messages": "Meddelanden",
+    "dashboard": "Dashboard",
+    "login": "Logga in",
+    "register": "Registrera",
+    "invite": "Bjud in",
+    "premium": "Premium",
+    "blog": "Blogg"
+  },
+  "auth": {
+    "login": "Logga in",
+    "register": "Registrera",
+    "email": "E-post",
+    "password": "Lösenord",
+    "loginBtn": "Logga in",
+    "registerBtn": "Registrera",
+    "noAccount": "Inget konto än?",
+    "hasAccount": "Redan ett konto?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Välkommen till Embyr",
+    "launchBadge": "Gratis lansering",
+    "completeProfile": "Fyll i din profil",
+    "browseMembers": "Se medlemmar",
+    "inviteFriends": "Bjud in vänner"
+  },
+  "members": {
+    "title": "Medlemmar",
+    "search": "Sök...",
+    "noResults": "Inga medlemmar hittades",
+    "online": "Online",
+    "recentlyActive": "Nyligen aktiv"
+  },
+  "messages": {
+    "title": "Meddelanden",
+    "noMessages": "Inga meddelanden än",
+    "startChat": "Starta en konversation",
+    "translate": "Visa översättning"
+  },
+  "footer": {
+    "tagline": "Gratis gaydejtingapp",
+    "legal": "Juridisk information",
+    "privacy": "Integritet",
+    "cookies": "Cookies",
+    "cgu": "Användarvillkor",
+    "security": "Säkerhet",
+    "moderation": "Moderering"
+  },
+  "invite": {
+    "title": "Bjud in dina vänner",
+    "description": "Dela Embyr med dina vänner och väx gemenskapen.",
+    "copyLink": "Kopiera länk",
+    "copied": "Länk kopierad!"
+  },
+  "common": {
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "retry": "Försök igen",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "back": "Tillbaka"
+  }
+}

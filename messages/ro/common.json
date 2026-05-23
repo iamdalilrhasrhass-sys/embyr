@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Pentru gay și comunitatea queer",
+    "title1": "Întâlniri",
+    "title2": "între bărbați.",
+    "subtitle": "Embyr este o nouă aplicație de întâlniri gay, creată pentru cei care își doresc ceva autentic. Fără presiune, fără judecată. Gratuită în perioada de lansare.",
+    "cta": "Creează-mi profilul gratuit",
+    "secondary": "Descoperă membrii"
+  },
+  "nav": {
+    "home": "Acasă",
+    "members": "Membri",
+    "messages": "Mesaje",
+    "dashboard": "Dashboard",
+    "login": "Autentificare",
+    "register": "Înregistrare",
+    "invite": "Invită",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Autentificare",
+    "register": "Înregistrare",
+    "email": "Email",
+    "password": "Parolă",
+    "loginBtn": "Conectează-te",
+    "registerBtn": "Înscrie-te",
+    "noAccount": "Nu ai încă un cont?",
+    "hasAccount": "Ai deja un cont?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Bun venit pe Embyr",
+    "launchBadge": "Lansare gratuită",
+    "completeProfile": "Completează-ți profilul",
+    "browseMembers": "Vezi membrii",
+    "inviteFriends": "Invită prieteni"
+  },
+  "members": {
+    "title": "Membri",
+    "search": "Caută...",
+    "noResults": "Niciun membru găsit",
+    "online": "Online",
+    "recentlyActive": "Activ recent"
+  },
+  "messages": {
+    "title": "Mesaje",
+    "noMessages": "Încă nu ai mesaje",
+    "startChat": "Începe o conversație",
+    "translate": "Vezi traducerea"
+  },
+  "footer": {
+    "tagline": "Aplicație de întâlniri gay gratuită",
+    "legal": "Mențiuni legale",
+    "privacy": "Confidențialitate",
+    "cookies": "Cookie-uri",
+    "cgu": "Termeni și condiții",
+    "security": "Securitate",
+    "moderation": "Moderare"
+  },
+  "invite": {
+    "title": "Invită-ți prietenii",
+    "description": "Distribuie Embyr cu prietenii tăi și extinde comunitatea.",
+    "copyLink": "Copiază linkul",
+    "copied": "Link copiat!"
+  },
+  "common": {
+    "loading": "Se încarcă...",
+    "error": "A apărut o eroare",
+    "retry": "Încearcă din nou",
+    "save": "Salvează",
+    "cancel": "Anulează",
+    "back": "Înapoi"
+  }
+}

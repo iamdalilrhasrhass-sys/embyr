@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Per i gay e la comunità queer",
+    "title1": "Incontri",
+    "title2": "tra uomini.",
+    "subtitle": "Embyr è una nuova app di incontri gay, pensata per chi cerca qualcosa di vero. Nessuna pressione, nessun giudizio. Gratuita durante il lancio.",
+    "cta": "Crea il mio profilo gratuitamente",
+    "secondary": "Scopri i membri"
+  },
+  "nav": {
+    "home": "Home",
+    "members": "Membri",
+    "messages": "Messaggi",
+    "dashboard": "Dashboard",
+    "login": "Accedi",
+    "register": "Registrati",
+    "invite": "Invita",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Accedi",
+    "register": "Registrati",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Accedi",
+    "registerBtn": "Registrati",
+    "noAccount": "Non hai ancora un account?",
+    "hasAccount": "Hai già un account?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Benvenuto su Embyr",
+    "launchBadge": "Lancio gratuito",
+    "completeProfile": "Completa il tuo profilo",
+    "browseMembers": "Vedi i membri",
+    "inviteFriends": "Invita amici"
+  },
+  "members": {
+    "title": "Membri",
+    "search": "Cerca...",
+    "noResults": "Nessun membro trovato",
+    "online": "Online",
+    "recentlyActive": "Attivo di recente"
+  },
+  "messages": {
+    "title": "Messaggi",
+    "noMessages": "Ancora nessun messaggio",
+    "startChat": "Inizia una conversazione",
+    "translate": "Vedi traduzione"
+  },
+  "footer": {
+    "tagline": "App di incontri gay gratuita",
+    "legal": "Note legali",
+    "privacy": "Privacy",
+    "cookies": "Cookie",
+    "cgu": "Condizioni d'uso",
+    "security": "Sicurezza",
+    "moderation": "Moderazione"
+  },
+  "invite": {
+    "title": "Invita i tuoi amici",
+    "description": "Condividi Embyr con i tuoi amici e allarga la comunità.",
+    "copyLink": "Copia link",
+    "copied": "Link copiato!"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "retry": "Riprova",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "back": "Indietro"
+  }
+}

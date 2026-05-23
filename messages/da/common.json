@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "For bøsser og queer-fællesskabet",
+    "title1": "Dates",
+    "title2": "mellem mænd.",
+    "subtitle": "Embyr er en ny datingapp for bøsser, skabt til dem, der vil have noget ægte. Intet pres, ingen dømmelse. Gratis under lanceringen.",
+    "cta": "Opret min profil gratis",
+    "secondary": "Opdag medlemmerne"
+  },
+  "nav": {
+    "home": "Hjem",
+    "members": "Medlemmer",
+    "messages": "Beskeder",
+    "dashboard": "Dashboard",
+    "login": "Log ind",
+    "register": "Registrer",
+    "invite": "Inviter",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Log ind",
+    "register": "Registrer",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "loginBtn": "Log ind",
+    "registerBtn": "Registrer",
+    "noAccount": "Har du ikke en konto endnu?",
+    "hasAccount": "Har du allerede en konto?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Velkommen til Embyr",
+    "launchBadge": "Gratis lancering",
+    "completeProfile": "Færdiggør din profil",
+    "browseMembers": "Se medlemmer",
+    "inviteFriends": "Inviter venner"
+  },
+  "members": {
+    "title": "Medlemmer",
+    "search": "Søg...",
+    "noResults": "Ingen medlemmer fundet",
+    "online": "Online",
+    "recentlyActive": "Nyligt aktiv"
+  },
+  "messages": {
+    "title": "Beskeder",
+    "noMessages": "Ingen beskeder endnu",
+    "startChat": "Start en samtale",
+    "translate": "Se oversættelse"
+  },
+  "footer": {
+    "tagline": "Gratis datingapp for bøsser",
+    "legal": "Juridisk",
+    "privacy": "Privatliv",
+    "cookies": "Cookies",
+    "cgu": "Betingelser",
+    "security": "Sikkerhed",
+    "moderation": "Moderation"
+  },
+  "invite": {
+    "title": "Inviter dine venner",
+    "description": "Del Embyr med dine venner og udvid fællesskabet.",
+    "copyLink": "Kopier link",
+    "copied": "Link kopieret!"
+  },
+  "common": {
+    "loading": "Indlæser...",
+    "error": "Der opstod en fejl",
+    "retry": "Prøv igen",
+    "save": "Gem",
+    "cancel": "Annuller",
+    "back": "Tilbage"
+  }
+}

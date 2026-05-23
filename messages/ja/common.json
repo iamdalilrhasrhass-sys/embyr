@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "ゲイとクィアコミュニティのための",
+    "title1": "出会いを",
+    "title2": "男性同士で。",
+    "subtitle": "Embyrは、本物を求める人のための新しいゲイ向け出会い系アプリです。プレッシャーも判断もありません。ローンチ期間中は無料。",
+    "cta": "無料でプロフィールを作成",
+    "secondary": "メンバーを見る"
+  },
+  "nav": {
+    "home": "ホーム",
+    "members": "メンバー",
+    "messages": "メッセージ",
+    "dashboard": "ダッシュボード",
+    "login": "ログイン",
+    "register": "登録",
+    "invite": "招待",
+    "premium": "プレミアム",
+    "blog": "ブログ"
+  },
+  "auth": {
+    "login": "ログイン",
+    "register": "登録",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "loginBtn": "ログイン",
+    "registerBtn": "登録する",
+    "noAccount": "まだアカウントをお持ちでないですか？",
+    "hasAccount": "すでにアカウントをお持ちですか？"
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "welcome": "Embyrへようこそ",
+    "launchBadge": "ローンチ無料",
+    "completeProfile": "プロフィールを完成させる",
+    "browseMembers": "メンバーを見る",
+    "inviteFriends": "友達を招待する"
+  },
+  "members": {
+    "title": "メンバー",
+    "search": "検索...",
+    "noResults": "メンバーが見つかりません",
+    "online": "オンライン",
+    "recentlyActive": "最近アクティブ"
+  },
+  "messages": {
+    "title": "メッセージ",
+    "noMessages": "まだメッセージはありません",
+    "startChat": "会話を始める",
+    "translate": "翻訳を見る"
+  },
+  "footer": {
+    "tagline": "無料のゲイ向け出会い系アプリ",
+    "legal": "法的通知",
+    "privacy": "プライバシー",
+    "cookies": "クッキー",
+    "cgu": "利用規約",
+    "security": "セキュリティ",
+    "moderation": "モデレーション"
+  },
+  "invite": {
+    "title": "友達を招待",
+    "description": "Embyrを友達と共有して、コミュニティを広げましょう。",
+    "copyLink": "リンクをコピー",
+    "copied": "リンクをコピーしました！"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "retry": "再試行",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "back": "戻る"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Homoille ja queer-yhteisölle",
+    "title1": "Treffejä",
+    "title2": "miesten kesken.",
+    "subtitle": "Embyr on uusi homotreffisovellus, suunniteltu niille, jotka haluavat aitoa. Ei paineita, ei tuomitsemista. Ilmainen lanseerauksen ajan.",
+    "cta": "Luo profiilini ilmaiseksi",
+    "secondary": "Tutustu jäseniin"
+  },
+  "nav": {
+    "home": "Etusivu",
+    "members": "Jäsenet",
+    "messages": "Viestit",
+    "dashboard": "Hallintapaneeli",
+    "login": "Kirjaudu sisään",
+    "register": "Rekisteröidy",
+    "invite": "Kutsu",
+    "premium": "Premium",
+    "blog": "Blogi"
+  },
+  "auth": {
+    "login": "Kirjaudu sisään",
+    "register": "Rekisteröidy",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "loginBtn": "Kirjaudu sisään",
+    "registerBtn": "Rekisteröidy",
+    "noAccount": "Eikö sinulla ole vielä tiliä?",
+    "hasAccount": "Onko sinulla jo tili?"
+  },
+  "dashboard": {
+    "title": "Hallintapaneeli",
+    "welcome": "Tervetuloa Embyriin",
+    "launchBadge": "Ilmainen lanseeraus",
+    "completeProfile": "Täydennä profiilisi",
+    "browseMembers": "Selaa jäseniä",
+    "inviteFriends": "Kutsu ystäviä"
+  },
+  "members": {
+    "title": "Jäsenet",
+    "search": "Hae...",
+    "noResults": "Yhtään jäsentä ei löytynyt",
+    "online": "Paikalla",
+    "recentlyActive": "Äskettäin aktiivinen"
+  },
+  "messages": {
+    "title": "Viestit",
+    "noMessages": "Ei vielä viestejä",
+    "startChat": "Aloita keskustelu",
+    "translate": "Näytä käännös"
+  },
+  "footer": {
+    "tagline": "Ilmainen homotreffisovellus",
+    "legal": "Oikeudelliset tiedot",
+    "privacy": "Yksityisyys",
+    "cookies": "Evästeet",
+    "cgu": "Käyttöehdot",
+    "security": "Turvallisuus",
+    "moderation": "Moderointi"
+  },
+  "invite": {
+    "title": "Kutsu ystäväsi",
+    "description": "Jaa Embyr ystäviesi kanssa ja kasvata yhteisöä.",
+    "copyLink": "Kopioi linkki",
+    "copied": "Linkki kopioitu!"
+  },
+  "common": {
+    "loading": "Ladataan...",
+    "error": "Tapahtui virhe",
+    "retry": "Yritä uudelleen",
+    "save": "Tallenna",
+    "cancel": "Peruuta",
+    "back": "Takaisin"
+  }
+}

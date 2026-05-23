@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Untuk kaum gay dan komunitas queer",
+    "title1": "Kencan",
+    "title2": "antar pria.",
+    "subtitle": "Embyr adalah aplikasi kencan gay baru, dirancang untuk mereka yang menginginkan hubungan nyata. Tanpa tekanan, tanpa penghakiman. Gratis selama peluncuran.",
+    "cta": "Buat profil saya secara gratis",
+    "secondary": "Temui anggota"
+  },
+  "nav": {
+    "home": "Beranda",
+    "members": "Anggota",
+    "messages": "Pesan",
+    "dashboard": "Dasbor",
+    "login": "Masuk",
+    "register": "Daftar",
+    "invite": "Undang",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Masuk",
+    "register": "Daftar",
+    "email": "Email",
+    "password": "Kata sandi",
+    "loginBtn": "Masuk",
+    "registerBtn": "Daftar",
+    "noAccount": "Belum punya akun?",
+    "hasAccount": "Sudah punya akun?"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "welcome": "Selamat datang di Embyr",
+    "launchBadge": "Peluncuran gratis",
+    "completeProfile": "Lengkapi profilmu",
+    "browseMembers": "Lihat anggota",
+    "inviteFriends": "Undang teman"
+  },
+  "members": {
+    "title": "Anggota",
+    "search": "Cari...",
+    "noResults": "Tidak ada anggota ditemukan",
+    "online": "Online",
+    "recentlyActive": "Aktif baru-baru ini"
+  },
+  "messages": {
+    "title": "Pesan",
+    "noMessages": "Belum ada pesan",
+    "startChat": "Mulai percakapan",
+    "translate": "Lihat terjemahan"
+  },
+  "footer": {
+    "tagline": "Aplikasi kencan gay gratis",
+    "legal": "Informasi hukum",
+    "privacy": "Privasi",
+    "cookies": "Cookie",
+    "cgu": "Ketentuan Layanan",
+    "security": "Keamanan",
+    "moderation": "Moderasi"
+  },
+  "invite": {
+    "title": "Undang temanmu",
+    "description": "Bagikan Embyr dengan temanmu dan perluas komunitas.",
+    "copyLink": "Salin tautan",
+    "copied": "Tautan tersalin!"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "back": "Kembali"
+  }
+}

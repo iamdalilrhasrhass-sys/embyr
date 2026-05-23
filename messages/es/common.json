@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Para gays y la comunidad queer",
+    "title1": "Encuentros",
+    "title2": "entre hombres.",
+    "subtitle": "Embyr es una nueva app de citas gay, pensada para quienes buscan algo real. Sin presión, sin juicios. Gratuita durante el lanzamiento.",
+    "cta": "Crear mi perfil gratis",
+    "secondary": "Descubrir miembros"
+  },
+  "nav": {
+    "home": "Inicio",
+    "members": "Miembros",
+    "messages": "Mensajes",
+    "dashboard": "Panel",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "invite": "Invitar",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginBtn": "Iniciar sesión",
+    "registerBtn": "Registrarse",
+    "noAccount": "¿Aún no tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Bienvenido a Embyr",
+    "launchBadge": "Lanzamiento gratuito",
+    "completeProfile": "Completa tu perfil",
+    "browseMembers": "Ver miembros",
+    "inviteFriends": "Invitar amigos"
+  },
+  "members": {
+    "title": "Miembros",
+    "search": "Buscar...",
+    "noResults": "No se encontraron miembros",
+    "online": "En línea",
+    "recentlyActive": "Activo recientemente"
+  },
+  "messages": {
+    "title": "Mensajes",
+    "noMessages": "Aún no hay mensajes",
+    "startChat": "Inicia una conversación",
+    "translate": "Ver traducción"
+  },
+  "footer": {
+    "tagline": "App de citas gay gratuita",
+    "legal": "Aviso legal",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "cgu": "Términos y condiciones",
+    "security": "Seguridad",
+    "moderation": "Moderación"
+  },
+  "invite": {
+    "title": "Invita a tus amigos",
+    "description": "Comparte Embyr con tus amigos y haz crecer la comunidad.",
+    "copyLink": "Copiar enlace",
+    "copied": "¡Enlace copiado!"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Reintentar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "back": "Volver"
+  }
+}

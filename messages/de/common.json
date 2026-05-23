@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Für Schwule und die queere Community",
+    "title1": "Dates",
+    "title2": "zwischen Männern.",
+    "subtitle": "Embyr ist eine neue Dating-App für Schwule, gemacht für die, die echte Verbindungen suchen. Kein Druck, kein Urteil. Kostenlos während des Starts.",
+    "cta": "Profil kostenlos erstellen",
+    "secondary": "Mitglieder entdecken"
+  },
+  "nav": {
+    "home": "Startseite",
+    "members": "Mitglieder",
+    "messages": "Nachrichten",
+    "dashboard": "Dashboard",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "invite": "Einladen",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "loginBtn": "Anmelden",
+    "registerBtn": "Registrieren",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Willkommen bei Embyr",
+    "launchBadge": "Kostenloser Start",
+    "completeProfile": "Profil vervollständigen",
+    "browseMembers": "Mitglieder ansehen",
+    "inviteFriends": "Freunde einladen"
+  },
+  "members": {
+    "title": "Mitglieder",
+    "search": "Suchen...",
+    "noResults": "Keine Mitglieder gefunden",
+    "online": "Online",
+    "recentlyActive": "Kürzlich aktiv"
+  },
+  "messages": {
+    "title": "Nachrichten",
+    "noMessages": "Noch keine Nachrichten",
+    "startChat": "Beginne ein Gespräch",
+    "translate": "Übersetzung anzeigen"
+  },
+  "footer": {
+    "tagline": "Kostenlose Schwulen-Dating-App",
+    "legal": "Impressum",
+    "privacy": "Datenschutz",
+    "cookies": "Cookies",
+    "cgu": "AGB",
+    "security": "Sicherheit",
+    "moderation": "Moderation"
+  },
+  "invite": {
+    "title": "Lade deine Freunde ein",
+    "description": "Teile Embyr mit deinen Freunden und vergrößere die Community.",
+    "copyLink": "Link kopieren",
+    "copied": "Link kopiert!"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "retry": "Erneut versuchen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "back": "Zurück"
+  }
+}

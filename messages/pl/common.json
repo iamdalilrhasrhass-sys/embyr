@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Dla gejów i społeczności queer",
+    "title1": "Randki",
+    "title2": "między mężczyznami.",
+    "subtitle": "Embyr to nowa aplikacja randkowa dla gejów, stworzona dla tych, którzy szukają czegoś prawdziwego. Bez presji, bez oceniania. Darmowa podczas premiery.",
+    "cta": "Stwórz profil za darmo",
+    "secondary": "Odkryj członków"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "members": "Członkowie",
+    "messages": "Wiadomości",
+    "dashboard": "Panel",
+    "login": "Logowanie",
+    "register": "Rejestracja",
+    "invite": "Zaproś",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Logowanie",
+    "register": "Rejestracja",
+    "email": "Email",
+    "password": "Hasło",
+    "loginBtn": "Zaloguj się",
+    "registerBtn": "Zarejestruj się",
+    "noAccount": "Nie masz jeszcze konta?",
+    "hasAccount": "Masz już konto?"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Witaj w Embyr",
+    "launchBadge": "Darmowa premiera",
+    "completeProfile": "Uzupełnij swój profil",
+    "browseMembers": "Zobacz członków",
+    "inviteFriends": "Zaproś znajomych"
+  },
+  "members": {
+    "title": "Członkowie",
+    "search": "Szukaj...",
+    "noResults": "Nie znaleziono członków",
+    "online": "Online",
+    "recentlyActive": "Aktywny niedawno"
+  },
+  "messages": {
+    "title": "Wiadomości",
+    "noMessages": "Brak wiadomości",
+    "startChat": "Rozpocznij rozmowę",
+    "translate": "Zobacz tłumaczenie"
+  },
+  "footer": {
+    "tagline": "Darmowa aplikacja randkowa dla gejów",
+    "legal": "Informacje prawne",
+    "privacy": "Prywatność",
+    "cookies": "Ciasteczka",
+    "cgu": "Regulamin",
+    "security": "Bezpieczeństwo",
+    "moderation": "Moderacja"
+  },
+  "invite": {
+    "title": "Zaproś znajomych",
+    "description": "Podziel się Embyr ze znajomymi i powiększ społeczność.",
+    "copyLink": "Skopiuj link",
+    "copied": "Link skopiowany!"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Wystąpił błąd",
+    "retry": "Spróbuj ponownie",
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "back": "Wstecz"
+  }
+}

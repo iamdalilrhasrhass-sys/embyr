@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "为同性恋及酷儿社群打造",
+    "title1": "遇见",
+    "title2": "属于男人之间的缘分。",
+    "subtitle": "Embyr 是一款全新的同性恋交友应用，专为寻求真实连接的人设计。没有压力，没有评判。上线期间免费使用。",
+    "cta": "免费创建我的个人资料",
+    "secondary": "探索会员"
+  },
+  "nav": {
+    "home": "首页",
+    "members": "会员",
+    "messages": "消息",
+    "dashboard": "控制面板",
+    "login": "登录",
+    "register": "注册",
+    "invite": "邀请",
+    "premium": "高级会员",
+    "blog": "博客"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "email": "邮箱",
+    "password": "密码",
+    "loginBtn": "登录",
+    "registerBtn": "注册",
+    "noAccount": "还没有账号？",
+    "hasAccount": "已有账号？"
+  },
+  "dashboard": {
+    "title": "控制面板",
+    "welcome": "欢迎来到 Embyr",
+    "launchBadge": "上线免费",
+    "completeProfile": "完善你的个人资料",
+    "browseMembers": "浏览会员",
+    "inviteFriends": "邀请好友"
+  },
+  "members": {
+    "title": "会员",
+    "search": "搜索...",
+    "noResults": "未找到会员",
+    "online": "在线",
+    "recentlyActive": "最近活跃"
+  },
+  "messages": {
+    "title": "消息",
+    "noMessages": "暂无消息",
+    "startChat": "开始对话",
+    "translate": "查看翻译"
+  },
+  "footer": {
+    "tagline": "免费同性恋交友应用",
+    "legal": "法律声明",
+    "privacy": "隐私政策",
+    "cookies": "Cookie",
+    "cgu": "服务条款",
+    "security": "安全",
+    "moderation": "内容审核"
+  },
+  "invite": {
+    "title": "邀请你的好友",
+    "description": "与好友分享 Embyr，壮大我们的社群。",
+    "copyLink": "复制链接",
+    "copied": "链接已复制！"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "retry": "重试",
+    "save": "保存",
+    "cancel": "取消",
+    "back": "返回"
+  }
+}

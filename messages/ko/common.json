@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "게이와 퀴어 커뮤니티를 위한",
+    "title1": "진정한 만남",
+    "title2": "남성들 사이에서.",
+    "subtitle": "Embyr는 진짜를 원하는 사람들을 위해 만들어진 새로운 게이 데이트 앱입니다. 압박도, 판단도 없습니다. 출시 기간 동안 무료입니다.",
+    "cta": "내 프로필 무료로 만들기",
+    "secondary": "회원 살펴보기"
+  },
+  "nav": {
+    "home": "홈",
+    "members": "회원",
+    "messages": "메시지",
+    "dashboard": "대시보드",
+    "login": "로그인",
+    "register": "회원가입",
+    "invite": "초대하기",
+    "premium": "프리미엄",
+    "blog": "블로그"
+  },
+  "auth": {
+    "login": "로그인",
+    "register": "회원가입",
+    "email": "이메일",
+    "password": "비밀번호",
+    "loginBtn": "로그인",
+    "registerBtn": "가입하기",
+    "noAccount": "아직 계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?"
+  },
+  "dashboard": {
+    "title": "대시보드",
+    "welcome": "Embyr에 오신 것을 환영합니다",
+    "launchBadge": "무료 출시",
+    "completeProfile": "프로필을 완성하세요",
+    "browseMembers": "회원 보기",
+    "inviteFriends": "친구 초대하기"
+  },
+  "members": {
+    "title": "회원",
+    "search": "검색...",
+    "noResults": "회원을 찾을 수 없습니다",
+    "online": "온라인",
+    "recentlyActive": "최근 활동"
+  },
+  "messages": {
+    "title": "메시지",
+    "noMessages": "아직 메시지가 없습니다",
+    "startChat": "대화 시작하기",
+    "translate": "번역 보기"
+  },
+  "footer": {
+    "tagline": "무료 게이 데이트 앱",
+    "legal": "법적 고지",
+    "privacy": "개인정보 보호",
+    "cookies": "쿠키",
+    "cgu": "이용약관",
+    "security": "보안",
+    "moderation": "모더레이션"
+  },
+  "invite": {
+    "title": "친구 초대하기",
+    "description": "Embyr를 친구들과 공유하고 커뮤니티를 확장하세요.",
+    "copyLink": "링크 복사",
+    "copied": "링크 복사됨!"
+  },
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "retry": "다시 시도",
+    "save": "저장",
+    "cancel": "취소",
+    "back": "뒤로"
+  }
+}

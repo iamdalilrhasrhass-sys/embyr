@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "For homofile og queermiljøet",
+    "title1": "Møter",
+    "title2": "mellom menn.",
+    "subtitle": "Embyr er en ny datingapp for homofile, laget for de som vil ha ekte forbindelser. Ingen press, ingen dømmelse. Gratis under lanseringen.",
+    "cta": "Opprett profilen min gratis",
+    "secondary": "Oppdag medlemmene"
+  },
+  "nav": {
+    "home": "Hjem",
+    "members": "Medlemmer",
+    "messages": "Meldinger",
+    "dashboard": "Dashboard",
+    "login": "Logg inn",
+    "register": "Registrer deg",
+    "invite": "Inviter",
+    "premium": "Premium",
+    "blog": "Blogg"
+  },
+  "auth": {
+    "login": "Logg inn",
+    "register": "Registrer deg",
+    "email": "E-post",
+    "password": "Passord",
+    "loginBtn": "Logg inn",
+    "registerBtn": "Registrer deg",
+    "noAccount": "Har du ikke konto ennå?",
+    "hasAccount": "Har du allerede en konto?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Velkommen til Embyr",
+    "launchBadge": "Gratis lansering",
+    "completeProfile": "Fullfør profilen din",
+    "browseMembers": "Se medlemmer",
+    "inviteFriends": "Inviter venner"
+  },
+  "members": {
+    "title": "Medlemmer",
+    "search": "Søk...",
+    "noResults": "Ingen medlemmer funnet",
+    "online": "Pålogget",
+    "recentlyActive": "Nylig aktiv"
+  },
+  "messages": {
+    "title": "Meldinger",
+    "noMessages": "Ingen meldinger ennå",
+    "startChat": "Start en samtale",
+    "translate": "Se oversettelse"
+  },
+  "footer": {
+    "tagline": "Gratis datingapp for homofile",
+    "legal": "Juridisk informasjon",
+    "privacy": "Personvern",
+    "cookies": "Informasjonskapsler",
+    "cgu": "Bruksvilkår",
+    "security": "Sikkerhet",
+    "moderation": "Moderering"
+  },
+  "invite": {
+    "title": "Inviter vennene dine",
+    "description": "Del Embyr med vennene dine og utvid fellesskapet.",
+    "copyLink": "Kopier lenke",
+    "copied": "Lenke kopiert!"
+  },
+  "common": {
+    "loading": "Laster...",
+    "error": "En feil oppstod",
+    "retry": "Prøv igjen",
+    "save": "Lagre",
+    "cancel": "Avbryt",
+    "back": "Tilbake"
+  }
+}

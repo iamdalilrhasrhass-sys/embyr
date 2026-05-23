@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Voor homo's en de queer gemeenschap",
+    "title1": "Ontmoetingen",
+    "title2": "tussen mannen.",
+    "subtitle": "Embyr is een nieuwe datingapp voor homo's, ontworpen voor wie op zoek is naar iets echts. Geen druk, geen oordeel. Gratis tijdens de lancering.",
+    "cta": "Maak gratis mijn profiel aan",
+    "secondary": "Ontdek de leden"
+  },
+  "nav": {
+    "home": "Startpagina",
+    "members": "Leden",
+    "messages": "Berichten",
+    "dashboard": "Dashboard",
+    "login": "Inloggen",
+    "register": "Registreren",
+    "invite": "Uitnodigen",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Inloggen",
+    "register": "Registreren",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "loginBtn": "Inloggen",
+    "registerBtn": "Registreren",
+    "noAccount": "Nog geen account?",
+    "hasAccount": "Al een account?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welkom bij Embyr",
+    "launchBadge": "Gratis lancering",
+    "completeProfile": "Vul je profiel aan",
+    "browseMembers": "Bekijk leden",
+    "inviteFriends": "Vrienden uitnodigen"
+  },
+  "members": {
+    "title": "Leden",
+    "search": "Zoeken...",
+    "noResults": "Geen leden gevonden",
+    "online": "Online",
+    "recentlyActive": "Recent actief"
+  },
+  "messages": {
+    "title": "Berichten",
+    "noMessages": "Nog geen berichten",
+    "startChat": "Start een gesprek",
+    "translate": "Bekijk vertaling"
+  },
+  "footer": {
+    "tagline": "Gratis datingapp voor homo's",
+    "legal": "Juridische informatie",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "cgu": "Algemene voorwaarden",
+    "security": "Beveiliging",
+    "moderation": "Moderatie"
+  },
+  "invite": {
+    "title": "Nodig je vrienden uit",
+    "description": "Deel Embyr met je vrienden en vergroot de gemeenschap.",
+    "copyLink": "Kopieer link",
+    "copied": "Link gekopieerd!"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "retry": "Opnieuw proberen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "back": "Terug"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Untuk golongan gay dan komuniti queer",
+    "title1": "Temu janji",
+    "title2": "antara lelaki.",
+    "subtitle": "Embyr ialah aplikasi temu janji gay baharu, direka untuk mereka yang mahukan hubungan sebenar. Tiada tekanan, tiada penghakiman. Percuma semasa pelancaran.",
+    "cta": "Buat profil saya secara percuma",
+    "secondary": "Terokai ahli"
+  },
+  "nav": {
+    "home": "Laman Utama",
+    "members": "Ahli",
+    "messages": "Mesej",
+    "dashboard": "Papan Pemuka",
+    "login": "Log Masuk",
+    "register": "Daftar",
+    "invite": "Jemput",
+    "premium": "Premium",
+    "blog": "Blog"
+  },
+  "auth": {
+    "login": "Log Masuk",
+    "register": "Daftar",
+    "email": "E-mel",
+    "password": "Kata Laluan",
+    "loginBtn": "Log Masuk",
+    "registerBtn": "Daftar",
+    "noAccount": "Belum ada akaun?",
+    "hasAccount": "Sudah ada akaun?"
+  },
+  "dashboard": {
+    "title": "Papan Pemuka",
+    "welcome": "Selamat datang ke Embyr",
+    "launchBadge": "Pelancaran percuma",
+    "completeProfile": "Lengkapkan profil anda",
+    "browseMembers": "Lihat ahli",
+    "inviteFriends": "Jemput rakan"
+  },
+  "members": {
+    "title": "Ahli",
+    "search": "Cari...",
+    "noResults": "Tiada ahli ditemui",
+    "online": "Dalam talian",
+    "recentlyActive": "Aktif baru-baru ini"
+  },
+  "messages": {
+    "title": "Mesej",
+    "noMessages": "Belum ada mesej",
+    "startChat": "Mulakan perbualan",
+    "translate": "Lihat terjemahan"
+  },
+  "footer": {
+    "tagline": "Aplikasi temu janji gay percuma",
+    "legal": "Maklumat undang-undang",
+    "privacy": "Privasi",
+    "cookies": "Kuki",
+    "cgu": "Terma Penggunaan",
+    "security": "Keselamatan",
+    "moderation": "Moderasi"
+  },
+  "invite": {
+    "title": "Jemput rakan anda",
+    "description": "Kongsi Embyr dengan rakan anda dan besarkan komuniti.",
+    "copyLink": "Salin pautan",
+    "copied": "Pautan disalin!"
+  },
+  "common": {
+    "loading": "Memuatkan...",
+    "error": "Berlaku ralat",
+    "retry": "Cuba semula",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "back": "Kembali"
+  }
+}

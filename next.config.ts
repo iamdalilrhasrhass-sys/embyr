@@ -1,34 +1,27 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  outputFileTracingRoot: "/root/embyr",
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
+  },
   async redirects() {
     return [
-      { source: "/connexion", destination: "/auth/login", permanent: true },
-      { source: "/inscription", destination: "/auth/register", permanent: true },
-      { source: "/profil", destination: "/dashboard/profile", permanent: true },
-      { source: "/members", destination: "/membres", permanent: true },
-      { source: "/profiles", destination: "/membres", permanent: true },
-      { source: "/decouvrir", destination: "/membres", permanent: true },
-      { source: "/login", destination: "/auth/login", permanent: true },
-      { source: "/register", destination: "/auth/register", permanent: true },
-    ];
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Frame-Options", value: "DENY" },
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "X-XSS-Protection", value: "1; mode=block" },
-          { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(self)" },
-        ],
-      },
+      { source: "/connexion", destination: "/fr/auth/login", permanent: true },
+      { source: "/inscription", destination: "/fr/auth/register", permanent: true },
+      { source: "/profil", destination: "/fr/dashboard/profile", permanent: true },
+      { source: "/login", destination: "/fr/auth/login", permanent: true },
+      { source: "/register", destination: "/fr/auth/register", permanent: true },
+      { source: "/pricing", destination: "/fr/premium", permanent: true },
+      { source: "/members", destination: "/fr/membres", permanent: true },
+      { source: "/profiles", destination: "/fr/membres", permanent: true },
+      { source: "/decouvrir", destination: "/fr/membres", permanent: true },
+      { source: "/members/:path*", destination: "/fr/membres/:path*", permanent: true },
+      { source: "/profiles/:path*", destination: "/fr/membres/:path*", permanent: true },
     ];
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
