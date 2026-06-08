@@ -46,7 +46,6 @@ const STATS = [
   { value: "Gratuit", label: "Au lancement" },
   { value: "7", label: "IA intelligentes" },
   { value: "25+", label: "Langues" },
-  { value: "∞", label: "Messages" },
 ];
 
 const COMPARISONS = [
@@ -90,7 +89,15 @@ function PhonePreview() {
 
           <div className="relative z-20 flex h-[calc(100%-44px)] flex-col px-4 pb-3">
             <div className="mb-3 flex items-center justify-between">
-              <EmbirLogo size="sm" />
+              <div className="flex items-center gap-2">
+                <EmbirLogo size="sm" showText={false} />
+                <span className="text-lg font-black tracking-[-0.06em] text-white">
+                  embir
+                  <span className="bg-gradient-to-tr from-[#ff1f5a] to-[#ff5e36] bg-clip-text text-transparent">
+                    .
+                  </span>
+                </span>
+              </div>
               <button className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[11px] font-semibold text-white/65">
                 Paris
               </button>
@@ -100,8 +107,9 @@ function PhonePreview() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_16%,rgba(255,163,51,0.36),transparent_30%),radial-gradient(circle_at_22%_72%,rgba(255,31,90,0.28),transparent_36%)]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/28 to-transparent" />
 
-              <span className="absolute left-3 top-3 rounded-full bg-black/45 px-3 py-1 text-[11px] font-semibold tracking-wide text-white/78 backdrop-blur-md">
-                📍 À 1.4 km
+              <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/45 px-3 py-1 text-[11px] font-semibold tracking-wide text-white/78 backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#ff5e36]" />
+                À 1.4 km
               </span>
               <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white/72 backdrop-blur-md">
                 fondateur
@@ -117,23 +125,26 @@ function PhonePreview() {
                   <p className="mt-2 text-xs italic text-white/44">
                     “Boire un verre ce soir dans le Marais ?”
                   </p>
+                  <div className="mt-3 inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold text-white/58">
+                    Compatibilité IA · 94%
+                  </div>
 
-                  <div className="mt-4 flex justify-center gap-4">
-                    <button className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/8 text-white/55 transition-transform hover:scale-105" aria-label="Passer">
-                      ✕
+                  <div className="mt-4 flex justify-center gap-3">
+                    <button className="flex h-11 min-w-20 items-center justify-center rounded-full border border-white/10 bg-white/8 text-xs font-semibold uppercase tracking-[0.18em] text-white/55 transition-transform hover:scale-105" aria-label="Passer">
+                      Non
                     </button>
-                    <button className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] font-bold text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Allumer">
-                      🔥
+                    <button className="flex h-11 min-w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Allumer">
+                      Allumer
                     </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-3 flex items-center justify-around rounded-full border border-white/8 bg-white/[0.035] px-5 py-3 text-lg text-white/30">
-              <span className="text-[#ff5e36]">🎴</span>
-              <span>💬</span>
-              <span>👤</span>
+            <div className="mt-3 flex items-center justify-around rounded-full border border-white/8 bg-white/[0.035] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/30">
+              <span className="text-[#ff5e36]">Profils</span>
+              <span>Messages</span>
+              <span>Moi</span>
             </div>
             <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-white/32" />
           </div>
@@ -168,9 +179,9 @@ export default function Home() {
 
             <ScrollReveal delay={360}>
               <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/45 sm:text-xl lg:mx-0">
-                Pas de chichis, pas de profils fantômes. Embir concentre ses premiers
-                membres à Paris pour créer de vraies rencontres, gratuitement, sans pubs
-                et sans faux compteur.
+                Une nouvelle app de rencontres entre hommes, pensée pour Paris,
+                avec profils vérifiés, messages gratuits au lancement, matching
+                intelligent et zéro bruit inutile.
               </p>
             </ScrollReveal>
 
