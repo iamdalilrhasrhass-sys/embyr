@@ -31,26 +31,26 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-card border-b-0 border-white/10">
+    <nav className="fixed top-0 w-full z-50 border-b border-white/8 bg-[#070409]/82 backdrop-blur-2xl shadow-[0_18px_80px_rgba(0,0,0,0.35)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
             <Link href="/" className="shrink-0">
-              <EmbyrLogo size="md" />
+              <EmbyrLogo size="md" showTagline />
             </Link>
-            <span className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-green-500/10 text-green-400 border border-green-500/20">
-              <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse mr-2"></span>
-              🎁 Gratuit au lancement
+            <span className="hidden lg:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.16em] bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/20">
+              <span className="w-1.5 h-1.5 bg-[#ff5e36] rounded-full shadow-[0_0_12px_rgba(255,94,54,0.75)] mr-2"></span>
+              Lancement gratuit
             </span>
           </div>
 
           {/* Desktop */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="/paris" className="hover:text-[#d4a574] text-[#e8c4a2] transition-colors px-3 py-2 rounded-md font-semibold text-sm">Paris</Link>
+              <Link href="/paris" className="hover:text-[#ff5e36] text-[#ffa333] transition-colors px-3 py-2 rounded-md font-semibold text-sm">Paris</Link>
               <Link href="/about" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">À propos</Link>
               <Link href="/membres" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Membres</Link>
-              <Link href="/premium" className="hover:text-purple-400 text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Premium</Link>
+              <Link href="/premium" className="hover:text-[#ff5e36] text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Premium</Link>
               <Link href="/auth/login" className="hover:text-white text-gray-300 transition-colors px-3 py-2 font-medium text-sm">Connexion</Link>
               <LanguageSwitcher />
               <Link href="/paris" className="emb-button-primary text-sm px-5 py-2.5">

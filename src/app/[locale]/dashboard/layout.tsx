@@ -1,5 +1,6 @@
 import { VibeKeyframes } from "@/components/VibeEffects";
 import LogoutButton from "@/components/layout/LogoutButton";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 
 export default function DashboardLayout({
   children,
@@ -22,22 +23,11 @@ export default function DashboardLayout({
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
           <a
             href="/dashboard"
             className="flex items-center gap-3 group"
           >
-            <div
-              className="w-8 h-8 rounded-xl flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, var(--color-premium-purple), var(--color-premium-rose))",
-              }}
-            >
-              <span className="font-bold text-sm text-white">E</span>
-            </div>
-            <span className="font-bold text-white/90 text-sm tracking-wide group-hover:text-white transition-colors">
-              Embyr
-            </span>
+            <EmbirLogo size="sm" />
           </a>
 
           {/* Nav Links */}
@@ -66,7 +56,7 @@ export default function DashboardLayout({
               className="w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-xs hover:border-[var(--color-premium-rose)]/30 transition-all"
               title="Mon compte"
             >
-              👤
+              <span className="h-2 w-2 rounded-full bg-[#ff5e36] shadow-[0_0_12px_rgba(255,94,54,0.7)]" />
             </a>
             <LogoutButton />
           </div>

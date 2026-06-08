@@ -3,10 +3,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/membres", label: "Membres", icon: "👥" },
-  { href: "/messages", label: "Messages", icon: "💬" },
-  { href: "/dashboard", label: "Profil", icon: "👤" },
-  { href: "/salons", label: "Salons", icon: "💬" },
+  { href: "/membres", label: "Membres" },
+  { href: "/messages", label: "Messages" },
+  { href: "/dashboard", label: "Profil" },
+  { href: "/salons", label: "Salons" },
 ];
 
 export default function BottomNav() {
@@ -23,7 +23,9 @@ export default function BottomNav() {
               className={`flex flex-col items-center justify-center gap-0.5 px-2 py-1 rounded-xl transition-all min-w-[44px] ${
                 active ? "text-white" : "text-white/30"}`}
               style={active ? { background: "rgba(255,107,53,0.1)" } : {}}>
-              <span className="text-lg">{item.icon}</span>
+              <span
+                className={`h-1.5 w-1.5 rounded-full ${active ? "bg-[#ff5e36] shadow-[0_0_10px_rgba(255,94,54,0.85)]" : "bg-white/22"}`}
+              />
               <span className="text-[9px] font-medium">{item.label}</span>
             </Link>
           );

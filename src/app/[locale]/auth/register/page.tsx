@@ -84,7 +84,7 @@ export default function Register() {
       <div className="absolute inset-0 noise-overlay"></div>
       <div className="absolute inset-0 soft-grid-bg opacity-30"></div>
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-[var(--color-premium-rose)]/10 rounded-full blur-[100px] animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-[var(--color-premium-purple)]/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-[#ff5e36]/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
       <ScrollReveal direction="up" className="w-full max-w-md z-10 py-12">
         <TiltCard tiltScale={0.3}>
@@ -108,7 +108,7 @@ export default function Register() {
                 </>
               ) : (
                 <>
-                  Rejoindre <span className="text-gradient">embir.xyz</span>
+                  Rejoindre <span className="bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] bg-clip-text text-transparent">embir.xyz</span>
                 </>
               )}
             </h1>

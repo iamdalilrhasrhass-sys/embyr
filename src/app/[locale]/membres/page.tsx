@@ -66,9 +66,9 @@ export default function MembresPage() {
 
           {/* Bannière accès gratuit */}
           {!isPremium && !loading && (
-            <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-green-500/10 bg-green-500/[0.02] backdrop-blur-sm">
+            <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-[#ff5e36]/15 bg-[#ff5e36]/[0.035] backdrop-blur-sm">
               <span className="text-white/50">
-                🔥 Accès gratuit au lancement.{" "}
+                Accès gratuit au lancement.{" "}
                 <span className="text-[#ffa333]/90">
                   Invite des vrais profils Paris / IDF pour densifier la communauté.
                 </span>
@@ -114,7 +114,7 @@ export default function MembresPage() {
             <button
               onClick={fetchProfiles}
               className="px-4 py-2 rounded-xl text-xs font-medium text-white"
-              style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}
+              style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}
             >
               Appliquer
             </button>
@@ -130,7 +130,7 @@ export default function MembresPage() {
             <div className="text-center py-20">
               <p className="text-white/40 mb-4">{error}</p>
               <button onClick={fetchProfiles} className="px-5 py-2.5 rounded-xl text-sm font-medium text-white"
-                style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}>
+                style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
                 Réessayer
               </button>
             </div>
@@ -148,7 +148,7 @@ export default function MembresPage() {
             </div>
           ) : profiles.length === 0 ? (
             <div className="text-center py-20 space-y-6">
-              <div className="text-5xl opacity-20">🌱</div>
+              <div className="mx-auto h-10 w-10 rounded-full bg-gradient-to-tr from-[#ff1f5a] to-[#ff5e36] opacity-80 shadow-[0_0_30px_rgba(255,94,54,0.28)]" />
               <h2 className="text-xl font-bold text-white/70">Les premiers membres arrivent</h2>
               <p className="text-white/40 max-w-md mx-auto">
                 {hasFilters
@@ -187,7 +187,7 @@ export default function MembresPage() {
                   <Link
                     key={p.id || p.userId}
                     href={`/membres/${p.id || p.userId}`}
-                    className="group rounded-2xl overflow-hidden border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm hover:border-indigo-500/20 hover:bg-white/[0.02] transition-all duration-300"
+                    className="group rounded-2xl overflow-hidden border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm hover:border-[#ff5e36]/25 hover:bg-[#ff5e36]/[0.025] transition-all duration-300"
                   >
                     {/* Photo */}
                     <div className="aspect-[3/4] relative overflow-hidden">
@@ -198,7 +198,7 @@ export default function MembresPage() {
                       />
                       {isNew && (
                         <div className="absolute top-2 left-2 z-10">
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400/90 border border-cyan-500/20">
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-[#ff5e36]/15 text-[#ffa333] border border-[#ff5e36]/20">
                             Nouveau
                           </span>
                         </div>
@@ -211,7 +211,7 @@ export default function MembresPage() {
                       )}
                       {p.id && p.id === myId && (
                         <div className="absolute top-2 left-2 z-10">
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400/90 border border-purple-500/20">
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-[#ff5e36]/15 text-[#ffa333] border border-[#ff5e36]/20">
                             Mon profil
                           </span>
                         </div>
@@ -225,10 +225,10 @@ export default function MembresPage() {
                           {p.username || p.displayName || "Membre"}
                         </h3>
                         {p.isVerified && (
-                          <span className="text-[11px]" title="Vérifié">🛡️</span>
+                          <span className="h-2 w-2 rounded-full bg-[#ff5e36] shadow-[0_0_10px_rgba(255,94,54,0.75)]" title="Vérifié" />
                         )}
                         {p.isPremium && (
-                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400/80 border border-indigo-500/10">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/15">
                             Premium
                           </span>
                         )}

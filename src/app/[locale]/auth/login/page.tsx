@@ -43,7 +43,7 @@ export default function Login() {
       <div className="absolute inset-0 noise-overlay"></div>
       <div className="absolute inset-0 soft-grid-bg opacity-30"></div>
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--color-premium-rose)]/10 rounded-full blur-[100px] animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--color-premium-purple)]/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#ff5e36]/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
       <ScrollReveal direction="up" className="w-full max-w-md z-10">
         <TiltCard tiltScale={0.3}>
@@ -53,7 +53,7 @@ export default function Login() {
             <div className="mb-7 flex justify-center">
               <EmbyrLogo size="md" />
             </div>
-            <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">Bon <span className="text-gradient">retour</span></h1>
+            <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">Bon <span className="bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] bg-clip-text text-transparent">retour</span></h1>
             <p className="text-[var(--color-premium-gray)] mb-8 font-medium">Connecte-toi à ton espace embir.xyz.</p>
             
             {error && (

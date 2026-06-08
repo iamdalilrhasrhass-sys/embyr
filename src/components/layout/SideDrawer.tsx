@@ -3,55 +3,56 @@ import { useState } from "react";
 import Link from "next/link";
 import EmbyrAvatar from "@/components/embyr/EmbyrAvatar";
 import EmbyrBadge from "@/components/embyr/EmbyrBadge";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 
 const NAV_SECTIONS = [
   {
     title: "Explorer",
     items: [
-      { href: "/dashboard", icon: "🏠", label: "Tableau de bord" },
-      { href: "/membres", icon: "👥", label: "Membres" },
-      { href: "/messages", icon: "💬", label: "Messages" },
+      { href: "/dashboard", icon: "•", label: "Tableau de bord" },
+      { href: "/membres", icon: "•", label: "Membres" },
+      { href: "/messages", icon: "•", label: "Messages" },
     ],
   },
   {
     title: "Communauté",
     items: [
-      { href: "/salons", icon: "🚬", label: "Salons" },
-      { href: "/annonces", icon: "📌", label: "Annonces" },
-      { href: "/forum", icon: "📖", label: "Forum" },
-      { href: "/videos", icon: "🎬", label: "Vidéos" },
+      { href: "/salons", icon: "•", label: "Salons" },
+      { href: "/annonces", icon: "•", label: "Annonces" },
+      { href: "/forum", icon: "•", label: "Forum" },
+      { href: "/videos", icon: "•", label: "Vidéos" },
     ],
   },
   {
     title: "Mon univers",
     items: [
-      { href: "/dashboard/profile", icon: "⚙️", label: "Mon profil" },
-      { href: "/albums", icon: "🖼️", label: "Albums" },
-      { href: "/favoris", icon: "💎", label: "Favoris" },
-      { href: "/blacklist", icon: "🚫", label: "Blacklist" },
-      { href: "/temoignages", icon: "🏆", label: "Témoignages" },
-      { href: "/certification", icon: "✅", label: "Certification" },
-      { href: "/apercu-visiteur", icon: "👁️", label: "Aperçu visiteur" },
+      { href: "/dashboard/profile", icon: "•", label: "Mon profil" },
+      { href: "/albums", icon: "•", label: "Albums" },
+      { href: "/favoris", icon: "•", label: "Favoris" },
+      { href: "/blacklist", icon: "•", label: "Blacklist" },
+      { href: "/temoignages", icon: "•", label: "Témoignages" },
+      { href: "/certification", icon: "•", label: "Certification" },
+      { href: "/apercu-visiteur", icon: "•", label: "Aperçu visiteur" },
     ],
   },
   {
     title: "Premium",
     items: [
-      { href: "/premium", icon: "⭐", label: "Premium bientôt" },
-      { href: "/mode-discret", icon: "🕶️", label: "Mode Discret" },
-      { href: "/ambassadeur", icon: "👑", label: "Ambassadeur" },
+      { href: "/premium", icon: "•", label: "Premium bientôt" },
+      { href: "/mode-discret", icon: "•", label: "Mode Discret" },
+      { href: "/ambassadeur", icon: "•", label: "Ambassadeur" },
     ],
   },
   {
     title: "Autres",
     items: [
-      { href: "/notifications", icon: "🔔", label: "Notifications" },
-      { href: "/parametres", icon: "⚙️", label: "Paramètres" },
-      { href: "/affichage", icon: "🎨", label: "Affichage" },
-      { href: "/faq", icon: "❓", label: "FAQ" },
-      { href: "/sites-partenaires", icon: "🌐", label: "Sites partenaires" },
-      { href: "/installer-application", icon: "📲", label: "Installer" },
-      { href: "/legal/cgu", icon: "📄", label: "CGU" },
+      { href: "/notifications", icon: "•", label: "Notifications" },
+      { href: "/parametres", icon: "•", label: "Paramètres" },
+      { href: "/affichage", icon: "•", label: "Affichage" },
+      { href: "/faq", icon: "•", label: "FAQ" },
+      { href: "/sites-partenaires", icon: "•", label: "Sites partenaires" },
+      { href: "/installer-application", icon: "•", label: "Installer" },
+      { href: "/legal/cgu", icon: "•", label: "CGU" },
     ],
   },
 ];
@@ -70,7 +71,7 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
         {/* Header */}
         <div className="p-5 flex flex-col items-center border-b border-[var(--eb-border-soft)]">
           <EmbyrAvatar name="Membre" size={96} isPremium />
-          <p className="mt-3 font-[var(--eb-font-display)] text-lg text-[var(--eb-text-primary)]">Embyr</p>
+          <EmbirLogo size="sm" className="mt-4" />
           <EmbyrBadge variant="online">En ligne</EmbyrBadge>
         </div>
 
@@ -87,7 +88,7 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
                     onClick={onClose}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm transition-all hover:bg-[var(--eb-bg-elev-2)] ${item.label === "Premium bientôt" ? "text-[var(--eb-accent)] font-medium" : "text-[var(--eb-text-secondary)]"}`}
                   >
-                    <span className="text-base w-5 text-center">{item.icon}</span>
+                    <span className="text-base w-5 text-center text-[#ff5e36]">{item.icon}</span>
                     <span>{item.label}</span>
                     {item.label === "Premium bientôt" && <span className="ml-auto text-[10px] bg-[var(--eb-accent)]/20 text-[var(--eb-accent)] px-2 py-0.5 rounded-full font-medium">BIENTÔT</span>}
                   </Link>
@@ -100,7 +101,7 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
         {/* Footer */}
         <div className="p-4 border-t border-[var(--eb-border-soft)]">
           <Link href="/auth/logout" className="flex items-center justify-center gap-2 w-full py-2.5 rounded-[10px] text-sm text-[var(--eb-text-muted)] hover:bg-[var(--eb-bg-elev-2)] transition-colors">
-            🚪 Déconnexion
+            Déconnexion
           </Link>
         </div>
       </nav>

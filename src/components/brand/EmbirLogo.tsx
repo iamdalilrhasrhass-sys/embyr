@@ -3,6 +3,7 @@
 type EmbyrLogoProps = {
   size?: 'sm' | 'md' | 'lg';
   showText?: boolean;
+  showTagline?: boolean;
   className?: string;
 };
 
@@ -21,8 +22,11 @@ const dotSizes = {
 export default function EmbyrLogo({
   size = 'md',
   showText = true,
+  showTagline,
   className = '',
 }: EmbyrLogoProps) {
+  const shouldShowTagline = showTagline ?? size === 'lg';
+
   if (!showText) {
     return (
       <span
@@ -51,7 +55,7 @@ export default function EmbyrLogo({
         xyz
       </span>
 
-      {size === 'lg' ? (
+      {shouldShowTagline ? (
         <span className="hidden text-xs font-semibold uppercase tracking-[0.28em] text-white/32 md:inline-flex">
           Allume l&apos;étincelle
         </span>
