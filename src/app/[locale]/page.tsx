@@ -60,60 +60,83 @@ const COMPARISONS = [
 
 function PhonePreview() {
   return (
-    <div className="relative mx-auto flex w-full max-w-[360px] justify-center lg:max-w-[400px]">
-      <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5e36]/20 blur-3xl" />
-      <div className="absolute left-6 top-10 h-28 w-28 rounded-full bg-[#ff1f5a]/25 blur-2xl" />
-      <div className="absolute bottom-8 right-0 h-36 w-36 rounded-full bg-[#ffa333]/16 blur-2xl" />
+    <div className="relative mx-auto flex w-full max-w-[390px] justify-center lg:max-w-[430px]" aria-label="Aperçu iPhone de l'application embir.xyz">
+      <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5e36]/20 blur-3xl" />
+      <div className="absolute left-0 top-8 h-36 w-36 rounded-full bg-[#ff1f5a]/25 blur-2xl" />
+      <div className="absolute bottom-8 right-2 h-44 w-44 rounded-full bg-[#ffa333]/18 blur-2xl" />
 
-      <div className="relative w-[310px] overflow-hidden rounded-[40px] border-[6px] border-[#222933] bg-[#12161c] p-4 shadow-[0_34px_90px_rgba(0,0,0,0.55)]">
-        <div className="absolute left-1/2 top-0 z-30 h-4 w-32 -translate-x-1/2 rounded-b-xl bg-[#222933]" />
+      <div className="absolute -left-1 top-28 h-16 w-1.5 rounded-l-full bg-[#2a2d34]" />
+      <div className="absolute -right-1 top-36 h-24 w-1.5 rounded-r-full bg-[#2a2d34]" />
 
-        <div className="relative z-20 flex items-center justify-between pt-2">
-          <EmbirLogo size="sm" showText={false} />
-          <span className="text-xs font-semibold text-white/35">embir</span>
-          <div className="flex gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#ff5e36]" />
-            <span className="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
-          </div>
-        </div>
+      <div className="relative h-[650px] w-[318px] rounded-[3.25rem] border border-white/12 bg-gradient-to-br from-[#3a3d46] via-[#111318] to-black p-[7px] shadow-[0_42px_110px_rgba(0,0,0,0.72)]">
+        <div className="absolute inset-[3px] rounded-[3rem] border border-white/8 pointer-events-none" />
+        <div className="relative h-full w-full overflow-hidden rounded-[2.75rem] bg-[#090b0e]">
+          <div className="absolute left-1/2 top-3 z-40 h-8 w-28 -translate-x-1/2 rounded-full bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08),0_8px_22px_rgba(0,0,0,0.45)]" />
 
-        <div className="relative mt-4 h-[470px] overflow-hidden rounded-[28px] border border-white/8 bg-gradient-to-tr from-[#1b1e24] via-[#2d1b33] to-[#ff5e36]/30 shadow-xl">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(255,163,51,0.28),transparent_28%),radial-gradient(circle_at_20%_70%,rgba(255,31,90,0.25),transparent_34%)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/22 to-transparent" />
-          <span className="absolute left-3 top-3 rounded-full bg-black/45 px-3 py-1 text-[11px] font-semibold tracking-wide text-white/78 backdrop-blur-md">
-            📍 À 1.4 km
-          </span>
-          <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white/72 backdrop-blur-md">
-            fondateur
-          </span>
-
-          <div className="absolute inset-x-0 bottom-0 p-4 pt-20">
-            <div className="rounded-[24px] border border-white/10 bg-black/34 p-4 backdrop-blur-xl">
-              <div className="flex items-center gap-2">
-                <h3 className="text-xl font-black tracking-[-0.03em] text-white">Lucas, 26</h3>
-                <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
-              </div>
-              <p className="mt-1 text-xs text-white/58">Paris · Créateur de contenu</p>
-              <p className="mt-2 text-xs italic text-white/42">
-                “Boire un verre ce soir dans le Marais ?”
-              </p>
-
-              <div className="mt-4 flex justify-center gap-4">
-                <button className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/8 text-white/55 transition-transform hover:scale-105" aria-label="Passer">
-                  ✕
-                </button>
-                <button className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] font-bold text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Allumer">
-                  🔥
-                </button>
-              </div>
+          <div className="relative z-30 flex items-center justify-between px-7 pb-3 pt-4 text-[11px] font-semibold text-white/72">
+            <span>9:41</span>
+            <div className="flex items-center gap-1.5">
+              <span className="flex items-end gap-[2px]" aria-hidden="true">
+                <span className="h-1.5 w-1 rounded-sm bg-white/70" />
+                <span className="h-2 w-1 rounded-sm bg-white/70" />
+                <span className="h-2.5 w-1 rounded-sm bg-white/70" />
+              </span>
+              <span className="text-[10px]">5G</span>
+              <span className="h-2.5 w-5 rounded-[4px] border border-white/60 p-[1px]" aria-hidden="true">
+                <span className="block h-full w-3.5 rounded-[2px] bg-white/75" />
+              </span>
             </div>
           </div>
-        </div>
 
-        <div className="flex items-center justify-around border-t border-white/5 pb-1 pt-3 text-lg text-white/28">
-          <span className="text-[#ff5e36]">🎴</span>
-          <span>💬</span>
-          <span>👤</span>
+          <div className="relative z-20 flex h-[calc(100%-44px)] flex-col px-4 pb-3">
+            <div className="mb-3 flex items-center justify-between">
+              <EmbirLogo size="sm" />
+              <button className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[11px] font-semibold text-white/65">
+                Paris
+              </button>
+            </div>
+
+            <div className="relative min-h-0 flex-1 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-tr from-[#171a20] via-[#24182e] to-[#ff5e36]/30 shadow-2xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_16%,rgba(255,163,51,0.36),transparent_30%),radial-gradient(circle_at_22%_72%,rgba(255,31,90,0.28),transparent_36%)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/28 to-transparent" />
+
+              <span className="absolute left-3 top-3 rounded-full bg-black/45 px-3 py-1 text-[11px] font-semibold tracking-wide text-white/78 backdrop-blur-md">
+                📍 À 1.4 km
+              </span>
+              <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white/72 backdrop-blur-md">
+                fondateur
+              </span>
+
+              <div className="absolute inset-x-0 bottom-0 p-4 pt-20">
+                <div className="rounded-[26px] border border-white/10 bg-black/38 p-4 backdrop-blur-xl">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl font-black tracking-[-0.03em] text-white">Lucas, 26</h3>
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
+                  </div>
+                  <p className="mt-1 text-xs text-white/58">Paris · Créateur de contenu</p>
+                  <p className="mt-2 text-xs italic text-white/44">
+                    “Boire un verre ce soir dans le Marais ?”
+                  </p>
+
+                  <div className="mt-4 flex justify-center gap-4">
+                    <button className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/8 text-white/55 transition-transform hover:scale-105" aria-label="Passer">
+                      ✕
+                    </button>
+                    <button className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] font-bold text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Allumer">
+                      🔥
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-3 flex items-center justify-around rounded-full border border-white/8 bg-white/[0.035] px-5 py-3 text-lg text-white/30">
+              <span className="text-[#ff5e36]">🎴</span>
+              <span>💬</span>
+              <span>👤</span>
+            </div>
+            <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-white/32" />
+          </div>
         </div>
       </div>
     </div>
