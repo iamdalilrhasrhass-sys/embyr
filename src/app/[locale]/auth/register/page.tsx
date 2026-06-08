@@ -4,11 +4,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import TiltCard from "@/components/motion/TiltCard";
+import EmbyrLogo from "@/components/brand/EmbirLogo";
 
 export default function Register() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const refParam = searchParams.get("ref") || "";
+  const sourceParam = searchParams.get("source") || "";
+  const isParisFounder = sourceParam.includes("paris");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -88,8 +91,38 @@ export default function Register() {
           <div className="glass-premium w-full p-8 md:p-10 rounded-[2.5rem] relative overflow-hidden border border-[var(--color-premium-rose)]/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--color-premium-rose)]/10 rounded-full blur-[50px]"></div>
             
-            <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">Rejoindre <span className="text-gradient">Embyr</span></h1>
-            <p className="text-[var(--color-premium-gray)] mb-8 font-medium">L'élégance et la confidentialité.</p>
+            <div className="mb-7 flex justify-center">
+              <EmbyrLogo size="md" />
+            </div>
+
+            {isParisFounder && (
+              <div className="mb-5 rounded-2xl border border-[#ff5e36]/25 bg-[#ff5e36]/10 px-4 py-3 text-center text-sm font-semibold text-[#ffa333]">
+                Paris · accès membre fondateur
+              </div>
+            )}
+
+            <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">
+              {isParisFounder ? (
+                <>
+                  Rejoindre les <span className="text-gradient">100 fondateurs</span>
+                </>
+              ) : (
+                <>
+                  Rejoindre <span className="text-gradient">embir.xyz</span>
+                </>
+              )}
+            </h1>
+            <p className="text-[var(--color-premium-gray)] mb-6 font-medium">
+              {isParisFounder
+                ? "Crée ton profil réel pour aider Embir à lancer sa première communauté active à Paris."
+                : "Gratuit au lancement. Pas de pubs, pas de faux profils, pas de paywall pour discuter."}
+            </p>
+
+            <div className="mb-8 grid grid-cols-3 gap-2 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-white/45">
+              <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-2 py-3">18+</div>
+              <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-2 py-3">Gratuit</div>
+              <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-2 py-3">Paris</div>
+            </div>
             
             {error && (
               <div className="bg-red-500/10 border border-red-500/30 text-red-400 p-4 rounded-xl mb-6 text-sm font-medium backdrop-blur-md">
@@ -174,7 +207,7 @@ export default function Register() {
                     </svg>
                   </div>
                   <span className="text-sm text-gray-300 group-hover:text-white transition-colors leading-relaxed">
-                    Embyr est réservé aux personnes majeures. En créant un compte, vous certifiez avoir 18 ans ou plus.
+                    Embir est réservé aux personnes majeures. En créant un compte, vous certifiez avoir 18 ans ou plus.
                   </span>
                 </label>
                 
@@ -201,12 +234,15 @@ export default function Register() {
                 disabled={loading}
                 className="w-full bg-gradient-premium text-white font-bold text-lg py-4 rounded-2xl hover:shadow-[0_0_20px_rgba(244,63,143,0.4)] transition-all disabled:opacity-50 mt-4 premium-glow hover:scale-[1.02]"
               >
-                {loading ? "Création..." : "Créer mon compte"}
+                {loading ? "Création..." : isParisFounder ? "Créer mon profil fondateur" : "Créer mon compte gratuit"}
               </button>
             </form>
 
             <p className="text-center mt-8 text-sm text-gray-400 font-medium">
               Déjà un compte ? <Link href="/auth/login" className="text-[var(--color-premium-rose)] hover:text-white transition-colors font-bold ml-1">Se connecter</Link>
+            </p>
+            <p className="mt-4 text-center text-xs text-white/25">
+              Tu viens de la campagne Paris ? <Link href="/paris" className="text-[#ffa333]/80 hover:text-[#ffa333]">Retour au manifeste fondateur</Link>
             </p>
           </div>
         </TiltCard>

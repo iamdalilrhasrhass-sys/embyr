@@ -1,5 +1,5 @@
 import Link from "next/link";
-import EmbyrLogo from "@/components/brand/EmbyrLogo";
+import EmbyrLogo from "@/components/brand/EmbirLogo";
 
 export default function Footer() {
   return (
@@ -14,7 +14,8 @@ export default function Footer() {
             </span>
             <p className="mt-4 text-sm text-[var(--color-premium-gray)] leading-relaxed">
               App de rencontre gay nouvelle génération. Gratuite pendant
-              sa phase de lancement. Profils réels, messagerie gratuite.
+              sa phase de lancement. Paris d&apos;abord, profils réels,
+              messagerie gratuite.
             </p>
             <p className="mt-4 text-xs font-bold text-red-400">18+ UNIQUEMENT</p>
           </div>
@@ -22,8 +23,10 @@ export default function Footer() {
             <h3 className="text-sm font-semibold tracking-wider uppercase mb-4 text-white">Navigation</h3>
             <ul className="space-y-2 text-sm text-[var(--color-premium-gray)]">
               <li><Link href="/" className="hover:text-cyan-400">Accueil</Link></li>
+              <li><Link href="/paris" className="hover:text-cyan-400">100 fondateurs Paris</Link></li>
+              <li><Link href="/about" className="hover:text-cyan-400">À propos</Link></li>
               <li><Link href="/membres" className="hover:text-cyan-400">Membres</Link></li>
-              <li><Link href="/premium" className="hover:text-cyan-400">Premium bientôt</Link></li>
+              <li><Link href="/premium" className="hover:text-cyan-400">Premium</Link></li>
             </ul>
           </div>
           <div>
@@ -44,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-white/5 text-center text-xs text-[var(--color-premium-gray)] flex flex-col md:flex-row justify-between items-center gap-2">
-          <p>© {new Date().getFullYear()} Embyr. Tous droits réservés.</p>
+          <p>© 2026 embir.xyz. Tous droits réservés.</p>
           <div className="flex items-center gap-3">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/60" />
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-400/60" />

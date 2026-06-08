@@ -1,5 +1,5 @@
 /**
- * SMS Service for Embyr
+ * SMS Service for embir.xyz
  * Uses Twilio when configured, falls back to console.log in dev
  */
 
@@ -42,7 +42,7 @@ export async function sendSmsCode(phone: string): Promise<{ success: boolean; co
 
   try {
     const message = await twilioClient.messages.create({
-      body: `Embyr : ton code de vérification est ${code}. Il expire dans 5 minutes.`,
+      body: `embir.xyz : ton code de vérification est ${code}. Il expire dans 5 minutes.`,
       from: TWILIO_PHONE_NUMBER,
       to: formattedPhone,
     });

@@ -11,16 +11,16 @@ export default function PremiumPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="mb-4 inline-flex rounded-full border border-purple-400/20 bg-purple-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-purple-300">
-              ⭐ Premium bientôt
+            <div className="mb-4 inline-flex rounded-full border border-[#ff5e36]/25 bg-[#ff5e36]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ffa333]">
+              🔥 Fondateurs d&apos;abord
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4"
-              style={{ background: "linear-gradient(135deg, #E2E8F0 60%, #A78BFA 80%, #06B6D4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Premium arrive bientôt
+              style={{ background: "linear-gradient(135deg, #FFFFFF 55%, #ff5e36 78%, #ffa333 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Gratuit pendant le lancement
             </h1>
             <p className="text-white/50 max-w-xl mx-auto text-lg">
-              Pendant la phase de lancement, Embyr donne accès gratuitement aux
-              fonctionnalités essentielles pour permettre à la communauté de grandir.
+              Avant de vendre du Premium, embir.xyz doit réussir le plus important :
+              créer une vraie communauté active à Paris.
             </p>
           </div>
 
@@ -34,16 +34,16 @@ export default function PremiumPage() {
                   Tu peux créer ton profil, découvrir les membres et utiliser les
                   fonctions essentielles gratuitement pendant la phase de lancement.
                 </p>
-                <Link href="/auth/register" className="inline-block mt-4 px-6 py-2.5 rounded-xl text-sm font-semibold text-white"
-                  style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}>
-                  Créer mon profil gratuitement
+                <Link href="/paris" className="inline-block mt-4 px-6 py-2.5 rounded-xl text-sm font-semibold text-white"
+                  style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
+                  Rejoindre les fondateurs Paris
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Avantages Premium à venir */}
-          <h2 className="text-2xl font-bold text-white mb-6">Avantages Premium à venir</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">Ce qui restera précieux plus tard</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {[
               { title: "Boost de profil", desc: "Plus de visibilité dans les résultats", icon: "🚀" },
@@ -70,9 +70,12 @@ export default function PremiumPage() {
               <div>
                 <h2 className="text-xl font-bold text-white mb-2">Membres fondateurs</h2>
                 <p className="text-white/50">
-                  Les premiers membres actifs pourront recevoir des avantages Premium
-                  offerts lors du lancement des options payantes.
+                  Les premiers profils réels à Paris auront un statut fondateur.
+                  C&apos;est cette base qui décidera quoi construire avant toute option payante.
                 </p>
+                <Link href="/paris" className="mt-4 inline-flex rounded-xl border border-amber-500/20 px-5 py-2.5 text-sm font-semibold text-amber-200 hover:bg-amber-500/10">
+                  Voir la campagne Paris
+                </Link>
               </div>
             </div>
           </div>

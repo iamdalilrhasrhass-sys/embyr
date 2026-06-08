@@ -54,13 +54,13 @@ export default function MembresPage() {
           {/* Header */}
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-1" style={{
-              background: "linear-gradient(135deg, #E2E8F0 60%, #06B6D4 80%, #6366F1 100%)",
+              background: "linear-gradient(135deg, #E2E8F0 55%, #ff5e36 82%, #ffa333 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             }}>
               Membres
             </h1>
             <p className="text-white/30 text-sm">
-              {profiles.length} profil{profiles.length !== 1 ? "s" : ""} à découvrir
+              {profiles.length} profil{profiles.length !== 1 ? "s" : ""} à découvrir · Paris d&apos;abord
             </p>
           </div>
 
@@ -68,11 +68,14 @@ export default function MembresPage() {
           {!isPremium && !loading && (
             <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-green-500/10 bg-green-500/[0.02] backdrop-blur-sm">
               <span className="text-white/50">
-                🎁 Accès gratuit au lancement.{" "}
-                <span className="text-green-400/80">
-                  Tous les profils sont visibles.
+                🔥 Accès gratuit au lancement.{" "}
+                <span className="text-[#ffa333]/90">
+                  Invite des vrais profils Paris / IDF pour densifier la communauté.
                 </span>
               </span>
+              <Link href="/paris" className="ml-2 text-[#ffa333] underline underline-offset-4 hover:text-white">
+                Voir la campagne
+              </Link>
             </div>
           )}
 
@@ -150,15 +153,21 @@ export default function MembresPage() {
               <p className="text-white/40 max-w-md mx-auto">
                 {hasFilters
                   ? "Aucun profil ne correspond à tes critères. Élargis ta recherche."
-                  : "Complète ton profil pour apparaître dans la communauté et découvrir les nouveaux membres dès leur arrivée."
+                  : "La priorité est simple : de vrais profils à Paris. Complète ton profil, puis invite 2 ou 3 personnes fiables."
                 }
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {!hasFilters && (
                   <Link href="/dashboard/profile"
                     className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white"
-                    style={{ background: "linear-gradient(135deg, #06B6D4, #6366F1)" }}>
+                    style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
                     Compléter mon profil
+                  </Link>
+                )}
+                {!hasFilters && (
+                  <Link href="/paris"
+                    className="px-5 py-2.5 rounded-xl text-sm font-semibold border border-[#ff5e36]/20 text-[#ffa333] hover:bg-[#ff5e36]/10 transition-colors">
+                    Inviter les fondateurs
                   </Link>
                 )}
                 {hasFilters && (

@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
-import EmbyrLogo from "@/components/brand/EmbyrLogo";
+import EmbyrLogo from "@/components/brand/EmbirLogo";
 import { useState, useEffect } from "react";
 import { isFreeNightAccess } from "@/lib/freeAccess";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
   const [isFree, setIsFree] = useState(false);
@@ -22,8 +23,10 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   const navLinks = [
+    { href: "/paris", label: "Paris" },
+    { href: "/about", label: "À propos" },
     { href: "/membres", label: "Membres" },
-    { href: "/premium", label: "Premium bientôt" },
+    { href: "/premium", label: "Premium" },
     { href: "/auth/login", label: "Connexion" },
   ];
 
@@ -43,12 +46,15 @@ export default function Navbar() {
 
           {/* Desktop */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <Link href="/membres" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium">Membres</Link>
-              <Link href="/premium" className="hover:text-purple-400 text-gray-300 transition-colors px-3 py-2 rounded-md font-medium">Premium bientôt</Link>
-              <Link href="/auth/login" className="hover:text-white text-gray-300 transition-colors px-3 py-2 font-medium">Connexion</Link>
-              <Link href="/auth/register" className="emb-button-primary text-sm px-5 py-2.5">
-                Créer un compte gratuit
+            <div className="ml-10 flex items-baseline space-x-4">
+              <Link href="/paris" className="hover:text-[#d4a574] text-[#e8c4a2] transition-colors px-3 py-2 rounded-md font-semibold text-sm">Paris</Link>
+              <Link href="/about" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">À propos</Link>
+              <Link href="/membres" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Membres</Link>
+              <Link href="/premium" className="hover:text-purple-400 text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Premium</Link>
+              <Link href="/auth/login" className="hover:text-white text-gray-300 transition-colors px-3 py-2 font-medium text-sm">Connexion</Link>
+              <LanguageSwitcher />
+              <Link href="/paris" className="emb-button-primary text-sm px-5 py-2.5">
+                Rejoindre Paris
               </Link>
             </div>
           </div>
@@ -74,12 +80,15 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <div className="flex gap-4 mt-4">
+          <div className="mt-4">
+            <LanguageSwitcher />
+          </div>
+          <div className="flex gap-4 mt-2">
             <Link href="/dashboard" onClick={closeMenu} className="glass-premium px-8 py-4 rounded-full text-lg font-bold border border-white/20">
               Mon compte
             </Link>
             <Link href="/auth/register" onClick={closeMenu} className="emb-button-primary text-lg px-8 py-4 rounded-full">
-              S&apos;inscrire gratuitement
+              Rejoindre les fondateurs
             </Link>
           </div>
         </div>

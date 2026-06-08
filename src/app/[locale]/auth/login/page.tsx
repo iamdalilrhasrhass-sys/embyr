@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import TiltCard from "@/components/motion/TiltCard";
+import EmbyrLogo from "@/components/brand/EmbirLogo";
 
 export default function Login() {
   const router = useRouter();
@@ -49,8 +50,11 @@ export default function Login() {
           <div className="glass-premium w-full p-8 md:p-10 rounded-[2.5rem] relative overflow-hidden border border-[var(--color-premium-rose)]/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-premium opacity-10 rounded-full blur-[50px]"></div>
             
+            <div className="mb-7 flex justify-center">
+              <EmbyrLogo size="md" />
+            </div>
             <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">Bon <span className="text-gradient">retour</span></h1>
-            <p className="text-[var(--color-premium-gray)] mb-8 font-medium">Connectez-vous à votre espace privé.</p>
+            <p className="text-[var(--color-premium-gray)] mb-8 font-medium">Connecte-toi à ton espace embir.xyz.</p>
             
             {error && (
               <div className="bg-red-500/10 border border-red-500/30 text-red-400 p-4 rounded-xl mb-6 text-sm font-medium backdrop-blur-md">
@@ -95,7 +99,7 @@ export default function Login() {
             </form>
 
             <p className="text-center mt-8 text-sm text-gray-400 font-medium">
-              Pas encore de compte ? <Link href="/auth/register" className="text-[var(--color-premium-rose)] hover:text-white transition-colors font-bold ml-1">S'inscrire</Link>
+              Pas encore de compte ? <Link href="/paris" className="text-[var(--color-premium-rose)] hover:text-white transition-colors font-bold ml-1">Rejoindre les fondateurs</Link>
             </p>
           </div>
         </TiltCard>
