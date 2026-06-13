@@ -1,6 +1,7 @@
 import EmbirLogo from "@/components/brand/EmbirLogo";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import AuroraBackground from "@/components/motion/AuroraBackground";
+import SchemaOrg from "@/components/seo/SchemaOrg";
 import Link from "next/link";
 
 // ISR: pre-render at build, revalidate every hour for instant subsequent loads
@@ -141,6 +142,7 @@ function PhonePreview() {
 export default function Home() {
   return (
     <main className="emb-page">
+      <SchemaOrg />
       {/* ───── HERO ───── */}
       <section className="relative flex min-h-[96vh] items-center overflow-hidden px-4 pt-28 pb-20 sm:px-6 lg:px-8">
         <AuroraBackground variant="embir" />
