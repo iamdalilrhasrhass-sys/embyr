@@ -1,54 +1,59 @@
-# Embir 🏳️‍🌈 — Alternative gratuite à Grindr
+# Embir — Free Gay Dating App
 
-**Des rencontres entre hommes. Gratuitement.**
+**Meet men. No ads. No paywalls.**
 
-👉 **[embir.xyz](https://embir.xyz)** — Crée ton profil gratuitement
+[embir.xyz](https://embir.xyz) — Create your free profile
 
 ---
 
-## Pourquoi Embir ?
+## Why Embir
 
-Les applis de rencontre gay sont devenues des machines à fric :
+Gay dating apps have become money extraction machines. Unlimited swipes, unlocked messages, no ads — features that should be standard are locked behind €15-30/month subscriptions.
 
-| App | Prix mensuel | Pubs | Messages gratuits |
-|-----|:-----------:|:---:|:-----------------:|
-| Grindr | 30€/mois | ❌ 3/min | Limité |
-| Tinder Gay | 25€/mois | ❌ | Limité |
-| Scruff | 20€/mois | ❌ | Limité |
-| **Embir** | **GRATUIT** | **✅ Zéro** | **Illimités** |
+Embir breaks this pattern.
 
-**Embir casse le moule.** 100% gratuit au lancement. Premium bientôt à **5x moins cher** que Grindr.
+| Feature | Grindr | Tinder | Scruff | Embir |
+|---------|:------:|:------:|:------:|:-----:|
+| Monthly price | ~€15 | ~€25 | ~€20 | Free |
+| Ads | Yes | Yes | Yes | Zero |
+| Free messages | Limited | Limited | Limited | Unlimited |
+| Profile verification | Optional | Optional | Optional | Mandatory |
+| AI matching | No | Yes | No | DeepSeek |
+| Languages | 10+ | 40+ | 10+ | 25+ |
 
-## Fonctionnalités
+## Features
 
-🔥 **100% gratuit** — tout débloqué, zéro paywall
-🌍 **25 langues** — traduction auto des messages intégrée
-🛡️ **Safe** — pas de dick pics sur la page d'accueil
-🏙️ **69 pages villes** — trouve des mecs près de chez toi
-🎯 **Quiz viral** — "Quel mec gay es-tu ?"
-📝 **Blog SEO** — 17 articles, 750+ mots chacun
+- **100% free at launch** — everything unlocked, zero paywalls
+- **25 languages** — built-in message translation
+- **Verified profiles** — mandatory selfie check, no catfish
+- **AI matching** — DeepSeek analyzes compatibility
+- **Zero toxicity** — human + AI moderation
+- **Privacy-first** — email signup only, no Facebook/Google login required
+- **70+ city pages** — find men near you across Europe
+
+## SEO Pages
+
+- [Gay dating Paris](https://embir.xyz/rencontre-gay/paris)
+- [Gay dating London](https://embir.xyz/rencontre-gay/london)
+- [Gay dating Berlin](https://embir.xyz/rencontre-gay/berlin)
+- [Gay dating New York](https://embir.xyz/rencontre-gay/new-york)
+- [Gay dating Barcelona](https://embir.xyz/rencontre-gay/barcelona)
+- [Gay dating Amsterdam](https://embir.xyz/rencontre-gay/amsterdam)
+- [Gay dating Tokyo](https://embir.xyz/rencontre-gay/tokyo)
+
+## Blog
+
+- [Free Grindr Alternatives 2026](https://embir.xyz/blog/free-grindr-alternatives-2026)
+- [Best Free Gay Dating Apps 2026](https://embir.xyz/blog/best-free-gay-dating-apps-2026)
+- [Gay Dating Safety Rules](https://embir.xyz/blog/gay-dating-safety-rules)
+- [How to Flirt With a Guy](https://embir.xyz/blog/how-to-flirt-with-guys)
+- [First Gay Date Tips](https://embir.xyz/blog/first-gay-date-tips)
+- [More articles →](https://embir.xyz/blog)
 
 ## Tech Stack
 
-- **Next.js 16** (App Router, Turbopack)
-- **PostgreSQL** + Prisma ORM
-- **DeepSeek AI** — traduction auto, features intelligentes
-- **25 locales** (next-intl)
-- **Design system Dark Warm** — rose/amber/purple gradient
-
-## Déploiement
-
-```bash
-npm install
-npm run build
-pm2 restart embyr-web --update-env
-```
-
-## Réseaux
-
-- [Site web](https://embir.xyz)
-- [GitHub](https://github.com/iamdalilrhasrhass-sys/embyr)
+Next.js 16 · TypeScript · Prisma · PostgreSQL · DeepSeek AI · Stripe
 
 ---
 
-*Construit avec ❤️ pour la communauté gay. Pas pour les VC.*
+Built from real frustration with existing dating apps. Free during founding member phase. No venture capital. No data selling.
