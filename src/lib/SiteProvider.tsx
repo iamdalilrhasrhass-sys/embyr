@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, ReactNode } from "react";
 
-export type SiteName = "femynia" | "embyr";
+export type SiteName = "femynia" | "embir";
 
 interface SiteContextValue {
   site: SiteName;
@@ -10,7 +10,7 @@ interface SiteContextValue {
 }
 
 const SiteContext = createContext<SiteContextValue>({
-  site: "embyr",
+  site: "embir",
   siteId: 2,
   partnerSites: [],
 });

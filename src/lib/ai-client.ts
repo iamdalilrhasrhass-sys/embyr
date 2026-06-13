@@ -1,6 +1,6 @@
 /**
  * Hermes AI Client — DeepSeek V4 Pro
- * Moteur de toutes les fonctionnalités IA d'Embyr
+ * Moteur de toutes les fonctionnalités IA d'Embir
  */
 const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "sk-6877182a9be345ecb73806940a27d0c8";
 const DEEPSEEK_BASE_URL = process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com/v1";
@@ -15,7 +15,7 @@ export async function hermesAI(prompt: string, system?: string): Promise<string>
     body: JSON.stringify({
       model: "deepseek-chat",
       messages: [
-        { role: "system", content: system || "Tu es Hermes, l'IA de Embyr.xyz, une app de rencontre gay nouvelle génération. Tu es provocateur, expert en psychologie sociale, drôle et incisif. Tu réponds en français." },
+        { role: "system", content: system || "Tu es Hermes, l'IA de Embir.xyz, une app de rencontre gay nouvelle génération. Tu es provocateur, expert en psychologie sociale, drôle et incisif. Tu réponds en français." },
         { role: "user", content: prompt },
       ],
       max_tokens: 800,

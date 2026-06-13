@@ -158,13 +158,13 @@ function generateSignature(payload: Record<string, any>, secret: string): string
   return hmac.digest("hex");
 }
 
-// Mapping des plans Embyr vers Allopass
+// Mapping des plans Embir vers Allopass
 export const ALLOPASS_PLANS: Record<string, { amount: number; description: string }> = {
-  "decouverte_24h":  { amount: 249,  description: "Découverte 24h - Embyr" },
-  "premium_1w":      { amount: 499,  description: "Premium 1 semaine - Embyr" },
-  "premium_1m":      { amount: 1499, description: "Premium 1 mois - Embyr" },
-  "premium_3m":      { amount: 2999, description: "Premium 3 mois - Embyr" },
-  "premium_12m":     { amount: 4999, description: "Premium 12 mois - Embyr" },
-  "boost_24h":       { amount: 99,   description: "Boost profil 24h - Embyr" },
-  "highlight_7d":    { amount: 6999, description: "VIP 1 an - Embyr" },
+  "decouverte_24h":  { amount: 249,  description: "Découverte 24h - Embir" },
+  "premium_1w":      { amount: 499,  description: "Premium 1 semaine - Embir" },
+  "premium_1m":      { amount: 1499, description: "Premium 1 mois - Embir" },
+  "premium_3m":      { amount: 2999, description: "Premium 3 mois - Embir" },
+  "premium_12m":     { amount: 4999, description: "Premium 12 mois - Embir" },
+  "boost_24h":       { amount: 99,   description: "Boost profil 24h - Embir" },
+  "highlight_7d":    { amount: 6999, description: "VIP 1 an - Embir" },
 };

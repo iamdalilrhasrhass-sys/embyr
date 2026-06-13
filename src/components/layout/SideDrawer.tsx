@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import EmbyrAvatar from "@/components/embyr/EmbyrAvatar";
-import EmbyrBadge from "@/components/embyr/EmbyrBadge";
+import EmbirAvatar from "@/components/embir/EmbirAvatar";
+import EmbirBadge from "@/components/embir/EmbirBadge";
 import EmbirLogo from "@/components/brand/EmbirLogo";
 
 const NAV_SECTIONS = [
@@ -71,9 +71,9 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
       >
         {/* Header */}
         <div className="p-5 flex flex-col items-center border-b border-[var(--eb-border-soft)]">
-          <EmbyrAvatar name="Membre" size={96} isPremium />
+          <EmbirAvatar name="Membre" size={96} isPremium />
           <EmbirLogo size="sm" className="mt-4" />
-          <EmbyrBadge variant="online">En ligne</EmbyrBadge>
+          <EmbirBadge variant="online">En ligne</EmbirBadge>
         </div>
 
         {/* Scrollable nav */}

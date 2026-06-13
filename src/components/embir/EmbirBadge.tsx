@@ -6,7 +6,7 @@ const BADGE_COLORS: Record<BadgeVariant, string> = {
   new: "bg-[var(--eb-accent)]",
 };
 
-export default function EmbyrBadge({ variant = "new", children }: { variant?: BadgeVariant; children: React.ReactNode }) {
+export default function EmbirBadge({ variant = "new", children }: { variant?: BadgeVariant; children: React.ReactNode }) {
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded-[var(--eb-radius-badge)] text-[10px] font-medium text-white ${BADGE_COLORS[variant]}`}>
       {children}

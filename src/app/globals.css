@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════
-   EMBYR — IDENTITÉ VISUELLE
+   EMBIR — IDENTITÉ VISUELLE
    Warm editorial — amber, copper, midnight dark
    Palette : deep black, warm amber/copper, soft rose
    ═══════════════════════════════════════════ */
@@ -100,7 +100,7 @@ body {
 }
 
 
-/* ═══════════════ EMBYR NATIVE CLASSES ═══════════════ */
+/* ═══════════════ EMBIR NATIVE CLASSES ═══════════════ */
 .emb-page {
   min-height: 100vh;
   overflow-x: hidden;
@@ -206,7 +206,7 @@ body {
 }
 
 
-/* ── AURORA EMBYR — Angulaire, sharp, électrique ── */
+/* ── AURORA EMBIR — Angulaire, sharp, électrique ── */
 .emb-aurora {
   position: relative;
   overflow: hidden;
@@ -238,7 +238,7 @@ body {
   100% { transform: rotate(360deg) scale(1); }
 }
 
-/* ── GRILLE GÉOMÉTRIQUE EMBYR ── */
+/* ── GRILLE GÉOMÉTRIQUE EMBIR ── */
 .emb-grid {
   position: absolute;
   inset: 0;
@@ -249,7 +249,7 @@ body {
   background-size: 60px 60px;
 }
 
-/* ── DIAMANTS EMBYR ── */
+/* ── DIAMANTS EMBIR ── */
 .emb-diamond {
   position: absolute;
   width: 12px;
@@ -265,7 +265,7 @@ body {
   50% { opacity: 0.8; transform: rotate(45deg) scale(1.3); }
 }
 
-/* ── CHAÎNES / CONNEXIONS EMBYR ── */
+/* ── CHAÎNES / CONNEXIONS EMBIR ── */
 .emb-chain {
   position: absolute;
   height: 1px;
@@ -278,7 +278,7 @@ body {
   50% { opacity: 0.6; transform: scaleX(1.2); }
 }
 
-/* ── ÉCLAIR / LIGHTNING EMBYR ── */
+/* ── ÉCLAIR / LIGHTNING EMBIR ── */
 .emb-bolt {
   position: absolute;
   width: 2px;
@@ -293,7 +293,7 @@ body {
   50% { opacity: 0.5; transform: skewX(-15deg) scaleY(1.2); }
 }
 
-/* ── VERRE EMBYR — angulaire, sharp edges ── */
+/* ── VERRE EMBIR — angulaire, sharp edges ── */
 .emb-glass {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,94,54,0.08);
@@ -308,7 +308,7 @@ body {
   box-shadow: 0 0 30px rgba(255,94,54,0.04);
 }
 
-/* ── CARTES EMBYR — bordures nettes, coins moins arrondis ── */
+/* ── CARTES EMBIR — bordures nettes, coins moins arrondis ── */
 .emb-card {
   border-radius: 16px;
   background: rgba(255,255,255,0.02);
@@ -321,7 +321,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ── BOUTON EMBYR ── */
+/* ── BOUTON EMBIR ── */
 .emb-btn {
   position: relative;
   border-radius: 14px;
@@ -352,7 +352,7 @@ body {
   opacity: 0.5;
 }
 
-/* ── BOUTON EMBYR OUTLINE ── */
+/* ── BOUTON EMBIR OUTLINE ── */
 .emb-btn-outline {
   border-radius: 14px;
   padding: 12px 28px;
@@ -369,7 +369,7 @@ body {
   background: rgba(255,94,54,0.05);
 }
 
-/* ── TEXTES EMBYR ── */
+/* ── TEXTES EMBIR ── */
 .emb-text-gradient {
   background: linear-gradient(135deg, #ff1f5a 20%, #ff5e36 52%, #ffa333 86%);
   -webkit-background-clip: text;
@@ -383,7 +383,7 @@ body {
   background-clip: text;
 }
 
-/* ── BADGE EMBYR ── */
+/* ── BADGE EMBIR ── */
 .emb-badge {
   display: inline-flex;
   align-items: center;
@@ -398,7 +398,7 @@ body {
   color: rgba(255,255,255,0.4);
 }
 
-/* ── BORDURE EMBYR FIERTÉ ── */
+/* ── BORDURE EMBIR FIERTÉ ── */
 .emb-pride-border {
   position: relative;
 }
@@ -413,13 +413,13 @@ body {
   border-radius: 2px 2px 0 0;
 }
 
-/* ── DIVISEUR EMBYR ── */
+/* ── DIVISEUR EMBIR ── */
 .emb-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255,31,90,0.18), rgba(255,94,54,0.18), transparent);
 }
 
-/* ── SCROLLBAR EMBYR ── */
+/* ── SCROLLBAR EMBIR ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255,94,54,0.22); border-radius: 2px; }

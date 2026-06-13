@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import EmbyrLogo from "@/components/brand/EmbirLogo";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 import { useState, useEffect } from "react";
 import { isFreeNightAccess } from "@/lib/freeAccess";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
             <Link href="/" className="shrink-0">
-              <EmbyrLogo size="md" showTagline />
+              <EmbirLogo size="md" showTagline />
             </Link>
             <span className="hidden lg:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.16em] bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/20">
               <span className="w-1.5 h-1.5 bg-[#ff5e36] rounded-full shadow-[0_0_12px_rgba(255,94,54,0.75)] mr-2"></span>

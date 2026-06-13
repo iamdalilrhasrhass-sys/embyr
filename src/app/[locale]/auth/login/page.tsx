@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import TiltCard from "@/components/motion/TiltCard";
-import EmbyrLogo from "@/components/brand/EmbirLogo";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 
 export default function Login() {
   const router = useRouter();
@@ -51,7 +51,7 @@ export default function Login() {
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-premium opacity-10 rounded-full blur-[50px]"></div>
             
             <div className="mb-7 flex justify-center">
-              <EmbyrLogo size="md" />
+              <EmbirLogo size="md" />
             </div>
             <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">Bon <span className="bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] bg-clip-text text-transparent">retour</span></h1>
             <p className="text-[var(--color-premium-gray)] mb-8 font-medium">Connecte-toi à ton espace embir.xyz.</p>

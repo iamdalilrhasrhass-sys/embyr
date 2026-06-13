@@ -1,5 +1,5 @@
 import Link from "next/link";
-import EmbyrLogo from "@/components/brand/EmbirLogo";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <EmbyrLogo size="sm" className="mb-2" />
+            <EmbirLogo size="sm" className="mb-2" />
             <p className="mt-4 text-sm text-[var(--color-premium-gray)] leading-relaxed">
               Next-gen gay dating app. Free during launch phase.
               Paris first, real profiles, free messaging.

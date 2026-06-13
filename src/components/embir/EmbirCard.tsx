@@ -1,4 +1,4 @@
-export default function EmbyrCard({
+export default function EmbirCard({
   children,
   className = "",
   hover = true,

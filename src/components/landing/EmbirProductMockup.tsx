@@ -2,7 +2,7 @@
 
 import EmbirLogo from "@/components/brand/EmbirLogo";
 
-export default function EmbyrProductMockup() {
+export default function EmbirProductMockup() {
   const profiles = [
     { name: 'Lucas', meta: 'Paris · actif', score: '94%' },
     { name: 'Rayan', meta: 'Marais · vérifié', score: '88%' },

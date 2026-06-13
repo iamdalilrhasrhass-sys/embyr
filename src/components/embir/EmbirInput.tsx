@@ -1,5 +1,5 @@
 "use client";
-export default function EmbyrInput({
+export default function EmbirInput({
   label, error, ...props
 }: {
   label?: string; error?: string;

@@ -1,11 +1,11 @@
 /* ═══════════════════════════════════════════════
-   EMBYR DESIGN TOKENS — Editorial, warm, premium
+   EMBIR DESIGN TOKENS — Editorial, warm, premium
    Palette : amber/copper, midnight deep, warm rose
    Typography : Playfair Display (serif) + Inter (sans)
-   Tous scopés sous [data-site="embyr"]
+   Tous scopés sous [data-site="embir"]
    ═══════════════════════════════════════════════ */
 
-[data-site="embyr"] {
+[data-site="embir"] {
   /* ── Surfaces ── */
   --eb-bg-base: #0a0614;
   --eb-bg-elev-1: #110d1a;
@@ -57,23 +57,23 @@
   --eb-font-mono: "Geist Mono", "JetBrains Mono", monospace;
 }
 
-/* ── Global Embyr styles ── */
-[data-site="embyr"] body {
+/* ── Global Embir styles ── */
+[data-site="embir"] body {
   background: var(--eb-bg-base);
   color: var(--eb-text-primary);
   font-family: var(--eb-font-body);
 }
 
-[data-site="embyr"] h1, [data-site="embyr"] h2, [data-site="embyr"] h3 {
+[data-site="embir"] h1, [data-site="embir"] h2, [data-site="embir"] h3 {
   font-family: var(--eb-font-display);
   letter-spacing: -0.02em;
 }
 
-[data-site="embyr"] .font-display {
+[data-site="embir"] .font-display {
   font-family: var(--eb-font-display);
 }
 
-[data-site="embyr"] .font-body {
+[data-site="embir"] .font-body {
   font-family: var(--eb-font-body);
 }
 

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Card3DTilt from "./Card3DTilt";
 
-export default function EmbyrProfileCard({
+export default function EmbirProfileCard({
   id, username, displayName, age, city, isPremium, isOnline, photoUrl,
 }: {
   id: string; username?: string; displayName?: string; age?: number; city?: string;

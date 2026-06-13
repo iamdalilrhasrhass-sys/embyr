@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import TiltCard from "@/components/motion/TiltCard";
-import EmbyrLogo from "@/components/brand/EmbirLogo";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 
 export default function Register() {
   const router = useRouter();
@@ -92,7 +92,7 @@ export default function Register() {
             <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--color-premium-rose)]/10 rounded-full blur-[50px]"></div>
             
             <div className="mb-7 flex justify-center">
-              <EmbyrLogo size="md" />
+              <EmbirLogo size="md" />
             </div>
 
             {isParisFounder && (

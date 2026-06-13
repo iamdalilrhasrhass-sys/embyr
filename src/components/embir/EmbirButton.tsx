@@ -9,7 +9,7 @@ const STYLES: Record<Variant, string> = {
   copper: "bg-[var(--eb-copper)] text-[var(--eb-text-primary)]",
 };
 
-export default function EmbyrButton({
+export default function EmbirButton({
   variant = "primary",
   children,
   className = "",

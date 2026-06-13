@@ -1,4 +1,4 @@
-export default function EmbyrAvatar({
+export default function EmbirAvatar({
   src, name, size = 48, isPremium, isOnline,
 }: {
   src?: string; name: string; size?: number; isPremium?: boolean; isOnline?: boolean;

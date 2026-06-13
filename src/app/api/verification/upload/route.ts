@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     const ext = file.name.split(".").pop() || "jpg";
     const filename = `${userId}_${randomBytes(4).toString("hex")}.${ext}`;
-    const uploadDir = "/root/embyr/uploads/verifications";
+    const uploadDir = "/root/embir/uploads/verifications";
     await mkdir(uploadDir, { recursive: true });
     const buffer = Buffer.from(await file.arrayBuffer());
     await writeFile(`${uploadDir}/${filename}`, buffer);

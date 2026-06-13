@@ -16,7 +16,7 @@ interface Blob {
   morphScale: number;
 }
 
-const EMBYR_BLOBS: Blob[] = [
+const EMBIR_BLOBS: Blob[] = [
   // Grand rose central-haut — cœur chaud
   { id: 1, x: '50%', y: '-10%', w: '50rem', h: '50rem', color: '#f43f5e', opacity: 0.22, blur: '120px', animDuration: 16, animDelay: 0, morphScale: 1.12 },
   // Amber sur la droite — chaleur
@@ -43,10 +43,10 @@ const FEMYNYA_BLOBS: Blob[] = [
 export default function AuroraBackground({
   variant = 'femynya',
 }: {
-  variant?: 'femynya' | 'embyr' | 'embir';
+  variant?: 'femynya' | 'embir';
 }) {
-  const blobs = variant === 'embyr' || variant === 'embir' ? EMBYR_BLOBS : FEMYNYA_BLOBS;
-  const isEmbyr = variant === 'embyr' || variant === 'embir';
+  const blobs = variant === 'embir' ? EMBIR_BLOBS : FEMYNYA_BLOBS;
+  const isEmbir = variant === 'embir';
 
   // Génère les keyframes inline pour chaque blob
   const blobStyles = useMemo(() => {
@@ -98,7 +98,7 @@ export default function AuroraBackground({
       />
 
       {/* Subtle grid — only Embyr */}
-      {isEmbyr && (
+      {isEmbir && (
         <div
           className="absolute inset-0 z-[1]"
           style={{
@@ -123,7 +123,7 @@ export default function AuroraBackground({
       />
 
       {/* Ligne d'horizon subtile — ligne lumineuse */}
-      {isEmbyr && (
+      {isEmbir && (
         <div
           className="absolute left-0 right-0 z-[3]"
           style={{

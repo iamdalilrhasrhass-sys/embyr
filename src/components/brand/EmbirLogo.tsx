@@ -1,6 +1,6 @@
 'use client';
 
-type EmbyrLogoProps = {
+type EmbirLogoProps = {
   size?: 'sm' | 'md' | 'lg';
   showText?: boolean;
   showTagline?: boolean;
@@ -19,12 +19,12 @@ const dotSizes = {
   lg: 'h-14 w-14',
 };
 
-export default function EmbyrLogo({
+export default function EmbirLogo({
   size = 'md',
   showText = true,
   showTagline,
   className = '',
-}: EmbyrLogoProps) {
+}: EmbirLogoProps) {
   const shouldShowTagline = showTagline ?? size === 'lg';
 
   if (!showText) {
