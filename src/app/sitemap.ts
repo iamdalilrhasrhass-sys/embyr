@@ -11,6 +11,13 @@ const blogSlugs = [
   "being-gay-and-lonely", "pride-month-history", "best-free-gay-dating-apps-2026",
   "best-gay-neighborhoods-france", "first-gay-date-tips", "successful-first-gay-date",
   "serious-relationship-vs-hookup", "gay-dating-safety", "gay-dating-safety-rules",
+  // Phase 3 articles
+  "dating-tips/authentic-gay-dating-profile-2026", "safety/online-dating-safety-guide",
+  "dating-tips/first-date-ideas-gay-men", "dating-tips/long-distance-gay-relationships",
+  "culture/coming-out-at-your-own-pace", "dating-tips/psychology-of-attraction-gay-men",
+  "culture/gay-dating-trends-2026", "safety/spot-catfish-scammers-dating-apps",
+  "dating-tips/building-confidence-shy-gay-men", "city-guides/best-lgbtq-friendly-cities-europe",
+  "culture/hookup-culture-vs-meaningful-connections", "dating-tips/difficult-conversations-gay-relationships",
 ];
 
 const cities = ["paris", "lyon", "marseille", "lille", "bordeaux", "toulouse", "nantes", "strasbourg", "montpellier", "nice", "london", "berlin", "new-york", "madrid", "barcelona", "amsterdam", "brussels", "tokyo", "sao-paulo", "bangkok"];
