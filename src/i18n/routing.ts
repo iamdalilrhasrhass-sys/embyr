@@ -7,7 +7,7 @@ export const routing = defineRouting({
     "ko", "ar", "hi", "tr", "pl", "sv", "da", "fi", "no", "th",
     "vi", "id", "ms", "ro", "uk"
   ],
-  defaultLocale: "fr",
+  defaultLocale: "en",
   localeDetection: true,
   localePrefix: "as-needed",
 });

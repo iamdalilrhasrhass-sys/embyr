@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const FEATURES = [
   {
-    title: "Selfie vérifié",
-    desc: "Chaque profil est authentifié. Fini les bots et les catfish. Des vrais mecs, des vraies rencontres.",
+    title: "Verified Selfie",
+    desc: "Every profile is authenticated. No more bots and catfish. Real guys, real connections.",
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -14,8 +14,8 @@ const FEATURES = [
     ),
   },
   {
-    title: "Gratuit au lancement",
-    desc: "Pendant le lancement, tout est gratuit : profils, messages, photos illimitées. Les fondateurs garderont un accès privilégié à vie.",
+    title: "Free At Launch",
+    desc: "During launch, everything is free: profiles, messages, unlimited photos. Founding members keep lifetime privileged access.",
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
@@ -23,8 +23,8 @@ const FEATURES = [
     ),
   },
   {
-    title: "IA pour matcher",
-    desc: "Notre IA DeepSeek analyse ta personnalité et te propose les mecs les plus compatibles. Pas de swipe aléatoire.",
+    title: "AI Matching",
+    desc: "Our DeepSeek AI analyzes your personality and matches you with the most compatible guys. No random swiping.",
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
@@ -32,8 +32,8 @@ const FEATURES = [
     ),
   },
   {
-    title: "Zéro toxicité",
-    desc: "Modération humaine + IA. Les comportements toxiques sont bannis immédiatement. Une communauté qui se respecte.",
+    title: "Zero Toxicity",
+    desc: "Human + AI moderation. Toxic behavior is banned instantly. A community that respects itself.",
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -43,23 +43,23 @@ const FEATURES = [
 ];
 
 const STATS = [
-  { value: "Gratuit", label: "Au lancement" },
-  { value: "7", label: "IA intelligentes" },
-  { value: "25+", label: "Langues" },
+  { value: "Free", label: "At launch" },
+  { value: "7", label: "Smart AIs" },
+  { value: "25+", label: "Languages" },
 ];
 
 const COMPARISONS = [
-  { feature: "Prix", grindr: "~15€/mois", embir: "Gratuit 🎉", winner: "embir" },
-  { feature: "Pubs", grindr: "Partout", embir: "Zéro", winner: "embir" },
-  { feature: "Swipes gratuits", grindr: "Limités", embir: "Illimités", winner: "embir" },
-  { feature: "Vérification", grindr: "Optionnelle", embir: "Obligatoire", winner: "embir" },
-  { feature: "IA Matching", grindr: "Non", embir: "DeepSeek", winner: "embir" },
-  { feature: "Messages", grindr: "Limités", embir: "Illimités", winner: "embir" },
+  { feature: "Price", grindr: "~€15/mo", embir: "Free 🎉", winner: "embir" },
+  { feature: "Ads", grindr: "Everywhere", embir: "Zero", winner: "embir" },
+  { feature: "Free Swipes", grindr: "Limited", embir: "Unlimited", winner: "embir" },
+  { feature: "Verification", grindr: "Optional", embir: "Mandatory", winner: "embir" },
+  { feature: "AI Matching", grindr: "No", embir: "DeepSeek", winner: "embir" },
+  { feature: "Messages", grindr: "Limited", embir: "Unlimited", winner: "embir" },
 ];
 
 function PhonePreview() {
   return (
-    <div className="relative mx-auto flex w-full max-w-[390px] justify-center lg:max-w-[430px]" aria-label="Aperçu iPhone de l'application embir.xyz">
+    <div className="relative mx-auto flex w-full max-w-[390px] justify-center lg:max-w-[430px]" aria-label="iPhone preview of the embir.xyz app">
       <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5e36]/20 blur-3xl" />
       <div className="absolute left-0 top-8 h-36 w-36 rounded-full bg-[#ff1f5a]/25 blur-2xl" />
       <div className="absolute bottom-8 right-2 h-44 w-44 rounded-full bg-[#ffa333]/18 blur-2xl" />
@@ -109,10 +109,10 @@ function PhonePreview() {
 
               <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/45 px-3 py-1 text-[11px] font-semibold tracking-wide text-white/78 backdrop-blur-md">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#ff5e36]" />
-                À 1.4 km
+                1.4 km away
               </span>
               <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white/72 backdrop-blur-md">
-                fondateur
+                founder
               </span>
 
               <div className="absolute inset-x-0 bottom-0 p-4 pt-20">
@@ -121,20 +121,20 @@ function PhonePreview() {
                     <h3 className="text-xl font-black tracking-[-0.03em] text-white">Lucas, 26</h3>
                     <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
                   </div>
-                  <p className="mt-1 text-xs text-white/58">Paris · Créateur de contenu</p>
+                  <p className="mt-1 text-xs text-white/58">Paris · Content creator</p>
                   <p className="mt-2 text-xs italic text-white/44">
-                    “Boire un verre ce soir dans le Marais ?”
+                    "Drinks tonight in the Marais?"
                   </p>
                   <div className="mt-3 inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold text-white/58">
-                    Compatibilité IA · 94%
+                    AI Compatibility · 94%
                   </div>
 
                   <div className="mt-4 flex justify-center gap-3">
-                    <button className="flex h-11 min-w-20 items-center justify-center rounded-full border border-white/10 bg-white/8 text-xs font-semibold uppercase tracking-[0.18em] text-white/55 transition-transform hover:scale-105" aria-label="Passer">
-                      Non
+                    <button className="flex h-11 min-w-20 items-center justify-center rounded-full border border-white/10 bg-white/8 text-xs font-semibold uppercase tracking-[0.18em] text-white/55 transition-transform hover:scale-105" aria-label="Pass">
+                      Nope
                     </button>
-                    <button className="flex h-11 min-w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Allumer">
-                      Allumer
+                    <button className="flex h-11 min-w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Spark">
+                      Spark
                     </button>
                   </div>
                 </div>
@@ -142,9 +142,9 @@ function PhonePreview() {
             </div>
 
             <div className="mt-3 flex items-center justify-around rounded-full border border-white/8 bg-white/[0.035] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/30">
-              <span className="text-[#ff5e36]">Profils</span>
+              <span className="text-[#ff5e36]">Profiles</span>
               <span>Messages</span>
-              <span>Moi</span>
+              <span>Me</span>
             </div>
             <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-white/32" />
           </div>
@@ -169,19 +169,19 @@ export default function Home() {
 
             <ScrollReveal delay={180}>
               <h1 className="font-serif text-5xl font-light leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl md:text-7xl lg:text-8xl">
-                Là où les regards
+                Where glances
                 <br />
                 <span className="bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] bg-clip-text text-transparent">
-                  s&apos;embrasent.
+                  ignite.
                 </span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={360}>
               <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/45 sm:text-xl lg:mx-0">
-                Une nouvelle app de rencontres entre hommes, pensée pour Paris,
-                avec profils vérifiés, messages gratuits au lancement, matching
-                intelligent et zéro bruit inutile.
+                A new dating app for men, designed for Paris,
+                with verified profiles, free messaging at launch, smart
+                matching, and zero unnecessary noise.
               </p>
             </ScrollReveal>
 
@@ -191,7 +191,7 @@ export default function Home() {
                   href="/paris"
                   className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] px-8 py-4 text-sm font-bold text-white shadow-[0_12px_36px_rgba(255,31,90,0.32)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_18px_46px_rgba(255,94,54,0.42)] sm:w-auto"
                 >
-                  <span>Rejoindre les 100 fondateurs</span>
+                  <span>Join the 100 founders</span>
                   <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -200,7 +200,7 @@ export default function Home() {
                   href="/auth/register"
                   className="inline-flex w-full items-center justify-center rounded-full border border-white/10 bg-white/[0.04] px-8 py-4 text-sm font-semibold text-white/72 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/[0.08] hover:text-white sm:w-auto"
                 >
-                  Créer un compte gratuit
+                  Create a free account
                 </Link>
               </div>
             </ScrollReveal>
@@ -222,7 +222,9 @@ export default function Home() {
           </div>
 
           <ScrollReveal delay={300}>
+            <div className="phone-preview-wrapper">
             <PhonePreview />
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -233,11 +235,11 @@ export default function Home() {
           <ScrollReveal>
             <div className="mb-16 text-center">
               <p className="font-mono text-xs font-medium tracking-[0.2em] text-[#d4a574]/60 uppercase">
-                Pourquoi Embir
+                Why Embir
               </p>
               <h2 className="mt-4 font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
-                Plus qu'une app,{" "}
-                <span className="text-[#d4a574]">une expérience.</span>
+                More than an app,{" "}
+                <span className="text-[#d4a574]">an experience.</span>
               </h2>
             </div>
           </ScrollReveal>
@@ -272,13 +274,13 @@ export default function Home() {
           <ScrollReveal>
             <div className="mb-16 text-center">
               <p className="font-mono text-xs font-medium tracking-[0.2em] text-[#d4a574]/60 uppercase">
-                La différence
+                The difference
               </p>
               <h2 className="mt-4 font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
                 Grindr vs <span className="text-[#d4a574]">Embir</span>
               </h2>
               <p className="mt-4 text-white/25 font-light">
-                Pourquoi payer pour ce qui devrait être gratuit
+                Why pay for what should be free
               </p>
             </div>
           </ScrollReveal>
@@ -308,7 +310,7 @@ export default function Home() {
                 href="/comparaison"
                 className="inline-flex items-center gap-2 text-sm font-light text-white/30 hover:text-[#d4a574] transition-colors"
               >
-                Comparaison détaillée
+                Detailed comparison
                 <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                 </svg>
@@ -318,7 +320,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───── FONDATEUR ───── */}
+      {/* ───── FOUNDER ───── */}
       <section className="relative py-32 px-4">
         <div className="mx-auto max-w-3xl">
           <ScrollReveal>
@@ -330,24 +332,24 @@ export default function Home() {
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d4a574]/20 bg-[#d4a574]/5 px-4 py-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574]" />
                   <span className="text-xs font-medium tracking-[0.15em] text-[#d4a574]/80 uppercase">
-                    Membre fondateur
+                    Founding member
                   </span>
                 </div>
 
                 <h2 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
-                  Les premiers auront{" "}
-                  <span className="text-[#d4a574]">tout</span>
+                  The first ones get{" "}
+                  <span className="text-[#d4a574]">everything</span>
                 </h2>
                 <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/30 font-light">
-                  Inscris-toi maintenant et obtiens le badge Fondateur à vie.
-                  Accès anticipé aux futures fonctionnalités premium — sans jamais payer.
+                  Sign up now and get the lifetime Founder badge.
+                  Early access to future premium features — without ever paying.
                 </p>
 
                 <Link
                   href="/auth/register"
                   className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-medium text-[#0a0614] transition-all duration-500 hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]"
                 >
-                  Devenir membre fondateur
+                  Become a founding member
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -358,19 +360,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───── CTA FINAL ───── */}
+      {/* ───── FINAL CTA ───── */}
       <section className="relative pb-32 px-4">
         <div className="mx-auto max-w-2xl text-center">
           <ScrollReveal>
             <h2 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
-              Prêt à rencontrer
+              Ready to meet
               <br />
-              <span className="text-[#d4a574]">des vrais mecs ?</span>
+              <span className="text-[#d4a574]">real guys?</span>
             </h2>
             <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-white/25 font-light">
-              Gratuit. Safe. Sans algorithme opaque.
+              Free. Safe. No opaque algorithm.
               <br />
-              Juste toi et les mecs qui te correspondent vraiment.
+              Just you and the guys who truly match you.
             </p>
 
             <div className="mt-10">
@@ -378,7 +380,7 @@ export default function Home() {
                 href="/auth/register"
                 className="group relative inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-medium text-[#0a0614] transition-all duration-500 hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]"
               >
-                <span>Créer mon profil</span>
+                <span>Create my profile</span>
                 <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
@@ -386,9 +388,9 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-xs text-white/15 font-light">
-              Déjà membre ?{" "}
+              Already a member?{" "}
               <Link href="/auth/login" className="text-[#d4a574]/60 hover:text-[#d4a574] underline underline-offset-4 transition-colors">
-                Connecte-toi
+                Log in
               </Link>
             </p>
           </ScrollReveal>

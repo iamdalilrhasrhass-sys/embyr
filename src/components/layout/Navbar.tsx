@@ -24,10 +24,10 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/paris", label: "Paris" },
-    { href: "/about", label: "À propos" },
-    { href: "/membres", label: "Membres" },
+    { href: "/about", label: "About" },
+    { href: "/membres", label: "Members" },
     { href: "/premium", label: "Premium" },
-    { href: "/auth/login", label: "Connexion" },
+    { href: "/auth/login", label: "Login" },
   ];
 
   return (
@@ -40,7 +40,7 @@ export default function Navbar() {
             </Link>
             <span className="hidden lg:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.16em] bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/20">
               <span className="w-1.5 h-1.5 bg-[#ff5e36] rounded-full shadow-[0_0_12px_rgba(255,94,54,0.75)] mr-2"></span>
-              Lancement gratuit
+              Free launch
             </span>
           </div>
 
@@ -48,13 +48,13 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link href="/paris" className="hover:text-[#ff5e36] text-[#ffa333] transition-colors px-3 py-2 rounded-md font-semibold text-sm">Paris</Link>
-              <Link href="/about" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">À propos</Link>
-              <Link href="/membres" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Membres</Link>
+              <Link href="/about" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">About</Link>
+              <Link href="/membres" className="hover:text-white text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Members</Link>
               <Link href="/premium" className="hover:text-[#ff5e36] text-gray-300 transition-colors px-3 py-2 rounded-md font-medium text-sm">Premium</Link>
-              <Link href="/auth/login" className="hover:text-white text-gray-300 transition-colors px-3 py-2 font-medium text-sm">Connexion</Link>
+              <Link href="/auth/login" className="hover:text-white text-gray-300 transition-colors px-3 py-2 font-medium text-sm">Login</Link>
               <LanguageSwitcher />
               <Link href="/paris" className="emb-button-primary text-sm px-5 py-2.5">
-                Rejoindre Paris
+                Join Paris
               </Link>
             </div>
           </div>
@@ -85,10 +85,10 @@ export default function Navbar() {
           </div>
           <div className="flex gap-4 mt-2">
             <Link href="/dashboard" onClick={closeMenu} className="glass-premium px-8 py-4 rounded-full text-lg font-bold border border-white/20">
-              Mon compte
+              My account
             </Link>
             <Link href="/auth/register" onClick={closeMenu} className="emb-button-primary text-lg px-8 py-4 rounded-full">
-              Rejoindre les fondateurs
+              Join the founders
             </Link>
           </div>
         </div>
