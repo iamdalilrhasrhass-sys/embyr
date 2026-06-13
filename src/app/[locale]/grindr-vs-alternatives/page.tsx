@@ -2,82 +2,52 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Grindr vs Alternatives 2026 — Le Vrai Comparatif Gratuit | Embir",
-  description: "Grindr ou une alternative ? Découvre le comparatif complet et gratuit des meilleures apps de rencontre gay en 2026. Embir, Tinder, Scruff, Romeo — on a tout testé pour toi.",
-  keywords: ["grindr alternative", "grindr vs", "meilleure app gay", "alternative grindr gratuite", "app rencontre gay 2026"],
+  title: "Grindr vs Alternatives — The Honest 2026 Comparison | Embir",
+  description: "Tired of Grindr's paywalls and ads? Compare Grindr against the best free gay dating alternatives in 2026. Real features, real prices, no bias.",
+  keywords: ["Grindr alternative", "gay app comparison", "free gay dating", "Grindr vs", "gay app no ads"],
   alternates: { canonical: "https://embir.xyz/grindr-vs-alternatives" },
 };
 
-const comparison = [
+const alternatives = [
   {
-    feature: "Gratuité",
-    embir: "✅ 100% gratuit",
-    grindr: "❌ Freemium (limité sans XTRA)",
-    romeo: "✅ Gratuit",
-    scruff: "❌ Freemium",
+    name: "Embir",
+    price: "Free forever",
+    ads: "None",
+    messaging: "Unlimited",
+    bestFor: "Real connections, no paywalls",
+    verdict: "The only truly free option.",
   },
   {
-    feature: "Pubs",
-    embir: "✅ Zéro pub",
-    grindr: "❌ Pubs intrusives",
-    romeo: "⚠️ Quelques pubs",
-    scruff: "❌ Pubs fréquentes",
+    name: "Scruff",
+    price: "Freemium (from $14.99/mo)",
+    ads: "Yes (free tier)",
+    messaging: "Limited on free tier",
+    bestFor: "Bears, otters, and community features",
+    verdict: "Good community, but paywalled.",
   },
   {
-    feature: "Messages illimités",
-    embir: "✅ Oui",
-    grindr: "❌ Limités gratuit",
-    romeo: "✅ Oui",
-    scruff: "✅ Oui",
+    name: "Romeo",
+    price: "Freemium (from $9.99/mo)",
+    ads: "Yes (free tier)",
+    messaging: "Limited on free tier",
+    bestFor: "European users, travel features",
+    verdict: "Strong in Europe, same paywall model.",
   },
   {
-    feature: "Multilingue",
-    embir: "✅ 25 langues",
-    grindr: "✅ 10+ langues",
-    romeo: "⚠️ 5 langues",
-    scruff: "⚠️ 10 langues",
+    name: "Tinder",
+    price: "Freemium (from $19.99/mo)",
+    ads: "Yes (free tier)",
+    messaging: "Match required + limited swipes",
+    bestFor: "Mainstream appeal, large userbase",
+    verdict: "Massive but not gay-focused. Paywalled hard.",
   },
   {
-    feature: "Traduction auto",
-    embir: "✅ Oui (IA)",
-    grindr: "❌ Non",
-    romeo: "❌ Non",
-    scruff: "❌ Non",
-  },
-  {
-    feature: "Mode privé",
-    embir: "✅ Gratuit",
-    grindr: "❌ Payant (Unlimited)",
-    romeo: "✅ Gratuit",
-    scruff: "❌ Payant (Pro)",
-  },
-  {
-    feature: "Profil vérifié",
-    embir: "✅ Photo + badge",
-    grindr: "⚠️ Basique",
-    romeo: "⚠️ Basique",
-    scruff: "⚠️ Basique",
-  },
-  {
-    feature: "Parrainage",
-    embir: "✅ Gagne des perks",
-    grindr: "❌ Non",
-    romeo: "❌ Non",
-    scruff: "❌ Non",
-  },
-  {
-    feature: "Design",
-    embir: " Premium sombre",
-    grindr: "🟡 Jaune agressif",
-    romeo: "🔵 Bleu classique",
-    scruff: "🟠 Orange daté",
-  },
-  {
-    feature: "Communauté",
-    embir: "🌱 Nouvelle, bienveillante",
-    grindr: "👥 Massive, tout type",
-    romeo: "👥 Établie, Europe",
-    scruff: "👥 Ours/cuir, niche",
+    name: "Jack'd",
+    price: "Freemium (from $9.99/mo)",
+    ads: "Yes (free tier)",
+    messaging: "Limited on free tier",
+    bestFor: "Diverse community, POC-focused",
+    verdict: "Inclusive but still freemium.",
   },
 ];
 
@@ -86,123 +56,53 @@ export default function GrindrVsPage() {
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-4xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-black mb-4">
-              Grindr vs{" "}
-              <span className="bg-gradient-to-r from-rose-400 via-amber-300 to-purple-400 bg-clip-text text-transparent">
-                Alternatives
-              </span>
-            </h1>
-            <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              Tu en as marre des pubs, des limites de messages et des abonnements hors de prix ? 
-              On a comparé les meilleures apps de rencontre gay en 2026. Spoiler : y&apos;a mieux que Grindr.
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">
+            Grindr vs Alternatives — The Honest 2026 Comparison
+          </h1>
+          <p className="text-white/50 text-lg mb-10 leading-relaxed">
+            Let&apos;s be real: Grindr is the biggest name in gay dating. But between the ads,
+            the paywalls, and the bots, many guys are looking for something better.
+            Here&apos;s how the alternatives actually stack up.
+          </p>
 
-          {/* Scorecard */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            <div className="rounded-2xl border border-emerald-400/20 bg-emerald-500/[0.04] p-6 text-center">
-              <div className="text-3xl mb-1">🥇</div>
-              <div className="text-emerald-400 font-bold text-lg">Embir</div>
-              <div className="text-white/40 text-xs mt-1">Le nouveau champion</div>
-            </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-1">🟡</div>
-              <div className="text-white/50 font-bold text-lg">Grindr</div>
-              <div className="text-white/30 text-xs mt-1">Le vétéran fatigué</div>
-            </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-1">🔵</div>
-              <div className="text-white/50 font-bold text-lg">Romeo</div>
-              <div className="text-white/30 text-xs mt-1">Le classique EU</div>
-            </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-1">🟠</div>
-              <div className="text-white/50 font-bold text-lg">Scruff</div>
-              <div className="text-white/30 text-xs mt-1">Le niche</div>
-            </div>
-          </div>
-
-          {/* Comparison table */}
-          <div className="rounded-2xl border border-white/5 overflow-hidden mb-10">
-            <div className="grid grid-cols-[1.5fr_1fr_1fr_1fr_1fr] bg-white/[0.03] border-b border-white/5 text-xs sm:text-sm font-semibold text-white/80">
-              <div className="p-4">Fonctionnalité</div>
-              <div className="p-4 text-emerald-400">Embir</div>
-              <div className="p-4">Grindr</div>
-              <div className="p-4">Romeo</div>
-              <div className="p-4">Scruff</div>
-            </div>
-            {comparison.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-[1.5fr_1fr_1fr_1fr_1fr] border-b border-white/[0.03] text-xs sm:text-sm text-white/50 ${
-                  i % 2 === 0 ? "bg-white/[0.01]" : ""
-                }`}
-              >
-                <div className="p-4 text-white/70 font-medium">{row.feature}</div>
-                <div className={`p-4 ${row.embir.startsWith("✅") ? "text-emerald-400" : "text-white/50"}`}>
-                  {row.embir}
+          <div className="space-y-4 mb-10">
+            {alternatives.map((alt, i) => (
+              <div key={i} className={`rounded-2xl border p-6 ${alt.name === "Embir" ? "border-white/20 bg-white/[0.04]" : "border-white/[0.06] bg-white/[0.02]"}`}>
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-bold text-white">{alt.name}</h3>
+                  <span className="text-sm text-white/40">{alt.price}</span>
                 </div>
-                <div className={`p-4 ${row.grindr.startsWith("✅") ? "text-emerald-400" : row.grindr.startsWith("❌") ? "text-rose-400" : "text-white/50"}`}>
-                  {row.grindr}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm mb-3">
+                  <div><span className="text-white/30">Ads: </span><span className="text-white/60">{alt.ads}</span></div>
+                  <div><span className="text-white/30">Messages: </span><span className="text-white/60">{alt.messaging}</span></div>
+                  <div className="col-span-2"><span className="text-white/30">Best for: </span><span className="text-white/60">{alt.bestFor}</span></div>
                 </div>
-                <div className={`p-4 ${row.romeo.startsWith("✅") ? "text-emerald-400" : row.romeo.startsWith("❌") ? "text-rose-400" : "text-white/50"}`}>
-                  {row.romeo}
-                </div>
-                <div className={`p-4 ${row.scruff.startsWith("✅") ? "text-emerald-400" : row.scruff.startsWith("❌") ? "text-rose-400" : "text-white/50"}`}>
-                  {row.scruff}
-                </div>
+                <p className="text-white/40 text-sm">{alt.verdict}</p>
               </div>
             ))}
           </div>
 
-          {/* Verdict */}
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-purple-500/[0.04] p-8 sm:p-10 mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4">🏆 Le verdict</h2>
-            <p className="text-white/60 leading-relaxed mb-6">
-              Grindr reste le plus connu, mais son modèle freemium est devenu insupportable : pubs toutes les 30 secondes, 
-              messages limités, fonctionnalités de base derrière un paywall à 25€/mois. Les alternatives comme Embir 
-              prouvent qu&apos;on peut avoir une expérience premium <strong className="text-white">sans payer un centime</strong>.
-            </p>
-            <Link
-              href="/auth/register"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-purple-600 px-8 py-4 text-base font-bold text-white shadow-xl shadow-rose-500/20 transition-all hover:scale-[1.02] hover:shadow-rose-500/40"
-            >
-              Essayer Embir gratuitement 
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
+            <h2 className="text-2xl font-bold text-white mb-3">Try the only 100% free option</h2>
+            <p className="text-white/50 mb-6">No ads. No limits. No catch. Just real guys.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
             </Link>
           </div>
 
-          {/* FAQ */}
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Questions fréquentes</h2>
-            
-            <h3 className="text-white/80">Pourquoi quitter Grindr ?</h3>
-            <p>Pubs invasives, fonctionnalités essentielles payantes, bots et faux profils, données personnelles monétisées. L&apos;expérience gratuite s&apos;est dégradée année après année pour pousser les utilisateurs vers l&apos;abonnement XTRA à 24,99€/mois.</p>
-
-            <h3 className="text-white/80">Embir est-il vraiment gratuit ?</h3>
-            <p>Oui, 100%. Pas de \"freemium\" caché. Pas de pubs. Pas de limite de messages. Pas d&apos;abonnement. On veut construire la meilleure communauté gay, pas ton portefeuille.</p>
-
-            <h3 className="text-white/80">Quelle est la meilleure alternative à Grindr ?</h3>
-            <p>Ça dépend de ce que tu cherches. Pour du sérieux et respectueux : Embir. Pour du rapide : Grindr reste le plus peuplé. Pour la communauté bear/leather : Scruff. Pour l&apos;Europe : Romeo.</p>
-
-            <h3 className="text-white/80">Mes données sont-elles en sécurité sur Embir ?</h3>
-            <p>Absolument. Pas de revente de données. Pas de traqueurs publicitaires. Pas de shadowban. Juste une app qui respecte ta vie privée.</p>
-          </div>
-
-          {/* Share section */}
-          <div className="text-center mt-12 pt-8 border-t border-white/5">
-            <p className="text-white/40 text-sm mb-4">Partage ce comparatif avec tes potes 👇</p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("J'ai comparé Grindr et ses alternatives. Le résultat est surprenant \n\nhttps://embir.xyz/grindr-vs-alternatives")}`} target="_blank" rel="noopener" className="rounded-full bg-white/[0.06] border border-white/10 px-4 py-2 text-xs text-white/60 hover:bg-white/[0.10] transition-all">
-                𝕏 Twitter
-              </a>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=https://embir.xyz/grindr-vs-alternatives`} target="_blank" rel="noopener" className="rounded-full bg-white/[0.06] border border-white/10 px-4 py-2 text-xs text-white/60 hover:bg-white/[0.10] transition-all">
-                📘 Facebook
-              </a>
-              <a href={`https://wa.me/?text=${encodeURIComponent("Grindr vs Alternatives — le comparatif qui dit la vérité 😳 https://embir.xyz/grindr-vs-alternatives")}`} target="_blank" rel="noopener" className="rounded-full bg-white/[0.06] border border-white/10 px-4 py-2 text-xs text-white/60 hover:bg-white/[0.10] transition-all">
-                📱 WhatsApp
-              </a>
-            </div>
+            <h2 className="text-white text-xl font-bold">What to look for in a Grindr alternative</h2>
+            <p>
+              The gay dating app market runs on a simple formula: get users in for free,
+              then lock essential features behind a subscription. Messaging limits, swipe
+              counters, ad removal — all monetized. Embir breaks that model entirely.
+            </p>
+            <h3 className="text-white/80 text-lg font-semibold">No paywalls, period</h3>
+            <p>If messaging is the core feature, why paywall it? Embir keeps everything free — messages, profiles, discovery, and even AI matching.</p>
+            <h3 className="text-white/80 text-lg font-semibold">No ads, no tracking</h3>
+            <p>Most free apps sell your attention to advertisers. Embir doesn&apos;t run ads and doesn&apos;t sell your data.</p>
+            <h3 className="text-white/80 text-lg font-semibold">Real profiles, not bots</h3>
+            <p>Free apps attract bots. Embir starts with real founding members in Paris — quality over quantity from day one.</p>
           </div>
         </div>
       </section>

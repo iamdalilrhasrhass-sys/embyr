@@ -27,7 +27,7 @@ export default function VideosPage() {
       <main className="min-h-screen text-[var(--eb-text-primary)] pt-4 pb-20 md:pb-8 px-4" style={{background:"var(--eb-bg-base)"}}>
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-[var(--eb-font-display)] font-bold" style={{background:"linear-gradient(135deg, var(--eb-accent), var(--eb-copper))",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>
-            🎬 Vidéos
+            Videos
           </h1>
           <button onClick={()=>setShowForm(!showForm)} className="px-4 py-2 rounded-[var(--eb-radius-sm)] text-sm font-semibold text-white transition-all hover:brightness-110" style={{background:"var(--eb-accent)"}}>
             + Ajouter

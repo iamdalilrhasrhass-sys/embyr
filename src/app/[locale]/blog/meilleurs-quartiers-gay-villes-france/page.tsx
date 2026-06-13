@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Les meilleurs quartiers gay-friendly dans les grandes villes de France | Embir Blog",
-  description: "Guide des quartiers gay-friendly à Paris, Lyon, Marseille, Bordeaux, Toulouse, Lille, Nantes, Strasbourg, Montpellier et Nice.",
+  title: "Best Gay Neighborhoods in French Cities — Guide | Embir Blog",
+  description: "The best LGBTQ-friendly neighborhoods across France, from Le Marais to Vieux-Lille.",
   keywords: ["meilleurs quartiers gay villes france", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/meilleurs-quartiers-gay-villes-france" },
 };

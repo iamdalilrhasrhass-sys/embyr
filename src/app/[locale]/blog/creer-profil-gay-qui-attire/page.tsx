@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Créer un Profil Gay Qui Attire : Le Guide Ultime 2026 | Blog Embir",
-  description:
-    "Un bon profil de rencontre gay, c'est la clé pour multiplier tes matchs. Découvre comment choisir tes photos, rédiger une bio percutante et éviter les erreurs qui font fuir.",
+  title: "How to Create a Gay Dating Profile That Attracts | Embir Blog",
+  description: "Photos, bio, what to say (and what to avoid) to create a profile that gets matches.",
   keywords: [
     "créer profil gay",
     "profil rencontre gay",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/creer-profil-gay-qui-attire",
   },
   openGraph: {
-    title: "Créer un Profil Gay Qui Attire : Le Guide Ultime 2026 | Blog Embir",
+    title: "How to Create a Gay Dating Profile That Attracts | Embir Blog",
     description:
       "Photos, bio, centres d'intérêt : tout ce qu'il faut pour un profil de rencontre gay qui sort du lot.",
     url: "https://embir.xyz/blog/creer-profil-gay-qui-attire",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Top 5 des apps de rencontre gay sans pub en 2026 | Embir Blog",
-  description: "Les meilleures applications de rencontre gay sans publicité intrusive. Comparatif gratuit des apps respectueuses de votre vie privée.",
+  title: "Gay Dating App Without Ads — The 2026 Guide | Embir Blog",
+  description: "Looking for a gay dating app with no ads? Compare ad-free alternatives and choose the right one.",
   keywords: ["app rencontre gay sans pub", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/app-rencontre-gay-sans-pub" },
 };

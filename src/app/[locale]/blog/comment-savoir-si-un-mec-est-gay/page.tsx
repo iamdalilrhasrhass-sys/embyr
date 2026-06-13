@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Comment savoir si un mec est gay ? — Les signes qui ne trompent pas | Embir Blog",
-  description: "Guide complet pour savoir si un mec est gay. Signes, comportements, et comment aborder la discussion sans awkwardness.",
+  title: "How to Tell If a Guy Is Gay — Signs and Signals | Embir Blog",
+  description: "Subtle signs and respectful ways to understand if a guy might be interested.",
   keywords: ["comment savoir si un mec est gay", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/comment-savoir-si-un-mec-est-gay" },
 };

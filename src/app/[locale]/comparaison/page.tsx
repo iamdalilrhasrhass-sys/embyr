@@ -1,81 +1,64 @@
-"use client";
-import ScrollReveal from "@/components/motion/ScrollReveal";
+import type { Metadata } from "next";
+import Link from "next/link";
 
-const ROWS = [
-  { label: "Design", divineva: "PHP vieillot, tableaux HTML, années 2000", feminya: "Interface premium, Aurora-Bubble C, glassmorphism, animations fluides", winner: "feminya" },
-  { label: "Mobile", divineva: "Non responsive, zoom obligatoire sur téléphone", feminya: "100% responsive, PWA, app-like, 100dvh, safe-area", winner: "feminya" },
-  { label: "Vérification profils", divineva: "Aucune, des dizaines de faux comptes", feminya: "Selfie avec code unique, modération humaine, badge Vérifié", winner: "feminya" },
-  { label: "Premium", divineva: "Paiement opaque, renouvellement forcé", feminya: "Stripe 3D Secure, 4.99€ découverte, sans engagement, transparent", winner: "feminya" },
-  { label: "Inclusivité", divineva: "Aucune mention, communauté non protégée", feminya: "Célébration de TOUTES les femmes, trans incluses, modération stricte", winner: "feminya" },
-  { label: "Messagerie", divineva: "Basique, pas de chiffrement, pas de vocal", feminya: "Texte, vocal, appels, visio. Chiffrée. Premium.", winner: "feminya" },
-  { label: "Support", divineva: "Inexistant, pas de modération", feminya: "Équipe humaine 7j/7, conciergerie pour Ambassadrices", winner: "feminya" },
-  { label: "Communauté", divineva: "Annonces agressives, pubs, ambiance glauque", feminya: "Salons, forum, témoignages. Communauté bienveillante.", winner: "feminya" },
-  { label: "Prix", divineva: "Flou, pas de tarifs clairs", feminya: "4.99€/7j · 14.99€/mois · 49.99€/an — tout affiché", winner: "feminya" },
-];
+export const metadata: Metadata = {
+  title: "Gay Dating Apps Compared — Why Embir? | Embir",
+  description: "Compare gay dating apps side by side. See why Embir is the only 100% free option with no ads, unlimited messaging, and 25 languages.",
+  alternates: { canonical: "https://embir.xyz/comparaison" },
+};
 
 export default function ComparaisonPage() {
+  const apps = [
+    { name: "Embir", free: true, ads: false, messaging: "Unlimited", languages: "25", privacy: "Strong" },
+    { name: "Grindr", free: "Limited", ads: true, messaging: "Restricted", languages: "10+", privacy: "Moderate" },
+    { name: "Tinder", free: "Limited", ads: true, messaging: "Restricted", languages: "40+", privacy: "Moderate" },
+    { name: "Romeo", free: "Limited", ads: true, messaging: "Restricted", languages: "15+", privacy: "Good" },
+    { name: "Scruff", free: "Limited", ads: true, messaging: "Restricted", languages: "10+", privacy: "Good" },
+  ];
+
   return (
-    <main className="min-h-screen py-24 px-4" style={{background:"linear-gradient(180deg, #0a0010 0%, #100520 100%)"}}>
-      <div className="max-w-4xl mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-wider mb-4" style={{background:"rgba(168,85,247,0.2)", border:"1px solid rgba(168,85,247,0.3)", color:"#c4b5fd"}}>
-              COMPARAISON OBJECTIVE
-            </span>
-            <h1 className="text-4xl md:text-6xl font-black mb-4" style={{background:"linear-gradient(135deg, #c084fc, #818cf8, #38bdf8)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>
-              Divineva vs Feminya
-            </h1>
-            <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              On ne va pas vous mentir. On a comparé. Voici la vérité.
-            </p>
-          </div>
-        </ScrollReveal>
+    <main className="emb-page min-h-screen">
+      <section className="py-24 px-4 sm:px-6">
+        <div className="emb-container max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-white text-center">Gay Dating Apps Compared</h1>
+          <p className="text-white/50 text-lg mb-10 leading-relaxed text-center max-w-xl mx-auto">
+            See how Embir stacks up against other gay dating apps. One is truly free — the rest have catches.
+          </p>
 
-        {/* Table header */}
-        <div className="hidden md:grid grid-cols-4 gap-4 mb-4 px-4">
-          <div className="text-white/30 text-sm font-semibold"></div>
-          <div className="text-red-300/70 text-sm font-semibold text-center">Divineva</div>
-          <div className="text-purple-300 text-sm font-semibold text-center">Feminya</div>
-          <div className="text-white/20 text-sm font-semibold text-center"></div>
+          <div className="overflow-x-auto mb-10">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-white/[0.06] text-white/40">
+                  <th className="py-3 px-4 font-medium">App</th>
+                  <th className="py-3 px-4 font-medium">Free</th>
+                  <th className="py-3 px-4 font-medium">No Ads</th>
+                  <th className="py-3 px-4 font-medium">Messaging</th>
+                  <th className="py-3 px-4 font-medium">Languages</th>
+                </tr>
+              </thead>
+              <tbody>
+                {apps.map((app, i) => (
+                  <tr key={i} className={`border-b border-white/[0.03] ${app.name === "Embir" ? "bg-white/[0.03]" : ""}`}>
+                    <td className="py-3 px-4 font-bold text-white">{app.name}</td>
+                    <td className="py-3 px-4 text-white/60">{app.free}</td>
+                    <td className="py-3 px-4 text-white/60">{app.ads ? "Yes" : "None"}</td>
+                    <td className="py-3 px-4 text-white/60">{app.messaging}</td>
+                    <td className="py-3 px-4 text-white/60">{app.languages}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center">
+            <h2 className="text-2xl font-bold text-white mb-3">Only one is truly free</h2>
+            <p className="text-white/50 mb-6">Try Embir — no credit card, no trial, no catch.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
+            </Link>
+          </div>
         </div>
-
-        {ROWS.map((row, i) => (
-          <ScrollReveal key={i} delay={i * 0.08}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 mb-3 p-4 md:p-5 rounded-2xl transition-all hover:brightness-105" style={{background:row.winner==="feminya"?"rgba(139,92,246,0.08)":"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.04)"}}>
-              <div className="text-white font-bold text-sm md:text-base flex items-center">{row.label}</div>
-              <div className="text-white/40 text-xs md:text-sm flex items-center">
-                <span className="md:hidden font-bold text-red-300/70 mr-2">Divineva :</span>
-                {row.divineva}
-              </div>
-              <div className="text-white/80 text-xs md:text-sm flex items-center" style={row.winner==="feminya"?{color:"#c4b5fd"}:{}}>
-                <span className="md:hidden font-bold text-purple-300 mr-2">Feminya :</span>
-                {row.feminya}
-              </div>
-              <div className="flex items-center justify-center">
-                {row.winner === "feminya" ? (
-                  <span className="text-xs font-bold px-3 py-1 rounded-full" style={{background:"rgba(139,92,246,0.2)", color:"#a78bfa"}}>Feminya ✓</span>
-                ) : null}
-              </div>
-            </div>
-          </ScrollReveal>
-        ))}
-
-        {/* CTA */}
-        <ScrollReveal delay={0.8}>
-          <div className="text-center mt-12 p-8 rounded-3xl" style={{background:"rgba(139,92,246,0.05)", border:"2px solid rgba(139,92,246,0.15)"}}>
-            <h2 className="text-2xl font-bold text-white mb-4">9-0. Le choix est vite fait.</h2>
-            <p className="text-white/50 mb-6">Rejoins la plateforme pensée pour toi. Pas celle codée en 2005.</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href="/auth/register" className="px-8 py-4 rounded-xl font-bold text-white text-lg" style={{background:"linear-gradient(135deg, #8b5cf6, #6366f1)", boxShadow:"0 0 40px rgba(139,92,246,0.3)"}}>
-                Créer mon compte gratuit →
-              </a>
-              <a href="/ambassadrice" className="px-8 py-4 rounded-xl font-bold text-white text-lg" style={{background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)"}}>
-                Devenir Ambassadrice ✦
-              </a>
-            </div>
-          </div>
-        </ScrollReveal>
-      </div>
+      </section>
     </main>
   );
 }

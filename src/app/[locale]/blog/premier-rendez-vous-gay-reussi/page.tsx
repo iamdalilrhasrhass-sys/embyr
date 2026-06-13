@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Premier rendez-vous gay réussi — 10 conseils pour impressionner | Embir Blog",
-  description: "Tout pour réussir ton premier rendez-vous gay. Du choix du lieu à la conversation, en passant par les gestes qui font la différence.",
+  title: "Successful First Gay Date — What Works | Embir Blog",
+  description: "From choosing the right place to ending the night gracefully — your first date playbook.",
   keywords: ["premier rendez vous gay reussi", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/premier-rendez-vous-gay-reussi" },
 };

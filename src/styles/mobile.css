@@ -150,12 +150,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  /* ── GRID COLUMNS: stack on mobile ── */
-  [data-site="embir"] .grid.sm\\:grid-cols-2,
-  [data-site="embir"] .grid.lg\\:grid-cols-4 {
-    grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
-  }
+
 
   /* ── FEATURE CARDS: tighter on mobile ── */
   [data-site="embir"] .emb-page section#features .group {

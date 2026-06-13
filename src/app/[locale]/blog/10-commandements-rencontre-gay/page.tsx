@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Les 10 Commandements des Rencontres Gay — Guide Essentiel | Blog Embir",
-  description:
-    "Découvre les 10 commandements essentiels pour réussir tes rencontres gay. Respect, communication, sécurité — tout ce qu'il faut savoir pour des dates épanouissants entre hommes.",
+  title: "10 Rules for Gay Dating — The Complete Guide 2026 | Embir Blog",
+  description: "The 10 essential rules for successful gay dating in 2026. Practical advice for authentic connections.",
   keywords: [
     "commandements rencontres gay",
     "règles rencontre gay",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/10-commandements-rencontre-gay",
   },
   openGraph: {
-    title: "Les 10 Commandements des Rencontres Gay — Le Guide Complet",
+    title: "10 Rules for Gay Dating — The Complete Guide 2026 | Embir Blog",
     description:
       "Respect, communication, sécurité : les 10 règles d'or pour des rencontres gay épanouissantes. Un guide bienveillant pour tous les mecs.",
     url: "https://embir.xyz/blog/10-commandements-rencontre-gay",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

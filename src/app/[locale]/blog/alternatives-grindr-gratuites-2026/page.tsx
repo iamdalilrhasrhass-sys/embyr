@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "5 Meilleures Alternatives à Grindr Gratuites en 2026 | Blog Embir",
-  description:
-    "Marre de payer Grindr ? Découvre les 5 meilleures alternatives gratuites à Grindr en 2026. Apps de rencontre gay sans abonnement, sans pubs intrusives et sans faux profils.",
+  title: "Best Free Grindr Alternatives 2026 — Full Comparison | Embir Blog",
+  description: "Discover the best 100% free Grindr alternatives in 2026. No ads, no limits, real dating.",
   keywords: [
     "alternative grinder gratuite",
     "alternative a grindr",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/alternatives-grindr-gratuites-2026",
   },
   openGraph: {
-    title: "5 Meilleures Alternatives à Grindr Gratuites en 2026 | Blog Embir",
+    title: "Best Free Grindr Alternatives 2026 — Full Comparison | Embir Blog",
     description:
       "Marre de payer Grindr ? Découvre les 5 meilleures alternatives gratuites à Grindr en 2026. Apps de rencontre gay sans abonnement et sans pubs.",
     url: "https://embir.xyz/blog/alternatives-grindr-gratuites-2026",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

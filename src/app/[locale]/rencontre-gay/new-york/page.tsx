@@ -2,47 +2,59 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating New York — Free Gay App | Embir",
-  description: "Gay dating in New York on Embir. 100% free app, no ads, no premium. Create your profile and meet guys near you in New York.",
-  keywords: ["gay dating New York", "gay New York", "meet guys New York", "gay app New York", "dating gay New York", "free gay dating"],
+  title: "Gay Dating in New York — 100% Free App | Embir",
+  description: "Gay dating in New York on Embir. 100% free app with no ads. Create your profile and meet guys near you in New York.",
+  keywords: ["gay dating New York", "gay New York", "meet guys New York", "gay app New York", "LGBTQ New York"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/new-york" },
 };
 
-export default function GayDatingCity() {
+export default function RencontreGayCityPage() {
   return (
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-black mb-6">
-            Gay Dating in <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">New York</span>
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">
+            Gay dating in <span className="text-white/70">New York</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Looking to meet guys in New York? Embir is the 100% free gay dating app. 
-            No ads, no premium, no catch. Create your profile and start connecting with men near you in New York.
+            Looking to meet men in New York? Embir is the 100% free gay dating app.
+            Create your profile in 2 minutes and discover guys near you.
           </p>
+
           <div className="grid gap-4 sm:grid-cols-3 mb-10">
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🎯</div>
-              <div className="text-white font-bold">100% Free</div>
-              <div className="text-white/40 text-sm mt-1">No hidden costs</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Free</div>
+              <div className="text-white/40 text-sm">No ads, no hidden fees</div>
             </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">📍</div>
-              <div className="text-white font-bold">Local</div>
-              <div className="text-white/40 text-sm mt-1">Guys in New York</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Local</div>
+              <div className="text-white/40 text-sm">Guys near New York</div>
             </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🌍</div>
-              <div className="text-white font-bold">25 Languages</div>
-              <div className="text-white/40 text-sm mt-1">Talk in your language</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Private</div>
+              <div className="text-white/40 text-sm">Discreet mode available</div>
             </div>
           </div>
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mb-10">
+
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-3">Ready to meet guys in New York?</h2>
-            <p className="text-white/50 mb-6">Join 8.3M people in New York already discovering Embir.</p>
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 transition-all hover:shadow-rose-500/40 hover:scale-[1.02]">
+            <p className="text-white/50 mb-6">Join the New York launch and help Embir build its first local community.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
               Create my free profile
             </Link>
+          </div>
+
+          <div className="prose prose-invert max-w-none text-white/50 space-y-4">
+            <h2 className="text-white text-xl font-bold">Why choose Embir for gay dating in New York?</h2>
+            <p>
+              Embir is built for men seeking authentic connections in New York.
+              No intrusive algorithms. No aggressive ads. No hidden premium subscriptions.
+              Just guys, near you, ready to talk.
+            </p>
+            <h3 className="text-white/80 text-lg font-semibold">Quick signup</h3>
+            <p>2 minutes is all it takes. Email, password, and you&apos;re in. No endless questionnaire.</p>
+            <h3 className="text-white/80 text-lg font-semibold">Unlimited messaging</h3>
+            <p>Talk to whoever you want, whenever you want. No message limits. No paywalls.</p>
           </div>
         </div>
       </section>

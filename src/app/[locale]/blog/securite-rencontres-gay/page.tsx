@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sécurité dans les rencontres gay — Les règles à connaître absolument | Embir Blog",
-  description: "Guide de sécurité pour les rencontres gay en ligne et dans la vie réelle. Protégez votre vie privée et restez en sécurité.",
+  title: "Gay Dating Safety — Rules to Protect Yourself | Embir Blog",
+  description: "Essential safety rules for gay dating. Meeting strangers, protecting your privacy, and staying safe.",
   keywords: ["securite rencontres gay", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/securite-rencontres-gay" },
 };

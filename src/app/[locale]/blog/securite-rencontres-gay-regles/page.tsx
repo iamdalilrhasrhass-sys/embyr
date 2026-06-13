@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sécurité et Rencontres Gay : 12 Règles d'Or en 2026 | Blog Embir",
-  description:
-    "Ta sécurité passe avant tout. Découvre les 12 règles essentielles pour des rencontres gay en toute sérénité : premier date safe, protection IST, signaux d'alarme à repérer, et outils pratiques.",
+  title: "Gay Dating Safety Rules — The Complete Checklist | Embir Blog",
+  description: "The definitive safety checklist for gay dating. Before, during, and after meeting someone new.",
   keywords: [
     "sécurité rencontres gay",
     "règles sécurité date gay",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/securite-rencontres-gay-regles",
   },
   openGraph: {
-    title: "Sécurité et Rencontres Gay : 12 Règles d'Or en 2026 | Blog Embir",
+    title: "Gay Dating Safety Rules — The Complete Checklist | Embir Blog",
     description:
       "Premier date safe, protection IST, signaux d'alarme : les 12 règles pour des rencontres gay en toute sérénité.",
     url: "https://embir.xyz/blog/securite-rencontres-gay-regles",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

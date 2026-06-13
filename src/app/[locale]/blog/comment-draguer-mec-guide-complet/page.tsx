@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Comment Draguer un Mec : Le Guide Complet 2026 | Blog Embir",
-  description:
-    "Tu veux savoir comment draguer un mec sans passer pour un forceur ? Découvre notre guide complet avec des techniques concrètes, des exemples de phrases, et les erreurs à éviter absolument.",
+  title: "How to Flirt With a Guy — The Complete Guide 2026 | Embir Blog",
+  description: "Want to know how to flirt with a guy without being awkward? Complete guide with concrete techniques and mistakes to avoid.",
   keywords: [
     "comment draguer un mec",
     "draguer un garçon",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/comment-draguer-mec-guide-complet",
   },
   openGraph: {
-    title: "Comment Draguer un Mec : Le Guide Complet 2026 | Blog Embir",
+    title: "How to Flirt With a Guy — The Complete Guide 2026 | Embir Blog",
     description:
       "Techniques concrètes, exemples de phrases, et erreurs à éviter pour draguer un mec sans être lourd.",
     url: "https://embir.xyz/blog/comment-draguer-mec-guide-complet",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

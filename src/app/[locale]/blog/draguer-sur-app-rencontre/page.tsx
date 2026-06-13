@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Comment draguer sur une app de rencontre gay ? — Les 7 règles d'or | Embir Blog",
-  description: "Guide de drague gay sur les applications de rencontre. Comment envoyer le premier message, se démarquer, et obtenir des dates.",
+  title: "How to Flirt on Dating Apps — Gay Edition | Embir Blog",
+  description: "Master the art of flirting on gay dating apps. Opening lines, timing, and red flags.",
   keywords: ["draguer sur app rencontre", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/draguer-sur-app-rencontre" },
 };

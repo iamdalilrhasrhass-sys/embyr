@@ -1,77 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import React from "react";
 
 export const metadata: Metadata = {
-  title: "Meilleurs Bars Gay Londres — Top Adresses 2026 | Embir",
-  description: "Guide complet des meilleurs bars gay à Londres. Boîtes de nuit, bars branchés, lieux de rencontre où sortir ce soir.",
-  keywords: ["bars gay londres", "soirée gay londres", "londres vie nocturne gay"],
+  title: "Best Gay Bars in London — Guide & Map | Embir",
+  description: "Discover the best gay bars in London with Embir's curated guide. Find LGBTQ-friendly spots, meet locals, and explore the scene.",
+  keywords: ["gay bars London", "LGBTQ bars London", "gay nightlife London", "gay scene London"],
   alternates: { canonical: "https://embir.xyz/bars-gay/london" },
 };
 
-export default function GayBarsPage() {
-  const bars = "Heaven, G-A-Y, Ku Bar, The Glory, Royal Vauxhall Tavern".split(", ");
-  const hoods = "Soho, Vauxhall, Shoreditch, Earl's Court".split(", ");
-  
+export default function BarsGayCityPage() {
   return (
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-black mb-6">
-            Guide des bars gay à 
-            <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Londres</span>
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">
+            Best gay bars in <span className="text-white/70">London</span>
           </h1>
-          
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches les meilleurs bars et boîtes gay à Londres ? Voici notre guide complet pour sortir
-            et rencontrer d&apos;autres mecs.
+            Explore London&apos;s LGBTQ nightlife. From cozy neighborhood pubs to vibrant dance clubs, 
+            find the spots where the local community comes together.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3 mb-10">
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🍸</div>
-              <div className="text-white font-bold">Heaven</div>
-              <div className="text-white/40 text-sm mt-1">Bar recommandé #1</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Curated</div>
+              <div className="text-white/40 text-sm">Hand-picked local spots</div>
             </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">📍</div>
-              <div className="text-white font-bold">Soho</div>
-              <div className="text-white/40 text-sm mt-1">Quartier gay-friendly</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Updated</div>
+              <div className="text-white/40 text-sm">Current hours and vibes</div>
             </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-               
-              <div className="text-white font-bold">5+ bars</div>
-              <div className="text-white/40 text-sm mt-1">Adresses recommandées</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Connected</div>
+              <div className="text-white/40 text-sm">Meet guys who go there</div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-bold text-white mb-4">Top bars et boîtes gay à Londres</h2>
-            <div className="space-y-4">
-              {bars.map((bar, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="text-rose-400 font-bold shrink-0">#{i + 1}</span>
-                  <p className="text-white font-medium">{bar}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-bold text-white mb-4">Quartiers gay-friendly à Londres</h2>
-            <div className="flex flex-wrap gap-2">
-              {hoods.map((hood, i) => (
-                <span key={i} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/70">{hood}</span>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mb-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Planifie ta soirée sur Embir</h2>
-            <p className="text-white/50 mb-6">100% gratuit, 0 pub, 0 abonnement.</p>
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-[1.02]">
-              Créer mon profil gratuitement
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
+            <h2 className="text-2xl font-bold text-white mb-3">Meet guys who love London&apos;s nightlife</h2>
+            <p className="text-white/50 mb-6">Join Embir and connect with locals who know the best spots.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
             </Link>
+          </div>
+
+          <div className="prose prose-invert max-w-none text-white/50 space-y-4">
+            <h2 className="text-white text-xl font-bold">Navigating the gay scene in London</h2>
+            <p>
+              London has a rich LGBTQ nightlife. Whether you&apos;re into relaxed wine bars, 
+              high-energy dance floors, or drag shows, there&apos;s a place for every vibe.
+              Embir connects you with guys who actually go to these places — not just tourists.
+            </p>
+            <h3 className="text-white/80 text-lg font-semibold">Local favorites</h3>
+            <p>Discover the bars locals actually recommend, not just the ones with the highest Google rating.</p>
+            <h3 className="text-white/80 text-lg font-semibold">Go together</h3>
+            <p>Match with someone and suggest meeting at a bar you both want to try. First dates feel easier with a plan.</p>
           </div>
         </div>
       </section>

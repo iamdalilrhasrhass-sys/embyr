@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "L'histoire du mois des fiertés LGBTQ+ — Des émeutes de Stonewall à aujourd'hui | Embir Blog",
-  description: "Retour sur l'histoire du Pride Month. Des émeutes de Stonewall à la marche des fiertés d'aujourd'hui. Un héritage de lutte et de célébration.",
+  title: "The History of Pride Month — From Stonewall to Today | Embir Blog",
+  description: "The story behind Pride Month. Stonewall, the movement, and what it means today.",
   keywords: ["histoire mois fierte lgbt", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/histoire-mois-fierte-lgbt" },
 };

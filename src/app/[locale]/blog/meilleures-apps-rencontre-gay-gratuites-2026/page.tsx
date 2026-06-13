@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Top 7 Meilleures Apps de Rencontre Gay Gratuites en 2026 | Blog Embir",
-  description:
-    "Comparatif complet des meilleures applications de rencontre gay gratuites en 2026. Découvre quelle app gay correspond vraiment à tes attentes : sérieux, plan cul, amitié ou amour.",
+  title: "Best Free Gay Dating Apps 2026 — Ranked | Embir Blog",
+  description: "The definitive ranking of free gay dating apps in 2026. Which ones deliver and which are paywalled.",
   keywords: [
     "meilleure app rencontre gay gratuite",
     "app rencontre gay 2026",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/meilleures-apps-rencontre-gay-gratuites-2026",
   },
   openGraph: {
-    title: "Top 7 Meilleures Apps de Rencontre Gay Gratuites en 2026 | Blog Embir",
+    title: "Best Free Gay Dating Apps 2026 — Ranked | Embir Blog",
     description:
       "Comparatif complet des meilleures applications de rencontre gay gratuites en 2026. Découvre quelle app gay correspond vraiment à tes attentes.",
     url: "https://embir.xyz/blog/meilleures-apps-rencontre-gay-gratuites-2026",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Embir Paris — 100 membres fondateurs | Rencontre gay gratuite",
+  title: "Embir Paris — 100 Founding Members | Free Gay Dating",
   description:
-    "Rejoins le lancement Paris d'Embir : 100 membres fondateurs, profils réels, messagerie gratuite, sans pubs et sans faux comptes.",
+    "Join the Embir Paris launch: 100 founding members, real profiles, free messaging, no ads, no fake accounts.",
   keywords: [
     "Embir Paris",
-    "rencontre gay Paris",
-    "app rencontre gay gratuite Paris",
-    "membres fondateurs Embir",
-    "rencontre gay sans pub",
+    "gay dating Paris",
+    "free gay app Paris",
+    "founding members Embir",
+    "gay dating no ads",
   ],
   alternates: { canonical: "https://embir.xyz/paris" },
   openGraph: {
-    title: "Embir Paris — les 100 premiers membres fondateurs",
+    title: "Embir Paris — The First 100 Founding Members",
     description:
-      "Un lancement local, honnête et gratuit pour créer assez de vrais profils à Paris.",
+      "A local, honest, and free launch to create enough real profiles in Paris.",
     url: "https://embir.xyz/paris",
     type: "website",
   },
@@ -25,100 +25,100 @@ export const metadata: Metadata = {
 const registerHref = "/auth/register?source=paris-100-fondateurs";
 
 const rules = [
-  "Vrais profils uniquement : pas de faux comptes pour gonfler les chiffres.",
-  "Lancement gratuit : messages, profils et découverte ouverts pendant la phase fondatrice.",
-  "Paris d'abord : on concentre les premiers membres au même endroit pour créer de vraies rencontres.",
-  "Respect non négociable : signalement, modération et communauté adulte 18+.",
+  "Real profiles only. No fake accounts to inflate numbers.",
+  "Free launch. Messages, profiles, and discovery all open during the founding phase.",
+  "Paris first. We concentrate the first members in the same place to create real connections.",
+  "Respect is non-negotiable. Reporting, moderation, and an adult 18+ community.",
 ];
 
 const steps = [
   {
-    title: "Crée ton profil",
-    text: "Ajoute une photo claire, ton prénom ou pseudo, et ce que tu cherches vraiment.",
+    title: "Create your profile",
+    text: "Add a clear photo, your name or nickname, and what you're really looking for.",
   },
   {
-    title: "Invite 2 ou 3 amis",
-    text: "Embir marche quand la communauté démarre par des personnes réelles, pas par de la pub vide.",
+    title: "Invite 2 or 3 friends",
+    text: "Embir works when the community starts with real people, not empty advertising.",
   },
   {
-    title: "Teste pendant 7 jours",
-    text: "Dis-nous ce qui manque, ce qui bloque, et ce qui rendrait l'app évidente pour toi.",
+    title: "Test for 7 days",
+    text: "Tell us what's missing, what's blocking you, and what would make the app obvious for you.",
   },
 ];
 
 const founderPerks = [
-  "Badge membre fondateur",
-  "Accès gratuit pendant le lancement",
-  "Priorité sur les retours produit",
-  "Influence directe sur les prochaines fonctionnalités",
+  "Founding member badge",
+  "Free access during launch",
+  "Priority on product feedback",
+  "Direct influence on upcoming features",
 ];
 
 export default function ParisFoundersPage() {
   return (
     <main className="emb-page min-h-screen overflow-hidden">
       <section className="relative px-4 pt-32 pb-20 sm:px-6 lg:px-8">
-        <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_50%_0%,rgba(212,165,116,0.22),transparent_60%)]" />
+        <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08),transparent_60%)]" />
         <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d4a574]/25 bg-[#d4a574]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#e8c4a2]">
-              <span className="h-2 w-2 rounded-full bg-[#d4a574] shadow-[0_0_18px_rgba(212,165,116,0.9)]" />
-              Paris · lancement local
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+              <span className="h-2 w-2 rounded-full bg-white/80" />
+              Paris · local launch
             </div>
 
             <h1 className="font-serif text-5xl font-light leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl">
-              Les 100 premiers
-              <span className="block bg-gradient-to-r from-[#e8c4a2] via-[#d4a574] to-[#f0d0b0] bg-clip-text text-transparent">
-                membres fondateurs
+              The first 100
+              <span className="block text-white/60">
+                founding members
               </span>
-              d&apos;Embir Paris.
+              of Embir Paris.
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/52">
-              On ne va pas te vendre une app pleine si elle démarre. On fait mieux :
-              on lance Paris volontairement, avec de vrais profils, gratuitement, et
-              assez de monde au même endroit pour que les rencontres deviennent possibles.
+              We won't sell you a full app if it's just starting. We do better:
+              we launch Paris intentionally, with real profiles, for free, and
+              enough people in the same place for real connections to happen.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={registerHref}
-                className="inline-flex items-center justify-center rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_44px_rgba(212,165,116,0.32)]"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition-all hover:opacity-90"
               >
-                Rejoindre les 100 fondateurs
+                Join the 100 founders
               </Link>
               <Link
                 href="/membres"
                 className="inline-flex items-center justify-center rounded-full border border-white/10 px-8 py-4 text-sm font-medium text-white/70 transition-all hover:border-white/20 hover:bg-white/[0.04] hover:text-white"
               >
-                Voir les membres
+                View members
               </Link>
             </div>
 
             <p className="mt-5 text-sm text-white/32">
-              18+ uniquement · gratuit au lancement · sans pubs · sans faux profils.
+              18+ only · free during launch · no ads · no fake profiles.
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-[#120c1a]/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
-            <div className="rounded-[1.5rem] border border-[#d4a574]/18 bg-gradient-to-br from-[#d4a574]/10 via-white/[0.03] to-[#6366F1]/10 p-7">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d4a574]/75">
-                Objectif public
+          <div className="rounded-[2rem] border border-white/[0.06] bg-white/[0.02] p-6">
+            <div className="rounded-[1.5rem] border border-white/[0.06] bg-white/[0.02] p-7">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-white/40">
+                Public goal
               </p>
               <div className="mt-5 flex items-end gap-3">
                 <span className="font-serif text-7xl font-light text-white">100</span>
-                <span className="pb-3 text-lg text-white/45">profils réels</span>
+                <span className="pb-3 text-lg text-white/45">real profiles</span>
               </div>
-              <div className="mt-6 rounded-2xl border border-white/8 bg-black/18 p-4 text-sm font-medium text-white/60">
-                On affiche l&apos;objectif, pas un faux compteur : les vrais chiffres se suivent en interne.
+              <div className="mt-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 text-sm font-medium text-white/60">
+                We show the goal, not a fake counter. Real numbers are tracked internally.
               </div>
               <p className="mt-5 text-sm leading-relaxed text-white/45">
-                Le but n&apos;est pas de paraître énorme. Le but est de créer une
-                première poche active à Paris, avec des personnes qui veulent vraiment
-                tester une alternative plus saine.
+                The goal isn't to look huge. The goal is to create a
+                first active pocket in Paris, with people who genuinely want
+                to test a healthier alternative.
               </p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {founderPerks.map((perk) => (
-                  <div key={perk} className="rounded-2xl border border-white/8 bg-black/18 px-4 py-3 text-sm text-white/70">
+                  <div key={perk} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-white/70">
                     {perk}
                   </div>
                 ))}
@@ -131,19 +131,19 @@ export default function ParisFoundersPage() {
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 max-w-3xl">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#d4a574]/65">
-              Pourquoi Paris d&apos;abord
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-white/30">
+              Why Paris first
             </p>
             <h2 className="mt-4 font-serif text-4xl font-light tracking-[-0.03em] text-white">
-              Une app de rencontre ne gagne pas avec du bruit.
-              <span className="text-[#d4a574]"> Elle gagne avec de la densité.</span>
+              A dating app doesn't win with noise.
+              <span className="text-white/50"> It wins with density.</span>
             </h2>
           </div>
 
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/8 bg-white/8 md:grid-cols-4">
+          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/[0.06] bg-white/8 md:grid-cols-4">
             {rules.map((rule) => (
               <div key={rule} className="bg-[#0a0614] p-6 text-sm leading-relaxed text-white/50">
-                <span className="mb-5 block h-1.5 w-10 rounded-full bg-[#d4a574]" />
+                <span className="mb-5 block h-1.5 w-10 rounded-full bg-white/40" />
                 {rule}
               </div>
             ))}
@@ -154,22 +154,22 @@ export default function ParisFoundersPage() {
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#d4a574]/65">
-              Ce qu&apos;on te demande
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-white/30">
+              What we ask of you
             </p>
             <h2 className="mt-4 font-serif text-4xl font-light tracking-[-0.03em] text-white">
-              Trois actions simples.
+              Three simple actions.
             </h2>
             <p className="mt-5 text-white/45">
-              Si tu veux qu&apos;une app gay française existe vraiment, le premier
-              geste est simple : créer un vrai profil et inviter quelques personnes fiables.
+              If you want a French gay app to truly exist, the first
+              step is simple: create a real profile and invite a few trusted people.
             </p>
           </div>
 
           <div className="grid gap-4">
             {steps.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-white/8 bg-white/[0.025] p-6">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#d4a574]/12 text-sm font-bold text-[#d4a574]">
+              <div key={step.title} className="rounded-3xl border border-white/[0.06] bg-white/[0.02] p-6">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/[0.06] text-sm font-bold text-white/60">
                   {index + 1}
                 </div>
                 <h3 className="text-xl font-semibold text-white">{step.title}</h3>
@@ -181,21 +181,21 @@ export default function ParisFoundersPage() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl rounded-[2rem] border border-[#d4a574]/18 bg-gradient-to-br from-[#d4a574]/10 via-[#120c1a] to-[#6366F1]/10 p-8 text-center sm:p-12">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#d4a574]/75">
-            Message à partager
+        <div className="mx-auto max-w-4xl rounded-[2rem] border border-white/[0.06] bg-white/[0.02] p-8 text-center sm:p-12">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-white/40">
+            Share this message
           </p>
           <blockquote className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-            “Je teste Embir, une nouvelle app de rencontre gay gratuite qui lance
-            ses 100 premiers membres à Paris. Pas de pubs, pas de faux profils,
-            juste une vraie communauté au départ. Tu peux rejoindre ici :
-            embir.xyz/paris”
+            "I'm testing Embir, a new free gay dating app launching its
+            first 100 members in Paris. No ads, no fake profiles,
+            just a real community at the start. Join here:
+            embir.xyz/paris"
           </blockquote>
           <Link
             href={registerHref}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2]"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition-all hover:opacity-90"
           >
-            Je crée mon profil fondateur
+            Create my founder profile
           </Link>
         </div>
       </section>

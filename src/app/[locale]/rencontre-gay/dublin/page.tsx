@@ -2,64 +2,59 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Dublin — App 100% Gratuite | Embir",
-  description: "Rencontre gay à Dublin sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Dublin, Dublin.",
-  keywords: ["rencontre gay dublin", "gay dublin", "rencontre mec dublin", "app gay dublin", "dating gay dublin"],
+  title: "Gay Dating in Dublin — 100% Free App | Embir",
+  description: "Gay dating in Dublin on Embir. 100% free app with no ads. Create your profile and meet guys near you in Dublin.",
+  keywords: ["gay dating Dublin", "gay Dublin", "meet guys Dublin", "gay app Dublin", "LGBTQ Dublin"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/dublin" },
 };
 
-export default function RencontreGayCity() {
+export default function RencontreGayCityPage() {
   return (
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-black mb-6">
-            Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Dublin</span>
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">
+            Gay dating in <span className="text-white/70">Dublin</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Dublin ? Embir est l&apos;app de rencontre gay 100% gratuite.
-            Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Dublin.
+            Looking to meet men in Dublin? Embir is the 100% free gay dating app.
+            Create your profile in 2 minutes and discover guys near you.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3 mb-10">
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🎯</div>
-              <div className="text-white font-bold">Gratuit</div>
-              <div className="text-white/40 text-sm mt-1">100% sans pubs</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Free</div>
+              <div className="text-white/40 text-sm">No ads, no hidden fees</div>
             </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">📍</div>
-              <div className="text-white font-bold">Local</div>
-              <div className="text-white/40 text-sm mt-1">Mecs près de Dublin</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Local</div>
+              <div className="text-white/40 text-sm">Guys near Dublin</div>
             </div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🔒</div>
-              <div className="text-white font-bold">Discret</div>
-              <div className="text-white/40 text-sm mt-1">Mode privé dispo</div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
+              <div className="text-white/90 font-bold text-lg mb-1">Private</div>
+              <div className="text-white/40 text-sm">Discreet mode available</div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mb-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Prêt à rencontrer des mecs à Dublin ?</h2>
-            <p className="text-white/50 mb-6">Rejoins les 550 000 habitants de Dublin — quartiers comme Temple Bar, The Liberties, Smithfield, Ranelagh.</p>
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 transition-all hover:shadow-rose-500/20">
-              Créer mon profil gratuitement
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
+            <h2 className="text-2xl font-bold text-white mb-3">Ready to meet guys in Dublin?</h2>
+            <p className="text-white/50 mb-6">Join the Dublin launch and help Embir build its first local community.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
             </Link>
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Dublin ?</h2>
+            <h2 className="text-white text-xl font-bold">Why choose Embir for gay dating in Dublin?</h2>
             <p>
-              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Dublin.
-              Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
-              Juste des mecs, près de chez toi, prêts à discuter.
+              Embir is built for men seeking authentic connections in Dublin.
+              No intrusive algorithms. No aggressive ads. No hidden premium subscriptions.
+              Just guys, near you, ready to talk.
             </p>
-            <h3 className="text-white/80 text-lg font-semibold">Inscription rapide</h3>
-            <p>2 minutes suffisent. Email, mot de passe, et c&apos;est parti. Pas de questionnaire interminable.</p>
-            <h3 className="text-white/80 text-lg font-semibold">Messagerie illimitée</h3>
-            <p>Parle avec qui tu veux, quand tu veux. Sans limite de messages. Sans payer.</p>
-            <h3 className="text-white/80 text-lg font-semibold">Quartiers gay-friendly près de Dublin</h3>
-            <p>Temple Bar, The Liberties, Smithfield, Ranelagh, les quartiers où la communauté gay est la plus active.</p>
+            <h3 className="text-white/80 text-lg font-semibold">Quick signup</h3>
+            <p>2 minutes is all it takes. Email, password, and you&apos;re in. No endless questionnaire.</p>
+            <h3 className="text-white/80 text-lg font-semibold">Unlimited messaging</h3>
+            <p>Talk to whoever you want, whenever you want. No message limits. No paywalls.</p>
           </div>
         </div>
       </section>

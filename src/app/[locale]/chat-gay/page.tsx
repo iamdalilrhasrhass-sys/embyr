@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Chat Gay Gratuit — Messagerie Illimitée | Embir",
-  description: "Chat gay 100% gratuit et illimité. Discussion instantanée, traduction auto en 25 langues.",
+  title: "Gay Chat — Free Unlimited Messaging | Embir",
+  description: "Free gay chat on Embir. Unlimited messaging, no limits. Talk to guys near you.",
   alternates: { canonical: "https://embir.xyz/chat-gay" },
 };
 
@@ -12,20 +12,22 @@ export default function Page() {
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-black mb-6">Chat Gay Gratuit et Illimité</h1>
-          <p className="text-white/50 text-lg mb-8 leading-relaxed">Chat gay 100% gratuit et illimité. Discussion instantanée, traduction auto en 25 langues.</p>
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mb-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Prêt à commencer ?</h2>
-            <p className="text-white/50 mb-6">Rejoins Embir maintenant. 100% gratuit, sans pubs, sans piège.</p>
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 transition-all hover:shadow-rose-500/40 hover:scale-[1.02]">Créer mon profil gratuitement</Link>
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">Gay Chat</h1>
+          <p className="text-white/50 text-lg mb-8 leading-relaxed">Free gay chat on Embir. Unlimited messaging, no limits. Talk to guys near you.</p>
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
+            <h2 className="text-2xl font-bold text-white mb-3">Ready to chat?</h2>
+            <p className="text-white/50 mb-6">Join Embir now. 100% free, unlimited messaging.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
+            </Link>
           </div>
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi Embir ?</h2>
-            <p>Contrairement aux autres apps de rencontre gay, Embir est 100% gratuit. Messagerie illimitée, profils complets, découverte de mecs près de chez toi — tout est inclus, sans exception.</p>
-            <h3 className="text-white/80 text-lg font-semibold">Vraiment gratuit</h3>
-            <p>Pas d&apos;abonnement déguisé, pas de "freemium" qui te bloque après 3 messages. Embir est gratuit pour tous, tout le temps.</p>
-            <h3 className="text-white/80 text-lg font-semibold">25 langues</h3>
-            <p>Parle avec des mecs du monde entier. La traduction automatique est intégrée à la messagerie.</p>
+            <h2 className="text-white text-xl font-bold">Why Embir?</h2>
+            <p>Unlike other gay dating apps, Embir is 100% free. Unlimited messaging, full profiles, discover guys near you — everything included, no exceptions.</p>
+            <h3 className="text-white/80 text-lg font-semibold">Truly free</h3>
+            <p>No hidden subscriptions, no freemium that blocks you after 3 messages. Embir is free for everyone, always.</p>
+            <h3 className="text-white/80 text-lg font-semibold">25 languages</h3>
+            <p>Talk to guys worldwide. Automatic translation is built into the messaging.</p>
           </div>
         </div>
       </section>

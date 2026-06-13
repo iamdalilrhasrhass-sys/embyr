@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coming-Out et Rencontres Gay : Nos Conseils Bienveillants | Blog Embir",
-  description:
-    "Faire son coming-out et se lancer dans les rencontres gay en même temps, c'est un double défi. Guide bienveillant pour naviguer ces deux étapes avec sérénité, à ton rythme.",
+  title: "Coming Out and Dating — Practical Advice | Embir Blog",
+  description: "Navigate coming out and gay dating with confidence. Real advice from the community.",
   keywords: [
     "coming out et rencontres",
     "faire son coming out",
@@ -21,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/coming-out-rencontres-conseils",
   },
   openGraph: {
-    title: "Coming-Out et Rencontres Gay : Nos Conseils Bienveillants | Blog Embir",
+    title: "Coming Out and Dating — Practical Advice | Embir Blog",
     description:
       "Faire son coming-out et se lancer dans les rencontres gay en même temps : guide bienveillant pour avancer à ton rythme.",
     url: "https://embir.xyz/blog/coming-out-rencontres-conseils",
     type: "article",
     siteName: "Embir",
-    locale: "fr_FR",
+    locale: "en_US",
   },
 };
 

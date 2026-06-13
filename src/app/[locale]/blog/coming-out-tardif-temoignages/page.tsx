@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coming out tardif — Témoignages et conseils pour faire son coming out après 30 ans | Embir Blog",
-  description: "Le coming out tardif est plus courant qu'on ne le pense. Conseils, témoignages, et ressources pour faire son coming out à tout âge.",
+  title: "Coming Out Later in Life — Real Stories | Embir Blog",
+  description: "Real stories from men who came out after 30. It's never too late to be yourself.",
   keywords: ["coming out tardif temoignages", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/coming-out-tardif-temoignages" },
 };

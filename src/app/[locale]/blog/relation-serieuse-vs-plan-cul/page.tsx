@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Relation sérieuse ou plan cul ? Comment définir ce que tu cherches | Embir Blog",
-  description: "Comment savoir si tu veux une relation sérieuse ou un plan cul. Guide pour être honnête avec toi-même et les autres.",
+  title: "Serious Relationship vs Hookup — Know What You Want | Embir Blog",
+  description: "Be clear about what you're looking for. How to navigate both worlds honestly.",
   keywords: ["relation serieuse vs plan cul", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/relation-serieuse-vs-plan-cul" },
 };

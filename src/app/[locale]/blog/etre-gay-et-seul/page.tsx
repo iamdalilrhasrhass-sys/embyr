@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Être gay et seul — Comment vivre sa solitude et en faire une force | Embir Blog",
-  description: "La solitude chez les hommes gays est plus fréquente qu'on ne le pense. Conseils pour l'accepter, la comprendre, et en sortir.",
+  title: "Being Gay and Lonely — You're Not Alone | Embir Blog",
+  description: "Navigating loneliness as a gay man. Understanding it, coping with it, and finding real connection.",
   keywords: ["etre gay et seul", "gay", "LGBTQ+", "rencontre gay", "Embir"],
   alternates: { canonical: "https://embir.xyz/blog/etre-gay-et-seul" },
 };
