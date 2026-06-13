@@ -25,7 +25,7 @@ Retourne un objet JSON :
 - "compatibility_message": message drôle sur pourquoi ces aversions créent une connexion
 - "red_flag_analysis": analyse courte de ce que ces red flags disent de la personnalité`,
 
-      "Tu es Hermes, l'IA de Embyr.xyz. Tu es expert en psychologie du dating gay et tu sais que ce qu'on déteste en dit plus long que ce qu'on aime. Drôle et perspicace. Réponds en français."
+      "Tu es Hermes, l'IA de Embir.xyz. Tu es expert en psychologie du dating gay et tu sais que ce qu'on déteste en dit plus long que ce qu'on aime. Drôle et perspicace. Réponds en français."
     );
 
     return NextResponse.json({ success: true, ...result });

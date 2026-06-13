@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       personality_tags: string[];
       feedback: string;
     }>(
-      `Évalue si cet utilisateur a la "vibe" pour rejoindre Embyr, une app de rencontre gay exclusive.
+      `Évalue si cet utilisateur a la "vibe" pour rejoindre Embir, une app de rencontre gay exclusive.
 
 Profil: ${profile?.bio || "non spécifié"}
 Réponses au mini-entretien :
@@ -42,7 +42,7 @@ Retourne un objet JSON :
 - "personality_tags": 3 tags qui décrivent la personnalité
 - "feedback": feedback constructif si refusé, ou compliment si accepté`,
 
-      "Tu es Hermes, le physionomiste IA de Embyr.xyz, un club de rencontre gay exclusif. Tu es drôle, exigeant, mais juste. Tu sais repérer les personnalités intéressantes. Réponds en français."
+      "Tu es Hermes, le physionomiste IA de Embir.xyz, un club de rencontre gay exclusif. Tu es drôle, exigeant, mais juste. Tu sais repérer les personnalités intéressantes. Réponds en français."
     );
 
     return NextResponse.json({ success: true, ...result });

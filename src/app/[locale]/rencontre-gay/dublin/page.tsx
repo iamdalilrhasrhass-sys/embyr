@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Dublin — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Dublin sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Dublin, Dublin.",
+  title: "Rencontre Gay Dublin — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Dublin sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Dublin, Dublin.",
   keywords: ["rencontre gay dublin", "gay dublin", "rencontre mec dublin", "app gay dublin", "dating gay dublin"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/dublin" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Dublin</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Dublin ? Embyr est l&apos;app de rencontre gay 100% gratuite.
+            Tu cherches des rencontres entre hommes à Dublin ? Embir est l&apos;app de rencontre gay 100% gratuite.
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Dublin.
           </p>
 
@@ -48,9 +48,9 @@ export default function RencontreGayCity() {
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Dublin ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Dublin ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Dublin.
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Dublin.
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

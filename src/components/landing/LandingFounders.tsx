@@ -37,7 +37,7 @@ export default function LandingFounders() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-gray-500 mb-20 max-w-md mx-auto"
       >
-        Les premières à rejoindre l'aventure Embyr. Une place parmi elles t'attend.
+        Les premières à rejoindre l'aventure Embir. Une place parmi elles t'attend.
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

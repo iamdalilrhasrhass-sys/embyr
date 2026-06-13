@@ -83,12 +83,15 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    const LIFETIME_DATE = new Date("2099-12-31T23:59:59Z");
+
     const user = await prisma.user.create({
       data: {
         email,
         passwordHash,
         isAdultConfirmed: true,
         consentSensitiveData: true,
+        role: "AMBASSADOR",
         referralCode: userReferralCode,
         referredBy: referredById ? referralCode?.trim() : null,
         profile: {
@@ -101,6 +104,10 @@ export async function POST(request: NextRequest) {
             genderIdentity: (genderIdentity as any) || null,
             profileCompletionScore: (name ? 20 : 0) + (city ? 10 : 0) + (birthDate ? 10 : 0),
             referralCode: userReferralCode,
+            isPremium: true,
+            premiumUntil: LIFETIME_DATE,
+            isFounder: true,
+            courtesyBadges: ["ambassadeur"],
           },
         },
         consents: {
@@ -113,6 +120,50 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    // Créer le record Ambassador
+    await prisma.ambassador.create({
+      data: {
+        userId: user.id,
+        profileId: user.id,
+        publicName: name || email.split("@")[0],
+        slug: `amb-${user.id.slice(0, 8)}`,
+        bio: "Ambassadeur·ice EMBIR — accès gratuit à vie",
+        socialLinks: "{}",
+        referralCode: userReferralCode,
+        lifetimePremium: true,
+        status: "active",
+      },
+    });
+
+    // ── Referral reward: grant 7 premium days to referrer ──
+    if (referredById) {
+      const REFERRAL_REWARD_DAYS = 7;
+      const rewardMs = REFERRAL_REWARD_DAYS * 24 * 60 * 60 * 1000;
+
+      const sponsorProfile = await prisma.profile.findUnique({
+        where: { userId: referredById },
+        select: { id: true, premiumUntil: true, referralEarnings: true },
+      });
+
+      if (sponsorProfile) {
+        const now = new Date();
+        const currentUntil = sponsorProfile.premiumUntil;
+        const base = currentUntil && currentUntil > now ? currentUntil : now;
+        const newUntil = new Date(base.getTime() + rewardMs);
+
+        await prisma.profile.update({
+          where: { id: sponsorProfile.id },
+          data: {
+            isPremium: true,
+            premiumUntil: newUntil,
+            referralEarnings: { increment: REFERRAL_REWARD_DAYS },
+          },
+        });
+
+        console.log(`[referral reward] sponsor=${referredById} days=${REFERRAL_REWARD_DAYS} newUntil=${newUntil.toISOString()}`);
+      }
+    }
+
     const token = signToken({ userId: user.id, email: user.email });
 
     // Notification Telegram (fire-and-forget)
@@ -121,7 +172,7 @@ export async function POST(request: NextRequest) {
     if (botToken) {
       const totalUsers = await prisma.user.count();
       const notifMsg = [
-        `🆕 **Nouvelle inscription Embyr !**`,
+        `🆕 **Nouvelle inscription Embir !**`,
         ``,
         `📧 Email: \`${email}\``,
         `🆔 ID: \`${user.id}\``,

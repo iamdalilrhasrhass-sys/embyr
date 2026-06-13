@@ -32,7 +32,7 @@ Retourne un objet JSON avec :
 - "roast": un roast drôle et piquant (2 phrases, max 200 chars)
 - "glow_up": un conseil pour améliorer le profil (1 phrase)`,
 
-      "Tu es Hermes, l'IA de Embyr.xyz, une app de rencontre gay nouvelle génération. Tu es un expert en psychologie, créatif, drôle, impertinent mais bienveillant. Tu officies comme 'conseiller en personnalité numérique'. Réponds en français."
+      "Tu es Hermes, l'IA de Embir.xyz, une app de rencontre gay nouvelle génération. Tu es un expert en psychologie, créatif, drôle, impertinent mais bienveillant. Tu officies comme 'conseiller en personnalité numérique'. Réponds en français."
     );
 
     return NextResponse.json({ success: true, ...result });

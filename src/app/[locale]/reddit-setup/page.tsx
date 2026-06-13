@@ -14,7 +14,7 @@ export default function RedditSetupPage() {
 2. Va sur https://www.reddit.com/prefs/apps
 3. Clique "Create App" ou "Create Another App"
 4. Remplis :
-   - Name : Embyr
+   - Name : Embir
    - Type : script (coche "script")
    - redirect uri : http://localhost:8080
 5. Clique "Create App"
@@ -64,7 +64,7 @@ export default function RedditSetupPage() {
                 <span className="text-white font-semibold text-sm">Remplis ça :</span>
               </div>
               <div className="text-white/60 text-xs space-y-1 font-mono bg-black/20 rounded-lg p-3">
-                <div><span className="text-white/80">Name :</span> Embyr</div>
+                <div><span className="text-white/80">Name :</span> Embir</div>
                 <div><span className="text-white/80">Type :</span> ✅ Script (personal use script)</div>
                 <div><span className="text-white/80">Redirect URI :</span> http://localhost:8080</div>
               </div>

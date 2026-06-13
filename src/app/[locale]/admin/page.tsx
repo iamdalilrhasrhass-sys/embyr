@@ -74,7 +74,7 @@ export default function AdminDashboard() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 min-h-[80vh]">
       <div className="w-full md:w-1/4 glass-card p-4 rounded-3xl self-start md:sticky top-24">
-        <h2 className="text-xl font-bold mb-6 px-4">Admin Embyr</h2>
+        <h2 className="text-xl font-bold mb-6 px-4">Admin Embir</h2>
         <nav className="space-y-2">
           <button onClick={() => setTab("reports")} className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${tab === 'reports' ? 'bg-[var(--color-premium-rose)] text-white' : 'hover:bg-white/5 text-gray-300'}`}>
             🚨 Signalements ({reports.filter(r => r.status === 'PENDING').length})

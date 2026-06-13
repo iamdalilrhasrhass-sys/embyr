@@ -59,16 +59,25 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
+          {/* Mobile: Auth + Language + Hamburger */}
+          <div className="flex md:hidden items-center gap-1.5">
+            <Link href="/auth/login" className="text-xs font-medium text-white/60 hover:text-white px-2 py-1.5 rounded-full border border-white/10 hover:border-white/20 transition-all">
+              Login
+            </Link>
+            <Link href="/auth/register" className="text-xs font-bold text-white bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] px-3 py-1.5 rounded-full shadow-[0_0_12px_rgba(255,31,90,0.3)] transition-all hover:scale-105">
+              Sign up
+            </Link>
+            <LanguageSwitcher />
+            <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-50"
+            className="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-50"
             aria-label="Menu"
           >
             <span className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[5px]' : ''}`}></span>
             <span className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
             <span className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`}></span>
           </button>
+          </div>
         </div>
       </div>
 

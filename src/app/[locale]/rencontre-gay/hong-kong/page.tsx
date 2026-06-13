@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Hong Kong — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Hong Kong sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Hong Kong, Hong Kong.",
+  title: "Rencontre Gay Hong Kong — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Hong Kong sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Hong Kong, Hong Kong.",
   keywords: ["rencontre gay hong kong", "gay hong kong", "rencontre mec hong kong", "app gay hong kong", "dating gay hong kong"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/hong-kong" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Hong Kong</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Hong Kong ? Embyr est l&apos;app de rencontre gay 100% gratuite.
+            Tu cherches des rencontres entre hommes à Hong Kong ? Embir est l&apos;app de rencontre gay 100% gratuite.
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Hong Kong.
           </p>
 
@@ -48,9 +48,9 @@ export default function RencontreGayCity() {
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Hong Kong ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Hong Kong ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Hong Kong.
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Hong Kong.
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

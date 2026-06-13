@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Buenos Aires — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Buenos Aires sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Buenos Aires, Buenos Aires.",
+  title: "Rencontre Gay Buenos Aires — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Buenos Aires sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Buenos Aires, Buenos Aires.",
   keywords: ["rencontre gay buenos aires", "gay buenos aires", "rencontre mec buenos aires", "app gay buenos aires", "dating gay buenos aires"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/buenos-aires" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Buenos Aires</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Buenos Aires ? Embyr est l&apos;app de rencontre gay 100% gratuite.
+            Tu cherches des rencontres entre hommes à Buenos Aires ? Embir est l&apos;app de rencontre gay 100% gratuite.
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Buenos Aires.
           </p>
 
@@ -48,9 +48,9 @@ export default function RencontreGayCity() {
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Buenos Aires ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Buenos Aires ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Buenos Aires.
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Buenos Aires.
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

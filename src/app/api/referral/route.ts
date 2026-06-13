@@ -15,10 +15,10 @@ export async function GET(req: NextRequest) {
     where: { referredBy: profile?.referralCode || "" },
   });
 
-  // Also check Profile for referralCode fallback
+  // Also check Profile for referralCode fallback and earnings
   const profileData = await prisma.profile.findUnique({
     where: { userId: user.id },
-    select: { referralCode: true },
+    select: { referralCode: true, referralEarnings: true },
   });
 
   const code = profile?.referralCode || profileData?.referralCode || null;
@@ -26,6 +26,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     referralCode: code,
     referralCount,
+    referralDays: profileData?.referralEarnings ? Number(profileData.referralEarnings) : referralCount * 7,
     referralLink: code ? `https://embir.xyz/fr/auth/register?ref=${code}` : null,
   });
 }

@@ -57,7 +57,7 @@ export default function LandingInclusive() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-lg text-gray-300/70 max-w-2xl mx-auto leading-relaxed mb-16"
         >
-          Embyr est née d'une conviction simple : les rencontres premium doivent célébrer{" "}
+          Embir est née d'une conviction simple : les rencontres premium doivent célébrer{" "}
           <span className="text-white/90 font-semibold">toutes les identités</span>.{" "}
           Gays, bis, queers — chaque homme mérite une plateforme qui le respecte, le protège et le met en valeur. Sans exception.
         </motion.p>
@@ -93,7 +93,7 @@ export default function LandingInclusive() {
           <span className="w-2 h-2 rounded-full bg-[#5BCEFA] shadow-[0_0_10px_rgba(91,206,250,0.5)]" />
           <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
           <span className="w-2 h-2 rounded-full bg-[#F5A9B8] shadow-[0_0_10px_rgba(245,169,184,0.5)]" />
-          <span className="text-xs text-gray-400 tracking-wide ml-1">Embyr est fièrement inclusive</span>
+          <span className="text-xs text-gray-400 tracking-wide ml-1">Embir est fièrement inclusive</span>
         </motion.div>
 
         <motion.div

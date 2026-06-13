@@ -30,7 +30,7 @@ export default function InstallerApplicationPage() {
             </div>
           ) : (
             <div className="rounded-[var(--eb-radius-card)] p-6 space-y-3" style={{background: "var(--eb-bg-elev-1)", border: "1px solid var(--eb-border-soft)"}}>
-              <p className="text-[var(--eb-text-secondary)]">Installe Embyr sur ton téléphone pour une expérience optimale. Sur iPhone : Safari → Partager → Sur l'écran d'accueil.</p>
+              <p className="text-[var(--eb-text-secondary)]">Installe Embir sur ton téléphone pour une expérience optimale. Sur iPhone : Safari → Partager → Sur l'écran d'accueil.</p>
             </div>
           )}
         </div>

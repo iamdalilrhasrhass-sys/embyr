@@ -1,0 +1,122 @@
+/* ═══════════════════════════════════════════════
+   EMBYR DESIGN TOKENS — Editorial, warm, premium
+   Palette : amber/copper, midnight deep, warm rose
+   Typography : Playfair Display (serif) + Inter (sans)
+   Tous scopés sous [data-site="embyr"]
+   ═══════════════════════════════════════════════ */
+
+[data-site="embyr"] {
+  /* ── Surfaces ── */
+  --eb-bg-base: #0a0614;
+  --eb-bg-elev-1: #110d1a;
+  --eb-bg-elev-2: #181324;
+  --eb-bg-elev-3: #1f1930;
+  --eb-bg-overlay: rgba(10, 6, 20, 0.78);
+
+  /* ── Accents amber/copper ── */
+  --eb-accent: #d4a574;
+  --eb-accent-hover: #e8c4a2;
+  --eb-accent-deep: #a07050;
+  --eb-accent-glow: rgba(212, 165, 116, 0.3);
+
+  /* ── Métaux ── */
+  --eb-copper: #c4956a;
+  --eb-gold-dark: #d4a574;
+  --eb-steel: #5A6470;
+
+  /* ── Texte ── */
+  --eb-text-primary: #f5f0e8;
+  --eb-text-secondary: #b0a89a;
+  --eb-text-muted: #706858;
+
+  /* ── Bordures ── */
+  --eb-border-soft: rgba(255, 255, 255, 0.04);
+  --eb-border-strong: rgba(212, 165, 116, 0.2);
+
+  /* ── Sémantique ── */
+  --eb-danger: #E5484D;
+  --eb-success: #2EBD85;
+  --eb-warning: #d4a574;
+
+  /* ── Ombres ── */
+  --eb-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --eb-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --eb-shadow-lg: 0 16px 50px rgba(0, 0, 0, 0.6);
+  --eb-shadow-glow: 0 0 40px var(--eb-accent-glow);
+  --eb-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  /* ── Rayons ── */
+  --eb-radius-card: 16px;
+  --eb-radius-btn: 12px;
+  --eb-radius-input: 12px;
+  --eb-radius-badge: 8px;
+
+  /* ── Fonts ── */
+  --eb-font-display: "Playfair Display", Georgia, serif;
+  --eb-font-body: "Inter", -apple-system, sans-serif;
+  --eb-font-mono: "Geist Mono", "JetBrains Mono", monospace;
+}
+
+/* ── Global Embyr styles ── */
+[data-site="embyr"] body {
+  background: var(--eb-bg-base);
+  color: var(--eb-text-primary);
+  font-family: var(--eb-font-body);
+}
+
+[data-site="embyr"] h1, [data-site="embyr"] h2, [data-site="embyr"] h3 {
+  font-family: var(--eb-font-display);
+  letter-spacing: -0.02em;
+}
+
+[data-site="embyr"] .font-display {
+  font-family: var(--eb-font-display);
+}
+
+[data-site="embyr"] .font-body {
+  font-family: var(--eb-font-body);
+}
+
+/* ── Ember Glow effect (copper warm) ── */
+.ember-glow {
+  position: relative;
+}
+.ember-glow::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 50% 50%, var(--eb-accent-glow) 0%, transparent 60%);
+  filter: blur(40px);
+  animation: ember-pulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes ember-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.9; transform: scale(1.12); }
+}
+
+/* ── Scroll reveal ── */
+.scroll-reveal-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card 3D Tilt base ── */
+.card-3d {
+  transform: perspective(900px) rotateX(var(--eb-ry, 0deg)) rotateY(var(--eb-rx, 0deg));
+  transition: transform 0.2s ease-out;
+}
+.card-3d:hover {
+  transition: transform 0.1s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-3d { transform: none !important; }
+  .ember-glow::before { animation: none !important; }
+  .scroll-reveal-hidden { opacity: 1; transform: none; }
+}

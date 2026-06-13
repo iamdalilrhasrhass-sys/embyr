@@ -31,7 +31,7 @@ Retourne un objet JSON :
 - "chemistry": une phrase décrivant l'alchimie
 - "verdict": verdict final drôle en une phrase (style "Ça passe crème" ou "Fuyez")`,
 
-      "Tu es Hermes, l'IA de Embyr.xyz, expert en dating gay. Tu simules des premiers rendez-vous de façon drôle et perspicace. Réponds en français."
+      "Tu es Hermes, l'IA de Embir.xyz, expert en dating gay. Tu simules des premiers rendez-vous de façon drôle et perspicace. Réponds en français."
     );
 
     return NextResponse.json({ success: true, ...result });

@@ -1,0 +1,196 @@
+
+	<div class="p-body-inner">
+		<!--XF:EXTRA_OUTPUT-->
+
+
+	
+
+
+
+
+
+
+    
+
+
+
+
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+
+
+
+
+	
+	
+	
+
+
+
+	
+
+
+
+
+		
+			
+	
+		
+		
+
+		<ul class="notices notices--block js-notices" data-xf-init="notices" data-type="block" data-scroll-interval="6">
+
+			
+				
+	<li class="notice js-notice notice--primary" data-notice-id="30" data-delay-duration="0" data-display-duration="0" data-auto-dismiss="" data-visibility="">
+
+		
+		<div class="notice-content">
+			
+			<h4>Welcome To Just Us Boys - The World's Largest Gay Message Board Community</h4>
+In order to comply with recent US Supreme Court rulings regarding adult content, we will be making changes in the future to require that you log into your account to view adult content on the site.  <br>
+If you do not have an account, please register.  <br>
+<a href="https://forums.justusboys.com/register/">REGISTER HERE</a> - 100% FREE / We Will Never Sell Your Info<p>  PLEASE READ: To register, <strong>turn off your VPN (iPhone users- disable iCloud)</strong>; you can re-enable the VPN after registration.  You must maintain an active email address on your account:  <b>disposable email addresses cannot be used to register</b>.
+		</p></div>
+	</li>
+
+			
+		</ul>
+	
+
+		
+
+		
+
+		
+	
+
+		
+			
+		
+
+		
+	
+
+
+		
+	
+		<ul class="p-breadcrumbs " itemscope="" itemtype="https://schema.org/BreadcrumbList">
+		
+			
+
+			
+			
+
+			
+				
+				
+	<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+		<a href="http://www.justusboys.com" itemprop="item">
+			<span itemprop="name">Home</span>
+		</a>
+		<meta itemprop="position" content="1">
+	</li>
+
+			
+
+			
+			
+
+		
+		</ul>
+	
+
+		
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+		
+	
+
+		
+	
+
+
+		
+			<div class="p-body-header">
+			
+				
+					<div class="p-title ">
+					
+						
+							<h1 class="p-title-value">JustUsBoys The World's Largest Gay Message Board</h1>
+						
+						
+							<div class="p-title-pageAction">
+	
+		<a href="/whats-new/posts/" class="button button--icon button--icon--bolt "><i class="fa--xf far fa-bolt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="/data/local/icons/regular.svg?v=1778076901#bolt"></use></svg></i><span class="button-text">
+			New posts
+		</span></a>
+	
+	
+</div>
+						
+					
+					</div>
+				
+
+				
+			
+			</div>
+		
+
+		<div class="p-body-main p-body-main--withSidebar ">
+			
+			<div class="p-body-contentCol"></div>
+			
+				<div class="p-body-sidebarCol"></div>
+			
+
+			
+
+			<div class="p-body-content">
+				
+	
+
+		
+			
+		
+
+		
+	
+
+
+				<div class="p-body-pageContent"> <div class="samBannerUnit" data-xf-init="sam-unit" data-position="forum_overview_top"> <div class="samItem" data-xf-init="sam-item" data-id="191" data-cv="true" data-cc="true"> <a href="http://join.brokestraightboys.com/track/MTAxMzg4LjEwNy4xMDkuMjM0LjkuMC4wLjAuMA/model/MTc4/Liam-Corolla" rel="nofollow" target="_blank"><img src="https://www.brokestraightboys.com/ads/liam.jpg" border="0" width="175" height="210"></a> <a href="http://join.brok

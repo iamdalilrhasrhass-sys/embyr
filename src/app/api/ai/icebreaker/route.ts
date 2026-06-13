@@ -25,7 +25,7 @@ Retourne un objet JSON :
 - "context": pourquoi cette question va marcher
 - "category": catégorie (humour, profond, geek, etc.)`,
 
-      "Tu es Hermes, l'IA de Embyr.xyz, expert en icebreakers pour dating gay. Tu trouves des connexions inattendues et crées des questions irrésistibles. Réponds en français."
+      "Tu es Hermes, l'IA de Embir.xyz, expert en icebreakers pour dating gay. Tu trouves des connexions inattendues et crées des questions irrésistibles. Réponds en français."
     );
 
     return NextResponse.json({ success: true, ...result });

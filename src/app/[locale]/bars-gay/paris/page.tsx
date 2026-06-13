@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Meilleurs Bars Gay Paris — Top Adresses 2026 | Embyr",
+  title: "Meilleurs Bars Gay Paris — Top Adresses 2026 | Embir",
   description: "Guide complet des meilleurs bars gay à Paris. Boîtes de nuit, bars branchés, lieux de rencontre où sortir ce soir.",
   keywords: ["bars gay paris", "soirée gay paris", "paris vie nocturne gay"],
   alternates: { canonical: "https://embir.xyz/bars-gay/paris" },
@@ -67,7 +67,7 @@ export default function GayBarsPage() {
           </div>
 
           <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mb-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Planifie ta soirée sur Embyr</h2>
+            <h2 className="text-2xl font-bold text-white mb-3">Planifie ta soirée sur Embir</h2>
             <p className="text-white/50 mb-6">100% gratuit, 0 pub, 0 abonnement.</p>
             <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-[1.02]">
               Créer mon profil gratuitement

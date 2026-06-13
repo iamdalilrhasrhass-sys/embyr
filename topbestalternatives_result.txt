@@ -1,0 +1,8 @@
+FAILED: Could not solve Turnstile captcha.
+Attempted methods:
+1. puppeteer-extra with stealth plugin
+2. Xvfb + Camoufox (Firefox)
+3. Direct turnstile.execute() API call
+4. Playwright Chromium with various settings
+
+Manual submission required at: https://topbestalternatives.com/submit/

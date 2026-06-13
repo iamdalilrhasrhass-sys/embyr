@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Premier Date Gay : 10 Conseils pour une Rencontre Réussie | Blog Embyr",
+  title: "Premier Date Gay : 10 Conseils pour une Rencontre Réussie | Blog Embir",
   description:
     "Stressé pour ton premier date gay ? On te donne 10 conseils pratiques pour un premier rendez-vous réussi : où aller, quoi dire, comment gérer le stress et éviter les faux pas.",
   keywords: [
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/premier-date-gay-conseils",
   },
   openGraph: {
-    title: "Premier Date Gay : 10 Conseils pour une Rencontre Réussie | Blog Embyr",
+    title: "Premier Date Gay : 10 Conseils pour une Rencontre Réussie | Blog Embir",
     description:
       "Où aller, quoi dire, comment gérer le stress : nos conseils pratiques pour un premier rendez-vous gay réussi.",
     url: "https://embir.xyz/blog/premier-date-gay-conseils",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };

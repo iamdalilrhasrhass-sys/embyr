@@ -21,7 +21,7 @@ export default function WelcomePage() {
   }, []);
 
   const refLink = `https://embir.xyz/auth/register?ref=${referralCode}`;
-  const shareMsg = encodeURIComponent(`Je viens de rejoindre Embyr, une app de rencontre gay 100% gratuite ! Rejoins-moi avec mon code ${referralCode} → https://embir.xyz/auth/register?ref=${referralCode}`);
+  const shareMsg = encodeURIComponent(`Je viens de rejoindre Embir, une app de rencontre gay 100% gratuite ! Rejoins-moi avec mon code ${referralCode} → https://embir.xyz/auth/register?ref=${referralCode}`);
 
   const copyLink = () => {
     navigator.clipboard.writeText(refLink);
@@ -34,7 +34,7 @@ export default function WelcomePage() {
       <div className="emb-container max-w-lg text-center py-16">
         <div className="text-6xl mb-6">🎉</div>
         <h1 className="text-3xl md:text-4xl font-black mb-3">
-          Bienvenue sur <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Embyr</span> !
+          Bienvenue sur <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Embir</span> !
         </h1>
         <p className="text-white/50 text-lg mb-8">
           Ton compte est créé. Maintenant, invite tes potes et fais grandir la communauté.
@@ -70,7 +70,7 @@ export default function WelcomePage() {
             💬 WhatsApp
           </a>
           <a
-            href={`https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=${encodeURIComponent("Rejoins-moi sur Embyr ! 🏳️‍🌈")}`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=${encodeURIComponent("Rejoins-moi sur Embir ! 🏳️‍🌈")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-3 rounded-xl text-sm font-semibold border border-blue-400/20 bg-blue-400/10 text-blue-400 hover:bg-blue-400/20 transition-colors text-center"

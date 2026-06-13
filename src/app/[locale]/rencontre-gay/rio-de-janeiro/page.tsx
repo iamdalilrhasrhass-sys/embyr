@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Rio de Janeiro — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Rio de Janeiro sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Rio de Janeiro, Rio de Janeiro.",
+  title: "Rencontre Gay Rio de Janeiro — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Rio de Janeiro sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Rio de Janeiro, Rio de Janeiro.",
   keywords: ["rencontre gay rio de janeiro", "gay rio de janeiro", "rencontre mec rio de janeiro", "app gay rio de janeiro", "dating gay rio de janeiro"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/rio-de-janeiro" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Rio de Janeiro</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Rio de Janeiro ? Embyr est l&apos;app de rencontre gay 100% gratuite.
+            Tu cherches des rencontres entre hommes à Rio de Janeiro ? Embir est l&apos;app de rencontre gay 100% gratuite.
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Rio de Janeiro.
           </p>
 
@@ -48,9 +48,9 @@ export default function RencontreGayCity() {
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Rio de Janeiro ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Rio de Janeiro ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Rio de Janeiro.
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Rio de Janeiro.
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Top 20 des Villes Gay Friendly dans le Monde — Rencontres Gay | Embyr",
+  title: "Top 20 des Villes Gay Friendly dans le Monde — Rencontres Gay | Embir",
   description:
-    "Découvre le top 20 des villes gay friendly les plus incroyables pour les rencontres entre hommes. De Paris à Tokyo, trouve ta prochaine destination idéale avec Embyr.",
+    "Découvre le top 20 des villes gay friendly les plus incroyables pour les rencontres entre hommes. De Paris à Tokyo, trouve ta prochaine destination idéale avec Embir.",
   keywords: [
     "villes gay friendly",
     "top villes gay",
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Top 20 des Villes Gay Friendly pour les Rencontres Gay",
     description:
-      "Les meilleures villes du monde pour les rencontres entre hommes. Trouve ta prochaine destination avec Embyr.",
+      "Les meilleures villes du monde pour les rencontres entre hommes. Trouve ta prochaine destination avec Embir.",
     url: "https://embir.xyz/top-gay-cities",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };
@@ -262,7 +262,7 @@ export default function TopGayCitiesPage() {
             </div>
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
               <div className="text-3xl mb-2">💜</div>
-              <div className="text-white font-bold">Embyr</div>
+              <div className="text-white font-bold">Embir</div>
               <div className="text-white/40 text-sm mt-1">Connecte-toi partout</div>
             </div>
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
@@ -306,7 +306,7 @@ export default function TopGayCitiesPage() {
               Prêt à rencontrer des mecs dans ta ville ?
             </h2>
             <p className="text-white/50 mb-6">
-              Rejoins Embyr gratuitement et connecte-toi avec des hommes près de chez toi, où que tu sois dans le monde.
+              Rejoins Embir gratuitement et connecte-toi avec des hommes près de chez toi, où que tu sois dans le monde.
             </p>
             <Link
               href="/auth/register"
@@ -327,7 +327,7 @@ export default function TopGayCitiesPage() {
               LGBTQ+ se rassemble naturellement.
             </p>
             <p>
-              Sur <strong className="text-white/70">Embyr</strong>, tu peux te connecter avec des mecs
+              Sur <strong className="text-white/70">Embir</strong>, tu peux te connecter avec des mecs
               dans chacune de ces villes, où que tu sois. Que tu prépares un voyage, que tu
               déménages ou que tu cherches simplement à élargir ton cercle de rencontres,
               l&apos;app est là pour toi — <strong>100% gratuite, sans pubs, sans limite de messages</strong>.

@@ -23,7 +23,7 @@ Retourne un objet JSON avec "options", un tableau de 3 objets :
 - "text": le texte de la réponse (max 200 chars)
 - "vibe": l'énergie en un mot (ex: "taquin", "chill", "audacieux")`,
 
-      "Tu es Hermes, le wingman IA de Embyr.xyz, l'app de rencontre gay. Tu aides les mecs à briller en conversation. Tu es drôle, confiant, et tu connais tous les codes du dating gay. Réponds en français."
+      "Tu es Hermes, le wingman IA de Embir.xyz, l'app de rencontre gay. Tu aides les mecs à briller en conversation. Tu es drôle, confiant, et tu connais tous les codes du dating gay. Réponds en français."
     );
 
     return NextResponse.json({ success: true, ...result });

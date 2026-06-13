@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Miami — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Miami sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Miami, Miami.",
+  title: "Rencontre Gay Miami — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Miami sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Miami, Miami.",
   keywords: ["rencontre gay miami", "gay miami", "rencontre mec miami", "app gay miami", "dating gay miami"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/miami" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Miami</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Miami ? Embyr est l&apos;app de rencontre gay 100% gratuite.
+            Tu cherches des rencontres entre hommes à Miami ? Embir est l&apos;app de rencontre gay 100% gratuite.
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Miami.
           </p>
 
@@ -48,9 +48,9 @@ export default function RencontreGayCity() {
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Miami ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Miami ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Miami.
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Miami.
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

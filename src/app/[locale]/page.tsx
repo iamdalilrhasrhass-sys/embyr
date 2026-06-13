@@ -3,6 +3,9 @@ import ScrollReveal from "@/components/motion/ScrollReveal";
 import AuroraBackground from "@/components/motion/AuroraBackground";
 import Link from "next/link";
 
+// ISR: pre-render at build, revalidate every hour for instant subsequent loads
+export const revalidate = 3600;
+
 const FEATURES = [
   {
     title: "Verified Selfie",
@@ -153,7 +156,6 @@ function PhonePreview() {
     </div>
   );
 }
-
 export default function Home() {
   return (
     <main className="emb-page">

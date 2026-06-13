@@ -27,6 +27,7 @@ const NAV_SECTIONS = [
     title: "Mon univers",
     items: [
       { href: "/dashboard/profile", icon: "•", label: "Mon profil" },
+      { href: "/inviter", icon: "•", label: "Inviter des amis" },
       { href: "/albums", icon: "•", label: "Albums" },
       { href: "/favoris", icon: "•", label: "Favoris" },
       { href: "/blacklist", icon: "•", label: "Blacklist" },

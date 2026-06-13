@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Tel Aviv — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Tel Aviv sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Tel Aviv, Tel Aviv.",
+  title: "Rencontre Gay Tel Aviv — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Tel Aviv sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Tel Aviv, Tel Aviv.",
   keywords: ["rencontre gay tel aviv", "gay tel aviv", "rencontre mec tel aviv", "app gay tel aviv", "dating gay tel aviv"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/tel-aviv" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Tel Aviv</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Tel Aviv ? Embyr est l&apos;app de rencontre gay 100% gratuite.
+            Tu cherches des rencontres entre hommes à Tel Aviv ? Embir est l&apos;app de rencontre gay 100% gratuite.
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi, Tel Aviv.
           </p>
 
@@ -48,9 +48,9 @@ export default function RencontreGayCity() {
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Tel Aviv ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Tel Aviv ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Tel Aviv.
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Tel Aviv.
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché.
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

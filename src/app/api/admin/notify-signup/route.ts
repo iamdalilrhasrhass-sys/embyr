@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     const totalUsers = await prisma.user.count();
 
     const message = [
-      `🆕 **Nouvelle inscription Embyr !**`,
+      `🆕 **Nouvelle inscription Embir !**`,
       ``,
       `📧 Email: \`${email}\``,
       `🆔 ID: \`${userId}\``,

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Comment Draguer un Mec : Le Guide Complet 2026 | Blog Embyr",
+  title: "Comment Draguer un Mec : Le Guide Complet 2026 | Blog Embir",
   description:
     "Tu veux savoir comment draguer un mec sans passer pour un forceur ? Découvre notre guide complet avec des techniques concrètes, des exemples de phrases, et les erreurs à éviter absolument.",
   keywords: [
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/comment-draguer-mec-guide-complet",
   },
   openGraph: {
-    title: "Comment Draguer un Mec : Le Guide Complet 2026 | Blog Embyr",
+    title: "Comment Draguer un Mec : Le Guide Complet 2026 | Blog Embir",
     description:
       "Techniques concrètes, exemples de phrases, et erreurs à éviter pour draguer un mec sans être lourd.",
     url: "https://embir.xyz/blog/comment-draguer-mec-guide-complet",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };
@@ -84,7 +84,7 @@ export default function ArticlePage() {
             </p>
 
             <h3 className="text-lg font-semibold text-white/80 mt-6 mb-2">
-              📱 Sur une appli de rencontre (Embyr, Tinder, Grindr…)
+              📱 Sur une appli de rencontre (Embir, Tinder, Grindr…)
             </h3>
             <p>
               Le premier message est crucial. Oublie le "salut ça va ?" qui ne mène nulle part. Regarde son profil,
@@ -185,7 +185,7 @@ export default function ArticlePage() {
               href="/auth/register"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-6 py-3 text-sm font-semibold text-white hover:from-rose-400 hover:to-amber-400 transition-all"
             >
-              Rejoins Embyr gratuitement
+              Rejoins Embir gratuitement
             </Link>
           </div>
 

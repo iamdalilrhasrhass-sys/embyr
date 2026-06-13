@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Les 10 Commandements des Rencontres Gay — Guide Essentiel | Blog Embyr",
+  title: "Les 10 Commandements des Rencontres Gay — Guide Essentiel | Blog Embir",
   description:
     "Découvre les 10 commandements essentiels pour réussir tes rencontres gay. Respect, communication, sécurité — tout ce qu'il faut savoir pour des dates épanouissants entre hommes.",
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "Respect, communication, sécurité : les 10 règles d'or pour des rencontres gay épanouissantes. Un guide bienveillant pour tous les mecs.",
     url: "https://embir.xyz/blog/10-commandements-rencontre-gay",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };
@@ -231,7 +231,7 @@ export default function ArticlePage() {
               t&apos;exposer à des pubs intrusives ou limiter tes interactions. Ce n&apos;est pas une fatalité.
             </p>
             <p>
-              <strong>Embyr</strong> est l&apos;app de rencontre gay{" "}
+              <strong>Embir</strong> est l&apos;app de rencontre gay{" "}
               <Link href="/" className="text-rose-400 hover:text-rose-300 underline">
                 100% gratuite
               </Link>{" "}
@@ -266,7 +266,7 @@ export default function ArticlePage() {
               href="/auth/register"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-6 py-3 text-sm font-semibold text-white hover:from-rose-400 hover:to-amber-400 transition-all"
             >
-              Rejoins Embyr gratuitement
+              Rejoins Embir gratuitement
             </Link>
           </div>
 

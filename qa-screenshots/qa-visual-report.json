@@ -3,13 +3,19 @@
     "route": "/",
     "viewport": "desktop",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/home-desktop.png",
-    "fileSize": 2281538,
+    "fileSize": 3449553,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 3059
+    "textLen": 2231
+  },
+  {
+    "route": "n/a",
+    "viewport": "desktop",
+    "type": "console-error",
+    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
   },
   {
     "route": "n/a",
@@ -21,37 +27,31 @@
     "route": "/membres",
     "viewport": "desktop",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/membres-desktop.png",
-    "fileSize": 520613,
+    "fileSize": 556200,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 182
-  },
-  {
-    "route": "n/a",
-    "viewport": "desktop",
-    "type": "console-error",
-    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    "textLen": 297
   },
   {
     "route": "/premium",
     "viewport": "desktop",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/premium-desktop.png",
-    "fileSize": 20268,
+    "fileSize": 597447,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 63
+    "textLen": 930
   },
   {
     "route": "/auth/login",
     "viewport": "desktop",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/auth-login-desktop.png",
     "fileSize": 565416,
     "overflow": false,
@@ -63,25 +63,31 @@
     "route": "/auth/register",
     "viewport": "desktop",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/auth-register-desktop.png",
-    "fileSize": 596056,
+    "fileSize": 617650,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 327
+    "textLen": 402
   },
   {
     "route": "/",
     "viewport": "mobile-430",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/home-mobile-430.png",
-    "fileSize": 659586,
-    "overflow": true,
+    "fileSize": 875829,
+    "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 3059
+    "textLen": 2231
+  },
+  {
+    "route": "n/a",
+    "viewport": "mobile-430",
+    "type": "console-error",
+    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
   },
   {
     "route": "n/a",
@@ -93,37 +99,31 @@
     "route": "/membres",
     "viewport": "mobile-430",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/membres-mobile-430.png",
-    "fileSize": 227606,
+    "fileSize": 250465,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 247
-  },
-  {
-    "route": "n/a",
-    "viewport": "mobile-430",
-    "type": "console-error",
-    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    "textLen": 348
   },
   {
     "route": "/premium",
     "viewport": "mobile-430",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/premium-mobile-430.png",
-    "fileSize": 20155,
+    "fileSize": 269488,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 128
+    "textLen": 982
   },
   {
     "route": "/auth/login",
     "viewport": "mobile-430",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/auth-login-mobile-430.png",
     "fileSize": 292822,
     "overflow": false,
@@ -135,25 +135,31 @@
     "route": "/auth/register",
     "viewport": "mobile-430",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/auth-register-mobile-430.png",
-    "fileSize": 319903,
+    "fileSize": 333269,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 327
+    "textLen": 402
   },
   {
     "route": "/",
     "viewport": "mobile-390",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/home-mobile-390.png",
-    "fileSize": 554903,
-    "overflow": true,
+    "fileSize": 790456,
+    "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 3059
+    "textLen": 2231
+  },
+  {
+    "route": "n/a",
+    "viewport": "mobile-390",
+    "type": "console-error",
+    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
   },
   {
     "route": "n/a",
@@ -165,37 +171,31 @@
     "route": "/membres",
     "viewport": "mobile-390",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/membres-mobile-390.png",
-    "fileSize": 199221,
+    "fileSize": 217686,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 247
-  },
-  {
-    "route": "n/a",
-    "viewport": "mobile-390",
-    "type": "console-error",
-    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    "textLen": 348
   },
   {
     "route": "/premium",
     "viewport": "mobile-390",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/premium-mobile-390.png",
-    "fileSize": 20359,
+    "fileSize": 255363,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 128
+    "textLen": 982
   },
   {
     "route": "/auth/login",
     "viewport": "mobile-390",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/auth-login-mobile-390.png",
     "fileSize": 261294,
     "overflow": false,
@@ -207,12 +207,12 @@
     "route": "/auth/register",
     "viewport": "mobile-390",
     "status": 200,
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embyr — Rencontre gay gratuite | App de rencontre entre hommes",
     "screenshot": "/root/embyr/qa-screenshots/auth-register-mobile-390.png",
-    "fileSize": 289163,
+    "fileSize": 299784,
     "overflow": false,
     "empty": false,
     "hasError": false,
-    "textLen": 327
+    "textLen": 402
   }
 ]

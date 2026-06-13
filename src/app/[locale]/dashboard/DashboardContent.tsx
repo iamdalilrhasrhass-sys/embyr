@@ -194,7 +194,7 @@ export default function DashboardContent() {
             }}
           >
             <span className="font-body text-xs text-white/70">
-              ✅ Paiement confirmé — Bienvenue sur Embyr Premium !
+              ✅ Paiement confirmé — Bienvenue sur Embir Premium !
             </span>
           </motion.div>
         )}
@@ -209,7 +209,7 @@ export default function DashboardContent() {
             >
               <span className="font-display font-bold text-[10px] text-white">F</span>
             </div>
-            <span className="font-body text-xs font-medium text-white/85 tracking-wider">Embyr</span>
+            <span className="font-body text-xs font-medium text-white/85 tracking-wider">Embir</span>
           </Link>
           <div className="flex items-center gap-6">
             {user?.profile?.isPremium && (

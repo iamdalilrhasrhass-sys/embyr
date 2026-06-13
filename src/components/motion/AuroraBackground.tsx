@@ -43,10 +43,10 @@ const FEMYNYA_BLOBS: Blob[] = [
 export default function AuroraBackground({
   variant = 'femynya',
 }: {
-  variant?: 'femynya' | 'embyr';
+  variant?: 'femynya' | 'embyr' | 'embir';
 }) {
-  const blobs = variant === 'embyr' ? EMBYR_BLOBS : FEMYNYA_BLOBS;
-  const isEmbyr = variant === 'embyr';
+  const blobs = variant === 'embyr' || variant === 'embir' ? EMBYR_BLOBS : FEMYNYA_BLOBS;
+  const isEmbyr = variant === 'embyr' || variant === 'embir';
 
   // Génère les keyframes inline pour chaque blob
   const blobStyles = useMemo(() => {

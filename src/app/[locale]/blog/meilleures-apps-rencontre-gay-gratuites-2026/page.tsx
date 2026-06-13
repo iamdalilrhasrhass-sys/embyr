@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Top 7 Meilleures Apps de Rencontre Gay Gratuites en 2026 | Blog Embyr",
+  title: "Top 7 Meilleures Apps de Rencontre Gay Gratuites en 2026 | Blog Embir",
   description:
     "Comparatif complet des meilleures applications de rencontre gay gratuites en 2026. Découvre quelle app gay correspond vraiment à tes attentes : sérieux, plan cul, amitié ou amour.",
   keywords: [
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/meilleures-apps-rencontre-gay-gratuites-2026",
   },
   openGraph: {
-    title: "Top 7 Meilleures Apps de Rencontre Gay Gratuites en 2026 | Blog Embyr",
+    title: "Top 7 Meilleures Apps de Rencontre Gay Gratuites en 2026 | Blog Embir",
     description:
       "Comparatif complet des meilleures applications de rencontre gay gratuites en 2026. Découvre quelle app gay correspond vraiment à tes attentes.",
     url: "https://embir.xyz/blog/meilleures-apps-rencontre-gay-gratuites-2026",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };
@@ -60,12 +60,12 @@ export default function ArticlePage() {
             </p>
 
             <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              1. Embyr — La nouvelle référence du dating gay gratuit
+              1. Embir — La nouvelle référence du dating gay gratuit
             </h2>
             <p>
-              <strong>Embyr</strong> débarque en 2026 avec une promesse claire : 100 % gratuit au lancement, zéro
+              <strong>Embir</strong> débarque en 2026 avec une promesse claire : 100 % gratuit au lancement, zéro
               pub intrusive, et une expérience pensée par et pour les hommes gays. Contrairement aux géants du marché,
-              Embyr mise sur la <strong>qualité des profils</strong> plutôt que sur la quantité. Son algorithme de
+              Embir mise sur la <strong>qualité des profils</strong> plutôt que sur la quantité. Son algorithme de
               compatibilité utilise l'IA pour te proposer des mecs qui te correspondent vraiment — pas juste les plus
               proches géographiquement.
             </p>
@@ -138,7 +138,7 @@ export default function ArticlePage() {
               Comment choisir la bonne appli de rencontre gay ?
             </h2>
             <p>
-              Tout dépend de ce que tu cherches. Si tu veux du <strong>sérieux</strong> sans te ruiner, Embyr est
+              Tout dépend de ce que tu cherches. Si tu veux du <strong>sérieux</strong> sans te ruiner, Embir est
               clairement le meilleur choix en 2026. Pour du rapide et sans lendemain, Grindr fait le job. Pour une
               communauté spécifique, regarde Scruff ou Hornet. Le mieux reste d'en tester plusieurs et de voir où
               tu te sens le plus à l'aise.

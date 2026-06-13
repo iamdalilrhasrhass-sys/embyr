@@ -1,5 +1,5 @@
 "use client";
-import ScrollReveal from "@/components/embyr/ScrollReveal";
+import ScrollReveal from "@/components/motion/ScrollReveal";
 import { useState } from "react";
 
 export default function AmbassadeurPage() {
@@ -15,7 +15,7 @@ export default function AmbassadeurPage() {
             🔥 PROGRAMME AMBASSADEUR — ÉDITION LIMITÉE
           </span>
           <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight" style={{background:"linear-gradient(135deg, var(--eb-accent), var(--eb-copper), var(--eb-gold))", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"}}>
-            Deviens Ambassadeur<br/>Embyr
+            Deviens Ambassadeur<br/>Embir
           </h1>
           <p className="text-xl text-[var(--eb-text-secondary)] max-w-2xl mx-auto mb-8">
             Rejoins le cercle privé des hommes qui façonnent la nouvelle référence des rencontres premium.
@@ -37,7 +37,7 @@ export default function AmbassadeurPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {icon:"👑",title:"Avantages Fondateur",desc:"Accès prioritaire aux futures options Premium. Inclus pour les premiers membres actifs.",hl:"Badge Fondateur offert"},
-              {icon:"💎",title:"Badge Fondateur Braise",desc:"Le badge le plus rare d'Embyr. Visible sur ton profil.",hl:"Badge le plus rare"},
+              {icon:"💎",title:"Badge Fondateur Braise",desc:"Le badge le plus rare d'Embir. Visible sur ton profil.",hl:"Badge le plus rare"},
               {icon:"🚀",title:"Visibilité Maximale",desc:"Ton profil en premier. +300% de vues.",hl:"+300% visibilité"},
               {icon:"🎟️",title:"Accès Anticipé",desc:"Teste les features avant tout le monde.",hl:"Influence la roadmap"},
               {icon:"💌",title:"Messagerie Illimitée",desc:"Messages, vocaux, appels, visio. Sans limite.",hl:"Priorité absolue"},
@@ -74,7 +74,7 @@ export default function AmbassadeurPage() {
               <form onSubmit={(e)=>{e.preventDefault();setSubmitted(true)}} className="space-y-5">
                 <input placeholder="Ton prénom ou pseudo" className="w-full px-5 py-4 rounded-xl text-white border" style={{background:"var(--eb-bg-elev-2)", border:"1px solid var(--eb-border-soft)", fontSize:"16px"}} required />
                 <input type="email" placeholder="Ton email" className="w-full px-5 py-4 rounded-xl text-white border" style={{background:"var(--eb-bg-elev-2)", border:"1px solid var(--eb-border-soft)", fontSize:"16px"}} required />
-                <textarea placeholder="Pourquoi veux-tu devenir Ambassadeur Embyr ? (2-3 phrases)" rows={4} className="w-full px-5 py-4 rounded-xl text-white border resize-none" style={{background:"var(--eb-bg-elev-2)", border:"1px solid var(--eb-border-soft)", fontSize:"16px"}} required />
+                <textarea placeholder="Pourquoi veux-tu devenir Ambassadeur Embir ? (2-3 phrases)" rows={4} className="w-full px-5 py-4 rounded-xl text-white border resize-none" style={{background:"var(--eb-bg-elev-2)", border:"1px solid var(--eb-border-soft)", fontSize:"16px"}} required />
                 <button type="submit" className="w-full py-5 rounded-xl text-lg font-bold text-white transition-all hover:scale-[1.02]" style={{background:"linear-gradient(135deg, var(--eb-accent), var(--eb-copper))", boxShadow:"0 0 40px rgba(255,90,31,0.3)"}}>
                   🔥 Envoyer ma candidature — Places limitées
                 </button>

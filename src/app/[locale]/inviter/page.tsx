@@ -5,6 +5,7 @@ import AppShell from "@/components/layout/AppShell";
 export default function InviterPage() {
   const [referralCode, setReferralCode] = useState<string | null>(null);
   const [referralCount, setReferralCount] = useState<number>(0);
+  const [referralDays, setReferralDays] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -15,6 +16,7 @@ export default function InviterPage() {
         if (data.referralCode) {
           setReferralCode(data.referralCode);
           setReferralCount(data.referralCount || 0);
+          setReferralDays(data.referralDays || data.referralCount * 7 || 0);
         }
       })
       .catch(() => {})
@@ -26,8 +28,8 @@ export default function InviterPage() {
     : "";
 
   const message = referralCode
-    ? `🔥 Rejoins-moi sur Embyr, la nouvelle app de rencontre gay élégante et gratuite ! Inscris-toi avec mon code ${referralCode} ou via ce lien : ${referralLink}`
-    : "Je viens de rejoindre Embyr, une nouvelle app de rencontre gay gratuite pendant son lancement. Rejoins les premiers membres : https://embir.xyz";
+    ? `🔥 Rejoins-moi sur Embir, la nouvelle app de rencontre gay élégante et gratuite ! Inscris-toi avec mon code ${referralCode} ou via ce lien : ${referralLink}`
+    : "Je viens de rejoindre Embir, une nouvelle app de rencontre gay gratuite pendant son lancement. Rejoins les premiers membres : https://embir.xyz";
 
   const lien = referralLink || "https://embir.xyz";
 
@@ -47,10 +49,10 @@ export default function InviterPage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2"
             style={{ background: "linear-gradient(135deg, #E2E8F0 60%, #06B6D4 80%, #6366F1 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-            Invite tes amis sur Embyr
+            Invite tes amis sur Embir
           </h1>
           <p className="text-white/40 mb-8">
-            Embyr est gratuit pendant le lancement. Invite quelques personnes
+            Embir est gratuit pendant le lancement. Invite quelques personnes
             à rejoindre les premiers membres.
           </p>
 
@@ -154,7 +156,7 @@ export default function InviterPage() {
 
               {/* Email */}
               <a
-                href={`mailto:?subject=${encodeURIComponent("Rejoins-moi sur Embyr 💜")}&body=${encodeURIComponent(message)}`}
+                href={`mailto:?subject=${encodeURIComponent("Rejoins-moi sur Embir 💜")}&body=${encodeURIComponent(message)}`}
                 className="px-4 py-3 rounded-xl text-sm font-semibold border border-white/10 bg-white/[0.03] text-white/70 hover:bg-white/[0.08] transition-colors text-center">
                 📧 Email
               </a>
@@ -175,6 +177,26 @@ export default function InviterPage() {
               des avantages Premium offerts lors du lancement des options payantes.
             </p>
           </div>
+
+          {/* Premium reward banner */}
+          {referralCode && (
+            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-6 mb-6">
+              <div className="flex items-start gap-4">
+                <div className="text-3xl">🎁</div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">7 jours Premium offerts par filleul</h3>
+                  <p className="text-sm text-white/50 mb-3">
+                    Chaque ami qui s'inscrit avec ton lien te rapporte <strong className="text-emerald-400">7 jours de Premium</strong>.
+                    Les jours s'accumulent automatiquement. Plus tu invites, plus tu gagnes !
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-emerald-400 text-2xl font-black">{referralCount}</span>
+                    <span className="text-white/40 text-sm">filleuls · {referralDays} jours Premium cumulés</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
     </AppShell>

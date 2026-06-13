@@ -6,7 +6,7 @@ export default function EighteenPlusPage() {
       </div>
       <h1 className="text-4xl font-bold mb-6">Avertissement Contenu Adulte</h1>
       <p className="text-xl text-[var(--color-premium-gray)] leading-relaxed mb-8">
-        Embyr est une plateforme strictement réservée aux personnes majeures.
+        Embir est une plateforme strictement réservée aux personnes majeures.
         L'accès à ce site nécessite d'avoir 18 ans révolus ou l'âge de la majorité légale dans votre pays de résidence.
       </p>
       
@@ -15,7 +15,7 @@ export default function EighteenPlusPage() {
           <strong>Vérification d'âge :</strong> Nous mettons en œuvre des mesures pour vérifier l'âge de nos membres. La création d'un profil implique l'acceptation de nos Conditions Générales et la confirmation formelle de votre majorité.
         </p>
         <p>
-          <strong>Tolérance Zéro :</strong> Embyr applique une politique de tolérance zéro concernant la présence de mineurs sur la plateforme. Tout profil suspecté d'appartenir à un mineur sera immédiatement banni et signalé aux autorités compétentes.
+          <strong>Tolérance Zéro :</strong> Embir applique une politique de tolérance zéro concernant la présence de mineurs sur la plateforme. Tout profil suspecté d'appartenir à un mineur sera immédiatement banni et signalé aux autorités compétentes.
         </p>
         <p>
           <strong>Contrôle parental :</strong> Si vous partagez votre appareil avec des mineurs, nous vous recommandons fortement d'utiliser des logiciels de contrôle parental.

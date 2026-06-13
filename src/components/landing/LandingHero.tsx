@@ -141,7 +141,7 @@ export default function LandingHero() {
           <Link href="/auth/register" className="group relative px-10 py-5 rounded-full font-bold text-lg transition-all duration-500">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[var(--color-premium-purple)] via-purple-500 to-[var(--color-premium-purple)] opacity-90 group-hover:opacity-100 transition-opacity" />
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[var(--color-premium-purple)] via-purple-500 to-[var(--color-premium-purple)] blur-xl opacity-60 group-hover:opacity-100 transition-opacity" />
-            <span className="relative z-10 text-white">Rejoindre Embyr</span>
+            <span className="relative z-10 text-white">Rejoindre Embir</span>
           </Link>
 
           <Link href="/profiles" className="group relative px-10 py-5 rounded-full font-semibold text-lg transition-all duration-500">

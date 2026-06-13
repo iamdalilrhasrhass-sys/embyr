@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Coming-Out et Rencontres Gay : Nos Conseils Bienveillants | Blog Embyr",
+  title: "Coming-Out et Rencontres Gay : Nos Conseils Bienveillants | Blog Embir",
   description:
     "Faire son coming-out et se lancer dans les rencontres gay en même temps, c'est un double défi. Guide bienveillant pour naviguer ces deux étapes avec sérénité, à ton rythme.",
   keywords: [
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/coming-out-rencontres-conseils",
   },
   openGraph: {
-    title: "Coming-Out et Rencontres Gay : Nos Conseils Bienveillants | Blog Embyr",
+    title: "Coming-Out et Rencontres Gay : Nos Conseils Bienveillants | Blog Embir",
     description:
       "Faire son coming-out et se lancer dans les rencontres gay en même temps : guide bienveillant pour avancer à ton rythme.",
     url: "https://embir.xyz/blog/coming-out-rencontres-conseils",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };
@@ -98,7 +98,7 @@ export default function ArticlePage() {
                   applis de rencontre gay
                 </Link>
               </strong> sont le premier endroit où ils peuvent être eux-mêmes sans crainte. C'est un espace
-              précieux. Sur Embyr, par exemple, tu peux discuter avec des mecs qui vivent les mêmes choses,
+              précieux. Sur Embir, par exemple, tu peux discuter avec des mecs qui vivent les mêmes choses,
               poser des questions, découvrir ce qui te plaît — le tout sans avoir à justifier ton orientation
               puisque tout le monde est là pour la même chose.
             </p>
@@ -164,7 +164,7 @@ export default function ArticlePage() {
               href="/auth/register"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-6 py-3 text-sm font-semibold text-white hover:from-rose-400 hover:to-amber-400 transition-all"
             >
-              Rejoins Embyr gratuitement
+              Rejoins Embir gratuitement
             </Link>
           </div>
 

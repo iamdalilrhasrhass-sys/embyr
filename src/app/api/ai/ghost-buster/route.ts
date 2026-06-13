@@ -23,7 +23,7 @@ Règles :
 - Style "high value", zéro needy
 - Format : retourne juste la phrase, sans guillemets, sans explication`,
 
-      "Tu es Hermes, le coach dating de Embyr.xyz. Tu es expert en relances qui marchent. Tu es drôle, confiant, jamais needy. Réponds en français."
+      "Tu es Hermes, le coach dating de Embir.xyz. Tu es expert en relances qui marchent. Tu es drôle, confiant, jamais needy. Réponds en français."
     );
 
     return NextResponse.json({ success: true, message: result.trim() });

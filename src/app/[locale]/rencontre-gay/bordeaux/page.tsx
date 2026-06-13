@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Rencontre Gay Bordeaux — App 100% Gratuite | Embyr",
-  description: "Rencontre gay à Bordeaux sur Embyr. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Bordeaux.",
+  title: "Rencontre Gay Bordeaux — App 100% Gratuite | Embir",
+  description: "Rencontre gay à Bordeaux sur Embir. App 100% gratuite sans pubs. Crée ton profil et rencontre des mecs près de chez toi à Bordeaux.",
   keywords: ["rencontre gay Bordeaux", "gay Bordeaux", "rencontre mec Bordeaux", "app gay Bordeaux", "dating gay Bordeaux"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/bordeaux" },
 };
@@ -17,7 +17,7 @@ export default function RencontreGayCity() {
             Rencontre gay à <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Bordeaux</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Tu cherches des rencontres entre hommes à Bordeaux ? Embyr est l&apos;app de rencontre gay 100% gratuite. 
+            Tu cherches des rencontres entre hommes à Bordeaux ? Embir est l&apos;app de rencontre gay 100% gratuite. 
             Crée ton profil en 2 minutes et découvre les mecs près de chez toi.
           </p>
 
@@ -41,16 +41,16 @@ export default function RencontreGayCity() {
 
           <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-3">Prêt à rencontrer des mecs à Bordeaux ?</h2>
-            <p className="text-white/50 mb-6">Rejoins les 260k habitants de Bordeaux déjà sur Embyr.</p>
+            <p className="text-white/50 mb-6">Rejoins les 260k habitants de Bordeaux déjà sur Embir.</p>
             <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 transition-all hover:shadow-rose-500/40 hover:scale-[1.02]">
               Créer mon profil gratuitement
             </Link>
           </div>
 
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
-            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embyr pour tes rencontres gay à Bordeaux ?</h2>
+            <h2 className="text-white text-xl font-bold">Pourquoi choisir Embir pour tes rencontres gay à Bordeaux ?</h2>
             <p>
-              Embyr est conçu pour les hommes qui cherchent des rencontres authentiques à Bordeaux. 
+              Embir est conçu pour les hommes qui cherchent des rencontres authentiques à Bordeaux. 
               Sans algorithme intrusif, sans pubs agressives, sans abonnement premium caché. 
               Juste des mecs, près de chez toi, prêts à discuter.
             </p>

@@ -6,15 +6,14 @@ import type { Metadata } from "next";
 import "../globals.css";
 import "@/styles/embir-tokens.css";
 import "@/styles/mobile.css";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Fraunces, Playfair_Display } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], weight: ["500", "700"] });
-const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
+const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap", weight: ["400", "700"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://embir.xyz"),
   verification: { google: "zhl0TqH5BoVmHCeI9QrtuMd8yoO05uJK_oMM_yEh3ss" },
   title: "embir.xyz — Free Gay Dating | 100 Founding Members",
   description: "embir.xyz launches its first 100 founding members: a free gay dating app, no ads, no fake profiles, built for real connections.",
@@ -29,13 +28,13 @@ export const metadata: Metadata = {
     description: "A free gay dating app, local and honest: Paris first, real profiles only, zero fake numbers.",
     url: "https://embir.xyz",
     locale: "en_US",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "embir.xyz — Men meeting men" }],
+    images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "embir.xyz — Men meeting men" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "embir.xyz — Free Gay Dating App",
     description: "Join the first 100 founding members in Paris. Free, no ads, no fake profiles.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "embir.xyz" }],
+    images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "embir.xyz" }],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://embir.xyz" },
@@ -53,10 +52,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} data-site="embir" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${playfair.variable}`}>
+    <html lang={locale} data-site="embir" className={`${geistMono.variable} ${playfair.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sécurité et Rencontres Gay : 12 Règles d'Or en 2026 | Blog Embyr",
+  title: "Sécurité et Rencontres Gay : 12 Règles d'Or en 2026 | Blog Embir",
   description:
     "Ta sécurité passe avant tout. Découvre les 12 règles essentielles pour des rencontres gay en toute sérénité : premier date safe, protection IST, signaux d'alarme à repérer, et outils pratiques.",
   keywords: [
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     canonical: "https://embir.xyz/blog/securite-rencontres-gay-regles",
   },
   openGraph: {
-    title: "Sécurité et Rencontres Gay : 12 Règles d'Or en 2026 | Blog Embyr",
+    title: "Sécurité et Rencontres Gay : 12 Règles d'Or en 2026 | Blog Embir",
     description:
       "Premier date safe, protection IST, signaux d'alarme : les 12 règles pour des rencontres gay en toute sérénité.",
     url: "https://embir.xyz/blog/securite-rencontres-gay-regles",
     type: "article",
-    siteName: "Embyr",
+    siteName: "Embir",
     locale: "fr_FR",
   },
 };
@@ -68,7 +68,7 @@ export default function ArticlePage() {
               1. Vérifie l'identité de ton match
             </h3>
             <p>
-              Un <strong>profil vérifié</strong> (comme sur Embyr avec la vérification par selfie), c'est
+              Un <strong>profil vérifié</strong> (comme sur Embir avec la vérification par selfie), c'est
               le minimum. Si l'appli ne propose pas de vérification, fais un appel vidéo rapide avant le
               date. Pas besoin d'en faire tout un plat : un simple <em>"Hâte de te voir, ça te dit un
               appel de 5 minutes avant ?"</em> suffit. Si la personne refuse catégoriquement, c'est un
@@ -184,7 +184,7 @@ export default function ArticlePage() {
             <p>
               Numéro de téléphone (utilise Telegram ou WhatsApp sans montrer ton numéro si possible),
               adresse exacte, lieu de travail, réseaux sociaux avec ton nom complet… Ces infos se partagent
-              APRÈS avoir établi la confiance, pas avant. Sur Embyr, la messagerie intégrée te permet de
+              APRÈS avoir établi la confiance, pas avant. Sur Embir, la messagerie intégrée te permet de
               discuter sans rien divulguer.
             </p>
 

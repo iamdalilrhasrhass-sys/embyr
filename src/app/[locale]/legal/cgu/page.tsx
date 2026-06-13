@@ -5,10 +5,10 @@ export default function CGUPage() {
       <p className="text-gray-400">Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}</p>
       
       <h2>1. Présentation de la plateforme</h2>
-      <p>Embyr est une plateforme numérique premium dédiée à la mise en relation entre adultes consentants. L'accès est strictement réservé aux personnes de plus de 18 ans.</p>
+      <p>Embir est une plateforme numérique premium dédiée à la mise en relation entre adultes consentants. L'accès est strictement réservé aux personnes de plus de 18 ans.</p>
       
       <h2>2. Conditions d'accès</h2>
-      <p>L'utilisation de Embyr nécessite :</p>
+      <p>L'utilisation de Embir nécessite :</p>
       <ul>
         <li>D'être majeur(e) dans votre juridiction de résidence (18+).</li>
         <li>De fournir des informations exactes lors de l'inscription.</li>
@@ -16,7 +16,7 @@ export default function CGUPage() {
       </ul>
 
       <h2>3. Modération et Sécurité</h2>
-      <p>Embyr applique une politique de tolérance zéro envers :</p>
+      <p>Embir applique une politique de tolérance zéro envers :</p>
       <ul>
         <li>La présence de mineurs.</li>
         <li>Le harcèlement, la violence, et les discours de haine.</li>

@@ -55,28 +55,28 @@ const results: Record<string, { emoji: string; title: string; description: strin
   romantic: {
     emoji: "💘",
     title: "Le Romantique Passionné",
-    description: "Tu crois au grand amour et aux gestes attentionnés. Pour toi, une rencontre doit avoir de la profondeur. Les applis de rencontre superficielles te frustrent — tu veux du vrai. Embyr est fait pour les mecs comme toi qui cherchent plus qu'un swipe.",
+    description: "Tu crois au grand amour et aux gestes attentionnés. Pour toi, une rencontre doit avoir de la profondeur. Les applis de rencontre superficielles te frustrent — tu veux du vrai. Embir est fait pour les mecs comme toi qui cherchent plus qu'un swipe.",
     color: "from-rose-500 to-pink-600",
     gradient: "from-rose-500/20 to-pink-500/20",
   },
   bold: {
     emoji: "🔥",
     title: "Le Confiant Audacieux",
-    description: "Tu sais ce que tu veux et tu n'as pas peur d'y aller. Ta confiance attire les regards, mais tu cherches quelqu'un qui peut suivre ton rythme. Sur Embyr, trouve des mecs qui aiment les personnalités fortes et le franc-parler.",
+    description: "Tu sais ce que tu veux et tu n'as pas peur d'y aller. Ta confiance attire les regards, mais tu cherches quelqu'un qui peut suivre ton rythme. Sur Embir, trouve des mecs qui aiment les personnalités fortes et le franc-parler.",
     color: "from-orange-500 to-red-600",
     gradient: "from-orange-500/20 to-red-500/20",
   },
   social: {
     emoji: "🦋",
     title: "Le Papillon Social",
-    description: "Tu vis pour les rencontres, les éclats de rire et les soirées improvisées. Pour toi, chaque nouvelle personne est une histoire qui commence. Embyr te connecte avec une communauté vibrante prête à sortir et s'amuser.",
+    description: "Tu vis pour les rencontres, les éclats de rire et les soirées improvisées. Pour toi, chaque nouvelle personne est une histoire qui commence. Embir te connecte avec une communauté vibrante prête à sortir et s'amuser.",
     color: "from-purple-500 to-indigo-600",
     gradient: "from-purple-500/20 to-indigo-500/20",
   },
   adventurous: {
     emoji: "🌍",
     title: "L'Aventurier Libre",
-    description: "Les sentiers battus, c'est pour les autres. Tu préfères les chemins de traverse et les rencontres imprévues. Tu veux un partenaire qui te rejoindra dans tes explorations. Embyr attire les esprits libres qui refusent les cases.",
+    description: "Les sentiers battus, c'est pour les autres. Tu préfères les chemins de traverse et les rencontres imprévues. Tu veux un partenaire qui te rejoindra dans tes explorations. Embir attire les esprits libres qui refusent les cases.",
     color: "from-emerald-500 to-teal-600",
     gradient: "from-emerald-500/20 to-teal-500/20",
   },
@@ -109,7 +109,7 @@ export default function GayTestPage() {
   };
 
   const shareText = result
-    ? `🌈 J'ai passé le test "Quel mec gay es-tu ?" et je suis "${results[result].emoji} ${results[result].title}" !\n\nDécouvre ton type sur Embyr → https://embir.xyz/test-gay\n\n#Embyr #GayDating #RencontreGay`
+    ? `🌈 J'ai passé le test "Quel mec gay es-tu ?" et je suis "${results[result].emoji} ${results[result].title}" !\n\nDécouvre ton type sur Embir → https://embir.xyz/test-gay\n\n#Embir #GayDating #RencontreGay`
     : "";
 
   const handleCopy = async () => {
@@ -142,7 +142,7 @@ export default function GayTestPage() {
 
               <div className={`rounded-2xl bg-gradient-to-br ${r.gradient} border border-white/10 p-5 mb-8`}>
                 <p className="text-white/80 text-sm font-medium">
-                  Rejoins Embyr — l&apos;app de rencontre gay 100% gratuite
+                  Rejoins Embir — l&apos;app de rencontre gay 100% gratuite
                 </p>
                 <Link
                   href="/auth/register"

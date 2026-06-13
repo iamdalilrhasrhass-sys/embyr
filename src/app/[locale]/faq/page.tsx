@@ -30,7 +30,7 @@ export default function FaqPage() {
             </div>
           ) : (
             <div className="rounded-[var(--eb-radius-card)] p-6 space-y-3" style={{background: "var(--eb-bg-elev-1)", border: "1px solid var(--eb-border-soft)"}}>
-              <p className="text-[var(--eb-text-secondary)]">Questions fréquentes sur Embyr.</p>
+              <p className="text-[var(--eb-text-secondary)]">Questions fréquentes sur Embir.</p>
             </div>
           )}
         </div>

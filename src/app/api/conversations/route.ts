@@ -57,7 +57,7 @@ export async function GET(request: NextRequest) {
           status: lastMsg.status,
         } : null,
         lastMessageAt: conv.lastMessageAt || conv.updatedAt,
-        unreadCount: 0, // Embyr schema: status field on messages
+        unreadCount: 0, // Embir schema: status field on messages
       });
     }
 

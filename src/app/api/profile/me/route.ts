@@ -4,7 +4,18 @@ import { verifyToken } from "@/lib/auth";
 import { cookies } from "next/headers";
 
 export async function GET(request: NextRequest) {
-  const token = (await cookies()).get("token")?.value;
+  // Support both cookie-based and Bearer token auth
+  const cookieStore = await cookies();
+  let token = cookieStore.get("token")?.value;
+  
+  // Fallback to Authorization header
+  if (!token) {
+    const authHeader = request.headers.get("Authorization");
+    if (authHeader?.startsWith("Bearer ")) {
+      token = authHeader.slice(7);
+    }
+  }
+  
   if (!token) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
   const decoded = verifyToken(token);
@@ -19,7 +30,16 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-  const token = (await cookies()).get("token")?.value;
+  const cookieStore = await cookies();
+  let token = cookieStore.get("token")?.value;
+  
+  if (!token) {
+    const authHeader = request.headers.get("Authorization");
+    if (authHeader?.startsWith("Bearer ")) {
+      token = authHeader.slice(7);
+    }
+  }
+  
   if (!token) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
   const decoded = verifyToken(token);

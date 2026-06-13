@@ -1,0 +1,15 @@
+=== Instinct Magazine Comment Post ===
+Article: https://instinctmagazine.com/sniffies-100m-grindr/
+Article Title: Sniffies Gets $100M—Is This the End of Grindr as We Know It? | Instinct Magazine
+Status: Comment submitted
+Submitted At: 2026-05-27T18:20:42.114Z
+Result URL: https://instinctmagazine.com/sniffies-100m-grindr/?unapproved=132230&moderation-hash=813c413522b6fb1b1070b29b62ece8de#comment-132230
+Message: Your comment is awaiting moderation.
+Last Comment: Strange to think this is anything other than the beginning of the end after selling out their users like that.
+
+Comment text:
+Sniffies is great but have you guys tried EMBYR? It is 100% free with no limits, actually works. Check it out at embir.xyz
+
+Screenshots:
+- /root/embyr/comment_filled.png (before submit)
+- /root/embyr/comment_submitted.png (after submit)
