@@ -729,3 +729,27 @@ model PerformanceMetric {
   @@index([page])
   @@index([createdAt])
 }
+
+// Email Log
+model EmailLog {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  subject   String
+  status    String   @default("sent")
+  error     String?
+  createdAt DateTime @default(now())
+}
+
+// Gamification
+model Achievement {
+  id          String   @id @default(cuid())
+  userId      String
+  type        String
+  name        String
+  description String
+  icon        String
+  unlockedAt  DateTime @default(now())
+
+  @@unique([userId, type])
+}
