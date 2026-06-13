@@ -2,31 +2,31 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog Embir — Conseils rencontre gay, dating & lifestyle",
-  description: "Le blog Embir : conseils pour tes rencontres gay, témoignages, astuces dating et lifestyle. Tout pour réussir tes rencontres entre hommes.",
-  keywords: ["blog gay", "conseils rencontre gay", "dating gay", "lifestyle gay", "app rencontre gay"],
+  title: "Embir Blog — Gay Dating Tips, Guides & Community Stories",
+  description: "The Embir blog: gay dating tips, coming out stories, safety guides, and everything you need for authentic connections.",
+  keywords: ["gay blog", "gay dating tips", "gay dating guide", "LGBTQ community", "gay dating app"],
   alternates: { canonical: "https://embir.xyz/blog" },
 };
 
 const articles = [
-  { title: "5 Meilleures Alternatives à Grindr Gratuites en 2026", slug: "alternatives-grindr-gratuites-2026", desc: "Marre de payer Grindr ? Découvre les 5 meilleures alternatives 100% gratuites à Grindr en 2026. Apps de rencontre gay sans abonnement et sans pubs.", tags: ["alternative grindr", "app gay gratuite", "remplacer grindr"] },
-  { title: "Top 7 des Meilleures Apps de Rencontre Gay Gratuites en 2026", slug: "meilleures-apps-rencontre-gay-gratuites-2026", desc: "Tu cherches une app de rencontre gay gratuite ? Découvre notre comparatif complet des meilleures applis pour rencontrer des mecs en 2026.", tags: ["app rencontre gay", "rencontre gay gratuite", "dating gay"] },
-  { title: "Comment Draguer un Mec en 2026 : Le Guide Complet", slug: "comment-draguer-mec-guide-complet", desc: "Draguer un mec te stresse ? Voici nos conseils pour aborder, séduire et créer une vraie connexion. Du premier message au premier date.", tags: ["draguer un mec", "rencontre homme", "dating conseils"] },
-  { title: "Premier Date Gay : 10 Conseils pour le Réussir", slug: "premier-date-gay-conseils", desc: "Stressé pour ton premier date avec un mec ? On te donne tous nos conseils pour un premier rendez-vous gay réussi et sans pression.", tags: ["premier date gay", "rendez-vous gay", "conseils dating"] },
-  { title: "Rencontre Gay : Comment Créer un Profil Qui Attire", slug: "creer-profil-gay-qui-attire", desc: "Ton profil de rencontre gay ne reçoit pas assez de messages ? Voici comment optimiser tes photos et ta bio pour attirer les bons mecs.", tags: ["profil rencontre gay", "photo profil gay", "bio dating"] },
-  { title: "Coming Out et Rencontres : Nos Conseils Bienveillants", slug: "coming-out-rencontres-conseils", desc: "Tu viens de faire ton coming out et tu veux rencontrer des mecs ? Un guide bienveillant pour tes premières rencontres gay.", tags: ["coming out", "première rencontre gay", "conseils LGBTQ+"] },
-  { title: "Sécurité et Rencontres Gay : 12 Règles d'Or", slug: "securite-rencontres-gay-regles", desc: "Rencontrer des mecs en ligne en toute sécurité. Nos conseils pour des dates safe et respectueux. Protège-toi et profite.", tags: ["sécurité rencontre gay", "dating safe", "conseils sécurité"] },
-  { title: "Les 10 Commandements des Rencontres Gay", slug: "10-commandements-rencontre-gay", desc: "Découvre les 10 commandements essentiels pour réussir tes rencontres gay. Respect, communication, sécurité — tout pour des dates épanouissants.", tags: ["conseils rencontre gay", "dating gay", "respect"] },
-  { title: "Top 5 des Apps de Rencontre Gay Sans Pub en 2026", slug: "app-rencontre-gay-sans-pub", desc: "Les meilleures applications de rencontre gay sans publicité intrusive. Comparatif gratuit des apps respectueuses de votre vie privée.", tags: ["app sans pub", "rencontre gay gratuite", "vie privée"] },
-  { title: "Coming Out Tardif — Témoignages et Conseils Après 30 Ans", slug: "coming-out-tardif-temoignages", desc: "Le coming out tardif est plus courant qu'on ne le pense. Conseils, témoignages, et ressources pour faire son coming out à tout âge.", tags: ["coming out tardif", "témoignages", "gay après 30 ans"] },
-  { title: "Comment Savoir si un Mec est Gay ? — Les Signes", slug: "comment-savoir-si-un-mec-est-gay", desc: "Guide complet pour savoir si un mec est gay. Signes, comportements, et comment aborder la discussion sans awkwardness.", tags: ["savoir si gay", "signes", "comportement"] },
-  { title: "Comment Draguer sur une App de Rencontre Gay", slug: "draguer-sur-app-rencontre", desc: "Guide de drague gay sur les applications de rencontre. Comment envoyer le premier message, se démarquer, et obtenir des dates.", tags: ["drague gay", "premier message", "app rencontre"] },
-  { title: "Être Gay et Seul — Comment Vivre Sa Solitude", slug: "etre-gay-et-seul", desc: "La solitude chez les hommes gays est plus fréquente qu'on ne le pense. Conseils pour l'accepter, la comprendre, et en sortir.", tags: ["solitude gay", "bien-être", "conseils"] },
-  { title: "L'Histoire du Mois des Fiertés LGBTQ+", slug: "histoire-mois-fierte-lgbt", desc: "Retour sur l'histoire du Pride Month. Des émeutes de Stonewall à la marche des fiertés d'aujourd'hui. Un héritage de lutte et de célébration.", tags: ["pride", "histoire LGBTQ+", "Stonewall", "fiertés"] },
-  { title: "Les Meilleurs Quartiers Gay-Friendly en France", slug: "meilleurs-quartiers-gay-villes-france", desc: "Guide des quartiers gay-friendly à Paris, Lyon, Marseille, Bordeaux, Toulouse, Lille, Nantes, Strasbourg, Montpellier et Nice.", tags: ["quartiers gay", "France", "ville gay-friendly"] },
-  { title: "Premier Rendez-Vous Gay Réussi — 10 Conseils", slug: "premier-rendez-vous-gay-reussi", desc: "Tout pour réussir ton premier rendez-vous gay. Du choix du lieu à la conversation, en passant par les gestes qui font la différence.", tags: ["premier rendez-vous", "date réussi", "conseils"] },
-  { title: "Relation Sérieuse ou Plan Cul ? Définis ce que tu Cherches", slug: "relation-serieuse-vs-plan-cul", desc: "Comment savoir si tu veux une relation sérieuse ou un plan cul. Guide pour être honnête avec toi-même et les autres.", tags: ["relation sérieuse", "plan cul", "honnêteté"] },
-  { title: "Sécurité dans les Rencontres Gay — Les Règles à Connaître", slug: "securite-rencontres-gay", desc: "Guide de sécurité pour les rencontres gay en ligne et dans la vie réelle. Protégez votre vie privée et restez en sécurité.", tags: ["sécurité", "rencontres gay", "protection", "conseils"] },
+  { title: "5 Best Free Grindr Alternatives in 2026", slug: "alternatives-grindr-gratuites-2026", desc: "Sick of paying for Grindr? Discover the 5 best 100% free alternatives to Grindr in 2026. Gay dating apps with no subscription and no ads.", tags: ["grindr alternative", "free gay app", "no ads"] },
+  { title: "Top 7 Free Gay Dating Apps in 2026", slug: "meilleures-apps-rencontre-gay-gratuites-2026", desc: "Looking for a free gay dating app? Our complete comparison of the best apps to meet guys in 2026.", tags: ["gay dating app", "free gay dating", "gay app ranking"] },
+  { title: "How to Flirt With a Guy — The Complete Guide", slug: "comment-draguer-mec-guide-complet", desc: "Nervous about flirting with a guy? Tips on approaching, seducing, and creating a real connection. From first message to first date.", tags: ["flirting", "gay dating", "dating tips"] },
+  { title: "First Gay Date — 10 Tips for Success", slug: "premier-date-gay-conseils", desc: "Stressed about your first gay date? Our complete guide to a successful first date without the pressure.", tags: ["first date", "gay date", "dating advice"] },
+  { title: "How to Create a Gay Dating Profile That Attracts", slug: "creer-profil-gay-qui-attire", desc: "Your gay dating profile isn't getting matches? Here's how to optimize your photos and bio to attract the right guys.", tags: ["dating profile", "gay profile tips", "bio tips"] },
+  { title: "Coming Out and Dating — Supportive Guide", slug: "coming-out-rencontres-conseils", desc: "Just came out and want to start dating? A supportive guide for your first gay dates.", tags: ["coming out", "gay dating", "LGBTQ advice"] },
+  { title: "Gay Dating Safety — 12 Golden Rules", slug: "securite-rencontres-gay-regles", desc: "Meeting guys online safely. Our tips for safe and respectful dates. Protect yourself and enjoy.", tags: ["safety", "safe dating", "protection tips"] },
+  { title: "10 Rules for Gay Dating — The Complete Guide", slug: "10-commandements-rencontre-gay", desc: "The 10 essential rules for successful gay dating. Respect, communication, safety — everything for fulfilling dates.", tags: ["gay dating rules", "dating etiquette", "respect"] },
+  { title: "Top 5 Ad-Free Gay Dating Apps in 2026", slug: "app-rencontre-gay-sans-pub", desc: "The best gay dating apps with no intrusive advertising. A comparison of privacy-respecting free apps.", tags: ["ad-free app", "free gay dating", "privacy"] },
+  { title: "Coming Out Later in Life — Stories After 30", slug: "coming-out-tardif-temoignages", desc: "Coming out later in life is more common than you think. Advice, stories, and resources for coming out at any age.", tags: ["coming out late", "real stories", "gay after 30"] },
+  { title: "How to Tell If a Guy Is Gay — Signs to Look For", slug: "comment-savoir-si-un-mec-est-gay", desc: "Complete guide to knowing if a guy is gay. Signs, behaviors, and how to approach the conversation naturally.", tags: ["gay signs", "gaydar", "behavior"] },
+  { title: "How to Flirt on a Gay Dating App", slug: "draguer-sur-app-rencontre", desc: "Gay flirting guide for dating apps. How to send the first message, stand out, and get dates.", tags: ["gay flirting", "first message", "dating app"] },
+  { title: "Being Gay and Lonely — Coping Guide", slug: "etre-gay-et-seul", desc: "Loneliness among gay men is more common than you think. Tips to accept it, understand it, and move through it.", tags: ["gay loneliness", "wellbeing", "advice"] },
+  { title: "History of LGBTQ+ Pride Month", slug: "histoire-mois-fierte-lgbt", desc: "The history of Pride Month. From the Stonewall riots to today's marches. A legacy of struggle and celebration.", tags: ["pride", "LGBTQ history", "Stonewall"] },
+  { title: "Best Gay-Friendly Neighborhoods in France", slug: "meilleurs-quartiers-gay-villes-france", desc: "Guide to gay-friendly neighborhoods in Paris, Lyon, Marseille, Bordeaux, and more.", tags: ["gay neighborhood", "France", "gay-friendly cities"] },
+  { title: "10 Tips for a Successful First Gay Date", slug: "premier-rendez-vous-gay-reussi", desc: "Everything you need for a successful first gay date. From venue choice to conversation tips.", tags: ["first date", "successful date", "tips"] },
+  { title: "Serious Relationship or Hookup — Know What You Want", slug: "relation-serieuse-vs-plan-cul", desc: "How to know if you want a serious relationship or just casual. A guide to being honest with yourself and others.", tags: ["serious relationship", "hookup", "honesty"] },
+  { title: "Gay Dating Safety — Essential Guide", slug: "securite-rencontres-gay", desc: "Safety guide for gay dating online and in real life. Protect your privacy and stay safe.", tags: ["safety", "gay dating", "protection"] },
 ];
 
 export default function BlogPage() {
@@ -34,20 +34,26 @@ export default function BlogPage() {
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">
-            Le blog <span className="bg-gradient-to-r from-rose-300 via-amber-300 to-purple-300 bg-clip-text text-transparent">Embir</span>
+          <h1 className="text-4xl md:text-5xl font-black mb-4 text-white">
+            Embir <span className="text-white/50">Blog</span>
           </h1>
-          <p className="text-white/50 text-lg mb-12 max-w-2xl">
-            Conseils, astuces et témoignages pour réussir tes rencontres entre hommes. 
-            Du premier message au premier date, on t&apos;accompagne.
+          <p className="text-white/50 text-lg mb-8 max-w-2xl">
+            Tips, guides, and stories for gay dating. From first message to first date — we've got you covered.
           </p>
+
+          <Link href="/grindr-cost-calculator" className="block mb-12 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 hover:bg-white/[0.04] transition-all group">
+            <span className="text-white/70 text-xs font-bold uppercase tracking-wider">Featured Tool</span>
+            <h2 className="text-xl font-bold text-white mt-1 group-hover:text-white/80 transition-colors">Grindr Cost Calculator</h2>
+            <p className="text-white/40 text-sm mt-1">Find out how much you've spent on dating apps — and how much you'd save with Embir.</p>
+          </Link>
+
           <div className="grid gap-6 md:grid-cols-2">
             {articles.map((article) => (
-              <Link key={article.slug} href={`/blog/${article.slug}`} className="group rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all hover:border-white/10 hover:bg-white/[0.04]">
-                <h2 className="text-lg font-bold text-white group-hover:text-rose-300 transition-colors mb-2">{article.title}</h2>
+              <Link key={article.slug} href={`/blog/${article.slug}`} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-all hover:border-white/10 hover:bg-white/[0.04]">
+                <h2 className="text-lg font-bold text-white group-hover:text-white/80 transition-colors mb-2">{article.title}</h2>
                 <p className="text-white/45 text-sm leading-relaxed mb-4">{article.desc}</p>
                 <div className="flex flex-wrap gap-2">
-                  {article.tags.map((tag) => (<span key={tag} className="rounded-full border border-white/5 bg-white/[0.02] px-3 py-1 text-[11px] text-white/35">{tag}</span>))}
+                  {article.tags.map((tag) => (<span key={tag} className="rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[11px] text-white/35">{tag}</span>))}
                 </div>
               </Link>
             ))}
