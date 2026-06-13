@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import "@/styles/embir-tokens.css";
 import "@/styles/mobile.css";
+import ClientShell from "@/components/ClientShell";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://embir.xyz"),
@@ -82,16 +83,28 @@ export default async function LocaleLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+            <script dangerouslySetInnerHTML={{ __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+            `}} />
+          </>
+        )}
       </head>
       <body className="antialiased relative" style={{ background: "#0a0614", color: "rgba(255,255,255,0.9)", fontFamily: "'Inter', system-ui, sans-serif" }}>
-        <NextIntlClientProvider messages={messages}>
-          <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-            <div className="emb-aurora-bg" />
-            <div className="emb-grid" />
-            <div className="emb-noise" />
-          </div>
-          <div className="relative z-[1]">{children}</div>
-        </NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
+            <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+              <div className="emb-aurora-bg" />
+              <div className="emb-grid" />
+              <div className="emb-noise" />
+            </div>
+            <div className="relative z-[1]">{children}</div>
+            <ClientShell />
+          </NextIntlClientProvider>
       </body>
     </html>
   );

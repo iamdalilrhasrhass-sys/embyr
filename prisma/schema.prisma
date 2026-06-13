@@ -658,3 +658,74 @@ model AcquisitionEvent {
   metadata     String?  // JSON
   createdAt    DateTime @default(now())
 }
+
+// Analytics & Monitoring
+model AnalyticsEvent {
+  id          String   @id @default(cuid())
+  eventName   String
+  properties  Json     @default("{}")
+  userId      String?
+  page        String?
+  language    String?  @default("en")
+  referrer    String?
+  ipAddress   String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+
+  @@index([eventName])
+  @@index([createdAt])
+  @@index([language])
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  type      String   // bug, suggestion, technical, other
+  message   String
+  userEmail String?
+  pageUrl   String?
+  userAgent String?
+  status    String   @default("new") // new, in_progress, resolved, dismissed
+  createdAt DateTime @default(now())
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model ABTest {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  description   String?
+  trafficSplit  Int      @default(50) // percentage for variant B
+  startDate     DateTime?
+  endDate       DateTime?
+  status        String   @default("draft") // draft, running, stopped, completed
+  createdAt     DateTime @default(now())
+}
+
+model ABTestEvent {
+  id        String   @id @default(cuid())
+  testId    String
+  userId    String?
+  variant   String   // "A" or "B"
+  eventName String
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now())
+
+  @@index([testId])
+  @@index([testId, variant])
+}
+
+model PerformanceMetric {
+  id         String   @id @default(cuid())
+  page       String
+  ttfb       Float?   // Time to First Byte (ms)
+  lcp        Float?   // Largest Contentful Paint (ms)
+  fid        Float?   // First Input Delay (ms)
+  cls        Float?   // Cumulative Layout Shift
+  pageSize   Float?   // KB
+  statusCode Int?
+  createdAt  DateTime @default(now())
+
+  @@index([page])
+  @@index([createdAt])
+}
