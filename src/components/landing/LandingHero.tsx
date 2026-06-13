@@ -15,7 +15,7 @@ const particles = Array.from({length: 60}, (_, i) => ({
   opacity: Math.random() * 0.6 + 0.1,
 }));
 
-const floatingWords = ["Fierté", "Communauté", "Liberté", "Respect", "🏳️‍🌈 Amour"];
+const floatingWords = ["Fierté", "Communauté", "Liberté", "Respect", " Amour"];
 
 export default function LandingHero() {
   const containerRef = useRef<HTMLDivElement>(null);

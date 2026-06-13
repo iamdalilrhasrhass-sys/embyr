@@ -67,7 +67,7 @@ const comparison = [
   },
   {
     feature: "Design",
-    embir: "✨ Premium sombre",
+    embir: " Premium sombre",
     grindr: "🟡 Jaune agressif",
     romeo: "🔵 Bleu classique",
     scruff: "🟠 Orange daté",
@@ -168,7 +168,7 @@ export default function GrindrVsPage() {
               href="/auth/register"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-purple-600 px-8 py-4 text-base font-bold text-white shadow-xl shadow-rose-500/20 transition-all hover:scale-[1.02] hover:shadow-rose-500/40"
             >
-              Essayer Embir gratuitement 🚀
+              Essayer Embir gratuitement 
             </Link>
           </div>
 
@@ -193,7 +193,7 @@ export default function GrindrVsPage() {
           <div className="text-center mt-12 pt-8 border-t border-white/5">
             <p className="text-white/40 text-sm mb-4">Partage ce comparatif avec tes potes 👇</p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("J'ai comparé Grindr et ses alternatives. Le résultat est surprenant 👀\n\nhttps://embir.xyz/grindr-vs-alternatives")}`} target="_blank" rel="noopener" className="rounded-full bg-white/[0.06] border border-white/10 px-4 py-2 text-xs text-white/60 hover:bg-white/[0.10] transition-all">
+              <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("J'ai comparé Grindr et ses alternatives. Le résultat est surprenant \n\nhttps://embir.xyz/grindr-vs-alternatives")}`} target="_blank" rel="noopener" className="rounded-full bg-white/[0.06] border border-white/10 px-4 py-2 text-xs text-white/60 hover:bg-white/[0.10] transition-all">
                 𝕏 Twitter
               </a>
               <a href={`https://www.facebook.com/sharer/sharer.php?u=https://embir.xyz/grindr-vs-alternatives`} target="_blank" rel="noopener" className="rounded-full bg-white/[0.06] border border-white/10 px-4 py-2 text-xs text-white/60 hover:bg-white/[0.10] transition-all">

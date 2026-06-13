@@ -76,7 +76,7 @@ export default function MembreDetailPage() {
                   </h2>
                   {profile.isPremium && (
                     <span className="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400/80 border border-indigo-500/10">
-                      ⭐ Premium
+                       Premium
                     </span>
                   )}
                   {profile.isVerified && (
@@ -119,7 +119,7 @@ export default function MembreDetailPage() {
                     border: "1px solid rgba(255,255,255,0.06)",
                   }}
                 >
-                  {profile.isFavorited ? "⭐" : "☆"}
+                  {profile.isFavorited ? "" : "☆"}
                 </button>
               </div>
 

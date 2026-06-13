@@ -28,7 +28,7 @@ export default function InviterPage() {
     : "";
 
   const message = referralCode
-    ? `🔥 Rejoins-moi sur Embir, la nouvelle app de rencontre gay élégante et gratuite ! Inscris-toi avec mon code ${referralCode} ou via ce lien : ${referralLink}`
+    ? ` Rejoins-moi sur Embir, la nouvelle app de rencontre gay élégante et gratuite ! Inscris-toi avec mon code ${referralCode} ou via ce lien : ${referralLink}`
     : "Je viens de rejoindre Embir, une nouvelle app de rencontre gay gratuite pendant son lancement. Rejoins les premiers membres : https://embir.xyz";
 
   const lien = referralLink || "https://embir.xyz";
@@ -156,7 +156,7 @@ export default function InviterPage() {
 
               {/* Email */}
               <a
-                href={`mailto:?subject=${encodeURIComponent("Rejoins-moi sur Embir 💜")}&body=${encodeURIComponent(message)}`}
+                href={`mailto:?subject=${encodeURIComponent("Rejoins-moi sur Embir ")}&body=${encodeURIComponent(message)}`}
                 className="px-4 py-3 rounded-xl text-sm font-semibold border border-white/10 bg-white/[0.03] text-white/70 hover:bg-white/[0.08] transition-colors text-center">
                 📧 Email
               </a>

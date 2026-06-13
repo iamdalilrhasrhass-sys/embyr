@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 
 const SITE_URL = "https://embir.xyz";
 const SHARE_MESSAGE =
-  "Découvre Embir — l'app de rencontre gay 100% gratuite, sans pubs et sans limite 💜 Rejoins la communauté dès maintenant !";
+  "Découvre Embir — l'app de rencontre gay 100% gratuite, sans pubs et sans limite  Rejoins la communauté dès maintenant !";
 
 const platforms = [
   {

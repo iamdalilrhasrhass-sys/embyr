@@ -253,7 +253,7 @@ export default function ArticlePage() {
               communication et l&apos;authenticité sont les piliers de toute relation épanouissante — gay ou pas.
             </p>
             <p>
-              Et si tu as besoin d&apos;un espace pour mettre tout ça en pratique, tu sais où nous trouver 💜
+              Et si tu as besoin d&apos;un espace pour mettre tout ça en pratique, tu sais où nous trouver 
             </p>
           </div>
 

@@ -80,7 +80,7 @@ export default function AdminDashboard() {
             🚨 Signalements ({reports.filter(r => r.status === 'PENDING').length})
           </button>
           <button onClick={() => setTab("ambassadors")} className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${tab === 'ambassadors' ? 'bg-[var(--color-premium-rose)] text-white' : 'hover:bg-white/5 text-gray-300'}`}>
-            🌟 Ambassadrices ({ambassadorStats.pending})
+             Ambassadrices ({ambassadorStats.pending})
           </button>
           <button onClick={() => setTab("users")} className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${tab === 'users' ? 'bg-[var(--color-premium-rose)] text-white' : 'hover:bg-white/5 text-gray-300'}`}>
             👥 Utilisateurs ({users.length})
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
               <h4 className="text-3xl font-bold text-yellow-400">{reports.filter(r => r.status === 'PENDING').length}</h4>
             </div>
             <div className="glass-card p-6 rounded-3xl">
-              <p className="text-gray-400 text-sm">🌟 Ambassadrices</p>
+              <p className="text-gray-400 text-sm"> Ambassadrices</p>
               <h4 className="text-3xl font-bold text-[var(--color-premium-rose)]">{ambassadorStats.pending}</h4>
               <p className="text-xs text-gray-500 mt-1">{ambassadorStats.approved} approuvées</p>
             </div>
@@ -195,7 +195,7 @@ export default function AdminDashboard() {
             <h3 className="text-2xl font-bold mb-6">Candidatures Ambassadrices</h3>
             {ambassadors.length === 0 && (
               <div className="text-gray-400 text-center py-12">
-                <p className="text-5xl mb-4">🌟</p>
+                <p className="text-5xl mb-4"></p>
                 <p>Aucune candidature pour le moment.</p>
                 <p className="text-sm mt-2 text-gray-500">Les candidatures apparaîtront ici quand des profils postuleront.</p>
               </div>

@@ -33,7 +33,7 @@ export default function PricingPage() {
         {/* Hero */}
         <ScrollReveal>
           <div className="mb-4 inline-flex rounded-full border border-purple-400/20 bg-purple-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-purple-300">
-            ⭐ Premium bientôt
+             Premium bientôt
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
             Premium <span className="text-gradient">arrive bientôt</span>

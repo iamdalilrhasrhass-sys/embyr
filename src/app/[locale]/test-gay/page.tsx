@@ -26,7 +26,7 @@ const questions = [
     q: "Ta tenue pour une soirée gay ?",
     answers: [
       { text: "Chemise bien coupée, look clean 👔", score: "romantic" },
-      { text: "T-shirt moulant qui met en valeur 💪", score: "bold" },
+      { text: "T-shirt moulant qui met en valeur ", score: "bold" },
       { text: "Pièce vintage dénichée en friperie 🧥", score: "social" },
       { text: "Ce qui est propre, honnêtement mdr 👕", score: "adventurous" },
     ],
@@ -35,7 +35,7 @@ const questions = [
     q: "Tu vois un mec mignon au bar. Tu fais quoi ?",
     answers: [
       { text: "Je lui souris et j'attends qu'il vienne 😊", score: "romantic" },
-      { text: "Je vais direct lui parler, la vie est courte 🔥", score: "bold" },
+      { text: "Je vais direct lui parler, la vie est courte ", score: "bold" },
       { text: "Je demande à un pote de faire les présentations 🕺", score: "social" },
       { text: "Je lui envoie un verre depuis l'autre bout du bar 🍸", score: "adventurous" },
     ],
@@ -43,10 +43,10 @@ const questions = [
   {
     q: "Le trait le plus important chez un partenaire ?",
     answers: [
-      { text: "La fidélité et la tendresse 💕", score: "romantic" },
+      { text: "La fidélité et la tendresse ", score: "romantic" },
       { text: "La confiance en soi et l'ambition 🎯", score: "bold" },
       { text: "L'humour et la vibe positive 😂", score: "social" },
-      { text: "L'ouverture d'esprit et la spontanéité 🌈", score: "adventurous" },
+      { text: "L'ouverture d'esprit et la spontanéité ", score: "adventurous" },
     ],
   },
 ];
@@ -60,7 +60,7 @@ const results: Record<string, { emoji: string; title: string; description: strin
     gradient: "from-rose-500/20 to-pink-500/20",
   },
   bold: {
-    emoji: "🔥",
+    emoji: "",
     title: "Le Confiant Audacieux",
     description: "Tu sais ce que tu veux et tu n'as pas peur d'y aller. Ta confiance attire les regards, mais tu cherches quelqu'un qui peut suivre ton rythme. Sur Embir, trouve des mecs qui aiment les personnalités fortes et le franc-parler.",
     color: "from-orange-500 to-red-600",
@@ -109,7 +109,7 @@ export default function GayTestPage() {
   };
 
   const shareText = result
-    ? `🌈 J'ai passé le test "Quel mec gay es-tu ?" et je suis "${results[result].emoji} ${results[result].title}" !\n\nDécouvre ton type sur Embir → https://embir.xyz/test-gay\n\n#Embir #GayDating #RencontreGay`
+    ? ` J'ai passé le test "Quel mec gay es-tu ?" et je suis "${results[result].emoji} ${results[result].title}" !\n\nDécouvre ton type sur Embir → https://embir.xyz/test-gay\n\n#Embir #GayDating #RencontreGay`
     : "";
 
   const handleCopy = async () => {
@@ -148,7 +148,7 @@ export default function GayTestPage() {
                   href="/auth/register"
                   className={`mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${r.color} px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-[1.02]`}
                 >
-                  Créer mon profil gratuitement ✨
+                  Créer mon profil gratuitement 
                 </Link>
               </div>
 
@@ -191,7 +191,7 @@ export default function GayTestPage() {
       <section className="py-16 px-4 sm:px-6">
         <div className="emb-container max-w-lg">
           <div className="text-center mb-8">
-            <div className="text-5xl mb-4">🌈</div>
+             
             <h1 className="text-3xl sm:text-4xl font-black text-white mb-3">
               Quel mec gay es-tu ?
             </h1>

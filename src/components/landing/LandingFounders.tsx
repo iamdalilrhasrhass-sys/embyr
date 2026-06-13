@@ -4,9 +4,9 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const founderCards = [
-  { number: 1, badge: "👑", title: "Fondatrice #1", status: "Première inscrite" },
-  { number: 2, badge: "💎", title: "Fondatrice #2", status: "Membre fondatrice" },
-  { number: 3, badge: "✨", title: "Fondatrice #3", status: "Profil vérifié" },
+  { number: 1, badge: "", title: "Fondatrice #1", status: "Première inscrite" },
+  { number: 2, badge: "", title: "Fondatrice #2", status: "Membre fondatrice" },
+  { number: 3, badge: "", title: "Fondatrice #3", status: "Profil vérifié" },
 ];
 
 export default function LandingFounders() {

@@ -52,7 +52,7 @@ const STATS = [
 ];
 
 const COMPARISONS = [
-  { feature: "Price", grindr: "~€15/mo", embir: "Free 🎉", winner: "embir" },
+  { feature: "Price", grindr: "~€15/mo", embir: "Free", winner: "embir" },
   { feature: "Ads", grindr: "Everywhere", embir: "Zero", winner: "embir" },
   { feature: "Free Swipes", grindr: "Limited", embir: "Unlimited", winner: "embir" },
   { feature: "Verification", grindr: "Optional", embir: "Mandatory", winner: "embir" },
@@ -63,80 +63,65 @@ const COMPARISONS = [
 function PhonePreview() {
   return (
     <div className="relative mx-auto flex w-full max-w-[390px] justify-center lg:max-w-[430px]" aria-label="iPhone preview of the embir.xyz app">
-      <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ff5e36]/20 blur-3xl" />
-      <div className="absolute left-0 top-8 h-36 w-36 rounded-full bg-[#ff1f5a]/25 blur-2xl" />
-      <div className="absolute bottom-8 right-2 h-44 w-44 rounded-full bg-[#ffa333]/18 blur-2xl" />
+      <div className="relative h-[620px] w-[300px] rounded-[3rem] border border-white/10 bg-gradient-to-b from-[#1a1d24] to-black p-[6px] shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+        <div className="absolute inset-[3px] rounded-[2.75rem] border border-white/6 pointer-events-none" />
+        <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-[#0a0c10]">
+          <div className="absolute left-1/2 top-3 z-40 h-7 w-24 -translate-x-1/2 rounded-full bg-black border border-white/8" />
 
-      <div className="absolute -left-1 top-28 h-16 w-1.5 rounded-l-full bg-[#2a2d34]" />
-      <div className="absolute -right-1 top-36 h-24 w-1.5 rounded-r-full bg-[#2a2d34]" />
-
-      <div className="relative h-[650px] w-[318px] rounded-[3.25rem] border border-white/12 bg-gradient-to-br from-[#3a3d46] via-[#111318] to-black p-[7px] shadow-[0_42px_110px_rgba(0,0,0,0.72)]">
-        <div className="absolute inset-[3px] rounded-[3rem] border border-white/8 pointer-events-none" />
-        <div className="relative h-full w-full overflow-hidden rounded-[2.75rem] bg-[#090b0e]">
-          <div className="absolute left-1/2 top-3 z-40 h-8 w-28 -translate-x-1/2 rounded-full bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08),0_8px_22px_rgba(0,0,0,0.45)]" />
-
-          <div className="relative z-30 flex items-center justify-between px-7 pb-3 pt-4 text-[11px] font-semibold text-white/72">
+          <div className="relative z-30 flex items-center justify-between px-7 pb-3 pt-4 text-[10px] font-semibold text-white/60">
             <span>9:41</span>
-            <div className="flex items-center gap-1.5">
-              <span className="flex items-end gap-[2px]" aria-hidden="true">
-                <span className="h-1.5 w-1 rounded-sm bg-white/70" />
-                <span className="h-2 w-1 rounded-sm bg-white/70" />
-                <span className="h-2.5 w-1 rounded-sm bg-white/70" />
-              </span>
-              <span className="text-[10px]">5G</span>
-              <span className="h-2.5 w-5 rounded-[4px] border border-white/60 p-[1px]" aria-hidden="true">
-                <span className="block h-full w-3.5 rounded-[2px] bg-white/75" />
+            <div className="flex items-center gap-1">
+              <span className="h-2.5 w-4 rounded border border-white/40 p-[1px]">
+                <span className="block h-full w-3 rounded bg-white/60" />
               </span>
             </div>
           </div>
 
-          <div className="relative z-20 flex h-[calc(100%-44px)] flex-col px-4 pb-3">
+          <div className="relative z-20 flex h-[calc(100%-40px)] flex-col px-4 pb-3">
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <EmbirLogo size="sm" showText={false} />
-                <span className="text-lg font-black tracking-[-0.06em] text-white">
-                  embir
-                  <span className="bg-gradient-to-tr from-[#ff1f5a] to-[#ff5e36] bg-clip-text text-transparent">
-                    .
-                  </span>
+                <span className="relative inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] shadow-sm">
+                  <span className="h-1/3 w-1/3 rounded-full bg-white" />
+                </span>
+                <span className="text-base font-bold tracking-tight text-white">
+                  embir<span className="text-[#ff5e36]">.</span>
                 </span>
               </div>
-              <button className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-[11px] font-semibold text-white/65">
+              <span className="rounded-full border border-white/8 bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-white/50">
                 Paris
-              </button>
+              </span>
             </div>
 
-            <div className="relative min-h-0 flex-1 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-tr from-[#171a20] via-[#24182e] to-[#ff5e36]/30 shadow-2xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_16%,rgba(255,163,51,0.36),transparent_30%),radial-gradient(circle_at_22%_72%,rgba(255,31,90,0.28),transparent_36%)]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/28 to-transparent" />
+            <div className="relative min-h-0 flex-1 overflow-hidden rounded-[2rem] border border-white/8 bg-gradient-to-b from-[#171a20] to-[#1a1020]">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-              <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/45 px-3 py-1 text-[11px] font-semibold tracking-wide text-white/78 backdrop-blur-md">
+              <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/50 px-2.5 py-0.5 text-[10px] font-medium text-white/70 backdrop-blur">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#ff5e36]" />
                 1.4 km away
               </span>
-              <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white/72 backdrop-blur-md">
+              <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/40 px-2.5 py-0.5 text-[10px] font-medium text-white/60 backdrop-blur">
                 founder
               </span>
 
-              <div className="absolute inset-x-0 bottom-0 p-4 pt-20">
-                <div className="rounded-[26px] border border-white/10 bg-black/38 p-4 backdrop-blur-xl">
+              <div className="absolute inset-x-0 bottom-0 p-4">
+                <div className="rounded-[22px] border border-white/8 bg-black/50 p-4 backdrop-blur">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-black tracking-[-0.03em] text-white">Lucas, 26</h3>
-                    <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
+                    <h3 className="text-lg font-bold tracking-tight text-white">Lucas, 26</h3>
+                    <span className="h-2 w-2 rounded-full bg-green-500" />
                   </div>
-                  <p className="mt-1 text-xs text-white/58">Paris · Content creator</p>
-                  <p className="mt-2 text-xs italic text-white/44">
+                  <p className="mt-1 text-xs text-white/45">Paris · Content creator</p>
+                  <p className="mt-2 text-xs italic text-white/35">
                     "Drinks tonight in the Marais?"
                   </p>
-                  <div className="mt-3 inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold text-white/58">
-                    AI Compatibility · 94%
+                  <div className="mt-3 inline-flex rounded-full border border-white/8 bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-white/50">
+                    Compatibility · 94%
                   </div>
 
                   <div className="mt-4 flex justify-center gap-3">
-                    <button className="flex h-11 min-w-20 items-center justify-center rounded-full border border-white/10 bg-white/8 text-xs font-semibold uppercase tracking-[0.18em] text-white/55 transition-transform hover:scale-105" aria-label="Pass">
+                    <button className="flex h-10 min-w-16 items-center justify-center rounded-full border border-white/10 bg-white/6 text-xs font-semibold uppercase tracking-wider text-white/50 hover:bg-white/10">
                       Nope
                     </button>
-                    <button className="flex h-11 min-w-24 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,31,90,0.45)] transition-transform hover:scale-105" aria-label="Spark">
+                    <button className="flex h-10 min-w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] text-xs font-bold uppercase tracking-wider text-white shadow-lg">
                       Spark
                     </button>
                   </div>
@@ -144,18 +129,18 @@ function PhonePreview() {
               </div>
             </div>
 
-            <div className="mt-3 flex items-center justify-around rounded-full border border-white/8 bg-white/[0.035] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/30">
+            <div className="mt-3 flex items-center justify-around rounded-full border border-white/6 bg-white/[0.02] px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-white/25">
               <span className="text-[#ff5e36]">Profiles</span>
               <span>Messages</span>
               <span>Me</span>
             </div>
-            <div className="mx-auto mt-2 h-1 w-28 rounded-full bg-white/32" />
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default function Home() {
   return (
     <main className="emb-page">

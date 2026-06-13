@@ -18,7 +18,7 @@ export default function SalonsPage() {
     <AppShell>
       <main className="min-h-screen text-[var(--eb-text-primary)] pt-4 pb-20 md:pb-8 px-4" style={{background:"var(--eb-bg-base)"}}>
         <h1 className="text-2xl font-[var(--eb-font-display)] font-bold mb-6" style={{background:"linear-gradient(135deg, var(--eb-accent), var(--eb-copper))",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>
-          🔥 Salons
+          Discover rooms
         </h1>
         {loading ? (
           <div className="flex justify-center py-20"><div className="w-8 h-8 rounded-full border-2 border-[var(--eb-border-soft)] border-t-[var(--eb-accent)] animate-spin" /></div>

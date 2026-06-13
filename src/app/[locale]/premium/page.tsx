@@ -12,7 +12,7 @@ export default function PremiumPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="mb-4 inline-flex rounded-full border border-[#ff5e36]/25 bg-[#ff5e36]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ffa333]">
-              🔥 Fondateurs d&apos;abord
+               Fondateurs d&apos;abord
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4"
               style={{ background: "linear-gradient(135deg, #FFFFFF 55%, #ff5e36 78%, #ffa333 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -46,13 +46,13 @@ export default function PremiumPage() {
           <h2 className="text-2xl font-bold text-white mb-6">Ce qui restera précieux plus tard</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {[
-              { title: "Boost de profil", desc: "Plus de visibilité dans les résultats", icon: "🚀" },
+              { title: "Boost de profil", desc: "Plus de visibilité dans les résultats", icon: "" },
               { title: "Voir les visiteurs", desc: "Sache qui consulte ton profil", icon: "👁️" },
               { title: "Filtres avancés", desc: "Recherche par centres d'intérêt", icon: "🔍" },
               { title: "Albums privés", desc: "Partage des photos en privé", icon: "🔒" },
               { title: "Mode invisible", desc: "Navigue discrètement", icon: "🕶️" },
               { title: "Badge vérifié", desc: "Profil certifié authentique", icon: "🛡️" },
-              { title: "Mise en avant", desc: "Apparais en priorité", icon: "⭐" },
+              { title: "Mise en avant", desc: "Apparais en priorité", icon: "" },
               { title: "Messages illimités", desc: "Aucune limite d'échange", icon: "💬" },
             ].map((item) => (
               <TiltCard key={item.title} className="emb-card rounded-2xl p-5 text-center">

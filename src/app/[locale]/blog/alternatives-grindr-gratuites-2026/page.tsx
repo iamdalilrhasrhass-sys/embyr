@@ -67,7 +67,7 @@ export default function ArticlePage() {
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">1. EMBIR — La nouvelle référence gratuite</h2>
             <p>
-              <strong>⭐ Note : 4.8/5 — Le meilleur rapport qualité/prix (gratuit)</strong>
+              <strong> Note : 4.8/5 — Le meilleur rapport qualité/prix (gratuit)</strong>
             </p>
             <p>
               EMBIR est la plateforme de rencontre qui monte. Créée par une petite équipe indépendante 
@@ -95,7 +95,7 @@ export default function ArticlePage() {
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">2. Romeo (ex-PlanetRomeo)</h2>
             <p>
-              <strong>⭐ Note : 4.2/5 — Le vétéran allemand</strong>
+              <strong> Note : 4.2/5 — Le vétéran allemand</strong>
             </p>
             <p>
               Romeo existe depuis 2002. C'est l'app gay la plus populaire en Allemagne et elle a une 
@@ -113,7 +113,7 @@ export default function ArticlePage() {
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">3. Scruff</h2>
             <p>
-              <strong>⭐ Note : 4.0/5 — La communauté bear et muscle</strong>
+              <strong> Note : 4.0/5 — La communauté bear et muscle</strong>
             </p>
             <p>
               Scruff est l'alternative historique pour la communauté bear, otter, daddy et les mecs 
@@ -131,7 +131,7 @@ export default function ArticlePage() {
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">4. Hornet</h2>
             <p>
-              <strong>⭐ Note : 3.8/5 — Le réseau social gay</strong>
+              <strong> Note : 3.8/5 — Le réseau social gay</strong>
             </p>
             <p>
               Hornet se positionne comme un "réseau social gay" plutôt qu'une app de rencontre pure. 
@@ -148,7 +148,7 @@ export default function ArticlePage() {
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">5. Tinder (mode gay)</h2>
             <p>
-              <strong>⭐ Note : 3.5/10 — Le mastodonte, mais payant</strong>
+              <strong> Note : 3.5/10 — Le mastodonte, mais payant</strong>
             </p>
             <p>
               Oui, Tinder n'est pas une app gay. Mais avec 75 millions d'utilisateurs, tu peux filtrer 

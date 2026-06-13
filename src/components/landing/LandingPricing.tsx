@@ -128,7 +128,7 @@ export default function LandingPricing() {
         >
           <div className="relative z-10">
             <div className="inline-flex mb-4 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/10">
-              <span className="text-xs font-bold tracking-wider text-green-400 uppercase">🎉 Au lancement</span>
+              <span className="text-xs font-bold tracking-wider text-green-400 uppercase"> Au lancement</span>
             </div>
             <h3 className="text-lg font-medium text-white/70 mb-1 font-serif">Free</h3>
             <p className="text-xs text-white/30 mb-6 font-light">Tout illimité, zéro engagement</p>

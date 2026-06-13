@@ -39,7 +39,7 @@ export default function GayBarsPage() {
               <div className="text-white/40 text-sm mt-1">Quartier gay-friendly</div>
             </div>
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🌈</div>
+               
               <div className="text-white font-bold">3+ bars</div>
               <div className="text-white/40 text-sm mt-1">Adresses recommandées</div>
             </div>

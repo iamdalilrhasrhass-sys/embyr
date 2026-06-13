@@ -21,7 +21,7 @@ export default function FavorisPage() {
       <main className="min-h-screen text-[var(--eb-text-primary)] pt-4 pb-20 md:pb-8" style={{background: "var(--eb-bg-base)"}}>
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-2xl font-[var(--eb-font-display)] font-bold mb-6" style={{background: "linear-gradient(135deg, var(--eb-accent), var(--eb-copper))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
-            💎 Favoris
+             Favoris
           </h1>
           
           {loading ? (

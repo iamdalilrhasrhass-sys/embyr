@@ -36,7 +36,7 @@ const cities = [
     description:
       "Capitale mondiale du romantisme, Paris brille par son village gay dynamique au Marais. Bars, clubs et saunas gay s'y côtoient dans une atmosphère ouverte et festive. La Parisienne Pride attire des milliers de participants chaque année.",
     population: "2.1M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "New York",
@@ -46,7 +46,7 @@ const cities = [
     description:
       "New York est le berceau du mouvement LGBTQ+ moderne. Greenwich Village, Hell's Kitchen et Brooklyn regorgent de lieux gay friendly. La NYC Pride est l'une des plus grandes du monde.",
     population: "8.4M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Barcelona",
@@ -56,7 +56,7 @@ const cities = [
     description:
       "Barcelona vibre au rythme de sa communauté gay, concentrée autour de l'Eixample (Gaixample). Plages, clubs en bord de mer et une ambiance méditerranéenne incomparable.",
     population: "1.6M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "San Francisco",
@@ -66,7 +66,7 @@ const cities = [
     description:
       "Le Castro est LE quartier gay le plus emblématique au monde. San Francisco incarne la liberté LGBTQ+ avec une scène bouillonnante de bars, de clubs et d'associations.",
     population: "880K habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Berlin",
@@ -76,7 +76,7 @@ const cities = [
     description:
       "Berlin est la capitale européenne de la culture queer. Schöneberg et Neukölln concentrent bars, clubs techno gay et une vie nocturne légendaire. La CSD Berlin (Christopher Street Day) est un événement monumental.",
     population: "3.6M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Amsterdam",
@@ -86,7 +86,7 @@ const cities = [
     description:
       "Premier pays à avoir légalisé le mariage gay, Amsterdam est une référence en matière de droits LGBTQ+. Le Reguliersdwarsstraat est l'artère gay principale de la ville.",
     population: "870K habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Madrid",
@@ -96,7 +96,7 @@ const cities = [
     description:
       "Le quartier de Chueca est le cœur gay de Madrid : bars, restaurants, clubs et une énergie contagieuse. Le MADO (Madrid Orgullo) est l'une des plus grandes Pride d'Europe.",
     population: "3.2M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Los Angeles",
@@ -106,7 +106,7 @@ const cities = [
     description:
       "West Hollywood (WeHo) est l'épicentre gay de Los Angeles. Santa Monica Boulevard concentre les clubs et bars gay les plus mythiques de la côte ouest.",
     population: "3.9M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Sydney",
@@ -116,7 +116,7 @@ const cities = [
     description:
       "Sydney et son quartier d'Oxford Street accueillent chaque année la Mardi Gras, l'un des événements LGBTQ+ les plus spectaculaires du monde. Plages, soleil et communauté vibrante.",
     population: "5.3M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Londres",
@@ -126,7 +126,7 @@ const cities = [
     description:
       "Soho et Vauxhall sont les quartiers gay emblématiques de Londres. Théâtres, clubs et pubs, la capitale britannique offre une scène gay riche et diversifiée.",
     population: "8.9M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Montréal",
@@ -136,7 +136,7 @@ const cities = [
     description:
       "Le Village gai de Montréal est l'un des plus grands d'Amérique du Nord. Toute l'année, bars, spectacles et événements animent ce quartier emblématique.",
     population: "1.7M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Rio de Janeiro",
@@ -146,7 +146,7 @@ const cities = [
     description:
       "Ipanema et Copacabana sont les plages gay friendly de Rio. La ville respire la diversité et la fête, avec l'une des communautés LGBTQ+ les plus visibles d'Amérique latine.",
     population: "6.7M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Tokyo",
@@ -156,7 +156,7 @@ const cities = [
     description:
       "Ni-chōme à Shinjuku est le quartier gay de Tokyo, avec des centaines de bars nichés dans des ruelles. Une scène unique, discrète mais incroyablement riche.",
     population: "13.9M habitants",
-    gayScore: "⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Toronto",
@@ -166,7 +166,7 @@ const cities = [
     description:
       "Church-Wellesley Village est le cœur gay de Toronto. La ville est reconnue pour son inclusivité et sa Pride Week parmi les plus festives du continent.",
     population: "2.7M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Buenos Aires",
@@ -176,7 +176,7 @@ const cities = [
     description:
       "Buenos Aires est la ville la plus gay friendly d'Amérique du Sud. Palermo et San Telmo concentrent bars et clubs dans une ambiance latino unique.",
     population: "2.9M habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Stockholm",
@@ -186,7 +186,7 @@ const cities = [
     description:
       "Stockholm brille par son ouverture d'esprit et sa scène gay moderne. Södermalm est le quartier prisé, avec bars et cafés LGBTQ+ dans un cadre scandinave magnifique.",
     population: "975K habitants",
-    gayScore: "⭐⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Rome",
@@ -196,7 +196,7 @@ const cities = [
     description:
       "Rome allie histoire antique et vie gay moderne. Gay Street à Colosseo et le quartier Monti accueillent une communauté gay chaleureuse et fière.",
     population: "2.8M habitants",
-    gayScore: "⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Mexico",
@@ -206,7 +206,7 @@ const cities = [
     description:
       "Zona Rosa est le quartier gay historique de Mexico. La ville est une référence en matière de droits LGBTQ+ en Amérique latine, avec une scène culturelle queer florissante.",
     population: "8.8M habitants",
-    gayScore: "⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Prague",
@@ -216,7 +216,7 @@ const cities = [
     description:
       "Prague attire une communauté gay cosmopolite. Vinohrady et le centre-ville offrent bars et clubs gay dans un décor architectural à couper le souffle.",
     population: "1.3M habitants",
-    gayScore: "⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
   {
     name: "Vancouver",
@@ -226,7 +226,7 @@ const cities = [
     description:
       "Davie Village est le quartier gay de Vancouver, entouré de montagnes et d'océan. La ville est réputée pour son atmosphère décontractée et inclusive.",
     population: "631K habitants",
-    gayScore: "⭐⭐⭐⭐",
+    gayScore: "5/5",
   },
 ];
 
@@ -256,12 +256,12 @@ export default function TopGayCitiesPage() {
               <div className="text-white/40 text-sm mt-1">Dans le monde</div>
             </div>
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">🏳️‍🌈</div>
+               
               <div className="text-white font-bold">Gay Friendly</div>
               <div className="text-white/40 text-sm mt-1">Scène LGBTQ+ active</div>
             </div>
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center">
-              <div className="text-3xl mb-2">💜</div>
+               
               <div className="text-white font-bold">Embir</div>
               <div className="text-white/40 text-sm mt-1">Connecte-toi partout</div>
             </div>

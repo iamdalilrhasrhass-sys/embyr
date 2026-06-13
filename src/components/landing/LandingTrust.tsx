@@ -9,7 +9,7 @@ const badges = [
   { icon: "👁️", title: "Modération 24/7", sub: "Équipe humaine" },
   { icon: "✅", title: "Profils Vérifiés", sub: "Selfie avec code" },
   { icon: "📱", title: "Paiement Local", sub: "Allopass SMS+" },
-  { icon: "💎", title: "Premium Qualité", sub: "Expérience soignée" },
+  { icon: "", title: "Premium Qualité", sub: "Expérience soignée" },
 ];
 
 function AnimatedCounter({ value, label }: { value: number; label: string }) {
