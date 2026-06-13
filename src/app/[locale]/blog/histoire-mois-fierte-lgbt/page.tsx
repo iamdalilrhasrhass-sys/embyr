@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The History of Pride Month — From Stonewall to Today | Embir Blog",
-  description: "The story behind Pride Month. Stonewall, the movement, and what it means today.",
-  keywords: ["histoire mois fierte lgbt", "gay", "LGBTQ+", "rencontre gay", "Embir"],
+  title: "The History of Pride Month — Stonewall to Today | Embir Blog",
+  description: "The story behind Pride Month. From Stonewall to the global celebration it is today.",
   alternates: { canonical: "https://embir.xyz/blog/histoire-mois-fierte-lgbt" },
 };
 
@@ -13,26 +12,16 @@ export default function BlogPost() {
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <p className="text-rose-400 text-sm font-semibold mb-2 uppercase tracking-wider">Blog Embir</p>
-          <h1 className="text-3xl md:text-5xl font-black mb-6 text-white">L'histoire du mois des fiertés LGBTQ+ — Des émeutes de Stonewall à aujourd'hui</h1>
-          
+          <p className="text-white/40 text-sm font-semibold mb-2 uppercase tracking-wider">Embir Blog</p>
+          <h1 className="text-3xl md:text-5xl font-black mb-6 text-white">The History of Pride Month</h1>
           <div className="prose prose-invert max-w-none text-white/50 space-y-4 leading-relaxed">
-            <p>Retour sur l'histoire du Pride Month. Des émeutes de Stonewall à la marche des fiertés d'aujourd'hui. Un héritage de lutte et de célébration.</p>
-            <p>Chez Embir, on croit en des rencontres authentiques entre hommes. Sans pubs, sans abonnement, sans algorithme intrusif.</p>
-            <p>Notre mission : créer un espace où chaque homme peut être lui-même, en toute sécurité.</p>
-            
-            <h2 className="text-white text-xl font-bold mt-8">Rejoins la communauté Embir</h2>
-            <p>
-              Embir est l&apos;app de rencontre gay 100% gratuite, sans pubs, disponible en 25 langues.
-              Crée ton profil en 2 minutes et découvre des mecs près de chez toi.
-            </p>
+            <p>Pride Month traces back to the Stonewall Riots of 1969. Today, it is a global celebration of LGBTQ identity and rights. At Embir, we believe in authentic dating between men. No ads, no subscriptions, no intrusive algorithm.</p>
           </div>
-          
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mt-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Prêt à rencontrer des mecs ?</h2>
-            <p className="text-white/50 mb-6">Embir est 100% gratuit. Sans pubs, sans abonnement.</p>
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-[1.02]">
-              Créer mon profil gratuitement
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mt-10">
+            <h2 className="text-2xl font-bold text-white mb-3">Ready to meet guys?</h2>
+            <p className="text-white/50 mb-6">Embir is 100% free. No ads, no subscription.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
             </Link>
           </div>
         </div>

@@ -3,26 +3,12 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "10 Rules for Gay Dating — The Complete Guide 2026 | Embir Blog",
-  description: "The 10 essential rules for successful gay dating in 2026. Practical advice for authentic connections.",
-  keywords: [
-    "commandements rencontres gay",
-    "règles rencontre gay",
-    "conseils dating gay",
-    "rencontre entre hommes conseils",
-    "guide rencontre gay",
-    "étiquette dating gay",
-    "rencontre gay sérieuse",
-    "conseils premiers dates gay",
-    "dating gay respectueux",
-    "relation gay épanouie",
-  ],
-  alternates: {
-    canonical: "https://embir.xyz/blog/10-commandements-rencontre-gay",
-  },
+  description: "Respect, communication, safety — 10 essential rules for meaningful gay dating in 2026. A thoughtful guide for every guy.",
+  keywords: ["gay dating rules", "gay dating tips", "dating etiquette gay", "gay relationship advice", "respectful gay dating"],
+  alternates: { canonical: "https://embir.xyz/blog/10-commandements-rencontre-gay" },
   openGraph: {
     title: "10 Rules for Gay Dating — The Complete Guide 2026 | Embir Blog",
-    description:
-      "Respect, communication, sécurité : les 10 règles d'or pour des rencontres gay épanouissantes. Un guide bienveillant pour tous les mecs.",
+    description: "Respect, communication, safety — 10 essential rules for meaningful gay dating in 2026. A thoughtful guide for every guy.",
     url: "https://embir.xyz/blog/10-commandements-rencontre-gay",
     type: "article",
     siteName: "Embir",
@@ -35,261 +21,124 @@ export default function ArticlePage() {
     <main className="emb-page min-h-screen">
       <article className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <Link
-            href="/blog"
-            className="text-white/40 hover:text-white/70 text-sm mb-8 inline-block transition-colors"
-          >
-            ← Blog
-          </Link>
+          <Link href="/blog" className="text-white/40 hover:text-white/70 text-sm mb-8 inline-block transition-colors">← Blog</Link>
 
-          <h1 className="text-3xl md:text-4xl font-black mb-6">
-            Les 10 Commandements des Rencontres Gay
-          </h1>
-
-          <p className="text-white/50 text-sm mb-8">
-            Publié le 23 mai 2026 · 10 min de lecture
-          </p>
+          <h1 className="text-3xl md:text-4xl font-black mb-6 text-white">10 Rules for Gay Dating</h1>
+          <p className="text-white/50 text-sm mb-8">Published May 23, 2026 · 10 min read</p>
 
           <div className="prose prose-invert max-w-none text-white/60 leading-relaxed space-y-6">
             <p>
-              Les <strong>rencontres gay</strong> ont leurs propres codes, leurs propres défis, et surtout leurs
-              propres règles. Dans un monde où les applis de rencontre ont transformé la façon dont on se
-              connecte, il est facile de perdre de vue l&apos;essentiel : le respect, l&apos;authenticité et la
-              communication.
+              Gay dating comes with its own codes, challenges, and rules. In a world where apps have transformed how we connect, it&apos;s easy to lose sight of what matters: respect, authenticity, and communication.
             </p>
             <p>
-              Voici les <strong>10 commandements des rencontres gay</strong> — un guide bienveillant pour
-              t&apos;aider à naviguer le dating entre hommes avec confiance, élégance et conscience.
-              Que tu sois novice ou expérimenté, ces principes te rappelleront ce qui compte vraiment
-              quand on cherche à <Link href="/" className="text-rose-400 hover:text-rose-300 underline">rencontrer des mecs</Link>.
+              Here are <strong>10 rules for gay dating</strong> — a guide to navigating dating between men with confidence, class, and awareness. Whether you&apos;re new to it or experienced, these principles will remind you what counts when you&apos;re looking to <Link href="/" className="text-white/80 hover:text-white underline">meet guys</Link>.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              1. Sois toi-même — toujours
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">1. Be yourself — always</h2>
             <p>
-              C&apos;est le premier commandement, et sûrement le plus important. Dans un monde où les profils
-              sur les <strong>apps de rencontre gay</strong> sont souvent embellis, idealisés ou carrément fictifs,
-              la personne la plus attirante que tu puisses être, c&apos;est toi-même. Pas la version de toi que
-              tu penses que les autres veulent voir.
+              The most important rule. In a world where profiles are often polished, idealized, or outright fake, the most attractive person you can be is yourself. Not the version you think others want to see.
             </p>
             <p>
-              Ça ne veut pas dire qu&apos;il faut tout révéler dès le premier message. Mais construire une
-              relation sur un mensonge — même un petit — c&apos;est construire sur du sable. Sois fier de qui
-              tu es, de ton corps, de tes passions, de tes particularités. Les bonnes personnes tomberont
-              amoureuses de la vraie personne, pas du personnage.
+              That doesn&apos;t mean revealing everything in the first message. But building a relationship on a lie — even a small one — is building on sand. Be proud of who you are, your body, your passions, your quirks. The right people will fall for the real person, not the character.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              2. Le consentement n&apos;est pas négociable
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">2. Consent is not negotiable</h2>
             <p>
-              C&apos;est la base de toute interaction respectueuse. Le consentement, c&apos;est un{" "}
-              <strong>&quot;oui&quot;enthousiaste, libre et révocable à tout moment</strong>. Pas un
-              &quot;bon d&apos;accord&quot; gêné, pas un silence, pas un &quot;je sais pas&quot;.
+              The foundation of any respectful interaction. Consent is an <strong>enthusiastic, free, and revocable &quot;yes&quot;</strong> at any time. Not an awkward &quot;fine,&quot; not silence, not &quot;I don&apos;t know.&quot;
             </p>
             <p>
-              Dans le contexte des rencontres gay, où la pression sociale et les attentes peuvent être
-              fortes, rappelle-toi : tu as le droit de dire non à tout moment, pour n&apos;importe quelle
-              raison. Et tu dois respecter le non de l&apos;autre sans discussion, sans insistance, sans
-              culpabilisation.
+              In gay dating, where social pressure and expectations can be intense: you have the right to say no at any time, for any reason. And you must respect someone else&apos;s no — no debate, no insistence, no guilt-tripping.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              3. La communication, pas la devinette
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">3. Communication, not guessing</h2>
             <p>
-              Les esprits ne se lisent pas. Ce qui est évident pour toi ne l&apos;est pas forcément pour
-              l&apos;autre. Tu cherches une relation sérieuse ? Dis-le. Tu veux juste du fun ? Dis-le aussi.
-              Tu as des inquiétudes, des attentes, des limites ? Exprime-les clairement.
+              Minds can&apos;t be read. What&apos;s obvious to you isn&apos;t to someone else. Looking for a serious relationship? Say it. Just want casual fun? Say that too. Worries, expectations, boundaries — express them clearly.
             </p>
             <p>
-              La communication honnête est la clé pour éviter les malentendus, les frustrations et les
-              souffrances inutiles. Un message clair peut faire la différence entre une belle rencontre
-              et une situation ambiguë qui blesse les deux parties. Et si quelqu&apos;un réagit mal à ta
-              transparence, c&apos;est probablement que ce n&apos;était pas la bonne personne.
+              Honest communication prevents misunderstandings, frustration, and unnecessary hurt. A clear message can mean the difference between a great connection and an ambiguous situation that leaves both sides confused. If someone reacts badly to your transparency, they were probably not the right person.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              4. Ne juge pas les autres sur leur passé ou leurs expériences
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">4. Don&apos;t judge others by their past or experience</h2>
             <p>
-              Dans la communauté gay, chacun a un parcours unique. Certains ont fait leur{" "}
-              <Link href="/blog/coming-out-rencontres-conseils" className="text-rose-400 hover:text-rose-300 underline">
-                coming-out
-              </Link>{" "}
-              tard, d&apos;autres tôt. Certains ont eu beaucoup de partenaires, d&apos;autres très peu. Certains
-              découvrent leur sexualité, d&apos;autres savent exactement ce qu&apos;ils veulent depuis toujours.
+              In the LGBTQ community, everyone has a unique path. Some came out late, others early. Some have had many partners, others very few. Some are discovering their sexuality, others have known since day one.
             </p>
             <p>
-              Aucun de ces parcours n&apos;est meilleur qu&apos;un autre. Le slut-shaming, le jugement sur le
-              nombre de partenaires, les moqueries sur les préférences sexuelles — tout ça c&apos;est toxique
-              et ça n&apos;a pas sa place dans des rencontres saines. Laisse tomber les préjugés, ouvre ton
-              esprit, et accueille l&apos;autre comme il est.
+              None of these paths is better than another. Slut-shaming, judging partner counts, mocking preferences — all of this is toxic and has no place in healthy dating. Drop the prejudice, open your mind, and welcome others as they are.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              5. Protège ta santé — et celle des autres
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">5. Protect your health — and others&apos;</h2>
             <p>
-              La prévention, c&apos;est un acte d&apos;amour envers toi-même et envers les autres. Que tu sois
-              séronégatif ou séropositif, connais ton statut, communique-le, et protège-toi. Les IST ne
-              sont pas une fatalité ni une honte — mais les ignorer, c&apos;est prendre des risques inutiles.
+              Prevention is an act of love toward yourself and others. Whether you&apos;re HIV-negative or positive, know your status, communicate it, and protect yourself. STIs aren&apos;t a fatality or a shame — but ignoring them is an unnecessary risk.
             </p>
             <p>
-              La Prep (prophylaxie pré-exposition) est disponible et remboursée dans de nombreux pays.
-              Le dépistage régulier est un geste responsable et mature. Et n&apos;oublie jamais : le statut
-              sérologique de quelqu&apos;un ne définit pas sa valeur en tant que personne ou partenaire.
-              L&apos;important, c&apos;est la communication et les précautions mutuelles.
+              PrEP is available and covered in many countries. Regular testing is a responsible, mature habit. Never forget: someone&apos;s serostatus doesn&apos;t define their value as a person or partner. What matters is communication and mutual precautions.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              6. Assume tes intentions dès le début
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">6. State your intentions early</h2>
             <p>
-              Tu veux un copain pour la vie ? Parfait. Tu veux un plan cul régulier ? Très bien aussi.
-              Tu cherches juste à rencontrer des potes gay pour sortir de ta zone de confort ? C&apos;est
-              valide. Le piège, c&apos;est de faire semblant de vouloir une chose pour obtenir autre chose.
+              Want a long-term partner? Perfect. Want a regular hookup? Also fine. Just looking for gay friends to expand your circle? Valid. The trap is pretending to want one thing to get another.
             </p>
             <p>
-              Si tu sais que tu ne veux rien de sérieux, ne fais pas miroiter une relation à quelqu&apos;un
-              qui cherche clairement du sérieux. Non seulement c&apos;est malhonnête, mais en plus tu perds
-              ton temps et celui de l&apos;autre. Sois clair, sois respectueux, et les bonnes personnes
-              s&apos;aligneront avec tes intentions.
+              If you know you don&apos;t want anything serious, don&apos;t dangle the prospect of a relationship to someone clearly looking for one. It&apos;s dishonest and wastes everyone&apos;s time. Be clear, be respectful, and the right people will align with your intentions.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              7. Le premier date : sois présent, pas sur ton téléphone
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">7. First date: be present, not on your phone</h2>
             <p>
-              On l&apos;a tous fait : vérifier son téléphone pendant un date pour combler un silence gênant.
-              Pourtant, rien ne tue plus l&apos;alchimie naissante qu&apos;un écran qui s&apos;allume à table. Si
-              tu as pris le temps de rencontrer quelqu&apos;un, donne-lui toute ton attention.
+              We&apos;ve all done it — checked our phone during a date to fill an awkward silence. Nothing kills budding chemistry faster than a glowing screen. If you took time to meet someone, give them your full attention.
             </p>
             <p>
-              Pour le choix du lieu, opte pour un endroit neutre et public pour un premier rendez-vous.
-              Un café, un parc, un bar tranquille — l&apos;essentiel c&apos;est de pouvoir discuter sans pression
-              et de pouvoir partir facilement si le feeling ne passe pas.{" "}
-              <Link href="/blog/premier-date-gay-conseils" className="text-rose-400 hover:text-rose-300 underline">
-                Découvre nos conseils pour un premier date gay réussi
-              </Link>.
+              For the venue, choose somewhere neutral and public for a first date. A coffee shop, a park, a quiet bar — somewhere you can talk without pressure and leave easily if the chemistry isn&apos;t there. <Link href="/blog/premier-date-gay-conseils" className="text-white/80 hover:text-white underline">Read our first gay date tips</Link>.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              8. Ne fais pas aux autres ce que tu ne voudrais pas qu&apos;on te fasse
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">8. Do unto others as you would have them do unto you</h2>
             <p>
-              C&apos;est la règle d&apos;or universelle. Ne ghoste pas quelqu&apos;un après plusieurs semaines de
-              discussion — un message de fermeture, même court, c&apos;est toujours mieux que le silence radio.
-              N&apos;envoie pas de photos non sollicitées. Ne mens pas sur ton âge, ton poids, tes photos.
+              The universal golden rule. Don&apos;t ghost after weeks of talking — a closing message, even short, is always better than radio silence. Don&apos;t send unsolicited photos. Don&apos;t lie about your age, weight, or photos.
             </p>
             <p>
-              Sur les <strong>apps de rencontre gay</strong>, on oublie parfois qu&apos;il y a de vraies
-              personnes avec de vrais sentiments derrière chaque profil. Traite chaque interaction avec
-              la même dignité que tu aimerais recevoir. C&apos;est simple, efficace, et ça rend le dating
-              bien plus agréable pour tout le monde.
+              On dating apps, it&apos;s easy to forget there are real people with real feelings behind every profile. Treat every interaction with the same dignity you&apos;d want. It&apos;s simple, effective, and makes dating far more pleasant for everyone.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              9. Ne te compare pas aux autres
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">9. Don&apos;t compare yourself to others</h2>
             <p>
-              La communauté gay peut parfois être compétitive : le physique idéal, le nombre de matchs,
-              la fréquence des dates. Instagram et les applis amplifient ce sentiment d&apos;insuffisance.
-              Rappelle-toi que ce que tu vois sur les réseaux sociaux est une vitrine soigneusement
-              sélectionnée — pas la réalité.
+              The gay community can sometimes feel competitive — the ideal body, match count, date frequency. Instagram and apps amplify this feeling of inadequacy. Remember that what you see on social media is a carefully curated display, not reality.
             </p>
             <p>
-              Ton chemin est unique. Tu ne rencontreras pas quelqu&apos;un parce que tu as le plus beau
-              torse ou le nombre de matchs le plus élevé. Les connexions authentiques se forgent sur
-              la personnalité, l&apos;écoute, la bienveillance. Travaille sur toi-même pour toi, pas pour
-              impressionner les autres. La confiance en soi est l&apos;atout le plus séduisant qui soit.
+              Your path is unique. You won&apos;t meet someone because you have the best chest or the highest match count. Authentic connections form around personality, listening, and kindness. Work on yourself for you, not to impress others. Self-confidence is the most attractive quality there is.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              10. Amuse-toi et reste indulgent
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">10. Have fun and stay kind to yourself</h2>
             <p>
-              Le dernier commandement, et peut-être le plus libérateur : <strong>amuse-toi</strong>. Les rencontres
-              devraient être une aventure excitante, pas une source de stress ou d&apos;anxiété. Tous les dates
-              ne mèneront pas à une relation. Certains seront gênants, d&apos;autres hilarants, d&apos;autres
-              tout simplement oubliables.
+              The final rule, and maybe the most liberating: <strong>have fun</strong>. Dating should be an exciting adventure, not a source of stress or anxiety. Not every date will lead to a relationship. Some will be awkward, some hilarious, some entirely forgettable.
             </p>
             <p>
-              Sois indulgent avec toi-même. Si un date se passe mal, ce n&apos;est pas un échec — c&apos;est
-              une expérience. Si tu mets du temps à trouver la bonne personne, ce n&apos;est pas un problème
-              — c&apos;est normal. Profite du chemin, apprends de chaque rencontre, et garde le sourire.
+              Be kind to yourself. If a date goes badly, it&apos;s not a failure — it&apos;s experience. If it takes time to find the right person, it&apos;s not a problem — it&apos;s normal. Enjoy the journey, learn from each meeting, and keep smiling.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              Bonus : trouve la bonne app de rencontre gay
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">Bonus: find the right gay dating app</h2>
             <p>
-              Pour appliquer ces 10 commandements, encore faut-il être sur une app qui respecte ses
-              utilisateurs. Trop d&apos;apps de rencontre gay sont conçues pour te pousser à payer,
-              t&apos;exposer à des pubs intrusives ou limiter tes interactions. Ce n&apos;est pas une fatalité.
+              To apply these rules, you need an app that respects its users. Too many gay dating apps are designed to push you toward paying, expose you to intrusive ads, or limit your interactions. It doesn&apos;t have to be this way.
             </p>
             <p>
-              <strong>Embir</strong> est l&apos;app de rencontre gay{" "}
-              <Link href="/" className="text-rose-400 hover:text-rose-300 underline">
-                100% gratuite
-              </Link>{" "}
-              — sans pubs, sans limite de messages, sans abonnement caché. Tu peux discuter avec qui tu
-              veux, autant que tu veux. En plus, elle est{" "}
-              <Link href="/grindr-vs-alternatives" className="text-rose-400 hover:text-rose-300 underline">
-                traduite en 25 langues
-              </Link>{" "}
-              et propose des fonctionnalités comme l&apos;appel vocal, la messagerie illimitée et un mode
-              privé pour les utilisateurs discrets.
+              <Link href="/" className="text-white/80 hover:text-white underline"><strong>Embir</strong></Link> is the <Link href="/" className="text-white/80 hover:text-white underline">100% free gay dating app</Link> — no ads, no message limits, no hidden subscriptions. Talk to whoever you want, as much as you want. Plus it comes in <Link href="/grindr-vs-alternatives" className="text-white/80 hover:text-white underline">25 languages</Link> with voice calls, unlimited messaging, and a private mode for discreet users.
             </p>
 
-            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">
-              À retenir
-            </h2>
+            <h2 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">What to remember</h2>
             <p>
-              Les rencontres gay sont ce que tu en fais. Applique ces 10 commandements avec sincérité,
-              et tu attires naturellement des personnes qui partagent tes valeurs. Le respect, la
-              communication et l&apos;authenticité sont les piliers de toute relation épanouissante — gay ou pas.
-            </p>
-            <p>
-              Et si tu as besoin d&apos;un espace pour mettre tout ça en pratique, tu sais où nous trouver 
+              Gay dating is what you make of it. Apply these 10 rules with sincerity, and you&apos;ll naturally attract people who share your values. Respect, communication, and authenticity are the pillars of any fulfilling relationship — gay or not.
             </p>
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl border border-white/5 bg-white/[0.02] text-center">
-            <p className="text-white/70 mb-4">
-              Prêt à appliquer ces commandements sur une app{" "}
-              <strong className="text-white">100% gratuite</strong> ?
-            </p>
-            <Link
-              href="/auth/register"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-6 py-3 text-sm font-semibold text-white hover:from-rose-400 hover:to-amber-400 transition-all"
-            >
-              Rejoins Embir gratuitement
-            </Link>
+          <div className="mt-12 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] text-center">
+            <p className="text-white/70 mb-4">Ready to apply these rules on a <strong className="text-white">100% free</strong> app?</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90 transition-all">Join Embir free</Link>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-white/5">
-            <p className="text-white/40 text-sm mb-4">À lire aussi :</p>
+          <div className="mt-8 pt-8 border-t border-white/[0.06]">
+            <p className="text-white/40 text-sm mb-4">Also read:</p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="/blog/premier-date-gay-conseils"
-                className="text-rose-400/70 hover:text-rose-300 text-sm underline"
-              >
-                Premier date gay : nos conseils →
-              </Link>
-              <Link
-                href="/blog/securite-rencontres-gay-regles"
-                className="text-rose-400/70 hover:text-rose-300 text-sm underline"
-              >
-                Sécurité et rencontres gay : les règles d&apos;or →
-              </Link>
-              <Link
-                href="/blog/creer-profil-gay-qui-attire"
-                className="text-rose-400/70 hover:text-rose-300 text-sm underline"
-              >
-                Créer un profil gay qui attire →
-              </Link>
+              <Link href="/blog/premier-date-gay-conseils" className="text-white/50 hover:text-white/80 text-sm underline transition-colors">First gay date tips →</Link>
+              <Link href="/blog/securite-rencontres-gay-regles" className="text-white/50 hover:text-white/80 text-sm underline transition-colors">Safety rules for gay dating →</Link>
+              <Link href="/blog/creer-profil-gay-qui-attire" className="text-white/50 hover:text-white/80 text-sm underline transition-colors">Create an attractive gay profile →</Link>
             </div>
           </div>
         </div>

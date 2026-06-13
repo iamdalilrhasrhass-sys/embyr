@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating Safety — Rules to Protect Yourself | Embir Blog",
-  description: "Essential safety rules for gay dating. Meeting strangers, protecting your privacy, and staying safe.",
-  keywords: ["securite rencontres gay", "gay", "LGBTQ+", "rencontre gay", "Embir"],
+  title: "Gay Dating Safety Guide — Protect Yourself | Embir Blog",
+  description: "Essential rules for safe gay dating. Protect your privacy and stay safe when meeting new people.",
   alternates: { canonical: "https://embir.xyz/blog/securite-rencontres-gay" },
 };
 
@@ -13,26 +12,16 @@ export default function BlogPost() {
     <main className="emb-page min-h-screen">
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
-          <p className="text-rose-400 text-sm font-semibold mb-2 uppercase tracking-wider">Blog Embir</p>
-          <h1 className="text-3xl md:text-5xl font-black mb-6 text-white">Sécurité dans les rencontres gay — Les règles à connaître absolument</h1>
-          
+          <p className="text-white/40 text-sm font-semibold mb-2 uppercase tracking-wider">Embir Blog</p>
+          <h1 className="text-3xl md:text-5xl font-black mb-6 text-white">Gay Dating Safety — The Essential Guide</h1>
           <div className="prose prose-invert max-w-none text-white/50 space-y-4 leading-relaxed">
-            <p>Guide de sécurité pour les rencontres gay en ligne et dans la vie réelle. Protégez votre vie privée et restez en sécurité.</p>
-            <p>Chez Embir, on croit en des rencontres authentiques entre hommes. Sans pubs, sans abonnement, sans algorithme intrusif.</p>
-            <p>Notre mission : créer un espace où chaque homme peut être lui-même, en toute sécurité.</p>
-            
-            <h2 className="text-white text-xl font-bold mt-8">Rejoins la communauté Embir</h2>
-            <p>
-              Embir est l&apos;app de rencontre gay 100% gratuite, sans pubs, disponible en 25 langues.
-              Crée ton profil en 2 minutes et découvre des mecs près de chez toi.
-            </p>
+            <p>Safety guide for gay dating online and in real life. Protect your privacy and stay safe. At Embir, we believe in authentic dating between men. No ads, no subscriptions, no intrusive algorithm. Our mission: create a space where every man can be himself, safely.</p>
           </div>
-          
-          <div className="rounded-2xl border border-rose-400/10 bg-gradient-to-br from-rose-500/[0.04] to-amber-500/[0.04] p-8 text-center mt-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Prêt à rencontrer des mecs ?</h2>
-            <p className="text-white/50 mb-6">Embir est 100% gratuit. Sans pubs, sans abonnement.</p>
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-[1.02]">
-              Créer mon profil gratuitement
+          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mt-10">
+            <h2 className="text-2xl font-bold text-white mb-3">Ready to meet guys?</h2>
+            <p className="text-white/50 mb-6">Embir is 100% free. No ads, no subscription.</p>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
+              Create my free profile
             </Link>
           </div>
         </div>
