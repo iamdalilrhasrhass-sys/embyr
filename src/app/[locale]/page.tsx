@@ -113,16 +113,13 @@ function PhonePreview() {
                   <p className="mt-2 text-xs italic text-white/35">
                     "Drinks tonight in the Marais?"
                   </p>
-                  <div className="mt-3 inline-flex rounded-full border border-white/8 bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-white/50">
-                    Compatibility · 94%
-                  </div>
 
                   <div className="mt-4 flex justify-center gap-3">
-                    <button className="flex h-10 min-w-16 items-center justify-center rounded-full border border-white/10 bg-white/6 text-xs font-semibold uppercase tracking-wider text-white/50 hover:bg-white/10">
-                      Nope
+                    <button className="flex-1 py-2.5 rounded-full border border-white/10 bg-white/6 text-xs font-medium text-white/50">
+                      Pass
                     </button>
-                    <button className="flex h-10 min-w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] text-xs font-bold uppercase tracking-wider text-white shadow-lg">
-                      Spark
+                    <button className="flex-1 py-2.5 rounded-full bg-white text-xs font-medium text-black">
+                      Like
                     </button>
                   </div>
                 </div>

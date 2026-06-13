@@ -63,9 +63,9 @@
   mask-image: radial-gradient(circle at 50% 20%, black, transparent 72%);
 }
 
-/* ── Font utilities ── */
-.font-serif { font-family: var(--font-playfair), Georgia, serif; }
-.font-mono { font-family: var(--font-geist-mono), ui-monospace, monospace; }
+/* ── Font utilities — system fonts only, zero downloads ── */
+.font-serif { font-family: Georgia, "Times New Roman", serif; }
+.font-mono { font-family: "SF Mono", "JetBrains Mono", "Fira Code", monospace; }
 
 html {
   overflow-x: hidden;

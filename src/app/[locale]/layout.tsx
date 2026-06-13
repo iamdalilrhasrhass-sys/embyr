@@ -6,11 +6,6 @@ import type { Metadata } from "next";
 import "../globals.css";
 import "@/styles/embir-tokens.css";
 import "@/styles/mobile.css";
-import { Geist_Mono } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
-
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
-const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap", weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://embir.xyz"),
@@ -52,7 +47,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} data-site="embir" className={`${geistMono.variable} ${playfair.variable}`}>
+    <html lang={locale} data-site="embir">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
