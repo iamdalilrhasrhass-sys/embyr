@@ -1,9 +1,9 @@
-# Embyr — Récapitulatif Global
+# Embir — Récapitulatif Global
 
 **Date :** 14 Mai 2026
 **Repo :** `/root/embyr`
 **Domaine :** embir.xyz
-**PM2 :** embyr-web (ID 35, port 3100)
+**PM2 :** embir-web (ID 35, port 3100)
 **DB :** PostgreSQL `embyr` @ localhost:5432
 
 ## Architecture
@@ -76,7 +76,7 @@
 ## Design System
 - **Palette :** Braise (#FF5A1F), Cuivre (#B87333), Or sombre (#C9A227), Charbon (#0A0B0E)
 - **Typos :** Fraunces (display), Geist (body), Geist Mono (code)
-- **Tokens :** `/src/styles/embyr-tokens.css` (12 variables)
+- **Tokens :** `/src/styles/embir-tokens.css` (12 variables)
 - **Composants :** `/src/components/embyr/` (Card, Button, Input, Avatar, Badge, Card3DTilt, EmberGlow, ScrollReveal)
 - **Scope :** `[data-site="embyr"]` — isolation totale de Femynia
 

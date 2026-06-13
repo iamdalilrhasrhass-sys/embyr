@@ -2,8 +2,8 @@ const { chromium } = require('playwright');
 const { execSync } = require('child_process');
 const fs = require('fs');
 
-const SUBJECT = "EMBYR - L'app gay 100% gratuite qui cartonne en Europe";
-const MESSAGE = `EMBYR c'est quoi ?
+const SUBJECT = "EMBIR - L'app gay 100% gratuite qui cartonne en Europe";
+const MESSAGE = `EMBIR c'est quoi ?
 
 L'app de rencontre gay 100% gratuite. Pas de pub, pas de limite de messages, pas de comptes premium a 30€/mois.
 

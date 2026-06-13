@@ -57,7 +57,7 @@ const fs = require('fs');
         el.dispatchEvent(new Event('change', { bubbles: true }));
       };
       
-      setVal(user, 'EmbyrFan');
+      setVal(user, 'EmbirFan');
       setVal(email, 'embyrf@yopmail.com');
       setVal(pass, 'Test1234!');
       if (confirm) {

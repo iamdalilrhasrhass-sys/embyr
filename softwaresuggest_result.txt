@@ -1,6 +1,6 @@
 === SoftwareSuggest Review Submission Result ===
 Date: 2026-05-27 18:17 UTC
-Product: EMBYR - Free Gay Dating App (embir.xyz)
+Product: EMBIR - Free Gay Dating App (embir.xyz)
 Description: Free alternative to Grindr with no premium subscriptions
 
 === Submission Status ===
@@ -10,7 +10,7 @@ Step 1 (Review Details - Ratings, Title, Comment): SUCCESS
   - Ease of Use: 5/5
   - Value for Money: 5/5
   - Customer Support: 5/5
-  - Title: EMBYR is a great free alternative to Grindr with no premium subscriptions
+  - Title: EMBIR is a great free alternative to Grindr with no premium subscriptions
   - Description: 90+ character review submitted
 
 Step 2 (Pros/Cons and Details): SUCCESS
@@ -24,7 +24,7 @@ Step 2 (Pros/Cons and Details): SUCCESS
 Lead ID: 81429
 
 === Notes ===
-- EMBYR was not found in the existing SoftwareSuggest database, so it was
+- EMBIR was not found in the existing SoftwareSuggest database, so it was
   submitted as a new product listing via the Write a Review flow.
 - The review has been saved in the system and will likely go through
   moderation before being published publicly.

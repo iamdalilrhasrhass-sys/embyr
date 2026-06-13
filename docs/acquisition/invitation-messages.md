@@ -1,4 +1,4 @@
-# Embyr — Messages d'invitation
+# Embir — Messages d'invitation
 
 ## Principe
 
@@ -8,7 +8,7 @@ Pas de spam. Pas d'envoi automatique.
 ## Message standard (WhatsApp, SMS, DM)
 
 ```
-Je viens de rejoindre Embyr, une nouvelle plateforme de rencontre 
+Je viens de rejoindre Embir, une nouvelle plateforme de rencontre 
 moderne et gratuite pendant son lancement. 
 
 Tu peux créer ton profil ici : https://embir.xyz
@@ -25,7 +25,7 @@ https://embir.xyz
 Route : /inviter
 Accessible depuis le dashboard ET en page standalone.
 Contient :
-- Titre "Invite tes amis sur Embyr"
+- Titre "Invite tes amis sur Embir"
 - Texte explicatif
 - Message copiable
 - Lien copiable

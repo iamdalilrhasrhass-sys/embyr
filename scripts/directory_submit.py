@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Submit Embyr to directories via Flaresolverr (Cloudflare bypass) + Playwright"""
+"""Submit Embir to directories via Flaresolverr (Cloudflare bypass) + Playwright"""
 import os, sys, time, json, re
 import requests
 
 FLARESOLVER = "http://localhost:8191/v1"
 EMBIR = "https://embir.xyz"
-EMAIL = "embyr@embir.xyz"
+EMAIL = "embir@embir.xyz"
 PASSWORD = "EmbirDating2026!"
 
 def flare_get(url):
@@ -57,7 +57,7 @@ if res["status"] == 200:
     # Try to sign up
     signup_data = {
         "authenticity_token": csrf or "",
-        "user[email]": "embyr@embir.xyz",
+        "user[email]": "embir@embir.xyz",
         "user[username]": "embirdating",
         "user[password]": PASSWORD,
         "user[password_confirmation]": PASSWORD,
@@ -77,11 +77,11 @@ if res["status"] == 200:
         if csrf2:
             sub_data = {
                 "authenticity_token": csrf2,
-                "submission[name]": "Embyr",
+                "submission[name]": "Embir",
                 "submission[url]": EMBIR,
                 "submission[tagline]": "Free gay dating app with 25 languages and auto-translation",
-                "submission[description]": "Embyr is a free gay dating app. No paywalls, no ads. 25 languages with automatic message translation. Strict moderation for a safe space.",
-                "submission[email]": "embyr@embir.xyz",
+                "submission[description]": "Embir is a free gay dating app. No paywalls, no ads. 25 languages with automatic message translation. Strict moderation for a safe space.",
+                "submission[email]": "embir@embir.xyz",
                 "commit": "Submit"
             }
             submit2 = s.post("https://betalist.com/submissions", data=sub_data, allow_redirects=True)
@@ -111,11 +111,11 @@ if res2["status"] == 200:
     # Try submitting
     sub_data2 = {
         "authenticity_token": csrf_val or "",
-        "startup[name]": "Embyr",
+        "startup[name]": "Embir",
         "startup[url]": EMBIR,
         "startup[tagline]": "Free gay dating app with 25 languages",
         "startup[description]": "Free gay dating app. 25 languages. Auto-translation.",
-        "startup[email]": "embyr@embir.xyz"
+        "startup[email]": "embir@embir.xyz"
     }
     r2 = s2.post("https://www.saashub.com/startups", data=sub_data2, allow_redirects=True)
     print(f"SaaSHub submit: {r2.status_code} -> {r2.url}")

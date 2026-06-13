@@ -3,7 +3,7 @@
     "badge": "为同性恋及酷儿社群打造",
     "title1": "遇见",
     "title2": "属于男人之间的缘分。",
-    "subtitle": "Embyr 是一款全新的同性恋交友应用，专为寻求真实连接的人设计。没有压力，没有评判。上线期间免费使用。",
+    "subtitle": "Embir 是一款全新的同性恋交友应用，专为寻求真实连接的人设计。没有压力，没有评判。上线期间免费使用。",
     "cta": "免费创建我的个人资料",
     "secondary": "探索会员"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "控制面板",
-    "welcome": "欢迎来到 Embyr",
+    "welcome": "欢迎来到 Embir",
     "launchBadge": "上线免费",
     "completeProfile": "完善你的个人资料",
     "browseMembers": "浏览会员",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "邀请你的好友",
-    "description": "与好友分享 Embyr，壮大我们的社群。",
+    "description": "与好友分享 Embir，壮大我们的社群。",
     "copyLink": "复制链接",
     "copied": "链接已复制！"
   },

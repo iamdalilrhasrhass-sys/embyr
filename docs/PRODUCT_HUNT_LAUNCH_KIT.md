@@ -17,7 +17,7 @@ EMBIR is a gay dating app built for real connections. No ads, no algorithms opti
 
 ### Social Links
 - Website: https://embir.xyz
-- Dev.to: https://dev.to/embyrdating
+- Dev.to: https://dev.to/embirdating
 - GitHub: https://github.com/embir
 
 ### Images (required)

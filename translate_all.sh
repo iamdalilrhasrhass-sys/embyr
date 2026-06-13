@@ -51,7 +51,7 @@ TOTAL=${#ORDERED_LANGS[@]}
 DONE=0
 FAILED_LANGS=()
 
-echo "=== Embyr Translation Generator ==="
+echo "=== Embir Translation Generator ==="
 echo "Total languages: $TOTAL"
 echo "Template: $TEMPLATE_FILE"
 echo ""
@@ -72,7 +72,7 @@ RÈGLES IMPORTANTES :
 - Préserve la structure JSON exacte
 - Produis UNIQUEMENT le JSON, sans explications, sans markdown, sans backticks
 - Assure-toi que le JSON reste valide (guillemets échappés correctement)
-- Le contexte est une application de rencontre gay appelée Embyr
+- Le contexte est une application de rencontre gay appelée Embir
 
 JSON à traduire :
 ${TEMPLATE_JSON}"

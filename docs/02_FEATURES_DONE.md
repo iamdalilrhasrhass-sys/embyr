@@ -1,4 +1,4 @@
-# Embyr — Modules Réellement Fonctionnels
+# Embir — Modules Réellement Fonctionnels
 
 Dernière mise à jour : 14 Mai 2026
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Reddit + X.com account creation for Embyr brand.
+Reddit + X.com account creation for Embir brand.
 Uses Playwright with chromium - resilient version.
 """
 
@@ -14,8 +14,8 @@ from playwright.sync_api import sync_playwright, TimeoutError as PwTimeout
 
 CREDS_PATH = "/root/embyr/.social_creds.json"
 EMAIL = "embirparis2026@web-library.net"
-PASSWORD = "EmbyrParis2026!"
-REDDIT_USERNAME = "EmbyrDating"
+PASSWORD = "EmbirParis2026!"
+REDDIT_USERNAME = "EmbirDating"
 
 creds = {
     "reddit": {"username": REDDIT_USERNAME, "email": EMAIL, "password": PASSWORD, "script_app": {}},
@@ -214,7 +214,7 @@ def create_script_app(page):
     # Fill form
     fill_field(page, [
         'input[name="name"]', 'input[id*="name"]', 'input[placeholder*="name"]'
-    ], "EmbyrBot")
+    ], "EmbirBot")
 
     # Try to select 'script' radio
     try:
@@ -247,7 +247,7 @@ def create_script_app(page):
 
     fill_field(page, [
         'textarea[name="description"]', 'textarea[placeholder*="description"]'
-    ], "Embyr Dating - Reddit integration bot")
+    ], "Embir Dating - Reddit integration bot")
 
     time.sleep(1)
     save_snapshot(page, "reddit_form_filled")
@@ -298,10 +298,10 @@ def create_script_app(page):
     if not client_id:
         # Try broad pattern - Reddit client IDs look like random 20+ char strings
         # Usually preceded by some text
-        m = re.search(r'EmbyrBot.*?([a-zA-Z0-9_-]{14,})', full_text, re.I)
+        m = re.search(r'EmbirBot.*?([a-zA-Z0-9_-]{14,})', full_text, re.I)
         if m:
             client_id = m.group(1).strip()
-            print(f"[+] Found client_id (via EmbyrBot context): {client_id}")
+            print(f"[+] Found client_id (via EmbirBot context): {client_id}")
 
     # Secret is usually shown as "secret: [SECRET]"
     m = re.search(r'(?:secret|app secret)[\s:]*([a-zA-Z0-9_-]{10,})', full_text, re.I)
@@ -310,10 +310,10 @@ def create_script_app(page):
         print(f"[+] Found secret: {client_secret[:8]}...")
 
     if not client_secret:
-        m = re.search(r'EmbyrBot.*?secret[\s:]*([a-zA-Z0-9_-]{10,})', full_text, re.I | re.DOTALL)
+        m = re.search(r'EmbirBot.*?secret[\s:]*([a-zA-Z0-9_-]{10,})', full_text, re.I | re.DOTALL)
         if m:
             client_secret = m.group(1).strip()
-            print(f"[+] Found secret (via EmbyrBot context): {client_secret[:8]}...")
+            print(f"[+] Found secret (via EmbirBot context): {client_secret[:8]}...")
 
     return client_id, client_secret
 
@@ -337,7 +337,7 @@ def try_xcom_registration(page):
     fill_field(page, [
         'input[name="name"]', 'input[autocomplete="name"]',
         'input[data-testid*="name"]', 'input[placeholder*="name"]'
-    ], "Embyr")
+    ], "Embir")
 
     time.sleep(1)
     click_any(page, [
@@ -427,7 +427,7 @@ def try_xcom_registration(page):
 
 def main():
     print("=" * 60)
-    print("Reddit + X.com Account Creation for Embyr")
+    print("Reddit + X.com Account Creation for Embir")
     print("=" * 60)
     print(f"Email: {EMAIL}")
     print(f"Reddit Username: {REDDIT_USERNAME}")
@@ -461,7 +461,7 @@ def main():
             creds["reddit"]["script_app"]["client_id"] = client_id
         if client_secret:
             creds["reddit"]["script_app"]["client_secret"] = client_secret
-        creds["reddit"]["script_app"]["name"] = "EmbyrBot"
+        creds["reddit"]["script_app"]["name"] = "EmbirBot"
         creds["reddit"]["script_app"]["type"] = "script"
         creds["reddit"]["script_app"]["redirect_uri"] = "http://localhost:8080"
         save_creds()

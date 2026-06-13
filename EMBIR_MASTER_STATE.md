@@ -1,7 +1,7 @@
 # EMBIR MASTER STATE 🚀
 **Dernière mise à jour :** Lundi 9 Juin 2026 — Session Croissance Urgente
 **Objectif :** 10 000 utilisateurs sur embir.xyz
-**Marque :** EMBIR (pas Embyr — le dossier projet s'appelle /root/embyr mais la marque est Embir)
+**Marque :** EMBIR (pas Embir — le dossier projet s'appelle /root/embyr mais la marque est Embir)
 
 ---
 
@@ -46,13 +46,13 @@ Forums gay : JustusBoys ✅, EmptyClosets ✅ (recaptcha), Gayspeak ❌ (timeout
 ### SEO
 - ✅ Sitemap ~2750 URLs
 - ✅ IndexNow cron toutes les 6h (Bing)
-- ✅ robots.txt → embyr.xyz
+- ✅ robots.txt → embir.xyz
 - ✅ Meta tag GSC deployé dans layout.tsx
 - ❌ Google Search Console pas configuré (besoin compte Google)
 
 ### GitHub
 - ✅ Repo public : https://github.com/iamdalilrhasrhass-sys/embyr
-- ✅ README viral (comparatif Grindr vs Embyr, features, tech stack)
+- ✅ README viral (comparatif Grindr vs Embir, features, tech stack)
 - ✅ Code source complet poussé
 - ✅ GH CLI authentifié
 
@@ -62,7 +62,7 @@ Forums gay : JustusBoys ✅, EmptyClosets ✅ (recaptcha), Gayspeak ❌ (timeout
 
 ### ✅ X/Twitter (24 Mai)
 - ✅ Compte X créé par l'utilisateur (@ChyroFoxy42330)
-- ✅ Profil configuré via CDP Chrome sur Mac : display name "Embyr", bio, location "Paris / Worldwide", URL embir.xyz
+- ✅ Profil configuré via CDP Chrome sur Mac : display name "Embir", bio, location "Paris / Worldwide", URL embir.xyz
 - ✅ PP + bannière générées (warm gradient rose/amber/purple)
 - ❌ Sauvegarde X React non automatisable (clic Save bloqué par React SPA)
 - ❌ @handle pas changé (besoin Settings → Username)
@@ -77,16 +77,16 @@ Forums gay : JustusBoys ✅, EmptyClosets ✅ (recaptcha), Gayspeak ❌ (timeout
 ### ✅ Site
 - embir.xyz → HTTP 200
 - API → 401 (expected sans auth)
-- PM2 embyr-web online
+- PM2 embir-web online
 
 ---
 
 ## CRONS ACTIFS
 | Nom | Fréquence | Status |
 |-----|-----------|--------|
-| **Embyr HN Retry** | 1x/jour (10h) | ✅ Prochain : aujourd'hui 10h |
-| **Embyr IndexNow** | 6h | ✅ |
-| **Embyr Daily Promo** | 8h | ✅ |
+| **Embir HN Retry** | 1x/jour (10h) | ✅ Prochain : aujourd'hui 10h |
+| **Embir IndexNow** | 6h | ✅ |
+| **Embir Daily Promo** | 8h | ✅ |
 | **Santé services** | 60min | ✅ |
 
 ---

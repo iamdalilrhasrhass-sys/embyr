@@ -65,9 +65,9 @@ const { chromium } = require('playwright');
   // Fill form
   await page.evaluate(() => {
     const sub = document.querySelector('input[name="sub"]');
-    if (sub) sub.value = 'EMBYR - App gay 100% gratuite';
+    if (sub) sub.value = 'EMBIR - App gay 100% gratuite';
     const com = document.querySelector('textarea[name="com"]');
-    if (com) com.value = 'EMBYR est une app de rencontre gay 100% gratuite.\n\nPlus de 60 villes, traduit en 25 langues, swipe Tinder-like.\nZERO pub, ZERO limite.\n\nembir.xyz';
+    if (com) com.value = 'EMBIR est une app de rencontre gay 100% gratuite.\n\nPlus de 60 villes, traduit en 25 langues, swipe Tinder-like.\nZERO pub, ZERO limite.\n\nembir.xyz';
   });
   console.log('FORM_FILLED');
   

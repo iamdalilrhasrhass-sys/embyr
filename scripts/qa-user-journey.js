@@ -1,5 +1,5 @@
 /**
- * QA USER JOURNEY — Embyr
+ * QA USER JOURNEY — Embir
  * Teste le parcours utilisateur complet
  */
 
@@ -52,7 +52,7 @@ async function checkPage(page, url, name) {
   });
   
   // Visiteur
-  console.log('=== VISITEUR EMBYR ===');
+  console.log('=== VISITEUR EMBIR ===');
   const page = await context.newPage();
   await checkPage(page, `${BASE}/`, '01-landing');
   await checkPage(page, `${BASE}/membres`, '02-membres');
@@ -94,7 +94,7 @@ async function checkPage(page, url, name) {
   // Report
   const errors = REPORT.filter(r => r.errors?.length || r.overflow || r.isEmpty || r.status >= 400);
   console.log('\n========================================');
-  console.log('RAPPORT QA UTILISATEUR EMBYR');
+  console.log('RAPPORT QA UTILISATEUR EMBIR');
   console.log('========================================');
   console.log(`Pages testées: ${REPORT.length}`);
   console.log(`Erreurs: ${errors.length}`);

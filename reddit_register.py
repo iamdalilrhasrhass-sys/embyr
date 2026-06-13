@@ -5,9 +5,9 @@ import asyncio, json, sys, re, time
 from playwright.async_api import async_playwright
 
 PROXY = "http://174.137.134.182:2999"
-EMAIL = "embyrpromo1779557374@wshu.net"
-PASSWORD = "EmbyrPromo2026!"
-USERNAME = "EmbyrDating"
+EMAIL = "embirpromo1779557374@wshu.net"
+PASSWORD = "EmbirPromo2026!"
+USERNAME = "EmbirDating"
 
 async def main():
     async with async_playwright() as p:

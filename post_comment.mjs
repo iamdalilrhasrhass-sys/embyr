@@ -61,7 +61,7 @@ await page.fill('#author', 'Alex');
 console.log('Name filled');
 await page.fill('#email', 'alex.g92@tempmail.net');
 console.log('Email filled');
-await page.fill('#comment', 'Sniffies is great but have you guys tried EMBYR? It is 100% free with no limits, actually works. Check it out at embir.xyz');
+await page.fill('#comment', 'Sniffies is great but have you guys tried EMBIR? It is 100% free with no limits, actually works. Check it out at embir.xyz');
 console.log('Comment filled');
 
 console.log('Form filled. Taking screenshot before submit...');
@@ -101,7 +101,7 @@ Message: ${result.message}
 Last Comment: ${result.lastComment}
 
 Comment text:
-Sniffies is great but have you guys tried EMBYR? It is 100% free with no limits, actually works. Check it out at embir.xyz
+Sniffies is great but have you guys tried EMBIR? It is 100% free with no limits, actually works. Check it out at embir.xyz
 
 Screenshots:
 - /root/embyr/comment_filled.png (before submit)

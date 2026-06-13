@@ -8,7 +8,7 @@
 ## BLOCAGE #1 — Reddit IP block (VPS OVH = IP datacenter)
 **Problème** : Reddit bloque toutes les IP VPS/datacenter (403 network policy)
 **Solution** : Proxy SOCKS via Mac (Free, IP résidentielle)
-**Status** : Même via SOCKS → le compte EmbyrDating est flaggé (créé depuis VPS)
+**Status** : Même via SOCKS → le compte EmbirDating est flaggé (créé depuis VPS)
 **GitHub piste** : → hermes docs, opencode, claude-code issues
 
 ## BLOCAGE #2 — X.com registration

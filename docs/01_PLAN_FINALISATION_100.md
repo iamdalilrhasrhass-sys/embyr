@@ -1,4 +1,4 @@
-# Embyr — Plan Finalisation 100%
+# Embir — Plan Finalisation 100%
 
 ## Phases terminées
 
@@ -16,7 +16,7 @@
 - Middleware détection domaine
 - Helpers `scopeToSite`, `enforceSiteAccess`
 
-### Phase 4 — Design System Embyr (✅)
+### Phase 4 — Design System Embir (✅)
 - 12 tokens CSS
 - 8 composants (/components/embyr/)
 - Layout (SideDrawer, BottomNav, AppShell)

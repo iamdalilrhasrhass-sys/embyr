@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Create a new Reddit account + script app for Embyr via SOCKS proxy (Mac IP)."""
+"""Create a new Reddit account + script app for Embir via SOCKS proxy (Mac IP)."""
 import os, sys, json, time, re
 from playwright.sync_api import sync_playwright
 
 SOCKS_PROXY = "socks5://localhost:1080"
 EMAIL = "embirparis2026@web-library.net"
-PASSWORD = "EmbyrParis2026!"
-USERNAME = "EmbyrDating"
+PASSWORD = "EmbirParis2026!"
+USERNAME = "EmbirDating"
 
 def main():
     with sync_playwright() as p:
@@ -92,7 +92,7 @@ def main():
             # Name
             name_input = page.locator('input[name="name"], input[id="name"], input[placeholder*="name"]').first()
             if name_input.is_visible(timeout=3000):
-                name_input.fill("EmbyrBot")
+                name_input.fill("EmbirBot")
                 time.sleep(1)
             
             # Select script radio
@@ -104,7 +104,7 @@ def main():
             # Description
             desc_input = page.locator('textarea[name="description"], textarea[id="description"]').first()
             if desc_input.is_visible(timeout=3000):
-                desc_input.fill("Automation for Embyr dating app - embir.xyz")
+                desc_input.fill("Automation for Embir dating app - embir.xyz")
                 time.sleep(1)
             
             # About URL

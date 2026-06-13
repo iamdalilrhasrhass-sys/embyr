@@ -117,8 +117,8 @@ def post_to_reddit(subreddit, post_data):
     reddit = praw.Reddit(
         client_id=os.environ.get("REDDIT_CLIENT_ID", ""),
         client_secret=os.environ.get("REDDIT_SECRET", ""),
-        username="EmbyrDating",
-        password="EmbyrParis2026!",
+        username="EmbirDating",
+        password="EmbirParis2026!",
         user_agent=USER_AGENT
     )
 

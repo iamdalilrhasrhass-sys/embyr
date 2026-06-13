@@ -47,7 +47,7 @@ Pour poster proprement :
 | Follows | 0 | 5/jour | 10/jour | 20/jour |
 
 ## Scripts désactivés
-- `cronjob:78c48851b3ce` — Embyr X Posting (supprimé)
+- `cronjob:78c48851b3ce` — Embir X Posting (supprimé)
 - `/tmp/x_engage.py` — like + reply auto (supprimé)
 - `/tmp/x_playwright_v5.py` — login auto (supprimé)
 - `/tmp/x_*.py` — tous les scripts X (supprimés)

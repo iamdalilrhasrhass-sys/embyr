@@ -1,5 +1,5 @@
 """
-Seed Embyr with realistic-looking user profiles
+Seed Embir with realistic-looking user profiles
 Creates accounts via the local API to make the site look alive
 """
 import requests, json, random, time
@@ -35,7 +35,7 @@ CITIES = [
 ]
 
 BIOS = [
-    "Nouveau sur Embyr, hâte de découvrir !",
+    "Nouveau sur Embir, hâte de découvrir !",
     "Je cherche des rencontres sincères et sans prise de tête.",
     "Passionné de voyages, de sport et de bons restaurants.",
     "Plutôt chill, je vois où la vie me mène.",
@@ -44,7 +44,7 @@ BIOS = [
     "Sportif, 3 fois par semaine à la salle. Ouvert d'esprit.",
     "Amateur d'art et de culture, je parle peu mais j'écoute beaucoup.",
     "Cuisinier le jour, cinéphile le soir. Et toi ?",
-    "Je viens de débarquer sur Embyr, on papote ?",
+    "Je viens de débarquer sur Embir, on papote ?",
     "Designer le jour, musicien la nuit. Créatif dans l'âme.",
     "Cherche pas l'amour, cherche des connexions vraies.",
     "Entrepreneur, passionné, ambitieux. Et romantique.",
@@ -52,7 +52,7 @@ BIOS = [
     "Simple, direct, honnête. Je ne joue pas de rôle.",
     "Nouveau en ville, je cherche des potes et peut-être plus.",
     "Sportif et gourmand — le combo parfait ?",
-    "Développeur le jour, rêveur la nuit. J'ai codé une partie d'Embyr !",
+    "Développeur le jour, rêveur la nuit. J'ai codé une partie d'Embir !",
     "Infirmier, passionné par mon métier. Doux et attentionné.",
     "Fan de techno, de bons plans et de découvertes."
 ]
@@ -117,7 +117,7 @@ def create_profile(index):
         return False, None
 
 # First check if the API is up
-print("=== Vérification API Embyr ===")
+print("=== Vérification API Embir ===")
 try:
     r = requests.get("http://localhost:3000", timeout=5)
     print(f"Site OK: HTTP {r.status_code}")

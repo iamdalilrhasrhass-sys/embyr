@@ -5,15 +5,15 @@ tags: showdev, webdev, javascript, opensource
 canonical_url: https://embir.xyz/blog/meilleures-apps-rencontre-gay-gratuites-2026
 ---
 
-## Why I Built Embyr
+## Why I Built Embir
 
 Let's be honest: gay dating apps have gotten worse. Grindr now costs €30/month just to see who liked you. Tinder hides matches behind a €25 paywall. And every app bombards you with ads — 3 per minute on some platforms.
 
-So I built Embyr.
+So I built Embir.
 
 100% free. No ads. No paywalls. No dick pics on the homepage. Just a clean, modern dating experience for gay men, by gay men.
 
-## What Makes Embyr Different?
+## What Makes Embir Different?
 
 🔥 **Completely free right now.** Everything unlocked. When we do introduce Premium (eventually), it will be 5x cheaper than Grindr.
 
@@ -27,7 +27,7 @@ So I built Embyr.
 
 ## The Tech Stack
 
-Embyr is built with:
+Embir is built with:
 - Next.js 16 (App Router, Turbopack)
 - PostgreSQL with Prisma ORM
 - DeepSeek AI for auto-translation and smart features

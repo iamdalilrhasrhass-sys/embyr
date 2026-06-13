@@ -1,12 +1,12 @@
 {
   "reddit": {
-    "username": "EmbyrDating",
+    "username": "EmbirDating",
     "email": "embirparis2026@web-library.net",
-    "password": "EmbyrParis2026!",
+    "password": "EmbirParis2026!",
     "status": "account_created_but_login_blocked",
     "needs_verification": true,
     "script_app": {
-      "name": "EmbyrBot",
+      "name": "EmbirBot",
       "type": "script",
       "redirect_uri": "http://localhost:8080",
       "client_id": null,
@@ -15,7 +15,7 @@
       "note": "Could not create - Reddit blocked this VPS IP (network security). Create manually at https://www.reddit.com/prefs/apps after logging in from a different IP."
     },
     "issues": [
-      "Account 'EmbyrDating' was created successfully (user page exists)",
+      "Account 'EmbirDating' was created successfully (user page exists)",
       "Email verification likely sent to web-library.net",
       "Login blocked by Reddit network security from this VPS IP",
       "curl and Playwright both return 403 blocked page",
@@ -25,7 +25,7 @@
   },
   "xcom": {
     "email": "embirparis2026@web-library.net",
-    "password": "EmbyrParis2026!",
+    "password": "EmbirParis2026!",
     "status": "needs_verification",
     "note": "Registration form submitted but email verification code required. Check web-library.net inbox.",
     "issues": [

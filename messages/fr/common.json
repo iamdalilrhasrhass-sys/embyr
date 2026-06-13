@@ -3,7 +3,7 @@
     "badge": "Pour les gays et la communauté queer",
     "title1": "Des rencontres",
     "title2": "entre hommes.",
-    "subtitle": "Embyr est une nouvelle app de rencontre gay, pensée pour ceux qui veulent du vrai. Pas de pression, pas de jugement. Gratuite pendant le lancement.",
+    "subtitle": "Embir est une nouvelle app de rencontre gay, pensée pour ceux qui veulent du vrai. Pas de pression, pas de jugement. Gratuite pendant le lancement.",
     "cta": "Créer mon profil gratuitement",
     "secondary": "Découvrir les membres"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "welcome": "Bienvenue sur Embyr",
+    "welcome": "Bienvenue sur Embir",
     "launchBadge": "Lancement gratuit",
     "completeProfile": "Complète ton profil",
     "browseMembers": "Voir les membres",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Invite tes amis",
-    "description": "Partage Embyr avec tes amis et agrandis la communauté.",
+    "description": "Partage Embir avec tes amis et agrandis la communauté.",
     "copyLink": "Copier le lien",
     "copied": "Lien copié !"
   },

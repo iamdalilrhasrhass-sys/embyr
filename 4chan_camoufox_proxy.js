@@ -26,8 +26,8 @@ const { firefox } = require('playwright');
   
   // Fill form
   await page.evaluate(() => {
-    document.querySelector('input[name="sub"]').value = 'EMBYR - App gay 100% gratuite';
-    document.querySelector('textarea[name="com"]').value = 'EMBYR est une app de rencontre gay 100% gratuite.\n\nPlus de 60 villes, traduit en 25 langues, swipe Tinder-like.\nZERO pub, ZERO limite de messages, ZERO comptes premium a 30€.\n\nembir.xyz\n\nDispo maintenant.';
+    document.querySelector('input[name="sub"]').value = 'EMBIR - App gay 100% gratuite';
+    document.querySelector('textarea[name="com"]').value = 'EMBIR est une app de rencontre gay 100% gratuite.\n\nPlus de 60 villes, traduit en 25 langues, swipe Tinder-like.\nZERO pub, ZERO limite de messages, ZERO comptes premium a 30€.\n\nembir.xyz\n\nDispo maintenant.';
   });
   
   // Click "Get Captcha"

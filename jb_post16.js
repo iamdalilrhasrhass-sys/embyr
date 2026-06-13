@@ -129,7 +129,7 @@ const fs = require('fs');
           // Find title field
           const titleInput = await page.$('input[name="title"]');
           if (titleInput) {
-            await titleInput.fill('Has anyone tried EMBYR? Found a completely free Grindr alternative');
+            await titleInput.fill('Has anyone tried EMBIR? Found a completely free Grindr alternative');
             log('✓ Title filled');
           } else {
             log('✗ Title field not found');
@@ -142,7 +142,7 @@ const fs = require('fs');
             const tag = await messageArea.evaluate(el => el.tagName);
             log('Message area tag: ' + tag);
             
-            const msg = `I've been testing this new app called EMBYR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a gay dating app that's completely free - no paywalls, no "gold" features, no limits on who you can talk to. Unlike Grindr where you basically need a subscription to actually use it properly these days.\n\nHas anyone else tried it? The user base is still growing obviously but it seems legit. Just curious what other people think.`;
+            const msg = `I've been testing this new app called EMBIR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a gay dating app that's completely free - no paywalls, no "gold" features, no limits on who you can talk to. Unlike Grindr where you basically need a subscription to actually use it properly these days.\n\nHas anyone else tried it? The user base is still growing obviously but it seems legit. Just curious what other people think.`;
             
             if (tag === 'TEXTAREA') {
               await messageArea.fill(msg);

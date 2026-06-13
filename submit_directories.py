@@ -8,15 +8,15 @@ DIRECTORIES = [
     {
         "name": "BetaList",
         "url": "https://betalist.com/submissions/new",
-        "title": "Embyr - Free Grindr Alternative",
-        "desc": "Embyr is a free dating app for gay men. No ads, no paywalls, no sponsored profiles. Built as a real alternative to Grindr.",
+        "title": "Embir - Free Grindr Alternative",
+        "desc": "Embir is a free dating app for gay men. No ads, no paywalls, no sponsored profiles. Built as a real alternative to Grindr.",
         "tagline": "The dating app for gay men that actually respects you",
         "tags": "dating, lgbtq, gay, social, mobile"
     },
     {
         "name": "Launched.io",
         "url": "https://launched.io/SubmitStartup",
-        "title": "Embyr",
+        "title": "Embir",
         "desc": "Free alternative to Grindr for gay dating. Built because Grindr has 950k 1-star reviews.",
         "tagline": "Dating Without The BS",
         "tags": "dating, lgbtq"

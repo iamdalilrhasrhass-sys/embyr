@@ -1,4 +1,4 @@
-# Embyr — Mobile, PWA & Effets 3D
+# Embir — Mobile, PWA & Effets 3D
 
 ## Mobile
 - `100dvh` sur toutes les hauteurs critiques
@@ -11,7 +11,7 @@
 ## PWA
 - Manifest : `/public/manifest.json`
 - Icônes : 192x192 + 512x512 (générées)
-- theme_color : `#FF5A1F` (braise Embyr)
+- theme_color : `#FF5A1F` (braise Embir)
 - background_color : `#0A0B0E` (charbon)
 - display : standalone
 
@@ -22,7 +22,7 @@
   - Désactivé si `prefers-reduced-motion`
 - **EmberGlow** : `/components/embyr/EmberGlow.tsx`
   - Radial gradient braise pulsant 4s
-  - Effet signature Embyr
+  - Effet signature Embir
 - **ScrollReveal** : `/components/embyr/ScrollReveal.tsx`
   - IntersectionObserver
   - Opacity 0→1 + translateY 24→0

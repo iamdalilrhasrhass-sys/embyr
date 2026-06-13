@@ -35,8 +35,8 @@ Cette passe ne rajoute pas de “grosse feature”. Elle réduit la dispersion :
 
 - `npm install twilio --save` exécuté sur le VPS.
 - `npm run build` OK.
-- `pm2 restart embyr-web --update-env` OK.
-- `embyr-web` online.
+- `pm2 restart embir-web --update-env` OK.
+- `embir-web` online.
 - Le warning `Cannot resolve 'twilio'` a disparu.
 - Warning restant : convention Next.js `middleware` dépréciée au profit de `proxy`.
 

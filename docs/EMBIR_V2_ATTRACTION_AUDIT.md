@@ -1,11 +1,11 @@
-# EMBYR V2 — Audit & État des lieux
+# EMBIR V2 — Audit & État des lieux
 
 *Date : 15 mai 2026*
 
 ## Projet
 - Dossier : `/root/embyr`
 - Framework : Next.js App Router (TypeScript)
-- PM2 : `embyr-web` (ID 35, port 3100)
+- PM2 : `embir-web` (ID 35, port 3100)
 - Domaine : https://embir.xyz
 - DB : PostgreSQL locale
 

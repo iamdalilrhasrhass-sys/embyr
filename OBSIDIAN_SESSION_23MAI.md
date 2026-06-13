@@ -1,18 +1,18 @@
-# 24 Mai — Session Embyr HackerNoon + Cross-Post
+# 24 Mai — Session Embir HackerNoon + Cross-Post
 
 **Date :** Dimanche 24 Mai 2026 — 00h-01h
 
 ## Objectif
-Publier l'article Embyr sur HackerNoon et Dev.to, configurer GSC.
+Publier l'article Embir sur HackerNoon et Dev.to, configurer GSC.
 
 ## Résultat
 
 ### ✅ HackerNoon — Compte prêt
 - **Email :** embyrblog@wshu.net
-- **Password :** EmbyrBlog2026!
+- **Password :** EmbirBlog2026!
 - **Handle :** embyrapp (✅ défini via profilesApi/update)
 - **Login API :** `POST us-central1-hackernoon-app.cloudfunctions.net/auth2/login/email` → Firebase idToken
-- **Article :** `/tmp/embyr-hn-article.md` — titre, tags, body, canonical_url
+- **Article :** `/tmp/embir-hn-article.md` — titre, tags, body, canonical_url
 - **Éditeur :** sur `app.hackernoon.com/new` (sous-domaine séparé)
 - **Flow :** Login → `/p/publish` → Start Writing Now (3 clics) → remplir éditeur → Publish
 - **Story API :** `storyApi/publish` trouvé mais retourne 500 (body format inconnu)

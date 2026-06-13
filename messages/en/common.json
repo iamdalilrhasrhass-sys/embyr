@@ -3,7 +3,7 @@
     "badge": "For gays and the queer community",
     "title1": "Meet",
     "title2": "men.",
-    "subtitle": "Embyr is a new gay dating app, made for those who want something real. No pressure, no judgment. Free during launch.",
+    "subtitle": "Embir is a new gay dating app, made for those who want something real. No pressure, no judgment. Free during launch.",
     "cta": "Create my free profile",
     "secondary": "Browse members"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "welcome": "Welcome to Embyr",
+    "welcome": "Welcome to Embir",
     "launchBadge": "Free launch",
     "completeProfile": "Complete your profile",
     "browseMembers": "Browse members",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Invite your friends",
-    "description": "Share Embyr with your friends and grow the community.",
+    "description": "Share Embir with your friends and grow the community.",
     "copyLink": "Copy link",
     "copied": "Link copied!"
   },

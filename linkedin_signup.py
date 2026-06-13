@@ -1,12 +1,12 @@
 """
-Création compte LinkedIn + page entreprise Embyr
+Création compte LinkedIn + page entreprise Embir
 """
 import asyncio, re, time, requests
 from playwright.async_api import async_playwright
 
-EMAIL = "embyrpromo1779557374@wshu.net"
-PASS = "EmbyrPromo2026!"
-FIRST = "Embyr"
+EMAIL = "embirpromo1779557374@wshu.net"
+PASS = "EmbirPromo2026!"
+FIRST = "Embir"
 LAST = "Dating"
 
 # mail.tm credentials

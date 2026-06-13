@@ -8,7 +8,7 @@ Message: Your comment is awaiting moderation.
 Last Comment: Strange to think this is anything other than the beginning of the end after selling out their users like that.
 
 Comment text:
-Sniffies is great but have you guys tried EMBYR? It is 100% free with no limits, actually works. Check it out at embir.xyz
+Sniffies is great but have you guys tried EMBIR? It is 100% free with no limits, actually works. Check it out at embir.xyz
 
 Screenshots:
 - /root/embyr/comment_filled.png (before submit)

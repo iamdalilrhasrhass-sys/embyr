@@ -1,4 +1,4 @@
-# Embyr Acquisition — Divineva → Femynia
+# Embir Acquisition — Divineva → Femynia
 
 ## Contexte
 - **Date** : 15 mai 2026
@@ -49,4 +49,4 @@ Go now
 ## Obsidian
 - Journal : `20_JOURNAL_DE_BORD/15-05-2026 Acquisition Divineva Femynia.md`
 - État réel Femynia : mise à jour avec section Acquisition
-- Master Embyr : mise à jour
+- Master Embir : mise à jour

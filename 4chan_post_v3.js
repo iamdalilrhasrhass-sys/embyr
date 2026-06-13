@@ -23,8 +23,8 @@ const fs = require('fs');
   
   // Fill form using page.evaluate (bypasses Playwright visibility checks)
   await page.evaluate(() => {
-    document.querySelector('input[name="sub"]').value = 'EMBYR - App gay 100% gratuite';
-    document.querySelector('textarea[name="com"]').value = 'EMBYR est une app de rencontre gay 100% gratuite. Pas de pub, pas de limite de messages, pas de comptes premium a 30 euros/mois.\n\nCe qui change:\n- Tinder-like (swipe)\n- Plus de 60 villes deja couvertes\n- Traduit en 25 langues\n- Pas de bullshit Grindr\n\nPourquoi c est gratuit? Parce que le marche des apps gay est un oligopole qui abuse. Grindr c est 30 euros/mois pour des fonctions de base.\n\nembir.xyz\n\nDispo maintenant.';
+    document.querySelector('input[name="sub"]').value = 'EMBIR - App gay 100% gratuite';
+    document.querySelector('textarea[name="com"]').value = 'EMBIR est une app de rencontre gay 100% gratuite. Pas de pub, pas de limite de messages, pas de comptes premium a 30 euros/mois.\n\nCe qui change:\n- Tinder-like (swipe)\n- Plus de 60 villes deja couvertes\n- Traduit en 25 langues\n- Pas de bullshit Grindr\n\nPourquoi c est gratuit? Parce que le marche des apps gay est un oligopole qui abuse. Grindr c est 30 euros/mois pour des fonctions de base.\n\nembir.xyz\n\nDispo maintenant.';
   });
   console.log('FORM_FILLED');
 

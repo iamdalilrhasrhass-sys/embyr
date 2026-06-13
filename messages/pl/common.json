@@ -3,7 +3,7 @@
     "badge": "Dla gejów i społeczności queer",
     "title1": "Randki",
     "title2": "między mężczyznami.",
-    "subtitle": "Embyr to nowa aplikacja randkowa dla gejów, stworzona dla tych, którzy szukają czegoś prawdziwego. Bez presji, bez oceniania. Darmowa podczas premiery.",
+    "subtitle": "Embir to nowa aplikacja randkowa dla gejów, stworzona dla tych, którzy szukają czegoś prawdziwego. Bez presji, bez oceniania. Darmowa podczas premiery.",
     "cta": "Stwórz profil za darmo",
     "secondary": "Odkryj członków"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Panel",
-    "welcome": "Witaj w Embyr",
+    "welcome": "Witaj w Embir",
     "launchBadge": "Darmowa premiera",
     "completeProfile": "Uzupełnij swój profil",
     "browseMembers": "Zobacz członków",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Zaproś znajomych",
-    "description": "Podziel się Embyr ze znajomymi i powiększ społeczność.",
+    "description": "Podziel się Embir ze znajomymi i powiększ społeczność.",
     "copyLink": "Skopiuj link",
     "copied": "Link skopiowany!"
   },

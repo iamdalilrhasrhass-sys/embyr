@@ -7,7 +7,7 @@
 
 ## Before posting
 - Must use Mac (IP Free, not VPS — VPS is 403 banned from Reddit)
-- Account: u/EmbyrDating (password: see .env)
+- Account: u/EmbirDating (password: see .env)
 - If account suspended: create new via Mac Chrome
 - Wait 24h after account creation before posting
 

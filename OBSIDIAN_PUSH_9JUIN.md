@@ -10,7 +10,7 @@
 
 ## SKILLS TROUVÉS (solutions existantes)
 - acquisition-pipeline: Tier 1→5 autonomie totale, datingscout.com, email catch-all
-- embyr-promotion-camofox: Camoufox, Flaresolverr, status plateformes
+- embir-promotion-camofox: Camoufox, Flaresolverr, status plateformes
 - linkedin-growth: AppleScript Mac pour LinkedIn
 - web-scraping: Scrapling 11x plus rapide que BS4
 
@@ -33,8 +33,8 @@
 ## CRONS (RÉPARÉS)
 - embir-reddit-mac-proxy: 60min (nouveau)
 - Embir IndexNow: 6h (réparé)
-- embyr-daily-promo: 8h (réparé)
-- embyr-hn-retry: 10h/jour (shadowban, attend nouveau compte)
+- embir-daily-promo: 8h (réparé)
+- embir-hn-retry: 10h/jour (shadowban, attend nouveau compte)
 
 ## BLOCAGES PERSISTANTS
 - GitHub: token expiré, device code généré (BA76-45AA puis 8501-6628)

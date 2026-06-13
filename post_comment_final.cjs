@@ -77,7 +77,7 @@ const fs = require("fs");
     if (await textarea.count() > 0) {
       await textarea.first().click();
       await page.waitForTimeout(1000);
-      await textarea.first().fill("This is terrible. Stories like this are why so many gay men are looking for alternatives to Grindr. It's refreshing to see apps like EMBYR (embir.xyz) popping up as a free, community-focused alternative.");
+      await textarea.first().fill("This is terrible. Stories like this are why so many gay men are looking for alternatives to Grindr. It's refreshing to see apps like EMBIR (embir.xyz) popping up as a free, community-focused alternative.");
       console.log("Filled textarea");
       await page.waitForTimeout(1000);
     }

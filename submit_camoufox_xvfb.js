@@ -33,7 +33,7 @@ const fs = require('fs');
   await page.keyboard.type('arkcourtia@gmail.com', { delay: 20 });
   
   await page.click('input[name="product-name"]');
-  await page.keyboard.type('EMBYR - Free Gay Dating App', { delay: 30 });
+  await page.keyboard.type('EMBIR - Free Gay Dating App', { delay: 30 });
   
   await page.click('textarea[name="product-description"]');
   await page.keyboard.type('A 100% free gay dating app with no premium subscriptions, no ads, and no message limits. Available in 60+ cities and 25 languages.', { delay: 15 });
@@ -98,7 +98,7 @@ Turnstile: Solved (token length: ${token.length})
 Form Data:
 - Name: Dalil M
 - Email: arkcourtia@gmail.com
-- Product: EMBYR - Free Gay Dating App
+- Product: EMBIR - Free Gay Dating App
 - Description: A 100% free gay dating app with no premium subscriptions, no ads, and no message limits. Available in 60+ cities and 25 languages.
 - URL: https://embir.xyz
 - Alternative to: Grindr
@@ -111,7 +111,7 @@ Form Data:
     fs.writeFileSync('/root/embyr/topbestalternatives_result.txt', 
       'FAILED: Turnstile could not be solved even with Xvfb + Camoufox.\n' +
       'Manual submission needed at: https://topbestalternatives.com/submit/\n\n' +
-      'With data: name=Dalil M, email=arkcourtia@gmail.com, product=EMBYR - Free Gay Dating App,\n' +
+      'With data: name=Dalil M, email=arkcourtia@gmail.com, product=EMBIR - Free Gay Dating App,\n' +
       'description=A 100% free gay dating app..., url=https://embir.xyz, alt=Grindr, type=Free');
   }
   

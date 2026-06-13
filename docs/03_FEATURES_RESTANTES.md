@@ -1,4 +1,4 @@
-# Embyr — Fonctionnalités Restantes
+# Embir — Fonctionnalités Restantes
 
 ## Bloqué par dépendance externe
 

@@ -1,5 +1,5 @@
 /**
- * QA EMBYR — Messagerie Navigateur Cookie
+ * QA EMBIR — Messagerie Navigateur Cookie
  * Teste la messagerie comme un vrai utilisateur navigateur
  * avec login UI + cookies, pas Bearer token
  */
@@ -133,7 +133,7 @@ async function checkPage(page, name, url) {
     // Check for message input
     const msgInput = await pageA.$('textarea, input[type="text"], [contenteditable]');
     if (msgInput) {
-      await msgInput.fill('Test messagerie Embyr — navigateur cookie');
+      await msgInput.fill('Test messagerie Embir — navigateur cookie');
       await pageA.keyboard.press('Enter');
       await pageA.waitForTimeout(2000);
       console.log('  ✅ Message sent');
@@ -151,7 +151,7 @@ async function checkPage(page, name, url) {
 
   // ── REPORT ──
   console.log('\n' + '='.repeat(50));
-  console.log('RAPPORT QA EMBYR NATIVE');
+  console.log('RAPPORT QA EMBIR NATIVE');
   console.log('='.repeat(50));
   console.log(`Pages testées: ${report.length}`);
   

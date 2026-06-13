@@ -3,9 +3,9 @@
 ## 2026-06-13 — Session "Surpasser"
 
 ### Phase 1: Brand Unification
-- Replaced all "Embyr"/"Ember" → "Embir" in 27 files
+- Replaced all "Embir"/"Ember" → "Embir" in 27 files
 - Renamed `components/embyr/` → `components/embir/`
-- Renamed 8 component files (Embyr* → Embir*)
+- Renamed 8 component files (Embir* → Embir*)
 - Zero remaining occurrences verified
 - Commit: `ac6fba9`
 
@@ -46,5 +46,5 @@
 | Sitemap URLs | ~374 | 500+ |
 | hreflang tags | None | 25 languages |
 | Schema.org | None | WebApplication |
-| "Embyr" occurrences | 32+ files | 0 |
+| "Embir" occurrences | 32+ files | 0 |
 | Total words blog | ~10k | ~33k |

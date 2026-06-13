@@ -5,9 +5,9 @@ import asyncio, json, sys, re, time, requests
 from playwright.async_api import async_playwright
 
 PROXY = "http://174.137.134.182:2999"
-EMAIL = "embyrpromo1779557374@wshu.net"
-PASSWORD = "EmbyrPromo2026!"
-USERNAME = "EmbyrDating"
+EMAIL = "embirpromo1779557374@wshu.net"
+PASSWORD = "EmbirPromo2026!"
+USERNAME = "EmbirDating"
 MAIL_API = "https://api.mail.tm"
 MAIL_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3Nzk1NTczODAsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJhZGRyZXNzIjoiZW1ieXJwcm9tbzE3Nzk1NTczNzRAd3NodS5uZXQiLCJpZCI6IjZhMTFlM2ZlZGIxZWU2Y2RjYTBhNDA3YiIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82YTExZTNmZWRiMWVlNmNkY2EwYTQwN2IiXX19.POyQVshDJgp6Sx2CyRgBM2s8XmR3IkH0UhCfbDA3gyKs2kD5GY4SebfOSF2QolzKQd9TlZ-Xaz8VRuYamRYiHA"
 

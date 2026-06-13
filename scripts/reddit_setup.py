@@ -4,8 +4,8 @@ import os, sys, time, re, json
 from playwright.sync_api import sync_playwright
 
 SOCKS = "socks5://localhost:1080"
-USERNAME = "EmbyrDating"
-PASSWORD = "EmbyrParis2026!"
+USERNAME = "EmbirDating"
+PASSWORD = "EmbirParis2026!"
 
 def main():
     with sync_playwright() as p:
@@ -83,7 +83,7 @@ def main():
                 page.screenshot(path="/tmp/rl_form.png")
                 
                 # Fill form fields by label/text
-                page.locator('input[name="name"]').first.fill("EmbyrBot")
+                page.locator('input[name="name"]').first.fill("EmbirBot")
                 print("  Filled name")
                 time.sleep(0.5)
                 
@@ -92,7 +92,7 @@ def main():
                 print("  Selected script")
                 time.sleep(0.5)
                 
-                page.locator('textarea[name="description"]').first.fill("Automation for Embyr dating app - embir.xyz")
+                page.locator('textarea[name="description"]').first.fill("Automation for Embir dating app - embir.xyz")
                 print("  Filled desc")
                 time.sleep(0.5)
                 

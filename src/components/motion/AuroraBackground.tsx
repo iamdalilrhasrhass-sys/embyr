@@ -97,7 +97,7 @@ export default function AuroraBackground({
         }}
       />
 
-      {/* Subtle grid — only Embyr */}
+      {/* Subtle grid — only Embir */}
       {isEmbir && (
         <div
           className="absolute inset-0 z-[1]"

@@ -1,9 +1,9 @@
-# Embyr — Tests & Validation
+# Embir — Tests & Validation
 
 **Date :** 14 Mai 2026
 
 ## Build
-- **Embyr** : ✅ 55 routes, 0 erreur, 1 warning (twilio)
+- **Embir** : ✅ 55 routes, 0 erreur, 1 warning (twilio)
 - **Feminya** : ✅ 30 routes, 0 erreur
 
 ## Tests HTTP (curl)

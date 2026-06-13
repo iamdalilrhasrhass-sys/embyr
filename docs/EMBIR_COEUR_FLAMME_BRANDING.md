@@ -46,7 +46,7 @@ Passe appliquée le 2026-06-08 :
 - Variables globales `--color-premium-*`, `.bg-gradient-premium`, `.text-gradient`, `.glass-premium`, `.premium-glow`, `.noise-overlay`, `.soft-grid-bg` alignées sur le logo.
 - Ancienne dominante cyan/indigo retirée des composants structurants.
 
-Commit produit : `e2e1f53` — `Apply Embyr branding across platform`.
+Commit produit : `e2e1f53` — `Apply Embir branding across platform`.
 
 ## Règle de marque
 
@@ -61,7 +61,7 @@ La reconnaissance d'Embir repose maintenant sur :
 ## Vérification
 
 - `npm run build` OK sur le VPS le 2026-06-08
-- `pm2 restart embyr-web --update-env` OK
+- `pm2 restart embir-web --update-env` OK
 - `https://embir.xyz` HTTP 200
 - `https://embir.xyz/paris` HTTP 200
 - `https://embir.xyz/auth/login` HTTP 200
@@ -69,5 +69,5 @@ La reconnaissance d'Embir repose maintenant sur :
 - `https://embir.xyz/membres` HTTP 200
 - `https://embir.xyz/dashboard` HTTP 200
 - Le HTML public contient le nouveau hero, le CTA “Rejoindre les 100 fondateurs”, le logotype typographique, et ne contient plus l'ancien SVG cœur `viewBox="0 0 600 180"`.
-- Captures Playwright : `/tmp/embyr-typographic-desktop-final.png`, `/tmp/embyr-typographic-mobile-final.png`
-- Captures Playwright globales : `/tmp/embyr-global-home-desktop.png`, `/tmp/embyr-global-login-desktop.png`, `/tmp/embyr-global-register-desktop.png`, `/tmp/embyr-global-membres-with-header.png`, `/tmp/embyr-global-home-mobile.png`
+- Captures Playwright : `/tmp/embir-typographic-desktop-final.png`, `/tmp/embir-typographic-mobile-final.png`
+- Captures Playwright globales : `/tmp/embir-global-home-desktop.png`, `/tmp/embir-global-login-desktop.png`, `/tmp/embir-global-register-desktop.png`, `/tmp/embir-global-membres-with-header.png`, `/tmp/embir-global-home-mobile.png`

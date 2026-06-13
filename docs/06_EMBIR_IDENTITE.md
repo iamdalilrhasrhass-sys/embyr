@@ -1,4 +1,4 @@
-# Embyr — Identité & Architecture
+# Embir — Identité & Architecture
 
 ## Identité visuelle
 - **Thème** : Club privé, braise, métal sombre, luxe discret
@@ -12,11 +12,11 @@
 - **Database** : PostgreSQL `embyr` (localhost:5432)
 - **Auth** : JWT httpOnly cookie (7 jours)
 - **Paiement** : Stripe (checkout + webhook)
-- **Déploiement** : VPS, PM2 (`embyr-web`, port 3100)
+- **Déploiement** : VPS, PM2 (`embir-web`, port 3100)
 - **Domaine** : embir.xyz (Nginx proxy → localhost:3100)
 
 ## Différenciation Femynia
-| Aspect | Femynia | Embyr |
+| Aspect | Femynia | Embir |
 |--------|---------|-------|
 | Palette | Rose/violet/clair | Braise/noir/métal |
 | Typo | Arial | Fraunces + Geist |
@@ -26,7 +26,7 @@
 | CSS scope | `html` | `[data-site="embyr"]` |
 
 ## Fichiers clés
-- `/src/styles/embyr-tokens.css` — Design tokens CSS
+- `/src/styles/embir-tokens.css` — Design tokens CSS
 - `/src/components/embyr/` — 8 composants (Card, Button, Input, Avatar, Badge, Card3DTilt, ScrollReveal, EmberGlow)
 - `/src/lib/SiteProvider.tsx` — Contexte site courant
 - `/src/lib/scopeToSite.ts` — Filtres multi-site backend

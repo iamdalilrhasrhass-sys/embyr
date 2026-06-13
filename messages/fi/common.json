@@ -3,7 +3,7 @@
     "badge": "Homoille ja queer-yhteisölle",
     "title1": "Treffejä",
     "title2": "miesten kesken.",
-    "subtitle": "Embyr on uusi homotreffisovellus, suunniteltu niille, jotka haluavat aitoa. Ei paineita, ei tuomitsemista. Ilmainen lanseerauksen ajan.",
+    "subtitle": "Embir on uusi homotreffisovellus, suunniteltu niille, jotka haluavat aitoa. Ei paineita, ei tuomitsemista. Ilmainen lanseerauksen ajan.",
     "cta": "Luo profiilini ilmaiseksi",
     "secondary": "Tutustu jäseniin"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Hallintapaneeli",
-    "welcome": "Tervetuloa Embyriin",
+    "welcome": "Tervetuloa Embiriin",
     "launchBadge": "Ilmainen lanseeraus",
     "completeProfile": "Täydennä profiilisi",
     "browseMembers": "Selaa jäseniä",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Kutsu ystäväsi",
-    "description": "Jaa Embyr ystäviesi kanssa ja kasvata yhteisöä.",
+    "description": "Jaa Embir ystäviesi kanssa ja kasvata yhteisöä.",
     "copyLink": "Kopioi linkki",
     "copied": "Linkki kopioitu!"
   },

@@ -3,7 +3,7 @@
     "badge": "Geyler ve queer topluluğu için",
     "title1": "Tanışmalar",
     "title2": "erkekler arasında.",
-    "subtitle": "Embyr, gerçek bağlantılar arayanlar için tasarlanmış yeni bir gey tanışma uygulaması. Baskı yok, yargılama yok. Lansman süresince ücretsiz.",
+    "subtitle": "Embir, gerçek bağlantılar arayanlar için tasarlanmış yeni bir gey tanışma uygulaması. Baskı yok, yargılama yok. Lansman süresince ücretsiz.",
     "cta": "Profilimi ücretsiz oluştur",
     "secondary": "Üyeleri keşfet"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Panel",
-    "welcome": "Embyr'a hoş geldin",
+    "welcome": "Embir'a hoş geldin",
     "launchBadge": "Ücretsiz lansman",
     "completeProfile": "Profilini tamamla",
     "browseMembers": "Üyeleri gör",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Arkadaşlarını davet et",
-    "description": "Embyr'ı arkadaşlarınla paylaş ve topluluğu büyüt.",
+    "description": "Embir'ı arkadaşlarınla paylaş ve topluluğu büyüt.",
     "copyLink": "Bağlantıyı kopyala",
     "copied": "Bağlantı kopyalandı!"
   },

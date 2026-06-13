@@ -21,7 +21,7 @@ const viewports = [
 ];
 
 async function run() {
-  console.log('🚀 Lancement QA visuelle Embyr...');
+  console.log('🚀 Lancement QA visuelle Embir...');
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
   const results = [];
 
@@ -75,7 +75,7 @@ async function run() {
 
   const errors = results.filter(r => r.type?.includes('error') || r.hasError || r.empty || r.overflow);
   const routes200 = results.filter(r => r.status === 200).length;
-  console.log(`\n📊 RÉSUMÉ EMBYR`);
+  console.log(`\n📊 RÉSUMÉ EMBIR`);
   console.log(`   Total checks: ${results.length}`);
   console.log(`   Routes 200: ${routes200}/${results.length}`);
   console.log(`   Problèmes: ${errors.length}`);

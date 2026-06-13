@@ -11,7 +11,7 @@
     "overflow": false,
     "ctas": [
       {
-        "text": "Rejoindre Embyr",
+        "text": "Rejoindre Embir",
         "href": "/auth/register",
         "visible": true
       },
@@ -225,7 +225,7 @@
     "overflow": true,
     "ctas": [
       {
-        "text": "Rejoindre Embyr",
+        "text": "Rejoindre Embir",
         "href": "/auth/register",
         "visible": true
       },

@@ -1,6 +1,6 @@
 # HackerNoon (Nouveau 23 Mai)
 - email: embyrblog@wshu.net
-- pass: EmbyrBlog2026!
+- pass: EmbirBlog2026!
 - Handle: embyrapp (à définir)
 - Firebase ID token: obtenu via auth2/login/email
 - Status: Compte créé, email vérification reçue

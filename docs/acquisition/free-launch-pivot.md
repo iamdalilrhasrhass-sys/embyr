@@ -1,13 +1,13 @@
-# Embyr — Pivot Lancement Gratuit
+# Embir — Pivot Lancement Gratuit
 
 **Date**: 2026-05-15
-**Décision**: Embyr devient la plateforme principale, gratuite au lancement.
+**Décision**: Embir devient la plateforme principale, gratuite au lancement.
 
 ## Positionnement
 
 "Rencontre plus librement. Gratuitement."
 
-Embyr est une nouvelle plateforme de rencontre moderne, élégante et gratuite pendant sa phase de lancement.
+Embir est une nouvelle plateforme de rencontre moderne, élégante et gratuite pendant sa phase de lancement.
 
 ## Ce qui change
 

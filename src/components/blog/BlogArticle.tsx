@@ -44,7 +44,7 @@ export function BlogArticle({ slug }: { slug: string }) {
             ← Back to blog
           </Link>
           <div className="prose prose-invert max-w-none">
-            <MDContent filePath={`/root/embyr/content/blog/${slug}.md`} />
+            <MDContent filePath={`/root/embir/content/blog/${slug}.md`} />
           </div>
           <div className="mt-16 pt-8 border-t border-white/[0.06]">
             <p className="text-white/30 text-sm mb-4">Published on Embir Blog</p>

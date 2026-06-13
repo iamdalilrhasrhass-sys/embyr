@@ -11,7 +11,7 @@ Session intensive acquisition EMBIR. X spray reply → échec. Pivot Reddit + Pr
 - **Conclusion : ❌ Stratégie reply spray = 0 trafic. Poubelle.**
 
 ## 2. Reddit — Tentatives
-- Compte u/EmbyrDating : ❌ Login échoué (wrong password OU suspendu)
+- Compte u/EmbirDating : ❌ Login échoué (wrong password OU suspendu)
 - Tentatives API : Praw via Tor → user.me() None
 - Tentatives Playwright + Tor → 403 login
 - Nouveau compte : API register bloque (CAPTCHA probable)
@@ -20,7 +20,7 @@ Session intensive acquisition EMBIR. X spray reply → échec. Pivot Reddit + Pr
 ### Plan Reddit v2
 - Créer compte NEUF depuis Chrome Mac (IP Free propre)
 - Email prêt : embir-reddit-1781046831@web-library.net / EmbirReddit2026!
-- Username : EmbyrDating2
+- Username : EmbirDating2
 - Posts préparés dans /root/embyr/reddit_campaign.py
 
 ## 3. Product Hunt — Préparé
@@ -34,7 +34,7 @@ Session intensive acquisition EMBIR. X spray reply → échec. Pivot Reddit + Pr
 - Google ping déprécié — besoin Google Search Console
 - IndexNow cron actif (5a42be5cad28)
 
-## 5. État Actuel Embyr
+## 5. État Actuel Embir
 - Site online ✅
 - 1 user réel (Dalil), 0 inscriptions campagne
 - DB : 11 users (9 demo + 1 QA + Dalil)

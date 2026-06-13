@@ -9,7 +9,7 @@ from datetime import datetime
 EMAIL = "embirparis2026@web-library.net"
 NAME = "EMBIR"
 USERNAME = "EMBIR_APP"
-PASSWORD = "EmbyrX2026!Secure"
+PASSWORD = "EmbirX2026!Secure"
 CREDS_PATH = "/root/embyr/.x_creds.json"
 EMAIL_TOKEN = os.environ.get("EMBIR_EMAIL_TOKEN", "")
 

@@ -4,10 +4,10 @@ Créer un compte Twitter/X
 import asyncio, time
 from playwright.async_api import async_playwright
 
-EMAIL = "embyrpromo1779557374@wshu.net"
-USERNAME = "EmbyrApp"
-PASS = "EmbyrPromo2026!"
-NAME = "Embyr Dating"
+EMAIL = "embirpromo1779557374@wshu.net"
+USERNAME = "EmbirApp"
+PASS = "EmbirPromo2026!"
+NAME = "Embir Dating"
 
 async def main():
     async with async_playwright() as p:

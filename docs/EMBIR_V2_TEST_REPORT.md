@@ -1,4 +1,4 @@
-# EMBYR V2 — Rapport de Test
+# EMBIR V2 — Rapport de Test
 
 *Date : 15 mai 2026*
 
@@ -6,7 +6,7 @@
 ✅ `npm run build` — exit 0
 
 ## PM2
-✅ `embyr-web` — online (ID 35, port 3100, 3h uptime)
+✅ `embir-web` — online (ID 35, port 3100, 3h uptime)
 
 ## Routes testées (HTTP smoke test)
 | Route | Statut |

@@ -33,11 +33,11 @@ const { firefox } = require('playwright');
   // Fill form via evaluate (bypass Playwright visibility checks)
   await page.evaluate(() => {
     const subInput = document.querySelector('input[name="sub"]');
-    if (subInput) subInput.value = 'EMBYR - App gay 100% gratuite';
+    if (subInput) subInput.value = 'EMBIR - App gay 100% gratuite';
     
     const comText = document.querySelector('textarea[name="com"]');
     if (comText) {
-      comText.value = 'EMBYR est une app de rencontre gay 100% gratuite.\n\nPlus de 60 villes, traduit en 25 langues, swipe Tinder-like.\nZERO pub, ZERO limite de messages, ZERO comptes premium a 30€.\n\nGrindr c est 30€/mois pour des fonctions de base.\n\nOn casse ce monopole.\n\nembir.xyz\n\nDispo maintenant.';
+      comText.value = 'EMBIR est une app de rencontre gay 100% gratuite.\n\nPlus de 60 villes, traduit en 25 langues, swipe Tinder-like.\nZERO pub, ZERO limite de messages, ZERO comptes premium a 30€.\n\nGrindr c est 30€/mois pour des fonctions de base.\n\nOn casse ce monopole.\n\nembir.xyz\n\nDispo maintenant.';
     }
   });
   console.log('FORM_FILLED');

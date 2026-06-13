@@ -2,7 +2,7 @@
   {
     "page": "landing",
     "url": "https://embir.xyz/",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -22,7 +22,7 @@
   {
     "page": "membres",
     "url": "https://embir.xyz/membres",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -41,7 +41,7 @@
   {
     "page": "premium",
     "url": "https://embir.xyz/premium",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -59,7 +59,7 @@
   {
     "page": "pricing",
     "url": "https://embir.xyz/pricing",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -81,7 +81,7 @@
   {
     "page": "auth-login",
     "url": "https://embir.xyz/auth/login",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -96,7 +96,7 @@
   {
     "page": "auth-register",
     "url": "https://embir.xyz/auth/register",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -112,7 +112,7 @@
   {
     "page": "m-landing",
     "url": "https://embir.xyz/",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -132,7 +132,7 @@
   {
     "page": "m-membres",
     "url": "https://embir.xyz/membres",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,
@@ -151,7 +151,7 @@
   {
     "page": "m-premium",
     "url": "https://embir.xyz/premium",
-    "title": "Embyr — Club Privé Premium",
+    "title": "Embir — Club Privé Premium",
     "httpStatus": "200",
     "errors": [],
     "overflow": false,

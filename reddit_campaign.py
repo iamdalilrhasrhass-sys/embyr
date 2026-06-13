@@ -2,8 +2,8 @@
 """EMBIR Reddit Campaign — Playwright + stealth + Tor SOCKS"""
 import asyncio, random, sys, os
 
-REDDIT_USER = "EmbyrDating"
-REDDIT_PASS = "EmbyrParis2026!"
+REDDIT_USER = "EmbirDating"
+REDDIT_PASS = "EmbirParis2026!"
 TOR_PROXY = "socks5://127.0.0.1:9050"
 
 POSTS = [

@@ -28,7 +28,7 @@ We're a small, bootstrapped team. Right now EMBIR is live in Paris with ~200 ear
 ---
 
 ## Maker Info
-- **Name:** Embyr Team
+- **Name:** Embir Team
 - **Role:** Solo developer, bootstrapped
 - **Location:** Paris, France
 - **Twitter:** @EMBIR_APP

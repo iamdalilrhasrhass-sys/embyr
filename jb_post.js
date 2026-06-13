@@ -169,7 +169,7 @@ const fs = require('fs');
     }
 
     if (titleInput) {
-      await titleInput.fill('Has anyone tried EMBYR? Found a completely free Grindr alternative');
+      await titleInput.fill('Has anyone tried EMBIR? Found a completely free Grindr alternative');
       result.steps.push('Filled title');
     } else {
       result.steps.push('Could not find title input');
@@ -205,7 +205,7 @@ const fs = require('fs');
       const tag = await bodyInput.evaluate(el => el.tagName);
       const contentType = await bodyInput.evaluate(el => el.getAttribute('contenteditable'));
       
-      const message = `I've been testing this new app called EMBYR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a gay dating app that's completely free - no paywalls, no "gold" features, no limits on who you can talk to. Unlike Grindr where you basically need a subscription to actually use it properly these days.\n\nHas anyone else tried it? The user base is still growing obviously but it seems legit. Just curious what other people think.`;
+      const message = `I've been testing this new app called EMBIR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a gay dating app that's completely free - no paywalls, no "gold" features, no limits on who you can talk to. Unlike Grindr where you basically need a subscription to actually use it properly these days.\n\nHas anyone else tried it? The user base is still growing obviously but it seems legit. Just curious what other people think.`;
       
       if (contentType === 'true' || tag === 'DIV') {
         await bodyInput.fill(message);

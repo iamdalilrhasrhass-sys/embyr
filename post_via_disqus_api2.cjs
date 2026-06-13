@@ -68,7 +68,7 @@ function apiPost(endpoint, data) {
     console.log("\n=== Step 3: Post comment ===");
     const postData = {
       thread: String(threadId),
-      message: "This is really concerning. Stories like this about Grindr's treatment of its workers (and users) make me grateful for alternatives that actually put community first. If anyone's looking for something different, I've been trying EMBYR (embir.xyz) — it's completely free and feels much more respectful of its users. No shady data practices or corporate nonsense, just a decent dating experience.",
+      message: "This is really concerning. Stories like this about Grindr's treatment of its workers (and users) make me grateful for alternatives that actually put community first. If anyone's looking for something different, I've been trying EMBIR (embir.xyz) — it's completely free and feels much more respectful of its users. No shady data practices or corporate nonsense, just a decent dating experience.",
       author_name: "AlexM",
       author_email: "alex.m.reader@protonmail.com"
     };

@@ -133,19 +133,19 @@ const fs = require('fs');
           
           // Fill and submit
           if (info.hasTitleInput) {
-            await page.fill('input[name="title"]', 'Has anyone tried EMBYR? Found a completely free Grindr alternative');
+            await page.fill('input[name="title"]', 'Has anyone tried EMBIR? Found a completely free Grindr alternative');
             log('  ✓ Title filled');
           }
           
           // Find message field
           if (info.textareas.length > 0) {
-            const msg = `I've been testing this new app called EMBYR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a gay dating app that's completely free - no paywalls, no "gold" features, no limits on who you can talk to. Unlike Grindr where you basically need a subscription to actually use it properly these days.\n\nHas anyone else tried it? The user base is still growing obviously but it seems legit. Just curious what other people think.`;
+            const msg = `I've been testing this new app called EMBIR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a gay dating app that's completely free - no paywalls, no "gold" features, no limits on who you can talk to. Unlike Grindr where you basically need a subscription to actually use it properly these days.\n\nHas anyone else tried it? The user base is still growing obviously but it seems legit. Just curious what other people think.`;
             
             const textareaName = info.textareas[0].name;
             await page.fill(`textarea[name="${textareaName}"]`, msg);
             log('  ✓ Message filled');
           } else if (info.editable) {
-            const msg = `I've been testing this new app called EMBYR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a completely free gay dating app - no paywalls, no limits. Unlike Grindr. Has anyone tried it?`;
+            const msg = `I've been testing this new app called EMBIR (embir.xyz) for the past week and honestly I'm pretty impressed so far. It's a completely free gay dating app - no paywalls, no limits. Unlike Grindr. Has anyone tried it?`;
             await page.click('[contenteditable="true"]');
             await page.keyboard.type(msg, { delay: 3 });
             log('  ✓ Message typed into editor');

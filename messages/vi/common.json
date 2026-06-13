@@ -3,7 +3,7 @@
     "badge": "Dành cho người đồng tính và cộng đồng queer",
     "title1": "Kết nối",
     "title2": "giữa những người đồng tính.",
-    "subtitle": "Embyr là ứng dụng hẹn hò đồng tính mới, được thiết kế cho những ai muốn điều chân thật. Không áp lực, không phán xét. Miễn phí trong thời gian ra mắt.",
+    "subtitle": "Embir là ứng dụng hẹn hò đồng tính mới, được thiết kế cho những ai muốn điều chân thật. Không áp lực, không phán xét. Miễn phí trong thời gian ra mắt.",
     "cta": "Tạo hồ sơ miễn phí",
     "secondary": "Khám phá thành viên"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Bảng điều khiển",
-    "welcome": "Chào mừng đến với Embyr",
+    "welcome": "Chào mừng đến với Embir",
     "launchBadge": "Ra mắt miễn phí",
     "completeProfile": "Hoàn thiện hồ sơ của bạn",
     "browseMembers": "Xem thành viên",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Mời bạn bè của bạn",
-    "description": "Chia sẻ Embyr với bạn bè và mở rộng cộng đồng.",
+    "description": "Chia sẻ Embir với bạn bè và mở rộng cộng đồng.",
     "copyLink": "Sao chép liên kết",
     "copied": "Đã sao chép liên kết!"
   },

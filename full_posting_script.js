@@ -169,7 +169,7 @@ const { chromium } = require('playwright');
       // Fill title and message
       const titleField = await page.$('input[name="title"]');
       if (titleField) {
-        await titleField.fill('Anyone tried EMBYR? Free Grindr alternative');
+        await titleField.fill('Anyone tried EMBIR? Free Grindr alternative');
       }
       
       // The message editor is usually a contenteditable div or a textarea
@@ -179,10 +179,10 @@ const { chromium } = require('playwright');
         const tagName = await page.evaluate(el => el.tagName, editor);
         console.log("Editor type:", tagName);
         if (tagName === 'TEXTAREA') {
-          await editor.fill('I found this new free gay dating app called EMBYR - embir.xyz. It\'s actually completely free, no premium nonsense like Grindr. Works in multiple cities. Anyone tried it?');
+          await editor.fill('I found this new free gay dating app called EMBIR - embir.xyz. It\'s actually completely free, no premium nonsense like Grindr. Works in multiple cities. Anyone tried it?');
         } else {
           await editor.focus();
-          await page.keyboard.type('I found this new free gay dating app called EMBYR - embir.xyz. It\'s actually completely free, no premium nonsense like Grindr. Works in multiple cities. Anyone tried it?');
+          await page.keyboard.type('I found this new free gay dating app called EMBIR - embir.xyz. It\'s actually completely free, no premium nonsense like Grindr. Works in multiple cities. Anyone tried it?');
         }
       }
       

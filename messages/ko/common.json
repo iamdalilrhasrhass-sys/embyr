@@ -3,7 +3,7 @@
     "badge": "게이와 퀴어 커뮤니티를 위한",
     "title1": "진정한 만남",
     "title2": "남성들 사이에서.",
-    "subtitle": "Embyr는 진짜를 원하는 사람들을 위해 만들어진 새로운 게이 데이트 앱입니다. 압박도, 판단도 없습니다. 출시 기간 동안 무료입니다.",
+    "subtitle": "Embir는 진짜를 원하는 사람들을 위해 만들어진 새로운 게이 데이트 앱입니다. 압박도, 판단도 없습니다. 출시 기간 동안 무료입니다.",
     "cta": "내 프로필 무료로 만들기",
     "secondary": "회원 살펴보기"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "대시보드",
-    "welcome": "Embyr에 오신 것을 환영합니다",
+    "welcome": "Embir에 오신 것을 환영합니다",
     "launchBadge": "무료 출시",
     "completeProfile": "프로필을 완성하세요",
     "browseMembers": "회원 보기",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "친구 초대하기",
-    "description": "Embyr를 친구들과 공유하고 커뮤니티를 확장하세요.",
+    "description": "Embir를 친구들과 공유하고 커뮤니티를 확장하세요.",
     "copyLink": "링크 복사",
     "copied": "링크 복사됨!"
   },

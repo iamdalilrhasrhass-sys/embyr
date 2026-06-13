@@ -3,7 +3,7 @@
     "badge": "For bøsser og queer-fællesskabet",
     "title1": "Dates",
     "title2": "mellem mænd.",
-    "subtitle": "Embyr er en ny datingapp for bøsser, skabt til dem, der vil have noget ægte. Intet pres, ingen dømmelse. Gratis under lanceringen.",
+    "subtitle": "Embir er en ny datingapp for bøsser, skabt til dem, der vil have noget ægte. Intet pres, ingen dømmelse. Gratis under lanceringen.",
     "cta": "Opret min profil gratis",
     "secondary": "Opdag medlemmerne"
   },
@@ -30,7 +30,7 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "welcome": "Velkommen til Embyr",
+    "welcome": "Velkommen til Embir",
     "launchBadge": "Gratis lancering",
     "completeProfile": "Færdiggør din profil",
     "browseMembers": "Se medlemmer",
@@ -60,7 +60,7 @@
   },
   "invite": {
     "title": "Inviter dine venner",
-    "description": "Del Embyr med dine venner og udvid fællesskabet.",
+    "description": "Del Embir med dine venner og udvid fællesskabet.",
     "copyLink": "Kopier link",
     "copied": "Link kopieret!"
   },
