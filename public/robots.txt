@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /dashboard/
-Disallow: /admin/
-Disallow: /api/
-Disallow: /messages/
-Disallow: /auth/
-
-Sitemap: https://embir.xyz/sitemap.xml
