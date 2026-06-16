@@ -1,9 +1,9 @@
 export const seoAuditThresholds = {
   sitemapUrls: 500,
   francePages: 80,
-  usaPages: 120,
-  ukPages: 90,
-  switzerlandPages: 20,
+  usaPages: 30,
+  ukPages: 30,
+  switzerlandPages: 10,
   blogArticles: 150,
   guides: 120,
   comparisons: 40,
