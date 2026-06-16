@@ -226,15 +226,15 @@ async function main() {
     sampledPages: pages.length,
     sitemap,
     thresholds,
-    titleMissing: pages.filter((page) => !page.title).length,
-    descriptionMissing: pages.filter((page) => !page.description).length,
+    titleMissingUrls: pages.filter((page) => !page.title).map((p) => p.url),
+    descriptionMissingUrls: pages.filter((page) => !page.description).map((p) => p.url),
     duplicateTitles: countDuplicateValues(pages.map((page) => page.title)),
     duplicateDescriptions: countDuplicateValues(pages.map((page) => page.description)),
-    canonicalMissing: pages.filter((page) => !page.canonical).length,
-    pagesWithoutCta: seoPages.filter((page) => !page.cta).length,
-    pagesWithoutFaq: seoPages.filter((page) => !page.faq).length,
-    pagesWithoutInternalLinks: seoPages.filter((page) => !page.internalLinks).length,
-    noindexAccidental: seoPages.filter((page) => page.noindex).length,
+    canonicalMissingUrls: pages.filter((page) => !page.canonical).map((p) => p.url),
+    pagesWithoutCtaUrls: seoPages.filter((page) => !page.cta).map((p) => p.url),
+    pagesWithoutFaqUrls: seoPages.filter((page) => !page.faq).map((p) => p.url),
+    pagesWithoutInternalLinksUrls: seoPages.filter((page) => !page.internalLinks).map((p) => p.url),
+    noindexAccidentalUrls: seoPages.filter((page) => page.noindex).map((p) => p.url),
     homepageMissingRequired,
     homepageForbiddenFound,
     badStatusPages: pages.filter((page) => page.status !== 200).map((page) => `${page.status} ${page.url}`),
@@ -248,13 +248,13 @@ async function main() {
     ...homepageForbiddenFound.map((text) => `homepage forbidden text found: ${text}`),
   ];
 
-  if (result.titleMissing > 0) failures.push(`titleMissing: ${result.titleMissing}`);
-  if (result.descriptionMissing > 0) failures.push(`descriptionMissing: ${result.descriptionMissing}`);
-  if (result.canonicalMissing > 0) failures.push(`canonicalMissing: ${result.canonicalMissing}`);
-  if (result.pagesWithoutCta > 0) failures.push(`pagesWithoutCta: ${result.pagesWithoutCta}`);
-  if (result.pagesWithoutFaq > 0) failures.push(`pagesWithoutFaq: ${result.pagesWithoutFaq}`);
-  if (result.pagesWithoutInternalLinks > 0) failures.push(`pagesWithoutInternalLinks: ${result.pagesWithoutInternalLinks}`);
-  if (result.noindexAccidental > 0) failures.push(`noindexAccidental: ${result.noindexAccidental}`);
+  if (result.titleMissingUrls.length > 0) failures.push(`titleMissing: ${result.titleMissingUrls.join(', ')}`);
+  if (result.descriptionMissingUrls.length > 0) failures.push(`descriptionMissing: ${result.descriptionMissingUrls.join(', ')}`);
+  if (result.canonicalMissingUrls.length > 0) failures.push(`canonicalMissing: ${result.canonicalMissingUrls.join(', ')}`);
+  if (result.pagesWithoutCtaUrls.length > 0) failures.push(`pagesWithoutCta: ${result.pagesWithoutCtaUrls.join(', ')}`);
+  if (result.pagesWithoutFaqUrls.length > 0) failures.push(`pagesWithoutFaq: ${result.pagesWithoutFaqUrls.join(', ')}`);
+  if (result.pagesWithoutInternalLinksUrls.length > 0) failures.push(`pagesWithoutInternalLinks: ${result.pagesWithoutInternalLinksUrls.join(', ')}`);
+  if (result.noindexAccidentalUrls.length > 0) failures.push(`noindexAccidental: ${result.noindexAccidentalUrls.join(', ')}`);
 
   console.log(JSON.stringify(result, null, 2));
 
