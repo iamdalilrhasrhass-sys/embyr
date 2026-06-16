@@ -6,21 +6,7 @@ Geneva|Geneve
 Lausanne|Lausanne
 Basel|Bale
 Bern|Berne
-Lucerne|Lucerne
-Winterthur|Winterthur
-St Gallen|Saint-Gall
 Lugano|Lugano
-Fribourg|Fribourg
-Neuchatel|Neuchatel
-Sion|Sion
-Montreux|Montreux
-Vevey|Vevey
-Nyon|Nyon
-Yverdon-les-Bains|Yverdon-les-Bains
-Biel|Bienne
-Thun|Thoune
-Chur|Coire
-Zug|Zoug
 `);
 
 export const swissCities = uniqueBySlug(
