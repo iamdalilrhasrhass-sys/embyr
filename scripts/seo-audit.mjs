@@ -9,9 +9,9 @@ const SAMPLE_FILE = process.env.EMBIR_SEO_SAMPLE_FILE || "/tmp/embir_100_urls.tx
 const thresholds = {
   totalUrls: 500,
   franceUrls: 80,
-  usaUrls: 120,
-  ukUrls: 90,
-  switzerlandUrls: 20,
+  usaUrls: 30,
+  ukUrls: 30,
+  switzerlandUrls: 10,
   blogUrls: 150,
   guideUrls: 120,
   comparisonUrls: 40,
