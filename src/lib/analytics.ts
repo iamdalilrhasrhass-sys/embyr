@@ -1,14 +1,20 @@
 'use client';
 
-type AnalyticsEvent = 
+type AnalyticsEvent =
   | 'page_view'
-  | 'signup_start'
-  | 'signup_complete'
+  | 'signup_started'
+  | 'signup_completed'
+  | 'signup_error'
+  | 'signup_page_view'
   | 'profile_view'
   | 'message_sent'
   | 'language_switch'
   | 'blog_article_read'
   | 'cta_click'
+  | 'invite_page_view'
+  | 'city_page_view'
+  | 'landing_page_view'
+  | 'outbound_click'
   | 'feedback_submitted';
 
 interface AnalyticsProperties {
@@ -16,14 +22,24 @@ interface AnalyticsProperties {
   language?: string;
   articleSlug?: string;
   ctaLocation?: string;
+  ctaLabel?: string;
+  city?: string;
+  country?: string;
+  market?: string;
+  pageType?: string;
+  locale?: string;
   referrer?: string;
+  readingTrigger?: string;
+  scrollDepth?: number;
+  secondsOnPage?: number;
+  signupStep?: string;
+  errorType?: string;
+  destination?: string;
+  campaign?: string;
   [key: string]: any;
 }
 
-export function trackEvent(
-  eventName: AnalyticsEvent,
-  properties?: AnalyticsProperties
-) {
+function send(eventName: AnalyticsEvent, properties?: AnalyticsProperties) {
   if (typeof window === 'undefined') return;
 
   // GA4
@@ -35,7 +51,7 @@ export function trackEvent(
     });
   }
 
-  // Backend tracking
+  // Backend tracking — fire and forget
   fetch('/api/analytics/track', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -48,21 +64,75 @@ export function trackEvent(
       referrer: document.referrer,
     }),
     keepalive: true,
-  }).catch(() => {}); // fire-and-forget
+  }).catch(() => {});
 }
 
+// ── Page views ──
 export function trackPageView() {
-  trackEvent('page_view');
+  send('page_view');
 }
 
-export function trackBlogRead(slug: string) {
-  trackEvent('blog_article_read', { articleSlug: slug });
+// ── Blog ──
+let blogReadFired = new Set<string>();
+
+export function trackBlogRead(slug: string, trigger: string, scrollDepth?: number, secondsOnPage?: number) {
+  const key = `${slug}-${trigger}`;
+  if (blogReadFired.has(key)) return;
+  blogReadFired.add(key);
+
+  send('blog_article_read', {
+    articleSlug: slug,
+    readingTrigger: trigger,
+    scrollDepth,
+    secondsOnPage,
+  });
 }
 
-export function trackCTAClick(location: string) {
-  trackEvent('cta_click', { ctaLocation: location });
+export function resetBlogReadTracking() {
+  blogReadFired = new Set<string>();
 }
 
-export function trackSignupComplete() {
-  trackEvent('signup_complete');
+// ── CTA ──
+export function trackCTAClick(label: string, location: string, destination?: string, campaign?: string) {
+  send('cta_click', {
+    ctaLabel: label,
+    ctaLocation: location,
+    destination: destination || '',
+    campaign: campaign || '',
+  });
+}
+
+// ── Signup ──
+export function trackSignupPageView() {
+  send('signup_page_view');
+}
+
+export function trackSignupStarted(step?: string) {
+  send('signup_started', { signupStep: step || 'form_focus' });
+}
+
+export function trackSignupCompleted() {
+  send('signup_completed');
+}
+
+export function trackSignupError(errorType: string) {
+  send('signup_error', { errorType });
+}
+
+// ── Pages spécifiques ──
+export function trackInvitePageView() {
+  send('invite_page_view');
+}
+
+export function trackCityPageView(city: string, country: string) {
+  send('city_page_view', { city, country });
+}
+
+export function trackLandingPageView(market: string, pageType: string) {
+  send('landing_page_view', { market, pageType });
+}
+
+// ── Outbound clicks ──
+export function trackOutboundClick(destination: string, label: string) {
+  send('outbound_click', { destination, ctaLabel: label });
 }
