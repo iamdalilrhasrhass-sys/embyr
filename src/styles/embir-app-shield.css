@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════════════════
+   EMBIR APP SHIELD — Global Supernova for all connected pages
+   Applies to: dashboard, profile, messages, membres, settings,
+   premium, notifications, favoris, salons, welcome, etc.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── ALL CONNECTED PAGES — Dark cockpit base ── */
+[data-site="embir"] .emb-page section,
+[data-site="embir"] main[class*="dashboard"],
+[data-site="embir"] main[class*="profile"],
+[data-site="embir"] div[class*="min-h-screen"] {
+  background: #050308 !important;
+}
+
+/* ── ALL CARDS IN CONNECTED PAGES ── */
+[data-site="embir"] .rounded-2xl:not(nav *),
+[data-site="embir"] .rounded-3xl:not(nav *),
+[data-site="embir"] [class*="rounded-2xl"]:not(nav *):not(.emb-glass-extreme):not(.mobile-cta-primary) {
+  background: rgba(255, 255, 255, 0.015) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  transition: all 0.4s ease !important;
+}
+
+/* ── ALL INPUTS IN CONNECTED PAGES ── */
+[data-site="embir"] input[type="text"]:not(nav *),
+[data-site="embir"] input[type="email"]:not(nav *),
+[data-site="embir"] input[type="password"]:not(nav *),
+[data-site="embir"] input[type="search"]:not(nav *),
+[data-site="embir"] textarea:not(nav *),
+[data-site="embir"] select:not(nav *) {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(12px) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s !important;
+}
+[data-site="embir"] input:focus:not(nav *),
+[data-site="embir"] textarea:focus:not(nav *),
+[data-site="embir"] select:focus:not(nav *) {
+  border-color: rgba(212, 165, 116, 0.3) !important;
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.08) !important;
+  outline: none !important;
+}
+
+/* ── ALL BUTTONS IN CONNECTED PAGES ── */
+[data-site="embir"] button:not(nav *):not(.emb-cta-mega):not(.mobile-cta-primary),
+[data-site="embir"] a[class*="rounded"]:not(nav *) {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+[data-site="embir"] button[type="submit"]:not(nav *),
+[data-site="embir"] a[class*="bg-gradient"]:not(nav *) {
+  box-shadow: 0 8px 32px rgba(212, 165, 116, 0.1) !important;
+}
+[data-site="embir"] button[type="submit"]:hover:not(nav *),
+[data-site="embir"] a[class*="bg-gradient"]:hover:not(nav *) {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 48px rgba(212, 165, 116, 0.2) !important;
+}
+
+/* ── ALL LABELS ── */
+[data-site="embir"] label {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-weight: 500 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+
+/* ── ALL TEXT ── */
+[data-site="embir"] .text-gray-400,
+[data-site="embir"] .text-gray-500,
+[data-site="embir"] .text-gray-300 {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* ── ALL BORDERS ── */
+[data-site="embir"] .border-gray-200,
+[data-site="embir"] .border-gray-300,
+[data-site="embir"] .border-white\/10,
+[data-site="embir"] [class*="border-white/10"] {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ── NAVBAR SUPERNOVA ── */
+[data-site="embir"] nav.fixed {
+  background: rgba(8, 4, 16, 0.88) !important;
+  backdrop-filter: blur(32px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.06) !important;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.02) inset !important;
+}
+
+/* ── PROFILE / SETTINGS PAGES ── */
+[data-site="embir"] .profile-section,
+[data-site="embir"] .settings-section {
+  background: rgba(10, 6, 20, 0.5) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 20px !important;
+}
+
+/* ── MESSAGES PAGE ── */
+[data-site="embir"] .message-bubble {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 18px !important;
+}
+[data-site="embir"] .message-bubble-own {
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.12), rgba(255, 94, 54, 0.06)) !important;
+  border: 1px solid rgba(212, 165, 116, 0.15) !important;
+}
+
+/* ── MEMBERS / DISCOVER PAGE ── */
+[data-site="embir"] .member-card {
+  background: rgba(10, 6, 20, 0.6) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease !important;
+}
+[data-site="embir"] .member-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(212, 165, 116, 0.12) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 165, 116, 0.04) !important;
+}
+
+/* ── LOADING / SKELETON ── */
+[data-site="embir"] .animate-pulse:not(.animate-ping) {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 100%) !important;
+}
+
+/* ── SCROLLBAR ── */
+[data-site="embir"] ::-webkit-scrollbar { width: 4px; }
+[data-site="embir"] ::-webkit-scrollbar-track { background: transparent; }
+[data-site="embir"] ::-webkit-scrollbar-thumb { background: rgba(212, 165, 116, 0.15); border-radius: 2px; }
+[data-site="embir"] ::-webkit-scrollbar-thumb:hover { background: rgba(212, 165, 116, 0.3); }
+
+/* ── TABLES ── */
+[data-site="embir"] table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+[data-site="embir"] th {
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-weight: 500 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 12px 16px !important;
+}
+[data-site="embir"] td {
+  color: rgba(255, 255, 255, 0.5) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02) !important;
+  padding: 14px 16px !important;
+}
+
+/* ── BADGES / TAGS ── */
+[data-site="embir"] [class*="badge"],
+[data-site="embir"] [class*="Badge"],
+[data-site="embir"] span.rounded-full:not(.emb-cta-mega):not(nav *) {
+  background: rgba(212, 165, 116, 0.08) !important;
+  color: rgba(212, 165, 116, 0.7) !important;
+  border: 1px solid rgba(212, 165, 116, 0.1) !important;
+}
+
+/* ── LINKS ── */
+[data-site="embir"] a:not(nav *):not(.emb-cta-mega) {
+  color: rgba(212, 165, 116, 0.7) !important;
+  transition: color 0.3s !important;
+}
+[data-site="embir"] a:hover:not(nav *):not(.emb-cta-mega) {
+  color: rgba(212, 165, 116, 0.9) !important;
+}
+
+/* ── HEADINGS IN APP PAGES ── */
+[data-site="embir"] h1:not(.emb-super-title):not(.emb-hero-title) {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+}
+[data-site="embir"] h2:not(.emb-section-title) {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.01em !important;
+}
