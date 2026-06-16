@@ -72,27 +72,27 @@ export default function Home() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/auth/register"
+              href="/early-access"
               prefetch={false}
               className="inline-flex items-center justify-center rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
             >
-              Join the founding community
+              Demander un accès prioritaire
             </Link>
             <Link
-              href="/en/us/free-dating-app"
+              href="/auth/register"
               prefetch={false}
               className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white/75 transition hover:border-[#d4a574]/35 hover:text-white"
             >
-              Explore markets
+              Créer mon univers
             </Link>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/38">
-            <span>Founding community</span>
+            <span>Accès fondateur</span>
             <span>·</span>
-            <span>Not another swipe app</span>
+            <span>Welcome to my world</span>
             <span>·</span>
-            <span>Not just a Grindr alternative</span>
+            <span>Compatibilité profonde</span>
           </div>
         </div>
 
@@ -153,19 +153,19 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-5xl py-12 text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/75">Founding community</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/75">Accès fondateur</p>
         <h2 className="mt-5 font-serif text-4xl font-light text-white sm:text-6xl">
-          Ready to meet compatible people?
+          Prêt(e) à créer ton univers ?
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/45">
           Free at launch. Built for every orientation. Designed around immersive personal universes, deep compatibility, verified profiles and a safer community culture.
         </p>
         <Link
-          href="/auth/register"
+          href="/early-access"
           prefetch={false}
           className="mt-8 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
         >
-          Join the founding community
+          Demander mon accès prioritaire
         </Link>
       </section>
     </main>
