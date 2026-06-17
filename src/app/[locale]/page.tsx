@@ -34,17 +34,17 @@ const markets = [
   {
     name: "France",
     focus: "Paris first, then major cities",
-    href: "/fr/gratuit-au-lancement",
+    href: "/fr",
   },
   {
     name: "UK",
     focus: "London, Manchester, Birmingham and urban communities",
-    href: "/en/uk/free-dating-app",
+    href: "/uk",
   },
   {
     name: "US",
     focus: "New York, Los Angeles, Miami and early coastal demand",
-    href: "/en/us/free-dating-app",
+    href: "/us",
   },
   {
     name: "Switzerland",
@@ -64,7 +64,7 @@ export default function Home() {
             France · Switzerland · UK · US
           </p>
           <h1 className="mt-8 max-w-5xl font-serif text-5xl font-light tracking-[-0.03em] text-white sm:text-7xl lg:text-8xl">
-            The dating platform for everyone.
+            Free dating app for every orientation — France, Switzerland, UK &amp; US
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-white/58 sm:text-xl">
             Free at launch. Built for France, Switzerland, the UK and the United States. Embir helps people meet through immersive universes, deep compatibility, verified profiles, and shared intentions.
@@ -76,14 +76,14 @@ export default function Home() {
               prefetch={false}
               className="inline-flex items-center justify-center rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
             >
-              Demander un accès prioritaire
+              Request early access
             </Link>
             <Link
               href="/auth/register"
               prefetch={false}
               className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white/75 transition hover:border-[#d4a574]/35 hover:text-white"
             >
-              Créer mon univers
+              Create my universe
             </Link>
           </div>
 
@@ -153,9 +153,9 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-5xl py-12 text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/75">Accès fondateur</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/75">Founder access</p>
         <h2 className="mt-5 font-serif text-4xl font-light text-white sm:text-6xl">
-          Prêt(e) à créer ton univers ?
+          Ready to create your universe?
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/45">
           Free at launch. Built for every orientation. Designed around immersive personal universes, deep compatibility, verified profiles and a safer community culture.
@@ -165,7 +165,7 @@ export default function Home() {
           prefetch={false}
           className="mt-8 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
         >
-          Demander mon accès prioritaire
+          Request my early access
         </Link>
       </section>
     </main>

@@ -51,19 +51,19 @@ const frProductPages = [
 }));
 
 const frFreemiumPages = [
-  ["gratuit-au-lancement", "Gratuit au lancement"],
+  ["gratuit-au-lancement", "Gratuit au lancement", "Application de rencontre gratuite au lancement, pour toutes les orientations"],
   ["modele-freemium", "Modele freemium transparent"],
   ["pourquoi-embir-est-gratuit", "Pourquoi Embir est gratuit"],
   ["pourquoi-embir-deviendra-freemium", "Pourquoi Embir deviendra freemium"],
   ["fonctionnalites-premium", "Fonctionnalites premium futures"],
   ["communaute-fondatrice", "Communaute fondatrice"],
   ["application-mobile-a-venir", "Application mobile a venir"],
-].map(([slug, topic]) => ({
+].map(([slug, topic, h1Override]) => ({
   slug,
   locale: "fr" as const,
   type: "freemium" as const,
   title: topic,
-  h1: topic,
+  h1: h1Override ?? topic,
   topic,
   description: `${topic} sur Embir : gratuit au lancement, futur freemium transparent, moderation, securite, profils verifies et financement clair de l'application mobile.`,
   angle: `Cette page detaille le modele ${topic.toLowerCase()} avec une promesse claire : gratuit au lancement, freemium futur transparent, aucun piege d'abonnement dans la phase fondatrice.`,

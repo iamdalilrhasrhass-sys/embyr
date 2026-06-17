@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Embir — Free dating platform for France, UK and USA",
+    title: "Embir — Free dating platform for France, Switzerland, UK and USA",
     description: "Free at launch. France, Switzerland, UK, United States. Every orientation, preferences, compatibility and verified profiles.",
     images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "Embir" }],
   },

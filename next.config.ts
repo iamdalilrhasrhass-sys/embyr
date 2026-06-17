@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
       { source: "/decouvrir", destination: "/fr/membres", permanent: true },
       { source: "/members/:path*", destination: "/fr/membres/:path*", permanent: true },
       { source: "/profiles/:path*", destination: "/fr/membres/:path*", permanent: true },
+      // SEO canonicals — long-form aliases to short canonical URLs
+      { source: "/en/uk/free-dating-app", destination: "/uk", permanent: true },
+      { source: "/en/us/free-dating-app", destination: "/us", permanent: true },
     ];
   },
 };
