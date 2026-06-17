@@ -33,6 +33,26 @@ export type SeoEntry = {
 };
 
 export const seoEntries: SeoEntry[] = [
+  // Core legal & safety pages (newly created)
+  { path: "/en/terms", category: "product" as const, locale: "en" as const, priority: 0.7 },
+  { path: "/fr/conditions", category: "product" as const, locale: "fr" as const, priority: 0.7 },
+  { path: "/en/privacy", category: "product" as const, locale: "en" as const, priority: 0.7 },
+  { path: "/fr/confidentialite", category: "product" as const, locale: "fr" as const, priority: 0.7 },
+  { path: "/en/safety", category: "product" as const, locale: "en" as const, priority: 0.75 },
+  { path: "/fr/securite", category: "product" as const, locale: "fr" as const, priority: 0.75 },
+  { path: "/en/age-verification", category: "product" as const, locale: "en" as const, priority: 0.65 },
+  { path: "/fr/verification-age", category: "product" as const, locale: "fr" as const, priority: 0.65 },
+  { path: "/en/moderation", category: "product" as const, locale: "en" as const, priority: 0.7 },
+  { path: "/fr/moderation", category: "product" as const, locale: "fr" as const, priority: 0.7 },
+  { path: "/en/about", category: "product" as const, locale: "en" as const, priority: 0.8 },
+  { path: "/fr/a-propos", category: "product" as const, locale: "fr" as const, priority: 0.8 },
+  { path: "/en/support", category: "product" as const, locale: "en" as const, priority: 0.65 },
+  { path: "/fr/support", category: "product" as const, locale: "fr" as const, priority: 0.65 },
+  // Static dedicated SEO pages
+  { path: "/en/verified-dating-app", category: "product" as const, locale: "en" as const, priority: 0.88 },
+  { path: "/en/site-rencontre-gay", category: "product" as const, locale: "en" as const, priority: 0.85 },
+  { path: "/en/serious-dating-app", category: "product" as const, locale: "en" as const, priority: 0.85 },
+  // Original entries
   ...productPages.flatMap((page) => [
     { path: `/en/product/${page.slug}`, category: "product" as const, locale: "en" as const, priority: 0.9 },
     { path: `/fr/product/${page.slug}`, category: "product" as const, locale: "fr" as const, priority: 0.9 },

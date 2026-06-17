@@ -2,86 +2,116 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Grindr Alternative — A Better Gay Dating App",
-  description: "Embir is the modern alternative to Grindr. No ads, verified profiles, AI-powered matching, and completely free during launch. Compare the difference.",
-alternates: {
+  title: "Grindr Alternative — More Compatibility, Less Noise | Embir",
+  description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions, and a free launch — for all orientations, not just gay men.",
+  alternates: {
     canonical: "https://embir.xyz/grindr-alternative",
-    languages: {
-      "fr": "https://embir.xyz/comparaison/grindr-vs-embir",
-    },
+    languages: { "fr": "https://embir.xyz/fr/alternative-grindr" },
   },
   openGraph: {
-    title: "Grindr Alternative — A Better Gay Dating App",
-    description: "Embir is the modern alternative to Grindr. No ads, verified profiles, AI-powered matching, and completely free during launch. Compare the difference.",
+    title: "Grindr Alternative — More Compatibility, Less Noise | Embir",
+    description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions, and a free launch — for all orientations, not just gay men.",
     url: "https://embir.xyz/grindr-alternative",
     locale: "en_US",
     siteName: "Embir",
   },
+  twitter: { card: "summary_large_image", title: "Grindr Alternative — More Compatibility, Less Noise | Embir", description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions.", images: ["/og-image.png"] },
+  robots: { index: true, follow: true },
 };
 
 export default function Page() {
   return (
-    <main className="emb-page min-h-screen">
-      <section className="px-4 pt-32 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d4a574]/20 bg-[#d4a574]/5 px-4 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574]" />
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#d4a574]/80">Alternative</span>
+    <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+      <article className="mx-auto max-w-3xl">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Comparison</p>
+        <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">A Grindr alternative for when you want more than proximity</h1>
+        <p className="mt-6 text-lg leading-relaxed text-white/50">
+          Grindr changed gay dating forever. But for many, the constant stream of nearby profiles, the pressure to meet instantly, and the limited focus on compatibility have become exhausting. Embir offers a different rhythm — still for gay and bi men, but also for everyone else.
+        </p>
+
+        <section className="mt-10 space-y-5 text-base leading-relaxed text-white/55">
+          <div className="overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02]">
+            <h2 className="p-5 font-serif text-2xl text-white border-b border-white/[0.04]">How Embir compares</h2>
+            {[
+              ["Launch price", "Free with paid tiers", "Free during launch phase"],
+              ["Core audience", "Gay, bi, trans, queer men", "All orientations (gay, lesbian, bi, trans, queer, straight)"],
+              ["Discovery method", "Distance-first grid", "Preferences and compatibility first"],
+              ["Profile depth", "Photos + short bio", "Personal universe with interests, intentions, preferences"],
+              ["Verification", "Optional photo verification", "Selfie verification to reduce fake profiles"],
+              ["Safety tools", "Blocking and reporting", "Blocking, reporting, human moderation, orientation visibility controls"],
+              ["Future model", "Subscription tiers (Xtra, Unlimited)", "Transparent freemium to fund mobile app and safety"],
+            ].map(([feature, grindr, embir]) => (
+              <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
+                <div className="text-white/60">{feature}</div>
+                <div className="text-center text-white/30">{grindr}</div>
+                <div className="text-center font-semibold text-[#d4a574]">{embir}</div>
+              </div>
+            ))}
           </div>
-          <h1 className="font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-5xl">Looking for a Grindr alternative? Meet Embir.</h1>
-          <p className="mt-6 text-lg leading-relaxed text-white/50">Embir is the modern alternative to Grindr. No ads, verified profiles, AI-powered matching, and completely free during launch. Compare the difference.</p>
-          <div className="mt-8 flex gap-4">
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2]">Create Free Profile</Link>
-            <Link href="/" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 hover:border-white/20">Home</Link>
+
+          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+            <h2 className="font-serif text-2xl text-white">Why people look for Grindr alternatives</h2>
+            <p className="mt-4">We&apos;ve heard the same things from people exploring options: &quot;It&apos;s too focused on hookups,&quot; &quot;I want more than a torso pic,&quot; &quot;The free version is too limited,&quot; &quot;I want to know if we&apos;re actually compatible before meeting.&quot;</p>
+            <p className="mt-3">These aren&apos;t criticisms of Grindr — they&apos;re signals that different people want different things from dating apps. Embir doesn&apos;t try to be a better Grindr. It tries to be a different kind of space: one where compatibility, safety and verified identity carry more weight than distance alone.</p>
           </div>
-        </div>
-      </section>
-      <section className="px-4 py-16 sm:px-6 lg:px-8 bg-white/[0.01]">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="font-serif text-3xl text-white mb-8">Why choose Embir</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Verified Profiles</h3>
-              <p className="text-sm text-white/45">Every member verifies their identity by selfie. No fake profiles, no bots, no disappointments.</p>
-            </div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">100% Free During Launch</h3>
-              <p className="text-sm text-white/45">Unlimited messaging, AI matching, complete profiles. No subscription, no ads.</p>
-            </div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3>
-              <p className="text-sm text-white/45">Our DeepSeek AI learns your preferences to suggest truly compatible profiles.</p>
-            </div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Privacy & Respect</h3>
-              <p className="text-sm text-white/45">Your data is never sold. Zero intrusive ads. Human moderation.</p>
+
+          <div>
+            <h2 className="font-serif text-3xl text-white">What Embir does differently</h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {[
+                ["Not just for gay men", "Embir welcomes everyone. Gay and bi men share the platform with lesbians, trans people, queer folks, and straight people — but orientation controls ensure you only see compatible profiles."],
+                ["Verified, not anonymous", "Selfie verification means fewer blank profiles and catfish accounts. You know you're talking to a real person."],
+                ["Intentions that matter", "Looking for a relationship? Open to casual? Just exploring? Your intentions are visible and filterable."],
+                ["Free at launch", "No subscription needed to message, match, or browse. The founding community tests everything before any premium features arrive."],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+                  <h3 className="font-semibold text-white/85">{title}</h3>
+                  <p className="mt-2 text-sm text-white/45">{text}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl text-white mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Is Embir really free?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Yes. During the launch phase, all features are free — messaging, matching, profiles. Founding members keep premium access for life.</p>
-            </details>
-            <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">How are profiles verified?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Each new member completes a real-time selfie verification. Our system compares the profile photo with a live selfie.</p>
-            </details>
-            <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Where is Embir available?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir is available in France, the US, and the UK — with active communities in Paris, New York, London, and many more cities.</p>
-            </details>
+
+          <div>
+            <h2 className="font-serif text-3xl text-white">Frequently asked questions</h2>
+            <div className="mt-6 space-y-3">
+              {[
+                ["Is Embir trying to replace Grindr?", "No. Grindr serves a specific purpose well. Embir is for people who want a different experience: more compatibility context, verified profiles, and a platform that serves all orientations — not just gay men."],
+                ["Can I use both Embir and Grindr?", "Of course. Many people use multiple dating apps for different purposes. Embir might be where you look for more meaningful connections while using other apps for different needs."],
+                ["Is Embir free like Grindr?", "Embir is completely free during launch with no paywalls on core features. A freemium model may come later, but it will be transparent — founding members will know what's changing before it changes."],
+                ["Does Embir have the same user base as Grindr?", "Embir is in its launch phase, building its community city by city. The user base starts smaller but with verified profiles and clearer intentions — quality over quantity from day one."],
+              ].map(([q, a]) => (
+                <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
+                  <summary className="cursor-pointer text-sm font-semibold text-white/80">{q}</summary>
+                  <p className="mt-3 text-sm leading-relaxed text-white/45">{a}</p>
+                </details>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="px-4 pb-16 text-center">
-        <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create Free Profile</Link>
-        <p className="mt-4 text-xs text-white/20">18+ only. Free during launch. No commitment.</p>
-      </section>
+        </section>
+
+        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+          <h2 className="font-serif text-3xl text-white">Try a different approach</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your free verified profile and experience dating where compatibility comes before distance.</p>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+        </section>
+
+        <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
+          <h2 className="font-serif text-2xl text-white">Explore more</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {[
+              ["/tinder-alternative", "Tinder alternative"],
+              ["/lgbtq-dating-app", "LGBTQ dating app"],
+              ["/verified-dating-app", "Verified dating"],
+              ["/free-dating-app", "Free dating app"],
+              ["/safety", "Safety tools"],
+              ["/about", "About Embir"],
+            ].map(([href, label]) => (
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+            ))}
+          </div>
+        </section>
+      </article>
     </main>
   );
 }

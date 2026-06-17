@@ -298,7 +298,7 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
 
 function EditorialSections({ page }: { page: ResolvedSeoPage }) {
   const topic = page.topic ?? page.h1;
-  const place = page.city ?? (page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? (page.locale === "fr" ? "la Suisse" : "Switzerland") : page.locale === "fr" ? "la France" : "your market");
+  const place = page.city ?? (page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? (page.locale === "fr" ? "la Suisse" : "Switzerland") : page.locale === "fr" ? "la France" : "the regions Embir serves");
 
   if (page.locale === "fr") {
     return (
@@ -376,7 +376,7 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
 }
 
 export function SeoCityPage({ page }: { page: ResolvedSeoPage }) {
-  const city = page.city ?? "your city";
+  const city = page.city ?? "this city";
   const localizedIntro =
     page.locale === "fr"
       ? `A ${city}, Embir aide les personnes majeures a chercher une rencontre plus claire : rencontre serieuse, rencontre LGBTQ+, rencontre gay, rencontre inclusive, ou simple envie de discuter avec des profils verifies. La plateforme reste gratuite au lancement pour permettre a la communaute fondatrice de se former avant le futur modele freemium.`
