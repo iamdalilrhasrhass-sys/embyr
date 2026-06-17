@@ -37,15 +37,15 @@ export default function Page() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3>
-              <p className="text-sm text-white/45">Chaque membre vérifie son identité par selfie. Pas de faux profils, pas de robots, pas de déceptions.</p>
+              <p className="text-sm text-white/45">La vérification fait partie des fondations du produit. Les membres peuvent se vérifier par selfie pour obtenir un badge vérifié et renforcer la confiance dans la communauté.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">100% gratuit au lancement</h3>
               <p className="text-sm text-white/45">Messagerie illimitée, matching IA, profils complets. Sans abonnement, sans publicité.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Matching intelligent</h3>
-              <p className="text-sm text-white/45">Notre IA DeepSeek analyse vos préférences pour vous suggérer des profils vraiment compatibles.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Compatibilité réelle</h3>
+              <p className="text-sm text-white/45">Embir est conçu pour une découverte basée sur la compatibilité — préférences, intentions et orientation guident les suggestions, pas seulement les photos.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Respect et confidentialité</h3>
@@ -60,7 +60,7 @@ export default function Page() {
           <div className="space-y-4">
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il vraiment gratuit ?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Oui. Pendant la phase de lancement, toutes les fonctionnalités sont gratuites. Les membres fondateurs conservent l'accès premium à vie.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Oui. Pendant la phase de lancement, toutes les fonctionnalités sont gratuites. Les membres fondateurs recevront un accès prioritaire et des avantages produit lors du lancement des fonctionnalités premium.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Comment les profils sont-ils vérifiés ?</summary>
@@ -68,7 +68,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Dans quelles villes Embir est-il disponible ?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir est disponible partout en France, avec des communautés actives à Paris, Lyon, Marseille, Toulouse, Nice, Lille, Bordeaux et Nantes.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Embir lance ses premières communautés progressivement en France, aux États-Unis et au Royaume-Uni — en commençant par des membres fondateurs dans des villes clés comme Paris, New York et Londres.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il une alternative à Grindr ?</summary>

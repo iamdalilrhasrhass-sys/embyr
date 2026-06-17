@@ -42,15 +42,15 @@ export default function Page() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Verified Profiles</h3>
-              <p className="text-sm text-white/45">Every member verifies their identity by selfie. No fake profiles, no bots, no disappointments.</p>
+              <p className="text-sm text-white/45">Profile verification is part of Embir's product foundation. Members can verify by selfie to earn a verified badge and build community trust.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">100% Free During Launch</h3>
               <p className="text-sm text-white/45">Unlimited messaging, AI matching, complete profiles. No subscription, no ads.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3>
-              <p className="text-sm text-white/45">Our DeepSeek AI learns your preferences to suggest truly compatible profiles.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Compatibility Matching</h3>
+              <p className="text-sm text-white/45">Embir is designed to support compatibility-based discovery — preferences, intentions and orientation guide suggestions, not just photos.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Privacy & Respect</h3>
@@ -65,7 +65,7 @@ export default function Page() {
           <div className="space-y-4">
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Is Embir really free?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Yes. During the launch phase, all features are free — messaging, matching, profiles. Founding members keep premium access for life.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Yes. During the launch phase, all features are free — messaging, matching, profiles. Founding members will receive priority access and product benefits when premium features arrive.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">How are profiles verified?</summary>
@@ -73,7 +73,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Where is Embir available?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir is available in France, the US, and the UK — with active communities in Paris, New York, London, and many more cities.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Embir is launching its first communities progressively in France, the US, and the UK — starting with founding members in key cities like Paris, New York and London.</p>
             </details>
           </div>
         </div>
