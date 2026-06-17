@@ -52,6 +52,18 @@ export const seoEntries: SeoEntry[] = [
   { path: "/en/verified-dating-app", category: "product" as const, locale: "en" as const, priority: 0.88 },
   { path: "/en/site-rencontre-gay", category: "product" as const, locale: "en" as const, priority: 0.85 },
   { path: "/en/serious-dating-app", category: "product" as const, locale: "en" as const, priority: 0.85 },
+  { path: "/en/paris", category: "france" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/paris", category: "france" as const, locale: "fr" as const, priority: 0.92 },
+  { path: "/en/freemium", category: "freemium" as const, locale: "en" as const, priority: 0.88 },
+  { path: "/fr/freemium", category: "freemium" as const, locale: "fr" as const, priority: 0.88 },
+  { path: "/en/free-dating-app", category: "product" as const, locale: "en" as const, priority: 0.92 },
+  { path: "/fr/free-dating-app", category: "product" as const, locale: "fr" as const, priority: 0.92 },
+  { path: "/en/grindr-alternative", category: "product" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/grindr-alternative", category: "product" as const, locale: "fr" as const, priority: 0.9 },
+  { path: "/en/tinder-alternative", category: "product" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/tinder-alternative", category: "product" as const, locale: "fr" as const, priority: 0.9 },
+  { path: "/en/lgbtq-dating-app", category: "product" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/lgbtq-dating-app", category: "product" as const, locale: "fr" as const, priority: 0.9 },
   // Original entries
   ...productPages.flatMap((page) => [
     { path: `/en/product/${page.slug}`, category: "product" as const, locale: "en" as const, priority: 0.9 },

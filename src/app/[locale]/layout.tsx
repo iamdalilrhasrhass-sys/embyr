@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     twitter: { card: 'summary_large_image', title: t('title'), description: t('description'), images: ['/og-image.png'] },
     manifest: '/manifest.webmanifest',
     appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'Embir' },
-    robots: { index: true, follow: true },
+    robots: locale === 'en' || locale === 'fr' ? { index: true, follow: true } : { index: false, follow: false },
   };
 }
 
