@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Embir">
+  <defs>
+    <radialGradient id="mhBody" cx="32" cy="33" r="29" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff3d6"/><stop offset="0.16" stop-color="#ffcf63"/><stop offset="0.38" stop-color="#ff8a1e"/><stop offset="0.60" stop-color="#ff3326"/><stop offset="0.80" stop-color="#a30f1d"/><stop offset="1" stop-color="#45070f"/></radialGradient>
+    <radialGradient id="mhCore" cx="32" cy="37" r="15" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff8ee" stop-opacity="0.95"/><stop offset="0.5" stop-color="#ffcf7a" stop-opacity="0.5"/><stop offset="1" stop-color="#ff8a1e" stop-opacity="0"/></radialGradient>
+    <radialGradient id="mhHalo" cx="32" cy="30" r="32" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff6a2a" stop-opacity="0.55"/><stop offset="0.6" stop-color="#ff3a2a" stop-opacity="0.18"/><stop offset="1" stop-color="#ff3a2a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="mhFlame" x1="32" y1="18" x2="32" y2="2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff5a1f" stop-opacity="0.85"/><stop offset="0.45" stop-color="#ffae3a"/><stop offset="0.8" stop-color="#ffe79a"/><stop offset="1" stop-color="#fff7e0"/></linearGradient>
+    <linearGradient id="mhFlameC" x1="32" y1="16" x2="32" y2="3" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffb43c"/><stop offset="0.5" stop-color="#ffe79a"/><stop offset="1" stop-color="#fffaf0"/></linearGradient>
+    <linearGradient id="mhRim" x1="32" y1="9" x2="32" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe0b0"/><stop offset="0.5" stop-color="#ff9a5a" stop-opacity="0.3"/><stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/></linearGradient>
+    <radialGradient id="mhSpark" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fffcef"/><stop offset="1" stop-color="#ffd36b"/></radialGradient>
+    <filter id="mhBloom" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="mhFlameB" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.4"/></filter>
+    <filter id="mhGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="mhSpec" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="mhCrack" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.5"/></filter>
+    <clipPath id="mhClip"><path d="M32 57 C20 47 6 38 6 23.5 C6 15 12 9.5 19 9.5 C25 9.5 30 13.5 32 18 C34 13.5 39 9.5 45 9.5 C52 9.5 58 15 58 23.5 C58 38 44 47 32 57 Z"/></clipPath>
+  </defs>
+  <ellipse cx="32" cy="30" rx="30" ry="30" fill="url(#mhHalo)" filter="url(#mhBloom)"/>
+  <g filter="url(#mhFlameB)">
+    <path d="M21 16 C20.5 12 21.5 8 23 5 C24 8.5 25 12 25.5 16 Z" fill="url(#mhFlame)" opacity="0.85"/>
+    <path d="M43 16 C42.5 12 43.5 8 45 5.5 C46 9 47 12.5 47.5 16 Z" fill="url(#mhFlame)" opacity="0.85"/>
+    <path d="M26.5 17 C25.5 11 28 5.5 32 2 C36 5.5 38.5 11 37.5 17 C35 14 29 14 26.5 17 Z" fill="url(#mhFlame)"/>
+  </g>
+  <path d="M30 16 C29.5 11 31 7 32.5 3.5 C34 7 35.5 11 35 16 C33.5 14 31.5 14 30 16 Z" fill="url(#mhFlameC)" filter="url(#mhGlow)"/>
+  <path d="M32 57 C20 47 6 38 6 23.5 C6 15 12 9.5 19 9.5 C25 9.5 30 13.5 32 18 C34 13.5 39 9.5 45 9.5 C52 9.5 58 15 58 23.5 C58 38 44 47 32 57 Z" fill="url(#mhBody)"/>
+  <g clip-path="url(#mhClip)">
+    <ellipse cx="32" cy="37" rx="17" ry="16" fill="url(#mhCore)"/>
+    <g stroke="#ffe9b0" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.3" filter="url(#mhCrack)"><path d="M32 36 L27 29"/><path d="M32 36 L38 30"/><path d="M32 36 L30 45"/><path d="M32 36 L40 41"/><path d="M32 36 L24 37"/></g>
+    <ellipse cx="23" cy="18" rx="6.5" ry="3.4" fill="#ffffff" opacity="0.22" transform="rotate(-32 23 18)" filter="url(#mhSpec)"/>
+  </g>
+  <path d="M32 57 C20 47 6 38 6 23.5 C6 15 12 9.5 19 9.5 C25 9.5 30 13.5 32 18 C34 13.5 39 9.5 45 9.5 C52 9.5 58 15 58 23.5 C58 38 44 47 32 57 Z" fill="none" stroke="url(#mhRim)" stroke-width="1.1" opacity="0.5"/>
+  <g filter="url(#mhGlow)"><circle cx="32" cy="3" r="1.3" fill="url(#mhSpark)"/><circle cx="40" cy="6" r="0.9" fill="url(#mhSpark)" opacity="0.8"/><circle cx="24" cy="5" r="0.8" fill="url(#mhSpark)" opacity="0.7"/></g>
+</svg>

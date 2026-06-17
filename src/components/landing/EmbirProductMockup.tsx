@@ -24,7 +24,7 @@ export default function EmbirProductMockup() {
           </div>
 
           <div className="flex items-center gap-2 px-5 py-4">
-            <EmbirLogo size="sm" showText={false} />
+            <EmbirLogo size="sm" variant="mark" />
             <div>
               <div className="text-sm font-black tracking-[-0.06em] text-white">
                 embir<span className="text-[#ff5e36]">.</span>

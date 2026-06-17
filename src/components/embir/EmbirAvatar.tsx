@@ -1,3 +1,5 @@
+import EmbirLogo from "@/components/brand/EmbirLogo";
+
 export default function EmbirAvatar({
   src, name, size = 48, isPremium, isOnline,
 }: {
@@ -14,7 +16,9 @@ export default function EmbirAvatar({
       {/* Avatar */}
       <div className="relative w-full h-full rounded-full overflow-hidden bg-[var(--eb-bg-elev-2)] flex items-center justify-center border-2 border-[var(--eb-bg-base)]">
         {src ? <img src={src} alt={name} className="w-full h-full object-cover" /> : (
-          <span className="font-semibold text-[var(--eb-text-secondary)]" style={{ fontSize: size * 0.4 }}>{initials}</span>
+          <div className="flex items-center justify-center w-full h-full rounded-full bg-[#0a0614]" style={{ transform: `scale(${size / 48})` }}>
+            <EmbirLogo size="sm" variant="mark" />
+          </div>
         )}
       </div>
       {/* Online dot */}

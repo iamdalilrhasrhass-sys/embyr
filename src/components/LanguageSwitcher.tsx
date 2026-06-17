@@ -4,31 +4,8 @@ import { useState, useRef, useEffect } from "react";
 
 const LANGUAGES = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
-  { code: "it", label: "Italiano", flag: "🇮🇹" },
-  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
-  { code: "ru", label: "Русский", flag: "🇷🇺" },
-  { code: "zh", label: "中文", flag: "🇨🇳" },
-  { code: "ja", label: "日本語", flag: "🇯🇵" },
-  { code: "ko", label: "한국어", flag: "🇰🇷" },
-  { code: "ar", label: "العربية", flag: "🇸🇦" },
-  { code: "hi", label: "हिन्दी", flag: "🇮🇳" },
-  { code: "tr", label: "Türkçe", flag: "🇹🇷" },
-  { code: "pl", label: "Polski", flag: "🇵🇱" },
-  { code: "sv", label: "Svenska", flag: "🇸🇪" },
-  { code: "da", label: "Dansk", flag: "🇩🇰" },
-  { code: "fi", label: "Suomi", flag: "🇫🇮" },
-  { code: "no", label: "Norsk", flag: "🇳🇴" },
-  { code: "th", label: "ไทย", flag: "🇹🇭" },
-  { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
-  { code: "id", label: "Bahasa Indonesia", flag: "🇮🇩" },
-  { code: "ms", label: "Bahasa Melayu", flag: "🇲🇾" },
-  { code: "ro", label: "Română", flag: "🇷🇴" },
-  { code: "uk", label: "Українська", flag: "🇺🇦" },
-];
+  { code: "en", label: "English",  flag: "🇬🇧" },
+] as const;
 
 const getCookie = (name: string) => {
   const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
