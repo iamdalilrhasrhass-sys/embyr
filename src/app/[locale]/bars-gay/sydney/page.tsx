@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Gay Bars in Sydney — Guide & Map | Embir",
+  title: "Best Gay Bars in Sydney — Guide & Map",
   description: "Discover the best gay bars in Sydney with Embir's curated guide. Find LGBTQ-friendly spots, meet locals, and explore the scene.",
-  keywords: ["gay bars Sydney", "LGBTQ bars Sydney", "gay nightlife Sydney", "gay scene Sydney"],
   alternates: { canonical: "https://embir.xyz/bars-gay/sydney" },
 };
 

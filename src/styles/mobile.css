@@ -133,7 +133,7 @@
   }
 
   /* ── LANDING: CTA buttons full-width ── */
-  [data-site="embir"] .emb-page .flex-col.sm\\:flex-row {
+  [data-site="embir"] .emb-page [class*="sm:flex-row"] {
     flex-direction: column !important;
   }
 
@@ -162,7 +162,7 @@
     padding: 1.5rem !important;
   }
 
-  [data-site="embir"] .emb-page .md\\:p-16 {
+  [data-site="embir"] .emb-page [class*="md:p-16"] {
     padding: 1.5rem !important;
   }
 
@@ -204,7 +204,7 @@
     font-size: 3.5rem !important;
   }
 
-  [data-site="embir"] .emb-page .grid.lg\\:grid-cols-4 {
+  [data-site="embir"] .emb-page [class*="lg:grid-cols-4"] {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
@@ -291,6 +291,84 @@
   [data-site="embir"] .emb-diamond,
   [data-site="embir"] .emb-chain,
   [data-site="embir"] .emb-bolt {
+    display: none !important;
+  }
+
+  /* ── 20000X LANDING: Sticky bottom CTA bar ── */
+  .mobile-cta-bar {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(10, 6, 20, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid rgba(212, 165, 116, 0.12);
+    animation: slideUpMobile 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes slideUpMobile {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .mobile-cta-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff1f5a, #ff5e36);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(255, 31, 90, 0.3);
+    transition: all 0.3s;
+  }
+
+  .mobile-cta-primary:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 16px rgba(255, 31, 90, 0.2);
+  }
+
+  /* ── 20000X LANDING: Reduce particles on mobile ── */
+  [data-site="embir"] canvas.fixed.inset-0 {
+    opacity: 0.3 !important;
+  }
+
+  /* ── 20000X LANDING: AuroraBubbles lighter ── */
+  [data-site="embir"] .emb-page .absolute.inset-0.overflow-hidden.pointer-events-none > div {
+    opacity: 0.4 !important;
+  }
+
+  /* ── 20000X LANDING: Stagger faster on mobile ── */
+  .stagger-item {
+    animation-duration: 0.5s !important;
+  }
+
+  /* ── 20000X LANDING: GlassCard3D simpler ── */
+  .emb-page [class*="rounded-3xl"][class*="backdrop-blur"] {
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* ── 20000X LANDING: Reduce 3D perspective on mobile ── */
+  .emb-page[style*="perspective"] > section:first-of-type {
+    perspective: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   20000X LANDING: Desktop-only mobile-cta-bar hidden
+   ═══════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .mobile-cta-bar {
     display: none !important;
   }
 }

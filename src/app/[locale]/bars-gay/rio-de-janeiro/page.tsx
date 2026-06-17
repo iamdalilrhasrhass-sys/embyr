@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Gay Bars in Rio de Janeiro — Guide & Map | Embir",
+  title: "Best Gay Bars in Rio de Janeiro — Guide & Map",
   description: "Discover the best gay bars in Rio de Janeiro with Embir's curated guide. Find LGBTQ-friendly spots, meet locals, and explore the scene.",
-  keywords: ["gay bars Rio de Janeiro", "LGBTQ bars Rio de Janeiro", "gay nightlife Rio de Janeiro", "gay scene Rio de Janeiro"],
   alternates: { canonical: "https://embir.xyz/bars-gay/rio-de-janeiro" },
 };
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating Site — 100% Free, No Ads | Embir",
+  title: "Gay Dating Site — 100% Free, No Ads",
   description: "The best gay dating site. 100% free, no ads, 25 languages.",
   alternates: { canonical: "https://embir.xyz/site-rencontre-gay" },
 };

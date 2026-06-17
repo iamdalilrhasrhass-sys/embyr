@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Gay Bars in Amsterdam — Guide & Map | Embir",
+  title: "Best Gay Bars in Amsterdam — Guide & Map",
   description: "Discover the best gay bars in Amsterdam with Embir's curated guide. Find LGBTQ-friendly spots, meet locals, and explore the scene.",
-  keywords: ["gay bars Amsterdam", "LGBTQ bars Amsterdam", "gay nightlife Amsterdam", "gay scene Amsterdam"],
   alternates: { canonical: "https://embir.xyz/bars-gay/amsterdam" },
 };
 

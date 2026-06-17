@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Gay Bars in San Francisco — Guide & Map | Embir",
+  title: "Best Gay Bars in San Francisco — Guide & Map",
   description: "Discover the best gay bars in San Francisco with Embir's curated guide. Find LGBTQ-friendly spots, meet locals, and explore the scene.",
-  keywords: ["gay bars San Francisco", "LGBTQ bars San Francisco", "gay nightlife San Francisco", "gay scene San Francisco"],
   alternates: { canonical: "https://embir.xyz/bars-gay/san-francisco" },
 };
 

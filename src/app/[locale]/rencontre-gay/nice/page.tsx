@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Nice — 100% Free App | Embir",
+  title: "Gay Dating in Nice — 100% Free App",
   description: "Gay dating in Nice on Embir. 100% free app with no ads. Create your profile and meet guys near you in Nice.",
-  keywords: ["gay dating Nice", "gay Nice", "meet guys Nice", "gay app Nice", "LGBTQ Nice"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/nice" },
 };
 

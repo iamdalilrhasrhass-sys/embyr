@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "للمثليين ومجتمع كوير",
-    "title1": "مواعيد",
-    "title2": "بين الرجال.",
-    "subtitle": "إمبير هو تطبيق مواعدة جديد للمثليين، صُمم لمن يبحثون عن الحقيقي. لا ضغط، لا حكم. مجاني أثناء الإطلاق.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "أنشئ ملفي الشخصي مجانًا",
     "secondary": "اكتشف الأعضاء"
   },
@@ -50,7 +50,7 @@
     "translate": "عرض الترجمة"
   },
   "footer": {
-    "tagline": "تطبيق مواعدة مجاني للمثليين",
+    "tagline": "Free-at-launch dating platform",
     "legal": "الإشعارات القانونية",
     "privacy": "الخصوصية",
     "cookies": "ملفات تعريف الارتباط",

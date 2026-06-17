@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Cape Town — 100% Free App | Embir",
+  title: "Gay Dating in Cape Town — 100% Free App",
   description: "Gay dating in Cape Town on Embir. 100% free app with no ads. Create your profile and meet guys near you in Cape Town.",
-  keywords: ["gay dating Cape Town", "gay Cape Town", "meet guys Cape Town", "gay app Cape Town", "LGBTQ Cape Town"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/cape-town" },
 };
 

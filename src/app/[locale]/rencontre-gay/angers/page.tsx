@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Angers — 100% Free App | Embir",
+  title: "Gay Dating in Angers — 100% Free App",
   description: "Gay dating in Angers on Embir. 100% free app with no ads. Create your profile and meet guys near you in Angers.",
-  keywords: ["gay dating Angers", "gay Angers", "meet guys Angers", "gay app Angers", "LGBTQ Angers"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/angers" },
 };
 

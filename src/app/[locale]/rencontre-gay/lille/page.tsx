@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Lille — 100% Free App | Embir",
+  title: "Gay Dating in Lille — 100% Free App",
   description: "Gay dating in Lille on Embir. 100% free app with no ads. Create your profile and meet guys near you in Lille.",
-  keywords: ["gay dating Lille", "gay Lille", "meet guys Lille", "gay app Lille", "LGBTQ Lille"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/lille" },
 };
 

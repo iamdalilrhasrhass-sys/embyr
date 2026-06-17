@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Grindr vs Alternatives — The Honest 2026 Comparison | Embir",
+  title: "Grindr vs Alternatives — The Honest 2026 Comparison",
   description: "Tired of Grindr's paywalls and ads? Compare Grindr against the best free gay dating alternatives in 2026. Real features, real prices, no bias.",
-  keywords: ["Grindr alternative", "gay app comparison", "free gay dating", "Grindr vs", "gay app no ads"],
   alternates: { canonical: "https://embir.xyz/grindr-vs-alternatives" },
 };
 

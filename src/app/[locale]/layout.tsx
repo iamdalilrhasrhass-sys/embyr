@@ -13,6 +13,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { VibeKeyframes } from "@/components/VibeEffects";
 import ScrollProgress from "@/components/ScrollProgress";
 import Footer from "@/components/layout/Footer";
+import GlobalJsonLd from "@/components/seo/GlobalJsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://embir.xyz"),
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} data-site="embir">
       <head>
+        <GlobalJsonLd />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

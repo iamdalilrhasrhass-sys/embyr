@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Achievements — Embir' };
+export const metadata = { title: 'Achievements' };
 
 const ALL_ACHIEVEMENTS = [
   { type: 'profile_complete', name: 'Newcomer', description: 'Complete your profile', icon: '🌟' },

@@ -1,0 +1,1143 @@
+EMBIR WAR ROOM DIFF SUMMARY PATCH
+Generated: Mon Jun 15 04:08:47 UTC 2026
+Scope: package.json, homepage, layout footer, seo audit script, reports. Worktree is dirty from legacy changes; no commit made.
+
+--- git diff tracked files ---
+diff --git a/package.json b/package.json
+index 52ac640..6b5ec65 100644
+--- a/package.json
++++ b/package.json
+@@ -4,9 +4,11 @@
+   "private": true,
+   "scripts": {
+     "dev": "next dev",
+-    "build": "next build",
++    "build": "next build --webpack",
+     "start": "next start",
+-    "lint": "eslint"
++    "lint": "npm run lint:seo",
++    "lint:seo": "eslint src/seo src/components/seo-pages.tsx src/components/seo/SchemaOrg.tsx src/components/layout/Navbar.tsx src/components/layout/Footer.tsx src/app/sitemap.ts 'src/app/[locale]/layout.tsx' 'src/app/[locale]/page.tsx' 'src/app/[locale]/auth/register/page.tsx' 'src/app/[locale]/france/[slug]/page.tsx' 'src/app/[locale]/usa/[slug]/page.tsx' 'src/app/[locale]/us/page.tsx' 'src/app/[locale]/us/[slug]/page.tsx' 'src/app/[locale]/us/dating/[slug]/page.tsx' 'src/app/[locale]/uk/page.tsx' 'src/app/[locale]/uk/[slug]/page.tsx' 'src/app/[locale]/uk/dating/[slug]/page.tsx' 'src/app/[locale]/guides/[slug]/page.tsx' 'src/app/[locale]/comparisons/[slug]/page.tsx' 'src/app/[locale]/comparaison/[slug]/page.tsx' 'src/app/[locale]/comparison/[slug]/page.tsx' 'src/app/[locale]/product/[slug]/page.tsx' 'src/app/[locale]/freemium/[slug]/page.tsx' 'src/app/[locale]/blog/[slug]/page.tsx' 'src/app/[locale]/rencontre/[slug]/page.tsx' 'src/app/[locale]/[slug]/page.tsx'",
++    "seo:audit": "node scripts/seo-audit.mjs"
+   },
+   "dependencies": {
+     "@prisma/adapter-pg": "^7.8.0",
+diff --git a/src/app/[locale]/layout.tsx b/src/app/[locale]/layout.tsx
+index a098233..e7da161 100644
+--- a/src/app/[locale]/layout.tsx
++++ b/src/app/[locale]/layout.tsx
+@@ -2,34 +2,40 @@ import { NextIntlClientProvider } from "next-intl";
+ import { getMessages } from "next-intl/server";
+ import { notFound } from "next/navigation";
+ import { routing } from "@/i18n/routing";
+-import type { Metadata } from "next";
++import type { Metadata, Viewport } from "next";
+ import "../globals.css";
+ import "@/styles/embir-tokens.css";
+ import "@/styles/mobile.css";
++import "@/styles/embir-20000x.css";
+ import ClientShell from "@/components/ClientShell";
++import GoogleAnalytics from "@/components/GoogleAnalytics";
++import { VibeKeyframes } from "@/components/VibeEffects";
++import Footer from "@/components/layout/Footer";
+ 
+ export const metadata: Metadata = {
+   metadataBase: new URL("https://embir.xyz"),
+   verification: { google: "zhl0TqH5BoVmHCeI9QrtuMd8yoO05uJK_oMM_yEh3ss" },
+-  title: "Embir — Gay Dating App for Authentic Connections | Free & Safe",
+-  description: "Embir is the global gay dating app for real connections. Free, safe, no ads, no paywalls. Available in 25 languages. Join founding members now.",
+-  keywords: ["gay dating app", "free gay dating", "gay chat", "men seeking men", "dating app for men", "gay meet", "global gay dating", "LGBTQ dating"],
++  title: {
++    template: "%s | Embir",
++    default: "Embir — Free dating platform for France, UK and USA",
++  },
++  description: "Embir is a free-at-launch dating platform for France, the UK and the United States, built for every orientation with preferences, compatibility, verified profiles and a transparent future freemium model.",
++  keywords: ["dating platform", "free dating app", "international dating app", "France dating app", "UK dating app", "USA dating app", "LGBTQ dating", "verified profiles", "compatibility matching", "dating app no ads", "Grindr alternative", "Tinder alternative"],
+   manifest: "/manifest.json",
+-  themeColor: "#06030F",
+   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Embir" },
+   openGraph: {
+     type: "website",
+     siteName: "Embir",
+-    title: "Embir — Gay Dating App for Authentic Connections",
+-    description: "Meet authentic gay men worldwide. Free, safe, and designed for real connections. No ads, no paywalls.",
++    title: "Embir — Free dating platform for France, UK and USA",
++    description: "Embir is a free-at-launch dating platform for France, the UK and the United States, built for every orientation with preferences, compatibility, verified profiles and a transparent future freemium model.",
+     url: "https://embir.xyz",
+     locale: "en_US",
+-    images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "Embir — Gay dating app" }],
++    images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "Embir — International dating platform" }],
+   },
+   twitter: {
+     card: "summary_large_image",
+-    title: "Embir — Gay Dating App",
+-    description: "Free, safe, no ads. The gay dating app for authentic connections worldwide.",
++    title: "Embir — Free dating platform for France, UK and USA",
++    description: "Free at launch. France, UK, United States. Every orientation, preferences, compatibility and verified profiles.",
+     images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "Embir" }],
+   },
+   robots: { index: true, follow: true },
+@@ -60,12 +66,15 @@ export const metadata: Metadata = {
+       "id": "https://embir.xyz/id",
+       "ms": "https://embir.xyz/ms",
+       "ro": "https://embir.xyz/ro",
+-      "uk": "https://embir.xyz/uk",
+       "x-default": "https://embir.xyz",
+     },
+   },
+ };
+ 
++export const viewport: Viewport = {
++  themeColor: "#06030F",
++};
++
+ export default async function LocaleLayout({
+   children,
+   params,
+@@ -74,7 +83,7 @@ export default async function LocaleLayout({
+   params: Promise<{ locale: string }>;
+ }) {
+   const { locale } = await params;
+-  if (!routing.locales.includes(locale as any)) notFound();
++  if (!routing.locales.some((supportedLocale) => supportedLocale === locale)) notFound();
+   const messages = await getMessages();
+ 
+   return (
+@@ -102,8 +111,13 @@ export default async function LocaleLayout({
+               <div className="emb-grid" />
+               <div className="emb-noise" />
+             </div>
+-            <div className="relative z-[1]">{children}</div>
++            <div className="relative z-[1]">
++              {children}
++              <Footer />
++            </div>
+             <ClientShell />
++            <VibeKeyframes />
++            <GoogleAnalytics />
+           </NextIntlClientProvider>
+       </body>
+     </html>
+diff --git a/src/app/[locale]/page.tsx b/src/app/[locale]/page.tsx
+index be4c68b..4cb9135 100644
+--- a/src/app/[locale]/page.tsx
++++ b/src/app/[locale]/page.tsx
+@@ -1,45 +1,53 @@
+ import EmbirLogo from "@/components/brand/EmbirLogo";
+ import ScrollReveal from "@/components/motion/ScrollReveal";
+ import AuroraBackground from "@/components/motion/AuroraBackground";
++import TiltCard from "@/components/motion/TiltCard";
+ import SchemaOrg from "@/components/seo/SchemaOrg";
++import Particles3D from "@/components/Particles3D";
++import {
++  ScrollSection,
++  AuroraBubbles,
++  DepthLayer,
++  ParallaxHero,
++  Rotating3DRing,
++} from "@/components/VibeEffects";
+ import Link from "next/link";
+ 
+-// ISR: pre-render at build, revalidate every hour for instant subsequent loads
+ export const revalidate = 3600;
+ 
+ const FEATURES = [
+   {
+-    title: "Verified Selfie",
+-    desc: "Every profile is authenticated. No more bots and catfish. Real guys, real connections.",
++    title: "Verified Profiles",
++    desc: "Selfie verification, visible intent, and stronger moderation. Meet real people instead of bots or catfish.",
+     icon: (
+-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
++      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+       </svg>
+     ),
+   },
+   {
+     title: "Free At Launch",
+-    desc: "During launch, everything is free: profiles, messages, unlimited photos. Founding members keep lifetime privileged access.",
++    desc: "Profiles, messages, discovery, and compatibility tools stay free during the founding phase. Freemium comes later.",
+     icon: (
+-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
++      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
+       </svg>
+     ),
+   },
+   {
+-    title: "AI Matching",
+-    desc: "Our DeepSeek AI analyzes your personality and matches you with the most compatible guys. No random swiping.",
++    title: "Compatibility First",
++    desc: "Orientation, preferences, relationship intent, lifestyle, and conversation energy determine who you see. Less random swiping.",
+     icon: (
+-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
++      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+       </svg>
+     ),
+   },
+   {
+-    title: "Zero Toxicity",
+-    desc: "Human + AI moderation. Toxic behavior is banned instantly. A community that respects itself.",
++    title: "Safer Community",
++    desc: "Human and automated moderation, reporting, privacy controls, and founding-member culture set the tone from day one.",
+     icon: (
+-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
++      <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+       </svg>
+     ),
+@@ -47,90 +55,92 @@ const FEATURES = [
+ ];
+ 
+ const STATS = [
+-  { value: "Free", label: "At launch" },
+-  { value: "7", label: "Smart AIs" },
++  { value: "100%", label: "Free at launch" },
++  { value: "FR · UK · US", label: "Launch markets" },
+   { value: "25+", label: "Languages" },
+ ];
+ 
+ const COMPARISONS = [
+-  { feature: "Price", grindr: "~€15/mo", embir: "Free", winner: "embir" },
+-  { feature: "Ads", grindr: "Everywhere", embir: "Zero", winner: "embir" },
+-  { feature: "Free Swipes", grindr: "Limited", embir: "Unlimited", winner: "embir" },
+-  { feature: "Verification", grindr: "Optional", embir: "Mandatory", winner: "embir" },
+-  { feature: "AI Matching", grindr: "No", embir: "DeepSeek", winner: "embir" },
+-  { feature: "Messages", grindr: "Limited", embir: "Unlimited", winner: "embir" },
++  { feature: "Audience", grindr: "Narrower", embir: "All orientations" },
++  { feature: "Launch access", grindr: "Freemium limits", embir: "Free core app" },
++  { feature: "Discovery", grindr: "Distance-led", embir: "Compatibility-led" },
++  { feature: "Verification", grindr: "Optional", embir: "Core trust layer" },
++  { feature: "Markets", grindr: "Global legacy", embir: "France · UK · USA" },
++  { feature: "Community", grindr: "Transactional", embir: "Founder culture" },
++];
++
++const MARKETS = [
++  {
++    city: "France",
++    focus: "Paris first, then major cities",
++    detail: "A French foundation for verified, safer, inclusive dating across every orientation and community.",
++  },
++  {
++    city: "United Kingdom",
++    focus: "London and urban density",
++    detail: "Built for people tired of noisy swiping, expensive subscriptions, and unclear intent in large-city dating.",
++  },
++  {
++    city: "United States",
++    focus: "New York and coastal communities",
++    detail: "A founder-led entry point for users who want compatibility, privacy, and a cleaner freemium model.",
++  },
+ ];
+ 
+ function PhonePreview() {
+   return (
+-    <div className="relative mx-auto flex w-full max-w-[390px] justify-center lg:max-w-[430px]" aria-label="iPhone preview of the embir.xyz app">
+-      <div className="relative h-[620px] w-[300px] rounded-[3rem] border border-white/10 bg-gradient-to-b from-[#1a1d24] to-black p-[6px] shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+-        <div className="absolute inset-[3px] rounded-[2.75rem] border border-white/6 pointer-events-none" />
+-        <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] bg-[#0a0c10]">
+-          <div className="absolute left-1/2 top-3 z-40 h-7 w-24 -translate-x-1/2 rounded-full bg-black border border-white/8" />
+-
+-          <div className="relative z-30 flex items-center justify-between px-7 pb-3 pt-4 text-[10px] font-semibold text-white/60">
+-            <span>9:41</span>
+-            <div className="flex items-center gap-1">
+-              <span className="h-2.5 w-4 rounded border border-white/40 p-[1px]">
+-                <span className="block h-full w-3 rounded bg-white/60" />
+-              </span>
+-            </div>
+-          </div>
+-
+-          <div className="relative z-20 flex h-[calc(100%-40px)] flex-col px-4 pb-3">
+-            <div className="mb-3 flex items-center justify-between">
+-              <div className="flex items-center gap-2">
+-                <span className="relative inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] shadow-sm">
+-                  <span className="h-1/3 w-1/3 rounded-full bg-white" />
+-                </span>
+-                <span className="text-base font-bold tracking-tight text-white">
+-                  embir<span className="text-[#ff5e36]">.</span>
++    <div className="emb-phone-wrapper" aria-label="iPhone preview of Embir">
++      <div className="relative mx-auto flex w-full max-w-[390px] justify-center lg:max-w-[430px]">
++        <div className="relative h-[640px] w-[310px] rounded-[3.5rem] border border-white/[0.08] bg-gradient-to-b from-[#1a1d24] to-black p-[8px] shadow-[0_40px_100px_rgba(0,0,0,0.7),0_0_60px_rgba(212,165,116,0.06)]">
++          <div className="absolute inset-[4px] rounded-[3.25rem] border border-white/[0.04] pointer-events-none" />
++          <div className="relative h-full w-full overflow-hidden rounded-[2.75rem] bg-[#0a0c10]">
++            <div className="absolute left-1/2 top-3 z-40 h-7 w-28 -translate-x-1/2 rounded-full bg-black border border-white/[0.06]" />
++            <div className="relative z-30 flex items-center justify-between px-8 pb-3 pt-4 text-[10px] font-semibold text-white/50">
++              <span>9:41</span>
++              <div className="flex items-center gap-1">
++                <span className="h-2.5 w-4 rounded border border-white/30 p-[1px]">
++                  <span className="block h-full w-3 rounded bg-white/50" />
+                 </span>
+               </div>
+-              <span className="rounded-full border border-white/8 bg-white/[0.04] px-2.5 py-1 text-[10px] font-medium text-white/50">
+-                Paris
+-              </span>
+             </div>
+-
+-            <div className="relative min-h-0 flex-1 overflow-hidden rounded-[2rem] border border-white/8 bg-gradient-to-b from-[#171a20] to-[#1a1020]">
+-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+-
+-              <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/50 px-2.5 py-0.5 text-[10px] font-medium text-white/70 backdrop-blur">
+-                <span className="h-1.5 w-1.5 rounded-full bg-[#ff5e36]" />
+-                1.4 km away
+-              </span>
+-              <span className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/40 px-2.5 py-0.5 text-[10px] font-medium text-white/60 backdrop-blur">
+-                founder
+-              </span>
+-
+-              <div className="absolute inset-x-0 bottom-0 p-4">
+-                <div className="rounded-[22px] border border-white/8 bg-black/50 p-4 backdrop-blur">
+-                  <div className="flex items-center gap-2">
+-                    <h3 className="text-lg font-bold tracking-tight text-white">Lucas, 26</h3>
+-                    <span className="h-2 w-2 rounded-full bg-green-500" />
+-                  </div>
+-                  <p className="mt-1 text-xs text-white/45">Paris · Content creator</p>
+-                  <p className="mt-2 text-xs italic text-white/35">
+-                    "Drinks tonight in the Marais?"
+-                  </p>
+-
+-                  <div className="mt-4 flex justify-center gap-3">
+-                    <button className="flex-1 py-2.5 rounded-full border border-white/10 bg-white/6 text-xs font-medium text-white/50">
+-                      Pass
+-                    </button>
+-                    <button className="flex-1 py-2.5 rounded-full bg-white text-xs font-medium text-black">
+-                      Like
+-                    </button>
++            <div className="relative z-20 flex h-[calc(100%-40px)] flex-col px-4 pb-3">
++              <div className="mb-3 flex items-center justify-between">
++                <div className="flex items-center gap-2">
++                  <span className="relative inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] shadow-[0_0_20px_rgba(255,31,90,0.3)]">
++                    <span className="h-1/3 w-1/3 rounded-full bg-white" />
++                  </span>
++                  <span className="text-lg font-bold tracking-tight text-white">
++                    embir<span className="text-[#ff5e36]">.</span>
++                  </span>
++                </div>
++                <span className="rounded-full border border-white/[0.06] bg-white/[0.03] px-2.5 py-1 text-[10px] font-medium text-white/40">
++                  FR · UK · US
++                </span>
++              </div>
++              <div className="relative min-h-0 flex-1 overflow-hidden rounded-[2.25rem] border border-white/[0.06] bg-gradient-to-b from-[#171a20] to-[#1a1020]">
++                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
++                <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/50 px-2.5 py-0.5 text-[10px] font-medium text-white/60 backdrop-blur-md">
++                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff5e36]" />1.4 km away
++                </span>
++                <span className="absolute right-3 top-3 rounded-full border border-white/[0.08] bg-black/40 px-2.5 py-0.5 text-[10px] font-medium text-white/50 backdrop-blur-md">founder</span>
++                <div className="absolute inset-x-0 bottom-0 p-4">
++                  <div className="rounded-[24px] border border-white/[0.06] bg-black/55 p-4 backdrop-blur-xl">
++                    <div className="flex items-center gap-2">
++                      <h3 className="text-lg font-bold tracking-tight text-white">Maya, 29</h3>
++                      <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" /><span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" /></span>
++                    </div>
++                    <p className="mt-1 text-xs text-white/40">Founder member · verified</p>
++                    <p className="mt-2 text-xs italic text-white/30">&quot;Kind, direct, and looking for real chemistry.&quot;</p>
++                    <div className="mt-4 flex justify-center gap-3">
++                      <button className="flex-1 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.04] text-xs font-medium text-white/40 transition-all hover:border-white/10 hover:text-white/60">Pass</button>
++                      <button className="flex-1 py-2.5 rounded-full bg-white text-xs font-semibold text-black transition-all hover:bg-gray-100 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]">Like</button>
++                    </div>
+                   </div>
+                 </div>
+               </div>
+-            </div>
+-
+-            <div className="mt-3 flex items-center justify-around rounded-full border border-white/6 bg-white/[0.02] px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-white/25">
+-              <span className="text-[#ff5e36]">Profiles</span>
+-              <span>Messages</span>
+-              <span>Me</span>
++              <div className="mt-3 flex items-center justify-around rounded-full border border-white/[0.04] bg-white/[0.01] px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-white/20">
++                <span className="text-[#ff5e36]">Discover</span><span>Messages</span><span>Me</span>
++              </div>
+             </div>
+           </div>
+         </div>
+@@ -141,247 +151,323 @@ function PhonePreview() {
+ 
+ export default function Home() {
+   return (
+-    <main className="emb-page">
++    <main className="emb-page" style={{ perspective: "1200px" }}>
+       <SchemaOrg />
+-      {/* ───── HERO ───── */}
+-      <section className="relative flex min-h-[96vh] items-center overflow-hidden px-4 pt-28 pb-20 sm:px-6 lg:px-8">
+-        <AuroraBackground variant="embir" />
+ 
+-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+-          <div className="text-center lg:text-left">
+-            <ScrollReveal>
+-              <EmbirLogo size="lg" className="mb-8 justify-center lg:justify-start" />
+-            </ScrollReveal>
++      {/* ═══════════ HERO — CINEMATIC IMMERSIVE ═══════════ */}
++      <ParallaxHero>
++        <section className="relative flex min-h-[100vh] items-center overflow-hidden px-4 pt-28 pb-24 sm:px-6 lg:px-8">
++          <AuroraBackground variant="embir" />
++          <Particles3D count={70} />
+ 
+-            <ScrollReveal delay={180}>
+-              <h1 className="font-serif text-5xl font-light leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+-                Where glances
+-                <br />
+-                <span className="bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] bg-clip-text text-transparent">
+-                  ignite.
+-                </span>
+-              </h1>
+-            </ScrollReveal>
++          {/* Mega glow orbs */}
++          <div className="emb-hero-orb emb-hero-orb-1" />
++          <div className="emb-hero-orb emb-hero-orb-2" />
++          <div className="emb-hero-orb emb-hero-orb-3" />
+ 
+-            <ScrollReveal delay={360}>
+-              <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/45 sm:text-xl lg:mx-0">
+-                A new dating app for men, designed for Paris,
+-                with verified profiles, free messaging at launch, smart
+-                matching, and zero unnecessary noise.
+-              </p>
+-            </ScrollReveal>
++          <AuroraBubbles count={24} colors={["#ffa333", "#ff5e36", "#ff1f5a", "#d4a574", "#c4956a", "#f59e0b"]} />
+ 
+-            <ScrollReveal delay={520}>
+-              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+-                <Link
+-                  href="/paris"
+-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] px-8 py-4 text-sm font-bold text-white shadow-[0_12px_36px_rgba(255,31,90,0.32)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_18px_46px_rgba(255,94,54,0.42)] sm:w-auto"
+-                >
+-                  <span>Join the 100 founders</span>
+-                  <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+-                  </svg>
+-                </Link>
+-                <Link
+-                  href="/auth/register"
+-                  className="inline-flex w-full items-center justify-center rounded-full border border-white/10 bg-white/[0.04] px-8 py-4 text-sm font-semibold text-white/72 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/[0.08] hover:text-white sm:w-auto"
++          <Rotating3DRing speed={32} className="absolute top-[10%] right-[-5%] hidden lg:block pointer-events-none z-[3]">
++            <div className="h-[32rem] w-[32rem] rounded-full border border-[#d4a574]/5" style={{
++              background: "radial-gradient(circle, rgba(212,165,116,0.03) 0%, transparent 60%)",
++            }} />
++          </Rotating3DRing>
++
++          <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
++            <div className="text-center lg:text-left">
++              <ScrollReveal>
++                <EmbirLogo size="lg" className="mb-10 justify-center lg:justify-start" />
++              </ScrollReveal>
++
++              <ScrollReveal delay={100}>
++                <h1
++                  className="emb-hero-title text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] text-white"
++                  aria-label="The dating platform for everyone."
+                 >
+-                  Create a free account
+-                </Link>
+-              </div>
+-            </ScrollReveal>
++                  The dating platform for everyone.
++                </h1>
++              </ScrollReveal>
+ 
+-            <ScrollReveal delay={700}>
+-              <div className="mt-14 grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:gap-8">
+-                {STATS.map((stat) => (
+-                  <div key={stat.label} className="text-center lg:text-left">
+-                    <div className="font-serif text-2xl font-light text-white/86 sm:text-3xl">
+-                      {stat.value}
+-                    </div>
+-                    <div className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-white/25">
+-                      {stat.label}
++              <ScrollReveal delay={300}>
++                <p className="mx-auto mt-10 max-w-xl text-lg leading-relaxed text-white/35 sm:text-xl lg:mx-0"
++                  style={{ textShadow: "0 2px 4px rgba(0,0,0,0.6)" }}>
++                  Free at launch. Built for France, the UK and the United States. Embir helps people meet through orientation, preferences, compatibility, safety and verified profiles.
++                </p>
++              </ScrollReveal>
++
++              <ScrollReveal delay={450}>
++                <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
++                  <Link
++                    href="/auth/register"
++                    className="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] px-10 py-5 text-base font-bold text-white shadow-[0_20px_60px_rgba(255,31,90,0.35)] transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(255,94,54,0.5)] sm:w-auto"
++                  >
++                    <span className="relative z-10">Join the founding community</span>
++                    <svg className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
++                    <div className="absolute inset-0 -translate-x-full animate-[embCtaShimmer_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg]" />
++                  </Link>
++                  <Link
++                    href="/auth/register"
++                    className="inline-flex w-full items-center justify-center rounded-full border border-white/8 bg-white/[0.03] px-9 py-5 text-base font-semibold text-white/60 backdrop-blur-md transition-all hover:border-white/15 hover:bg-white/[0.06] hover:text-white sm:w-auto"
++                  >
++                    Create a free profile
++                  </Link>
++                </div>
++              </ScrollReveal>
++
++              <ScrollReveal delay={600}>
++                <div className="mt-16 grid grid-cols-3 gap-6 sm:flex sm:gap-10">
++                  {STATS.map((stat) => (
++                    <div key={stat.label} className="text-center lg:text-left group cursor-default">
++                      <div className="emb-stat-value text-3xl sm:text-4xl">{stat.value}</div>
++                      <div className="emb-stat-label mt-2 text-[10px] text-white/20">{stat.label}</div>
+                     </div>
+-                  </div>
+-                ))}
+-              </div>
++                  ))}
++                </div>
++              </ScrollReveal>
++            </div>
++
++            <ScrollReveal delay={200}>
++              <DepthLayer depth={0.9}>
++                <TiltCard intensity={10}>
++                  <PhonePreview />
++                </TiltCard>
++              </DepthLayer>
+             </ScrollReveal>
+           </div>
++        </section>
++      </ParallaxHero>
+ 
+-          <ScrollReveal delay={300}>
+-            <div className="phone-preview-wrapper">
+-            <PhonePreview />
+-            </div>
+-          </ScrollReveal>
+-        </div>
+-      </section>
+-
+-      {/* ───── FEATURES ───── */}
+-      <section id="features" className="relative py-32 px-4">
+-        <div className="mx-auto max-w-6xl">
+-          <ScrollReveal>
+-            <div className="mb-16 text-center">
+-              <p className="font-mono text-xs font-medium tracking-[0.2em] text-[#d4a574]/60 uppercase">
+-                Why Embir
+-              </p>
+-              <h2 className="mt-4 font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
+-                More than an app,{" "}
+-                <span className="text-[#d4a574]">an experience.</span>
+-              </h2>
+-            </div>
+-          </ScrollReveal>
+-
+-          <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-4" style={{ background: 'rgba(255,255,255,0.04)' }}>
+-            {FEATURES.map((f, i) => (
+-              <ScrollReveal key={f.title} delay={i * 150}>
+-                <div className="group relative bg-[#0a0614] p-8 transition-all duration-500 hover:bg-[#0d0a18]">
+-                  <div className="absolute inset-0 bg-gradient-to-b from-[#d4a574]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+-                  <div className="relative z-10">
+-                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#d4a574]/10 text-[#d4a574] transition-all duration-300 group-hover:bg-[#d4a574]/20 group-hover:scale-110">
++      {/* Divider */}
++      <div className="emb-section-divider" />
++
++      {/* ═══════════ FEATURES — ULTRA-PREMIUM CARDS ═══════════ */}
++      <ScrollSection speed={0.4}>
++        <section id="features" className="relative py-28 px-4">
++          <AuroraBubbles count={8} colors={["#d4a574", "#ffa333"]} />
++          <div className="mx-auto max-w-6xl relative z-10">
++            <ScrollReveal>
++              <div className="mb-20 text-center">
++                <div className="emb-section-eyebrow">Why Embir</div>
++                <h2 className="emb-section-title mt-6 text-5xl sm:text-6xl lg:text-7xl text-white">
++                  More than swiping.
++                  <br />
++                  <span className="text-[#d4a574]">A compatibility layer.</span>
++                </h2>
++              </div>
++            </ScrollReveal>
++
++            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
++              {FEATURES.map((f, i) => (
++                <ScrollReveal key={f.title} delay={i * 100}>
++                  <div className="emb-card-premium rounded-2xl p-8 min-h-[320px] flex flex-col group cursor-default">
++                    <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#d4a574]/10 to-[#d4a574]/5 text-[#d4a574] transition-all duration-700 group-hover:from-[#d4a574]/20 group-hover:to-[#d4a574]/10 group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(212,165,116,0.15)]">
+                       {f.icon}
+                     </div>
+-                    <h3 className="font-serif text-lg font-medium tracking-[-0.01em] text-white">
++                    <h3 className="font-serif text-2xl font-medium tracking-[-0.02em] text-white mb-3">
+                       {f.title}
+                     </h3>
+-                    <p className="mt-3 text-sm leading-relaxed text-white/30 font-light">
++                    <p className="text-sm leading-relaxed text-white/25 font-light flex-1">
+                       {f.desc}
+                     </p>
+                   </div>
+-                </div>
+-              </ScrollReveal>
+-            ))}
+-          </div>
+-        </div>
+-      </section>
+-
+-      {/* ───── COMPARISON ───── */}
+-      <section className="relative py-32 px-4 overflow-hidden">
+-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0614] via-[#0d0a18] to-[#0a0614]" />
+-        <div className="relative z-10 mx-auto max-w-4xl">
+-          <ScrollReveal>
+-            <div className="mb-16 text-center">
+-              <p className="font-mono text-xs font-medium tracking-[0.2em] text-[#d4a574]/60 uppercase">
+-                The difference
+-              </p>
+-              <h2 className="mt-4 font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
+-                Grindr vs <span className="text-[#d4a574]">Embir</span>
+-              </h2>
+-              <p className="mt-4 text-white/25 font-light">
+-                Why pay for what should be free
+-              </p>
++                </ScrollReveal>
++              ))}
+             </div>
+-          </ScrollReveal>
+-
+-          <ScrollReveal delay={200}>
+-            <div className="overflow-hidden rounded-2xl border border-white/[0.04] bg-[#0d0a18]/50 backdrop-blur-sm">
+-              {/* Header */}
+-              <div className="grid grid-cols-3 border-b border-white/[0.04] px-6 py-4">
+-                <div className="text-sm font-medium tracking-wider text-white/30 uppercase"></div>
+-                <div className="text-sm font-medium tracking-wider text-red-300/60 uppercase text-center">Grindr</div>
+-                <div className="text-sm font-medium tracking-wider text-[#d4a574] uppercase text-center">Embir</div>
++          </div>
++        </section>
++      </ScrollSection>
++
++      <div className="emb-section-divider" />
++
++      {/* ═══════════ MARKETS — CINEMATIC ═══════════ */}
++      <ScrollSection speed={0.35}>
++        <section className="relative px-4 py-28 overflow-hidden">
++          <AuroraBubbles count={10} colors={["#ffa333", "#d4a574", "#ff5e36"]} />
++          <div className="mx-auto max-w-6xl relative z-10">
++            <ScrollReveal>
++              <div className="mb-20 max-w-3xl">
++                <div className="emb-section-eyebrow">International launch</div>
++                <h2 className="emb-section-title mt-6 text-5xl sm:text-6xl text-white">
++                  Built for{" "}
++                  <span className="text-[#d4a574]">France, the UK,</span>
++                  <br />
++                  <span className="text-[#d4a574]">and the United States</span>
++                  <span className="text-white/30"> from day one.</span>
++                </h2>
++                <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/25">
++                  Focused founder communities expand city by city with the same promise:
++                  verified people, compatible discovery, safer conversations.
++                </p>
+               </div>
+-              {/* Rows */}
+-              {COMPARISONS.map((row, i) => (
+-                <div key={i} className="grid grid-cols-3 border-b border-white/[0.02] px-6 py-4 last:border-b-0 transition-colors hover:bg-white/[0.01]">
+-                  <div className="text-sm font-light text-white/40">{row.feature}</div>
+-                  <div className="text-sm text-center font-light text-white/25">{row.grindr}</div>
+-                  <div className="text-sm text-center font-medium text-[#d4a574]">{row.embir}</div>
+-                </div>
++            </ScrollReveal>
++
++            <div className="grid gap-5 md:grid-cols-3">
++              {MARKETS.map((market, i) => (
++                <ScrollReveal key={market.city} delay={i * 150}>
++                  <div className="emb-card-premium rounded-2xl p-10 min-h-[320px] group cursor-default">
++                    <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/15">0{i + 1}</p>
++                    <h3 className="mt-8 font-serif text-4xl font-light text-white group-hover:text-[#d4a574] transition-colors duration-500">
++                      {market.city}
++                    </h3>
++                    <div className="emb-accent-line" />
++                    <p className="text-sm font-semibold text-[#d4a574]/70">{market.focus}</p>
++                    <p className="mt-5 text-sm leading-relaxed text-white/25">{market.detail}</p>
++                  </div>
++                </ScrollReveal>
+               ))}
+             </div>
+-          </ScrollReveal>
++          </div>
++        </section>
++      </ScrollSection>
+ 
+-          <ScrollReveal delay={400}>
+-            <div className="mt-8 text-center">
+-              <Link
+-                href="/comparaison"
+-                className="inline-flex items-center gap-2 text-sm font-light text-white/30 hover:text-[#d4a574] transition-colors"
+-              >
+-                Detailed comparison
+-                <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+-                </svg>
+-              </Link>
+-            </div>
+-          </ScrollReveal>
+-        </div>
+-      </section>
+-
+-      {/* ───── FOUNDER ───── */}
+-      <section className="relative py-32 px-4">
+-        <div className="mx-auto max-w-3xl">
+-          <ScrollReveal>
+-            <div className="relative overflow-hidden rounded-3xl border border-[#d4a574]/10 bg-gradient-to-br from-[#d4a574]/5 to-[#0a0614] p-12 md:p-16">
+-              {/* Decorative corner */}
+-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#d4a574]/5 blur-3xl" />
+-
+-              <div className="relative z-10 text-center">
+-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d4a574]/20 bg-[#d4a574]/5 px-4 py-1.5">
+-                  <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574]" />
+-                  <span className="text-xs font-medium tracking-[0.15em] text-[#d4a574]/80 uppercase">
+-                    Founding member
++      <div className="emb-section-divider" />
++
++      {/* ═══════════ COMPARISON — PREMIUM TABLE ═══════════ */}
++      <ScrollSection speed={0.3}>
++        <section className="relative py-28 px-4">
++          <AuroraBubbles count={6} colors={["#d4a574"]} />
++          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0614] via-[#0b0718] to-[#0a0614]" />
++          <div className="relative z-10 mx-auto max-w-4xl">
++            <ScrollReveal>
++              <div className="mb-20 text-center">
++                <div className="emb-section-eyebrow">The difference</div>
++                <h2
++                  className="emb-section-title mt-6 text-5xl sm:text-6xl text-white"
++                  aria-label="Old dating apps vs Embir"
++                >
++                  Old dating apps vs{" "}
++                  <span className="text-[#d4a574]">Embir</span>
++                </h2>
++                <p className="mt-6 text-white/20 font-light text-lg">
++                  A broader platform. Compatibility, safety, and founders at the center.
++                </p>
++              </div>
++            </ScrollReveal>
++
++            <ScrollReveal delay={200}>
++              <div className="overflow-hidden rounded-3xl border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm">
++                <div className="grid grid-cols-3 border-b border-white/[0.03] px-8 py-5">
++                  <div className="text-xs font-semibold tracking-[0.2em] text-white/20 uppercase"></div>
++                  <div className="text-xs font-semibold tracking-[0.15em] text-red-300/40 uppercase text-center">Legacy</div>
++                  <div className="text-xs font-semibold tracking-[0.15em] text-[#d4a574]/60 uppercase text-center">Embir</div>
++                </div>
++                {COMPARISONS.map((row, i) => (
++                  <div key={i} className="emb-table-row grid grid-cols-3 border-b border-white/[0.015] px-8 py-6 last:border-b-0">
++                    <div className="text-sm font-light text-white/35">{row.feature}</div>
++                    <div className="text-sm text-center font-light text-white/18">{row.grindr}</div>
++                    <div className="text-sm text-center font-semibold text-[#d4a574] emb-check-glow">{row.embir} <span className="text-[#d4a574]/30">✓</span></div>
++                  </div>
++                ))}
++              </div>
++            </ScrollReveal>
++
++            <ScrollReveal delay={400}>
++              <div className="mt-10 text-center">
++                <Link href="/comparaison" className="inline-flex items-center gap-2 text-sm font-light text-white/25 hover:text-[#d4a574] transition-colors duration-500">
++                  Explore all comparisons
++                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>
++                </Link>
++              </div>
++            </ScrollReveal>
++          </div>
++        </section>
++      </ScrollSection>
++
++      <div className="emb-section-divider" />
++
++      {/* ═══════════ FOUNDER CTA — ULTRA CINEMATIC ═══════════ */}
++      <ScrollSection speed={0.5}>
++        <section className="relative py-28 px-4">
++          <AuroraBubbles count={18} colors={["#ffa333", "#ff5e36", "#d4a574"]} />
++          <div className="mx-auto max-w-3xl relative z-10">
++            <ScrollReveal>
++              <div className="emb-founder-cta rounded-3xl p-14 md:p-20 text-center">
++                <div className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[#d4a574]/15 bg-[#d4a574]/4 px-6 py-2.5 backdrop-blur-md">
++                  <span className="relative flex h-2 w-2">
++                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#d4a574] opacity-75 animate-ping" />
++                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#d4a574]" />
+                   </span>
++                  <span className="text-xs font-semibold tracking-[0.2em] text-[#d4a574]/70 uppercase">Founding community</span>
+                 </div>
+ 
+-                <h2 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
+-                  The first ones get{" "}
+-                  <span className="text-[#d4a574]">everything</span>
++                <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-light tracking-[-0.03em] text-white">
++                  Launch free.
++                  <br />
++                  <span className="text-[#d4a574]">Fair freemium later.</span>
+                 </h2>
+-                <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/30 font-light">
+-                  Sign up now and get the lifetime Founder badge.
+-                  Early access to future premium features — without ever paying.
++
++                <p className="mx-auto mt-8 max-w-lg text-lg leading-relaxed text-white/25 font-light">
++                  Sign up now and shape the first communities. Founder members
++                  earn a permanent badge and privileged access as premium features arrive.
+                 </p>
+ 
+                 <Link
+                   href="/auth/register"
+-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-medium text-[#0a0614] transition-all duration-500 hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]"
++                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#d4a574] px-12 py-5 text-base font-bold text-[#0a0614] transition-all duration-700 hover:bg-[#e8c4a2] hover:scale-[1.03] hover:shadow-[0_0_80px_rgba(212,165,116,0.35)] relative overflow-hidden group"
+                 >
+-                  Become a founding member
+-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+-                  </svg>
++                  <span className="relative z-10">Join the founding community</span>
++                  <svg className="relative z-10 h-5 w-5 transition-transform duration-500 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
++                  <div className="absolute inset-0 -translate-x-full animate-[embCtaShimmer_2.5s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-[-20deg]" />
+                 </Link>
++
++                <p className="mt-8 text-xs text-white/15 font-light">Free at launch · No credit card required · 25+ languages</p>
+               </div>
+-            </div>
+-          </ScrollReveal>
+-        </div>
+-      </section>
+-
+-      {/* ───── FINAL CTA ───── */}
+-      <section className="relative pb-32 px-4">
+-        <div className="mx-auto max-w-2xl text-center">
+-          <ScrollReveal>
+-            <h2 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">
+-              Ready to meet
+-              <br />
+-              <span className="text-[#d4a574]">real guys?</span>
+-            </h2>
+-            <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-white/25 font-light">
+-              Free. Safe. No opaque algorithm.
+-              <br />
+-              Just you and the guys who truly match you.
+-            </p>
+-
+-            <div className="mt-10">
+-              <Link
+-                href="/auth/register"
+-                className="group relative inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-medium text-[#0a0614] transition-all duration-500 hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]"
++            </ScrollReveal>
++          </div>
++        </section>
++      </ScrollSection>
++
++      {/* ═══════════ FINAL CTA ═══════════ */}
++      <ScrollSection speed={0.2}>
++        <section className="relative pb-40 px-4">
++          <AuroraBubbles count={8} colors={["#d4a574", "#ff5e36"]} />
++          <div className="mx-auto max-w-2xl text-center relative z-10">
++            <ScrollReveal>
++              <h2
++                className="emb-section-title text-5xl sm:text-6xl text-white"
++                aria-label="Ready to meet compatible people?"
+               >
+-                <span>Create my profile</span>
+-                <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+-                </svg>
+-              </Link>
+-            </div>
++                Ready to meet{" "}
++                <span className="text-[#d4a574]">compatible people?</span>
++              </h2>
++              <p className="mx-auto mt-8 max-w-md text-lg leading-relaxed text-white/20 font-light">
++                Free at launch. Safer by design. Built around
++                orientation, preferences, and real compatibility.
++              </p>
++              <div className="mt-10">
++                <Link
++                  href="/auth/register"
++                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] px-12 py-5 text-base font-bold text-white shadow-[0_20px_60px_rgba(255,31,90,0.3)] transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(255,94,54,0.45)]"
++                >
++                  <span className="relative z-10">Join the founding community</span>
++                  <svg className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
++                  <div className="absolute inset-0 -translate-x-full animate-[embCtaShimmer_2s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-[-20deg]" />
++                </Link>
++              </div>
++              <div className="mt-16 flex items-center justify-center gap-8 text-xs text-white/15">
++                <span>Free at launch</span><span className="text-white/5">·</span>
++                <span>FR · UK · US</span><span className="text-white/5">·</span>
++                <span>25+ languages</span>
++              </div>
++            </ScrollReveal>
++          </div>
++        </section>
++      </ScrollSection>
+ 
+-            <p className="mt-6 text-xs text-white/15 font-light">
+-              Already a member?{" "}
+-              <Link href="/auth/login" className="text-[#d4a574]/60 hover:text-[#d4a574] underline underline-offset-4 transition-colors">
+-                Log in
+-              </Link>
+-            </p>
+-          </ScrollReveal>
+-        </div>
+-      </section>
++      {/* Mobile sticky CTA */}
++      <div className="mobile-cta-bar">
++        <Link href="/auth/register" className="mobile-cta-primary">
++          Join the founding community
++        </Link>
++      </div>
++
++      {/* Keyframes */}
++      <style dangerouslySetInnerHTML={{ __html: `
++        @keyframes embCtaShimmer {
++          0% { transform: translateX(-100%) skewX(-20deg); }
++          100% { transform: translateX(200%) skewX(-20deg); }
++        }
++      `}} />
+     </main>
+   );
+ }
+
+--- new file: scripts/seo-audit.mjs ---
+diff --git a/scripts/seo-audit.mjs b/scripts/seo-audit.mjs
+new file mode 100644
+index 0000000..9f52616
+--- /dev/null
++++ b/scripts/seo-audit.mjs
+@@ -0,0 +1,254 @@
++#!/usr/bin/env node
++
++import fs from "node:fs";
++
++const BASE_URL = process.env.EMBIR_BASE_URL || "https://embir.xyz";
++const SITEMAP_URL = `${BASE_URL}/sitemap.xml`;
++const SAMPLE_FILE = process.env.EMBIR_SEO_SAMPLE_FILE || "/tmp/embir_100_urls.txt";
++
++const thresholds = {
++  totalUrls: 500,
++  franceUrls: 80,
++  usaUrls: 120,
++  ukUrls: 90,
++  blogUrls: 150,
++  guideUrls: 120,
++  comparisonUrls: 40,
++  hreflangLinks: 80,
++};
++
++const homepageRequired = [
++  "The dating platform for everyone",
++  "France",
++  "UK",
++  "United States",
++  "Free at launch",
++  "freemium",
++  "orientation",
++  "preferences",
++  "compatibility",
++  "verified profiles",
++  "Join the founding community",
++];
++
++const homepageForbidden = [
++  "Gay Dating App",
++  "designed for Paris",
++  "Grindr vs Embir",
++  "Ready to meet real guys",
++  "real guys",
++  "Where glances ignite",
++  "new dating app for men",
++];
++
++const coreUrls = [
++  BASE_URL,
++  `${BASE_URL}/en/us/free-dating-app`,
++  `${BASE_URL}/en/uk/free-dating-app`,
++  `${BASE_URL}/fr/gratuit-au-lancement`,
++  `${BASE_URL}/en/comparison/grindr-vs-embir`,
++];
++
++async function get(url) {
++  const controller = new AbortController();
++  const timeout = setTimeout(() => controller.abort(), 20000);
++
++  try {
++    const response = await fetch(url, {
++      redirect: "follow",
++      signal: controller.signal,
++      headers: {
++        "user-agent": "embir-seo-audit/1.0",
++      },
++    });
++
++    const text = await response.text();
++    return {
++      url,
++      finalUrl: response.url,
++      status: response.status,
++      text,
++    };
++  } finally {
++    clearTimeout(timeout);
++  }
++}
++
++function parseSitemap(xml) {
++  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
++}
++
++function unique(items) {
++  return [...new Set(items)];
++}
++
++function getMeta(html, name) {
++  const pattern = new RegExp(
++    `<meta[^>]+name=["']${name}["'][^>]+content=["']([^"']*)["'][^>]*>`,
++    "i",
++  );
++  return html.match(pattern)?.[1]?.trim() || "";
++}
++
++function getTitle(html) {
++  return html.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || "";
++}
++
++function canonicalPresent(html) {
++  return /rel=["']canonical["']/i.test(html);
++}
++
++function noindexPresent(html) {
++  return /\bnoindex\b/i.test(html);
++}
++
++function ctaPresent(html) {
++  return /\/auth\/register|Join the founding community|Create my free profile|Rejoindre/i.test(html);
++}
++
++function faqPresent(html) {
++  return /FAQPage|FAQ|Frequently asked questions|Quick answers|Questions frequentes|Questions/i.test(html);
++}
++
++function internalLinksPresent(html) {
++  const rootLinks = (html.match(/href=["']\/(fr|en|auth|blog|guide|guides|comparison|comparaison|rencontre|us|uk)/g) || [])
++    .length;
++  const absoluteLinks = (html.match(/href=["']https:\/\/embir\.xyz\//g) || []).length;
++  return rootLinks + absoluteLinks >= 3;
++}
++
++function isSeoPage(url) {
++  return /\/(fr\/|en\/us\/|en\/uk\/|blog\/|guides?\/|comparison\/|comparaison\/|dating\/|rencontre\/)/.test(
++    new URL(url).pathname,
++  );
++}
++
++function readSampleUrls(locs) {
++  if (fs.existsSync(SAMPLE_FILE)) {
++    return fs
++      .readFileSync(SAMPLE_FILE, "utf8")
++      .split(/\r?\n/)
++      .map((line) => line.trim())
++      .filter(Boolean);
++  }
++
++  return locs
++    .filter((url) => isSeoPage(url))
++    .slice(0, 100);
++}
++
++function countDuplicateValues(values) {
++  const seen = new Map();
++  for (const value of values.filter(Boolean)) {
++    seen.set(value, (seen.get(value) || 0) + 1);
++  }
++
++  return [...seen.values()].filter((count) => count > 1).reduce((sum, count) => sum + count, 0);
++}
++
++function summarizeSitemap(locs, xml) {
++  const paths = locs.map((url) => new URL(url).pathname);
++
++  return {
++    totalUrls: locs.length,
++    franceUrls: paths.filter((path) => path.startsWith("/fr/")).length,
++    usaUrls: paths.filter((path) => path.startsWith("/en/us/")).length,
++    ukUrls: paths.filter((path) => path.startsWith("/en/uk/")).length,
++    blogUrls: paths.filter((path) => path.includes("/blog/")).length,
++    guideUrls: paths.filter((path) => path.includes("/guide")).length,
++    comparisonUrls: paths.filter((path) => path.includes("/comparison/") || path.includes("/comparaison/")).length,
++    hreflangLinks: (xml.match(/hreflang|xhtml:link/g) || []).length,
++  };
++}
++
++async function main() {
++  const sitemapResponse = await get(SITEMAP_URL);
++  if (sitemapResponse.status !== 200) {
++    throw new Error(`Sitemap HTTP status is ${sitemapResponse.status}, expected 200.`);
++  }
++
++  const locs = parseSitemap(sitemapResponse.text);
++  const sitemap = summarizeSitemap(locs, sitemapResponse.text);
++  const thresholdFailures = Object.entries(thresholds)
++    .filter(([key, min]) => sitemap[key] < min)
++    .map(([key, min]) => `${key}: ${sitemap[key]} < ${min}`);
++
++  const sampleUrls = unique([...coreUrls, ...readSampleUrls(locs)]).slice(0, 140);
++  const pages = [];
++
++  for (const url of sampleUrls) {
++    const response = await get(url);
++    const title = getTitle(response.text);
++    const description = getMeta(response.text, "description");
++    pages.push({
++      url,
++      status: response.status,
++      title,
++      description,
++      canonical: canonicalPresent(response.text),
++      noindex: noindexPresent(response.text),
++      cta: ctaPresent(response.text),
++      faq: faqPresent(response.text),
++      internalLinks: internalLinksPresent(response.text),
++    });
++  }
++
++  const seoPages = pages.filter((page) => isSeoPage(page.url));
++  const homepage = pages.find((page) => page.url === BASE_URL);
++  const homepageHtml = (await get(BASE_URL)).text;
++  const homepageMissingRequired = homepageRequired.filter((text) => !homepageHtml.includes(text));
++  const homepageForbiddenFound = homepageForbidden.filter((text) => homepageHtml.includes(text));
++
++  const result = {
++    baseUrl: BASE_URL,
++    sitemapUrl: SITEMAP_URL,
++    sampledPages: pages.length,
++    sitemap,
++    thresholds,
++    titleMissing: pages.filter((page) => !page.title).length,
++    descriptionMissing: pages.filter((page) => !page.description).length,
++    duplicateTitles: countDuplicateValues(pages.map((page) => page.title)),
++    duplicateDescriptions: countDuplicateValues(pages.map((page) => page.description)),
++    canonicalMissing: pages.filter((page) => !page.canonical).length,
++    pagesWithoutCta: seoPages.filter((page) => !page.cta).length,
++    pagesWithoutFaq: seoPages.filter((page) => !page.faq).length,
++    pagesWithoutInternalLinks: seoPages.filter((page) => !page.internalLinks).length,
++    noindexAccidental: seoPages.filter((page) => page.noindex).length,
++    homepageMissingRequired,
++    homepageForbiddenFound,
++    badStatusPages: pages.filter((page) => page.status !== 200).map((page) => `${page.status} ${page.url}`),
++    homepageStatus: homepage?.status || null,
++  };
++
++  const failures = [
++    ...thresholdFailures,
++    ...result.badStatusPages,
++    ...homepageMissingRequired.map((text) => `homepage missing required text: ${text}`),
++    ...homepageForbiddenFound.map((text) => `homepage forbidden text found: ${text}`),
++  ];
++
++  if (result.titleMissing > 0) failures.push(`titleMissing: ${result.titleMissing}`);
++  if (result.descriptionMissing > 0) failures.push(`descriptionMissing: ${result.descriptionMissing}`);
++  if (result.canonicalMissing > 0) failures.push(`canonicalMissing: ${result.canonicalMissing}`);
++  if (result.pagesWithoutCta > 0) failures.push(`pagesWithoutCta: ${result.pagesWithoutCta}`);
++  if (result.pagesWithoutFaq > 0) failures.push(`pagesWithoutFaq: ${result.pagesWithoutFaq}`);
++  if (result.pagesWithoutInternalLinks > 0) failures.push(`pagesWithoutInternalLinks: ${result.pagesWithoutInternalLinks}`);
++  if (result.noindexAccidental > 0) failures.push(`noindexAccidental: ${result.noindexAccidental}`);
++
++  console.log(JSON.stringify(result, null, 2));
++
++  if (failures.length > 0) {
++    console.error("SEO audit failed:");
++    for (const failure of failures) {
++      console.error(`- ${failure}`);
++    }
++    process.exit(1);
++  }
++
++  console.log("SEO audit passed.");
++}
++
++main().catch((error) => {
++  console.error(error);
++  process.exit(1);
++});

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Mexico City — 100% Free App | Embir",
+  title: "Gay Dating in Mexico City — 100% Free App",
   description: "Gay dating in Mexico City on Embir. 100% free app with no ads. Create your profile and meet guys near you in Mexico City.",
-  keywords: ["gay dating Mexico City", "gay Mexico City", "meet guys Mexico City", "gay app Mexico City", "LGBTQ Mexico City"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/mexico-city" },
 };
 

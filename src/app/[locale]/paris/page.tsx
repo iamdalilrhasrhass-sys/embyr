@@ -5,13 +5,6 @@ export const metadata: Metadata = {
   title: "Embir Paris — 100 Founding Members | Free Gay Dating",
   description:
     "Join the Embir Paris launch: 100 founding members, real profiles, free messaging, no ads, no fake accounts.",
-  keywords: [
-    "Embir Paris",
-    "gay dating Paris",
-    "free gay app Paris",
-    "founding members Embir",
-    "gay dating no ads",
-  ],
   alternates: { canonical: "https://embir.xyz/paris" },
   openGraph: {
     title: "Embir Paris — The First 100 Founding Members",

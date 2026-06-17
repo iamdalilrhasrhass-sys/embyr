@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Ho Chi Minh — 100% Free App | Embir",
+  title: "Gay Dating in Ho Chi Minh — 100% Free App",
   description: "Gay dating in Ho Chi Minh on Embir. 100% free app with no ads. Create your profile and meet guys near you in Ho Chi Minh.",
-  keywords: ["gay dating Ho Chi Minh", "gay Ho Chi Minh", "meet guys Ho Chi Minh", "gay app Ho Chi Minh", "LGBTQ Ho Chi Minh"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/ho-chi-minh" },
 };
 

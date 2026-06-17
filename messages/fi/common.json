@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Homoille ja queer-yhteisölle",
-    "title1": "Treffejä",
-    "title2": "miesten kesken.",
-    "subtitle": "Embir on uusi homotreffisovellus, suunniteltu niille, jotka haluavat aitoa. Ei paineita, ei tuomitsemista. Ilmainen lanseerauksen ajan.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Luo profiilini ilmaiseksi",
     "secondary": "Tutustu jäseniin"
   },
@@ -50,7 +50,7 @@
     "translate": "Näytä käännös"
   },
   "footer": {
-    "tagline": "Ilmainen homotreffisovellus",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Oikeudelliset tiedot",
     "privacy": "Yksityisyys",
     "cookies": "Evästeet",

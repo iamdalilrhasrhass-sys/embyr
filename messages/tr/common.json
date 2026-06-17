@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Geyler ve queer topluluğu için",
-    "title1": "Tanışmalar",
-    "title2": "erkekler arasında.",
-    "subtitle": "Embir, gerçek bağlantılar arayanlar için tasarlanmış yeni bir gey tanışma uygulaması. Baskı yok, yargılama yok. Lansman süresince ücretsiz.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Profilimi ücretsiz oluştur",
     "secondary": "Üyeleri keşfet"
   },
@@ -50,7 +50,7 @@
     "translate": "Çeviriyi gör"
   },
   "footer": {
-    "tagline": "Ücretsiz gey tanışma uygulaması",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Yasal Uyarılar",
     "privacy": "Gizlilik",
     "cookies": "Çerezler",

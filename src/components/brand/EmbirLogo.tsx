@@ -43,7 +43,7 @@ export default function EmbirLogo({
   return (
     <div
       className={`inline-flex items-baseline ${size === 'lg' ? 'gap-4' : 'gap-2'} ${className}`}
-      aria-label="embir.xyz — Allume l'étincelle"
+      aria-label="embir.xyz — Ignite connection"
     >
       <span
         className={`font-sans font-black leading-none tracking-[-0.065em] text-white ${textSizes[size]}`}
@@ -57,7 +57,7 @@ export default function EmbirLogo({
 
       {shouldShowTagline ? (
         <span className="hidden text-xs font-semibold uppercase tracking-[0.28em] text-white/32 md:inline-flex">
-          Allume l&apos;étincelle
+          Ignite connection
         </span>
       ) : null}
     </div>

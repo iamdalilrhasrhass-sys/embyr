@@ -2,7 +2,7 @@ import { prisma } from '@/lib/prisma';
 import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Invite Friends — Embir' };
+export const metadata = { title: 'Invite Friends' };
 
 export default async function ReferralPage() {
   const referralCode = 'EMBIR-XXXXXX'; // Default until session is wired

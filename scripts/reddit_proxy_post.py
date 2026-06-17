@@ -86,6 +86,18 @@ On est en lancement, on veut vos retours ! ❤️🏳️‍🌈"""
     }
 }
 
+def load_env():
+    """Charge les creds depuis .reddit_env si dispo"""
+    env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".reddit_env")
+    if os.path.exists(env_file):
+        with open(env_file) as f:
+            for line in f:
+                line = line.strip()
+                if line and "=" in line and not line.startswith("#"):
+                    k, v = line.split("=", 1)
+                    if v:
+                        os.environ.setdefault(k, v)
+
 def check_mac_online():
     """Vérifie si le Mac est joignable via SSH"""
     r = subprocess.run(
@@ -114,13 +126,25 @@ def post_to_reddit(subreddit, post_data):
     socks.set_default_proxy(socks.SOCKS5, "localhost", SOCKS_PORT)
     socket.socket = socks.socksocket
 
+    client_id = os.environ.get("REDDIT_CLIENT_ID", "")
+    client_secret = os.environ.get("REDDIT_SECRET", "")
+    username = os.environ.get("REDDIT_USERNAME", "EmbirDating")
+    password = os.environ.get("REDDIT_PASSWORD", "EmbirParis2026!")
+
+    if not client_id or not client_secret:
+        raise Exception("❌ REDDIT_CLIENT_ID and REDDIT_SECRET must be set. Create a script app at https://www.reddit.com/prefs/apps")
+
     reddit = praw.Reddit(
-        client_id=os.environ.get("REDDIT_CLIENT_ID", ""),
-        client_secret=os.environ.get("REDDIT_SECRET", ""),
-        username="EmbirDating",
-        password="EmbirParis2026!",
+        client_id=client_id,
+        client_secret=client_secret,
+        username=username,
+        password=password,
         user_agent=USER_AGENT
     )
+
+    # Verify auth
+    me = reddit.user.me()
+    print(f"  Auth OK: u/{me.name}")
 
     sub = reddit.subreddit(subreddit.replace("r/", ""))
     flair_id = post_data.get("flair_id")
@@ -140,6 +164,8 @@ def post_to_reddit(subreddit, post_data):
     return f"https://reddit.com{submission.permalink}"
 
 def main():
+    load_env()
+    
     # Check if Mac is online
     if not check_mac_online():
         print("ERROR: Mac is offline. Can't post to Reddit (VPS IP blocked).")

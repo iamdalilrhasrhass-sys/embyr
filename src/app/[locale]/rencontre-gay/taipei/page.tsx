@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Taipei — 100% Free App | Embir",
+  title: "Gay Dating in Taipei — 100% Free App",
   description: "Gay dating in Taipei on Embir. 100% free app with no ads. Create your profile and meet guys near you in Taipei.",
-  keywords: ["gay dating Taipei", "gay Taipei", "meet guys Taipei", "gay app Taipei", "LGBTQ Taipei"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/taipei" },
 };
 

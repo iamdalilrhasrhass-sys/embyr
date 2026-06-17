@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
-import TiltCard from "@/components/motion/TiltCard";
 import EmbirLogo from "@/components/brand/EmbirLogo";
+import Particles3D from "@/components/Particles3D";
+import { AuroraBubbles } from "@/components/VibeEffects";
 
 export default function Login() {
   const router = useRouter();
@@ -39,70 +40,129 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-[var(--color-premium-dark)]">
-      <div className="absolute inset-0 noise-overlay"></div>
-      <div className="absolute inset-0 soft-grid-bg opacity-30"></div>
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--color-premium-rose)]/10 rounded-full blur-[100px] animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#ff5e36]/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0614] px-4">
 
-      <ScrollReveal direction="up" className="w-full max-w-md z-10">
-        <TiltCard tiltScale={0.3}>
-          <div className="glass-premium w-full p-8 md:p-10 rounded-[2.5rem] relative overflow-hidden border border-[var(--color-premium-rose)]/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-premium opacity-10 rounded-full blur-[50px]"></div>
-            
-            <div className="mb-7 flex justify-center">
+      {/* ── Liquid gradient mesh ── */}
+      <div className="emb-liquid-mesh" />
+
+      {/* ── 3D Particle field ── */}
+      <Particles3D count={60} />
+
+      {/* ── Mega orbs ── */}
+      <div className="emb-hero-orb emb-hero-orb-1 emb-breath" />
+      <div className="emb-hero-orb emb-hero-orb-2 emb-breath" style={{ animationDelay: "-3s" }} />
+      <div className="emb-hero-orb emb-hero-orb-3 emb-breath" style={{ animationDelay: "-6s" }} />
+
+      {/* ── Aurora floating bubbles ── */}
+      <AuroraBubbles count={25} colors={["#ffa333", "#ff5e36", "#ff1f5a", "#d4a574", "#c4956a"]} />
+
+      {/* ── ScrollReveal entrance ── */}
+      <ScrollReveal direction="up" className="relative z-10 w-full max-w-md">
+        {/* ── Parallax layer: card ── */}
+        <div className="emb-parallax-layer" data-depth="1">
+
+          {/* ── Glass card extreme ── */}
+          <div className="emb-glass-extreme w-full rounded-[2.5rem] p-8 md:p-10">
+
+            {/* ── Logo — parallax depth 0.5 ── */}
+            <div className="emb-parallax-layer mb-7 flex justify-center" data-depth="0.3">
               <EmbirLogo size="md" />
             </div>
-            <h1 className="text-4xl font-extrabold mb-3 drop-shadow-md tracking-tight">Bon <span className="bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] bg-clip-text text-transparent">retour</span></h1>
-            <p className="text-[var(--color-premium-gray)] mb-8 font-medium">Connecte-toi à ton espace embir.xyz.</p>
-            
+
+            {/* ── Title — super title ── */}
+            <div className="emb-parallax-layer mb-2" data-depth="0.6">
+              <h1 className="emb-super-title text-center text-5xl md:text-6xl text-white">
+                <span className="emb-word">Bon</span>{" "}
+                <span className="emb-word emb-gradient-text-super">retour</span>
+              </h1>
+            </div>
+
+            {/* ── Subtitle — parallax depth 0.8 ── */}
+            <div className="emb-parallax-layer mb-8" data-depth="0.8">
+              <p className="text-center text-sm font-medium text-white/20">
+                Connecte-toi à ton espace embir.xyz.
+              </p>
+            </div>
+
+            {/* ── Error ── */}
             {error && (
-              <div className="bg-red-500/10 border border-red-500/30 text-red-400 p-4 rounded-xl mb-6 text-sm font-medium backdrop-blur-md">
-                {error}
+              <div className="emb-parallax-layer mb-6" data-depth="0.9">
+                <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-center text-sm font-medium text-red-400 backdrop-blur-md">
+                  {error}
+                </div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <div className="group">
-                <label className="block text-sm font-bold text-gray-300 mb-2 group-focus-within:text-[var(--color-premium-rose)] transition-colors">Email</label>
-                <input 
-                  type="email" 
-                  required 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[var(--color-premium-rose)] focus:ring-1 focus:ring-[var(--color-premium-rose)]/50 transition-all text-white shadow-inner"
-                  placeholder="votre@email.com"
-                />
-              </div>
-              <div className="group">
-                <div className="flex justify-between mb-2">
-                  <label className="block text-sm font-bold text-gray-300 group-focus-within:text-[var(--color-premium-rose)] transition-colors">Mot de passe</label>
-                  <Link href="#" className="text-xs text-[var(--color-premium-rose)] hover:text-white transition-colors">Oublié ?</Link>
+            {/* ── Form — parallax depth 1 ── */}
+            <div className="emb-parallax-layer" data-depth="1">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Email input */}
+                <div className="group">
+                  <label className="mb-2 block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-[#d4a574]/40 focus:outline-none focus:ring-1 focus:ring-[#d4a574]/30"
+                    placeholder="votre@email.com"
+                  />
                 </div>
-                <input 
-                  type="password" 
-                  required 
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[var(--color-premium-rose)] focus:ring-1 focus:ring-[var(--color-premium-rose)]/50 transition-all text-white shadow-inner"
-                  placeholder="••••••••"
-                />
-              </div>
 
-              <button 
-                type="submit" 
-                disabled={loading}
-                className="w-full bg-gradient-premium text-white font-bold text-lg py-4 rounded-2xl hover:shadow-[0_0_20px_rgba(244,63,143,0.4)] transition-all disabled:opacity-50 mt-4 premium-glow hover:scale-[1.02]"
-              >
-                {loading ? "Connexion..." : "Se connecter"}
-              </button>
-            </form>
+                {/* Password input */}
+                <div className="group">
+                  <div className="mb-2 flex justify-between">
+                    <label className="block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
+                      Mot de passe
+                    </label>
+                    <Link
+                      href="#"
+                      className="text-xs text-[#d4a574] transition-colors hover:text-white"
+                    >
+                      Oublié&nbsp;?
+                    </Link>
+                  </div>
+                  <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-[#d4a574]/40 focus:outline-none focus:ring-1 focus:ring-[#d4a574]/30"
+                    placeholder="••••••••"
+                  />
+                </div>
 
-            <p className="text-center mt-8 text-sm text-gray-400 font-medium">
-              Pas encore de compte ? <Link href="/paris" className="text-[var(--color-premium-rose)] hover:text-white transition-colors font-bold ml-1">Rejoindre les fondateurs</Link>
-            </p>
+                {/* Submit button — CTA Mega */}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="emb-cta-mega group relative mt-4 inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] px-10 py-4 text-base font-bold text-white shadow-[0_25px_70px_rgba(255,31,90,0.35)] transition-all duration-500 disabled:opacity-50"
+                >
+                  <span className="relative z-10">
+                    {loading ? "Connexion..." : "Se connecter"}
+                  </span>
+                  <div className="absolute inset-0 -translate-x-full animate-[embCtaShimmer_2s_ease-in-out_infinite] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                </button>
+              </form>
+            </div>
+
+            {/* ── Register link — parallax depth 1.2 ── */}
+            <div className="emb-parallax-layer mt-8" data-depth="1.2">
+              <p className="text-center text-sm font-medium text-white/20">
+                Pas encore de compte&nbsp;?{" "}
+                <Link
+                  href="/paris"
+                  className="ml-1 font-bold text-[#d4a574] transition-colors hover:text-white"
+                >
+                  Rejoindre les fondateurs
+                </Link>
+              </p>
+            </div>
+
           </div>
-        </TiltCard>
+        </div>
       </ScrollReveal>
     </div>
   );

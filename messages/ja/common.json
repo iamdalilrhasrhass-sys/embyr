@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "ゲイとクィアコミュニティのための",
-    "title1": "出会いを",
-    "title2": "男性同士で。",
-    "subtitle": "Embirは、本物を求める人のための新しいゲイ向け出会い系アプリです。プレッシャーも判断もありません。ローンチ期間中は無料。",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "無料でプロフィールを作成",
     "secondary": "メンバーを見る"
   },
@@ -50,7 +50,7 @@
     "translate": "翻訳を見る"
   },
   "footer": {
-    "tagline": "無料のゲイ向け出会い系アプリ",
+    "tagline": "Free-at-launch dating platform",
     "legal": "法的通知",
     "privacy": "プライバシー",
     "cookies": "クッキー",

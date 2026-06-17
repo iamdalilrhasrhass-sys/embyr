@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Chat — Free Unlimited Messaging | Embir",
+  title: "Gay Chat — Free Unlimited Messaging",
   description: "Free gay chat on Embir. Unlimited messaging, no limits. Talk to guys near you.",
   alternates: { canonical: "https://embir.xyz/chat-gay" },
 };

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Chicago — 100% Free App | Embir",
+  title: "Gay Dating in Chicago — 100% Free App",
   description: "Gay dating in Chicago on Embir. 100% free app with no ads. Create your profile and meet guys near you in Chicago.",
-  keywords: ["gay dating Chicago", "gay Chicago", "meet guys Chicago", "gay app Chicago", "LGBTQ Chicago"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/chicago" },
 };
 

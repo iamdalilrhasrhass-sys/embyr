@@ -77,7 +77,7 @@
   font-family: var(--eb-font-body);
 }
 
-/* ── Ember Glow effect (copper warm) ── */
+/* ── Warm glow effect (copper warm) ── */
 .ember-glow {
   position: relative;
 }

@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Für Schwule und die queere Community",
-    "title1": "Dates",
-    "title2": "zwischen Männern.",
-    "subtitle": "Embir ist eine neue Dating-App für Schwule, gemacht für die, die echte Verbindungen suchen. Kein Druck, kein Urteil. Kostenlos während des Starts.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Profil kostenlos erstellen",
     "secondary": "Mitglieder entdecken"
   },
@@ -50,7 +50,7 @@
     "translate": "Übersetzung anzeigen"
   },
   "footer": {
-    "tagline": "Kostenlose Schwulen-Dating-App",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Impressum",
     "privacy": "Datenschutz",
     "cookies": "Cookies",

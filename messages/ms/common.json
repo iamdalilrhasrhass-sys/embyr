@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Untuk golongan gay dan komuniti queer",
-    "title1": "Temu janji",
-    "title2": "antara lelaki.",
-    "subtitle": "Embir ialah aplikasi temu janji gay baharu, direka untuk mereka yang mahukan hubungan sebenar. Tiada tekanan, tiada penghakiman. Percuma semasa pelancaran.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Buat profil saya secara percuma",
     "secondary": "Terokai ahli"
   },
@@ -50,7 +50,7 @@
     "translate": "Lihat terjemahan"
   },
   "footer": {
-    "tagline": "Aplikasi temu janji gay percuma",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Maklumat undang-undang",
     "privacy": "Privasi",
     "cookies": "Kuki",

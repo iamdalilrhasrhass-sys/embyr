@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Dla gejów i społeczności queer",
-    "title1": "Randki",
-    "title2": "między mężczyznami.",
-    "subtitle": "Embir to nowa aplikacja randkowa dla gejów, stworzona dla tych, którzy szukają czegoś prawdziwego. Bez presji, bez oceniania. Darmowa podczas premiery.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Stwórz profil za darmo",
     "secondary": "Odkryj członków"
   },
@@ -50,7 +50,7 @@
     "translate": "Zobacz tłumaczenie"
   },
   "footer": {
-    "tagline": "Darmowa aplikacja randkowa dla gejów",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Informacje prawne",
     "privacy": "Prywatność",
     "cookies": "Ciasteczka",

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Marseille — 100% Free App | Embir",
+  title: "Gay Dating in Marseille — 100% Free App",
   description: "Gay dating in Marseille on Embir. 100% free app with no ads. Create your profile and meet guys near you in Marseille.",
-  keywords: ["gay dating Marseille", "gay Marseille", "meet guys Marseille", "gay app Marseille", "LGBTQ Marseille"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/marseille" },
 };
 

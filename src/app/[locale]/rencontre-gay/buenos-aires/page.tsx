@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Buenos Aires — 100% Free App | Embir",
+  title: "Gay Dating in Buenos Aires — 100% Free App",
   description: "Gay dating in Buenos Aires on Embir. 100% free app with no ads. Create your profile and meet guys near you in Buenos Aires.",
-  keywords: ["gay dating Buenos Aires", "gay Buenos Aires", "meet guys Buenos Aires", "gay app Buenos Aires", "LGBTQ Buenos Aires"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/buenos-aires" },
 };
 

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Test — What Kind of Guy Are You Looking For? | Embir",
+  title: "Gay Test — What Kind of Guy Are You Looking For?",
   description: "Take our quick gay dating personality quiz. Discover your dating style, what you're really looking for, and get matched with compatible guys.",
-  keywords: ["gay test", "gay personality quiz", "gay dating style", "what kind of guy", "gay compatibility"],
   alternates: { canonical: "https://embir.xyz/test-gay" },
 };
 

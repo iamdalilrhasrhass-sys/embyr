@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Для геїв та квір-спільноти",
-    "title1": "Знайомства",
-    "title2": "між чоловіками.",
-    "subtitle": "Embir — це новий додаток для знайомств для геїв, створений для тих, хто шукає справжнього. Без тиску, без осуду. Безкоштовно під час запуску.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Створити профіль безкоштовно",
     "secondary": "Переглянути учасників"
   },
@@ -50,7 +50,7 @@
     "translate": "Переглянути переклад"
   },
   "footer": {
-    "tagline": "Безкоштовний додаток для знайомств для геїв",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Правова інформація",
     "privacy": "Конфіденційність",
     "cookies": "Файли cookie",

@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Voor homo's en de queer gemeenschap",
-    "title1": "Ontmoetingen",
-    "title2": "tussen mannen.",
-    "subtitle": "Embir is een nieuwe datingapp voor homo's, ontworpen voor wie op zoek is naar iets echts. Geen druk, geen oordeel. Gratis tijdens de lancering.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Maak gratis mijn profiel aan",
     "secondary": "Ontdek de leden"
   },
@@ -50,7 +50,7 @@
     "translate": "Bekijk vertaling"
   },
   "footer": {
-    "tagline": "Gratis datingapp voor homo's",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Juridische informatie",
     "privacy": "Privacy",
     "cookies": "Cookies",

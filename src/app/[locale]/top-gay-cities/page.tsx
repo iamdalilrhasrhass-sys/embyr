@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Top 30 Gay Cities in the World — The 2026 Ranking | Embir",
+  title: "Top 30 Gay Cities in the World — The 2026 Ranking",
   description: "The definitive ranking of the best gay cities in 2026. Nightlife, dating scene, community, and LGBTQ rights — find your next destination.",
-  keywords: ["best gay cities", "gay travel", "LGBTQ cities", "gay friendly cities", "top gay destinations 2026"],
   alternates: { canonical: "https://embir.xyz/top-gay-cities" },
 };
 

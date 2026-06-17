@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "为同性恋及酷儿社群打造",
-    "title1": "遇见",
-    "title2": "属于男人之间的缘分。",
-    "subtitle": "Embir 是一款全新的同性恋交友应用，专为寻求真实连接的人设计。没有压力，没有评判。上线期间免费使用。",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "免费创建我的个人资料",
     "secondary": "探索会员"
   },
@@ -50,7 +50,7 @@
     "translate": "查看翻译"
   },
   "footer": {
-    "tagline": "免费同性恋交友应用",
+    "tagline": "Free-at-launch dating platform",
     "legal": "法律声明",
     "privacy": "隐私政策",
     "cookies": "Cookie",

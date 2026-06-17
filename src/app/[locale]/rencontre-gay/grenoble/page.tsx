@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Grenoble — 100% Free App | Embir",
+  title: "Gay Dating in Grenoble — 100% Free App",
   description: "Gay dating in Grenoble on Embir. 100% free app with no ads. Create your profile and meet guys near you in Grenoble.",
-  keywords: ["gay dating Grenoble", "gay Grenoble", "meet guys Grenoble", "gay app Grenoble", "LGBTQ Grenoble"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/grenoble" },
 };
 

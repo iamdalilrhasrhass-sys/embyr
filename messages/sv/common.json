@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "För homosexuella och queergemenskapen",
-    "title1": "Dejting",
-    "title2": "mellan män.",
-    "subtitle": "Embir är en ny gaydejtingapp, skapad för dig som vill ha äkta kontakt. Ingen press, inget dömande. Gratis under lanseringen.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Skapa min profil gratis",
     "secondary": "Upptäck medlemmarna"
   },
@@ -50,7 +50,7 @@
     "translate": "Visa översättning"
   },
   "footer": {
-    "tagline": "Gratis gaydejtingapp",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Juridisk information",
     "privacy": "Integritet",
     "cookies": "Cookies",

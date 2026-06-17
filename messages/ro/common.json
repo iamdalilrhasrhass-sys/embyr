@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Pentru gay și comunitatea queer",
-    "title1": "Întâlniri",
-    "title2": "între bărbați.",
-    "subtitle": "Embir este o nouă aplicație de întâlniri gay, creată pentru cei care își doresc ceva autentic. Fără presiune, fără judecată. Gratuită în perioada de lansare.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Creează-mi profilul gratuit",
     "secondary": "Descoperă membrii"
   },
@@ -50,7 +50,7 @@
     "translate": "Vezi traducerea"
   },
   "footer": {
-    "tagline": "Aplicație de întâlniri gay gratuită",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Mențiuni legale",
     "privacy": "Confidențialitate",
     "cookies": "Cookie-uri",

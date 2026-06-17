@@ -61,6 +61,18 @@ const priorityGroups: HreflangGroup[] = [
     defaultPath: "/us/free-dating-app-no-subscription",
   },
   {
+    fr: "/fr/application-rencontre-serieuse",
+    us: "/us/serious-dating-app",
+    uk: "/uk/serious-dating-app",
+    defaultPath: "/us/serious-dating-app",
+  },
+  {
+    fr: "/fr/rencontre-gratuite-sans-abonnement",
+    us: "/us/best-free-dating-app",
+    uk: "/uk/free-dating-app",
+    defaultPath: "/us/best-free-dating-app",
+  },
+  {
     fr: "/fr/rencontre-paris",
     us: "/us/dating-app-new-york",
     uk: "/uk/dating-app-london",

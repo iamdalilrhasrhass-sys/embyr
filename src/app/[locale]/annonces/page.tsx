@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Classifieds — Free Personal Ads | Embir",
+  title: "Gay Classifieds — Free Personal Ads",
   description: "Browse and post free gay classifieds on Embir. Find local personal ads, events, and connections.",
   alternates: { canonical: "https://embir.xyz/annonces" },
 };

@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "For gays and the queer community",
+    "badge": "For every orientation",
     "title1": "Meet",
-    "title2": "men.",
-    "subtitle": "Embir is a new gay dating app, made for those who want something real. No pressure, no judgment. Free during launch.",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Create my free profile",
     "secondary": "Browse members"
   },
@@ -50,7 +50,7 @@
     "translate": "See translation"
   },
   "footer": {
-    "tagline": "Free gay dating app",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Legal notice",
     "privacy": "Privacy",
     "cookies": "Cookies",

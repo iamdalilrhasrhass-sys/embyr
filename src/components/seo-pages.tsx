@@ -337,6 +337,12 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
 
   return (
     <section className="mt-12 space-y-10 text-base leading-relaxed text-white/52">
+      {page.content && (
+        <div className="rounded-3xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-8">
+          <h2 className="font-serif text-3xl text-white">A word from the team</h2>
+          <p className="mt-4 italic text-white/70">{page.content}</p>
+        </div>
+      )}
       <div>
         <h2 className="font-serif text-3xl text-white">Why this page exists</h2>
         <p className="mt-4">{page.angle}</p>

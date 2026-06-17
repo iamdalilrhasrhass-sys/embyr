@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Dành cho người đồng tính và cộng đồng queer",
-    "title1": "Kết nối",
-    "title2": "giữa những người đồng tính.",
-    "subtitle": "Embir là ứng dụng hẹn hò đồng tính mới, được thiết kế cho những ai muốn điều chân thật. Không áp lực, không phán xét. Miễn phí trong thời gian ra mắt.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Tạo hồ sơ miễn phí",
     "secondary": "Khám phá thành viên"
   },
@@ -50,7 +50,7 @@
     "translate": "Xem bản dịch"
   },
   "footer": {
-    "tagline": "Ứng dụng hẹn hò đồng tính miễn phí",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Pháp lý",
     "privacy": "Quyền riêng tư",
     "cookies": "Cookie",

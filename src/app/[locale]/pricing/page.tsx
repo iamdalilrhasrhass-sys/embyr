@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pricing — 100% Free Forever | Embir",
+  title: "Pricing — 100% Free Forever",
   description: "Embir is 100% free. No subscriptions, no hidden fees, no premium tiers. Unlimited messaging for everyone.",
   alternates: { canonical: "https://embir.xyz/pricing" },
 };

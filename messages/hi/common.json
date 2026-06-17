@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "गे और क्वीयर समुदाय के लिए",
-    "title1": "मुलाकातें",
-    "title2": "पुरुषों के बीच।",
-    "subtitle": "एम्बायर एक नया गे डेटिंग ऐप है, जो उन लोगों के लिए बनाया गया है जो सच्चाई चाहते हैं। कोई दबाव नहीं, कोई निर्णय नहीं। लॉन्च के दौरान मुफ्त।",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "मुफ्त में अपना प्रोफाइल बनाएं",
     "secondary": "सदस्यों को जानें"
   },
@@ -50,7 +50,7 @@
     "translate": "अनुवाद देखें"
   },
   "footer": {
-    "tagline": "मुफ्त गे डेटिंग ऐप",
+    "tagline": "Free-at-launch dating platform",
     "legal": "कानूनी जानकारी",
     "privacy": "गोपनीयता",
     "cookies": "कुकीज़",

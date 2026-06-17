@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Gay Bars in Nice — Guide & Map | Embir",
+  title: "Best Gay Bars in Nice — Guide & Map",
   description: "Discover the best gay bars in Nice with Embir's curated guide. Find LGBTQ-friendly spots, meet locals, and explore the scene.",
-  keywords: ["gay bars Nice", "LGBTQ bars Nice", "gay nightlife Nice", "gay scene Nice"],
   alternates: { canonical: "https://embir.xyz/bars-gay/nice" },
 };
 

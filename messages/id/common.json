@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Untuk kaum gay dan komunitas queer",
-    "title1": "Kencan",
-    "title2": "antar pria.",
-    "subtitle": "Embir adalah aplikasi kencan gay baru, dirancang untuk mereka yang menginginkan hubungan nyata. Tanpa tekanan, tanpa penghakiman. Gratis selama peluncuran.",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "Buat profil saya secara gratis",
     "secondary": "Temui anggota"
   },
@@ -50,7 +50,7 @@
     "translate": "Lihat terjemahan"
   },
   "footer": {
-    "tagline": "Aplikasi kencan gay gratis",
+    "tagline": "Free-at-launch dating platform",
     "legal": "Informasi hukum",
     "privacy": "Privasi",
     "cookies": "Cookie",

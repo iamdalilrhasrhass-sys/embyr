@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Toulouse — 100% Free App | Embir",
+  title: "Gay Dating in Toulouse — 100% Free App",
   description: "Gay dating in Toulouse on Embir. 100% free app with no ads. Create your profile and meet guys near you in Toulouse.",
-  keywords: ["gay dating Toulouse", "gay Toulouse", "meet guys Toulouse", "gay app Toulouse", "LGBTQ Toulouse"],
   alternates: { canonical: "https://embir.xyz/rencontre-gay/toulouse" },
 };
 

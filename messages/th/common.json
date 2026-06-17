@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "สำหรับเกย์และชุมชน queer",
-    "title1": "การพบปะ",
-    "title2": "ระหว่างผู้ชาย",
-    "subtitle": "Embir คือแอปหาคู่เกย์ใหม่ ที่ออกแบบมาเพื่อคนที่ต้องการความจริงใจ ไม่กดดัน ไม่ตัดสิน ฟรีในช่วงเปิดตัว",
+    "badge": "For every orientation",
+    "title1": "Meet",
+    "title2": "compatible people.",
+    "subtitle": "Free at launch. Built for France, the UK and the United States, with orientation, preferences, compatibility, safety and verified profiles.",
     "cta": "สร้างโปรไฟล์ฟรี",
     "secondary": "ดูสมาชิก"
   },
@@ -50,7 +50,7 @@
     "translate": "ดูคำแปล"
   },
   "footer": {
-    "tagline": "แอปหาคู่เกย์ฟรี",
+    "tagline": "Free-at-launch dating platform",
     "legal": "ข้อกำหนดทางกฎหมาย",
     "privacy": "ความเป็นส่วนตัว",
     "cookies": "คุกกี้",

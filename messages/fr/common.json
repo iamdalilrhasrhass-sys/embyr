@@ -1,9 +1,9 @@
 {
   "hero": {
-    "badge": "Pour les gays et la communauté queer",
-    "title1": "Des rencontres",
-    "title2": "entre hommes.",
-    "subtitle": "Embir est une nouvelle app de rencontre gay, pensée pour ceux qui veulent du vrai. Pas de pression, pas de jugement. Gratuite pendant le lancement.",
+    "badge": "Pour toutes les orientations",
+    "title1": "Rencontrer",
+    "title2": "des personnes compatibles.",
+    "subtitle": "Gratuit au lancement. Construit pour la France, le Royaume-Uni et les Etats-Unis, avec orientation, preferences, compatibilite, securite et profils verifies.",
     "cta": "Créer mon profil gratuitement",
     "secondary": "Découvrir les membres"
   },
@@ -50,7 +50,7 @@
     "translate": "Voir la traduction"
   },
   "footer": {
-    "tagline": "App de rencontre gay gratuite",
+    "tagline": "Plateforme de rencontre gratuite au lancement",
     "legal": "Mentions légales",
     "privacy": "Confidentialité",
     "cookies": "Cookies",

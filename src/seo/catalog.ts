@@ -30,6 +30,7 @@ export type ResolvedSeoPage = {
   app?: string;
   topic?: string;
   angle?: string;
+  content?: string;
 };
 
 function normalizeComparisonSlug(slug: string) {

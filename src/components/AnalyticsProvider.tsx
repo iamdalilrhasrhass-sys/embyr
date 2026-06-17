@@ -1,17 +1,21 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { trackPageView } from '@/lib/analytics';
 
 export default function AnalyticsProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    trackPageView();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const lastPath = useRef<string>('');
 
-    // Track navigation
-    const handleRouteChange = () => trackPageView();
-    window.addEventListener('popstate', handleRouteChange);
-    return () => window.removeEventListener('popstate', handleRouteChange);
-  }, []);
+  useEffect(() => {
+    const currentPath = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+    if (currentPath !== lastPath.current) {
+      lastPath.current = currentPath;
+      trackPageView();
+    }
+  }, [pathname, searchParams]);
 
   return <>{children}</>;
 }
