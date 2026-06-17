@@ -122,6 +122,7 @@ export function resolveMarketProductPage(market: "usa" | "uk", slug: string, loc
     h1: page.h1,
     topic: page.topic,
     angle: page.angle,
+    content: page.content,
     description: page.description,
   };
 }

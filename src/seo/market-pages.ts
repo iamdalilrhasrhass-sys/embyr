@@ -8,6 +8,7 @@ export type MarketSeoPage = {
   topic: string;
   description: string;
   angle: string;
+  content?: string;
   priority: number;
 };
 
@@ -28,6 +29,7 @@ const topics = [
   ["founding-community", "Founding community"],
   ["tinder-alternative", "Tinder alternative"],
   ["grindr-alternative", "Grindr alternative"],
+  ["best-free-dating-app", "Best free dating app"],
   ["free-dating-app-no-subscription", "Free dating app without subscription"],
   ["gay-dating-app-us", "Gay dating app for real compatibility"],
   ["lgbtq-dating-uk", "LGBTQ dating app for the UK"],
@@ -41,6 +43,7 @@ function buildMarketPages(market: Extract<MarketCode, "usa" | "uk">, country: st
     h1: `${topic} for the ${country}`,
     topic,
     description: `${topic} in the ${country}: Embir is free at launch, built for verified profiles, every orientation, compatibility, safety and transparent future freemium.`,
+    content: slug === "best-free-dating-app" ? `Embir is the best free dating app in ${country} for those who value authenticity and safety. Our launch phase offers full access to all features, including verified profiles and deep compatibility matching, without any initial costs.` : undefined,
     angle:
       slug.includes("tinder")
         ? "Less empty swiping, more intent. This page exists for people comparing Tinder-like discovery with a platform that gives preferences, compatibility and profile trust more weight."
