@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: url, languages: { 'fr-FR': 'https://embir.xyz/fr', 'en': 'https://embir.xyz', 'x-default': 'https://embir.xyz' } },
     openGraph: { title: t('title'), description: t('description'), url, siteName: 'Embir', locale: locale === 'fr' ? 'fr_FR' : 'en_US', type: 'website', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Embir' }] },
     twitter: { card: 'summary_large_image', title: t('title'), description: t('description'), images: ['/og-image.png'] },
-    manifest: '/manifest.json',
+    manifest: '/manifest.webmanifest',
     appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'Embir' },
     robots: { index: true, follow: true },
   };
