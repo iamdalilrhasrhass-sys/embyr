@@ -104,7 +104,7 @@ export default function Page() {
           <h2 className="text-center font-serif text-3xl font-light tracking-[-0.02em] text-white sm:text-4xl mb-12">NYC Dating FAQ</h2>
           <div className="space-y-4">
             {[
-              { q: "Is Embir free in New York?", a: "Yes — completely free during launch. Unlimited messages, full profiles, and AI matching with no subscription required. Founding members in NYC keep premium access for life." },
+              { q: "Is Embir free in New York?", a: "Yes — completely free during launch. Unlimited messages, full profiles, and AI matching with no subscription required. Founding members in NYC will receive priority access and product benefits." },
               { q: "How many active users does Embir have in NYC?", a: "We're in our launch phase, which means our NYC community is growing daily. The advantage of joining now: you're part of the founding group that shapes the community from day one." },
               { q: "Which NYC neighborhoods have the most Embir members?", a: "Hell's Kitchen, Chelsea, and Williamsburg currently have our strongest concentrations, but we have verified members in all five boroughs." },
               { q: "How does verification work for New Yorkers?", a: "Quick selfie check. Our system matches your live selfie to your profile photo — no personal data stored, no third-party verification services. Takes under a minute." },

@@ -35,7 +35,7 @@ export default function Page() {
           <h2>2. Le contexte</h2>
           <p>Les utilisateurs d'applis de rencontre expriment une lassitude croissante face au swipe infini, aux profils non vérifiés et aux abonnements coûteux. <strong>Embir répond à ces frustrations</strong> avec une approche radicalement différente.</p>
           <h2>3. Ce qui fait la différence</h2>
-          <ul><li><strong>Profils vérifiés :</strong> chaque membre passe par une vérification selfie.</li><li><strong>Matching IA :</strong> notre algorithme DeepSeek analyse vos préférences.</li><li><strong>100% gratuit au lancement :</strong> messagerie illimitée, zéro pub.</li></ul>
+          <ul><li><strong>Profils vérifiés :</strong> la vérification par selfie est proposée à tous les membres.</li><li><strong>Matching IA :</strong> notre système de compatibilité suggère des profils adaptés à vos préférences.</li><li><strong>100% gratuit au lancement :</strong> messagerie illimitée, zéro pub.</li></ul>
           <h2>4. Nos recommandations</h2>
           <p>Pour une expérience de rencontre réussie, privilégiez toujours les plateformes qui vérifient leurs membres, respectent votre vie privée et ne vous enferment pas dans un abonnement.</p>
           <h2>5. FAQ</h2>

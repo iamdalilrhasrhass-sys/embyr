@@ -119,7 +119,7 @@ export default function Page() {
             {[
               { q: "Which gay dating app is 100% free?", a: "Embir is currently the only major gay dating app that is 100% free with no premium tiers, no ads, and no feature limits. Grindr, Tinder, and Scruff all use freemium models." },
               { q: "Are free gay dating apps safe?", a: "Safety depends on verification and moderation, not price. Apps with mandatory selfie verification (like Embir) are inherently safer than apps where anyone can create an unverified account." },
-              { q: "Why do most apps charge if they advertise as free?", a: "Most use a freemium model: download is free, but core features require a subscription. This is their revenue model. Embir is free during launch, with founding members keeping lifetime access." },
+              { q: "Why do most apps charge if they advertise as free?", a: "Most use a freemium model: download is free, but core features require a subscription. This is their revenue model. Embir is free during launch, with founding members receiving priority access and product benefits." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                 <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>

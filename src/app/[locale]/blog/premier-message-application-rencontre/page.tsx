@@ -91,7 +91,7 @@ export default function Page() {
           <h2>5. Le matching intelligent, pas le swipe aléatoire</h2>
           <p>
             Contrairement aux applications qui vous montrent des profils uniquement basés sur la distance, 
-            <strong>Embir utilise l'intelligence artificielle DeepSeek</strong> pour analyser vos préférences, 
+            <strong>Embir est conçu pour soutenir une découverte basée sur la compatibilité</strong> pour analyser vos préférences, 
             votre personnalité et vos centres d'intérêt. Résultat : des suggestions vraiment pertinentes, 
             pas un défilé de profils aléatoires.
           </p>

@@ -37,7 +37,7 @@ export default function Page() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Verified Profiles</h3><p className="text-sm text-white/45">Every member in Brussels is verified by selfie. No bots, no fakes.</p></div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Free During Launch</h3><p className="text-sm text-white/45">Unlimited messaging, AI matching, zero ads. No subscription needed.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3><p className="text-sm text-white/45">DeepSeek AI learns your preferences for truly compatible matches in Brussels.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3><p className="text-sm text-white/45">our compatibility system suggests profiles based on your preferences for truly compatible matches in Brussels.</p></div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Inclusive for All</h3><p className="text-sm text-white/45">Gay, lesbian, bi, trans, queer — Embir welcomes everyone in Brussels.</p></div>
           </div>
         </div>

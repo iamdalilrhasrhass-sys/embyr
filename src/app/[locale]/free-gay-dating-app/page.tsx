@@ -50,7 +50,7 @@ export default function Page() {
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3>
-              <p className="text-sm text-white/45">Our DeepSeek AI learns your preferences to suggest truly compatible profiles.</p>
+              <p className="text-sm text-white/45">Our our compatibility system suggests profiles based on your preferences to suggest truly compatible profiles.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Privacy & Respect</h3>
@@ -65,7 +65,7 @@ export default function Page() {
           <div className="space-y-4">
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Is Embir really free?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Yes. During the launch phase, all features are free — messaging, matching, profiles. Founding members keep premium access for life.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Yes. During the launch phase, all features are free — messaging, matching, profiles. Founding members will receive priority access and product benefits.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">How are profiles verified?</summary>
@@ -73,7 +73,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Where is Embir available?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir is available in France, the US, and the UK — with active communities in Paris, New York, London, and many more cities.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Embir is available in France, the US, and the UK — launching first communities progressively across key cities.</p>
             </details>
           </div>
         </div>

@@ -84,7 +84,7 @@ export default function Page() {
                 { label: "Mandatory verification", desc: "Selfie check for every new profile. No bots, no catfish, no fake accounts." },
                 { label: "Completely free during launch", desc: "Unlimited messages, full discovery, AI matching — all included." },
                 { label: "Zero advertising", desc: "No banner ads, no promoted profiles, no third-party trackers." },
-                { label: "Smarter matching", desc: "Our AI learns your preferences and suggests people based on genuine compatibility." },
+                { label: "Smarter matching", desc: "Our system suggests people based on shared preferences and genuine compatibility." },
                 { label: "UK cities covered", desc: "London, Manchester, Birmingham, Brighton, Edinburgh, and expanding weekly." },
                 { label: "Safety-first design", desc: "Granular privacy controls, block and report tools, and human moderation." },
               ].map((item, i) => (

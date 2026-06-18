@@ -60,7 +60,7 @@ export default function Page() {
 
             <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — Best free app, best verification</h3>
             <p><strong>Price:</strong> Free (no premium tier). <strong>Verification:</strong> Mandatory. <strong>Best in:</strong> New York, Los Angeles, Miami.</p>
-            <p>Embir is the newest major player and the most fundamentally different. Completely free — no $20-40/month subscription, no premium tiers, no ads. Every profile is selfie-verified, eliminating bots. The DeepSeek-powered AI matching learns your preferences and suggests compatible people. Active in New York, LA, Miami, Chicago, and growing across the US.</p>
+            <p>Embir is the newest major player and the most fundamentally different. Completely free — no $20-40/month subscription, no premium tiers, no ads. Every profile is selfie-verified, eliminating bots. Compatibility-based discovery helps you find genuinely compatible people and suggests compatible people. Active in New York, LA, Miami, Chicago, and growing across the US.</p>
             <p><strong>Best for:</strong> Gay men who want quality over quantity and refuse to pay monthly fees.</p>
             <p><Link href="/auth/register" className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
 

@@ -36,7 +36,7 @@ export default function Page() {
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">The 5 best Grindr alternatives — ranked</h2>
 
 <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — The best free alternative</h3>
-<p>Embir was built as a direct response to everything wrong with Grindr. It's completely free — no subscription tiers, no premium features locked away, no ads. Every profile is verified via mandatory selfie check, so you never talk to bots. The matching is powered by AI that learns your preferences, rather than just showing you whoever happens to be closest. Available in 25 languages with growing communities in the US, UK, and France.</p>
+<p>Embir was built as a direct response to everything wrong with Grindr. It's completely free — no subscription tiers, no premium features locked away, no ads. Every profile is verified via mandatory selfie check, so you never talk to bots. Matching is designed to support compatibility-based discovery, rather than just showing you whoever happens to be closest. Available in 25 languages launching progressively in the US, UK, and France.</p>
 <p><strong>Why it beats Grindr:</strong> Free. No ads. Verified profiles. Smarter matching. <strong>Trade-off:</strong> Newer, so the community is smaller but growing fast.</p>
 <p><Link href="/auth/register" className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
 

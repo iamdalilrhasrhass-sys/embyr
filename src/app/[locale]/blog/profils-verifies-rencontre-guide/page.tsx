@@ -67,7 +67,7 @@ export default function Page() {
           </p>
           <ul>
             <li><strong>La qualité des profils :</strong> sur Embir, chaque membre est vérifié par selfie.</li>
-            <li><strong>La pertinence du matching :</strong> notre IA DeepSeek analyse vos préférences.</li>
+            <li><strong>La pertinence du matching :</strong> notre système de compatibilité suggère des profils adaptés à vos préférences.</li>
             <li><strong>La confiance dans l'environnement :</strong> zéro pub, données protégées, modération humaine.</li>
           </ul>
 
