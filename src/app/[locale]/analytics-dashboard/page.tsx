@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
@@ -8,7 +9,42 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
+async function checkAuth(): Promise<boolean> {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("embir_admin_token")?.value;
+  const secret = process.env.ADMIN_SECRET || "embir_dashboard_2026";
+  return token === secret;
+}
+
 export default async function AnalyticsDashboard() {
+  const isAuthed = await checkAuth();
+
+  if (!isAuthed) {
+    return (
+      <main className="emb-page min-h-screen flex items-center justify-center px-4">
+        <div className="w-full max-w-sm rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center">
+          <h1 className="font-serif text-2xl text-white">Admin Access</h1>
+          <p className="mt-3 text-sm text-white/45">This dashboard is restricted to Embir administrators.</p>
+          <form method="POST" action="/api/admin/auth" className="mt-6 space-y-4">
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter admin password"
+              className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-[#d4a574]/50 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-[#d4a574] py-3 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
+            >
+              Access Dashboard
+            </button>
+          </form>
+          {false && <p className="mt-4 text-xs text-red-400">Invalid password</p>}
+        </div>
+      </main>
+    );
+  }
+
   const [totalEvents, uniqueIPs, pageViews, signupViews, earlyAccess, eventsByType, topPages, dailyStats] = await Promise.all([
     prisma.analyticsEvent.count(),
     prisma.analyticsEvent.groupBy({ by: ["ipAddress"] }).then(r => r.length),
@@ -26,7 +62,7 @@ export default async function AnalyticsDashboard() {
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-5xl">
         <h1 className="font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Analytics Dashboard</h1>
-        <p className="mt-4 text-sm text-white/35">Real-time from internal analytics. GA4 pending setup.</p>
+        <p className="mt-4 text-sm text-white/35">Internal analytics — restricted access</p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-4">
           {[
@@ -54,7 +90,6 @@ export default async function AnalyticsDashboard() {
               ))}
             </div>
           </div>
-
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
             <h2 className="font-serif text-2xl text-white">Daily Traffic</h2>
             <div className="mt-4 space-y-2">

@@ -8,6 +8,7 @@ import "@/styles/embir-tokens.css";
 import "@/styles/mobile.css";
 import "@/styles/embir-20000x.css";
 import "@/styles/embir-supernova.css";
+import CookieConsent from "@/components/CookieConsent";
 import ClientShell from "@/components/ClientShell";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { VibeKeyframes } from "@/components/VibeEffects";
@@ -81,6 +82,7 @@ export default async function LocaleLayout({
             <VibeKeyframes />
             <ScrollProgress />
             <GoogleAnalytics />
+            <CookieConsent />
           </NextIntlClientProvider>
       </body>
     </html>
