@@ -299,6 +299,9 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
 function EditorialSections({ page }: { page: ResolvedSeoPage }) {
   const topic = page.topic ?? page.h1;
   const place = page.city ?? (page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? (page.locale === "fr" ? "la Suisse" : "Switzerland") : page.locale === "fr" ? "la France" : "the regions Embir serves");
+  
+  const cityCity = page.city ?? "";
+  const marketLabel = page.market === "france" ? "France" : page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? "Switzerland" : "";
 
   if (page.locale === "fr") {
     return (
@@ -331,6 +334,32 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
             Les apps classiques optimisent souvent le temps passe dans le flux : swipe infini, distance immediate, options essentielles bloquees, notifications de relance. Embir cherche plutot a reduire le bruit. La difference se voit dans les pages locales, les comparatifs, les guides et les pages produit : chaque contenu doit aider l&apos;utilisateur a comprendre le fonctionnement, le niveau de confiance et le modele gratuit au lancement avant de creer un profil.
           </p>
         </div>
+        {page.city && (
+          <>
+            <div>
+              <h2 className="font-serif text-3xl text-white">Rencontre a {cityCity}</h2>
+              <p className="mt-4">
+                {cityCity} est une ville ou la vie sociale est riche, et les rencontres en ligne y tiennent une place importante. Que vous habitiez au coeur de la ville ou en banlieue, Embir vous permet de rencontrer des personnes qui partagent vos centres d&apos;interet et vos valeurs, sans le bruit des apps classiques. Les profils verifies, les preferences d&apos;orientation et la compatibilite sont au coeur de l&apos;experience.
+              </p>
+              <p className="mt-4">
+                Les habitants de {cityCity} cherchent souvent des relations plus authentiques que ce que proposent les applications traditionnelles. Embir repond a cette attente en mettant l&apos;accent sur la qualite des profils, la transparence des intentions et le respect des preferences de chacun. Pendant la phase de lancement, tout est gratuit : messagerie illimitee, profils verifies, decouverte par compatibilite.
+              </p>
+              <p className="mt-4">
+                Rejoindre la communaute fondatrice a {cityCity}, c&apos;est participer a la construction d&apos;une plateforme de rencontre plus saine, des le debut. Les premiers membres aident a definir la culture locale de la communaute et beneficient d&apos;un acces prioritaire aux futures fonctionnalites premium. C&apos;est le moment ideal pour decouvrir Embir et contribuer a son developpement.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-serif text-3xl text-white">Ce qui rend Embir different pour {cityCity}</h2>
+              <ul className="mt-4 list-disc space-y-2 pl-6">
+                <li><strong>Gratuit au lancement :</strong> pas d&apos;abonnement, pas de paywall cache. Toutes les fonctions essentielles sont accessibles sans frais.</li>
+                <li><strong>Profils verifies :</strong> chaque membre peut verifier son profil par selfie. Le badge verifie cree un environnement de confiance.</li>
+                <li><strong>Compatibilite avant distance :</strong> les preferences et l&apos;orientation comptent plus que la proximite geographique immediate.</li>
+                <li><strong>Moderation humaine :</strong> chaque signalement est examine par une equipe reelle, pas par un algorithme automatique.</li>
+                <li><strong>Communautaire :</strong> la phase de lancement est l&apos;occasion de rejoindre une communaute fondatrice qui construit la culture de la plateforme.</li>
+              </ul>
+            </div>
+          </>
+        )}
       </section>
     );
   }
@@ -371,6 +400,32 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
           Classic dating apps often optimize time in the feed: endless swiping, distance-first ranking, essential features locked away and constant reactivation prompts. Embir is designed to reduce that noise. The difference appears across local pages, comparison pages, guides and product pages: each page should help a user understand the product, the trust model and the free-at-launch promise before creating a profile.
         </p>
       </div>
+      {page.city && (
+        <>
+          <div>
+            <h2 className="font-serif text-3xl text-white">Dating in {cityCity}</h2>
+            <p className="mt-4">
+              {cityCity} has a vibrant dating scene, but it also comes with the same challenges that dating app users face everywhere: fake profiles, endless swiping, subscription fatigue and conversations that don&apos;t go anywhere. Embir was designed with these specific challenges in mind, offering a platform where trust is built through verified profiles, compatibility signals and human moderation instead of opaque algorithms.
+            </p>
+            <p className="mt-4">
+              What makes Embir different in {cityCity} is the focus on real connections over volume. Instead of showing hundreds of nearby profiles to swipe through, Embir surfaces people who match your orientation preferences, relationship intentions and lifestyle compatibility. During the launch phase in {cityCity}, every core feature is free — unlimited messaging, selfie verification, preference filters and safety tools. No paywall, no trial period, no credit card required.
+            </p>
+            <p className="mt-4">
+              The founding community in {cityCity} is growing. Early members who join during the launch phase help shape the local culture of the platform. They also receive priority access to premium features when those arrive. This is a unique opportunity to be part of something built differently — a dating platform that puts community quality and user trust ahead of growth metrics and engagement loops.
+            </p>
+          </div>
+          <div>
+            <h2 className="font-serif text-3xl text-white">Why Embir works in {cityCity}</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-6">
+              <li><strong>Free at launch:</strong> no subscription needed, no hidden paywalls. All core features accessible at no cost during the founding phase.</li>
+              <li><strong>Verified profiles:</strong> every member can verify their identity through a selfie check. The verified badge creates a safer environment for everyone.</li>
+              <li><strong>Compatibility before proximity:</strong> preferences and orientation matter more than how close someone happens to be right now.</li>
+              <li><strong>Human moderation:</strong> every report is reviewed by a real team member, not an automated filter. Context matters.</li>
+              <li><strong>Founding community:</strong> the launch phase is the best moment to join. Early members shape the platform culture and get priority access to future features.</li>
+            </ul>
+          </div>
+        </>
+      )}
     </section>
   );
 }
