@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 /**
  * FOMO Founder Counter — displayed on the home page.
@@ -34,12 +33,7 @@ export default function FomoCounter({ locale = "en" }: { locale?: string }) {
   const progress = Math.min(100, (count / limit) * 100);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3 }}
-      className="relative overflow-hidden rounded-2xl border border-[#ff5e36]/20 bg-gradient-to-r from-[#ff5e36]/[0.08] via-[#d4a574]/[0.04] to-[#ff1f5a]/[0.08] p-5 sm:p-6"
-    >
+    <div className="relative overflow-hidden rounded-2xl border border-[#ff5e36]/20 bg-gradient-to-r from-[#ff5e36]/[0.08] via-[#d4a574]/[0.04] to-[#ff1f5a]/[0.08] p-5 sm:p-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70 mb-1">
@@ -65,13 +59,11 @@ export default function FomoCounter({ locale = "en" }: { locale?: string }) {
         </a>
       </div>
       <div className="mt-4 h-1.5 bg-white/5 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+        <div
           className="h-full bg-gradient-to-r from-[#d4a574] via-[#ff5e36] to-[#ff1f5a]"
+          style={{ width: `${progress}%` }}
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
