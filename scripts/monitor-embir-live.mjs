@@ -110,7 +110,7 @@ for (const check of pageChecks) {
 
   if (check.expectH1) {
     assert(
-      result.body.includes("The dating platform for everyone."),
+      result.body.includes("Free Inclusive Dating App for Every Orientation"),
       "HOME: missing exact H1",
       failures,
     );

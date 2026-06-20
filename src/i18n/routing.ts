@@ -8,7 +8,7 @@ export const routing = defineRouting({
     "vi", "id", "ms", "ro"
   ],
   defaultLocale: "en",
-  localeDetection: true,
+  localeDetection: false,
   localePrefix: "as-needed",
   alternateLinks: false,
 });

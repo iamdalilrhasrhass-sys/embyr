@@ -5,7 +5,7 @@ type Params = Promise<{ locale: "en" | "fr" }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await params;
-  const url = locale === "fr" ? "https://embir.xyz/fr/a-propos" : "https://embir.xyz/about";
+  const url = locale === "fr" ? "https://embir.xyz/fr/about" : "https://embir.xyz/about";
   const title = locale === "fr" ? "À propos d'Embir — Application de rencontre inclusive" : "About Embir — Inclusive Dating App";
   const description = locale === "fr"
     ? "Embir est une application de rencontre inclusive, gratuite au lancement. Pour toutes les orientations, avec profils vérifiés, compatibilité réelle et modèle freemium transparent."
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title, description,
     metadataBase: new URL("https://embir.xyz"),
-    alternates: { canonical: url, languages: { "fr-FR": "https://embir.xyz/fr/a-propos", "en": "https://embir.xyz/about", "x-default": "https://embir.xyz/about" } },
+    alternates: { canonical: url, languages: { "fr-FR": "https://embir.xyz/fr/about", "en": "https://embir.xyz/about", "x-default": "https://embir.xyz/about" } },
     openGraph: { title, description, url, siteName: "Embir", locale: locale === "fr" ? "fr_FR" : "en_US", type: "website", images: [{ url: `/api/og?title=Embir&variant=default`, width: 1200, height: 630, alt: "Embir" }] },
     twitter: { card: "summary_large_image", title, description, images: [`/api/og?title=Embir&variant=default`] },
     robots: { index: true, follow: true },

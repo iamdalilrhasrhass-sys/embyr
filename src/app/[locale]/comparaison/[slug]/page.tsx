@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { resolveComparisonPage, staticParams } from "@/seo/catalog";
 import { buildSeoMetadata } from "@/seo/metadata";
@@ -23,8 +24,6 @@ export default async function Page({ params }: { params: Params }) {
   const page = resolveComparisonPage(slug, locale);
   if (!page) notFound();
 
-  const isFr = locale === "fr";
-
   return (
     <>
       <Navbar showLogo />
@@ -32,11 +31,11 @@ export default async function Page({ params }: { params: Params }) {
         <article className="mx-auto max-w-5xl">
           {/* Breadcrumb */}
           <nav className="mb-8 flex flex-wrap gap-2 text-xs text-white/35" aria-label="Breadcrumb">
-            <a href="/" className="hover:text-[#d4a574]">Accueil</a>
+            <Link href="/" className="hover:text-[#d4a574]">Accueil</Link>
             <span>/</span>
-            <a href="/fr/comparaison/alternative-tinder" className="hover:text-[#d4a574]">
+            <Link href="/fr/comparaison/alternative-tinder" className="hover:text-[#d4a574]">
               Comparatifs
-            </a>
+            </Link>
             <span>/</span>
             <span className="text-white/50">{page.h1}</span>
           </nav>

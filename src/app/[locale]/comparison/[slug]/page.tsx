@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { resolveComparisonPage, staticParams } from "@/seo/catalog";
 import { buildSeoMetadata } from "@/seo/metadata";
@@ -32,11 +33,11 @@ export default async function Page({ params }: { params: Params }) {
         <article className="mx-auto max-w-5xl">
           {/* Breadcrumb */}
           <nav className="mb-8 flex flex-wrap gap-2 text-xs text-white/35" aria-label="Breadcrumb">
-            <a href="/" className="hover:text-[#d4a574]">Home</a>
+            <Link href="/" className="hover:text-[#d4a574]">Home</Link>
             <span>/</span>
-            <a href={isFr ? "/fr/comparaison/alternative-tinder" : "/comparison/tinder-alternative"} className="hover:text-[#d4a574]">
+            <Link href={isFr ? "/fr/comparaison/alternative-tinder" : "/comparison/tinder-alternative"} className="hover:text-[#d4a574]">
               {isFr ? "Comparatifs" : "Comparisons"}
-            </a>
+            </Link>
             <span>/</span>
             <span className="text-white/50">{page.h1}</span>
           </nav>

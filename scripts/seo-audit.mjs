@@ -19,7 +19,7 @@ const thresholds = {
 };
 
 const homepageRequired = [
-  "The dating platform for everyone",
+  "Free Inclusive Dating App for Every Orientation",
   "France",
   "Switzerland",
   "UK",

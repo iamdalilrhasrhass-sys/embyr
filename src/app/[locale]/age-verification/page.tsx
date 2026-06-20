@@ -5,7 +5,7 @@ type Params = Promise<{ locale: "en" | "fr" }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await params;
-  const url = locale === "fr" ? "https://embir.xyz/fr/verification-age" : "https://embir.xyz/age-verification";
+  const url = locale === "fr" ? "https://embir.xyz/fr/age-verification" : "https://embir.xyz/age-verification";
   const title = locale === "fr" ? "Vérification d'âge 18+ — Embir" : "Age Verification 18+ — Embir";
   const description = locale === "fr"
     ? "Embir est strictement réservé aux adultes de 18 ans et plus. Déclaration d'âge obligatoire, signalement des profils mineurs, blocage immédiat et suppression définitive."
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title, description,
     metadataBase: new URL("https://embir.xyz"),
-    alternates: { canonical: url, languages: { "fr-FR": "https://embir.xyz/fr/verification-age", "en": "https://embir.xyz/age-verification", "x-default": "https://embir.xyz/age-verification" } },
+    alternates: { canonical: url, languages: { "fr-FR": "https://embir.xyz/fr/age-verification", "en": "https://embir.xyz/age-verification", "x-default": "https://embir.xyz/age-verification" } },
     openGraph: { title, description, url, siteName: "Embir", locale: locale === "fr" ? "fr_FR" : "en_US", type: "website", images: [{ url: `/api/og?title=Embir&variant=default`, width: 1200, height: 630, alt: "Embir" }] },
     twitter: { card: "summary_large_image", title, description, images: [`/api/og?title=Embir&variant=default`] },
     robots: { index: true, follow: true },
