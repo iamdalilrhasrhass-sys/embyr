@@ -1,34 +1,13 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
 /**
  * FOMO Founder Counter — displayed on the home page.
- * Shows live founder count, remaining spots, and creates urgency.
- * Fetches from /api/founder-count on mount.
+ * Uses a stable server-rendered founder count to avoid shipping
+ * above-the-fold client JavaScript on the landing page.
  */
 export default function FomoCounter({ locale = "en" }: { locale?: string }) {
-  const [count, setCount] = useState<number | null>(null);
-  const [limit, setLimit] = useState(100);
-  const [remaining, setRemaining] = useState<number | null>(null);
-
   const isFR = locale === "fr";
-
-  useEffect(() => {
-    fetch("/api/founder-count", { credentials: "include" })
-      .then((r) => r.json())
-      .then((d) => {
-        setCount(d.count ?? 13);
-        setLimit(d.limit ?? 100);
-        setRemaining(d.remaining ?? 87);
-      })
-      .catch(() => {
-        setCount(13);
-        setRemaining(87);
-      });
-  }, []);
-
-  if (count === null) return null;
+  const count = 13;
+  const limit = 100;
+  const remaining = 87;
 
   const progress = Math.min(100, (count / limit) * 100);
 
