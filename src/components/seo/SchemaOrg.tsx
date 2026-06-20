@@ -17,7 +17,7 @@ export default function SchemaOrg() {
       "@type": "Organization",
       name: "Embir",
       url: "https://embir.xyz",
-      logo: "https://embir.xyz/og-image.png",
+      logo: "https://embir.xyz/brand/embir-mark.svg",
       sameAs: ["https://embir.xyz"],
       areaServed: ["France", "Switzerland", "United Kingdom", "United States"],
     },

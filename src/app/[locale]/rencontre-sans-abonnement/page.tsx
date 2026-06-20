@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre-sans-abonnement",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+sans+abonnement+—+100%+gratuite&variant=market`],
   },
 };
 

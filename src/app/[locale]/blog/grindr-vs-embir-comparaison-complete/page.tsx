@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Grindr+vs+Embir+—+la+comparaison+complète+et+honnête&variant=market`],
   },
 };
 

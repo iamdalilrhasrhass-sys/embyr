@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Best Gay Dating Apps in the UK — London, Manchester & Beyond",
   description: "Looking for the best gay dating apps in the UK? Compare Embir, Grindr, Scruff, Tinder and more for London, Manchester, Birmingham and Brighton. Honest UK-specific rankings.",
   alternates: { canonical: "https://embir.xyz/blog/best-gay-dating-apps-uk" },
-  openGraph: { title: "Best Gay Dating Apps in the UK — 2026", description: "Honest UK-specific comparison of gay dating apps. London, Manchester, Birmingham, and beyond.", url: "https://embir.xyz/blog/best-gay-dating-apps-uk", type: "article", siteName: "Embir", locale: "en_GB" },
+  openGraph: { title: "Best Gay Dating Apps in the UK — 2026", description: "Honest UK-specific comparison of gay dating apps. London, Manchester, Birmingham, and beyond.", url: "https://embir.xyz/blog/best-gay-dating-apps-uk", type: "article", siteName: "Embir", locale: "en_GB",
+    images: [`/api/og?title=Best+Gay+Dating+Apps+in+the+UK+—+2026&variant=market`],
+  },
 };
 
 const schema = {"@context":"https://schema.org","@type":"Article","headline":"Best Gay Dating Apps in the UK — 2026","description":"Honest comparison of the best gay dating apps available in the UK: Embir, Grindr, Scruff, Tinder, and more.","author":{"@type":"Organization","name":"Embir"},"datePublished":"2026-06-14","publisher":{"@type":"Organization","name":"Embir","url":"https://embir.xyz"}};

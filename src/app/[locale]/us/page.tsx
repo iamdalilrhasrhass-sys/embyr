@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/us",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Free+Dating+App+for+the+US+—+New+York,+LA,+Miami+&+More+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Free Dating App for the US | Embir", description: "Embir is free at launch in the US. Verified profiles and compatibility matching.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Free Dating App for the US | Embir", description: "Embir is free at launch in the US. Verified profiles and compatibility matching.", images: [`/api/og?title=Free+Dating+App+for+the+US+—+New+York,+LA,+Miami+&+More+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/paris",
     locale: "en_US",
     siteName: "Embir",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir Paris dating" }],
+    images: [{ url: `/api/og?title=Dating+App+in+Paris+—+Verified+Profiles,+Real+Compatibility+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir Paris dating" }],
   },
-  twitter: { card: "summary_large_image", title: "Dating App in Paris | Embir", description: "Paris dating app: inclusive, verified profiles, compatibility matching.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Dating App in Paris | Embir", description: "Paris dating app: inclusive, verified profiles, compatibility matching.", images: [`/api/og?title=Dating+App+in+Paris+—+Verified+Profiles,+Real+Compatibility+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

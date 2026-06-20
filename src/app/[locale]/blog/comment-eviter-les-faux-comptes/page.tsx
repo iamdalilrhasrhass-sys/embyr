@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Comment+éviter+les+faux+comptes+sur+les+applis+de+rencontre&variant=market`],
   },
 };
 

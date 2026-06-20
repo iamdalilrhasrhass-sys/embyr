@@ -118,13 +118,14 @@ export async function POST(request: NextRequest) {
           ],
         },
       },
+      include: { profile: true },
     });
 
     // Créer le record Ambassador
     await prisma.ambassador.create({
       data: {
         userId: user.id,
-        profileId: user.id,
+        profileId: user.profile!.id,
         publicName: name || email.split("@")[0],
         slug: `amb-${user.id.slice(0, 8)}`,
         bio: "Ambassadeur·ice EMBIR — accès gratuit à vie",

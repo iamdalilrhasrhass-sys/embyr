@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/free-gay-dating-app",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Free+Gay+Dating+App+—+No+Ads,+Verified+Profiles&variant=market`],
   },
 };
 

@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 export default function AmbassadeurPage() {
   const [submitted, setSubmitted] = useState(false);
 

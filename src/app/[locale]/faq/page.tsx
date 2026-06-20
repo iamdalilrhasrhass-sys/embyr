@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/faq",
     type: "website",
     siteName: "Embir",
-    images: [{ url: "https://embir.xyz/og-image.png", width: 1200, height: 630, alt: "Embir FAQ" }],
+    images: [{ url: `/api/og?title=Embir+FAQ+—+Free+dating+platform+questions+and+answers+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir FAQ" }],
   },
 };
 

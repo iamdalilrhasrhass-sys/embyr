@@ -2,7 +2,6 @@
 import Link from "next/link";
 import AppShell from "@/components/layout/AppShell";
 import TiltCard from "@/components/motion/TiltCard";
-
 export default function PremiumPage() {
   return (
     <AppShell>

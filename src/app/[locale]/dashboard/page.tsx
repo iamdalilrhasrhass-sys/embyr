@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Particles3D from "@/components/Particles3D";
 import { AuroraBubbles } from "@/components/VibeEffects";
-
 function computeProfileCompletion(profile: any): number {
   if (!profile) return 0;
   let score = 0;

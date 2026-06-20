@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Grindr+est-il+encore+le+meilleur+choix+en+2026&variant=market`],
   },
 };
 

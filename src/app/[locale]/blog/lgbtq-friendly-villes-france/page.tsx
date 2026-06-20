@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Top+15+des+villes+LGBTQ++friendly+en+France&variant=market`],
   },
 };
 

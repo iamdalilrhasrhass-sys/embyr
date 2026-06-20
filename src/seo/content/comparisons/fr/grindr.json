@@ -1,0 +1,121 @@
+{
+  "slug": "grindr",
+  "intro": "Grindr est l'application de référence pour les hommes gays, bi, trans et queer depuis 2009. Mais en 2026, beaucoup d'utilisateurs cherchent une alternative qui propose plus que la culture du plan cul basée sur la proximité — une app qui combine profils vérifiés, compatibilité réelle et vraie sécurité sans sacrifier l'esprit inclusif qu'ils apprécient. Embir a été conçue comme cette alternative : une plateforme pour toutes les orientations où la confiance, la compatibilité et la communauté passent en premier. Voici une comparaison détaillée entre Embir et Grindr.",
+  "comparisonTable": [
+    {
+      "criteria": "Public cible",
+      "competitor": "Principalement hommes gays/bi/trans/queer",
+      "embir": "Toutes les orientations et identités",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Modèle de découverte",
+      "competitor": "Grille de proximité (distance avant tout)",
+      "embir": "Compatibilité d'abord + proximité optionnelle",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Limitée, non systématique",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Sécurité",
+      "competitor": "Signalements basiques",
+      "embir": "Modération humaine, profils vérifiés, tolérance zéro",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Intentions relationnelles",
+      "competitor": "Très orienté plans cul",
+      "embir": "Toutes les intentions : sérieux, casual, exploration",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Gratuité",
+      "competitor": "Version gratuite avec pubs lourdes",
+      "embir": "Gratuit au lancement, freemium transparent",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Modèle de découverte — Grille de proximité vs Compatibilité",
+      "content": "Grindr organise les profils dans une grille basée sur la proximité — les personnes les plus proches apparaissent en premier. Efficace pour les rencontres immédiates, ce modèle peut sembler transactionnel et limite la découverte à ce qui est géographiquement proche. Il n'y a pas de moyen intégré de filtrer par intention relationnelle, valeurs partagées ou compatibilité de style de vie au-delà des champs de profil basiques.\n\nEmbir adopte une approche centrée sur la compatibilité. Tu définis ton orientation, tes intentions (de la relation sérieuse au dating casual en passant par l'amitié), tes préférences et ton style de vie. Le flux de découverte met en avant les personnes qui correspondent à tes critères — pas seulement celles qui se trouvent à 200 mètres.\n\nCela ne signifie pas qu'Embir ignore complètement la localisation — tu peux filtrer par distance quand c'est important. Mais la distance est secondaire par rapport à la compatibilité. Pour les personnes fatiguées du modèle de la grille, ce changement est transformateur.",
+      "highlights": [
+        "La compatibilité avant la proximité",
+        "Filtrer par intentions, pas seulement par localisation",
+        "Plus de contexte avant le premier message"
+      ]
+    },
+    {
+      "title": "Vérification des profils & Sécurité — Au-delà des basiques",
+      "content": "Grindr propose une vérification de profil limitée et a fait face à des critiques récurrentes sur les problèmes de sécurité. Le catfishing, le harcèlement et les arnaques restent des problèmes significatifs que le modèle de grille peut amplifier.\n\nEmbir fait des profils vérifiés une fonctionnalité centrale, pas une réflexion après coup. La vérification par selfie est disponible dès le premier jour. Chaque signalement est transmis à une équipe de modération humaine, pas à un filtre automatique. La plateforme applique une tolérance zéro pour le harcèlement — bannissements immédiats et définitifs sans appel pour les violations graves.\n\nPour les utilisateurs LGBTQ+ qui ont subi du harcèlement ou se sont sentis en insécurité sur d'autres applis, cette attention à la sécurité n'est pas un simple bonus — c'est essentiel. Se sentir assez en sécurité pour être soi-même est la base de toute connexion significative.",
+      "highlights": [
+        "Vérification selfie systématique",
+        "Modération humaine, pas de filtres IA",
+        "Tolérance zéro pour le harcèlement et les discours de haine"
+      ]
+    },
+    {
+      "title": "Communauté & Intentions — Au-delà des plans cul",
+      "content": "La culture de Grindr est fortement orientée vers les rencontres casual et les plans cul. Bien qu'il n'y ait rien de mal à cela, l'app peut sembler peu accueillante pour les personnes qui cherchent d'autres types de connexions — que ce soit une relation sérieuse, de l'amitié au sein de la communauté, ou simplement des conversations qui ne commencent pas par des photos explicites.\n\nEmbir a été conçue pour accueillir chaque intention de manière égale. Tu choisis ce que tu recherches à l'inscription — sérieux, casual, amitié, ou encore en exploration — et la plateforme respecte ton choix. Le résultat est une communauté où des personnes avec différents objectifs peuvent coexister sans pression.\n\nC'est particulièrement important pour les utilisateurs LGBTQ+ qui veulent une expérience de rencontre qui ne les réduit pas à un corps et une métrique de distance.",
+      "highlights": [
+        "Toutes les intentions relationnelles respectées également",
+        "Pas de pression pour se conformer à la culture du plan cul",
+        "Espace pour l'amitié et la construction communautaire"
+      ]
+    },
+    {
+      "title": "Inclusivité — Au-delà du défaut gay masculin",
+      "content": "Bien que Grindr ait élargi ses options d'identité au fil des ans, l'app reste principalement destinée aux hommes gays et bisexuels. Les personnes trans, lesbiennes, non-binaires et autres rapportent souvent se sentir comme dans l'espace de quelqu'un d'autre.\n\nEmbir a été construite dès le départ pour toutes les orientations et identités. Gay, lesbienne, bi, pan, trans, queer, non-binaire, hétéro — chaque identité a un statut égal dans l'architecture du produit. Les préférences d'orientation et de genre sont centrales dans le fonctionnement du matching, et les règles communautaires protègent tout le monde de manière égale.\n\nIl ne s'agit pas d'être tout pour tout le monde de manière vague. Il s'agit de concevoir une plateforme où différentes communautés peuvent coexister avec des frontières claires, une découverte respectueuse et des standards de sécurité partagés.",
+      "highlights": [
+        "Chaque orientation a un statut égal dans le produit",
+        "Les préférences d'identité de genre sont au cœur du matching",
+        "Frontières claires et coexistence respectueuse"
+      ]
+    },
+    {
+      "title": "Gratuité & Modèle économique",
+      "content": "La version gratuite de Grindr existe mais est de plus en plus envahie par les publicités. Les abonnements XTRA et Unlimited débloquent des fonctionnalités essentielles comme voir plus de profils, les filtres avancés et la suppression des pubs — ce qui peut donner l'impression de payer pour rendre l'app utilisable.\n\nEmbir est entièrement gratuite au lancement. Les fonctions essentielles — découverte, messagerie, matching de compatibilité, vérification — sont accessibles sans paiement. Le futur freemium financera la sécurité, la modération et le développement des apps mobiles de façon transparente. Pas de paywalls cachés, pas de fonctionnalités essentielles bloquées derrière un abonnement.",
+      "highlights": [
+        "Fonctions essentielles complètes gratuites au lancement",
+        "Pas de publicités pendant la phase fondatrice",
+        "Feuille de route freemium transparente"
+      ]
+    }
+  ],
+  "verdict": "Choisis Embir si tu veux une expérience de rencontre inclusive où la compatibilité et la confiance passent avant la proximité, où la vérification est systématique et la modération humaine, et où chaque orientation et intention relationnelle est respectée de manière égale. Grindr reste pertinent pour les connexions immédiates basées sur la localisation — mais si tu cherches plus de profondeur, de sécurité et de compatibilité réelle, Embir est le meilleur choix en 2026.",
+  "ctaText": "Rejoins la communauté fondatrice — gratuit pour toutes les orientations",
+  "faq": [
+    {
+      "q": "Embir est-elle réservée aux utilisateurs LGBTQ+ ?",
+      "a": "Embir est pour les adultes de toutes les orientations et identités — gay, lesbienne, bi, trans, queer, hétéro, et tout le spectre. La plateforme a été conçue pour l'inclusivité dès le départ, pas adaptée après coup."
+    },
+    {
+      "q": "En quoi Embir est-elle différente de Grindr pour la sécurité ?",
+      "a": "Embir propose une vérification selfie systématique, une équipe de modération humaine qui examine chaque signalement, une tolérance zéro pour le harcèlement et des règles communautaires construites autour du respect. La sécurité est une fonctionnalité centrale, pas une réflexion après coup."
+    },
+    {
+      "q": "Embir a-t-elle une vue en grille comme Grindr ?",
+      "a": "Non. Embir utilise un flux de découverte basé sur la compatibilité plutôt qu'une grille de proximité. Tu peux toujours filtrer par distance, mais les signaux de compatibilité — orientation, intentions, valeurs — déterminent qui tu vois en premier."
+    },
+    {
+      "q": "Puis-je utiliser Embir pour du dating casual ?",
+      "a": "Oui. Embir te permet de choisir tes intentions — sérieux, casual, amitié, exploration. Quoi que tu cherches, la plateforme le respecte. Tu ne seras pas poussé vers un type de connexion spécifique."
+    },
+    {
+      "q": "Embir est-elle gratuite comme Grindr ?",
+      "a": "Embir est gratuite au lancement avec un accès complet aux fonctions essentielles — pas de pubs, pas de paywalls. Le futur modèle freemium financera la sécurité et l'infrastructure de façon transparente, mais la découverte et la messagerie essentielles resteront toujours accessibles."
+    },
+    {
+      "q": "Comment Embir gère-t-elle le harcèlement différemment ?",
+      "a": "Les signalements de harcèlement sont transmis à une vraie équipe de modération humaine, pas à un filtre automatique. Les violations graves entraînent des bannissements immédiats et définitifs. Les règles communautaires sont appliquées de manière cohérente, et le contexte est toujours pris en compte."
+    },
+    {
+      "q": "Embir est-elle disponible là où Grindr est populaire ?",
+      "a": "Embir est lancée en France, en Suisse, au Royaume-Uni et aux États-Unis — tous des marchés où Grindr a une large base d'utilisateurs. D'autres pays suivront après la phase fondatrice."
+    }
+  ]
+}

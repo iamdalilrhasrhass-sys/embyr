@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Comment+écrire+la+bio+parfaite+sur+une+application+de+rencontre&variant=market`],
   },
 };
 

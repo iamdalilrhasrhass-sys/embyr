@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description: "Free, safe, and built for the USA. Verified profiles, AI matching, and unlimited messaging — no ads, no paywalls.",
     url: "https://embir.xyz/gay-dating-app-usa",
     locale: "en_US",
+    images: [`/api/og?title=Free+Gay+Dating+App+in+the+USA&variant=market`],
   },
 };
 

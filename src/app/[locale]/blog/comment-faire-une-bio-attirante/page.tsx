@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Comment+faire+une+bio+attirante+sur+une+appli+de+rencontre&variant=market`],
   },
 };
 

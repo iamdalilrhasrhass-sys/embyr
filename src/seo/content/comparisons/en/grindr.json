@@ -1,0 +1,121 @@
+{
+  "slug": "grindr",
+  "intro": "Grindr has been the go-to app for gay, bi, trans and queer men since 2009. But in 2026, many users are looking for an alternative that offers more than proximity-based hookup culture — an app that combines verified profiles, real compatibility matching, and genuine safety features without sacrificing the inclusive spirit they value. Embir was built as that alternative: a platform for every orientation where trust, compatibility and community come first. Here's a detailed comparison between Embir and Grindr.",
+  "comparisonTable": [
+    {
+      "criteria": "Target audience",
+      "competitor": "Primarily gay/bi/trans/queer men",
+      "embir": "Every orientation and identity",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Discovery model",
+      "competitor": "Proximity grid (distance-first)",
+      "embir": "Compatibility-first + optional proximity",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Limited, not systematic",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Safety features",
+      "competitor": "Basic reporting",
+      "embir": "Human moderation, verified profiles, zero tolerance",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Relationship intent",
+      "competitor": "Heavily hookup-oriented",
+      "embir": "All intentions: serious, casual, exploring",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free access",
+      "competitor": "Free tier with heavy ad load",
+      "embir": "Free at launch, transparent freemium",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Discovery Model — Proximity Grid vs Compatibility",
+      "content": "Grindr organizes profiles in a proximity-based grid — the closest people appear first. While efficient for immediate meetups, this model can feel transactional and limits discovery to what's nearby. There's no built-in way to filter by relationship intent, shared values or lifestyle compatibility beyond basic profile fields.\n\nEmbir takes a compatibility-first approach. You define your orientation, intentions (from serious relationships to casual dating to friendship), preferences and lifestyle. The discovery feed surfaces people who align with your criteria — not just whoever happens to be 200 meters away.\n\nThis doesn't mean Embir ignores location entirely — you can filter by distance when it matters. But distance is secondary to compatibility. For people tired of the grid-based grind, this shift is transformative.",
+      "highlights": [
+        "Compatibility before proximity",
+        "Filter by intentions, not just location",
+        "More context before the first message"
+      ]
+    },
+    {
+      "title": "Profile Verification & Safety — Beyond the basics",
+      "content": "Grindr offers limited profile verification and has faced ongoing criticism over safety concerns. Catfishing, harassment and scams remain significant issues that the grid-based model can amplify.\n\nEmbir makes verified profiles a core feature, not an afterthought. Selfie verification is available from day one. Every report goes to a human moderation team, not an automated filter. The platform enforces zero tolerance for harassment — immediate and permanent bans with no appeals for serious violations.\n\nFor LGBTQ+ users who have experienced harassment or felt unsafe on other apps, this focus on safety is not just a nice-to-have — it's essential. Feeling safe enough to be yourself is the foundation of any meaningful connection.",
+      "highlights": [
+        "Systematic selfie verification",
+        "Human moderation, not AI filters",
+        "Zero tolerance for harassment and hate speech"
+      ]
+    },
+    {
+      "title": "Community & Intent — More than hookups",
+      "content": "Grindr's culture leans heavily toward hookups and casual encounters. While there's nothing wrong with that, it can make the app feel unwelcoming for people seeking different types of connections — whether that's serious dating, friendship within the community, or simply conversations that don't start with explicit photos.\n\nEmbir was designed to accommodate every intention equally. You choose what you're looking for at signup — serious, casual, friendship, or still figuring it out — and the platform respects your choice. The result is a community where people with different goals can coexist without pressure.\n\nThis matters especially for LGBTQ+ users who want a dating experience that doesn't reduce them to a body and a distance metric.",
+      "highlights": [
+        "All relationship intentions respected equally",
+        "No pressure to conform to hookup culture",
+        "Space for friendship and community building"
+      ]
+    },
+    {
+      "title": "Inclusivity — Beyond the gay male default",
+      "content": "While Grindr has expanded its identity options over the years, it remains primarily an app for gay and bisexual men. Trans users, lesbians, non-binary people and others often report feeling like they're in someone else's space.\n\nEmbir was built from the ground up for every orientation and identity. Gay, lesbian, bi, pan, trans, queer, non-binary, straight — every identity has equal standing in the product architecture. Orientation and gender preferences are central to how matching works, and community guidelines protect everyone equally.\n\nThis isn't about being everything to everyone in a vague way. It's about designing a platform where different communities can coexist with clear boundaries, respectful discovery and shared safety standards.",
+      "highlights": [
+        "Every orientation has equal standing in the product",
+        "Gender identity preferences are core to matching",
+        "Clear boundaries and respectful coexistence"
+      ]
+    },
+    {
+      "title": "Free Access & Business Model",
+      "content": "Grindr's free tier exists but is increasingly cluttered with ads. Grindr XTRA and Unlimited subscriptions unlock essential features like seeing more profiles, advanced filters and removing ads — which can feel like paying to make the app usable.\n\nEmbir is completely free at launch. Core features — discovery, messaging, compatibility matching, verification — are accessible without payment. The future freemium will fund safety, moderation and mobile app development transparently. No hidden paywalls, no feature-gating of basic human connection.",
+      "highlights": [
+        "Full core features free at launch",
+        "No ads during the founding phase",
+        "Transparent freemium roadmap"
+      ]
+    }
+  ],
+  "verdict": "Choose Embir if you want an inclusive dating experience where compatibility and trust come before proximity, where verification is systematic and moderation is human, and where every orientation and relationship intention is equally respected. Grindr remains relevant for immediate, location-based connections — but if you're looking for more depth, safety and genuine compatibility, Embir is the better choice in 2026.",
+  "ctaText": "Join the founding community — free for every orientation",
+  "faq": [
+    {
+      "q": "Is Embir only for LGBTQ+ users?",
+      "a": "Embir is for adults of every orientation and identity — gay, lesbian, bi, trans, queer, straight, and everything in between. The platform was designed for inclusivity from day one, not retrofitted onto a single-demographic app."
+    },
+    {
+      "q": "How is Embir different from Grindr for safety?",
+      "a": "Embir offers systematic selfie verification, a human moderation team that reviews every report, zero tolerance for harassment, and community guidelines built around respect. Safety is a core feature, not an afterthought."
+    },
+    {
+      "q": "Does Embir have a grid view like Grindr?",
+      "a": "No. Embir uses a compatibility-based discovery feed rather than a proximity grid. You can still filter by distance, but compatibility signals — orientation, intentions, values — determine who you see first."
+    },
+    {
+      "q": "Can I use Embir for casual dating?",
+      "a": "Yes. Embir lets you choose your intentions — serious, casual, friendship, exploring. Whatever you're looking for, the platform respects it. You won't be pressured toward any specific type of connection."
+    },
+    {
+      "q": "Is Embir free like Grindr?",
+      "a": "Embir is free at launch with full access to core features — no ads, no feature paywalls. The future freemium model will fund safety and infrastructure transparently, but essential discovery and messaging will always be accessible."
+    },
+    {
+      "q": "How does Embir handle harassment differently?",
+      "a": "Harassment reports go to a real human moderation team, not an automated filter. Serious violations lead to immediate and permanent bans. The community guidelines are enforced consistently, and context is always considered before action is taken."
+    },
+    {
+      "q": "Is Embir available where Grindr is popular?",
+      "a": "Embir is launching in France, Switzerland, the UK and the US — all markets where Grindr has a large user base. More countries will follow after the founding phase."
+    }
+  ]
+}

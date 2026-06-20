@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Données+personnelles+sur+les+applis+:+comment+les+protéger&variant=market`],
   },
 };
 

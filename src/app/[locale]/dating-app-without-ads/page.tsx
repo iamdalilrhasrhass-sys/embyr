@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/dating-app-without-ads",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Dating+App+Without+Ads+—+Premium+Experience,+Free&variant=market`],
   },
 };
 

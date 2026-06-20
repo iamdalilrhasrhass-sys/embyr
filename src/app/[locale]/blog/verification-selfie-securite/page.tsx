@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Vérification+par+selfie+:+la+meilleure+protection&variant=market`],
   },
 };
 

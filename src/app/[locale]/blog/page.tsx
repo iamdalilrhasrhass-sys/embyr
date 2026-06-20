@@ -5,7 +5,9 @@ export const metadata: Metadata = {
   title: "Embir Blog — 5,000+ Gay Dating Tips, City Guides & LGBTQ+ Articles",
   description: "Over 5,000 articles on gay dating, city guides, relationships, health, pride, and LGBTQ+ culture. The largest gay blog on the web. Free, expert advice.",
   alternates: { canonical: "https://embir.xyz/blog" },
-  openGraph: { title: "Embir Blog — 5,000+ Gay Articles", description: "The largest gay dating and lifestyle blog. City guides, dating tips, health, pride, and more.", url: "https://embir.xyz/blog", type: "website", siteName: "Embir" }
+  openGraph: { title: "Embir Blog — 5,000+ Gay Articles", description: "The largest gay dating and lifestyle blog. City guides, dating tips, health, pride, and more.", url: "https://embir.xyz/blog", type: "website", siteName: "Embir",
+    images: [`/api/og?title=Embir+Blog+—+5,000++Gay+Articles&variant=market`],
+  }
 };
 
 const categories = [

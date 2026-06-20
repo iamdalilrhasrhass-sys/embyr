@@ -54,7 +54,8 @@ export async function PUT(request: NextRequest) {
         username: data.username,
         age: data.age ? parseInt(data.age) : undefined,
         city: data.city,
-        genderIdentity: data.genderIdentity, // Enum in DB
+        genderIdentity: data.genderIdentity,
+        lookingFor: data.lookingFor,
         description: data.description,
       },
     });

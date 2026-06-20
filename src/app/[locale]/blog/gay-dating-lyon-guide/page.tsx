@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Gay+dating+Lyon+:+bars,+quartiers+et+applis&variant=market`],
   },
 };
 

@@ -180,8 +180,8 @@ export function resolveComparisonPage(slug: string, locale: Locale): ResolvedSeo
         : `This comparison explains concrete differences between ${comparison.app} and Embir: price, trust, verified profiles, intent, orientation and swipe fatigue.`,
     description:
       locale === "fr"
-        ? `${comparison.app} vs Embir : prix, profils verifies, orientations, preferences, compatibilite, securite et modele freemium transparent.`
-        : `${comparison.app} vs Embir: pricing, verified profiles, orientations, preferences, compatibility, safety and a transparent freemium model.`,
+        ? `${comparison.app} vs Embir 2026 : comparatif complet sur le prix, les profils vérifiés, la compatibilité, les orientations, la sécurité, la gratuité au lancement et le modèle freemium transparent. Découvre quelle app correspond le mieux à tes attentes.`
+        : `${comparison.app} vs Embir 2026: complete comparison of pricing, verified profiles, compatibility, orientations, safety, free-at-launch access and transparent freemium model. Find the app that fits your dating goals best.`,
   };
 }
 

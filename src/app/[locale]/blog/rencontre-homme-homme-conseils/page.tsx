@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+homme-homme+:+guide+complet+2026&variant=market`],
   },
 };
 

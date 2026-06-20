@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre-discrete",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+discrète+—+confidentialité+garantie&variant=market`],
   },
 };
 

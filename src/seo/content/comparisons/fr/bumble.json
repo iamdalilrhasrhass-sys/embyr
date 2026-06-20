@@ -1,0 +1,121 @@
+{
+  "slug": "bumble",
+  "intro": "Bumble a marqué les esprits en donnant aux femmes le contrôle du premier message. Une alternative rafraîchissante à la culture permissive de Tinder. Mais en 2026, beaucoup d'utilisateurs se demandent si un seul différenciateur — les femmes envoient le premier message — suffit à résoudre les problèmes plus profonds de la rencontre moderne : faux profils, fatigue du swipe et intentions mal alignées. Embir adopte une approche différente : profils vérifiés, découverte par compatibilité et inclusivité pour toutes les orientations, pas seulement une dynamique de genre unique. Voici une comparaison complète entre Embir et Bumble.",
+  "comparisonTable": [
+    {
+      "criteria": "Différenciateur principal",
+      "competitor": "Les femmes envoient le premier message (matchs hétéros)",
+      "embir": "Matching vérifié par compatibilité pour tous",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Modèle de découverte",
+      "competitor": "Swipe avec limite de 24h",
+      "embir": "Basé sur la compatibilité, sans urgence artificielle",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Vérification photo disponible",
+      "embir": "Vérification selfie systématique + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité",
+      "competitor": "Principalement hétéro avec extensions BFF/Bizz",
+      "embir": "Conçue pour toutes les orientations et identités",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Gratuité",
+      "competitor": "Version gratuite limitée, abonnements Boost/Premium",
+      "embir": "Essentiel gratuit au lancement + freemium transparent",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Approche sécurité",
+      "competitor": "Signalements basiques + vérification photo",
+      "embir": "Modération humaine, profils vérifiés, outils de sécurité",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Modèle de découverte — Urgence artificielle vs Matching intentionnel",
+      "content": "La fonctionnalité signature de Bumble — le compte à rebours de 24h pour envoyer ou répondre à un message — crée de l'urgence. Si cela peut motiver à agir, cela ajoute aussi du stress. Les utilisateurs se sentent obligés de trouver la phrase d'accroche parfaite avant la fin du chrono, et des connexions prometteuses peuvent être perdues quand la vie prend le dessus.\n\nEmbir supprime la pression temporelle artificielle. La découverte est guidée par les signaux de compatibilité — ton orientation, tes intentions, tes préférences et tes valeurs. Quand tu matches, il n'y a pas d'horloge qui tourne. Tu te connectes quand tu es prêt·e, au rythme qui te semble naturel.\n\nCela ne veut pas dire que les conversations traînent indéfiniment. Cela signifie qu'elles commencent quand les deux personnes ont vraiment envie de parler — pas parce qu'un chronomètre d'appli est sur le point d'expirer.",
+      "highlights": [
+        "Pas de deadline artificielle de 24h",
+        "Les messages commencent quand les deux sont prêts",
+        "Les signaux de compatibilité réduisent les ouvertures gênantes"
+      ]
+    },
+    {
+      "title": "Vérification des profils & Sécurité — La confiance d'abord",
+      "content": "Bumble propose la vérification photo, un pas dans la bonne direction. Mais la vérification seule ne résout pas l'équation de la sécurité — surtout quand la modération est largement automatisée et que les signalements donnent l'impression de disparaître dans le vide.\n\nEmbir combine la vérification selfie avec une équipe de modération humaine active. Chaque signalement est lu par une vraie personne. La plateforme applique une tolérance zéro pour le harcèlement avec des bannissements immédiats et définitifs. Les outils de sécurité — des filtres de messages au contrôle de visibilité du profil — sont intégrés dans les fondations du produit.\n\nPour les femmes et les utilisateurs marginalisés qui ont subi du harcèlement sur les applis de rencontre, savoir qu'il y a un humain derrière le bouton de signalement change la donne.",
+      "highlights": [
+        "Modération humaine examine chaque signalement",
+        "Vérification selfie systématique, pas optionnelle",
+        "Contrôles de confidentialité avancés : qui te voit, qui te contacte"
+      ]
+    },
+    {
+      "title": "Inclusivité & Orientation — Au-delà de la binarité de genre",
+      "content": "Le modèle 'les femmes en premier' de Bumble était novateur en 2014, mais il est intrinsèquement lié à un cadre de genre binaire. Pour les connexions non-binaires, trans et de même genre, la règle ne s'applique pas — créant une expérience à deux vitesses où certains utilisateurs bénéficient de la fonctionnalité phare et d'autres non.\n\nEmbir a été conçue pour toutes les orientations et identités dès le départ. Il n'y a pas de règle unique qui fonctionne pour certains et pas pour d'autres. Tout le monde dispose des mêmes outils : préférences claires, signaux de compatibilité, profils vérifiés et découverte respectueuse. La logique de matching s'adapte à qui tu es et ce que tu cherches, pas à une mécanique universelle.\n\nC'est une différence architecturale fondamentale — pas un ajout de fonctionnalité.",
+      "highlights": [
+        "Pas de mécanique de genre binaire — fonctionne pour tous également",
+        "L'orientation et l'identité de genre sont des primitives de matching",
+        "Même qualité d'expérience quelle que soit ton identité"
+      ]
+    },
+    {
+      "title": "Fonctionnalités & Paywalls — Ce qui est vraiment gratuit",
+      "content": "La version gratuite de Bumble permet de swiper et d'envoyer des messages (si la fenêtre de 24h tient). Mais Boost et Premium débloquent les fonctionnalités qui rendent l'app vraiment utile : voir qui t'a liké, prolonger les matchs, rematcher les connexions expirées, filtres avancés, mode voyage. Cela peut monter à 20-30€/mois.\n\nEmbir est gratuite au lancement. Les fonctions essentielles — découverte, messagerie, matching de compatibilité, vérification — sont accessibles sans paiement. Le futur modèle freemium financera la sécurité et l'infrastructure de façon transparente. La différence : Embir ne bloque pas la connexion humaine de base derrière un abonnement dès le premier jour.",
+      "highlights": [
+        "Toutes les fonctions essentielles gratuites au lancement",
+        "Pas de blocage artificiel de fonctionnalités",
+        "Feuille de route freemium partagée avec la communauté"
+      ]
+    },
+    {
+      "title": "Culture communautaire — Empowerment vs Compatibilité",
+      "content": "Bumble a construit sa marque sur l'empowerment — un message puissant qui a résonné avec des millions de personnes. Mais à mesure que l'app a mûri, l'expérience a commencé à ressembler à Tinder avec une variante. La mécanique de swipe, les upsells d'abonnement, les notifications gamifiées — elles érodent la promesse initiale.\n\nEmbir adopte une approche culturelle différente. Au lieu de l'empowerment via une mécanique unique, elle construit la confiance via de multiples signaux : identité vérifiée, intentions transparentes, découverte par compatibilité, modération humaine. Le résultat est une communauté où les gens se sentent respectés non pas à cause d'une fonctionnalité, mais parce que tout le système est conçu pour le respect.",
+      "highlights": [
+        "Confiance construite via de multiples signaux, pas une seule mécanique",
+        "Culture communautaire façonnée par les membres fondateurs",
+        "Respect intégré dans l'architecture du produit"
+      ]
+    }
+  ],
+  "verdict": "Choisis Embir si tu veux une compatibilité vérifiée sans urgence artificielle, une plateforme inclusive qui fonctionne de manière égale pour toutes les orientations et identités, une modération humaine en qui tu peux avoir confiance, et des fonctions essentielles vraiment gratuites pendant la phase fondatrice. Bumble reste un choix solide si tu valorises spécifiquement la mécanique du premier message par les femmes — mais pour tout le reste, Embir offre une expérience de rencontre plus complète et moderne en 2026.",
+  "ctaText": "Rejoins la communauté fondatrice — gratuit, vérifié, inclusif",
+  "faq": [
+    {
+      "q": "Embir a-t-elle une règle 'les femmes en premier' comme Bumble ?",
+      "a": "Non. Embir ne repose pas sur une mécanique unique basée sur le genre. Tout le monde bénéficie de la même expérience de découverte compatible — le matching est basé sur qui tu es, ce que tu cherches et la compatibilité mutuelle, pas sur une règle de qui envoie le premier message."
+    },
+    {
+      "q": "Embir est-elle sûre pour les femmes ?",
+      "a": "Oui. Embir a été construite avec la sécurité comme fondation, pas comme réflexion après coup. La vérification selfie, la modération humaine, la tolérance zéro pour le harcèlement et les contrôles de confidentialité granulaires protègent tous les utilisateurs — avec une attention particulière à la sécurité des femmes et des groupes marginalisés."
+    },
+    {
+      "q": "Y a-t-il des limites de temps sur les matchs comme Bumble ?",
+      "a": "Non. Embir n'impose pas de deadlines artificielles sur les conversations. Tu te connectes quand tu es prêt·e, au rythme qui te semble naturel. Pas de pression, pas de matchs expirés."
+    },
+    {
+      "q": "Puis-je utiliser Embir pour l'amitié comme Bumble BFF ?",
+      "a": "Embir est principalement une plateforme de rencontre, mais tu peux définir ton intention sur 'amitié' ou 'exploration' à l'inscription. La plateforme respecte ce que tu cherches sans te pousser vers un type de connexion spécifique."
+    },
+    {
+      "q": "Comment Embir se compare-t-elle à Bumble sur le prix ?",
+      "a": "Embir est entièrement gratuite au lancement avec toutes les fonctions essentielles. Les fonctionnalités utiles de Bumble sont largement derrière les abonnements Boost/Premium (20-30€/mois). Le futur freemium d'Embir sera annoncé de façon transparente et ne bloquera pas la découverte ou la messagerie essentielles."
+    },
+    {
+      "q": "Embir a-t-elle la vérification de profil comme Bumble ?",
+      "a": "Oui — et elle va plus loin. Embir propose une vérification selfie systématique combinée à une modération humaine. Les profils vérifiés sont clairement identifiés et prioritaires dans la découverte. Chaque signalement est examiné par une vraie personne, pas un algorithme."
+    },
+    {
+      "q": "Qu'est-ce qui rend l'inclusivité d'Embir différente de Bumble ?",
+      "a": "La mécanique centrale de Bumble est liée au genre binaire. Embir a été conçue pour toutes les orientations et identités dès le premier jour — il n'y a pas de fonctionnalité qui fonctionne différemment selon qui tu es. Gay, lesbienne, bi, trans, queer, non-binaire, hétéro — tout le monde a la même qualité d'expérience."
+    }
+  ]
+}

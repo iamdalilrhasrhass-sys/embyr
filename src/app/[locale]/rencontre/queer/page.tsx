@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre/queer",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+queer+—+application+ouverte+et+gratuite&variant=market`],
   },
 };
 

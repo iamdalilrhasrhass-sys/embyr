@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
-
 export default function AlbumsPage() {
   const [loading, setLoading] = useState(true);
 

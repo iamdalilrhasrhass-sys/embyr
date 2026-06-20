@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Le Havre. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/le-havre",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Le+Havre&variant=market`],
   },
 };
 

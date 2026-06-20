@@ -37,6 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage
   routes.push(entry(baseUrl, "daily", 1.0));
 
+  // Universe of the Day — daily fresh content, indexable
+  routes.push(entry(`${baseUrl}/universe-of-the-day`, "daily", 0.8));
+
   for (const item of seoEntries) {
     routes.push(entry(`${baseUrl}${item.path}`, "weekly", item.priority));
   }

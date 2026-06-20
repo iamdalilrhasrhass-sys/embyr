@@ -5,7 +5,6 @@ import Link from "next/link";
 import AppShell from "@/components/layout/AppShell";
 import PremiumBlurImage from "@/components/ui/PremiumBlurImage";
 import { usePremium } from "@/hooks/usePremium";
-
 export default function MembreDetailPage() {
   const params = useParams();
   const router = useRouter();

@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/modern-dating-app",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Modern+Dating+App+—+AI-Powered,+Human-Centered&variant=market`],
   },
 };
 

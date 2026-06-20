@@ -1,3 +1,7 @@
+import { noindexMetadata } from "@/seo/noindex";
+
+export const metadata = noindexMetadata;
+
 export default function EighteenPlusPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-20 text-center">

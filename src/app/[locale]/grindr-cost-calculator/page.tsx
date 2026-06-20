@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 const PLANS = [
   { name: "Grindr XTRA", price: 24.99 },
   { name: "Grindr Unlimited", price: 39.99 },

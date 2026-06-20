@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/rencontre-sans-pub",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+sans+publicité+—+expérience+premium+gratuite&variant=market`],
   },
 };
 

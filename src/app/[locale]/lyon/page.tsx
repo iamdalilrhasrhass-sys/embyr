@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       url: "https://embir.xyz/lyon",
       locale: locale === "en" ? "en_US" : "fr_FR",
       siteName: "Embir",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir Lyon rencontres" }],
+      images: [{ url: `/api/og?title=Rencontres+à+Lyon+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir Lyon rencontres" }],
     },
-    twitter: { card: "summary_large_image", title: "Rencontres à Lyon | Embir", description: "Application de rencontre à Lyon : profils vérifiés, matching par compatibilité.", images: ["/og-image.png"] },
+    twitter: { card: "summary_large_image", title: "Rencontres à Lyon | Embir", description: "Application de rencontre à Lyon : profils vérifiés, matching par compatibilité.", images: [`/api/og?title=Rencontres+à+Lyon+%7C+Embir&variant=default`] },
     robots: { index: true, follow: true },
   };
 }

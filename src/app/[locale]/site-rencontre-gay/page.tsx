@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/site-rencontre-gay",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Gay+Dating+App+—+Inclusive,+Verified+&+Free+at+Launch+%7C+Embir&variant=market`],
   },
   twitter: { card: "summary_large_image", title: "Gay Dating App — Inclusive, Verified & Free at Launch | Embir", description: "Embir is a dating platform for all orientations including gay men. Verified profiles, preference-based matching, safer discovery, and free during launch." },
   robots: { index: true, follow: true },

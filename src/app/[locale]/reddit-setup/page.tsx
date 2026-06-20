@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
 export default function RedditSetupPage() {
   const [step, setStep] = useState<"start" | "create" | "done">("start");
   const [clientId, setClientId] = useState("");

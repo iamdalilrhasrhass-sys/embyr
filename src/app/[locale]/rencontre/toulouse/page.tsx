@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Toulouse. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/toulouse",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Toulouse&variant=market`],
   },
 };
 

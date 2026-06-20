@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Lille. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/lille",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Lille&variant=market`],
   },
 };
 

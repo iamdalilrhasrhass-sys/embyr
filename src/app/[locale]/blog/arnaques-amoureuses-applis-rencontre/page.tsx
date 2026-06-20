@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Arnaques+amoureuses+sur+les+applis+:+les+reconnaître+et+les+éviter&variant=market`],
   },
 };
 

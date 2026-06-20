@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Premier+rendez-vous+—+12+conseils+pour+que+tout+se+passe+bien&variant=market`],
   },
 };
 

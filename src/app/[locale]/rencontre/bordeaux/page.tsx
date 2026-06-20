@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Bordeaux. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/bordeaux",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Bordeaux&variant=market`],
   },
 };
 

@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Link from "next/link";
-
 export default function Messages() {
   const [conversations, setConversations] = useState<any[]>([]);
   const [activeConv, setActiveConv] = useState<any>(null);

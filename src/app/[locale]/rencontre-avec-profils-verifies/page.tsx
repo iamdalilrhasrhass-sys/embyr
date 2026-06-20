@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre-avec-profils-verifies",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+avec+profils+vérifiés+—+zéro+faux+profil&variant=market`],
   },
 };
 

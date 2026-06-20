@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/grindr-alternative",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Grindr+Alternative+—+More+Compatibility,+Less+Noise+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Grindr Alternative — More Compatibility, Less Noise | Embir", description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Grindr Alternative — More Compatibility, Less Noise | Embir", description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions.", images: [`/api/og?title=Grindr+Alternative+—+More+Compatibility,+Less+Noise+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

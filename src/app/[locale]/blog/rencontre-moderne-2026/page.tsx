@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=La+rencontre+moderne+en+2026+—+au-delà+du+swipe&variant=market`],
   },
 };
 

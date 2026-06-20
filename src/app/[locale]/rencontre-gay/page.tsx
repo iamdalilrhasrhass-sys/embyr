@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre-gay",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+gay+—+gratuite+et+sans+pub&variant=market`],
   },
 };
 

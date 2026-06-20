@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/switzerland",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Free+Dating+App+for+Switzerland+—+Geneva,+Lausanne,+Zurich+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Free Dating App for Switzerland | Embir", description: "Embir arrives in Switzerland: free at launch, verified profiles, and compatibility-first dating.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Free Dating App for Switzerland | Embir", description: "Embir arrives in Switzerland: free at launch, verified profiles, and compatibility-first dating.", images: [`/api/og?title=Free+Dating+App+for+Switzerland+—+Geneva,+Lausanne,+Zurich+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

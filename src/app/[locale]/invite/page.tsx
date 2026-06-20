@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/invite",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Invite+Friends+—+Build+the+Embir+Founding+Community+Together&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Invite Friends — Build the Embir Founding Community Together", description: "Help build a verified, respectful dating community from the ground up.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Invite Friends — Build the Embir Founding Community Together", description: "Help build a verified, respectful dating community from the ground up.", images: [`/api/og?title=Invite+Friends+—+Build+the+Embir+Founding+Community+Together+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

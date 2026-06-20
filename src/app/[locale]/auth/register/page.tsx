@@ -6,7 +6,6 @@ import ScrollReveal from "@/components/motion/ScrollReveal";
 import EmbirLogo from "@/components/brand/EmbirLogo";
 import Particles3D from "@/components/ui/Particles3D";
 import { trackSignupPageView, trackSignupStarted, trackSignupCompleted, trackSignupError } from "@/lib/analytics";
-
 export default function Register() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -85,7 +84,7 @@ export default function Register() {
       }
 
       trackSignupCompleted();
-      router.push("/welcome");
+      router.push("/onboarding");
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "Erreur lors de l'inscription";
       setError(message);

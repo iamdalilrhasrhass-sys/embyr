@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/dating/vancouver",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Dating+in+Vancouver&variant=market`],
   },
 };
 

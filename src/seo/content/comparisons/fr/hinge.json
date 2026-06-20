@@ -1,0 +1,121 @@
+{
+  "slug": "hinge",
+  "intro": "Le slogan de Hinge dit tout : 'Conçue pour être supprimée.' L'app s'est positionnée comme l'anti-Tinder — axée sur les relations, pas les plans cul — et a gagné des millions d'utilisateurs fatigués du swipe sans lendemain. Mais en 2026, même les utilisateurs de Hinge se demandent si les prompts et les likes suffisent à construire une vraie compatibilité. Embir propose une approche plus profonde : profils vérifiés, matching prenant en compte l'orientation et des signaux de compatibilité qui vont au-delà d'un prompt astucieux. Voici comment Embir se compare à Hinge en 2026.",
+  "comparisonTable": [
+    {
+      "criteria": "Modèle de découverte",
+      "competitor": "Like + commentaire sur prompts/photos",
+      "embir": "Matching de compatibilité multi-signaux",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profondeur de compatibilité",
+      "competitor": "Prompts + préférences basiques",
+      "embir": "Orientation, intentions, valeurs, style de vie",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Vérification selfie disponible",
+      "embir": "Vérification systématique + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité",
+      "competitor": "Large mais pas conçu pour toutes les orientations",
+      "embir": "Conçu pour toutes les orientations et identités",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Gratuité",
+      "competitor": "Base gratuite, Preferred à 30€+/mois",
+      "embir": "Essentiel gratuit au lancement + freemium transparent",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Expérience utilisateur",
+      "competitor": "Prompts et roses, un peu de gamification",
+      "embir": "Propre, intentionnel, sans gamification",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Compatibilité — Prompts vs Signaux réels",
+      "content": "Le système de prompts de Hinge est astucieux. Réponds à trois questions, ajoute des photos, et laisse les gens liker ou commenter des parties spécifiques de ton profil. C'est mieux que le swipe aveugle. Mais les prompts ont des limites : ils récompensent l'esprit et les bonnes photos, pas nécessairement la compatibilité réelle.\n\nEmbir va plus loin en structurant la compatibilité autour de ce qui compte vraiment pour une relation : ton orientation et ton identité, tes intentions relationnelles, tes valeurs et tes préférences de style de vie. Ce ne sont pas des réponses en une ligne — ce sont des signaux structurés que l'algorithme de matching utilise pour mettre en avant des personnes alignées avec ce que tu recherches.\n\nLe résultat est plus qu'une phrase d'accroche astucieuse. C'est la différence entre matcher parce que quelqu'un a trouvé ta blague sur l'avocat toast drôle et matcher parce que vous cherchez tous les deux le même type de connexion dans la vie.",
+      "highlights": [
+        "Signaux de compatibilité structurés, pas juste des prompts",
+        "Valeurs, style de vie et intentions guident la découverte",
+        "Matchs basés sur le fond, pas seulement l'esprit"
+      ]
+    },
+    {
+      "title": "Vérification des profils & Confiance",
+      "content": "Hinge propose la vérification selfie, mais elle n'est pas mise en avant et de nombreux profils restent non vérifiés. La réputation de l'app pour le 'dating sérieux' aide, mais la réputation seule n'arrête pas les faux profils.\n\nEmbir fait de la vérification une partie centrale de l'expérience. La vérification selfie est proposée dès l'onboarding. Les profils vérifiés sont prioritaires dans la découverte. L'équipe de modération humaine supprime activement les faux comptes et traite les signalements. Cette approche par couches — vérification systématique, modération et règles communautaires — construit une confiance qui va plus loin que le positionnement marketing d'une app.",
+      "highlights": [
+        "Vérification proposée à l'inscription, pas cachée dans les paramètres",
+        "Modération humaine derrière chaque décision de sécurité",
+        "Confiance construite par les systèmes, pas seulement par la réputation"
+      ]
+    },
+    {
+      "title": "Inclusivité — Au-delà du défaut 'dating sérieux'",
+      "content": "Hinge est largement inclusive mais a été conçue à l'origine autour d'un cadre hétérosexuel de 'dating sérieux'. Les utilisateurs LGBTQ+ peuvent utiliser l'app, mais la logique de matching, les prompts et l'expérience ne sont pas conçus spécifiquement pour les diverses orientations et identités.\n\nEmbir part d'un postulat différent : il n'y a pas d'orientation par défaut. L'architecture de la plateforme traite chaque orientation et identité comme une primitive de matching de premier ordre. Ton identité de genre, tes préférences d'orientation, tes intentions — tout cela façonne la découverte dès le début, pas comme des filtres ajoutés après coup. C'est important pour tout le monde, pas seulement pour les utilisateurs LGBTQ+, parce que cela signifie que le système comprend vraiment qui tu es et ce que tu cherches.",
+      "highlights": [
+        "Pas d'orientation par défaut — chaque identité est un signal de matching de premier ordre",
+        "Le genre et les préférences d'orientation guident la découverte dès le premier jour",
+        "Même qualité d'expérience pour les utilisateurs hétéros, gays, bi, trans et queer"
+      ]
+    },
+    {
+      "title": "Gratuit vs Payant — Ce que Hinge Preferred coûte vs l'approche Embir",
+      "content": "Les fonctionnalités de base de Hinge sont gratuites, ce qui est mieux que Tinder. Mais l'expérience devient nettement meilleure avec Hinge Preferred (30€+/mois ou 100€/an) : likes illimités, filtres avancés, voir tout le monde qui t'a liké. Ce ne sont pas des options cosmétiques — ce sont des fonctionnalités essentielles de découverte derrière un paywall.\n\nEmbir est entièrement gratuite au lancement. Likes illimités, découverte complète, messagerie complète, vérification complète — aucun abonnement requis. Le futur modèle freemium sera transparent et financera la sécurité, l'infrastructure et les applications mobiles, sans bloquer les fonctionnalités essentielles de connexion humaine. Les membres fondateurs reçoivent un accès prioritaire aux fonctionnalités premium quand elles arrivent.",
+      "highlights": [
+        "Likes illimités et découverte complète gratuits au lancement",
+        "Aucun abonnement nécessaire pour les fonctions essentielles",
+        "Freemium transparent qui ne bloquera pas la connexion essentielle"
+      ]
+    },
+    {
+      "title": "Communauté & Culture — Supprimer l'app, ou construire quelque chose ?",
+      "content": "Le 'conçue pour être supprimée' de Hinge est un marketing brillant. Il positionne l'app comme un moyen pour une fin — trouve quelqu'un, supprime l'app, vis heureux pour toujours. Mais qu'en est-il des personnes qui ne correspondent pas à ce récit ? Ceux qui explorent leur identité, construisent une communauté, ou datent plusieurs personnes avant de se poser ?\n\nEmbir ne présuppose pas une trajectoire relationnelle correcte unique. Que tu cherches un partenaire de vie, des connexions significatives sans la pression de tout définir, ou que tu sois encore en exploration — la plateforme soutient ton chemin. La communauté est construite autour du respect des différentes intentions, pas d'une métrique de succès unique.",
+      "highlights": [
+        "Pas de récit de 'succès' unique — toutes les intentions respectées",
+        "Espace pour l'exploration et la communauté, pas seulement la formation de couples",
+        "Les membres fondateurs définissent la culture, pas un slogan marketing"
+      ]
+    }
+  ],
+  "verdict": "Choisis Embir si tu veux un matching de compatibilité qui va plus loin que les prompts, des profils vérifiés et une modération humaine par conception, une plateforme inclusive qui traite chaque orientation comme une expérience de premier ordre, et des fonctions essentielles vraiment gratuites pendant la phase fondatrice. Hinge reste excellent si la découverte par prompts et la philosophie 'conçue pour être supprimée' te parlent — mais pour une compatibilité structurée, une confiance vérifiée et une inclusivité réelle, Embir est le choix le plus complet en 2026.",
+  "ctaText": "Rejoins la communauté fondatrice — compatibilité, vérifié, gratuit au lancement",
+  "faq": [
+    {
+      "q": "En quoi la compatibilité d'Embir est-elle différente des prompts Hinge ?",
+      "a": "Hinge repose sur des prompts — des réponses astucieuses en une ligne qui suscitent des conversations. Embir utilise des signaux de compatibilité structurés : orientation, intentions relationnelles, valeurs, préférences de style de vie. Ceux-ci alimentent un algorithme qui met en avant des personnes vraiment alignées avec ce que tu recherches, pas seulement celles qui ont trouvé ton prompt drôle."
+    },
+    {
+      "q": "Embir est-elle conçue pour être supprimée comme Hinge ?",
+      "a": "Embir soutient le résultat que tu recherches — que ce soit trouver un partenaire de vie, dater intentionnellement ou explorer ton identité. Il n'y a pas de trajectoire relationnelle 'correcte' unique. La plateforme est construite pour être vraiment utile, pas juste une app de plus à parcourir."
+    },
+    {
+      "q": "Embir a-t-elle des prompts de profil comme Hinge ?",
+      "a": "Embir adopte une approche différente. Au lieu de prompts, les profils expriment qui tu es à travers des préférences structurées, des intentions et des signaux de style de vie. L'accent est mis sur le fond qui alimente le matching de compatibilité, pas sur les réponses conçues pour l'engagement."
+    },
+    {
+      "q": "Embir est-elle gratuite comme Hinge ?",
+      "a": "Embir est gratuite au lancement avec toutes les fonctions essentielles débloquées — likes illimités, découverte complète, vérification. La base de Hinge est gratuite mais les fonctionnalités utiles (likes illimités, filtres avancés, voir tous les likes) sont derrière Hinge Preferred à 30€+/mois."
+    },
+    {
+      "q": "Les utilisateurs LGBTQ+ peuvent-ils avoir une bonne expérience sur Embir ?",
+      "a": "Oui. Embir a été conçue pour toutes les orientations et identités dès le premier jour. Contrairement aux applis adaptées après coup pour être inclusives, l'architecture de matching d'Embir traite ton identité de genre et ton orientation comme des signaux de premier ordre — pas des filtres ajoutés à un défaut hétéro."
+    },
+    {
+      "q": "Comment Embir gère-t-elle les faux profils par rapport à Hinge ?",
+      "a": "Embir combine la vérification selfie systématique (proposée à l'inscription) avec une modération humaine active. Hinge propose la vérification mais ne la met pas en avant. Les profils vérifiés d'Embir sont prioritaires dans la découverte, et chaque signalement est examiné par une vraie personne."
+    },
+    {
+      "q": "Embir a-t-elle une fonction 'Compatibilité du jour' comme Hinge ?",
+      "a": "Tout le flux de découverte d'Embir est construit autour de la compatibilité — pas seulement un match mis en avant par jour. L'algorithme met continuellement en avant des personnes alignées avec ton orientation, tes intentions et tes préférences. Il n'y a pas de rareté artificielle de matchs compatibles."
+    }
+  ]
+}

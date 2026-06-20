@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Après+une+rupture+:+comment+rebondir+et+rencontrer+à+nouveau&variant=market`],
   },
 };
 

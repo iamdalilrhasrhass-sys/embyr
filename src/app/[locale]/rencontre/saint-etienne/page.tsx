@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Saint-Étienne. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/saint-etienne",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Saint-Étienne&variant=market`],
   },
 };
 

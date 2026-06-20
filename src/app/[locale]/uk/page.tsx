@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/uk",
     locale: "en_GB",
     siteName: "Embir",
+    images: [`/api/og?title=Free+Dating+App+for+the+UK+—+London,+Manchester,+Birmingham+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Free Dating App for the UK | Embir", description: "Embir is free at launch in the UK. Verified profiles and compatibility-first dating.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Free Dating App for the UK | Embir", description: "Embir is free at launch in the UK. Verified profiles and compatibility-first dating.", images: [`/api/og?title=Free+Dating+App+for+the+UK+—+London,+Manchester,+Birmingham+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Best Gay Dating Apps in the USA — New York, LA, Miami & More",
   description: "Looking for the best gay dating apps in the USA? Compare Embir, Grindr, Scruff, Tinder and more for New York, LA, Miami and Chicago. Honest, US-specific rankings for 2026.",
   alternates: { canonical: "https://embir.xyz/blog/best-gay-dating-apps-usa" },
-  openGraph: { title: "Best Gay Dating Apps in the USA — 2026", description: "Honest comparison of gay dating apps across the US. New York, LA, Miami, Chicago and beyond.", url: "https://embir.xyz/blog/best-gay-dating-apps-usa", type: "article", siteName: "Embir", locale: "en_US" },
+  openGraph: { title: "Best Gay Dating Apps in the USA — 2026", description: "Honest comparison of gay dating apps across the US. New York, LA, Miami, Chicago and beyond.", url: "https://embir.xyz/blog/best-gay-dating-apps-usa", type: "article", siteName: "Embir", locale: "en_US",
+    images: [`/api/og?title=Best+Gay+Dating+Apps+in+the+USA+—+2026&variant=market`],
+  },
 };
 
 const schema = {

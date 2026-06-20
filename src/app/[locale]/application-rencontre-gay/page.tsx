@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: "100% gratuite, profils vérifiés, sans publicité. L'application de rencontre gay pensée pour les hommes en France.",
     url: "https://embir.xyz/application-rencontre-gay",
     locale: "fr_FR",
+    images: [`/api/og?title=Application+de+rencontre+gay+gratuite+en+France&variant=market`],
   },
 };
 

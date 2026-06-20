@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Paris. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/paris",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Paris&variant=market`],
   },
 };
 

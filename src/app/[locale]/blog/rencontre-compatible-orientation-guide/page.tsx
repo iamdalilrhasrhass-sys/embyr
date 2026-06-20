@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+compatible+par+orientation+—+comment+ça+marche&variant=market`],
   },
 };
 

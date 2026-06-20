@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, use } from "react";
 import AppShell from "@/components/layout/AppShell";
-
 export default function SalonDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const [salon, setSalon] = useState<any>(null);

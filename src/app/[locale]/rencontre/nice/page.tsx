@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Nice. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/nice",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Nice&variant=market`],
   },
 };
 

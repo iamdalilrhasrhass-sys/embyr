@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Premier+message+sur+une+application+de+rencontre+—+exemples+qui+marchent&variant=market`],
   },
 };
 

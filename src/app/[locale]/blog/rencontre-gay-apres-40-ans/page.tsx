@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+gay+après+40+ans+:+guide+et+conseils&variant=market`],
   },
 };
 

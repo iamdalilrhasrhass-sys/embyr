@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       url: "https://embir.xyz/zurich",
       locale: locale === "fr" ? "fr_FR" : "en_US",
       siteName: "Embir",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir Zurich dating" }],
+      images: [{ url: `/api/og?title=Dating+in+Zurich+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir Zurich dating" }],
     },
-    twitter: { card: "summary_large_image", title: "Dating in Zurich | Embir", description: "Zurich dating app: verified profiles, compatibility matching, and a founding community.", images: ["/og-image.png"] },
+    twitter: { card: "summary_large_image", title: "Dating in Zurich | Embir", description: "Zurich dating app: verified profiles, compatibility matching, and a founding community.", images: [`/api/og?title=Dating+in+Zurich+%7C+Embir&variant=default`] },
     robots: { index: true, follow: true },
   };
 }

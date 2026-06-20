@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/rencontre-serieuse",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+sérieuse+—+pour+des+vraies+connexions&variant=market`],
   },
 };
 

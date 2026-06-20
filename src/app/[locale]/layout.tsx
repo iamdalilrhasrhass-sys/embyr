@@ -15,6 +15,8 @@ import { VibeKeyframes } from "@/components/VibeEffects";
 import ScrollProgress from "@/components/ScrollProgress";
 import Footer from "@/components/layout/Footer";
 import GlobalJsonLd from "@/components/seo/GlobalJsonLd";
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
+import InstallPrompt from "@/components/InstallPrompt";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -25,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL('https://embir.xyz'),
     verification: { google: 'zhl0TqH5BoVmHCeI9QrtuMd8yoO05uJK_oMM_yEh3ss' },
     alternates: { canonical: url, languages: { 'fr-FR': 'https://embir.xyz/fr', 'en': 'https://embir.xyz', 'x-default': 'https://embir.xyz' } },
-    openGraph: { title: t('title'), description: t('description'), url, siteName: 'Embir', locale: locale === 'fr' ? 'fr_FR' : 'en_US', type: 'website', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Embir' }] },
-    twitter: { card: 'summary_large_image', title: t('title'), description: t('description'), images: ['/og-image.png'] },
+    openGraph: { title: t('title'), description: t('description'), url, siteName: 'Embir', locale: locale === 'fr' ? 'fr_FR' : 'en_US', type: 'website', images: [{ url: `/api/og?title=${encodeURIComponent(t('title'))}&subtitle=${encodeURIComponent(t('description'))}&locale=${locale}&variant=default`, width: 1200, height: 630, alt: 'Embir' }] },
+    twitter: { card: 'summary_large_image', title: t('title'), description: t('description'), images: [`/api/og?title=${encodeURIComponent(t('title'))}&subtitle=${encodeURIComponent(t('description'))}&locale=${locale}&variant=default`] },
     manifest: '/manifest.webmanifest',
     appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'Embir' },
     robots: locale === 'en' || locale === 'fr' ? { index: true, follow: true } : { index: false, follow: false },
@@ -83,6 +85,8 @@ export default async function LocaleLayout({
             <ScrollProgress />
             <GoogleAnalytics />
             <CookieConsent />
+            <ServiceWorkerRegister />
+            <InstallPrompt />
           </NextIntlClientProvider>
       </body>
     </html>

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Pride+2026+:+comment+les+célébrations+influencent+les+rencontres&variant=market`],
   },
 };
 

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Profils+vérifiés+sur+les+applis+de+rencontre+—+pourquoi+c&variant=market`],
   },
 };
 

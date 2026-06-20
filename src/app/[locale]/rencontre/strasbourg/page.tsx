@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Strasbourg. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/strasbourg",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Strasbourg&variant=market`],
   },
 };
 

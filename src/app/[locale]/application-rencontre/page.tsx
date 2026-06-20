@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/application-rencontre",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+moderne+et+gratuite+au+lancement&variant=market`],
   },
 };
 

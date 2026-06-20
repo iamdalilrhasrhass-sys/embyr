@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre/homme-homme",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+homme-homme+—+application+gratuite+et+bienveillante&variant=market`],
   },
 };
 

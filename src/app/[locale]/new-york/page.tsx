@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description: "New York has millions of people and yet meeting someone real still feels impossible. Embir changes that.",
     url: "https://embir.xyz/new-york",
     locale: "en_US",
+    images: [`/api/og?title=Gay+Dating+in+New+York&variant=market`],
   },
 };
 

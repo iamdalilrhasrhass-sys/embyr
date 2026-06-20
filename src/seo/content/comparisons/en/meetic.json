@@ -1,0 +1,109 @@
+{
+  "slug": "meetic",
+  "intro": "Meetic has been a pioneer of online dating in France and Europe since 2001. But in 2026, its mandatory paid subscription model, web-first interface and basic matching struggle to compete with the new generation of dating apps. Embir arrives with a modern proposition: verified profiles, real compatibility, free-at-launch access and inclusivity for every orientation. Here's how Embir compares to Meetic in 2026.",
+  "comparisonTable": [
+    {
+      "criteria": "Business model",
+      "competitor": "Mandatory paid subscription",
+      "embir": "Free at launch + transparent freemium",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Basic, very few verified profiles",
+      "embir": "Systematic selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Discovery",
+      "competitor": "Manual search + basic suggestions",
+      "embir": "Multi-signal compatibility matching",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivity",
+      "competitor": "Very hetero-centric",
+      "embir": "Designed for every orientation and identity",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Mobile experience",
+      "competitor": "Basic app, mostly web",
+      "embir": "Modern web-first, native apps coming",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Target audience",
+      "competitor": "30-55, serious relationships",
+      "embir": "All adults, all intentions",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Business Model — Mandatory Subscription vs Free at Launch",
+      "content": "This is the most striking difference. Meetic requires a paid subscription to do almost anything — no messaging, no visible photos, no real interaction without payment. Prices range from €20-40/month depending on commitment length.\n\nEmbir completely reverses this logic. The platform is free throughout the launch phase. All core features — discovery, unlimited messaging, compatibility matching, profile verification — are accessible without payment. The future freemium model will be transparent and fund safety, moderation and mobile apps — not gate basic human connection behind a credit card.",
+      "highlights": [
+        "No payment required for core features during launch",
+        "Unlimited free messaging",
+        "Transparent freemium roadmap"
+      ]
+    },
+    {
+      "title": "Verification & Safety — Meetic's blind spot",
+      "content": "Despite the paid subscription, Meetic has always struggled with fake profiles. Payment filters some bad actors, but many scammers consider the subscription an acceptable cost of entry. Profile verification is virtually nonexistent.\n\nEmbir makes verification a product pillar. Selfie verification is systematic and prompted at signup. Verified profiles are clearly marked and prioritized in discovery. A human moderation team handles every report. Zero tolerance for harassment is consistently enforced. Paying doesn't replace verifying — that's the lesson Embir applies from day one.",
+      "highlights": [
+        "Systematic selfie verification",
+        "Verified badge visible on profiles",
+        "Human moderation for every safety decision"
+      ]
+    },
+    {
+      "title": "Discovery — Manual Search vs Compatibility Intelligence",
+      "content": "Meetic offers a traditional search engine: age, location, a few criteria. Suggestions are basic and barely personalized. Discovery relies heavily on the user actively searching.\n\nEmbir automates discovery intelligence. At signup, you define your orientation, intentions, preferences and lifestyle. The compatibility algorithm surfaces aligned profiles — no need to spend hours manually searching. Less time searching, more time having meaningful conversations with compatible people.",
+      "highlights": [
+        "Automatic compatibility-based discovery",
+        "Intentions and preferences respected continuously",
+        "More time for conversations, less for scrolling"
+      ]
+    },
+    {
+      "title": "Inclusivity — Dating isn't just heterosexual",
+      "content": "Meetic has long been — and largely remains — a platform designed for heterosexual serious dating. LGBTQ+ options feel tacked on. Embir was born inclusive, designed from day one for every orientation. Your gender identity and orientation preferences are matching primitives, not secondary filters.",
+      "highlights": [
+        "Designed for all orientations from day one",
+        "Gender identity as a first-class matching signal",
+        "Community guidelines protect everyone equally"
+      ]
+    },
+    {
+      "title": "Experience & Audience — Beyond '30-55, serious'",
+      "content": "Meetic targets 30-55 year-olds seeking serious relationships. It's both a strength (clear positioning) and a limit (excludes a large portion of singles). Embir serves all adults regardless of age, orientation or intentions. Modern web-first interface, mobile apps coming. The platform adapts to your goals, not the other way around.",
+      "highlights": [
+        "All ages, all intentions, all orientations",
+        "Modern responsive interface",
+        "Platform adapts to your goals"
+      ]
+    }
+  ],
+  "verdict": "Choose Embir if you want a free-at-launch platform without mandatory financial commitment, verified profiles with real human moderation, intelligent compatibility discovery instead of manual searching, and an inclusive experience designed for every orientation and age. Meetic remains relevant for traditional 'serious dating' positioning — but Embir represents the new generation of online dating in 2026.",
+  "ctaText": "Join the founding community — free, verified, for every orientation",
+  "faq": [
+    {
+      "q": "Is Embir really free unlike Meetic?",
+      "a": "Yes. Embir is completely free during launch: unlimited messaging, full discovery, compatibility matching, verification — all accessible without payment. Meetic requires a paid subscription (€20-40/month) for basic functions."
+    },
+    {
+      "q": "How does Embir verify profiles compared to Meetic?",
+      "a": "Embir offers systematic selfie verification at signup. Verified profiles get a badge and discovery priority. Meetic has very basic verification and most profiles remain unverified despite the paid subscription."
+    },
+    {
+      "q": "Can I find a serious relationship on Embir like Meetic?",
+      "a": "Absolutely. Set 'serious relationship' as your intention at signup and the compatibility algorithm respects it. The difference: Embir doesn't force that framework — you choose what you're looking for."
+    },
+    {
+      "q": "Is Embir suitable for people over 40?",
+      "a": "Yes. Embir is designed for all adults regardless of age. Compatibility considers lifestyle preferences and intentions — not age as the primary criterion. The platform is as relevant at 55 as at 25."
+    }
+  ]
+}

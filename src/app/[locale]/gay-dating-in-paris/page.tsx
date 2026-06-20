@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/gay-dating-in-paris",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Gay+Dating+in+Paris+—+Free+App+for+Authentic+Connections&variant=market`],
   },
 };
 

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description: "Free, safe, and built for the UK. Verified profiles, AI matching, and unlimited messaging — no ads, no paywalls.",
     url: "https://embir.xyz/gay-dating-app-uk",
     locale: "en_GB",
+    images: [`/api/og?title=Free+Gay+Dating+App+in+the+UK&variant=market`],
   },
 };
 

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/securite-rencontre",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+sécurisée+—+confidentialité+et+respect&variant=market`],
   },
 };
 

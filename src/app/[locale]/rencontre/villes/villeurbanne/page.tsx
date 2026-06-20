@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Villeurbanne. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/villes/villeurbanne",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Villeurbanne&variant=market`],
   },
 };
 

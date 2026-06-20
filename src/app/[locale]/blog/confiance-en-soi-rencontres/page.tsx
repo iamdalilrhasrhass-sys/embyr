@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Confiance+en+soi+et+rencontres+:+12+exercices+pratiques&variant=market`],
   },
 };
 

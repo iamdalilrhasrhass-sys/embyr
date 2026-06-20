@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Embir",
     locale: "en_US",
+    images: [`/api/og?title=Best+Free+Gay+Dating+Apps+in+2026+—+Safer,+Smarter,+More+Authentic&variant=market`],
   },
 };
 

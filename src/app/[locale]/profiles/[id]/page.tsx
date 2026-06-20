@@ -5,7 +5,6 @@ import Link from "next/link";
 import AppShell from "@/components/layout/AppShell";
 import PremiumBlurImage from "@/components/ui/PremiumBlurImage";
 import { usePremium } from "@/hooks/usePremium";
-
 function generateUserGradient(userId: string) {
   if (!userId) return "linear-gradient(135deg, #0a0614, #120b1f)";
   const hash = Array.from(userId).reduce((acc, char) => acc + char.charCodeAt(0), 0);

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
-
 export default function VerificationPage() {
   const [step, setStep] = useState<"request" | "code" | "upload" | "done">("request");
   const [code, setCode] = useState("");

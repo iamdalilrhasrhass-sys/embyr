@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       url: "https://embir.xyz/london",
       locale: locale === "fr" ? "fr_FR" : "en_GB",
       siteName: "Embir",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir London dating" }],
+      images: [{ url: `/api/og?title=Dating+in+London+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir London dating" }],
     },
-    twitter: { card: "summary_large_image", title: "Dating in London | Embir", description: "London dating app: verified profiles, compatibility matching, and a founding community.", images: ["/og-image.png"] },
+    twitter: { card: "summary_large_image", title: "Dating in London | Embir", description: "London dating app: verified profiles, compatibility matching, and a founding community.", images: [`/api/og?title=Dating+in+London+%7C+Embir&variant=default`] },
     robots: { index: true, follow: true },
   };
 }

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Meilleure+application+de+rencontre+gratuite+en+2026+—+le+guide+complet&variant=market`],
   },
 };
 

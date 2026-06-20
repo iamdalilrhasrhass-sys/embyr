@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre-serieuse/gay",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+sérieuse+gay+—+pour+des+relations+durables&variant=market`],
   },
 };
 

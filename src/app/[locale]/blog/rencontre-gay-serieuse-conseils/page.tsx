@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+gay+sérieuse+:+15+conseils+pour+une+relation+durable&variant=market`],
   },
 };
 

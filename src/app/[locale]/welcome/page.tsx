@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-
 export default function WelcomePage() {
   const router = useRouter();
   const searchParams = useSearchParams();

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Angers. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/angers",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Angers&variant=market`],
   },
 };
 

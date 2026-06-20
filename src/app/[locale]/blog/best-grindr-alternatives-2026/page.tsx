@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Best Grindr Alternatives in 2026 — Free, Safer, Better Matching",
   description: "Looking for the best Grindr alternatives? Compare Embir, Scruff, Romeo, Jack'd and more on price, verification, matching quality, and user experience. Find a better gay dating app.",
   alternates: { canonical: "https://embir.xyz/blog/best-grindr-alternatives-2026" },
-  openGraph: { title: "Best Grindr Alternatives in 2026", description: "Tired of Grindr's paywalls and bots? These are the best alternatives — honestly compared.", url: "https://embir.xyz/blog/best-grindr-alternatives-2026", type: "article", siteName: "Embir", locale: "en_US" },
+  openGraph: { title: "Best Grindr Alternatives in 2026", description: "Tired of Grindr's paywalls and bots? These are the best alternatives — honestly compared.", url: "https://embir.xyz/blog/best-grindr-alternatives-2026", type: "article", siteName: "Embir", locale: "en_US",
+    images: [`/api/og?title=Best+Grindr+Alternatives+in+2026&variant=market`],
+  },
 };
 
 const schema = {"@context":"https://schema.org","@type":"Article","headline":"Best Grindr Alternatives in 2026","description":"Honest comparison of the best Grindr alternatives: Embir, Scruff, Romeo, Jack'd, and more.","author":{"@type":"Organization","name":"Embir"},"datePublished":"2026-06-14","publisher":{"@type":"Organization","name":"Embir","url":"https://embir.xyz"}};

@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title, description,
     metadataBase: new URL("https://embir.xyz"),
     alternates: { canonical: url, languages: { "fr-FR": "https://embir.xyz/fr/a-propos", "en": "https://embir.xyz/about", "x-default": "https://embir.xyz/about" } },
-    openGraph: { title, description, url, siteName: "Embir", locale: locale === "fr" ? "fr_FR" : "en_US", type: "website", images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir" }] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og-image.png"] },
+    openGraph: { title, description, url, siteName: "Embir", locale: locale === "fr" ? "fr_FR" : "en_US", type: "website", images: [{ url: `/api/og?title=Embir&variant=default`, width: 1200, height: 630, alt: "Embir" }] },
+    twitter: { card: "summary_large_image", title, description, images: [`/api/og?title=Embir&variant=default`] },
     robots: { index: true, follow: true },
   };
 }

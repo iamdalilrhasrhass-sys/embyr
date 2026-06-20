@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/lgbtq-dating-app",
     locale: "en_US",
     siteName: "Embir",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir LGBTQ+ dating" }],
+    images: [{ url: `/api/og?title=LGBTQ++Dating+App+—+Safe,+Inclusive,+Verified+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir LGBTQ+ dating" }],
   },
-  twitter: { card: "summary_large_image", title: "LGBTQ+ Dating App — Safe, Inclusive, Verified | Embir", description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, human moderation and a free launch.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "LGBTQ+ Dating App — Safe, Inclusive, Verified | Embir", description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, human moderation and a free launch.", images: [`/api/og?title=LGBTQ++Dating+App+—+Safe,+Inclusive,+Verified+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

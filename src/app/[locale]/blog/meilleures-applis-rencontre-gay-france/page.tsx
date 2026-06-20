@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Meilleures applications de rencontre gay en France — Comparatif 2026",
   description: "Découvrez les meilleures applications de rencontre gay en France en 2026. Comparatif honnête : Embir, Grindr, Tinder, Scruff et Romeo sur le prix, la vérification et la qualité des profils.",
   alternates: { canonical: "https://embir.xyz/blog/meilleures-applis-rencontre-gay-france" },
-  openGraph: { title: "Meilleures applis de rencontre gay en France — 2026", description: "Comparatif honnête des applis de rencontre gay disponibles en France. Prix réels, fonctionnalités réelles.", url: "https://embir.xyz/blog/meilleures-applis-rencontre-gay-france", type: "article", siteName: "Embir", locale: "fr_FR" },
+  openGraph: { title: "Meilleures applis de rencontre gay en France — 2026", description: "Comparatif honnête des applis de rencontre gay disponibles en France. Prix réels, fonctionnalités réelles.", url: "https://embir.xyz/blog/meilleures-applis-rencontre-gay-france", type: "article", siteName: "Embir", locale: "fr_FR",
+    images: [`/api/og?title=Meilleures+applis+de+rencontre+gay+en+France+—+2026&variant=market`],
+  },
 };
 
 const schema = {"@context":"https://schema.org","@type":"Article","headline":"Meilleures applications de rencontre gay en France — Comparatif 2026","description":"Comparatif honnête des applications de rencontre gay en France : Embir, Grindr, Tinder, Scruff, Romeo.","author":{"@type":"Organization","name":"Embir"},"datePublished":"2026-06-14","publisher":{"@type":"Organization","name":"Embir","url":"https://embir.xyz"}};

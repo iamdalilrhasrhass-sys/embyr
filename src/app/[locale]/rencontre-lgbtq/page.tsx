@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/rencontre-lgbtq",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Application+de+rencontre+LGBTQ++inclusive+et+respectueuse&variant=market`],
   },
 };
 

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre/lesbienne",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+lesbienne+—+application+respectueuse+et+gratuite&variant=market`],
   },
 };
 

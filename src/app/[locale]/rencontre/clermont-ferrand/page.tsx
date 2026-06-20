@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Clermont-Ferrand. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/clermont-ferrand",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Clermont-Ferrand&variant=market`],
   },
 };
 

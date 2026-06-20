@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
 export default function EditProfile() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);

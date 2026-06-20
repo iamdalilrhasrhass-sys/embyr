@@ -14,8 +14,8 @@ export default function EmbirLogo({ size = 'md', variant = 'lockup', showTagline
     <span className={`inline-flex items-center gap-2 ${className}`}>
       {mark}
       <span className="flex flex-col leading-none">
-        <span className="font-extrabold tracking-tight text-white" style={{ fontSize: h * 0.62 }}>embir<span style={{ color: '#ff5e36' }}>.</span></span>
-        {showTagline && <span className="uppercase text-[#ff8a4c]/80" style={{ fontSize: h * 0.16, letterSpacing: '0.25em' }}>free at launch</span>}
+        <span className="font-extrabold tracking-tight text-white" style={{ fontSize: h * 0.62 }}>embir<span style={{ color: '#d4a574' }}>.</span></span>
+        {showTagline && <span className="uppercase text-[#d4a574]/80" style={{ fontSize: h * 0.16, letterSpacing: '0.25em' }}>free at launch</span>}
       </span>
     </span>
   );

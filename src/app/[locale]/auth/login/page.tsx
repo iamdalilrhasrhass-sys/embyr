@@ -6,7 +6,6 @@ import ScrollReveal from "@/components/motion/ScrollReveal";
 import EmbirLogo from "@/components/brand/EmbirLogo";
 import Particles3D from "@/components/Particles3D";
 import { AuroraBubbles } from "@/components/VibeEffects";
-
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");

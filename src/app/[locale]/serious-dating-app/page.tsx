@@ -16,6 +16,7 @@ alternates: {
     url: "https://embir.xyz/serious-dating-app",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Serious+Dating+App+—+For+Real+Relationships&variant=market`],
   },
 };
 

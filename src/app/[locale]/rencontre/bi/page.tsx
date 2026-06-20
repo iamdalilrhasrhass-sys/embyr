@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/rencontre/bi",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+bi+—+application+inclusive+et+gratuite&variant=market`],
   },
 };
 

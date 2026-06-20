@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Pourquoi+les+applis+de+rencontre+sont+payantes+—+et+l&variant=market`],
   },
 };
 

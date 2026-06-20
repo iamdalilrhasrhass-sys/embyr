@@ -4,7 +4,6 @@ import AppShell from "@/components/layout/AppShell";
 import PremiumBlurImage from "@/components/ui/PremiumBlurImage";
 import { usePremium } from "@/hooks/usePremium";
 import Link from "next/link";
-
 export default function MembresPage() {
   const [profiles, setProfiles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

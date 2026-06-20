@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Rencontre+bi+—+guide+complet+pour+la+communauté+bisexuelle&variant=market`],
   },
 };
 

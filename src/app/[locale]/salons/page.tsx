@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import AppShell from "@/components/layout/AppShell";
 import Link from "next/link";
-
 export default function SalonsPage() {
   const [salons, setSalons] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

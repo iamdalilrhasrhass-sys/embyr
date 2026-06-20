@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
 interface Profile {
   id: string;
   displayName?: string;

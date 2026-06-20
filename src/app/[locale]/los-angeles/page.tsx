@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       url: "https://embir.xyz/los-angeles",
       locale: locale === "fr" ? "fr_FR" : "en_US",
       siteName: "Embir",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Embir Los Angeles dating" }],
+      images: [{ url: `/api/og?title=Dating+in+Los+Angeles+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir Los Angeles dating" }],
     },
-    twitter: { card: "summary_large_image", title: "Dating in Los Angeles | Embir", description: "LA dating app: verified profiles, compatibility matching, and a founding community.", images: ["/og-image.png"] },
+    twitter: { card: "summary_large_image", title: "Dating in Los Angeles | Embir", description: "LA dating app: verified profiles, compatibility matching, and a founding community.", images: [`/api/og?title=Dating+in+Los+Angeles+%7C+Embir&variant=default`] },
     robots: { index: true, follow: true },
   };
 }

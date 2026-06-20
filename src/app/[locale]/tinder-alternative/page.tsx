@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     url: "https://embir.xyz/tinder-alternative",
     locale: "en_US",
     siteName: "Embir",
+    images: [`/api/og?title=Tinder+Alternative+—+Less+Swiping,+More+Compatibility+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Tinder Alternative — Less Swiping, More Compatibility | Embir", description: "Tired of swipe fatigue? Embir is a Tinder alternative built on compatibility and verified profiles.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Tinder Alternative — Less Swiping, More Compatibility | Embir", description: "Tired of swipe fatigue? Embir is a Tinder alternative built on compatibility and verified profiles.", images: [`/api/og?title=Tinder+Alternative+—+Less+Swiping,+More+Compatibility+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 

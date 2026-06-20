@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: "Application de rencontre gratuite à Nantes. Profils vérifiés, matching IA, zéro pub.",
     url: "https://embir.xyz/rencontre/nantes",
     locale: "fr_FR",
+    images: [`/api/og?title=Rencontre+à+Nantes&variant=market`],
   },
 };
 

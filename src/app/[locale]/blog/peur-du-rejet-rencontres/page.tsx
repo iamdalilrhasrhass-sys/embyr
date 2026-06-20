@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Peur+du+rejet+dans+les+rencontres+:+comment+la+surmonter&variant=market`],
   },
 };
 

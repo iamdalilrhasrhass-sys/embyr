@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     siteName: "Embir",
+    images: [`/api/og?title=Anxiété+sociale+et+rencontres+en+ligne+:+comment+gérer&variant=market`],
   },
 };
 
