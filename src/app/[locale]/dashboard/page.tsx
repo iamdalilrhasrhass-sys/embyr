@@ -1,394 +1,581 @@
 "use client";
-import Link from "next/link";
+
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Particles3D from "@/components/Particles3D";
-import { AuroraBubbles } from "@/components/VibeEffects";
-function computeProfileCompletion(profile: any): number {
-  if (!profile) return 0;
-  let score = 0;
-  let total = 7;
-  if (profile.username || profile.displayName) score++;
-  if (profile.age) score++;
-  if (profile.city) score++;
-  if (profile.description && profile.description.length > 10) score++;
-  if (profile.genderIdentity) score++;
-  if (profile.publicPhotos && profile.publicPhotos.length > 0) score++;
-  if (profile.isVerified) score++;
-  return Math.round((score / total) * 100);
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * Embir — Dashboard multi-orientation & multi-intention
+ *
+ * Affiche un feed de profils compatibles (via /api/match/feed) filtrable par
+ * intention. Cartes profil avec badges orientation / intents / vérifié, score
+ * de compatibilité, raisons du match et actions Like / Voir profil / Passer.
+ *
+ * Les libellés (orientation / intents) sont en dur côté client : on n'importe
+ * PAS @/lib/matching qui tirerait Prisma dans le bundle navigateur.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+const ORIENTATION_LABELS: Record<string, string> = {
+  HETERO: "Hétéro",
+  HOMOSEXUEL: "Homosexuel",
+  LESBIENNE: "Lesbienne",
+  BI: "Bi",
+  QUEER: "Queer",
+  PAN: "Pan",
+  FLUIDE: "Fluide",
+  DEMI: "Demi",
+  ASEXUEL: "Asexuel",
+  AUTRE: "Autre",
+};
+
+const INTENT_LABELS: Record<string, string> = {
+  AMOUR: "Amour",
+  AMIS: "Amis",
+  FUN: "Fun",
+  PLAN_CUL: "Plan cul",
+  SPORT: "Sport",
+  EVENEMENTS: "Événements",
+  DISCUSSION: "Discussion",
+  AUTRE: "Autre",
+};
+
+type IntentFilterDef = { key: string; label: string; value: string | null };
+
+const INTENT_FILTERS: IntentFilterDef[] = [
+  { key: "all", label: "Tous", value: null },
+  { key: "AMOUR", label: "Amour", value: "AMOUR" },
+  { key: "AMIS", label: "Amis", value: "AMIS" },
+  { key: "FUN", label: "Fun", value: "FUN" },
+  { key: "PLAN_CUL", label: "Plan cul", value: "PLAN_CUL" },
+  { key: "SPORT", label: "Sport", value: "SPORT" },
+  { key: "EVENEMENTS", label: "Événements", value: "EVENEMENTS" },
+];
+
+interface MatchCandidate {
+  profile: any;
+  score: number;
+  reasons: string[];
+  matchedIntents: string[];
+}
+
+interface FeedResponse {
+  profiles?: MatchCandidate[];
+  total?: number;
+  filter?: { intent?: string | null; userOrientation?: string | null };
+  error?: string;
+}
+
+/** Distance Haversine (km) entre l'utilisateur et un candidat. */
+function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+}
+
+/** Pourcentage de compatibilité borné 0–100 (le score brut peut dépasser 100). */
+function scorePct(score: number): number {
+  return Math.max(0, Math.min(100, Math.round(score)));
 }
 
 export default function DashboardPage() {
   const router = useRouter();
+
   const [profile, setProfile] = useState<any>(null);
   const [authChecked, setAuthChecked] = useState(false);
-  const [stats, setStats] = useState({ views: 0, favorites: 0, conversations: 0 });
 
+  const [feed, setFeed] = useState<MatchCandidate[]>([]);
+  const [feedLoading, setFeedLoading] = useState(true);
+  const [error, setError] = useState<string>("");
+
+  const [activeIntent, setActiveIntent] = useState<string | null>(null); // null = Tous
+  const [reload, setReload] = useState(0);
+  const [pendingId, setPendingId] = useState<string | null>(null);
+  const [toast, setToast] = useState<string>("");
+
+  /* ── Auth + profil utilisateur (au mount) ── */
   useEffect(() => {
+    let cancelled = false;
     fetch("/api/profile/me")
-      .then(res => {
-        if (res.status === 401) { router.push("/auth/login?redirect=/dashboard"); return null; }
+      .then(async (res) => {
+        if (res.status === 401) {
+          router.push("/auth/login?redirect=/dashboard");
+          return null;
+        }
         return res.json();
       })
-      .then(data => {
-        if (data) setProfile(data);
+      .then((data) => {
+        if (cancelled) return;
+        if (data && !data.error) setProfile(data);
         setAuthChecked(true);
       })
-      .catch(() => { router.push("/auth/login?redirect=/dashboard"); });
-  }, []);
+      .catch(() => {
+        if (!cancelled) router.push("/auth/login?redirect=/dashboard");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [router]);
 
+  /* ── Feed : fetch au mount + au changement de filtre intent (+ retry) ── */
   useEffect(() => {
-    if (!profile) return;
-    // Get message count
-    fetch("/api/messages").then(r => r.json()).then(d => {
-      if (Array.isArray(d)) setStats(prev => ({ ...prev, conversations: d.length }));
-    }).catch(() => {});
-    // Get favorites count
-    fetch("/api/favorites").then(r => r.json()).then(d => {
-      if (d.favorites) setStats(prev => ({ ...prev, favorites: d.favorites.length }));
-    }).catch(() => {});
-  }, [profile]);
+    if (!authChecked) return;
+    let cancelled = false;
+    setFeedLoading(true);
+    setError("");
 
-  const completion = computeProfileCompletion(profile);
+    const params = new URLSearchParams({ limit: "20" });
+    if (activeIntent) params.set("intent", activeIntent);
 
-  if (!authChecked) return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-4" style={{background:"radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)"}}>
-      <div className="relative">
-        <div className="w-16 h-16 rounded-full border border-[#ff5e36]/10 flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full border border-[#d4a574]/20 animate-ping absolute" />
-          <div className="w-8 h-8 rounded-full bg-[#ff5e36]/10 backdrop-blur-sm" />
-        </div>
+    fetch(`/api/match/feed?${params.toString()}`)
+      .then(async (res) => {
+        if (res.status === 401) {
+          router.push("/auth/login?redirect=/dashboard");
+          return null;
+        }
+        return res.json();
+      })
+      .then((data: FeedResponse | null) => {
+        if (cancelled || !data) return;
+        if (data.error) {
+          setError(data.error);
+          setFeed([]);
+        } else {
+          setFeed(data.profiles ?? []);
+        }
+        setFeedLoading(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setError("Impossible de charger le feed.");
+        setFeedLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [authChecked, activeIntent, reload, router]);
+
+  /* ── Like / Pass via /api/match/action ── */
+  function handleAction(candidate: MatchCandidate, action: "like" | "pass") {
+    const targetUserId = candidate.profile?.userId;
+    if (!targetUserId) return;
+    const id = candidate.profile?.id;
+    setPendingId(id ?? null);
+
+    fetch("/api/match/action", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ targetUserId, action }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (action === "like" && data?.matched) {
+          setToast(`Match avec ${displayName(candidate)} ! 💞`);
+          setTimeout(() => setToast(""), 3500);
+        }
+        setFeed((prev) => prev.filter((c) => c.profile?.id !== id));
+      })
+      .catch(() => {
+        /* silencieux : on garde le profil dans le feed */
+      })
+      .finally(() => setPendingId(null));
+  }
+
+  /* ── Helpers d'affichage ── */
+  function displayName(c: MatchCandidate): string {
+    return c.profile?.displayName || c.profile?.username || "Anonyme";
+  }
+
+  function distanceTo(c: MatchCandidate): string | null {
+    const u = profile;
+    const p = c.profile;
+    if (
+      u?.latitude != null &&
+      u?.longitude != null &&
+      p?.latitude != null &&
+      p?.longitude != null
+    ) {
+      const km = haversineKm(u.latitude, u.longitude, p.latitude, p.longitude);
+      if (km < 1) return "à moins d'1 km";
+      return `à ${Math.round(km)} km`;
+    }
+    return null;
+  }
+
+  /* ── Loading plein écran (vérification auth) ── */
+  if (!authChecked) {
+    return (
+      <div
+        className="min-h-screen flex flex-col items-center justify-center gap-4"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
+        }}
+      >
+        <motion.div
+          className="w-12 h-12 rounded-full border-2 border-[#ff5e36]/20 border-t-[#ff5e36]"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
+        />
+        <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/20">
+          Chargement…
+        </span>
       </div>
-      <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/20">Chargement...</span>
-    </div>
-  );
+    );
+  }
+
+  const greetingName = profile?.displayName || profile?.username || "toi";
 
   return (
-    <div className="relative min-h-screen overflow-hidden" style={{background:"radial-gradient(ellipse at 50% 20%, #0f0718 0%, #080212 50%, #020005 100%)"}}>
-      {/* ═══════════ COCKPIT BACKGROUND ═══════════ */}
-      {/* Liquid gradient mesh */}
-      <div className="emb-liquid-mesh" />
-
-      {/* 3D Particles */}
-      <Particles3D count={70} />
-
-      {/* Aurora Bubbles */}
-      <AuroraBubbles count={24} colors={["#ffa333","#ff5e36","#ff1f5a","#d4a574","#c4956a","#f59e0b"]} />
-
-      {/* Ambient orbs */}
+    <div
+      className="relative min-h-screen overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse at 50% 15%, #0f0718 0%, #080212 50%, #04000a 100%)",
+      }}
+    >
+      {/* Ambiance — orbes doux, palette de la landing */}
       <div
-        className="absolute pointer-events-none rounded-full opacity-[0.07]"
+        className="absolute pointer-events-none rounded-full opacity-[0.08]"
         style={{
-          width: "800px",
-          height: "800px",
-          background: "radial-gradient(circle, rgba(255,94,54,0.5) 0%, transparent 60%)",
-          top: "-15%",
-          right: "-10%",
+          width: 700,
+          height: 700,
+          top: "-12%",
+          right: "-8%",
+          background:
+            "radial-gradient(circle, rgba(255,94,54,0.5) 0%, transparent 60%)",
           filter: "blur(120px)",
         }}
       />
       <div
-        className="absolute pointer-events-none rounded-full opacity-[0.05]"
+        className="absolute pointer-events-none rounded-full opacity-[0.06]"
         style={{
-          width: "600px",
-          height: "600px",
-          background: "radial-gradient(circle, rgba(212,165,116,0.4) 0%, transparent 60%)",
-          bottom: "10%",
+          width: 560,
+          height: 560,
+          bottom: "5%",
           left: "-8%",
-          filter: "blur(100px)",
+          background:
+            "radial-gradient(circle, rgba(212,165,116,0.4) 0%, transparent 60%)",
+          filter: "blur(110px)",
         }}
       />
 
-      {/* ═══════════ MAIN CONTENT ═══════════ */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 py-10">
-        {/* ── Badge Row ── */}
-        <div className="mb-8 flex flex-wrap gap-3">
-          <div className="emb-float-badge inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.14em] bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/20">
-            <span className="w-1.5 h-1.5 bg-[#ff5e36] rounded-full animate-pulse shadow-[0_0_12px_rgba(255,94,54,0.8)]" />
-            Accès lancement gratuit
-          </div>
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-            ✦ Membre fondateur
-          </span>
-        </div>
-
-        {/* ── Supernova Title ── */}
-        <h1 className="emb-super-title text-4xl sm:text-5xl md:text-6xl text-white mb-3">
-          <span className="emb-word">Bienvenue</span>{" "}
-          <span className="emb-word emb-gradient-text-super">sur</span>{" "}
-          <span className="emb-word emb-gradient-text-super">embir.xyz</span>
-        </h1>
-        <p className="text-white/25 text-sm mb-10 max-w-2xl leading-relaxed">
-          Ton accès lancement gratuit est actif. Complète ton profil pour être visible
-          et commencer à rencontrer les premiers membres.
-        </p>
-
-        {/* ── Profile Completion ── PREMIUM PROGRESS BAR ── */}
-        {completion < 100 && (
-          <div className="emb-glass-extreme rounded-2xl p-6 mb-10 group">
-            <div className="flex items-center justify-between mb-3">
-              <div>
-                <span className="text-sm font-semibold text-white">Profil complété à {completion}%</span>
-              </div>
-              <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#d4a574]/70">
-                {completion < 40 ? "Commence par ajouter tes infos" : completion < 70 ? "Presque ! Ajoute une photo" : "Ajoute une description"}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 py-10">
+        {/* ───────────── En-tête : bienvenue + CTA profil ───────────── */}
+        <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <div className="mb-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.16em] bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/20">
+              <span className="w-1.5 h-1.5 bg-[#ff5e36] rounded-full animate-pulse shadow-[0_0_12px_rgba(255,94,54,0.8)]" />
+              100% gratuit · lancement
+            </div>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl tracking-[-0.02em] text-white">
+              Salut,{" "}
+              <span className="bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#d4a574] bg-clip-text text-transparent">
+                {greetingName}
               </span>
-            </div>
-            {/* Premium progress bar */}
-            <div className="relative w-full h-3 rounded-full bg-white/[0.04] overflow-hidden backdrop-blur-sm">
-              {/* Glow behind the fill */}
-              <div
-                className="absolute inset-0 rounded-full opacity-60 blur-sm transition-all duration-700"
-                style={{
-                  width: `${completion}%`,
-                  background: "linear-gradient(90deg, #ff1f5a, #ff5e36, #ffa333, #d4a574)",
-                }}
-              />
-              {/* Fill bar */}
-              <div
-                className="relative h-full rounded-full transition-all duration-700 ease-out"
-                style={{
-                  width: `${completion}%`,
-                  background: "linear-gradient(90deg, #ff1f5a 0%, #ff5e36 40%, #ffa333 70%, #d4a574 100%)",
-                  boxShadow: "0 0 30px rgba(255,94,54,0.5), 0 0 60px rgba(255,163,51,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
-                }}
-              >
-                {/* Shimmer effect */}
-                <div
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 45%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 55%, transparent 100%)",
-                    animation: "shimmer 2s ease-in-out infinite",
-                    backgroundSize: "200% 100%",
-                  }}
-                />
-              </div>
-            </div>
-            {/* Tick marks */}
-            <div className="flex justify-between mt-2 px-0.5">
-              {[25, 50, 75, 100].map(mark => (
-                <div key={mark} className="flex flex-col items-center gap-1">
-                  <div
-                    className="w-px h-1.5 rounded-full transition-all duration-500"
-                    style={{
-                      background: completion >= mark
-                        ? "linear-gradient(180deg, #ffa333, #ff5e36)"
-                        : "rgba(255,255,255,0.08)",
-                      boxShadow: completion >= mark ? "0 0 4px rgba(255,94,54,0.4)" : "none",
-                    }}
-                  />
-                  <span
-                    className="text-[8px] font-mono transition-colors duration-500"
-                    style={{ color: completion >= mark ? "#d4a574" : "rgba(255,255,255,0.12)" }}
-                  >
-                    {mark}%
-                  </span>
-                </div>
-              ))}
-            </div>
-            <Link
-              href="/dashboard/profile"
-              className="inline-flex items-center gap-2 mt-4 text-xs font-semibold text-[#ff5e36] hover:text-[#ffa333] transition-all duration-300 group/link"
-            >
-              <span>Compléter mon profil</span>
-              <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-              </svg>
-            </Link>
-          </div>
-        )}
-
-        {/* ── Profile 100% Complete Celebration ── */}
-        {completion === 100 && (
-          <div className="emb-glass-extreme rounded-2xl p-6 mb-10 border-[#d4a574]/15">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#d4a574]/20 to-[#ffa333]/10 flex items-center justify-center">
-                <svg className="w-5 h-5 text-[#d4a574]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
-              <div>
-                <span className="text-sm font-semibold text-[#d4a574]">Profil 100% complété</span>
-                <p className="text-[10px] text-white/20 mt-0.5">Super ! Ton profil est visible par la communauté</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* ═══════════ STATS CARDS — EMB-GLASS-EXTREME ═══════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-          {/* Views */}
-          <div className="emb-glass-extreme rounded-2xl p-6 text-center group cursor-default">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/15 mb-3">Vues du profil</div>
-            <div className="emb-stat-super text-4xl sm:text-5xl">—</div>
-            <div className="mt-2 h-1 w-10 mx-auto rounded-full bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent" />
-          </div>
-
-          {/* Favorites */}
-          <div className="emb-glass-extreme rounded-2xl p-6 text-center group cursor-default">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/15 mb-3">Favoris</div>
-            <div className="emb-stat-super text-4xl sm:text-5xl">{stats.favorites || "—"}</div>
-            <div className="mt-2 h-1 w-10 mx-auto rounded-full bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent" />
-          </div>
-
-          {/* Verified */}
-          <div className="emb-glass-extreme rounded-2xl p-6 text-center group cursor-default">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/15 mb-3">Vérifié</div>
-            <div className="emb-stat-super text-4xl sm:text-5xl">
-              {profile?.isVerified ? (
-                <span className="text-[#d4a574]" style={{filter:"drop-shadow(0 0 12px rgba(212,165,116,0.4))"}}>✓</span>
-              ) : (
-                <span className="text-white/10">—</span>
-              )}
-            </div>
-            <div className="mt-2 h-1 w-10 mx-auto rounded-full bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent" />
-          </div>
-        </div>
-
-        {/* ═══════════ QUICK-ACTION CARDS ═══════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          {/* Mon Profil */}
-          <Link href="/dashboard/profile" className="emb-glass-extreme rounded-2xl p-6 group cursor-pointer no-underline">
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#ff1f5a]/15 to-[#ff5e36]/10 text-[#ff5e36] transition-all duration-500 group-hover:scale-110 group-hover:from-[#ff1f5a]/25 group-hover:to-[#ff5e36]/20 group-hover:shadow-[0_0_40px_rgba(255,31,90,0.2)]">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
-              </svg>
-            </div>
-            <h3 className="font-serif text-lg font-medium tracking-[-0.02em] text-white mb-1 group-hover:text-[#d4a574] transition-colors duration-500">
-              Mon Profil
-            </h3>
-            <p className="text-xs text-white/20 leading-relaxed mb-4">Photos, description, préférences</p>
-            <div className="flex items-center gap-2 text-[10px] font-semibold text-[#ff5e36] group-hover:text-[#ffa333] transition-all duration-300">
-              <span>{completion < 50 ? "Compléter" : "Modifier"}</span>
-              <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-              </svg>
-            </div>
-          </Link>
-
-          {/* Messages */}
-          <Link href="/messages" className="emb-glass-extreme rounded-2xl p-6 group cursor-pointer no-underline">
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#ff5e36]/15 to-[#ffa333]/10 text-[#ffa333] transition-all duration-500 group-hover:scale-110 group-hover:from-[#ff5e36]/25 group-hover:to-[#ffa333]/20 group-hover:shadow-[0_0_40px_rgba(255,163,51,0.2)]">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
-              </svg>
-            </div>
-            <h3 className="font-serif text-lg font-medium tracking-[-0.02em] text-white mb-1 group-hover:text-[#d4a574] transition-colors duration-500">
-              Messages
-            </h3>
-            <p className="text-xs text-white/20 leading-relaxed mb-4">
-              {stats.conversations > 0 ? `${stats.conversations} conversation${stats.conversations > 1 ? 's' : ''}` : "Échange librement"}
+            </h1>
+            <p className="text-white/30 text-sm mt-2 max-w-xl leading-relaxed">
+              Voici les profils compatibles avec ton orientation et tes intentions.
+              Filtre, découvre, like.
             </p>
-            <div className="flex items-center gap-2 text-[10px] font-semibold text-[#ff5e36] group-hover:text-[#ffa333] transition-all duration-300">
-              <span>Voir</span>
-              <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-              </svg>
-            </div>
-          </Link>
-
-          {/* Membres */}
-          <Link href="/membres" className="emb-glass-extreme rounded-2xl p-6 group cursor-pointer no-underline">
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#d4a574]/15 to-[#c4956a]/10 text-[#d4a574] transition-all duration-500 group-hover:scale-110 group-hover:from-[#d4a574]/25 group-hover:to-[#c4956a]/20 group-hover:shadow-[0_0_40px_rgba(212,165,116,0.2)]">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-              </svg>
-            </div>
-            <h3 className="font-serif text-lg font-medium tracking-[-0.02em] text-white mb-1 group-hover:text-[#d4a574] transition-colors duration-500">
-              Membres
-            </h3>
-            <p className="text-xs text-white/20 leading-relaxed mb-4">Découvre la communauté</p>
-            <div className="flex items-center gap-2 text-[10px] font-semibold text-[#ff5e36] group-hover:text-[#ffa333] transition-all duration-300">
-              <span>Explorer</span>
-              <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-              </svg>
-            </div>
-          </Link>
-
-          {/* Premium */}
-          <Link href="/premium" className="emb-glass-extreme rounded-2xl p-6 group cursor-pointer no-underline">
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#ffa333]/15 to-[#ff1f5a]/10 text-[#ffa333] transition-all duration-500 group-hover:scale-110 group-hover:from-[#ffa333]/25 group-hover:to-[#ff1f5a]/20 group-hover:shadow-[0_0_40px_rgba(255,163,51,0.25)]">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/>
-              </svg>
-            </div>
-            <h3 className="font-serif text-lg font-medium tracking-[-0.02em] text-white mb-1 group-hover:text-[#d4a574] transition-colors duration-500">
-              Premium bientôt
-            </h3>
-            <p className="text-xs text-white/20 leading-relaxed mb-4">Avantages à venir pour les fondateurs</p>
-            <div className="flex items-center gap-2 text-[10px] font-semibold text-[#ffa333] group-hover:text-[#ffe0b2] transition-all duration-300">
-              <span>Découvrir</span>
-              <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-              </svg>
-            </div>
-          </Link>
-        </div>
-
-        {/* ═══════════ INVITE SECTION ═══════════ */}
-        <div className="emb-glass-extreme rounded-2xl p-6 md:p-8 mb-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div>
-              <h2 className="font-serif text-xl font-medium tracking-[-0.02em] text-white mb-1">
-                Invite tes amis
-              </h2>
-              <p className="text-white/20 text-sm max-w-lg">
-                embir.xyz est gratuit pendant le lancement. Partage le lien avec
-                quelques personnes pour agrandir la communauté.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <button
-                onClick={() => { navigator.clipboard.writeText("Je viens de rejoindre embir.xyz, une nouvelle plateforme de rencontre moderne et gratuite pendant son lancement. Tu peux créer ton profil ici : https://embir.xyz"); }}
-                className="px-5 py-3 rounded-xl text-[10px] font-semibold border border-white/[0.08] text-white/50 hover:text-white hover:border-white/[0.15] hover:bg-white/[0.04] backdrop-blur-sm transition-all duration-300"
-              >
-                Copier le message
-              </button>
-              <button
-                onClick={() => { navigator.clipboard.writeText("https://embir.xyz"); }}
-                className="px-5 py-3 rounded-xl text-[10px] font-semibold border border-white/[0.08] text-white/50 hover:text-white hover:border-white/[0.15] hover:bg-white/[0.04] backdrop-blur-sm transition-all duration-300"
-              >
-                Copier le lien
-              </button>
-            </div>
           </div>
+
+          <Link
+            href="/dashboard/profile"
+            className="self-start md:self-auto inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-[#d4a574] text-[#0a0614] hover:bg-[#e0b88a] transition-all duration-300 shadow-[0_0_30px_rgba(212,165,116,0.25)]"
+          >
+            <span>Voir mon profil</span>
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2.5"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </Link>
         </div>
 
-        {/* ═══════════ GLOW DIVIDER ═══════════ */}
-        <div className="emb-glow-divider mb-8" />
+        {/* ───────────── Barre de filtres par intention ───────────── */}
+        <div className="mb-8 flex flex-wrap items-center gap-2">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/20 mr-1 hidden sm:inline">
+            Je cherche
+          </span>
+          {INTENT_FILTERS.map((f) => {
+            const active = activeIntent === f.value;
+            return (
+              <button
+                key={f.key}
+                onClick={() => setActiveIntent(f.value)}
+                className={[
+                  "rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-300",
+                  active
+                    ? "bg-[#d4a574] text-[#0a0614] border-[#d4a574] shadow-[0_0_20px_rgba(212,165,116,0.3)]"
+                    : "border-white/[0.08] text-white/55 hover:text-white hover:border-[#d4a574]/25 hover:bg-white/[0.03]",
+                ].join(" ")}
+              >
+                {f.label}
+              </button>
+            );
+          })}
 
-        {/* ═══════════ STATISTICS SECTION ═══════════ */}
-        <div className="emb-glass-extreme rounded-2xl p-8">
-          <h2 className="font-serif text-xl font-medium tracking-[-0.02em] text-white mb-6">
-            Statistiques
-          </h2>
-          <div className="grid grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="emb-stat-super text-4xl sm:text-5xl mb-2">—</div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/15">Vues</div>
-            </div>
-            <div>
-              <div className="emb-stat-super text-4xl sm:text-5xl mb-2">{stats.favorites || "—"}</div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/15">Favoris</div>
-            </div>
-            <div>
-              <div className="emb-stat-super text-4xl sm:text-5xl mb-2">
-                {profile?.isVerified ? '✓' : '—'}
+          {!feedLoading && !error && feed.length > 0 && (
+            <span className="ml-auto text-[10px] font-semibold uppercase tracking-[0.2em] text-white/20">
+              {feed.length} profil{feed.length > 1 ? "s" : ""}
+            </span>
+          )}
+        </div>
+
+        {/* ───────────── État : erreur ───────────── */}
+        {error && !feedLoading && (
+          <div className="rounded-2xl border border-[#ff1f5a]/20 bg-[#ff1f5a]/5 p-8 text-center mb-8">
+            <p className="text-sm text-white/70 mb-1">Oups — {error}</p>
+            {/profil/i.test(error) ? (
+              <Link
+                href="/dashboard/profile"
+                className="text-xs font-semibold text-[#d4a574] hover:text-[#e0b88a]"
+              >
+                Compléter mon profil →
+              </Link>
+            ) : (
+              <button
+                onClick={() => setReload((n) => n + 1)}
+                className="text-xs font-semibold text-[#ff5e36] hover:text-[#ffa333]"
+              >
+                Réessayer
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ───────────── Feed : skeletons au chargement ───────────── */}
+        {feedLoading && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-5 animate-pulse"
+              >
+                <div className="h-40 rounded-2xl bg-white/[0.04] mb-4" />
+                <div className="h-3 w-2/3 rounded bg-white/[0.05] mb-2" />
+                <div className="h-3 w-1/3 rounded bg-white/[0.04] mb-4" />
+                <div className="h-1.5 w-full rounded-full bg-white/[0.05]" />
               </div>
-              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/15">Vérifié</div>
-            </div>
+            ))}
           </div>
-        </div>
+        )}
+
+        {/* ───────────── Feed : profils compatibles ───────────── */}
+        {!feedLoading && !error && feed.length > 0 && (
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.06 } },
+            }}
+          >
+            {feed.map((candidate) => {
+              const p = candidate.profile;
+              const name = displayName(candidate);
+              const initial = (name.charAt(0) || "?").toUpperCase();
+              const dist = distanceTo(candidate);
+              const pct = scorePct(candidate.score);
+              const orientation = p?.orientation
+                ? ORIENTATION_LABELS[p.orientation] ?? p.orientation
+                : null;
+              const intents: string[] = Array.isArray(p?.intentions)
+                ? p.intentions
+                : [];
+              const isPending = pendingId === p?.id;
+
+              return (
+                <motion.div
+                  key={p?.id ?? name}
+                  variants={{
+                    hidden: { opacity: 0, y: 16 },
+                    show: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.35, ease: "easeOut" },
+                    },
+                  }}
+                  whileHover={{ y: -4 }}
+                  className="group rounded-3xl border border-white/[0.07] bg-white/[0.025] p-5 backdrop-blur-sm transition-colors duration-300 hover:border-[#d4a574]/25"
+                >
+                  {/* Photo / placeholder gradient */}
+                  <div className="relative h-40 rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-[#d4a574]/20 to-[#ff5e36]/20">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-serif text-5xl text-white/70 select-none">
+                        {initial}
+                      </span>
+                    </div>
+
+                    {/* Badge orientation (gold) */}
+                    {orientation && (
+                      <span className="absolute top-3 left-3 rounded-full bg-[#d4a574]/10 text-[#d4a574] text-[10px] font-semibold px-2 py-1 border border-[#d4a574]/15">
+                        {orientation}
+                      </span>
+                    )}
+
+                    {/* Badge vérifié (vert) */}
+                    {p?.isVerified && (
+                      <span className="absolute top-3 right-3 inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs">
+                        ✓
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Identité */}
+                  <div className="mb-1 flex items-center gap-2">
+                    <h3 className="font-serif text-lg text-white truncate">
+                      {name}
+                    </h3>
+                    {p?.age ? (
+                      <span className="text-sm text-white/40">{p.age}</span>
+                    ) : null}
+                  </div>
+
+                  {/* Ville + distance */}
+                  <p className="text-xs text-white/35 mb-3 truncate">
+                    {p?.city ? p.city : "Ville non renseignée"}
+                    {dist ? <span className="text-white/25"> · {dist}</span> : null}
+                  </p>
+
+                  {/* Badges intents (ember) */}
+                  {intents.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {intents.slice(0, 4).map((it) => (
+                        <span
+                          key={it}
+                          className="rounded-full bg-[#ff5e36]/10 text-[#ff5e36] text-[10px] font-semibold px-2 py-1"
+                        >
+                          {INTENT_LABELS[it] ?? it}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Score de compatibilité */}
+                  <div className="mb-3">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/25">
+                        Compatibilité
+                      </span>
+                      <span className="text-[10px] font-bold text-[#d4a574]">
+                        {pct}% · {pct >= 80 ? "excellente" : pct >= 60 ? "élevée" : pct >= 40 ? "moyenne" : "faible"}
+                      </span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#d4a574]"
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Raisons du match */}
+                  {candidate.reasons.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {candidate.reasons.slice(0, 4).map((r, i) => (
+                        <span
+                          key={i}
+                          className="rounded-md border border-white/[0.06] bg-white/[0.02] text-white/40 text-[10px] px-2 py-1"
+                        >
+                          {r}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Actions */}
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => handleAction(candidate, "like")}
+                      disabled={isPending}
+                      aria-label="Liker ce profil"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-xs font-semibold bg-[#ff1f5a]/10 text-[#ff1f5a] border border-[#ff1f5a]/20 hover:bg-[#ff1f5a]/20 transition-all duration-300 disabled:opacity-40"
+                    >
+                      <span>♥</span> Like
+                    </button>
+
+                    <Link
+                      href={`/u/${p?.username ?? ""}`}
+                      className="flex-1 inline-flex items-center justify-center rounded-xl py-2.5 text-xs font-semibold border border-white/[0.08] text-white/60 hover:text-white hover:border-[#d4a574]/25 transition-all duration-300"
+                    >
+                      Voir profil
+                    </Link>
+
+                    <button
+                      onClick={() => handleAction(candidate, "pass")}
+                      disabled={isPending}
+                      aria-label="Passer ce profil"
+                      className="inline-flex items-center justify-center rounded-xl py-2.5 px-3 text-xs font-semibold border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/[0.15] transition-all duration-300 disabled:opacity-40"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {/* ───────────── État vide ───────────── */}
+        {!feedLoading && !error && feed.length === 0 && (
+          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-10 text-center">
+            <div className="mx-auto mb-4 w-14 h-14 rounded-full bg-gradient-to-br from-[#d4a574]/15 to-[#ff5e36]/10 flex items-center justify-center">
+              <span className="text-2xl">✦</span>
+            </div>
+            <h3 className="font-serif text-xl text-white mb-2">
+              Aucun profil pour l'instant
+            </h3>
+            <p className="text-sm text-white/35 max-w-md mx-auto mb-6">
+              Embir vient de démarrer. Invite quelques amis pour faire grandir la
+              communauté et débloquer de nouvelles rencontres compatibles.
+            </p>
+            <button
+              onClick={() => navigator.clipboard?.writeText("https://embir.xyz")}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-[#d4a574] text-[#0a0614] hover:bg-[#e0b88a] transition-all duration-300 shadow-[0_0_30px_rgba(212,165,116,0.25)]"
+            >
+              Inviter des amis · copier le lien
+            </button>
+          </div>
+        )}
+
+        {/* Pied de page éditorial */}
+        <p className="mt-12 text-center text-[10px] uppercase tracking-[0.3em] text-white/10">
+          Embir · rencontre multi-orientation · 100% gratuit
+        </p>
       </div>
 
-      {/* Shimmer keyframes */}
-      <style jsx>{`
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
-      `}</style>
+      {/* ───────────── Toast match ───────────── */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 24, scale: 0.96 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 rounded-2xl border border-[#d4a574]/30 bg-[#0a0614]/90 backdrop-blur-xl px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(212,165,116,0.2)]"
+          >
+            {toast}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -34,10 +34,11 @@ export default function Navbar({ showLogo }: { showLogo?: boolean }) {
   }, []);
 
   const navLinks = [
-    { href: "/discover", label: t("discover") },
-    { href: "/creators", label: t("creators") },
-    { href: "/events", label: t("events") },
-    { href: "/safety", label: t("safety") },
+    { href: "/amour", label: "Amour" },
+    { href: "/amis", label: "Amis" },
+    { href: "/fun", label: "Fun" },
+    { href: "/sport", label: "Sport" },
+    { href: "/evenements", label: "Événements" },
   ];
 
   return (
