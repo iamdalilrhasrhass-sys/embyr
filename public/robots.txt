@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /messages
+Disallow: /chat
+Disallow: /notifications
+Disallow: /parametres
+Disallow: /blacklist
+Disallow: /favoris
+Disallow: /albums
+Disallow: /videos
+Disallow: /salons
+Disallow: /forum
+Disallow: /annonces
+Disallow: /inviter
+Disallow: /analytics-dashboard
+Disallow: /moderation
+Disallow: /reddit-setup
+
+Sitemap: https://embir.xyz/sitemap.xml
