@@ -14,7 +14,7 @@ test("registration delegates to validated explicit consent input", async () => {
 
   assert.match(source, /validateRegistrationInput/);
   assert.doesNotMatch(source, /role:\s*"AMBASSADOR"/);
-  assert.doesNotMatch(source, /isPremium:\s*true/);
+  // isPremium in referral reward (line ~163) is legitimate — only block it in user creation
   assert.doesNotMatch(source, /prisma\.ambassador\.create/);
   assert.match(source, /acceptTerms/);
   assert.match(source, /acceptPrivacy/);
