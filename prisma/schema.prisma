@@ -611,12 +611,13 @@ model Prospect {
 }
 
 model Match {
-  id        String   @id @default(cuid())
-  user1Id   String
-  user2Id   String
-  score     Int      @default(0)
-  status    String   @default("pending") // pending/mutual/rejected
-  createdAt DateTime @default(now())
+  id          String   @id @default(cuid())
+  user1Id     String
+  user2Id     String
+  score       Int      @default(0)
+  status      String   @default("pending") // pending/mutual/rejected
+  initiatorId String?
+  createdAt   DateTime @default(now())
 
   user1 User @relation("MatchUser1", fields: [user1Id], references: [id], onDelete: Cascade)
   user2 User @relation("MatchUser2", fields: [user2Id], references: [id], onDelete: Cascade)
