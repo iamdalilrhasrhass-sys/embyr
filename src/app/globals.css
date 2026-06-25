@@ -459,3 +459,14 @@ body {
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* ── MOBILE SHEET ANIMATION ── */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[slideUp_250ms_ease-out\] {
+    animation: none !important;
+  }
+}
