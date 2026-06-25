@@ -59,7 +59,11 @@ export default function UniverseArtifact({
   return (
     <div className="e21-universe__experience">
       <div className="e21-universe__intro">
-        <h2 className="e21-chapter__title">{copy.title}</h2>
+        <h2 className="e21-chapter__title" aria-label={copy.title}>
+          {copy.titleLines.map((line) => (
+            <span className="e21-title-line" key={line}>{line}</span>
+          ))}
+        </h2>
         <p className="e21-chapter__body">{copy.body}</p>
         <div className="e21-universe__tabs" role="tablist" aria-orientation="vertical">
           {copy.tabs.map((tab, index) => (

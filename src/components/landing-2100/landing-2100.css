@@ -316,19 +316,23 @@
 
 .e21-reciprocity__layout {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.7fr) minmax(0, 1.3fr);
-  gap: clamp(3rem, 7vw, 8rem);
+  grid-template-columns: minmax(31rem, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2.5rem, 4vw, 5rem);
   align-items: start;
 }
 
 .e21-chapter__title {
   max-width: 12ch;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.2rem, 5.5vw, 6rem);
+  font-size: clamp(3.2rem, 4.65vw, 5rem);
   font-weight: 400;
   line-height: 0.96;
   letter-spacing: -0.06em;
   text-wrap: balance;
+}
+
+.e21-title-line {
+  display: block;
 }
 
 .e21-chapter__body {
@@ -476,13 +480,13 @@
 
 .e21-universe__experience {
   display: grid;
-  grid-template-columns: minmax(16rem, 0.72fr) minmax(24rem, 1.12fr) minmax(17rem, 0.72fr);
+  grid-template-columns: minmax(28rem, 1.05fr) minmax(24rem, 1.1fr) minmax(19rem, 0.85fr);
   align-items: center;
-  gap: clamp(2rem, 4vw, 5rem);
+  gap: clamp(2rem, 3vw, 3.5rem);
 }
 
 .e21-universe__intro .e21-chapter__title {
-  font-size: clamp(3rem, 4.7vw, 5.35rem);
+  font-size: clamp(3rem, 3.75vw, 4.05rem);
 }
 
 .e21-universe__tabs {
@@ -1055,6 +1059,10 @@
     transform: translateX(0);
   }
 
+  .e21-nav__links .e21-nav__optional {
+    display: flex;
+  }
+
   .e21-nav__links a {
     display: flex;
     min-height: 4rem;
@@ -1114,6 +1122,11 @@
 
   .e21-chapter {
     padding-block: 5rem;
+  }
+
+  .e21-title-line {
+    display: inline;
+    margin-right: 0.22em;
   }
 
   .e21-reciprocity__visual,

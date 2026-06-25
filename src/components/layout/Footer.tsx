@@ -7,7 +7,7 @@ export default async function Footer() {
 
   return (
     <footer className="relative border-t border-white/[0.1] bg-[#09060c] py-12">
-      <div className="mx-auto w-[min(100%-2rem,92rem)]">
+      <div className="mx-auto max-w-[92rem] px-4">
         <div className="grid gap-10 border-b border-white/[0.1] pb-10 md:grid-cols-[1.1fr_1fr_1fr]">
           <div>
             <EmbirLogo size="md" />

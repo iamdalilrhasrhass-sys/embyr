@@ -35,6 +35,7 @@ export interface LandingCopy {
   };
   reciprocity: {
     title: string;
+    titleLines: string[];
     body: string;
     cta: string;
     result: string;
@@ -45,6 +46,7 @@ export interface LandingCopy {
   };
   universe: {
     title: string;
+    titleLines: string[];
     body: string;
     tabs: [string, string, string, string];
     name: string;
@@ -104,6 +106,11 @@ const fr: LandingCopy = {
   },
   reciprocity: {
     title: "La compatibilité n’est pas une case. C’est une réciprocité.",
+    titleLines: [
+      "La compatibilité",
+      "n’est pas une case.",
+      "C’est une réciprocité.",
+    ],
     body: "Vous choisissez qui vous souhaitez rencontrer. Embir vérifie que cette personne souhaite aussi rencontrer quelqu’un comme vous.",
     cta: "Comprendre le matching",
     result: "Compatibilité réciproque",
@@ -114,6 +121,11 @@ const fr: LandingCopy = {
   },
   universe: {
     title: "Un profil ne devrait pas résumer une personne.",
+    titleLines: [
+      "Un profil ne devrait",
+      "pas résumer une",
+      "personne.",
+    ],
     body: "Chez Embir, chacun construit un univers : ce qui l’anime, ce qu’il cherche, sa manière d’être au monde.",
     tabs: ["Atmosphère", "Intentions", "Rythme", "Détails"],
     name: "Maya, 29",
@@ -224,6 +236,10 @@ const en: LandingCopy = {
   },
   reciprocity: {
     title: "Compatibility is not a box. It is reciprocal.",
+    titleLines: [
+      "Compatibility is not",
+      "a box. It is reciprocal.",
+    ],
     body: "You choose who you want to meet. Embir also checks whether that person wants to meet someone like you.",
     cta: "Understand matching",
     result: "Reciprocal compatibility",
@@ -234,6 +250,11 @@ const en: LandingCopy = {
   },
   universe: {
     title: "A profile should not reduce a person to a summary.",
+    titleLines: [
+      "A profile should not",
+      "reduce a person",
+      "to a summary.",
+    ],
     body: "On Embir, everyone builds a universe: what moves them, what they seek and how they move through the world.",
     tabs: ["Atmosphere", "Intentions", "Rhythm", "Details"],
     name: "Maya, 29",

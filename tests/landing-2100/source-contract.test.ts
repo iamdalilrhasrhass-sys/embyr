@@ -92,3 +92,10 @@ test("renders intentions, journal and SEO links without invented metadata", asyn
   assert.match(seo, /copy\.faq/);
   assert.match(seo, /FAQPage/);
 });
+
+test("treats analytics persistence as non-critical", async () => {
+  const route = await readFile("src/app/api/analytics/track/route.ts", "utf8");
+
+  assert.match(route, /status:\s*202/);
+  assert.doesNotMatch(route, /status:\s*500/);
+});
