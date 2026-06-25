@@ -60,3 +60,17 @@ test("uses semantic controls for the reciprocity demonstration", async () => {
   assert.match(instrument, /aria-live="polite"/);
   assert.match(instrument, /copy\.axes/);
 });
+
+test("presents the personal universe as an accessible demonstration", async () => {
+  const [chapter, artifact] = await Promise.all([
+    readFile("src/components/landing-2100/UniverseChapter.tsx", "utf8"),
+    readFile("src/components/landing-2100/UniverseArtifact.tsx", "utf8"),
+  ]);
+
+  assert.match(chapter, /from "next\/image"/);
+  assert.match(chapter, /alt=\{copy\.demoNotice\}/);
+  assert.match(artifact, /role="tablist"/);
+  assert.match(artifact, /role="tab"/);
+  assert.match(artifact, /aria-selected/);
+  assert.match(artifact, /copy\.demoNotice/);
+});
