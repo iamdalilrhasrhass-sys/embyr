@@ -47,3 +47,16 @@ test("keeps the hero semantic and lightweight", async () => {
   assert.match(compass, /aria-live="polite"/);
   assert.doesNotMatch(`${hero}${nav}${compass}`, /three|@react-three|badge|pill/i);
 });
+
+test("uses semantic controls for the reciprocity demonstration", async () => {
+  const [chapter, instrument] = await Promise.all([
+    readFile("src/components/landing-2100/ReciprocityChapter.tsx", "utf8"),
+    readFile("src/components/landing-2100/ReciprocityInstrument.tsx", "utf8"),
+  ]);
+
+  assert.match(chapter, /id="compatibility"/);
+  assert.match(instrument, /type="range"/);
+  assert.match(instrument, /buildReciprocalStrands/);
+  assert.match(instrument, /aria-live="polite"/);
+  assert.match(instrument, /copy\.axes/);
+});

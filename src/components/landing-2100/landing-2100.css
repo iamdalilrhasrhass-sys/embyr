@@ -314,6 +314,159 @@
   padding-block: clamp(6rem, 12vw, 11rem);
 }
 
+.e21-reciprocity__layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.e21-chapter__title {
+  max-width: 12ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 5.5vw, 6rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.e21-chapter__body {
+  max-width: 34rem;
+  margin-top: 2rem;
+  color: var(--e21-muted);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.e21-chapter__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--e21-ember);
+  padding-block: 0.8rem;
+  color: var(--e21-coral);
+  font-family: "SF Mono", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.e21-chapter__link::after {
+  content: "→";
+  transition: transform 180ms ease;
+}
+
+.e21-chapter__link:hover::after {
+  transform: translateX(0.3rem);
+}
+
+.e21-reciprocity__instrument {
+  min-width: 0;
+}
+
+.e21-reciprocity__visual {
+  position: relative;
+  min-height: 32rem;
+  border-top: 1px solid var(--e21-line);
+  border-bottom: 1px solid var(--e21-line);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(197, 111, 78, 0.1), transparent 16rem),
+    linear-gradient(rgba(242, 237, 228, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 237, 228, 0.025) 1px, transparent 1px);
+  background-size: auto, 4rem 4rem, 4rem 4rem;
+}
+
+.e21-reciprocity__svg {
+  width: 100%;
+  height: auto;
+  min-height: 32rem;
+}
+
+.e21-reciprocity__core-label {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  max-width: 11rem;
+  transform: translateX(-50%);
+  color: var(--e21-coral);
+  font-family: "SF Mono", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.e21-reciprocity__outcome {
+  position: absolute;
+  bottom: 7%;
+  max-width: 10rem;
+  color: var(--e21-muted);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.e21-reciprocity__outcome--left {
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.e21-reciprocity__outcome--right {
+  right: 30%;
+  transform: translateX(50%);
+}
+
+.e21-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+  border-top: 1px solid var(--e21-line);
+  border-bottom: 1px solid var(--e21-line);
+}
+
+.e21-control {
+  padding: 1.5rem 1.4rem;
+}
+
+.e21-control + .e21-control {
+  border-left: 1px solid var(--e21-line);
+}
+
+.e21-control label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--e21-coral);
+  font-family: "SF Mono", "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.e21-control output {
+  color: var(--e21-faint);
+  font-size: 0.65rem;
+}
+
+.e21-control input[type="range"] {
+  width: 100%;
+  height: 2.75rem;
+  margin-top: 0.8rem;
+  accent-color: var(--e21-coral);
+  cursor: ew-resize;
+}
+
+.e21-control input[type="range"]:focus-visible {
+  outline: 2px solid var(--e21-focus);
+  outline-offset: 3px;
+}
+
+.e21-reciprocity__notice {
+  margin-top: 1rem;
+  color: var(--e21-faint);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
 @keyframes e21-breathe {
   from { opacity: 0.72; }
   to { opacity: 1; }
@@ -345,6 +498,14 @@
   .e21-hero__visual {
     width: min(100%, 47rem);
     margin-inline: auto;
+  }
+
+  .e21-reciprocity__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .e21-chapter__title {
+    max-width: 14ch;
   }
 }
 
@@ -432,6 +593,29 @@
 
   .e21-compass__label::after {
     width: 2rem;
+  }
+
+  .e21-chapter {
+    padding-block: 5rem;
+  }
+
+  .e21-reciprocity__visual,
+  .e21-reciprocity__svg {
+    min-height: 24rem;
+  }
+
+  .e21-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .e21-control + .e21-control {
+    border-top: 1px solid var(--e21-line);
+    border-left: 0;
+  }
+
+  .e21-reciprocity__outcome {
+    bottom: 3%;
+    font-size: 0.68rem;
   }
 }
 
