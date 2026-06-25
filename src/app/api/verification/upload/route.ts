@@ -4,6 +4,7 @@ import { verifyToken } from "@/lib/auth";
 import { cookies } from "next/headers";
 import { writeFile, mkdir } from "fs/promises";
 import { randomBytes } from "crypto";
+import { validateImageUpload } from "@/lib/upload-policy";
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,12 +18,17 @@ export async function POST(req: NextRequest) {
     const file = formData.get("photo") as File;
     if (!file) return NextResponse.json({ error: "Photo requise." }, { status: 400 });
 
+    const policyCheck = validateImageUpload(file.type, file.size);
+    if (!policyCheck.ok) {
+      return NextResponse.json({ error: policyCheck.error }, { status: policyCheck.status });
+    }
+
     const pending = await prisma.photoVerification.findFirst({ where: { userId, status: "pending" } });
     if (!pending) {
       return NextResponse.json({ error: "Demande un code d'abord." }, { status: 400 });
     }
 
-    const ext = file.name.split(".").pop() || "jpg";
+    const ext = policyCheck.extension;
     const filename = `${userId}_${randomBytes(4).toString("hex")}.${ext}`;
     const uploadDir = "/root/embir/uploads/verifications";
     await mkdir(uploadDir, { recursive: true });

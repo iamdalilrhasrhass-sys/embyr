@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { validateAudioUpload } from "@/lib/upload-policy";
 
 export async function POST(request: NextRequest) {
   const auth = await getCurrentUser();
@@ -27,9 +28,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Audio trop volumineux (max 10 Mo)" }, { status: 413 });
     }
 
-    const validTypes = ["audio/webm", "audio/mp4", "audio/mpeg", "audio/wav", "audio/ogg"];
-    if (!validTypes.includes(file.type) && !file.type.startsWith("audio/")) {
-      return NextResponse.json({ error: "Format audio non supporté" }, { status: 400 });
+    const policyCheck = validateAudioUpload(file.type, file.size);
+    if (!policyCheck.ok) {
+      return NextResponse.json({ error: policyCheck.error }, { status: policyCheck.status });
     }
 
     // Vérifier conversation
@@ -56,7 +57,7 @@ export async function POST(request: NextRequest) {
     // Stocker fichier
     const uploadDir = path.join(process.cwd(), "public", "uploads", "audio");
     await mkdir(uploadDir, { recursive: true });
-    const ext = file.type.includes("webm") ? "webm" : file.type.includes("mp4") ? "mp4" : "ogg";
+    const ext = policyCheck.extension;
     const filename = `${crypto.randomUUID()}.${ext}`;
     const filePath = path.join(uploadDir, filename);
     const buffer = Buffer.from(await file.arrayBuffer());
