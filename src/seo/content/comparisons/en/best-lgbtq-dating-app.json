@@ -1,0 +1,86 @@
+{
+  "slug": "best-lgbtq-dating-app",
+  "intro": "The LGBTQ+ dating app landscape in 2026 splits into two types: niche apps built for specific identities (Grindr for gay men, HER for queer women, Feeld for open relationships) and mainstream apps that support LGBTQ+ users with varying degrees of seriousness. Neither type fully solves the problem for users who want universal inclusion with the safety and compatibility depth of a purpose-built platform.\n\nEmbir is built as the third option: a universal platform where every orientation — gay, lesbian, bi, pan, queer, trans, non-binary — is a first-class citizen, matched with the same depth of compatibility signals, protected by the same human moderation, and participating in the same community as straight users.",
+  "comparisonTable": [
+    {
+      "criteria": "Gay men",
+      "competitor": "Grindr: dominant, proximity-based",
+      "embir": "Full compatibility matching, verified profiles",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Queer women / lesbian",
+      "competitor": "HER: community-focused, limited verification",
+      "embir": "Universal platform, selfie verification, moderation",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Bi / pan users",
+      "competitor": "Most apps: awkward binary assumptions",
+      "embir": "Full bi/pan support, bidirectional filtering",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Trans / non-binary",
+      "competitor": "Most apps: broken or limited gender options",
+      "embir": "Full gender identity support in matching",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Open relationships",
+      "competitor": "Feeld: niche community, limited verification",
+      "embir": "Supported as explicit intention, full moderation",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Verified profiles",
+      "competitor": "Niche LGBTQ+ apps: community trust models",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Niche apps vs universal inclusion",
+      "content": "Niche LGBTQ+ apps solve one problem brilliantly — community belonging — and create another: fragmentation. Bi and pan users often need multiple apps to cover different orientations. Trans users may find niche apps cater to specific communities that don't fully include them. Queer people dating across orientations bounce between platforms.\n\nEmbir solves fragmentation: one platform, every orientation, full bidirectional filtering. You don't need Grindr for one context and Bumble for another. Your full identity is supported in one place.",
+      "highlights": [
+        "One platform for all orientations — no app-switching",
+        "Bi and pan users matched across orientations without profile duplication",
+        "Full bidirectional filtering — no mismatched discovery"
+      ]
+    },
+    {
+      "title": "Safety for LGBTQ+ users",
+      "content": "LGBTQ+ users face specific safety risks on dating apps: outing, targeted harassment, catfishing exploiting gender identity, and platforms that don't adequately protect queer users from bad actors.\n\nEmbir's human moderation team is briefed on LGBTQ+-specific harassment patterns. Community guidelines explicitly protect orientation and gender identity. Orientation and identity data has privacy controls. Reports involving LGBTQ+-targeted harassment are treated as serious violations with immediate escalation.",
+      "highlights": [
+        "Orientation and identity data has privacy controls — you control visibility",
+        "Human moderation trained on LGBTQ+-specific harassment patterns",
+        "LGBTQ+-targeted harassment treated as immediate ban-level violation"
+      ]
+    }
+  ],
+  "verdict": "The best LGBTQ+ dating app depends on what you need. For gay men in urban areas: Grindr still has density. For queer women wanting community: HER has depth. For open relationships: Feeld has community.\n\nFor bi, pan, trans, non-binary and queer users who want a universal platform with verified profiles, human moderation, deep compatibility, and free access — Embir is the strongest option in 2026.",
+  "ctaText": "Every orientation, one platform, free at launch — join Embir",
+  "faq": [
+    {
+      "q": "Is Embir better than Grindr for gay men?",
+      "a": "Grindr has higher density in most cities. Embir offers verified profiles, human moderation, compatibility matching, and a safer community environment. Better for quality; Grindr for volume."
+    },
+    {
+      "q": "Is Embir better than HER for queer women?",
+      "a": "HER has a stronger community focus for queer women specifically. Embir offers verified profiles, deeper compatibility matching, and a universal platform. Better for matching quality; HER for community."
+    },
+    {
+      "q": "Is Embir good for bi and pan users?",
+      "a": "Embir is particularly strong for bi and pan users — bidirectional filtering works correctly, and you're not forced to choose between contexts on different apps."
+    },
+    {
+      "q": "Is Embir safe for trans and non-binary users?",
+      "a": "Yes. Gender identity is handled correctly in matching. Trans and non-binary users are shown to users who've indicated openness. LGBTQ+-targeted harassment results in immediate bans."
+    },
+    {
+      "q": "Is Embir free for LGBTQ+ users?",
+      "a": "Yes. Core features are free during the launch phase for all users regardless of orientation."
+    }
+  ]
+}

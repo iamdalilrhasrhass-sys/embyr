@@ -1,0 +1,63 @@
+{
+  "slug": "match-alternative",
+  "intro": "Match.com charges ~$40/month for serious dating. Embir offers the same serious relationship matching with verified profiles, bidirectional filtering, and human moderation — completely free during the launch phase.",
+  "comparisonTable": [
+    {
+      "criteria": "Price",
+      "competitor": "~$40/month",
+      "embir": "100% free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Not systematic",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Basic support",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Serious relationship matching",
+      "competitor": "Good — established positioning",
+      "embir": "Intent-based matching — serious is configurable",
+      "winner": "tie"
+    },
+    {
+      "criteria": "User base freshness",
+      "competitor": "Large but aging",
+      "embir": "Founding community — engaged and intentional",
+      "winner": "tie"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Serious dating without the $40/month",
+      "content": "Match.com has built its brand on serious relationships — but charges $40/month to access them. Embir integrates serious-relationship intent directly into the matching algorithm. Configure it at signup, and only profiles seeking the same appear.",
+      "highlights": [
+        "Serious relationship as a matching filter, not just a preference",
+        "Verified profiles — authentic connections from the start",
+        "Free during launch — no subscription required"
+      ]
+    }
+  ],
+  "verdict": "Match.com works for serious dating if you're willing to pay. Embir offers the same depth with verified profiles, human moderation, and LGBTQ+ inclusivity — free at launch.",
+  "ctaText": "Serious connections, free — join Embir",
+  "faq": [
+    {
+      "q": "Is Embir good for serious relationships?",
+      "a": "Yes. Serious relationship is an explicit intent in the matching algorithm. You only see profiles seeking the same thing."
+    },
+    {
+      "q": "How much does Embir cost vs Match?",
+      "a": "Match costs ~$40/month. Embir is free during the launch phase."
+    },
+    {
+      "q": "Does Embir verify profiles?",
+      "a": "Yes. Selfie verification at signup and human moderation of every report."
+    }
+  ]
+}

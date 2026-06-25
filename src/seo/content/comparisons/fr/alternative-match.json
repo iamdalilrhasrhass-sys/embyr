@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-match",
+  "intro": "Match.com est l'une des plus anciennes plateformes de rencontre payantes. Son positionnement relations serieuses est clair, mais son abonnement obligatoire (environ 40 EUR/mois) et sa base d'utilisateurs vieillissante le rendent moins accessible en 2026.\n\nEmbir propose les memes ambitions de rencontre serieuse avec des profils verifies et un matching de compatibilite profond — completement gratuit pendant la phase de lancement.",
+  "comparisonTable": [
+    {
+      "criteria": "Prix",
+      "competitor": "~40 EUR/mois minimum",
+      "embir": "100% gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Profils non systematiquement verifies",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Support basique",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Matching compatibilite",
+      "competitor": "Algorithme peu transparent",
+      "embir": "Orientation + intentions + valeurs + preferences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Base utilisateurs FR",
+      "competitor": "Large mais vieillissante",
+      "embir": "Communaute fondatrice en croissance",
+      "winner": "tie"
+    }
+  ],
+  "sections": [
+    {
+      "title": "La promesse de la relation serieuse — sans les 40 EUR/mois",
+      "content": "Match.com facture un abonnement obligatoire pour toute interaction. Sur Embir, les intentions relationnelles — dont la relation serieuse — sont un parametre de matching. Tu rencontres des personnes qui cherchent la meme chose, gratuitement pendant le lancement.",
+      "highlights": [
+        "Intention relation serieuse configurable a l'inscription",
+        "Matching respecte ton objectif declare",
+        "Aucun abonnement requis pour communiquer"
+      ]
+    }
+  ],
+  "verdict": "Match.com est utile pour les rencontres serieuses si tu es pret a payer. Embir offre la meme profondeur de matching serieux avec des profils verifies et une moderation humaine — entierement gratuit au lancement.",
+  "ctaText": "Rencontres serieuses, gratuites — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il adapte pour les relations serieuses ?",
+      "a": "Oui. La relation serieuse est une intention explicite dans le matching. Tu rencontres uniquement des personnes qui cherchent la meme chose."
+    },
+    {
+      "q": "Combien coute Embir par rapport a Match ?",
+      "a": "Match coute environ 40 EUR/mois. Embir est gratuit pendant la phase de lancement."
+    },
+    {
+      "q": "Embir est-il aussi fiable que Match pour les profils ?",
+      "a": "Embir ajoute la verification selfie et la moderation humaine que Match n'offre pas systematiquement."
+    }
+  ]
+}

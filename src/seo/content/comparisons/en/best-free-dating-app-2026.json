@@ -1,0 +1,77 @@
+{
+  "slug": "best-free-dating-app-2026",
+  "intro": "Every major dating app claims to be 'free.' In practice, most free tiers are deliberately crippled: you can create a profile and see some matches, but messaging, seeing who liked you, and filtering by compatibility require a subscription. True free dating apps in 2026 are rarer than advertised.\n\nEmbir's launch phase is genuinely free. Core discovery, compatibility matching, and messaging work without a credit card. The freemium transition, when it happens, will be announced clearly and will fund safety infrastructure — not artificially restrict features you already rely on.",
+  "comparisonTable": [
+    {
+      "criteria": "Free messaging",
+      "competitor": "Most apps: requires subscription",
+      "embir": "Free during launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free profile visibility",
+      "competitor": "Most apps: limited without boost",
+      "embir": "Full visibility in discovery free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free likes/matches",
+      "competitor": "Most apps: daily limit, then paywall",
+      "embir": "No artificial limits during launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Ads on free tier",
+      "competitor": "Most apps: ad-supported free tier",
+      "embir": "No ads at any tier",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Freemium model transparency",
+      "competitor": "Most apps: opaque, surprise restrictions",
+      "embir": "Transparent — disclosed before launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier profile verification",
+      "competitor": "Usually paywalled or optional",
+      "embir": "Selfie verification free for all users",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What 'free' actually means across dating apps",
+      "content": "Tinder Free: create a profile, swipe, match, send limited likes, but you can't see who liked you, can't filter by interests, can't rewind, can't boost. The free tier is designed to frustrate you into upgrading.\n\nBumble Free: swipe, match, message — but women must send first within 24 hours, no boosts, no SuperSwipes, no extended matches. Fine but limited.\n\nHinge Free: some likes, some roses, basic filters — but 'Most Compatible' and advanced filters require Preferred membership.\n\nEmbir Launch Phase: full core features free. Discovery, compatibility matching, messaging. No credit card. No daily swipe cap. No artificial frustration. The freemium model funds safety, not paywall engineering.",
+      "highlights": [
+        "Full messaging free — send and receive without hitting a wall",
+        "Discovery and compatibility matching without daily caps",
+        "No ads or ad-supported tier — no data sold to advertisers"
+      ]
+    }
+  ],
+  "verdict": "The best truly free dating app in 2026 is Embir during its launch phase. Full features, no subscription required, no credit card needed, no ads. Join now while the founding community is still forming.",
+  "ctaText": "Actually free dating — join during launch",
+  "faq": [
+    {
+      "q": "Is Embir really completely free?",
+      "a": "During the launch phase, core features — discovery, compatibility, messaging — are free. No subscription, no credit card, no hidden limits."
+    },
+    {
+      "q": "Does Embir have ads on the free tier?",
+      "a": "No. Embir has no advertising model. The future freemium funds safety infrastructure via direct subscription, not ad targeting."
+    },
+    {
+      "q": "What happens when Embir adds a premium tier?",
+      "a": "Founding members are notified in advance. The freemium transition will be transparent — what changes, what stays free, and why. Core connection features remain accessible."
+    },
+    {
+      "q": "What's the catch with free access?",
+      "a": "No catch. The launch phase is free to build the founding community. Earlier members help shape the platform culture and get priority access to premium features when they launch."
+    },
+    {
+      "q": "Which other dating apps are genuinely free?",
+      "a": "OkCupid, POF, and Badoo have free tiers but all restrict meaningful features. Tinder, Bumble, and Hinge free tiers are heavily limited by design. Embir at launch is the most complete free experience."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "appli-rencontre-meilleur-algorithme",
+  "intro": "Le meilleur algorithme d'une appli de rencontre est celui qui maximise les connexions pertinentes et minimise le bruit — pas celui qui maximise le temps passe dans l'app. La plupart des grands acteurs optimisent pour l'engagement, pas pour ta reussite.\n\nL'algorithme d'Embir optimise pour la pertinence : filtrage bidirectionnel par orientation, respect des intentions dans les deux sens, et matching des valeurs declarees.",
+  "comparisonTable": [
+    {
+      "criteria": "Optimisation algo",
+      "competitor": "La plupart : engagement / temps dans l'app",
+      "embir": "Pertinence des matchs / connexions reelles",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Filtrage bidirectionnel",
+      "competitor": "La plupart : unidirectionnel uniquement",
+      "embir": "Bidirectionnel strict au niveau base de donnees",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Respect intentions",
+      "competitor": "Variable — souvent ignore",
+      "embir": "Intentions matchees dans les deux sens",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "La plupart : optionnelle",
+      "embir": "Selfie verif + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Transparence algo",
+      "competitor": "Boite noire opaque",
+      "embir": "Criteres declares explicitement",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bidirectionnel — le veritable differenciateur algorithmique",
+      "content": "Sur Tinder, Bumble, Hinge : tu filtres ce que TU vois, mais pas qui te voit. Ton profil peut apparaitre dans le feed de personnes qui ne correspondent pas a ton orientation. L'algorithme Embir applique les contraintes dans les deux sens : si tu es gay, tu n'apparais pas aux utilisateurs heteros ET les heteros n'apparaissent pas dans ton feed. Ce n'est pas une preference cote client — c'est une contrainte au niveau de la requete SQL.",
+      "highlights": [
+        "Bidirectionnel = aucune incompatibilite d'orientation ne passe",
+        "Optimise pour les connexions reelles, pas le temps d'ecran",
+        "Transparence totale sur les criteres de matching"
+      ]
+    }
+  ],
+  "verdict": "En 2026, le meilleur algorithme de rencontre est celui qui te fait perdre le moins de temps sur des profils incompatibles. Embir est concu autour de cet objectif : filtrage bidirectionnel, matching d'intention, profils verifies.",
+  "ctaText": "Le matching qui respecte ton temps — rejoins Embir",
+  "faq": [
+    {
+      "q": "Comment fonctionne l'algorithme de matching d'Embir ?",
+      "a": "Embir utilise un filtrage bidirectionnel strict : ton orientation et tes intentions s'appliquent dans les deux sens. Tu ne vois que des profils pour qui tu es aussi un match potentiel."
+    },
+    {
+      "q": "L'algorithme Embir est-il transparent ?",
+      "a": "Oui. Les criteres de matching sont explicites : orientation, intention, valeurs. Pas de boite noire opaque."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Gratuit pendant la phase de lancement."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "alternative-happn",
+  "intro": "Happn a lancé une idée séduisante : et si tu pouvais retrouver les personnes que tu as croisées dans la vraie vie ? Née à Paris, l'application a une densité d'utilisateurs forte en France et propose une expérience plus serendipiteuse que le swipe classique.\n\nEmbir respecte l'intuition de la proximité mais résout le problème plus profond : deux personnes qui se sont croisées au métro peuvent être totalement incompatibles sur tout le reste. Embir ajoute la profondeur de compatibilité — orientation, intentions, valeurs — à côté du contexte géographique, avec des profils vérifiés et une modération humaine qu'Happn n'offre pas.",
+  "comparisonTable": [
+    {
+      "criteria": "Modèle de découverte",
+      "competitor": "Proximité — personnes croisées",
+      "embir": "Compatibilité — orientation + intentions + valeurs",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Compte Facebook lié, pas de vérification systématique",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Limité — charms et likes payants",
+      "embir": "Fonctionnalités principales gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité LGBTQ+",
+      "competitor": "Disponible mais hétéro-dominant",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Présence en France",
+      "competitor": "Forte — fondée à Paris",
+      "embir": "France = marché principal au lancement",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Sécurité",
+      "competitor": "Signalement standard, pas de modération humaine",
+      "embir": "Équipe humaine + réponse rapide",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "La proximité comme contexte, pas comme compatibilité",
+      "content": "L'idée d'Happn est séduisante : tu partages déjà un espace physique avec ces personnes. Peut-être le même quartier, la même salle de sport, le même café. Ce contexte géographique peut être un bon point de départ.\n\nMais la proximité géographique ne prédit pas la compatibilité. Tu peux croiser la même personne tous les jours et n'avoir rien en commun au-delà du timing de ton trajet. Embir construit sur ce contexte géographique tout en ajoutant les signaux qui comptent vraiment : qui tu es, ce que tu cherches, quelles orientations t'intéressent.\n\nRésultat : des connexions qui commencent avec du contexte et ont quelque chose à construire.",
+      "highlights": [
+        "Orientation + intentions + valeurs filtrées avant de voir les profils",
+        "Pertinence géographique sans matching géographique exclusif",
+        "Moins de profils par jour — mais vraiment pertinents"
+      ]
+    },
+    {
+      "title": "France — un marché partagé, des approches différentes",
+      "content": "Happn a lancé à Paris et a toujours eu une forte densité d'utilisateurs en France. Pour les Français, l'application offre une expérience ancrée localement.\n\nEmbir fait de la France l'un de ses trois marchés principaux au lancement. La communauté fondatrice française est compacte et intentionnelle. Rejoindre pendant la phase de lancement, c'est participer à la construction d'une culture communautaire genuinement française avant que le scale la dilue.",
+      "highlights": [
+        "La France est l'un des trois marchés principaux d'Embir au lancement",
+        "Communauté fondatrice parisienne en croissance — rejoins avant le scale",
+        "Expérience entièrement disponible en français"
+      ]
+    }
+  ],
+  "verdict": "Happn vaut le coup si tu es attiré par la sérendipité des croisements réels et si tu passes beaucoup de temps dans des environnements urbains denses.\n\nEmbir est la meilleure alternative si tu veux de la profondeur de compatibilité en plus du contexte géographique — avec des profils vérifiés, une vraie inclusivité LGBTQ+, une modération humaine, et la gratuité au lancement.",
+  "ctaText": "Vraie compatibilité dans ta ville — gratuit au lancement",
+  "faq": [
+    {
+      "q": "Embir est-il disponible en France ?",
+      "a": "Oui. La France est l'un des trois marchés principaux au lancement. La communauté fondatrice à Paris et dans les grandes villes françaises est active et en croissance."
+    },
+    {
+      "q": "Embir est-il en français ?",
+      "a": "Oui. Embir est entièrement disponible en français, y compris toute l'expérience de découverte et de messagerie."
+    },
+    {
+      "q": "Comment Embir matche-t-il par rapport à Happn ?",
+      "a": "Happn matche avec les personnes que tu as physiquement croisées. Embir utilise l'orientation, les intentions, les valeurs et les préférences. La proximité géographique est un facteur mais pas le seul signal."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Les fonctionnalités principales sont gratuites pendant la phase de lancement. Pas de charms, pas de super-likes, pas d'abonnement requis pour envoyer un message."
+    },
+    {
+      "q": "Embir vérifie-t-il les profils ?",
+      "a": "Oui — vérification selfie à l'inscription, et modération humaine de chaque signalement. Les profils vérifiés sont prioritaires dans la découverte."
+    }
+  ]
+}

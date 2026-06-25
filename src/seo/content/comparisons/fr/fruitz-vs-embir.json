@@ -1,0 +1,86 @@
+{
+  "slug": "fruitz-vs-embir",
+  "intro": "Fruitz s'est imposé en France avec un concept astucieux : des fruits pour exprimer ce qu'on cherche (cerise = relation sérieuse, raisin = plan régulier, pastèque = fling, pêche = amitié). Cette transparence sur les intentions était rafraîchissante dans un monde où tout le monde prétend chercher la même chose.\n\nEmbir pousse cette logique encore plus loin : les intentions sont déclarées explicitement à l'inscription, le matching respecte ce que tu cherches, les profils sont vérifiés par selfie, et la plateforme est inclusive pour toutes les orientations — là où Fruitz reste largement centré sur l'hétéro.",
+  "comparisonTable": [
+    {
+      "criteria": "Expression des intentions",
+      "competitor": "Fruits emoji — simple et visuel",
+      "embir": "Intentions explicites + filtrage algorithme",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Aucune vérification systématique",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité LGBTQ+",
+      "competitor": "Principalement hétéro",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Accès gratuit",
+      "competitor": "Limité — abonnement pour les fonctionnalités clés",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profondeur du matching",
+      "competitor": "Fruits + proximité + photos",
+      "embir": "Orientation + intentions + valeurs + préférences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Modération",
+      "competitor": "Signalement standard",
+      "embir": "Équipe humaine, réponse rapide",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "L'idée des fruits — bonne, mais incomplète",
+      "content": "Le système de fruits de Fruitz est une vraie innovation UX : un emoji remplace un paragraphe flou sur ce qu'on cherche. La cerise dit clairement 'je cherche quelque chose de sérieux' sans que tu aies à le négocier en conversation.\n\nEmbir part du même principe — les intentions sont déclarées et visibles — mais va beaucoup plus loin. Au lieu d'un emoji, tu configures précisément ton orientation, ton intention de relation, tes valeurs clés et tes préférences de mode de vie. L'algorithme ne t'affiche que des profils compatibles avec cette configuration. Pas besoin de filtrer — les incompatibilités sont écartées avant que tu les voies.",
+      "highlights": [
+        "Intentions + orientation + valeurs configurées à l'inscription",
+        "L'algorithme applique tes critères — pas juste un filtre",
+        "Moins de profils, mais vraiment pertinents"
+      ]
+    },
+    {
+      "title": "Inclusivité — là où Fruitz s'arrête",
+      "content": "Fruitz a été conçu principalement pour les rencontres hétérosexuelles en France. Des options LGBTQ+ existent, mais l'expérience est clairement secondaire. La communauté gay, les lesbiennes, les personnes bi ou trans se retrouvent dans un produit qui n'a pas été pensé pour elles.\n\nEmbir a été construit de zéro pour toutes les orientations. Gay, lesbienne, bi, pan, queer, trans, non-binaire — chaque identité a la même qualité de matching. Le filtrage est bidirectionnel : tu n'apparais qu'aux profils ouverts à ton orientation.",
+      "highlights": [
+        "Filtrage bidirectionnel — tu n'apparais qu'aux bons profils",
+        "Toutes les orientations ont la même profondeur de matching",
+        "Pas de section LGBTQ+ à part — tu es dans l'expérience principale"
+      ]
+    }
+  ],
+  "verdict": "Fruitz a une vraie valeur ajoutée pour les rencontres hétéro casual à sérieuses en France. Son concept d'intentions visuelles est malin.\n\nEmbir est la meilleure alternative si tu cherches des profils vérifiés, une vraie inclusivité LGBTQ+, un matching plus profond, et l'accès gratuit au lancement — sans abonnement obligatoire.",
+  "ctaText": "Intentions claires, profils vérifiés — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Embir est-il une bonne alternative à Fruitz ?",
+      "a": "Oui, surtout si tu es LGBTQ+ ou si tu veux des profils vérifiés. Embir est gratuit au lancement, inclusif pour toutes les orientations, avec un matching basé sur les intentions et les valeurs."
+    },
+    {
+      "q": "Embir exprime-t-il les intentions comme Fruitz ?",
+      "a": "Oui, mais différemment. À l'inscription, tu configures ton intention de relation (sérieuse, casual, amitié, exploration) et l'algorithme respecte ce critère dans tes matchs."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui, les fonctionnalités principales sont gratuites au lancement : découverte, compatibilité, messagerie."
+    },
+    {
+      "q": "Fruitz ou Embir pour les rencontres gay ou lesbiennes ?",
+      "a": "Embir — il a été conçu pour toutes les orientations avec la même profondeur de matching. Fruitz est principalement hétéro."
+    },
+    {
+      "q": "Embir vérifie-t-il les profils ?",
+      "a": "Oui. Vérification selfie à l'inscription et une équipe de modérateurs humains examine chaque signalement."
+    }
+  ]
+}

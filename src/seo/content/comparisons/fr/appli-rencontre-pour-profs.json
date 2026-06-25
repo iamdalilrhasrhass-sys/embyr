@@ -1,0 +1,63 @@
+{
+  "slug": "appli-rencontre-pour-profs",
+  "intro": "Les professionnels cherchent souvent des rencontres qui respectent leur temps : moins de bruit, des profils serieux, et une experience qui ne necessite pas 3h de swipe par jour.\n\nEmbir est concu pour les utilisateurs intentionnels : matching de compatibilite profond, profils verifies, et des connexions qui partent sur une base solide.",
+  "comparisonTable": [
+    {
+      "criteria": "Efficacite du matching",
+      "competitor": "La plupart : volume infini, peu filtre",
+      "embir": "Matching intentionnel — profils pertinents uniquement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Temps requis",
+      "competitor": "Tinder/Hinge : swipe chronophage",
+      "embir": "Matching curate — moins de temps, plus de qualite",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "La plupart : optionnelle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Prix",
+      "competitor": "La plupart : 15-40 EUR/mois",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Respect de l'intention",
+      "competitor": "Variable",
+      "embir": "Intentions configurees = connexions alignees",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Des rencontres efficaces pour les gens occupes",
+      "content": "Le matching intentionnel d'Embir est concu pour les personnes qui ont peu de temps et veulent des connexions de qualite : tu configures ton orientation, ton intention et tes criteres cles a l'inscription — et l'algorithme filtre pour toi. Tu vois moins de profils, mais chaque profil a passe les filtres bidirectionnels de compatibilite.",
+      "highlights": [
+        "Moins de profils = moins de temps gache",
+        "Intentions configurees = conversations qui ont un sens",
+        "Profils verifies = connexions plus authentiques"
+      ]
+    }
+  ],
+  "verdict": "Pour les professionnels qui veulent des rencontres efficaces sans passer des heures a swiper, Embir offre un matching intentionnel, des profils verifies, et la gratuite au lancement.",
+  "ctaText": "Rencontres efficaces pour gens occupes — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il adapte aux professionnels qui manquent de temps ?",
+      "a": "Oui. Le matching intentionnel reduit le bruit — tu vois uniquement des profils qui correspondent a tes criteres."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Fonctionnalites principales gratuites au lancement."
+    },
+    {
+      "q": "Comment Embir garantit-il la qualite des profils ?",
+      "a": "Verification selfie a l'inscription et moderation humaine de chaque signalement."
+    }
+  ]
+}

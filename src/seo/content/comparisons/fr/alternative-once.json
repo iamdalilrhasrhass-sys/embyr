@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-once",
+  "intro": "Once a propose un concept rafraichissant : un seul match curated par jour, selectionne a la main par une equipe. Qualite maximale, fatigue du swipe eliminee. L'app a seduit beaucoup d'utilisateurs fatigues du volume infini de Tinder — mais Once a ferme ses portes en 2022.\n\nSi tu as ete utilisateur d'Once et cherches une alternative qui partage la meme philosophie de qualite avant quantite, Embir est la reponse en 2026.",
+  "comparisonTable": [
+    {
+      "criteria": "Philosophie matching",
+      "competitor": "1 match par jour, selection manuelle (ferme)",
+      "embir": "Matching intentionnel, filtrage bidirectionnel",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Disponibilite",
+      "competitor": "Ferme depuis 2022",
+      "embir": "Actif — lancement 2026",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Qualite vs quantite",
+      "competitor": "Qualite — mais un seul match/jour tres contraignant",
+      "embir": "Qualite — avec assez de volume pour matcher rapidement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Selection manuelle (quand actif)",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Limitee (quand actif)",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "La philosophie d'Once — revisitee pour 2026",
+      "content": "Once avait compris quelque chose que les grandes apps ignorent : le swipe infini est epuisant et contre-productif. Un seul match bien choisi vaut mieux que 100 swipes au hasard. Embir applique la meme philosophie avec le filtrage bidirectionnel : tu vois moins de profils que sur Tinder, mais chaque profil correspond vraiment a tes criteres ET pour qui tu es un match potentiel.",
+      "highlights": [
+        "Moins de profils = moins de bruit = plus de connexions reelles",
+        "Filtrage bidirectionnel — pas de profils mal alignes",
+        "Communaute fondatrice intentionnelle"
+      ]
+    }
+  ],
+  "verdict": "Once a ferme en 2022. Si tu cherches l'alternative en 2026 qui respecte la meme philosophie qualite-avant-quantite — Embir est la reponse, avec en plus les profils verifies, l'inclusivite LGBTQ+, et la gratuité au lancement.",
+  "ctaText": "La philosophie d'Once, moderne et gratuite — rejoins Embir",
+  "faq": [
+    {
+      "q": "Une alternative a Once en 2026 ?",
+      "a": "Once a ferme en 2022. Embir partage la meme philosophie de matching intentionnel avec filtrage de compatibilite profond et profils verifies."
+    },
+    {
+      "q": "Embir applique-t-il une selection curated comme Once ?",
+      "a": "Embir utilise un algorithme de compatibilite plutot qu'une selection manuelle, mais l'esprit est le meme : qualite avant quantite."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Fonctionnalites principales gratuites pendant la phase de lancement."
+    }
+  ]
+}

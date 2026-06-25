@@ -1,0 +1,63 @@
+{
+  "slug": "appli-rencontre-pour-celibataires",
+  "intro": "En 2026, les celibataires ont plus d'options que jamais — mais aussi plus de plateformes mediocres. La bonne appli de rencontre pour celibataires doit combiner profils verifies, matching de compatibilite, et un acces gratuit qui ne te force pas a payer avant de rencontrer quelqu'un.\n\nEmbir combine ces trois elements avec une inclusivite totale pour toutes les orientations.",
+  "comparisonTable": [
+    {
+      "criteria": "Gratuité",
+      "competitor": "La plupart : abonnement requis rapidement",
+      "embir": "100% gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "La plupart : partielle ou optionnelle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Matching compatibilite",
+      "competitor": "La plupart : swipe aleatoire",
+      "embir": "Orientation + intentions + valeurs + preferences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "La plupart : support partiel",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Securite",
+      "competitor": "Variable",
+      "embir": "Moderation humaine systematique",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "La meilleure appli de rencontre pour celibataires en 2026",
+      "content": "Les celibataires en 2026 ont des besoins clairs : trouver des connexions reelles, sans arnaques, sans payer une fortune, et sans passer des heures a swiper des profils incompatibles. Embir repond a ces besoins : profils verifies, matching de compatibilite profond, gratuit pendant le lancement.",
+      "highlights": [
+        "Profils verifies — connexions authentiques",
+        "Matching bidirectionnel — pertinence immediate",
+        "100% gratuit — aucune barriere a l'entree"
+      ]
+    }
+  ],
+  "verdict": "Pour les celibataires qui veulent la meilleure appli de rencontre en 2026, Embir combine profils verifies, moderation humaine, inclusivite universelle et gratuite au lancement.",
+  "ctaText": "Rejoins Embir gratuitement — pour tous les celibataires",
+  "faq": [
+    {
+      "q": "Quelle est la meilleure appli de rencontre pour celibataires en 2026 ?",
+      "a": "Embir pour la combinaison profils verifies + toutes orientations + gratuit. Tinder pour le volume. Hinge pour les relations serieuses hetero."
+    },
+    {
+      "q": "Embir est-il disponible en France ?",
+      "a": "Oui. La France est l'un des trois marches principaux au lancement."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Les fonctionnalites principales sont gratuites pendant la phase de lancement."
+    }
+  ]
+}

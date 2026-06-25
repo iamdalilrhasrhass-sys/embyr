@@ -1,0 +1,63 @@
+{
+  "slug": "okcupid-vs-embir",
+  "intro": "OkCupid pioneered compatibility matching with questionnaires. But its free tier is increasingly restricted, profile verification is insufficient, and the interface is dated.\n\nEmbir takes the same philosophy with 2026 standards: verified profiles, human moderation, full LGBTQ+ inclusivity.",
+  "comparisonTable": [
+    {
+      "criteria": "Profile verification",
+      "competitor": "Partial / optional",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Limited free tier, subscription $15-30/month",
+      "embir": "Full features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Partial support",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional filtering",
+      "competitor": "Unidirectional only",
+      "embir": "Strict bidirectional at algorithm level",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Moderation",
+      "competitor": "Automated / community",
+      "embir": "Human team + fast response",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Why choose Embir over OkCupid?",
+      "content": "OkCupid suffers from aggressive monetization and an increasingly restricted free tier. Embir solves these limitations with deep compatibility matching, verified profiles, and bidirectional filtering that truly respects your orientation both ways.",
+      "highlights": [
+        "Bidirectional filtering — your orientation applies both ways",
+        "Verified profiles — fewer bots and fake accounts",
+        "100% free at launch — no credit card required"
+      ]
+    }
+  ],
+  "verdict": "If you use OkCupid and want an alternative that better respects your orientation, verifies profiles, and is free — Embir is the best option in 2026.",
+  "ctaText": "Try Embir free — the best OkCupid alternative",
+  "faq": [
+    {
+      "q": "Is Embir better than OkCupid?",
+      "a": "Embir has verified profiles, bidirectional filtering and human moderation that OkCupid doesn't offer. For LGBTQ+ inclusivity and safety, Embir is superior."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Discovery, matching and messaging are free during the launch phase."
+    },
+    {
+      "q": "How does Embir compare to OkCupid for LGBTQ+ dating?",
+      "a": "Embir was built from scratch for all orientations. OkCupid added LGBTQ+ support gradually with often insufficient filtering."
+    }
+  ]
+}

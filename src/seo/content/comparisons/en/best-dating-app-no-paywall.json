@@ -1,0 +1,63 @@
+{
+  "slug": "best-dating-app-no-paywall",
+  "intro": "Every major dating app claims to be 'free'. In practice, most free tiers are deliberately limited: you can create a profile and see some matches, but messaging, seeing who liked you, and compatibility filters require a subscription.\n\nEmbir's launch phase is genuinely free. Core discovery, compatibility matching, and messaging work without a credit card.",
+  "comparisonTable": [
+    {
+      "criteria": "Free messaging",
+      "competitor": "Most: requires subscription",
+      "embir": "Free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Unlimited likes",
+      "competitor": "Most: daily limit then paywall",
+      "embir": "No artificial limits during launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "See who liked you",
+      "competitor": "Most: paid feature",
+      "embir": "Free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Ads on free tier",
+      "competitor": "Most: ad-supported free tier",
+      "embir": "No ads at any level",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Transparent freemium",
+      "competitor": "Most: opaque, surprise restrictions",
+      "embir": "Transparent — announced before launch",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What 'free' actually means on each app",
+      "content": "Tinder Free: swipe and match, but can't see who liked you, no advanced filters, no rewind. Bumble Free: some features, but 24h pressure mechanics. Hinge Free: a few likes per day then paywall. Embir Launch Phase: core discovery, compatibility matching, messaging — all free. No credit card. No daily limit. No engineered frustration.",
+      "highlights": [
+        "Full messaging free — send and receive without walls",
+        "Discovery and compatibility matching without daily limits",
+        "No ads — no ad-supported tier"
+      ]
+    }
+  ],
+  "verdict": "The best dating app with no paywall in 2026 is Embir during its launch phase. Full features, no subscription required, no credit card, no ads.",
+  "ctaText": "Genuinely free — join during launch",
+  "faq": [
+    {
+      "q": "Is Embir genuinely completely free?",
+      "a": "During the launch phase, core features — discovery, compatibility, messaging — are free. No subscription, no credit card, no hidden limits."
+    },
+    {
+      "q": "Does Embir have ads?",
+      "a": "No. Embir has no advertising model."
+    },
+    {
+      "q": "When will Embir add a premium tier?",
+      "a": "Founding members are notified in advance. Core connection features remain accessible. The transition will be fully transparent."
+    }
+  ]
+}

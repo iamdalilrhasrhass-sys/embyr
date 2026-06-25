@@ -1,0 +1,86 @@
+{
+  "slug": "most-inclusive-dating-app",
+  "intro": "Most dating apps claim inclusivity. Few actually deliver it. True inclusivity in a dating app means every orientation and gender identity has the same quality experience — not a secondary filter on a hetero-first design, not a separate LGBTQ+ section, not a platform built for one community that technically allows others.\n\nEmbir was designed from the first line of code for every orientation: gay, lesbian, bi, pan, queer, trans, non-binary, straight, and everything in between. There is no 'default' user in Embir's architecture. Inclusivity isn't a feature — it's the foundation.",
+  "comparisonTable": [
+    {
+      "criteria": "LGBTQ+ first-class support",
+      "competitor": "Most apps: retrofit on hetero-first design",
+      "embir": "Universal by design from day one",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional orientation filtering",
+      "competitor": "Most apps: one-directional or missing",
+      "embir": "Full bidirectional — your preferences AND others'",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Trans/non-binary support",
+      "competitor": "Most apps: limited or broken gender options",
+      "embir": "Full gender identity support in matching",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Straight user experience",
+      "competitor": "Most apps: optimized for straight users",
+      "embir": "Same quality experience for all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+-specific safety",
+      "competitor": "Most apps: general guidelines only",
+      "embir": "Safety design built for LGBTQ+ specific risks",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Non-monogamous support",
+      "competitor": "Most apps: limited or stigmatized",
+      "embir": "Open and non-monogamous intentions supported",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What bidirectional orientation filtering means",
+      "content": "Embir's core differentiator is bidirectional filtering: you don't just set what orientations you're interested in — the system also respects who would be interested in you based on their settings. If you're gay, you won't appear in straight users' discovery. If you're trans, users who haven't indicated openness to dating trans people won't see you first.\n\nThis matters profoundly. Most apps that added LGBTQ+ support later have one-directional filtering at best: you can filter who you see, but there's no guarantee that who sees you matches your expectations. The result is mismatched discovery — a trans woman appearing in the searches of users who haven't indicated interest in trans women, creating uncomfortable and sometimes unsafe situations.\n\nBidirectional filtering is technically more complex to implement but produces a dramatically better experience for everyone — including straight users who benefit from more accurate matching.",
+      "highlights": [
+        "Your orientation preferences apply in both directions",
+        "No accidental mismatched discovery — the algorithm respects both sides",
+        "Trans and non-binary users matched with people who've indicated openness"
+      ]
+    },
+    {
+      "title": "Beyond the checkbox — what real inclusion looks like",
+      "content": "Real inclusion is architectural, not cosmetic. It means the database schema handles every gender identity. It means the matching algorithm doesn't assume binary gender dynamics. It means moderation guidelines specifically cover LGBTQ+-targeted harassment. It means the community culture is shaped by early members who represent every orientation.\n\nEmbir's founding community is intentionally diverse across orientations. Early members — including a significant portion of LGBTQ+ users — are shaping the culture before scale dilutes it. This is the moment where inclusion becomes embedded in community norms, not just platform policy.",
+      "highlights": [
+        "Every gender identity stored and matched correctly in the system",
+        "Algorithm doesn't assume binary gender dynamics",
+        "LGBTQ+ founding members shaping community culture from day one"
+      ]
+    }
+  ],
+  "verdict": "The most inclusive dating app in 2026 isn't one that added a pride flag in June. It's one where inclusivity is architectural — where every orientation has the same quality experience, where bidirectional filtering prevents uncomfortable mismatches, and where LGBTQ+-specific safety is built in.\n\nEmbir is that app. Free at launch. Join during the founding phase to help build the community you want to date in.",
+  "ctaText": "Every orientation, same experience — join free",
+  "faq": [
+    {
+      "q": "What makes Embir more inclusive than Tinder or Bumble?",
+      "a": "Embir was built from day one for every orientation — no hetero-first architecture to work around. Bidirectional orientation filtering means you only appear to users who've indicated interest in your orientation."
+    },
+    {
+      "q": "What is bidirectional orientation filtering?",
+      "a": "It means your orientation preferences apply in both directions. You filter who you see, AND the system ensures you're only shown to users who've indicated interest in your orientation. This prevents uncomfortable mismatched discovery."
+    },
+    {
+      "q": "Is Embir inclusive for trans and non-binary users?",
+      "a": "Yes. Gender identity is handled correctly throughout the system — in your profile, in matching, and in discovery. Trans and non-binary users are matched with people who've specifically indicated openness."
+    },
+    {
+      "q": "Does Embir support non-monogamous dating?",
+      "a": "Yes. Open relationships, polyamory, and non-monogamous exploration are supported as explicit intentions in the matching system. No stigma, no separate section."
+    },
+    {
+      "q": "Is Embir free for LGBTQ+ users?",
+      "a": "Yes. Core features are free during the launch phase for all users regardless of orientation. No differential pricing or feature access."
+    }
+  ]
+}

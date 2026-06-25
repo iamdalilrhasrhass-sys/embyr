@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-coffee-meets-bagel",
+  "intro": "Coffee Meets Bagel (CMB) mise sur la qualite plutot que la quantite : un nombre limite de matchs quotidiens soignes, un focus feminin-friendly. Le concept est bon mais CMB reste tres oriente hetero et son systeme de credits peut devenir couteux.\n\nEmbir partage la philosophie qualite-avant-quantite : matching intentionnel, focus feminin-friendly renforce par la verification, et inclusivite totale pour toutes les orientations.",
+  "comparisonTable": [
+    {
+      "criteria": "Philosophie matching",
+      "competitor": "Qualite > quantite, bagels quotidiens",
+      "embir": "Compatibilite profonde, matching intentionnel",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Experience feminine",
+      "competitor": "Forte — priorite aux femmes dans le design",
+      "embir": "Securite par verification + moderation humaine",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Tres limitee, hetero-dominant",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Systeme de credits",
+      "competitor": "Credits payants pour fonctionnalites avancees",
+      "embir": "Aucun credit — tout gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Photo verification partielle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Moins de matchs, plus de sens — sans les credits",
+      "content": "CMB a raison : moins de matchs mais meilleure qualite reduit la fatigue du swipe. Embir applique la meme philosophie avec le filtrage bidirectionnel : tu ne vois que des profils qui correspondent vraiment a tes criteres ET pour qui tu es un match potentiel. Pas besoin de credits pour les fonctionnalites importantes.",
+      "highlights": [
+        "Matching intentionnel — qualite avant quantite",
+        "Filtrage bidirectionnel elimine les incompatibilites",
+        "Aucun credit, aucun abonnement pendant le lancement"
+      ]
+    }
+  ],
+  "verdict": "CMB a la bonne philosophie mais reste trop limite pour les utilisateurs LGBTQ+ et son modele de credits peut devenir couteux. Embir offre le meme esprit de matching intentionnel avec une inclusivite universelle et zero credits.",
+  "ctaText": "Matching intentionnel, toutes orientations — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il adapte aux femmes qui veulent une experience de qualite ?",
+      "a": "Oui. Embir a la verification selfie, la moderation humaine, et un matching intentionnel. Les femmes voient des profils qui correspondent vraiment a leurs criteres."
+    },
+    {
+      "q": "Embir utilise-t-il un systeme de credits comme CMB ?",
+      "a": "Non. Aucun credit sur Embir. Les fonctionnalites principales sont gratuites pendant le lancement."
+    },
+    {
+      "q": "CMB est-il disponible en France ?",
+      "a": "CMB a une presence limitee en France. Embir cible la France comme marche principal au lancement."
+    }
+  ]
+}

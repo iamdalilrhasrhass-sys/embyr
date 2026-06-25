@@ -1,0 +1,77 @@
+{
+  "slug": "once-vs-embir",
+  "intro": "Once proposait une idée séduisante : un seul match par jour, sélectionné par algorithme. Contre la fatigue du swipe, Once pariait sur la rareté comme facteur d'attention. En 2026, l'app a été rachetée et intégrée dans l'écosystème MagicLab (Badoo, Bumble). Le concept original a été dilué.\n\nEmbir partage la philosophie qualité-avant-quantité — moins de profils, mais vraiment compatibles — avec en plus la vérification systématique des profils, la modération humaine, et une vraie inclusivité pour toutes les orientations.",
+  "comparisonTable": [
+    {
+      "criteria": "Qualité vs volume",
+      "competitor": "1 match/jour (rareté artificielle)",
+      "embir": "Matching filtré par compatibilité (rareté réelle)",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Minimale",
+      "embir": "Selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+",
+      "competitor": "Très limité",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Accès gratuit",
+      "competitor": "Très limité sans abonnement",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Disponibilité active",
+      "competitor": "App rachetée, futur incertain",
+      "embir": "En croissance active",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profondeur matching",
+      "competitor": "Algorithme opaque, 1 suggestion",
+      "embir": "Orientation + intentions + valeurs",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "La rareté artificielle vs la qualité réelle",
+      "content": "L'idée de Once était bonne : forcer l'attention en limitant le nombre de matchs. Si tu n'as qu'un seul profil à regarder aujourd'hui, tu le regardes vraiment.\n\nLe problème : la rareté était artificielle, pas qualitative. Un seul match par jour, mais ce match pouvait être totalement incompatible. La contrainte de volume ne garantissait pas la pertinence.\n\nEmbir produit de la rareté différemment : en ne te montrant que des profils qui correspondent à ton orientation, tes intentions et tes valeurs, la découverte est naturellement moins volumineuse — mais chaque profil que tu vois mérite ton attention.",
+      "highlights": [
+        "Compatibilité réelle > rareté artificielle",
+        "Moins de profils, mais chacun répond à tes critères",
+        "Pas de quota — la qualité du matching fait le travail"
+      ]
+    }
+  ],
+  "verdict": "Once avait une belle idée mais un futur incertain depuis son rachat. Embir offre la même philosophie (qualité avant quantité) avec en plus des profils vérifiés, la modération humaine, l'inclusivité LGBTQ+ et la gratuité au lancement.",
+  "ctaText": "Un match qui compte vraiment — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Once existe encore en 2026 ?",
+      "a": "Once a été racheté par MagicLab et intégré à leur écosystème. La disponibilité et l'expérience ont changé depuis l'acquisition."
+    },
+    {
+      "q": "Embir est-il mieux que Once pour les rencontres sérieuses ?",
+      "a": "Oui. Embir filtre par compatibilité réelle (intentions, valeurs, orientation) et vérifie les profils — deux éléments que Once n'offrait pas."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Les fonctionnalités principales sont gratuites au lancement : découverte, messagerie, compatibilité."
+    },
+    {
+      "q": "Embir est-il inclusif LGBTQ+ ?",
+      "a": "Oui. Conçu pour toutes les orientations dès le départ — gay, lesbienne, bi, trans, queer, non-binaire."
+    },
+    {
+      "q": "Comment Embir vérifie-t-il les profils ?",
+      "a": "Vérification selfie à l'inscription + modération humaine de chaque signalement."
+    }
+  ]
+}

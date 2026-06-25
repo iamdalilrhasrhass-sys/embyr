@@ -1,0 +1,63 @@
+{
+  "slug": "adopt-vs-embir",
+  "intro": "Adopte Un Mec (now Adopte) is a French dating app known for its role reversal concept — women browse men's profiles and initiate contact first. It has strong name recognition in France but remains very hetero-dominant and lacks meaningful LGBTQ+ features.\n\nEmbir offers French users a universal alternative with verified profiles, bidirectional orientation filtering for all identities, and free access at launch.",
+  "comparisonTable": [
+    {
+      "criteria": "Concept",
+      "competitor": "Women shop men's profiles",
+      "embir": "Bidirectional compatibility matching",
+      "winner": "tie"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Very limited — hetero dominant",
+      "embir": "Universal — 10 orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Basic, not systematic",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Price",
+      "competitor": "Subscription required for men",
+      "embir": "100% free at launch for all",
+      "winner": "embir"
+    },
+    {
+      "criteria": "France presence",
+      "competitor": "Strong — well-known brand",
+      "embir": "Primary launch market",
+      "winner": "tie"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Beyond the hetero model — a platform for everyone",
+      "content": "Adopte's model was innovative when launched — flipping the power dynamic in heterosexual dating. But in 2026, it leaves LGBTQ+ users without a real experience. Embir builds bidirectional filtering for all orientations: gay, lesbian, bi, pan, queer, trans — each treated equally in the algorithm.",
+      "highlights": [
+        "10 orientations — full citizens in the algorithm",
+        "Bidirectional filtering works for all orientation combinations",
+        "France is a primary launch market for Embir"
+      ]
+    }
+  ],
+  "verdict": "Adopte is a solid option for hetero French users who like the role-reversal concept. Embir is the better alternative if you want verified profiles, full LGBTQ+ inclusivity, no subscription, and serious bidirectional matching.",
+  "ctaText": "Join Embir free — the inclusive French alternative",
+  "faq": [
+    {
+      "q": "Is Embir available in France like Adopte?",
+      "a": "Yes. France is one of Embir's three primary launch markets. The founding community is active and growing."
+    },
+    {
+      "q": "Is Embir good for LGBTQ+ users in France?",
+      "a": "Yes. Embir was built from scratch for all orientations — Adopte's LGBTQ+ support is minimal."
+    },
+    {
+      "q": "Is Embir free unlike Adopte for men?",
+      "a": "Yes. All features are free during the launch phase, regardless of gender."
+    }
+  ]
+}

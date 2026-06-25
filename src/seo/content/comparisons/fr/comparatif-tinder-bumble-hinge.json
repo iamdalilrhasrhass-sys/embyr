@@ -1,0 +1,81 @@
+{
+  "slug": "comparatif-tinder-bumble-hinge",
+  "intro": "Tinder, Bumble et Hinge dominent le marche des applis de rencontre en 2026. Les trois ont des positionnements distincts et des faiblesses documentees — filtrage unidirectionnel, moderation insuffisante, et paywalls agressifs.\n\nCe comparatif les analyse honnêtement et presente Embir comme alternative pour ceux qui cherchent mieux.",
+  "comparisonTable": [
+    {
+      "criteria": "Tinder",
+      "competitor": "Volume massif, swipe infini, paywall agressif (30 EUR+/mois)",
+      "embir": "Matching intentionnel, gratuit, bidirectionnel",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bumble",
+      "competitor": "Women-first, limite 24h, peu adapte aux LGBTQ+",
+      "embir": "Toutes orientations, pas de pression temporelle",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Hinge",
+      "competitor": "Prompts creatifs, ties oriente hetero, Preferred 30 EUR/mois",
+      "embir": "Profondeur de connexion, universel, gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Les 3 : partielle ou optionnelle",
+      "embir": "Selfie verif + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Filtrage bidirectionnel",
+      "competitor": "Les 3 : unidirectionnel uniquement",
+      "embir": "Bidirectionnel strict au niveau algorithme",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Tinder — le volume sans la qualite",
+      "content": "Tinder est la plateforme la plus utilisee au monde. Son probleme central : elle optimise pour l'engagement, pas pour les connexions reelles. Le swipe infini est concu pour maximiser le temps dans l'app, pas les matchs pertinents. Le filtrage d'orientation est unidirectionnel — tu filtres ce que tu vois, pas qui te voit.",
+      "highlights": [
+        "Filtrage unidirectionnel — profils mal alignes apparaissent toujours",
+        "Optimise pour l'engagement, pas les connexions",
+        "Paywall agressif — fonctionnalites cles derriere abonnement"
+      ]
+    },
+    {
+      "title": "Bumble — women-first avec des limites structurelles",
+      "content": "Le concept women-first de Bumble est une reponse reelle au harcelement. Mais la mecanique des 24h cree une pression artificielle et ne fonctionne pas bien pour les matchs gay hommes. Le tier gratuit est de plus en plus restreint.",
+      "highlights": [
+        "Mecanique 24h inadaptee pour les matchs homosexuels",
+        "Tier gratuit restreint",
+        "Support LGBTQ+ present mais experience hetero-dominante"
+      ]
+    },
+    {
+      "title": "Hinge — profondeur avec un prix eleve",
+      "content": "Hinge a bien fait de choisir la profondeur sur le volume. Les prompts encouragent des conversations plus significatives. Mais designed to be deleted n'est pas tres coherent avec un abonnement Preferred a 30 EUR/mois.",
+      "highlights": [
+        "Abonnement Preferred 30 EUR/mois pour l'experience complete",
+        "Quelques likes gratuits par jour — frustrant rapidement",
+        "Experience principalement hetero"
+      ]
+    }
+  ],
+  "verdict": "Tinder, Bumble et Hinge ont chacun des atouts reels — mais partagent les memes limites : filtrage unidirectionnel, moderation insuffisante, et paywalls agressifs. Embir adresse ces trois points avec un filtrage bidirectionnel, une moderation humaine, et la gratuite au lancement.",
+  "ctaText": "Au-dela de Tinder/Bumble/Hinge — rejoins Embir gratuitement",
+  "faq": [
+    {
+      "q": "Laquelle est la meilleure entre Tinder, Bumble et Hinge ?",
+      "a": "Ca depend de tes besoins. Tinder pour le volume, Bumble pour les femmes hetero, Hinge pour les conversations profondes. Aucune n'excelle sur la verification, l'inclusivite LGBTQ+, et la gratuite simultanement."
+    },
+    {
+      "q": "Pourquoi choisir Embir plutot que les trois ?",
+      "a": "Embir combine filtrage bidirectionnel strict, profils verifies, moderation humaine, inclusivite universelle et gratuite au lancement."
+    },
+    {
+      "q": "Embir est-il plus cher que Tinder, Bumble ou Hinge ?",
+      "a": "Non. Embir est gratuit pendant la phase de lancement. Tinder Gold coute 30 EUR+/mois, Bumble Premium ~25 EUR/mois, Hinge Preferred ~30 EUR/mois."
+    }
+  ]
+}

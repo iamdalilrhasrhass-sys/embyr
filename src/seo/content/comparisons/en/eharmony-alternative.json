@@ -1,0 +1,86 @@
+{
+  "slug": "eharmony-alternative",
+  "intro": "eHarmony pioneered compatibility-based dating. Its long questionnaire and algorithm-driven matches were ahead of their time in 2000 and helped establish that compatibility matters more than photos. In 2026, it remains one of the most cited apps for serious relationships — but it's also expensive, exclusionary of LGBTQ+ users in its early history, and deeply frustrating in its free tier limitations.\n\nEmbir carries forward eHarmony's best instinct — compatibility first, serious relationships welcome — and rebuilds it with modern values: full LGBTQ+ inclusion, verified profiles, free access at launch, and human moderation by default.",
+  "comparisonTable": [
+    {
+      "criteria": "Compatibility matching",
+      "competitor": "Deep algorithm, long questionnaire",
+      "embir": "Orientation + intentions + values, no quiz marathon",
+      "winner": "tie"
+    },
+    {
+      "criteria": "LGBTQ+ inclusion",
+      "competitor": "Now available, but historically exclusionary",
+      "embir": "Universal from day one — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Price",
+      "competitor": "$35-65/month for full access",
+      "embir": "Free during launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Serious relationships",
+      "competitor": "Optimized for long-term only",
+      "embir": "Serious, casual, and all intentions supported",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Photo upload, no systematic verification",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Almost non-functional without subscription",
+      "embir": "Core features genuinely free at launch",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Serious relationships — without the subscription tax",
+      "content": "eHarmony is expensive. Full access typically costs $35-65 per month, making a 3-month trial run $100-200 before you've even had a meaningful conversation. For users looking for a serious relationship, this is often framed as 'worth it' — but the data doesn't clearly support that paying more produces better outcomes.\n\nEmbir is free during the launch phase. Founding members get full access to discovery, compatibility matching, and messaging without a subscription. If you're looking for something serious, the economic barrier isn't you vs. a paywall — it's you vs. finding the right person.",
+      "highlights": [
+        "Serious relationships supported without a $40/month subscription",
+        "Compatibility signals set at signup — intentions respected by algorithm",
+        "No questionnaire barrier before meeting your first match"
+      ]
+    },
+    {
+      "title": "Modern inclusivity vs legacy architecture",
+      "content": "eHarmony was founded with a heterosexual, Christian-focused model. It added same-sex matching only under legal pressure and after years of exclusion. That history matters — platform DNA shapes user experience and community culture even after official policy changes.\n\nEmbir was built in 2024-2026 with every orientation as a first-class requirement. There was no 'straight first' phase to unlearn. Gay, lesbian, bi, trans, queer, non-binary users aren't accommodated — they're integral to how the platform was designed.",
+      "highlights": [
+        "No exclusionary history to overcome",
+        "Gay, lesbian, bi, trans users have always been in scope",
+        "Orientation preferences central to algorithm design, not a retrofit"
+      ]
+    }
+  ],
+  "verdict": "eHarmony is worth considering if you want a long-established serious relationships platform and can absorb the subscription cost. Its compatibility model has real depth.\n\nEmbir is the better choice if you want compatibility-first matching without the price tag, plus full LGBTQ+ inclusion, verified profiles, and human moderation — built from the ground up for 2026.",
+  "ctaText": "Serious dating, zero subscription required — join free",
+  "faq": [
+    {
+      "q": "Is Embir good for finding serious relationships?",
+      "a": "Yes. Serious relationship is one of the core intentions you set at signup. The matching algorithm respects it — surfacing profiles aligned with long-term connection, not casual encounters."
+    },
+    {
+      "q": "How much does Embir cost vs eHarmony?",
+      "a": "eHarmony costs $35-65/month. Embir is free during the launch phase. Core discovery, messaging and compatibility features are free. The future freemium model will be transparent and optional."
+    },
+    {
+      "q": "Is Embir inclusive for LGBTQ+ users seeking serious relationships?",
+      "a": "Yes. Every orientation is fully supported on Embir for every relationship intention — including serious long-term relationships. You're not a secondary audience."
+    },
+    {
+      "q": "Does Embir have a long compatibility questionnaire?",
+      "a": "No. Embir uses clear preference settings at signup — orientation, intentions, values, lifestyle preferences — without requiring you to fill out a 200-question quiz before seeing your first match."
+    },
+    {
+      "q": "How does Embir verify profiles?",
+      "a": "Selfie verification is available from day one. Verified profiles receive a badge and are prioritized in discovery. Human moderators review every report."
+    }
+  ]
+}

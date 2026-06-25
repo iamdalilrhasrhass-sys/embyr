@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-disons-demain",
+  "intro": "Disons Demain est une app de rencontre dediee aux seniors (50 ans et plus). L'app appartient au groupe Meetic/IAC et garantit une certaine solidite.\n\nEmbir n'est pas une app senior-specifique, mais son focus sur la verification, la moderation humaine et le matching d'intention le rend adapte aux utilisateurs qui veulent des connexions serieuses — quel que soit leur age.",
+  "comparisonTable": [
+    {
+      "criteria": "Public cible",
+      "competitor": "50 ans et plus uniquement",
+      "embir": "Tous ages — matching par intention",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Moderation",
+      "competitor": "Serieuse, profils qualifies",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Prix",
+      "competitor": "Abonnement ~25-35 EUR/mois",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Support basique",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Interface",
+      "competitor": "Simple, adaptee aux seniors",
+      "embir": "Moderne mais accessible",
+      "winner": "tie"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rencontres serieuses pour tous les ages",
+      "content": "Disons Demain a bien identifie que les seniors veulent des connexions serieuses, une moderation fiable, et une experience sans gamification agressive. Embir partage ces valeurs mais les applique a toutes les tranches d'age. Si tu as 45, 55 ou 65 ans et que tu cherches une relation serieuse ou une connexion authentique, la plateforme respecte ton objectif declare.",
+      "highlights": [
+        "Intention relation serieuse prioritisee dans le matching",
+        "Moderation humaine — pas juste algorithmique",
+        "Gratuit au lancement vs abonnement mensuel"
+      ]
+    }
+  ],
+  "verdict": "Disons Demain est pertinent si tu cherches specifiquement une app senior bien adaptee. Embir est une alternative solide si tu veux une plateforme universelle avec le meme serieux de matching et de moderation, gratuite au lancement.",
+  "ctaText": "Rencontres serieuses, gratuites — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il adapte aux personnes de plus de 50 ans ?",
+      "a": "Oui. Embir n'a pas de limite d'age. Le matching se fait par intention — si tu cherches une relation serieuse, tu rencontres des personnes qui cherchent la meme chose."
+    },
+    {
+      "q": "Embir est-il gratuit contrairement a Disons Demain ?",
+      "a": "Oui. Les fonctionnalites principales sont gratuites pendant la phase de lancement."
+    },
+    {
+      "q": "Embir verifie-t-il les profils ?",
+      "a": "Oui. Verification selfie a l'inscription et moderation humaine de chaque signalement."
+    }
+  ]
+}

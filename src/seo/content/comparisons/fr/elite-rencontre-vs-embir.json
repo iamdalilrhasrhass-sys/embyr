@@ -1,0 +1,86 @@
+{
+  "slug": "elite-rencontre-vs-embir",
+  "intro": "Elite Rencontre se positionne comme le site de rencontres pour diplômés et cadres. Son argument : la compatibilité sociale et professionnelle comme base de la relation. L'abonnement est cher, la cible est restreinte, et l'inclusivité LGBTQ+ est pratiquement inexistante.\n\nEmbir défie cette approche élitiste : la vraie compatibilité ne se résume pas au niveau d'études ou au statut social. Elle passe par l'orientation, les intentions, les valeurs et le mode de vie — des critères accessibles à tous, sans abonnement et sans sélection par diplôme.",
+  "comparisonTable": [
+    {
+      "criteria": "Critères de sélection",
+      "competitor": "Diplôme + statut social",
+      "embir": "Orientation + intentions + valeurs + préférences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Prix",
+      "competitor": "~30-50€/mois — très cher",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité LGBTQ+",
+      "competitor": "Inexistante ou très marginale",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Limitée",
+      "embir": "Selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Diversité de la base",
+      "competitor": "Très restreinte (niche CSP+)",
+      "embir": "Ouverte à tous, compatibilité réelle",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Relation sérieuse",
+      "competitor": "Optimisé pour le sérieux uniquement",
+      "embir": "Sérieux + casual + toutes intentions",
+      "winner": "tie"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Le problème de l'élitisme comme critère de compatibilité",
+      "content": "Elite Rencontre part d'une hypothèse discutable : que les diplômés sont plus compatibles entre eux. En pratique, la compatibilité d'une relation durable repose sur les valeurs partagées, les intentions relationnelles, le mode de vie et la communication — pas sur le niveau d'études ou le titre sur la carte de visite.\n\nEmbir inverse cette logique : au lieu de filtrer par statut, la plateforme aligne les intentions et les valeurs. Tu peux être cadre supérieur ou indépendant créatif — ce qui compte c'est ce que tu cherches, comment tu vis, et qui tu es.",
+      "highlights": [
+        "Compatibilité sur les valeurs et les intentions, pas le CV",
+        "Base ouverte à tous — diversité réelle",
+        "Pas de sélection par diplôme qui exclut arbitrairement"
+      ]
+    },
+    {
+      "title": "Prix — la barrière financière d'Elite Rencontre",
+      "content": "Un abonnement Elite Rencontre coûte 30-50€ par mois. Sur 3 mois, c'est 90-150€ avant d'avoir eu une conversation sérieuse. Ce modèle économique est présenté comme un gage de sérieux — les membres qui paient seraient plus motivés.\n\nEmbir est gratuit au lancement. La sérieux des membres vient de leur déclaration d'intentions à l'inscription, pas de leur capacité à payer. Un abonnement n'est pas un proxy de la qualité relationnelle.",
+      "highlights": [
+        "Gratuit au lancement pour tous",
+        "La qualité vient des critères de matching, pas du prix d'entrée",
+        "Futur freemium annoncé à l'avance — transparent"
+      ]
+    }
+  ],
+  "verdict": "Elite Rencontre est pertinent si tu cherches spécifiquement à rencontrer des cadres ou diplômés et que tu es prêt à payer pour ce critère de sélection.\n\nEmbir est la meilleure alternative si tu veux une vraie compatibilité (valeurs, intentions, mode de vie), des profils vérifiés, l'inclusivité pour toutes les orientations, et la gratuité au lancement.",
+  "ctaText": "Vraie compatibilité, sans prix d'entrée — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Embir remplace-t-il Elite Rencontre ?",
+      "a": "Embir est différent : pas de sélection par diplôme, mais un matching profond sur les valeurs, les intentions et l'orientation — gratuit au lancement, inclusif, avec profils vérifiés."
+    },
+    {
+      "q": "Embir est-il adapté aux rencontres sérieuses ?",
+      "a": "Oui. Relation sérieuse est l'une des intentions que tu configures à l'inscription. L'algorithme respecte cet objectif."
+    },
+    {
+      "q": "Embir est-il vraiment gratuit ?",
+      "a": "Oui. Les fonctionnalités principales sont gratuites au lancement — découverte, messagerie, compatibilité. Sans abonnement obligatoire."
+    },
+    {
+      "q": "Embir est-il inclusif LGBTQ+ ?",
+      "a": "Absolument. Conçu pour toutes les orientations dès le départ, avec un matching bidirectionnel."
+    },
+    {
+      "q": "Comment Embir vérifie-t-il les profils ?",
+      "a": "Vérification selfie à l'inscription + modération humaine de chaque signalement. Les profils vérifiés sont prioritaires dans la découverte."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "jackd-alternative",
+  "intro": "Jack'd is a dating and social networking app primarily for gay, bi, trans, and queer men of color. It has a loyal community but suffers from documented security issues and a limited free tier.\n\nEmbir offers an alternative with verified profiles, strict bidirectional orientation filtering, and human moderation — free at launch.",
+  "comparisonTable": [
+    {
+      "criteria": "Target audience",
+      "competitor": "Gay/bi/queer men of color",
+      "embir": "All orientations and identities",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Weak — documented security issues",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Limited",
+      "embir": "Full features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Security",
+      "competitor": "Documented breaches and issues",
+      "embir": "Human moderation + rapid response",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Trans inclusivity",
+      "competitor": "Present but limited",
+      "embir": "Full trans identity support in matching",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Security and verification — where Jack'd struggles",
+      "content": "Jack'd has faced documented security issues including data exposure incidents. Embir's approach is fundamentally different: selfie verification required at signup, human moderation of every report, and strict bidirectional filtering that prevents orientation mismatches.",
+      "highlights": [
+        "Selfie verification — barrier to fake accounts",
+        "Human moderation — every report reviewed",
+        "Bidirectional filtering — no orientation mismatches"
+      ]
+    }
+  ],
+  "verdict": "Jack'd serves its niche community but suffers from security vulnerabilities. Embir offers a safer alternative with verified profiles, human moderation, full trans/NB inclusivity, and free access at launch.",
+  "ctaText": "Safer LGBTQ+ dating, verified — join Embir",
+  "faq": [
+    {
+      "q": "Is Embir safer than Jack'd?",
+      "a": "Embir has selfie verification at signup, human moderation of every report, and documented zero-tolerance policies for harassment. Significantly more secure by design."
+    },
+    {
+      "q": "Is Embir inclusive for men of color?",
+      "a": "Yes. Embir is a universal platform where all backgrounds, orientations, and identities are full participants."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Core features are free during the launch phase."
+    }
+  ]
+}

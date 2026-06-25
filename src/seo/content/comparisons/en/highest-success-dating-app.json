@@ -1,0 +1,63 @@
+{
+  "slug": "highest-success-dating-app",
+  "intro": "Dating app 'success' is hard to measure — and most platforms don't try, because the longer you stay single, the more subscription revenue they earn. The app with the highest success rate is the one that optimizes for real connections, not engagement time.\n\nEmbir's algorithm optimizes for connection relevance: bidirectional filtering means every profile you see is a genuine potential match, not just nearby and recently active.",
+  "comparisonTable": [
+    {
+      "criteria": "Algorithm goal",
+      "competitor": "Most: engagement / retention",
+      "embir": "Relevant connections / real success",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional matching",
+      "competitor": "Most: unidirectional",
+      "embir": "Strict bidirectional — both sides must match",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Intent matching",
+      "competitor": "Variable",
+      "embir": "Intents matched bidirectionally at signup",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification",
+      "competitor": "Most: optional",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free access",
+      "competitor": "Most: paywall before success",
+      "embir": "Full access free during launch",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "The app that actually wants you to succeed",
+      "content": "Most dating apps benefit from you staying single — every month you subscribe is revenue. Embir's model is different: the founding community's success is the product. A founding member who finds a great connection becomes the best advertisement. The bidirectional algorithm is designed around this: fewer matches, but each one is genuinely aligned.",
+      "highlights": [
+        "Both sides of a match must be compatible for it to surface",
+        "Intent configured at signup — your goals are respected",
+        "No paywall between you and potential connections"
+      ]
+    }
+  ],
+  "verdict": "The dating app with the highest success rate in 2026 is the one that puts connection quality over engagement metrics. Embir is built around this principle: bidirectional filtering, intent matching, verified profiles.",
+  "ctaText": "The app designed for your success — join Embir",
+  "faq": [
+    {
+      "q": "Which dating app has the highest success rate?",
+      "a": "Success rates are rarely published accurately. Embir optimizes for connection relevance over engagement — bidirectional filtering and intent matching produce fewer but significantly better matches."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Core features free during the launch phase."
+    },
+    {
+      "q": "Is Embir available worldwide?",
+      "a": "Embir launched in France, UK, and USA with global expansion planned."
+    }
+  ]
+}

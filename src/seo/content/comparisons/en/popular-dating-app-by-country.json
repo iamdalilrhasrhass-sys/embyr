@@ -1,0 +1,63 @@
+{
+  "slug": "popular-dating-app-by-country",
+  "intro": "Dating app popularity varies significantly by country. Tinder dominates globally but faces strong regional competitors: Happn and Fruitz in France, Badoo in Southern Europe and Latin America, Bumble in English-speaking markets, Grindr for gay men worldwide.\n\nEmbir launched in France, UK, and USA simultaneously — the three markets where the gap between what existing apps offer and what users actually need is widest.",
+  "comparisonTable": [
+    {
+      "criteria": "France",
+      "competitor": "Tinder + Happn + Fruitz dominant",
+      "embir": "Primary launch market — founding community active",
+      "winner": "tie"
+    },
+    {
+      "criteria": "UK",
+      "competitor": "Tinder + Bumble + Hinge strong",
+      "embir": "Primary launch market",
+      "winner": "tie"
+    },
+    {
+      "criteria": "USA",
+      "competitor": "Tinder + Hinge + Bumble dominant",
+      "embir": "Primary launch market",
+      "winner": "tie"
+    },
+    {
+      "criteria": "LGBTQ+ globally",
+      "competitor": "Grindr/HER niche, mainstream partial",
+      "embir": "Universal — all orientations equally",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verified profiles globally",
+      "competitor": "Most: optional or paid",
+      "embir": "Free for all users in all markets",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Why Embir chose France, UK, and USA",
+      "content": "These three markets share a common pattern: high dating app adoption, dissatisfaction with existing options (particularly around LGBTQ+ inclusivity and profile authenticity), and users willing to try a verified, inclusive alternative. The founding community in all three markets is actively shaping the platform's early culture.",
+      "highlights": [
+        "Three simultaneous launch markets — France, UK, USA",
+        "Founding community in all three markets is active",
+        "French interface for France, English for UK and USA"
+      ]
+    }
+  ],
+  "verdict": "Embir launched simultaneously in France, UK, and USA — the three markets with the biggest gap between what existing apps offer and what users need. Verified profiles, bidirectional filtering, universal LGBTQ+ inclusivity, and free access at launch.",
+  "ctaText": "Join Embir in your country — free at launch",
+  "faq": [
+    {
+      "q": "Which countries is Embir available in?",
+      "a": "Embir launched in France, UK, and USA simultaneously. Global expansion is planned based on founding community growth."
+    },
+    {
+      "q": "What language is Embir available in?",
+      "a": "Embir is available in French and English. Additional languages will be added as expansion continues."
+    },
+    {
+      "q": "Is Embir popular in France?",
+      "a": "France is one of Embir's three primary launch markets. The founding community in Paris and major French cities is active and growing."
+    }
+  ]
+}

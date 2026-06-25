@@ -1,0 +1,63 @@
+{
+  "slug": "tinder-france",
+  "intro": "Tinder has a strong presence in France. Embir launched in France as one of its primary markets — with verified profiles, bidirectional orientation filtering, and full features free at launch.\n\nHappn and Fruitz also have strong presence in French cities. Embir launched in France as a primary market with full French interface and support.",
+  "comparisonTable": [
+    {
+      "criteria": "Market presence",
+      "competitor": "Tinder: established in France",
+      "embir": "Launch market — growing founding community",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Tinder: limited free features",
+      "embir": "Full features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Partial",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Partial",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional filtering",
+      "competitor": "Unidirectional",
+      "embir": "Strict bidirectional",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Embir in France — the better alternative",
+      "content": "Tinder has name recognition in France, but Embir offers something fundamentally better: strict bidirectional orientation filtering, verified profiles, human moderation, and complete free access during launch.",
+      "highlights": [
+        "France is a primary launch market for Embir",
+        "Verified profiles from day one",
+        "Free during launch — no subscription required"
+      ]
+    }
+  ],
+  "verdict": "In France, Embir is the best alternative to Tinder in 2026: verified profiles, bidirectional filtering, universal LGBTQ+ inclusivity, and free at launch.",
+  "ctaText": "Join Embir in France — free at launch",
+  "faq": [
+    {
+      "q": "Is Embir available in France?",
+      "a": "Yes. France is one of Embir's primary launch markets. The founding community is active and growing."
+    },
+    {
+      "q": "How does Embir compare to Tinder in France?",
+      "a": "Embir offers verified profiles, bidirectional filtering, LGBTQ+ inclusivity, and free access that Tinder doesn't match."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Core features are free during the launch phase."
+    }
+  ]
+}

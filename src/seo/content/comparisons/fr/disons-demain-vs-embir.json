@@ -1,0 +1,77 @@
+{
+  "slug": "disons-demain-vs-embir",
+  "intro": "Disons Demain est la plateforme de rencontres dédiée aux seniors en France, lancée par Meetic pour les plus de 50 ans. Elle répond à un vrai besoin : les applications mainstream sont souvent mal adaptées aux attentes et au contexte de vie des utilisateurs plus âgés.\n\nEmbir n'est pas une app senior — c'est une plateforme universelle. Mais elle inclut des utilisateurs de tous âges avec les mêmes fonctionnalités, les mêmes profils vérifiés, le même matching basé sur les valeurs et les intentions. Pas de segmentation par âge, mais une vraie compatibilité pour tout le monde.",
+  "comparisonTable": [
+    {
+      "criteria": "Cible d'âge",
+      "competitor": "+50 ans exclusivement",
+      "embir": "Tous âges — compatibilité universelle",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Limitée",
+      "embir": "Selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Prix",
+      "competitor": "Abonnement mensuel (~25-35€)",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+",
+      "competitor": "Très limité",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profondeur du matching",
+      "competitor": "Critères classiques + âge",
+      "embir": "Orientation + intentions + valeurs + mode de vie",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Sécurité",
+      "competitor": "Signalement standard",
+      "embir": "Modération humaine + réponse rapide",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "La segmentation par âge : nécessaire ou limitante ?",
+      "content": "Disons Demain part d'une bonne intention : créer un espace adapté aux seniors, avec une interface moins stressante et une communauté qui partage le même contexte de vie (enfants adultes, retraite proche, expériences de long terme).\n\nMais la segmentation par âge peut aussi limiter. Une personne de 55 ans peut avoir plus en commun avec quelqu'un de 45 ans partageant ses valeurs qu'avec un pair de 60 ans aux intentions différentes.\n\nEmbir ne segmente pas par âge — il segmente par compatibilité réelle. Tes préférences d'âge sont configurables, mais c'est toi qui décides, pas la plateforme.",
+      "highlights": [
+        "Préférences d'âge configurables — tu décides, pas la plateforme",
+        "Compatibilité sur les valeurs et les intentions, pas le numéro de naissance",
+        "Communauté diverse — rencontres inter-générations possibles"
+      ]
+    }
+  ],
+  "verdict": "Disons Demain répond à un vrai besoin pour les seniors français qui cherchent une communauté de même tranche d'âge. Si c'est ta priorité absolue, elle le fait bien.\n\nEmbir est la meilleure alternative si tu veux des profils vérifiés, une vraie inclusivité LGBTQ+, un matching basé sur les valeurs, la gratuité au lancement, et la flexibilité de choisir toi-même tes préférences d'âge.",
+  "ctaText": "Tes règles, ta compatibilité — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Embir est-il adapté aux utilisateurs de plus de 50 ans ?",
+      "a": "Oui. Embir n'a pas de limite d'âge et tu peux configurer tes préférences d'âge. Le matching basé sur les valeurs et les intentions fonctionne pour tous les âges."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Les fonctionnalités principales sont gratuites au lancement."
+    },
+    {
+      "q": "Embir est-il inclusif pour les seniors LGBTQ+ ?",
+      "a": "Oui. Toutes les orientations sont supportées avec la même qualité de matching, quel que soit l'âge."
+    },
+    {
+      "q": "Comment Embir vérifie-t-il les profils ?",
+      "a": "Vérification selfie à l'inscription + équipe de modération humaine pour chaque signalement."
+    },
+    {
+      "q": "Disons Demain ou Embir pour les rencontres sérieuses ?",
+      "a": "Les deux peuvent convenir pour les rencontres sérieuses. Embir ajoute les profils vérifiés, l'inclusivité LGBTQ+ et la gratuité au lancement."
+    }
+  ]
+}

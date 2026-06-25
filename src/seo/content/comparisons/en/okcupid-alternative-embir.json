@@ -1,0 +1,63 @@
+{
+  "slug": "okcupid-alternative-embir",
+  "intro": "OkCupid pioneered compatibility matching with deep questionnaires and match percentages. In 2026, the platform still has the most open-minded reputation among mainstream apps — but profile verification is near-zero, the free tier is increasingly paywalled, and the interface shows its age.\n\nEmbir takes the same core conviction — compatibility over volume — and rebuilds it for 2026: selfie-verified profiles, human moderation, full LGBTQ+ inclusivity, and a completely free launch.",
+  "comparisonTable": [
+    {
+      "criteria": "Compatibility model",
+      "competitor": "Questionnaire %, limited depth",
+      "embir": "Orientation + intent + values + preferences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Photo only, no control",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Paywalled — messaging and likes cost money",
+      "embir": "Discovery + messaging free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Good options but hetero-dominant UX",
+      "embir": "Universal from day one — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional filtering",
+      "competitor": "Unidirectional only",
+      "embir": "Strict bidirectional at algorithm level",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Compatibility-first, rebuilt for 2026",
+      "content": "OkCupid's compatibility philosophy was revolutionary in 2010. By 2026, it shows its age: the percentage system can be gamed, and messaging essential features costs money. Embir asks directly: what's your orientation, what are you looking for, what are your values? No 30-minute quiz before seeing your first profile. Clear preferences, and the algorithm surfaces truly compatible matches.",
+      "highlights": [
+        "Intent configured at signup — no endless quiz",
+        "Orientation and identity at the core of the algorithm",
+        "Fewer profiles seen, but genuinely compatible"
+      ]
+    }
+  ],
+  "verdict": "OkCupid had the right idea — compatibility over volume. But insufficient verification, aging interface, and aggressive monetization have eroded the original promise. Embir takes that philosophy with 2026 standards: verified profiles, human moderation, true LGBTQ+ inclusivity, and free at launch.",
+  "ctaText": "Real compatibility, real connections — join Embir free",
+  "faq": [
+    {
+      "q": "Is Embir better than OkCupid for LGBTQ+ dating?",
+      "a": "Embir was built from scratch for all orientations — bidirectional filtering means you only appear to matching profiles. OkCupid's LGBTQ+ options are good but the UX remains hetero-dominant."
+    },
+    {
+      "q": "Is messaging free on Embir?",
+      "a": "Yes. Messaging is free during the launch phase. No credit card required."
+    },
+    {
+      "q": "How does Embir verify profiles?",
+      "a": "Selfie verification at signup — a quick check that confirms profile authenticity. Verified profiles are prioritized in discovery."
+    }
+  ]
+}

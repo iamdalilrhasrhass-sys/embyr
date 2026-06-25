@@ -1,0 +1,63 @@
+{
+  "slug": "scruff-alternative",
+  "intro": "Scruff is a niche dating app for gay, bi, and queer men with a strong bear community focus. It offers solid social features but stays closed to other identities and requires Scruff Pro for most advanced features.\n\nEmbir offers an alternative for gay and bi men wanting a platform with verified profiles, human moderation, and openness to all orientations.",
+  "comparisonTable": [
+    {
+      "criteria": "Target audience",
+      "competitor": "Gay/bi/queer men (niche)",
+      "embir": "All orientations and gender identities",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Photo verification, no selfie check",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Very limited, Scruff Pro required",
+      "embir": "Core features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Trans/NB inclusivity",
+      "competitor": "Limited — cis gay/bi focus",
+      "embir": "Fully inclusive for trans and non-binary",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Safety",
+      "competitor": "Community moderation, variable response",
+      "embir": "Human team + fast response",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Beyond the bear niche — a broader platform",
+      "content": "Scruff has a solidly built community around the bear niche and gay travelers. If that's your identity, Scruff does it well. If you want a gay platform with a broader base — including bi, trans, non-binary users — Embir covers that territory with verified profiles.",
+      "highlights": [
+        "All LGBTQ+ identities included — not just cis men",
+        "Selfie verification vs Scruff's basic photo check",
+        "Free during launch vs Scruff Pro subscription"
+      ]
+    }
+  ],
+  "verdict": "Scruff excels for the bear gay community and traveling gay men. Embir is a better alternative if you want a broader gay platform with verified profiles, trans/NB inclusion, and free access.",
+  "ctaText": "Inclusive gay dating, verified — join Embir",
+  "faq": [
+    {
+      "q": "Is Embir good for gay and bi men?",
+      "a": "Yes. Bidirectional filtering ensures you only see profiles matching your orientation and vice versa. Verified profiles and human moderation."
+    },
+    {
+      "q": "Does Embir include trans men and non-binary people?",
+      "a": "Yes. Embir supports all gender identities in its matching system."
+    },
+    {
+      "q": "Is Embir free unlike Scruff Pro?",
+      "a": "Yes. Core features are free during the launch phase. No Pro subscription required."
+    }
+  ]
+}

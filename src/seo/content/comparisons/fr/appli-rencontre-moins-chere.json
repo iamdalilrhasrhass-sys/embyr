@@ -1,0 +1,63 @@
+{
+  "slug": "appli-rencontre-moins-chere",
+  "intro": "Tinder Gold coute 30 EUR+/mois. eHarmony depasse 60 EUR/mois. Match tourne autour de 40 EUR/mois. Les applications de rencontre sont devenues une des abonnements les plus chers du quotidien.\n\nEmbir est gratuit pendant la phase de lancement. Fonctionnalites completes accessibles sans abonnement.",
+  "comparisonTable": [
+    {
+      "criteria": "Prix mensuel",
+      "competitor": "Tinder Gold: 30+ EUR / eHarmony: 60+ EUR",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Messagerie gratuite",
+      "competitor": "La plupart : payante",
+      "embir": "Gratuite au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Pas de pub",
+      "competitor": "Tier gratuit souvent avec pubs",
+      "embir": "Aucune pub",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Souvent payante ou optionnelle",
+      "embir": "Gratuite pour tous",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Qualite pour le prix",
+      "competitor": "Variable — souvent surpaye",
+      "embir": "Maximum pour zero coût",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Le vrai cout des applis de rencontre en 2026",
+      "content": "Si tu utilises Tinder Gold (30 EUR/mois) pendant 6 mois, tu as depense 180 EUR. Hinge Preferred sur 6 mois = 180 EUR. eHarmony sur 6 mois = 360 EUR. Ces plateformes monetisent la loneliness — plus tu restes celibataire, plus tu paies. Embir au lancement est entierement gratuit. Quand le freemium arrivera, il sera transparent, avec les fonctionnalites de base gratuites.",
+      "highlights": [
+        "Zero EUR pendant la phase de lancement",
+        "Aucun abonnement cache, aucune carte bancaire requise",
+        "Fonctionnalites principales accessibles sans paiement"
+      ]
+    }
+  ],
+  "verdict": "L'appli de rencontre la moins chere en 2026 est Embir — entierement gratuite pendant le lancement. Profils verifies, matching bidirectionnel, messagerie complete, zero EUR.",
+  "ctaText": "La meilleure appli de rencontre gratuite — rejoins maintenant",
+  "faq": [
+    {
+      "q": "Embir est-il la moins chere des applis de rencontre ?",
+      "a": "Oui pendant la phase de lancement. Les fonctionnalites principales sont gratuites. Aucun abonnement, aucune carte bancaire."
+    },
+    {
+      "q": "Y a-t-il des frais caches sur Embir ?",
+      "a": "Non. Aucun frais cache. La transition freemium sera annoncee a l'avance."
+    },
+    {
+      "q": "Quand Embir deviendra-t-il payant ?",
+      "a": "La phase de lancement est gratuite. Les membres fondateurs seront prevenus a l'avance de tout changement."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "best-matching-algorithm-dating",
+  "intro": "The best dating app matching algorithm in 2026 is the one that maximizes relevant connections and minimizes noise — not the one that maximizes time in app. Most major players optimize for engagement, not for your success.\n\nEmbir's algorithm optimizes for relevance: strict bidirectional orientation filtering, bidirectional intent matching, and declared value matching.",
+  "comparisonTable": [
+    {
+      "criteria": "Algorithm optimization",
+      "competitor": "Most: engagement / time in app",
+      "embir": "Match relevance / real connections",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional filtering",
+      "competitor": "Most: unidirectional only",
+      "embir": "Strict bidirectional at DB level",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Intent matching",
+      "competitor": "Variable — often ignored",
+      "embir": "Intents matched bidirectionally",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Most: optional",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Algorithm transparency",
+      "competitor": "Opaque black box",
+      "embir": "Explicit criteria declared",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Bidirectional — the real algorithmic differentiator",
+      "content": "On Tinder, Bumble, Hinge: you filter what YOU see, but not who sees you. Your profile can appear in feeds of people who don't match your orientation at all. Embir's algorithm applies constraints both ways: if you're gay, you don't appear to straight users AND straight users don't appear in your feed. This isn't a client-side preference — it's a constraint at the SQL query level.",
+      "highlights": [
+        "Bidirectional = no orientation incompatibility slips through",
+        "Optimized for real connections, not screen time",
+        "Full transparency on matching criteria"
+      ]
+    }
+  ],
+  "verdict": "In 2026, the best dating algorithm is the one that wastes the least of your time on incompatible profiles. Embir is built around this objective: bidirectional filtering, intent matching, verified profiles.",
+  "ctaText": "The matching algorithm that respects your time — join Embir",
+  "faq": [
+    {
+      "q": "How does Embir's matching algorithm work?",
+      "a": "Embir uses strict bidirectional filtering: your orientation and intents apply both ways. You only see profiles for whom you're also a potential match."
+    },
+    {
+      "q": "Is Embir's algorithm transparent?",
+      "a": "Yes. Matching criteria are explicit: orientation, intent, values. No opaque black box."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Free during the launch phase."
+    }
+  ]
+}

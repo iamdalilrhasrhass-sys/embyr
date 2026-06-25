@@ -1,0 +1,86 @@
+{
+  "slug": "facebook-dating-alternative",
+  "intro": "Facebook Dating has one obvious advantage: it already knows everything about you. Your social graph, your groups, your events, your friends — all available as compatibility signals before you've answered a single question. For users already deep in the Facebook ecosystem, that integration is genuinely useful.\n\nBut Facebook Dating also inherits everything people dislike about Facebook: data privacy concerns, the feeling of being profiled, a social graph that might know your dating activity, and a company whose relationship with user trust has been tested repeatedly. Embir is privacy-first dating — your data is used to find compatible people, not to target you with ads or feed a social media algorithm.",
+  "comparisonTable": [
+    {
+      "criteria": "Privacy",
+      "competitor": "Integrated with Facebook social graph",
+      "embir": "Standalone app — no social media integration",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Facebook account required, no extra verification",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusion",
+      "competitor": "Available — follows your Facebook settings",
+      "embir": "Universal — all orientations, core design",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Ad targeting",
+      "competitor": "Dating data may inform Meta ad targeting",
+      "embir": "No ads, no ad-targeting model",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Free — but your data is the product",
+      "embir": "Free at launch, transparent freemium model",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Safety tools",
+      "competitor": "Facebook moderation — large-scale, inconsistent",
+      "embir": "Human team, small community, fast response",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Privacy — your dating life vs Meta's data model",
+      "content": "Facebook Dating is free because you're not the customer — you're the product. Your dating activity, your matches, your conversations, and your preferences become data points that enrich Meta's advertising profile of you. Facebook explicitly says dating information won't be used for ad targeting, but 'currently' and 'explicitly' carry significant caveats in Meta's history.\n\nEmbir has no advertising model. Revenue comes from a future transparent freemium subscription. Your dating preferences, your conversations, and your matches are not shared with advertisers — because there are no advertisers. The business model doesn't require surveillance.",
+      "highlights": [
+        "No Facebook account required — no social graph exposure",
+        "No ad-targeting model — your data isn't the product",
+        "Transparent freemium model disclosed upfront"
+      ]
+    },
+    {
+      "title": "Compatibility vs social graph",
+      "content": "Facebook Dating uses your social network as a compatibility signal — friends of friends, shared groups, common events. This can surface relevant people but also creates social awkwardness: what happens when you match with someone in your book club, and things don't work out?\n\nEmbir uses anonymous compatibility signals: orientation, intentions, lifestyle preferences, and values. You control what you share. There are no mutual friends to create social obligations or post-rejection awkwardness. Dating is separated from your social life by design.",
+      "highlights": [
+        "No friends-of-friends awkwardness",
+        "Social graph completely separate from dating activity",
+        "Compatibility based on stated preferences, not social proximity"
+      ]
+    }
+  ],
+  "verdict": "Facebook Dating is convenient if you're already in the Facebook ecosystem and comfortable with Meta's data practices. The social graph integration can surface genuinely relevant people.\n\nEmbir is the better choice if privacy matters to you, if you want verified profiles and human moderation, and if you'd rather your dating life stay separate from your social media footprint.",
+  "ctaText": "Private, verified, free — dating without the data trade-off",
+  "faq": [
+    {
+      "q": "Does Embir share data with social networks?",
+      "a": "No. Embir is a standalone platform with no Facebook, Instagram, or social media integration. Your dating activity stays private."
+    },
+    {
+      "q": "Is Embir free like Facebook Dating?",
+      "a": "Yes. Core features are free during launch. The difference is the business model: Facebook's 'free' monetizes your data. Embir's future freemium funds safety and moderation directly."
+    },
+    {
+      "q": "How does Embir verify profiles without a social media account?",
+      "a": "Selfie verification — a quick photo check at signup that confirms you're a real person. Human moderators review every report."
+    },
+    {
+      "q": "Is Embir inclusive for LGBTQ+ users?",
+      "a": "Yes. Every orientation is supported by design — gay, lesbian, bi, pan, queer, trans, non-binary. No Facebook orientation settings required."
+    },
+    {
+      "q": "Can I see who liked me on Embir for free?",
+      "a": "During the launch phase, core discovery features are free. Full visibility into who interacted with your profile is part of the features available at launch."
+    }
+  ]
+}

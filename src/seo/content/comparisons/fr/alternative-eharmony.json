@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-eharmony",
+  "intro": "eHarmony est connu pour son questionnaire de compatibilite approfondi et son focus sur les relations a long terme. En pratique, son abonnement tres eleve (60-70 EUR/mois), son interface datee, et son historique conservateur en termes d'inclusivite LGBTQ+ le rendent peu attractif en 2026.\n\nEmbir prend la compatibilite au serieux sans les frais excessifs ni les limitations historiques d'eHarmony.",
+  "comparisonTable": [
+    {
+      "criteria": "Prix",
+      "competitor": "60-70 EUR/mois — parmi les plus chers",
+      "embir": "100% gratuit au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Support LGBTQ+ ajoute tardivement, limites",
+      "embir": "Universel des le premier jour",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Matching compatibilite",
+      "competitor": "Questionnaire approfondi, algorithmique",
+      "embir": "Orientation + intentions + valeurs — transparent",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Manuelle limitee",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Accessibilite",
+      "competitor": "Interface datee, questionnaire intimidant",
+      "embir": "Moderne, inscription rapide",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Compatibilite profonde sans le prix abusif",
+      "content": "eHarmony pratique l'un des tarifs les plus eleves du marche pour un questionnaire de compatibilite qui existe depuis 2000. Embir integre les signaux de compatibilite cles — orientation, intentions, valeurs, style de vie — directement dans le matching, sans questionnaire de 30 minutes et sans abonnement.",
+      "highlights": [
+        "Matching base sur orientation + intentions + valeurs",
+        "Aucun questionnaire interminable a l'inscription",
+        "Gratuit pendant la phase de lancement"
+      ]
+    }
+  ],
+  "verdict": "eHarmony est pertinent si tu cherches une relation serieuse et que tu es pret a payer 60-70 EUR/mois. Embir offre un matching de compatibilite profond avec une meilleure inclusivite LGBTQ+ — entierement gratuit au lancement.",
+  "ctaText": "Compatibilite serieuse, zero frais — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il disponible en France comme eHarmony ?",
+      "a": "Oui. La France est l'un des trois marches principaux au lancement."
+    },
+    {
+      "q": "Embir est-il inclusif pour les couples LGBTQ+ ?",
+      "a": "Absolument. eHarmony a ajoute le support LGBT+ tardivement. Embir a ete concu universel des le depart."
+    },
+    {
+      "q": "Combien coute Embir ?",
+      "a": "Gratuit pendant la phase de lancement. Pas d'abonnement obligatoire."
+    }
+  ]
+}

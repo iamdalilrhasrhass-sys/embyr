@@ -1,0 +1,77 @@
+{
+  "slug": "appli-rencontre-sans-abonnement",
+  "intro": "Chaque grande app de rencontre prétend être 'gratuite'. En pratique, la plupart des tiers gratuits sont délibérément bridés : tu peux créer un profil et voir quelques matchs, mais la messagerie, voir qui t'a liké, et les filtres de compatibilité nécessitent un abonnement. Les vraies apps de rencontre sans abonnement en 2026 sont plus rares que la publicité ne le laisse croire.\n\nLa phase de lancement d'Embir est vraiment gratuite. Découverte principale, matching de compatibilité et messagerie fonctionnent sans carte bancaire. La transition freemium, quand elle arrivera, sera annoncée clairement et financera l'infrastructure de sécurité — pas les fonctionnalités de base dont tu as besoin pour te connecter.",
+  "comparisonTable": [
+    {
+      "criteria": "Messagerie gratuite",
+      "competitor": "La plupart : nécessite abonnement",
+      "embir": "Gratuite au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Visibilité du profil",
+      "competitor": "La plupart : limitée sans boost",
+      "embir": "Visibilité complète en découverte gratuite au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Likes / matchs gratuits",
+      "competitor": "La plupart : limite quotidienne puis paywall",
+      "embir": "Pas de limites artificielles pendant le lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Pubs sur le tier gratuit",
+      "competitor": "La plupart : tier gratuit soutenu par les pubs",
+      "embir": "Aucune pub à aucun niveau",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Transparence du modèle freemium",
+      "competitor": "La plupart : opaque, restrictions surprises",
+      "embir": "Transparent — annoncé avant le lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification profils gratuite",
+      "competitor": "Souvent payante ou optionnelle",
+      "embir": "Vérification selfie gratuite pour tous",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ce que 'gratuit' veut vraiment dire selon les apps",
+      "content": "Tinder Gratuit : créer un profil, swiper, matcher, mais tu ne peux pas voir qui t'a liké, pas de filtres avancés, pas de rewind, pas de boost. Le tier gratuit est conçu pour te frustrer jusqu'à l'abonnement.\n\nBumble Gratuit : swiper, matcher, envoyer des messages — mais les femmes doivent initier dans les 24h, pas de boosts, pas de SuperSwipe, pas d'extension de matchs.\n\nHinge Gratuit : quelques likes, quelques roses, filtres basiques — mais 'Most Compatible' et les filtres avancés nécessitent un abonnement Preferred.\n\nEmbir Phase de Lancement : fonctionnalités principales complètes gratuites. Découverte, matching de compatibilité, messagerie. Sans carte bancaire. Sans limite de swipe quotidienne. Sans frustration artificielle. Le modèle freemium financera la sécurité, pas l'ingénierie du paywall.",
+      "highlights": [
+        "Messagerie complète gratuite — envoie et reçois sans mur",
+        "Découverte et matching de compatibilité sans limites quotidiennes",
+        "Aucune pub ni tier soutenu par la pub — aucune donnée vendue"
+      ]
+    }
+  ],
+  "verdict": "La meilleure app de rencontre vraiment gratuite en 2026 est Embir pendant sa phase de lancement. Fonctionnalités complètes, aucun abonnement requis, pas de carte bancaire nécessaire, aucune pub. Rejoins maintenant pendant que la communauté fondatrice se forme encore.",
+  "ctaText": "Vraiment gratuit — rejoins pendant le lancement",
+  "faq": [
+    {
+      "q": "Embir est-il vraiment complètement gratuit ?",
+      "a": "Pendant la phase de lancement, les fonctionnalités principales — découverte, compatibilité, messagerie — sont gratuites. Aucun abonnement, aucune carte bancaire, aucune limite cachée."
+    },
+    {
+      "q": "Embir a-t-il des pubs sur le tier gratuit ?",
+      "a": "Non. Embir n'a aucun modèle publicitaire. Le futur freemium finance l'infrastructure de sécurité via un abonnement direct, pas le ciblage publicitaire."
+    },
+    {
+      "q": "Que se passe-t-il quand Embir ajoute un tier premium ?",
+      "a": "Les membres fondateurs sont prévenus à l'avance. La transition freemium sera transparente — ce qui change, ce qui reste gratuit, et pourquoi. Les fonctionnalités de connexion principales restent accessibles."
+    },
+    {
+      "q": "Quel est le piège de l'accès gratuit ?",
+      "a": "Aucun piège. La phase de lancement est gratuite pour construire la communauté fondatrice. Les membres qui arrivent plus tôt aident à façonner la culture de la plateforme et ont un accès prioritaire aux fonctionnalités premium quand elles arrivent."
+    },
+    {
+      "q": "Quelles autres apps de rencontre sont vraiment gratuites ?",
+      "a": "OkCupid, POF et Badoo ont des tiers gratuits mais tous restreignent les fonctionnalités importantes. Tinder, Bumble et Hinge sont très limités gratuitement par design. Embir au lancement est l'expérience gratuite la plus complète."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-zoosk",
+  "intro": "Zoosk a popularise le behavioral matchmaking — un algorithme qui apprend de tes interactions. L'idee est bonne, mais l'execution en 2026 souffre d'un tier gratuit tres restreint et d'une interface lourde.\n\nEmbir reprend l'idee d'un matching adaptatif tout en offrant gratuitement les fonctionnalites de base que Zoosk monetise agressivement.",
+  "comparisonTable": [
+    {
+      "criteria": "Matching adaptatif",
+      "competitor": "Behavioral matchmaking base sur les interactions",
+      "embir": "Preferences explicites + signaux comportementaux",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Tres limite — messagerie quasi impossible sans abo",
+      "embir": "Decouverte + messagerie gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Photo verification optionnelle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Support basique, hetero-dominant",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Prix abonnement",
+      "competitor": "~29 EUR/mois",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Matching intelligent — sans le paywall",
+      "content": "Zoosk apprend de tes interactions — qui tu likes, qui tu ignores. Embir combine les preferences explicites (orientation, intentions, valeurs) avec les signaux comportementaux. La difference : sur Embir, cette intelligence s'applique sans te bloquer derriere un abonnement pour chaque action.",
+      "highlights": [
+        "Preferences configurees explicitement a l'inscription",
+        "Algorithme respecte ton orientation dans les deux sens",
+        "Aucun paywall avant ta premiere vraie conversation"
+      ]
+    }
+  ],
+  "verdict": "Zoosk avait la bonne idee sur le matching adaptatif mais le monetise de maniere trop agressive. Embir offre un matching intelligent avec des profils verifies et une vraie inclusivite LGBTQ+, gratuitement pendant le lancement.",
+  "ctaText": "Matching intelligent, zero abonnement — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il vraiment gratuit contrairement a Zoosk ?",
+      "a": "Oui. Decouverte, matching et messagerie sont gratuits pendant la phase de lancement. Zoosk limite la messagerie sans abonnement."
+    },
+    {
+      "q": "Comment l'algorithme Embir apprend-il mes preferences ?",
+      "a": "Embir combine tes preferences declarees avec les signaux d'interaction pour affiner les suggestions au fil du temps."
+    },
+    {
+      "q": "Zoosk est-il disponible en France ?",
+      "a": "Oui, comme Embir. Mais Embir cible specifiquement le marche francais au lancement."
+    }
+  ]
+}

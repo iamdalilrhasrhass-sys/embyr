@@ -1,0 +1,86 @@
+{
+  "slug": "alternative-okcupid",
+  "intro": "OkCupid a construit sa réputation sur les questionnaires de compatibilité et les pourcentages de match. En 2026, la plateforme reste une des plus ouvertes d'esprit parmi les apps mainstream — mais la vérification des profils est quasi inexistante, le tier gratuit est de plus en plus bridé, et l'interface accuse son âge.\n\nEmbir reprend la même conviction de base — la compatibilité prime sur le volume — et la reconstruit pour 2026 : profils vérifiés par selfie, modération humaine systématique, inclusivité totale pour toutes les orientations, et un lancement totalement gratuit.",
+  "comparisonTable": [
+    {
+      "criteria": "Compatibilité",
+      "competitor": "Questionnaire %, profondeur limitée",
+      "embir": "Orientation + intentions + valeurs + préférences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Vérification profils",
+      "competitor": "Photo seule, sans contrôle",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Bridé — messagerie et likes payants",
+      "embir": "Découverte + messagerie gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité LGBTQ+",
+      "competitor": "Bonnes options mais UX hétéro-dominante",
+      "embir": "Universel dès le départ — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Sécurité",
+      "competitor": "Signalement standard, réponse lente",
+      "embir": "Équipe humaine + réponse rapide",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Interface",
+      "competitor": "Daté, chargé",
+      "embir": "Épuré, moderne, intentionnel",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Compatibilité — questionnaire vs préférences directes",
+      "content": "Le système de pourcentages d'OkCupid était révolutionnaire en 2010. En 2026, il montre ses limites : les pourcentages se manipulent, les réponses évoluent, et les questions peuvent sembler intrusives dès le départ.\n\nEmbir demande directement : quelle est ton orientation, qu'est-ce que tu cherches, quelles sont tes valeurs ? Tu ne passes pas 30 minutes à remplir un quiz avant de voir ton premier profil. Tu configures des préférences claires et l'algorithme te propose des matchs qui les respectent — moins de bruit, plus de pertinence.",
+      "highlights": [
+        "Intentions configurées à l'inscription — pas de quiz interminable",
+        "Orientation et identité au cœur de l'algorithme, pas en filtre secondaire",
+        "Moins de profils vus, mais vraiment compatibles"
+      ]
+    },
+    {
+      "title": "Gratuité — ce que 'gratuit' veut vraiment dire",
+      "content": "OkCupid a progressivement restreint son tier gratuit. Répondre à certains messages, voir qui t'a liké, utiliser les filtres avancés — tout ça demande maintenant un abonnement à 15-30€/mois. Beaucoup d'utilisateurs rapportent toucher un paywall avant même leur première conversation.\n\nEmbir est gratuit pendant la phase de lancement. Découverte, messagerie, compatibilité — tout est accessible sans carte bancaire. Le futur modèle freemium financera la sécurité et la modération, pas les fonctionnalités de base.",
+      "highlights": [
+        "Messagerie gratuite — aucun paywall avant ta première vraie conversation",
+        "Aucune limite artificielle qui pousse à l'abonnement",
+        "Transition freemium annoncée à l'avance et transparente"
+      ]
+    }
+  ],
+  "verdict": "OkCupid avait la bonne idée — la compatibilité avant le volume. Mais la vérification inexistante, une interface vieillissante et une monétisation agressive ont érodé la promesse originale.\n\nEmbir reprend cette philosophie avec les standards de 2026 : profils vérifiés, modération humaine, vraie inclusivité pour toutes les orientations, et gratuité au lancement.",
+  "ctaText": "Des connexions qui correspondent vraiment — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Embir est-il meilleur qu'OkCupid pour les rencontres LGBTQ+ ?",
+      "a": "Embir a été conçu de zéro pour toutes les orientations — le filtrage bidirectionnel fait que tu n'apparais qu'aux bons profils. OkCupid a de bonnes options mais l'UX reste hétéro-dominante."
+    },
+    {
+      "q": "Peut-on envoyer des messages gratuitement sur Embir ?",
+      "a": "Oui. La messagerie est gratuite pendant la phase de lancement. Aucune carte bancaire requise."
+    },
+    {
+      "q": "Comment Embir vérifie-t-il les profils ?",
+      "a": "Vérification selfie à l'inscription — une vérification rapide qui confirme l'authenticité du profil. Les profils vérifiés sont prioritaires dans la découverte."
+    },
+    {
+      "q": "Quand Embir passera-t-il au freemium ?",
+      "a": "La phase de lancement est gratuite. La transition sera annoncée à l'avance avec une transparence totale sur ce qui change. Les fonctionnalités de connexion de base restent gratuites."
+    },
+    {
+      "q": "Embir a-t-il des questionnaires comme OkCupid ?",
+      "a": "Non. Embir utilise des paramètres de préférences clairs plutôt que de longs questionnaires. Tu configures ton orientation, tes intentions et tes préférences clés à l'inscription."
+    }
+  ]
+}

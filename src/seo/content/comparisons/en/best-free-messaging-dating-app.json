@@ -1,0 +1,63 @@
+{
+  "slug": "best-free-messaging-dating-app",
+  "intro": "The best dating app with free messaging in 2026 is the one that doesn't lock conversation behind a paywall. Most major apps do: Tinder Gold for messaging priority, Hinge Preferred for more features, OkCupid A-List for unlimited likes.\n\nEmbir is the exception during its launch phase: full messaging free for everyone, no subscription required.",
+  "comparisonTable": [
+    {
+      "criteria": "Messaging cost",
+      "competitor": "Tinder: subscription / Hinge: limited free",
+      "embir": "100% free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification",
+      "competitor": "Most: optional",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "No ads",
+      "competitor": "Most: ads on free tier",
+      "embir": "No ads at any level",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Most: partial support",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Transparency",
+      "competitor": "Most: opaque pricing",
+      "embir": "Freemium transition pre-announced",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Why free messaging matters",
+      "content": "Paywalling messaging is the oldest trick in dating apps: you match someone, you want to say hi, and suddenly you need a subscription. Embir's launch phase removes this barrier entirely. Match and message, no friction, no credit card.",
+      "highlights": [
+        "Match and message immediately — no subscription gate",
+        "Send and receive without daily limits",
+        "No ads interrupting conversations"
+      ]
+    }
+  ],
+  "verdict": "The best dating app with truly free messaging in 2026 is Embir during launch. Full messaging, no paywall, no ads, verified profiles, universal LGBTQ+ inclusivity.",
+  "ctaText": "Message freely — join Embir at launch",
+  "faq": [
+    {
+      "q": "Can I message matches for free on Embir?",
+      "a": "Yes. Messaging is completely free during the launch phase. No subscription, no daily limit."
+    },
+    {
+      "q": "What happens when Embir adds premium?",
+      "a": "Founding members are notified in advance. Basic messaging remains accessible. The transition will be transparent."
+    },
+    {
+      "q": "Is Embir verified?",
+      "a": "Yes. Selfie verification at signup for all users."
+    }
+  ]
+}

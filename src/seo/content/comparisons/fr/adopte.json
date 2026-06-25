@@ -1,0 +1,95 @@
+{
+  "slug": "adopte",
+  "intro": "Adopte Un Mec a révolutionné les rencontres en France avec son concept inversé : ce sont les femmes qui choisissent, les hommes qui se proposent. En 2026, la plateforme reste une référence francophone — mais son modèle commence à vieillir : vérification des profils quasi inexistante, frais d'abonnement pour les hommes, inclusivité très limitée pour les utilisateurs LGBTQ+.\n\nEmbir propose une alternative universelle : profils vérifiés dès l'inscription, modération humaine, matching basé sur la compatibilité réelle (orientation, intentions, valeurs), et gratuité totale au lancement pour tous les genres et toutes les orientations.",
+  "comparisonTable": [
+    {
+      "criteria": "Modèle de découverte",
+      "competitor": "Femmes choisissent, hommes se proposent",
+      "embir": "Compatibilité — orientation + intentions + valeurs",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Minimale — photo sans contrôle",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Accès gratuit",
+      "competitor": "Gratuit pour les femmes, payant pour les hommes",
+      "embir": "Gratuit pour tous au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité LGBTQ+",
+      "competitor": "Très limité — modèle hétéro binaire",
+      "embir": "Universel — toutes les orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Sécurité / modération",
+      "competitor": "Signalement standard, traitement lent",
+      "embir": "Équipe humaine, réponse rapide",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Filtres de compatibilité",
+      "competitor": "Âge et localisation essentiellement",
+      "embir": "Orientation + intentions + valeurs + préférences",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Compatibilité réelle vs concept de sélection",
+      "content": "Adopte repose sur un renversement du modèle classique : les femmes parcourent les profils masculins et initient le contact. Ce concept a du mérite — il réduit la pression sur les femmes et force les hommes à soigner leur présentation.\n\nMais cette mécanique a ses limites. Elle suppose un modèle binaire homme/femme qui exclut de facto les utilisateurs LGBTQ+, les personnes non-binaires et toute forme de rencontre qui sort de ce schéma. Et la compatibilité réelle — qui partage tes intentions, tes valeurs, ton mode de vie — passe après le concept.\n\nEmbir prend le problème différemment : au lieu de réorganiser qui initie le contact, la plateforme s'assure que tu ne vois que des profils qui correspondent vraiment à ce que tu cherches. Orientation, intentions (relation sérieuse, casual, amitié, exploration), valeurs — tout est configuré dès l'inscription et respecté par l'algorithme.",
+      "highlights": [
+        "Filtres d'orientation et d'intentions configurés à l'inscription",
+        "Algorithme respecte ce que tu cherches — pas juste la proximité",
+        "Inclusif pour toutes les orientations et tous les genres"
+      ]
+    },
+    {
+      "title": "Gratuité et modèle économique",
+      "content": "Sur Adopte, les femmes ont accès gratuit. Les hommes paient un abonnement. Ce modèle a financé la croissance de la plateforme mais crée une asymétrie : les hommes investissent économiquement avant même d'avoir eu une conversation, ce qui n'est pas sans effets sur les dynamiques relationnelles.\n\nEmbir est gratuit pour tout le monde au lancement — quel que soit ton genre ou ton orientation. Le futur modèle freemium sera annoncé de façon transparente et financera la sécurité et la modération, pas l'accès aux fonctionnalités de base.",
+      "highlights": [
+        "Gratuit pour tous les genres et toutes les orientations",
+        "Aucune asymétrie économique au démarrage",
+        "Modèle freemium annoncé à l'avance — pas de surprise"
+      ]
+    },
+    {
+      "title": "LGBTQ+ — l'angle mort d'Adopte",
+      "content": "Adopte a été conçu autour d'une dynamique hétérosexuelle binaire. Les options LGBTQ+ ont été ajoutées tardivement et restent très limitées. Gays, lesbiennes, personnes bi, trans ou non-binaires se retrouvent dans une expérience clairement secondaire.\n\nEmbir a été conçu dès la première ligne de code pour toutes les orientations. Gay, lesbienne, bi, pan, queer, trans, non-binaire, hétéro — chaque identité est une priorité dans le système de matching, pas une case cochée après coup.",
+      "highlights": [
+        "Toutes les orientations supportées avec la même profondeur de matching",
+        "Filtrage bidirectionnel — tu n'apparais qu'aux profils ouverts à ton orientation",
+        "Pas de section LGBTQ+ séparée — tu fais partie de la plateforme principale"
+      ]
+    }
+  ],
+  "verdict": "Adopte Un Mec reste pertinent pour les rencontres hétérosexuelles en France avec son concept original. Mais la vérification est faible, les hommes paient, et l'inclusivité LGBTQ+ est quasi inexistante.\n\nEmbir est l'alternative moderne : profils vérifiés, modération humaine, inclusif pour toutes les orientations, gratuit pour tous au lancement — avec un matching basé sur la vraie compatibilité.",
+  "ctaText": "Toutes orientations bienvenues — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Embir est-il une bonne alternative à Adopte ?",
+      "a": "Oui, surtout si tu es LGBTQ+, si tu veux des profils vérifiés, ou si tu préfères un modèle gratuit pour tous les genres. Embir est gratuit au lancement, inclusif, et basé sur la compatibilité réelle."
+    },
+    {
+      "q": "Embir est-il gratuit pour les hommes et les femmes ?",
+      "a": "Oui. Contrairement à Adopte où les hommes paient un abonnement, Embir est gratuit pour tous au lancement, quel que soit le genre ou l'orientation."
+    },
+    {
+      "q": "Embir fonctionne-t-il pour les rencontres gay, lesbiennes ou bi ?",
+      "a": "Absolument. Embir a été conçu de zéro pour toutes les orientations — gay, lesbienne, bi, pan, queer, trans, non-binaire, hétéro. Toutes les identités ont la même qualité d'expérience."
+    },
+    {
+      "q": "Comment Embir vérifie-t-il les profils ?",
+      "a": "Vérification selfie à l'inscription — une vérification rapide qui confirme que la photo correspond à une vraie personne. Une équipe de modérateurs humains examine chaque signalement."
+    },
+    {
+      "q": "Embir est-il disponible en France ?",
+      "a": "Oui. La France est l'un des trois marchés principaux au lancement. La communauté fondatrice française est active à Paris et dans les grandes villes."
+    }
+  ]
+}

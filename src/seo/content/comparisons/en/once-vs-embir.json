@@ -1,0 +1,63 @@
+{
+  "slug": "once-vs-embir",
+  "intro": "Once offered a refreshing concept: one hand-curated match per day, eliminating swipe fatigue. It attracted users exhausted by Tinder's infinite volume — but shut down in 2022.\n\nIf you were a Once user looking for a 2026 alternative with the same quality-over-quantity philosophy, Embir is the answer: intentional matching, verified profiles, full LGBTQ+ inclusivity, and free access.",
+  "comparisonTable": [
+    {
+      "criteria": "Matching philosophy",
+      "competitor": "1 curated match/day (closed)",
+      "embir": "Intentional matching, bidirectional filtering",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Availability",
+      "competitor": "Closed since 2022",
+      "embir": "Active — 2026 launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Quality vs quantity",
+      "competitor": "Quality — but 1 match/day too constraining",
+      "embir": "Quality — with enough volume to match quickly",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Manual curation (when active)",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Limited (when active)",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Once's philosophy — reimagined for 2026",
+      "content": "Once understood what big apps ignore: infinite swipe is exhausting and counterproductive. One well-chosen match beats 100 random swipes. Embir applies the same philosophy with bidirectional filtering: you see fewer profiles than Tinder, but each one truly matches your criteria AND you're a potential match for them.",
+      "highlights": [
+        "Fewer profiles = less noise = more real connections",
+        "Bidirectional filtering — no misaligned profiles",
+        "Intentional founding community"
+      ]
+    }
+  ],
+  "verdict": "Once closed in 2022. If you're looking for the 2026 alternative that honors the same quality-over-quantity philosophy — Embir is the answer, with verified profiles, LGBTQ+ inclusivity, and free access at launch.",
+  "ctaText": "Once's philosophy, modern and free — join Embir",
+  "faq": [
+    {
+      "q": "Is there a Once alternative in 2026?",
+      "a": "Once closed in 2022. Embir shares the same intentional matching philosophy with bidirectional filtering and verified profiles."
+    },
+    {
+      "q": "Does Embir apply curated selection like Once?",
+      "a": "Embir uses a compatibility algorithm rather than manual curation, but the spirit is the same: quality over quantity."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Core features free during the launch phase."
+    }
+  ]
+}

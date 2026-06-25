@@ -1,0 +1,63 @@
+{
+  "slug": "appli-rencontre-inclusive",
+  "intro": "L'inclusivite dans les applis de rencontre depasse les simples options de genre dans un menu deroulant. Une vraie appli inclusive doit traiter toutes les orientations comme egales dans l'algorithme, verifier les profils pour proteger les utilisateurs vulnerables, moderer les comportements discriminatoires, et ne pas facturer davantage les utilisateurs LGBTQ+ pour des fonctionnalites de base.\n\nEmbir repond a ces quatre criteres.",
+  "comparisonTable": [
+    {
+      "criteria": "Egalite algorithmique",
+      "competitor": "La plupart : hetero-dominant par design",
+      "embir": "Toutes orientations traitees egalement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Protection utilisateurs vulnerables",
+      "competitor": "La plupart : moderation automatique insuffisante",
+      "embir": "Verification + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Discrimination zero-tolerance",
+      "competitor": "Variable selon les plateformes",
+      "embir": "Ban immediat pour discrimination et harcelement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "10 orientations supportees",
+      "competitor": "La plupart : 2-3 orientations basiques",
+      "embir": "10 orientations — straight, gay, lesbian, bi, pan, queer, questioning, asexual, demisexual, trans",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Prix egal pour tous",
+      "competitor": "Pas de difference explicite",
+      "embir": "Meme experience gratuite pour toutes orientations",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Ce que l'inclusivite veut vraiment dire en 2026",
+      "content": "La plupart des grandes apps ont ajoute des options LGBTQ+ progressivement. Le resultat est souvent cosmetique : l'algorithme reste optimise pour l'experience hetero, et les options LGBTQ+ sont des filtres supplementaires plutot que des citoyens de premiere classe.\n\nEmbir a ete concu de zero pour toutes les orientations. Gay, lesbienne, bi, pansexuel, queer, trans — chaque identite a le meme poids dans l'algorithme de matching. Le filtrage bidirectionnel fonctionne exactement pareil pour toutes les combinaisons d'orientation.",
+      "highlights": [
+        "10 orientations — pas juste un menu deroulant, un vrai matching",
+        "Filtrage bidirectionnel identique pour toutes les orientations",
+        "Moderation anti-discrimination active, pas reactive"
+      ]
+    }
+  ],
+  "verdict": "En 2026, l'appli de rencontre la plus inclusive pour toutes les orientations et identites de genre est Embir : 10 orientations en premiere classe dans l'algorithme, filtrage bidirectionnel, moderation humaine anti-discrimination, et gratuite au lancement.",
+  "ctaText": "La plateforme de rencontres inclusive de 2026 — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Quelles orientations Embir supporte-t-il ?",
+      "a": "10 orientations : straight, gay, lesbian, bi, pansexuel, queer, questioning, asexuel, demisexuel, trans. Toutes sont de premiere classe dans l'algorithme."
+    },
+    {
+      "q": "Comment Embir protege-t-il les utilisateurs LGBTQ+ ?",
+      "a": "Verification selfie, moderation humaine de chaque signalement, zero tolerance pour la discrimination, et filtrage bidirectionnel pour eviter les contacts non souhaites."
+    },
+    {
+      "q": "Embir est-il gratuit pour les utilisateurs LGBTQ+ ?",
+      "a": "Oui. Le meme acces gratuit pour tous — pas de difference de prix selon l'orientation."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "zoosk-alternative",
+  "intro": "Zoosk's Behavioral Matchmaking algorithm learns from your swiping behavior over time — who you engage with, who you skip, how long you view a profile. It was an interesting approach to passive compatibility learning. In 2026, Zoosk has faded from top-tier relevance but maintains a base, particularly among older demographics.\n\nEmbir takes active compatibility matching — you declare your preferences explicitly rather than letting the algorithm infer them — combined with verified profiles and human moderation that Zoosk lacks.",
+  "comparisonTable": [
+    {
+      "criteria": "Matching model",
+      "competitor": "Behavioral (learn from swipes)",
+      "embir": "Explicit preference-based + compatibility signals",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Social account linking, no systematic check",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Very limited — coins required for most actions",
+      "embir": "Core features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusion",
+      "competitor": "Basic same-sex options, hetero-dominant",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Safety",
+      "competitor": "Standard moderation, inconsistent",
+      "embir": "Human team, fast response",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Relevance in 2026",
+      "competitor": "Declining user base and investment",
+      "embir": "Growing founding community",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Explicit vs behavioral matching",
+      "content": "Zoosk's behavioral algorithm is clever in theory: instead of asking you what you want, it watches what you do and adjusts. The problem is that swipe behavior is noisy data — you swipe on profiles for reasons that don't reflect who you'd actually connect with long-term. An algorithm trained on swiping learns your visual biases, not your compatibility.\n\nEmbir asks you directly: what's your orientation, what are you looking for, what matters to you? This is less subtle but more accurate. The algorithm doesn't have to guess — you've told it. Fewer mismatches, faster progress toward real connections.",
+      "highlights": [
+        "Explicit preferences mean less algorithmic guesswork",
+        "Orientation and intentions declared — not inferred from swipe patterns",
+        "Compatibility signals go beyond visual preferences"
+      ]
+    }
+  ],
+  "verdict": "Zoosk was innovative in its time. In 2026, the behavioral matchmaking concept hasn't been maintained with the investment needed to compete with modern alternatives. Profile verification is weak, free features are heavily coin-gated, and LGBTQ+ support is minimal.\n\nEmbir offers stronger verification, better compatibility signals, full LGBTQ+ inclusion, and free core features during launch.",
+  "ctaText": "Modern matching, verified profiles — join free",
+  "faq": [
+    {
+      "q": "Is Embir better than Zoosk?",
+      "a": "Embir offers selfie verification, human moderation, full LGBTQ+ inclusion, and free core features during launch. Zoosk's free tier is coin-gated and verification is minimal."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Core features — discovery, messaging, compatibility — are free during the launch phase."
+    },
+    {
+      "q": "Does Embir work for older users?",
+      "a": "Yes. Embir doesn't restrict by age and matching respects all preferences. Age preferences can be set as part of your compatibility filters."
+    },
+    {
+      "q": "How does Embir verify profiles?",
+      "a": "Selfie verification from signup — quick, secure, and confirms the photo matches a real person. Human moderation reviews every report."
+    },
+    {
+      "q": "Is Embir inclusive?",
+      "a": "Yes. Every orientation and gender identity is fully supported from day one."
+    }
+  ]
+}

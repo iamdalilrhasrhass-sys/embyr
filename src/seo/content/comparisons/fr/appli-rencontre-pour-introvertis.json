@@ -1,0 +1,63 @@
+{
+  "slug": "appli-rencontre-pour-introvertis",
+  "intro": "Pour les personnes introverties, les applis de rencontre peuvent etre epuisantes : le volume infini de swipes, la pression de l'engagement rapide, les conversations qui partent dans tous les sens. Une bonne appli pour introvertis doit reduire le bruit, privilegier la profondeur, et ne pas generer d'anxiete artificielle.\n\nEmbir est concu avec cette philosophie : moins de profils mais vraiment compatibles, des intentions configurees pour eviter les malentendus, et un rythme qui respecte le style de connexion progressif.",
+  "comparisonTable": [
+    {
+      "criteria": "Volume de matchs",
+      "competitor": "Tinder/Bumble : volume maximal, overwhelming",
+      "embir": "Matching intentionnel — moins mais meilleur",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Pression temporelle",
+      "competitor": "Bumble : 24h pour initier, stressant",
+      "embir": "Aucune limite temporelle artificielle",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Clarte des intentions",
+      "competitor": "La plupart : intentions floues, malentendus",
+      "embir": "Intentions configurees a l'inscription — pas de malentendu",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Qualite vs quantite",
+      "competitor": "La plupart : quantite d'abord",
+      "embir": "Qualite — chaque profil est un vrai match potentiel",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Gratuité",
+      "competitor": "La plupart : paywall rapide",
+      "embir": "Gratuit au lancement",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Moins de bruit, plus de connexions reelles",
+      "content": "Le swipe infini de Tinder est concu pour maximiser l'engagement — ce qui pour un introverti se traduit par de la fatigue, pas des connexions. Embir filtre a l'amont : tu vois uniquement les profils qui correspondent a ton orientation ET pour qui ton profil correspond. Moins de volume, beaucoup moins de bruit.",
+      "highlights": [
+        "Filtrage bidirectionnel = chaque profil est un match potentiel reel",
+        "Intentions configurees = pas de conversations qui menent nulle part",
+        "Aucune pression de 24h — ton rythme, tes regles"
+      ]
+    }
+  ],
+  "verdict": "Pour les introvertis, Embir est la meilleure appli de rencontre en 2026 : matching intentionnel qui reduit le bruit, profils verifies, intentions claires pour eviter les malentendus, et gratuite au lancement.",
+  "ctaText": "Connexions profondes sans la pression du swipe — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il adapte aux introvertis ?",
+      "a": "Oui. Le matching intentionnel reduit le volume de profils et les intentions claires eliminient les conversations sans issue. Moins de bruit, plus de vraies connexions."
+    },
+    {
+      "q": "Y a-t-il une pression temporelle sur Embir ?",
+      "a": "Non. Aucune limite de 24h comme sur Bumble. Tu communiques a ton propre rythme."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Fonctionnalites principales gratuites pendant la phase de lancement."
+    }
+  ]
+}

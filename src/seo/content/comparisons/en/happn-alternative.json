@@ -1,0 +1,86 @@
+{
+  "slug": "happn-alternative",
+  "intro": "Happn pioneered proximity-based dating: instead of swiping through profiles, you see people you literally crossed paths with in real life. It's a clever concept that feels more serendipitous than traditional apps — and it's built a loyal niche, particularly in France where it was founded.\n\nEmbir respects the proximity insight but solves the deeper problem differently: real compatibility requires more than geographic coincidence. Two people who crossed paths at a metro station can be entirely incompatible in every meaningful way. Embir adds compatibility depth — orientation, intentions, values, preferences — on top of geographic context, with verified profiles and human moderation that Happn currently lacks.",
+  "comparisonTable": [
+    {
+      "criteria": "Discovery model",
+      "competitor": "Proximity — people you crossed paths with",
+      "embir": "Compatibility — orientation, intentions, values",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Facebook-linked, no systematic verification",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Limited — charms, likes paywalled",
+      "embir": "Core features free during launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusion",
+      "competitor": "Available, but hetero-dominant",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "France presence",
+      "competitor": "Strong — founded in Paris",
+      "embir": "France is a core launch market",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Safety tools",
+      "competitor": "Standard reporting, no human moderation",
+      "embir": "Human moderation team + systematic review",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Proximity is context, not compatibility",
+      "content": "Happn's core idea is appealing: you already share physical space with these people. You might share routines, neighborhoods, gyms, cafés. That geographic context can be a meaningful starting point.\n\nBut shared geography doesn't predict compatibility. You can cross paths with someone every day and have nothing in common beyond commute timing. Embir builds on geographic context where relevant while adding the signals that actually matter: who you are, what you're looking for, what orientations you're open to, what relationship model fits your life.\n\nThe result: connections that start with context and have somewhere to go.",
+      "highlights": [
+        "Orientation + intentions + values filtering applied before you see profiles",
+        "Geographic relevance without geographic-only matching",
+        "Fewer, more meaningful connections per day — less browsing fatigue"
+      ]
+    },
+    {
+      "title": "France — a shared market, different approaches",
+      "content": "Happn launched in Paris and has always had strong French user density. For users in France, it offers a locally rooted experience.\n\nEmbir's launch strategy prioritizes France — particularly Paris and the major cities — as a core market. The founding community in France is compact and intentional. Users who join during the launch phase help shape a community culture that's genuinely French before scale dilutes it.",
+      "highlights": [
+        "France is one of Embir's three core launch markets",
+        "Paris founding community is growing — join before scale",
+        "French-language experience available throughout the platform"
+      ]
+    }
+  ],
+  "verdict": "Happn is worth trying if you're drawn to the serendipity of real-world proximity and spend a lot of time in urban environments where crossing paths with other users is frequent.\n\nEmbir is the better choice if you want compatibility depth alongside geographic relevance — plus verified profiles, full LGBTQ+ inclusion, human moderation, and free access during launch.",
+  "ctaText": "Real compatibility in your city — free at launch",
+  "faq": [
+    {
+      "q": "Is Embir available in France?",
+      "a": "Yes. France is one of Embir's three core launch markets. The founding community in Paris and major French cities is active and growing."
+    },
+    {
+      "q": "Is Embir in French?",
+      "a": "Yes. Embir is fully available in French, including the full discovery and messaging experience."
+    },
+    {
+      "q": "How does Embir match compared to Happn?",
+      "a": "Happn matches you with people you physically crossed paths with. Embir uses orientation, intentions, values, and preferences. Geographic proximity is a factor but not the only signal."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Core features are free during the launch phase. No charms, no super-likes, no subscription required to message."
+    },
+    {
+      "q": "Does Embir verify profiles?",
+      "a": "Yes — selfie verification from signup, and human moderation of every report. Verified profiles are prioritized in discovery."
+    }
+  ]
+}

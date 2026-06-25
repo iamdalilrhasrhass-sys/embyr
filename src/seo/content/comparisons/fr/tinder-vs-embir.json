@@ -1,0 +1,63 @@
+{
+  "slug": "tinder-vs-embir",
+  "intro": "Tinder est l'app la plus utilisee au monde mais optimise pour l'engagement, pas les connexions reelles. Le swipe infini, le filtrage unidirectionnel, et Tinder Gold a 30 EUR+/mois en font une experience frustrante pour beaucoup.\n\nEmbir offre un matching intentionnel, bidirectionnel, et gratuit pendant le lancement.",
+  "comparisonTable": [
+    {
+      "criteria": "Verification profils",
+      "competitor": "Partielle / optionnelle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Tier gratuit tres limite, Tinder Gold 30 EUR+/mois",
+      "embir": "Fonctionnalites completes gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Support partiel",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Filtrage bidirectionnel",
+      "competitor": "Unidirectionnel uniquement",
+      "embir": "Bidirectionnel strict au niveau algorithme",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Moderation",
+      "competitor": "Automatisee / communautaire",
+      "embir": "Equipe humaine + reponse rapide",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pourquoi choisir Embir plutot que Tinder ?",
+      "content": "Tinder souffre de un paywall agressif et un filtrage d'orientation unidirectionnel. Embir resout ces limitations avec un matching de compatibilite profond, des profils verifies, et un filtrage bidirectionnel qui respecte vraiment ton orientation dans les deux sens.",
+      "highlights": [
+        "Filtrage bidirectionnel — ton orientation s'applique dans les deux sens",
+        "Profils verifies — moins de bots et de faux comptes",
+        "100% gratuit au lancement — aucune carte bancaire requise"
+      ]
+    }
+  ],
+  "verdict": "Si tu utilises Tinder et cherches une alternative qui respecte mieux ton orientation, verifie les profils et est gratuite — Embir est la meilleure option en 2026.",
+  "ctaText": "Essaie Embir gratuitement — meilleure alternative a Tinder",
+  "faq": [
+    {
+      "q": "Embir est-il meilleur que Tinder ?",
+      "a": "Embir a des profils verifies, un filtrage bidirectionnel et une moderation humaine que Tinder n'offre pas. Pour l'inclusivite LGBTQ+ et la securite, Embir est superieur."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Decouverte, matching et messagerie sont gratuits pendant la phase de lancement."
+    },
+    {
+      "q": "Comment Embir se compare a Tinder pour les rencontres LGBTQ+ ?",
+      "a": "Embir a ete concu de zero pour toutes les orientations. Tinder a ajoute le support LGBTQ+ progressivement, avec un filtrage souvent insuffisant."
+    }
+  ]
+}

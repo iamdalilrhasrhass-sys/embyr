@@ -1,0 +1,77 @@
+{
+  "slug": "alternative-feeld",
+  "intro": "Feeld s'est fait un nom dans les rencontres ouvertes et non-monogames : couples, explorateurs solo, chaque identité sexuelle imaginable présentée avec un minimum de jugement. Son audience est progressiste, queer-friendly, et cherche souvent des connexions hors des cadres traditionnels.\n\nEmbir occupe un territoire adjacent mais vient d'un angle différent : inclusivité universelle pour toutes les orientations combinée à des profils vérifiés, une modération humaine, et un système de compatibilité qui fonctionne pour tous les modèles relationnels — monogames, non-monogames, casual, sérieux ou exploration ouverte. Pour les utilisateurs qui trouvent Feeld trop niche ou trop permissif, Embir offre un milieu qui ne compromet pas sur l'inclusivité.",
+  "comparisonTable": [
+    {
+      "criteria": "Portée de l'audience",
+      "competitor": "Relations ouvertes + communauté kink",
+      "embir": "Toutes orientations, tous styles relationnels",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Optionnelle, modèle confiance communautaire",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Abonnement payant pour la plupart des fonctionnalités",
+      "embir": "Fonctionnalités principales gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Sécurité",
+      "competitor": "Modération communautaire, escalade lente",
+      "embir": "Équipe humaine + réponse immédiate",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivité LGBTQ+",
+      "competitor": "Forte — audience core LGBTQ+",
+      "embir": "Conçu pour toutes orientations universellement",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Matching relation sérieuse",
+      "competitor": "Orienté casual/ouvert",
+      "embir": "Toutes intentions supportées également",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "App niche vs plateforme universelle",
+      "content": "Feeld est explicitement construit pour des personnes qui s'identifient en dehors des rencontres mainstream — relations ouvertes, polyamorie, exploration LGBTQ+, communauté kink-positive. Cette spécificité est sa force et sa limite. Les utilisateurs qui ne cadrent pas parfaitement dans l'audience assumée de Feeld peuvent se sentir étrangers sur une plateforme censée accueillir tout le monde.\n\nEmbir est universel par conception. Chaque orientation — gay, lesbienne, bi, pan, queer, trans, non-binaire, hétéro, et tout ce qu'il y a entre — est traité comme un citoyen de première classe, pas une catégorie dans un menu déroulant. Les intentions relationnelles — sérieuse, casual, ouverte, exploration, amitié — sont des préférences explicites qui guident le matching.",
+      "highlights": [
+        "Toutes orientations et modèles relationnels supportés également",
+        "Intentions configurées à l'inscription — Embir respecte ce que tu cherches vraiment",
+        "Pas d'audience assumée — la plateforme s'adapte à toi"
+      ]
+    }
+  ],
+  "verdict": "Feeld est excellent pour sa niche spécifique — relations ouvertes, exploration non-monogame, communauté kink-positive. Si c'est exactement ce que tu cherches, il le fait bien.\n\nEmbir est une solide alternative si tu veux la même ouverture d'esprit et inclusivité sans le focus niche — avec en plus la vérification, la modération humaine, l'accès gratuit au lancement, et un matching qui fonctionne pour toutes les orientations et tous les styles relationnels.",
+  "ctaText": "Ton orientation, tes intentions, tes règles — rejoins gratuitement",
+  "faq": [
+    {
+      "q": "Embir est-il inclusif pour les utilisateurs non-monogames ?",
+      "a": "Oui. Embir supporte tous les styles relationnels — monogame, ouvert, polyamoureux, ou encore en exploration. Tu configures tes intentions à l'inscription et le matching les respecte."
+    },
+    {
+      "q": "Embir est-il LGBTQ+ friendly ?",
+      "a": "Embir a été conçu dès le départ pour toutes les orientations. Gay, lesbienne, bi, pan, queer, trans, non-binaire — toutes les identités sont de premières classes dans le système de matching."
+    },
+    {
+      "q": "Comment Embir se compare à Feeld sur le prix ?",
+      "a": "Feeld exige un abonnement pour la plupart des fonctionnalités importantes. Embir est gratuit au lancement — découverte, messagerie et compatibilité accessibles sans paiement."
+    },
+    {
+      "q": "Embir vérifie-t-il les profils ?",
+      "a": "Oui. Vérification selfie disponible dès l'inscription. Les membres vérifiés reçoivent un badge et sont prioritaires dans la découverte. Les modérateurs humains examinent chaque signalement."
+    },
+    {
+      "q": "Peut-on utiliser Embir pour du casual ?",
+      "a": "Absolument. La connexion casual est l'une des intentions explicites que tu peux configurer à l'inscription. L'algorithme respecte ton objectif déclaré."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "hinge-vs-embir",
+  "intro": "Hinge positions itself on serious relationships with creative prompts. But it remains heavily heterocentric and its free tier runs out quickly (a few likes/day), pushing toward Hinge Preferred at $30/month.\n\nEmbir offers the same depth of connection with universal inclusivity and free access at launch.",
+  "comparisonTable": [
+    {
+      "criteria": "Profile verification",
+      "competitor": "Partial / optional",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Hinge Preferred ~$30/month",
+      "embir": "Full features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Partial support",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional filtering",
+      "competitor": "Unidirectional only",
+      "embir": "Strict bidirectional at algorithm level",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Moderation",
+      "competitor": "Automated / community",
+      "embir": "Human team + fast response",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Why choose Embir over Hinge?",
+      "content": "Hinge suffers from a hetero-dominant design and a free tier blocked after a few likes. Embir solves these limitations with deep compatibility matching, verified profiles, and bidirectional filtering that truly respects your orientation both ways.",
+      "highlights": [
+        "Bidirectional filtering — your orientation applies both ways",
+        "Verified profiles — fewer bots and fake accounts",
+        "100% free at launch — no credit card required"
+      ]
+    }
+  ],
+  "verdict": "If you use Hinge and want an alternative that better respects your orientation, verifies profiles, and is free — Embir is the best option in 2026.",
+  "ctaText": "Try Embir free — the best Hinge alternative",
+  "faq": [
+    {
+      "q": "Is Embir better than Hinge?",
+      "a": "Embir has verified profiles, bidirectional filtering and human moderation that Hinge doesn't offer. For LGBTQ+ inclusivity and safety, Embir is superior."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Discovery, matching and messaging are free during the launch phase."
+    },
+    {
+      "q": "How does Embir compare to Hinge for LGBTQ+ dating?",
+      "a": "Embir was built from scratch for all orientations. Hinge added LGBTQ+ support gradually with often insufficient filtering."
+    }
+  ]
+}

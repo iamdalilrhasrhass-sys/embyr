@@ -1,0 +1,86 @@
+{
+  "slug": "alternative-pof",
+  "intro": "Plenty of Fish est l'une des plus anciennes plateformes de rencontre gratuites encore en activité. Son argument : des millions de profils, pas d'abonnement obligatoire, inscription rapide. En pratique, 'gratuit et beaucoup de profils' se traduit par une modération médiocre, un taux élevé de faux profils, et une expérience utilisateur qui n'a pas fondamentalement changé depuis 2010.\n\nEmbir propose un compromis différent : moins de profils mais vérifiés, fonctionnalités gratuites avec un modèle futur transparent, et un système de matching basé sur la vraie compatibilité plutôt que la proximité géographique.",
+  "comparisonTable": [
+    {
+      "criteria": "Vérification des profils",
+      "competitor": "Minimale — photos sans contrôle",
+      "embir": "Vérification selfie + modération humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Qualité de la modération",
+      "competitor": "Taux élevé de faux/bots, suppression lente",
+      "embir": "Modérateurs humains, réponse rapide",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Gratuit mais bourré de pubs, chargé",
+      "embir": "Gratuit, épuré, messagerie complète au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Logique de matching",
+      "competitor": "Proximité + récence, pas de compatibilité",
+      "embir": "Orientation + intentions + préférences",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Sécurité",
+      "competitor": "Signalement basique, réponse aléatoire",
+      "embir": "Équipe humaine + action immédiate sur violations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Design moderne",
+      "competitor": "Daté, surchargé de pubs",
+      "embir": "Épuré, moderne, sans distraction",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Volume vs qualité — le vrai compromis",
+      "content": "POF a des millions de profils. Ça semble être un avantage jusqu'à ce que tu passes une heure à filtrer des bots, des profils obsolètes et des gens qui ne se sont pas connectés depuis 18 mois. Le volume sans curation produit du bruit, pas des opportunités.\n\nEmbir fait le pari inverse : une communauté plus petite et plus intentionnelle où chaque profil est lié à une vraie personne vérifiée. La phase fondatrice est le bon moment pour rejoindre — la communauté est compacte, engagée, et construit quelque chose ensemble.",
+      "highlights": [
+        "Profils vérifiés uniquement — pas de comptes abandonnés en tête de liste",
+        "Communauté fondatrice engagée et intentionnelle",
+        "Filtres de compatibilité éliminent les incompatibilités avant qu'elles apparaissent"
+      ]
+    },
+    {
+      "title": "Sécurité — le point faible de POF",
+      "content": "Les problèmes de modération de POF sont bien documentés. Arnaques, messages explicites non sollicités, réponse lente aux signalements — les plaintes sont récurrentes. À l'échelle de la plateforme, une modération humaine exhaustive est impossible.\n\nL'équipe de modération humaine d'Embir examine chaque signalement. C'est uniquement tenable à l'échelle du lancement — et c'est intentionnel. Construire une communauté de haute confiance dès le début est moins coûteux que de reconstruire cette confiance après l'avoir perdue.",
+      "highlights": [
+        "Chaque signalement examiné par un humain, pas juste un algorithme",
+        "Tolérance zéro — ban immédiat et permanent pour violations graves",
+        "Infrastructure de sécurité financée par le futur modèle freemium transparent"
+      ]
+    }
+  ],
+  "verdict": "POF est utile si tu veux un maximum de profils sans payer. Si ta priorité est de rencontrer de vraies personnes vérifiées et compatibles — le calcul change rapidement.\n\nEmbir est gratuit au lancement, plus petit, mais significativement plus fiable. Qualité avant quantité, avec un système de compatibilité qui respecte ton temps.",
+  "ctaText": "Des vraies personnes vérifiées — gratuit au lancement",
+  "faq": [
+    {
+      "q": "Embir est-il vraiment gratuit comme POF ?",
+      "a": "Oui. Les fonctionnalités principales — profil, découverte, messagerie — sont gratuites pendant la phase de lancement. Aucun abonnement requis."
+    },
+    {
+      "q": "Comment Embir gère-t-il les faux profils ?",
+      "a": "Vérification selfie à l'inscription et modération humaine de chaque signalement. L'échelle de la communauté fondatrice rend une modération réelle faisable."
+    },
+    {
+      "q": "Embir a-t-il des pubs ?",
+      "a": "Non. Aucune publicité sur Embir. Les revenus viendront d'un futur modèle freemium transparent qui finance la sécurité et la modération."
+    },
+    {
+      "q": "Embir est-il inclusif pour les rencontres LGBTQ+ ?",
+      "a": "Oui. Conçu pour toutes les orientations dès le départ — gay, lesbienne, bi, pan, queer, trans, non-binaire."
+    },
+    {
+      "q": "Embir est-il disponible sur mobile ?",
+      "a": "Embir est accessible sur le web avec une application mobile en développement. Les membres fondateurs auront un accès prioritaire à l'app mobile."
+    }
+  ]
+}

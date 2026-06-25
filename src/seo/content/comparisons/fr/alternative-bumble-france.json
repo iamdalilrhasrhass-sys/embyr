@@ -1,0 +1,63 @@
+{
+  "slug": "alternative-bumble-france",
+  "intro": "Bumble s'est implante solidement en France ces dernieres annees, notamment aupres des femmes qui apprecient son concept women-first — les femmes doivent initier dans les 24h. Ce mecanique cree une experience distincte mais comporte des limites : elle ne fonctionne pas pour les matchs gay hommes, l'interface est de plus en plus lourde, et le tier gratuit est restreint.\n\nEmbir est l'alternative francaise qui conserve le respect de l'experience feminine par la verification et la moderation, sans la contrainte des 24h ni le paywall.",
+  "comparisonTable": [
+    {
+      "criteria": "Experience feminine",
+      "competitor": "Women-first — les femmes initient (24h)",
+      "embir": "Securite par verification + moderation humaine",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Matchs homosexuels",
+      "competitor": "Problematique — 24h women-first inadapte",
+      "embir": "Filtrage bidirectionnel fonctionne pour toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Limite — nombreux paywalls",
+      "embir": "Fonctionnalites completes gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Verification profils",
+      "competitor": "Photo verification optionnelle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Design",
+      "competitor": "Interface lourde, de nombreux modes",
+      "embir": "Epure, oriente rencontres",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "L'experience feminine repensee",
+      "content": "Bumble a popularise une idee importante : les femmes devraient avoir plus de controle sur leur experience de rencontre. En pratique, la contrainte des 24h cree une pression artificielle et ne resout pas le vrai probleme — la securite et la qualite des profils. Embir protege l'experience feminine differemment : verification selfie pour tous les profils, moderation humaine de chaque signalement, et un matching qui garantit que les profils que tu vois correspondent vraiment a ton orientation et tes intentions.",
+      "highlights": [
+        "Verification selfie obligatoire = moins de profils douteux",
+        "Moderation humaine = reponse rapide aux comportements inappropries",
+        "Filtrage bidirectionnel = pas de profils incompatibles"
+      ]
+    }
+  ],
+  "verdict": "Bumble est une bonne option en France, notamment pour les femmes hetero. Embir est l'alternative si tu veux la meme protection de l'experience feminine via la verification et la moderation — sans la contrainte des 24h, sans paywall, et avec une vraie inclusivite pour toutes les orientations.",
+  "ctaText": "Experience feminine protegee, pour toutes les orientations — rejoins Embir",
+  "faq": [
+    {
+      "q": "Embir est-il disponible en France ?",
+      "a": "Oui. La France est l'un des trois marches principaux d'Embir au lancement."
+    },
+    {
+      "q": "Comment Embir protege-t-il l'experience feminine ?",
+      "a": "Verification selfie obligatoire, moderation humaine de chaque signalement, et filtrage bidirectionnel pour garantir que seuls des profils compatibles apparaissent."
+    },
+    {
+      "q": "Embir fonctionne-t-il pour les matchs lesbiennes et gay hommes ?",
+      "a": "Oui. Le systeme bidirectionnel fonctionne correctement pour toutes les orientations — pas de mecanique genre-specifique problematique."
+    }
+  ]
+}

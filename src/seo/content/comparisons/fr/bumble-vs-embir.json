@@ -1,0 +1,63 @@
+{
+  "slug": "bumble-vs-embir",
+  "intro": "Bumble oblige les femmes a initier le contact en premier — une mecanique qui cree une asymetrie artificielle et ne fonctionne pas pour les matchs non-hetero. Son tier gratuit est de plus en plus restreint.\n\nEmbir offre la meme protection de l'experience feminine via la verification et la moderation humaine, sans la contrainte des 24h ni le paywall.",
+  "comparisonTable": [
+    {
+      "criteria": "Verification profils",
+      "competitor": "Partielle / optionnelle",
+      "embir": "Verification selfie + moderation humaine",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Tier gratuit",
+      "competitor": "Abonnement premium ~25 EUR/mois",
+      "embir": "Fonctionnalites completes gratuites au lancement",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Inclusivite LGBTQ+",
+      "competitor": "Support partiel",
+      "embir": "Universel — toutes orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Filtrage bidirectionnel",
+      "competitor": "Unidirectionnel uniquement",
+      "embir": "Bidirectionnel strict au niveau algorithme",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Moderation",
+      "competitor": "Automatisee / communautaire",
+      "embir": "Equipe humaine + reponse rapide",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Pourquoi choisir Embir plutot que Bumble ?",
+      "content": "Bumble souffre de une interface vieillissante pour les non-heteros et un tier gratuit tres limite. Embir resout ces limitations avec un matching de compatibilite profond, des profils verifies, et un filtrage bidirectionnel qui respecte vraiment ton orientation dans les deux sens.",
+      "highlights": [
+        "Filtrage bidirectionnel — ton orientation s'applique dans les deux sens",
+        "Profils verifies — moins de bots et de faux comptes",
+        "100% gratuit au lancement — aucune carte bancaire requise"
+      ]
+    }
+  ],
+  "verdict": "Si tu utilises Bumble et cherches une alternative qui respecte mieux ton orientation, verifie les profils et est gratuite — Embir est la meilleure option en 2026.",
+  "ctaText": "Essaie Embir gratuitement — meilleure alternative a Bumble",
+  "faq": [
+    {
+      "q": "Embir est-il meilleur que Bumble ?",
+      "a": "Embir a des profils verifies, un filtrage bidirectionnel et une moderation humaine que Bumble n'offre pas. Pour l'inclusivite LGBTQ+ et la securite, Embir est superieur."
+    },
+    {
+      "q": "Embir est-il gratuit ?",
+      "a": "Oui. Decouverte, matching et messagerie sont gratuits pendant la phase de lancement."
+    },
+    {
+      "q": "Comment Embir se compare a Bumble pour les rencontres LGBTQ+ ?",
+      "a": "Embir a ete concu de zero pour toutes les orientations. Bumble a ajoute le support LGBTQ+ progressivement, avec un filtrage souvent insuffisant."
+    }
+  ]
+}

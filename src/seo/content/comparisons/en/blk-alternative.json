@@ -1,0 +1,63 @@
+{
+  "slug": "blk-alternative",
+  "intro": "BLK is a dating app designed specifically for Black singles. It has built a strong community with culturally relevant features and a clear audience focus.\n\nEmbir is a universal alternative where Black singles are fully included alongside all orientations and backgrounds — with verified profiles, human moderation, and deep compatibility matching for free.",
+  "comparisonTable": [
+    {
+      "criteria": "Community focus",
+      "competitor": "Black singles (niche)",
+      "embir": "Universal — all backgrounds and orientations",
+      "winner": "tie"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Limited verification",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Basic support",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Free tier",
+      "competitor": "Limited features free",
+      "embir": "Full features free at launch",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Compatibility matching",
+      "competitor": "Basic filters",
+      "embir": "Deep: orientation + intent + values",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Niche community vs universal platform",
+      "content": "BLK's focus creates a strong community but also limits reach — especially outside major US cities where the user base is thinner. Embir includes Black singles as full participants in a universal platform, with the same verified profiles and bidirectional matching.",
+      "highlights": [
+        "Universal platform — no segregation by background",
+        "Verified profiles — authentic connections",
+        "Works in smaller cities where BLK's base is thinner"
+      ]
+    }
+  ],
+  "verdict": "BLK is excellent for Black singles seeking a dedicated community app. Embir is a solid alternative if you want a universal platform with verified profiles, full LGBTQ+ inclusivity, and free access at launch.",
+  "ctaText": "Authentic connections, verified, free — join Embir",
+  "faq": [
+    {
+      "q": "How does Embir compare to BLK for Black singles?",
+      "a": "Embir is a universal platform where Black singles are full participants, with verified profiles and bidirectional matching that BLK doesn't offer."
+    },
+    {
+      "q": "Is Embir inclusive for LGBTQ+ Black singles?",
+      "a": "Yes. Embir supports all orientations — gay, lesbian, bi, pan, queer, trans, non-binary — equally in its matching algorithm."
+    },
+    {
+      "q": "Is Embir free?",
+      "a": "Yes. Core features are free during the launch phase."
+    }
+  ]
+}

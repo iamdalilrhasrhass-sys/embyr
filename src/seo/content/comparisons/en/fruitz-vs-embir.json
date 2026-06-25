@@ -1,0 +1,63 @@
+{
+  "slug": "fruitz-vs-embir",
+  "intro": "Fruitz is a French dating app famous for fruit emojis that signal intent — cherry for serious, grapes for hookups, watermelon for friendship. Light, fun, popular in French cities. Acquired by Bumble in 2022.\n\nEmbir shares Fruitz's core insight — intentions should be clear upfront — but applies it with more depth: 6 configurable intent categories, bidirectional orientation filtering, verified profiles, and full LGBTQ+ inclusivity.",
+  "comparisonTable": [
+    {
+      "criteria": "Intent clarity",
+      "competitor": "4 fruits = 4 intents, simple",
+      "embir": "6 configurable intents, more granular",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Profile verification",
+      "competitor": "Photo verification, limited moderation",
+      "embir": "Selfie verification + human moderation",
+      "winner": "embir"
+    },
+    {
+      "criteria": "LGBTQ+ inclusivity",
+      "competitor": "Basic LGBTQ+ support",
+      "embir": "Universal — all orientations",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Bidirectional filtering",
+      "competitor": "Unidirectional",
+      "embir": "Strict bidirectional",
+      "winner": "embir"
+    },
+    {
+      "criteria": "Price",
+      "competitor": "Subscription ~$15-20/month",
+      "embir": "Free at launch",
+      "winner": "embir"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Fruitz's great idea — taken further",
+      "content": "Fruitz got one fundamental thing right: clarifying intent before matching avoids misunderstandings. The cherry-for-serious, grapes-for-hookups approach is honest. Embir takes this further: 6 configurable intent categories (serious, casual, friendship, networking, exploration, open), filtering that respects these intents both ways, and verified profiles to make intent declarations credible.",
+      "highlights": [
+        "6 intents vs 4 fruits — more granular and honest",
+        "Intents respected bidirectionally in matching",
+        "Verified profiles = credible intent declarations"
+      ]
+    }
+  ],
+  "verdict": "Fruitz is well designed for fun, explicit dating in French cities. Embir is the best alternative if you want the same intent clarity with more depth, verification, full LGBTQ+ inclusivity, and free access at launch.",
+  "ctaText": "Clear intentions, verified profiles — join Embir",
+  "faq": [
+    {
+      "q": "Is Embir available in France like Fruitz?",
+      "a": "Yes. France is one of Embir's three primary launch markets."
+    },
+    {
+      "q": "How does Embir handle dating intentions?",
+      "a": "At signup, you configure your intent from 6 categories. Matching respects intents bidirectionally."
+    },
+    {
+      "q": "Is Embir inclusive for LGBTQ+ users?",
+      "a": "Yes. Embir was built for all orientations from day one — gay, lesbian, bi, pan, queer, trans, non-binary."
+    }
+  ]
+}
