@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import { requireAdmin } from "@/lib/admin-auth";
 import { prisma } from "@/lib/prisma";
-import { cookies } from "next/headers";
 
 export async function GET(req: NextRequest) {
-  try {
-    const token = (await cookies()).get("token")?.value;
-    if (!token) return NextResponse.json({ error: "Non autorisé." }, { status: 401 });
+  const admin = await requireAdmin();
+  if (!admin) {
+    return NextResponse.json({ error: "Accès administrateur requis" }, { status: 401 });
+  }
 
+  try {
     const [totalUsers, payingUsers, events] = await Promise.all([
       prisma.user.count(),
       prisma.subscription.count({ where: { status: "ACTIVE" } }),

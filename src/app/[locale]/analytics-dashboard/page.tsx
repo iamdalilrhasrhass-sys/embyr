@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
+import { verifyAdminSessionToken } from "@/lib/admin-auth";
 
 export const metadata: Metadata = {
   title: "Analytics Dashboard — Embir",
@@ -11,9 +12,8 @@ export const dynamic = "force-dynamic";
 
 async function checkAuth(): Promise<boolean> {
   const cookieStore = await cookies();
-  const token = cookieStore.get("embir_admin_token")?.value;
-  const secret = process.env.ADMIN_SECRET || "embir_dashboard_2026";
-  return token === secret;
+  const sessionToken = cookieStore.get("embir_admin_session")?.value;
+  return verifyAdminSessionToken(sessionToken);
 }
 
 export default async function AnalyticsDashboard() {
