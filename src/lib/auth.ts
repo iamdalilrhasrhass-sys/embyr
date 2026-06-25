@@ -1,7 +1,16 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { cookies, headers } from "next/headers";
 
-const JWT_SECRET = process.env.JWT_SECRET || "feminy...2026";
+function getJwtSecret(): string {
+  const secret = process.env.JWT_SECRET;
+  if (!secret || secret.length < 32) {
+    throw new Error(
+      "JWT_SECRET must be configured with at least 32 characters"
+    );
+  }
+  return secret;
+}
 
 export async function hashPassword(password: string): Promise<string> {
   return bcrypt.hash(password, 12);
@@ -15,7 +24,7 @@ export async function verifyPassword(
 }
 
 export function signToken(payload: { userId: string; email: string }) {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: "7d" });
+  return jwt.sign(payload, getJwtSecret(), { expiresIn: "7d" });
 }
 
 export function verifyToken(token: string): {
@@ -23,13 +32,12 @@ export function verifyToken(token: string): {
   email: string;
 } | null {
   try {
-    return jwt.verify(token, JWT_SECRET) as { userId: string; email: string };
+    const secret = getJwtSecret();
+    return jwt.verify(token, secret) as { userId: string; email: string };
   } catch {
     return null;
   }
 }
-
-import { cookies, headers } from "next/headers";
 
 export async function requireUser() {
   const user = await getCurrentUser();
