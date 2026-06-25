@@ -31,3 +31,19 @@ test("composes the approved landing chapters in order", async () => {
     previousIndex = currentIndex;
   }
 });
+
+test("keeps the hero semantic and lightweight", async () => {
+  const [hero, nav, compass] = await Promise.all([
+    readFile("src/components/landing-2100/HeroChapter.tsx", "utf8"),
+    readFile("src/components/landing-2100/LandingNav.tsx", "utf8"),
+    readFile("src/components/landing-2100/CompatibilityCompass.tsx", "utf8"),
+  ]);
+
+  assert.equal((hero.match(/<h1/g) ?? []).length, 1);
+  assert.match(nav, /#compatibility/);
+  assert.match(nav, /#safety/);
+  assert.match(nav, /#journal/);
+  assert.match(compass, /<title/);
+  assert.match(compass, /aria-live="polite"/);
+  assert.doesNotMatch(`${hero}${nav}${compass}`, /three|@react-three|badge|pill/i);
+});
