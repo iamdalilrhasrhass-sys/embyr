@@ -73,6 +73,9 @@ export default function Register() {
         body: JSON.stringify({
           email,
           password,
+          isAdult,
+          acceptTerms: acceptCGU,
+          acceptPrivacy: acceptCGU,
           referralCode: referralCode.trim() || undefined,
         }),
       });

@@ -95,7 +95,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = "login" }: Aut
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, isAdult, acceptTerms: acceptCGU, acceptPrivacy: acceptCGU }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Registration failed");

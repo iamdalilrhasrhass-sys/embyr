@@ -1,10 +1,10 @@
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { hashPassword, signToken } from "@/lib/auth";
+import { validateRegistrationInput } from "@/lib/registration";
 
-// Génère un code de parrainage unique format EMB-XXXXXXXX
 function generateReferralCode(): string {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // sans 0/O/1/I pour éviter confusion
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let code = "";
   for (let i = 0; i < 6; i++) {
     code += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -14,7 +14,37 @@ function generateReferralCode(): string {
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password, name, city, birthDate, gender, referralCode } = await request.json();
+    const body = await request.json();
+    const {
+      email,
+      password,
+      isAdult,
+      acceptTerms,
+      acceptPrivacy,
+      name,
+      city,
+      birthDate,
+      gender,
+      referralCode,
+      consentSensitiveData,
+    } = body;
+
+    // Validate all consent flags explicitly
+    const validation = validateRegistrationInput({
+      email,
+      password,
+      isAdult,
+      acceptTerms,
+      acceptPrivacy,
+      consentSensitiveData,
+      birthDate,
+    });
+
+    if (!validation.ok) {
+      return Response.json({ error: validation.error }, { status: validation.status });
+    }
+
+    const validated = validation.value;
 
     // Map gender strings to GenderIdentity enum
     const genderMap: Record<string, string> = {
@@ -27,23 +57,10 @@ export async function POST(request: NextRequest) {
     };
     const genderIdentity = gender ? (genderMap[gender.toLowerCase()] || "AUTRE") : undefined;
 
-    if (!email || !password) {
-      return Response.json({ error: "Email et mot de passe requis" }, { status: 400 });
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return Response.json({ error: "Email invalide" }, { status: 400 });
-    }
-
-    if (password.length < 8) {
-      return Response.json({ error: "Mot de passe trop court (8 caracteres minimum)" }, { status: 400 });
-    }
-
     // Calculer l'age depuis la date de naissance
     let calculatedAge = 18;
-    if (birthDate) {
-      const birth = new Date(birthDate);
+    if (validated.birthDate) {
+      const birth = new Date(validated.birthDate);
       const today = new Date();
       calculatedAge = today.getFullYear() - birth.getFullYear();
       const monthDiff = today.getMonth() - birth.getMonth();
@@ -52,12 +69,12 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const existingUser = await prisma.user.findUnique({ where: { email } });
+    const existingUser = await prisma.user.findUnique({ where: { email: validated.email } });
     if (existingUser) {
       return Response.json({ error: "Un compte existe deja avec cet email" }, { status: 409 });
     }
 
-    const passwordHash = await hashPassword(password);
+    const passwordHash = await hashPassword(validated.password);
 
     // Générer un code de parrainage unique
     let userReferralCode = generateReferralCode();
@@ -83,15 +100,26 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const LIFETIME_DATE = new Date("2099-12-31T23:59:59Z");
+    // Build consents array from explicitly accepted flags only
+    const consentsToCreate: { type: string; version: string }[] = [];
+    if (validated.acceptTerms) {
+      consentsToCreate.push({ type: "cgu", version: "1.0" });
+    }
+    if (validated.acceptPrivacy) {
+      consentsToCreate.push({ type: "privacy", version: "1.0" });
+    }
+    if (validated.consentSensitiveData) {
+      consentsToCreate.push({ type: "sensitive_data", version: "1.0" });
+    }
 
+    // NO privilege fabrication: role stays USER, no auto-premium, no ambassador creation
     const user = await prisma.user.create({
       data: {
-        email,
+        email: validated.email,
         passwordHash,
-        isAdultConfirmed: true,
-        consentSensitiveData: true,
-        role: "AMBASSADOR",
+        isAdultConfirmed: validated.isAdult,
+        consentSensitiveData: validated.consentSensitiveData,
+        role: "USER",
         referralCode: userReferralCode,
         referredBy: referredById ? referralCode?.trim() : null,
         profile: {
@@ -99,41 +127,18 @@ export async function POST(request: NextRequest) {
             username: `user_${Date.now().toString(36)}`,
             displayName: name || null,
             age: calculatedAge,
-            birthdate: birthDate ? new Date(birthDate) : null,
+            birthdate: validated.birthDate ? new Date(validated.birthDate) : null,
             city: city || null,
             genderIdentity: (genderIdentity as any) || null,
-            profileCompletionScore: (name ? 20 : 0) + (city ? 10 : 0) + (birthDate ? 10 : 0),
+            profileCompletionScore: (name ? 20 : 0) + (city ? 10 : 0) + (validated.birthDate ? 10 : 0),
             referralCode: userReferralCode,
-            isPremium: true,
-            premiumUntil: LIFETIME_DATE,
-            isFounder: true,
-            courtesyBadges: ["ambassadeur"],
           },
         },
-        consents: {
-          create: [
-            { type: "cgu", version: "1.0" },
-            { type: "privacy", version: "1.0" },
-            { type: "sensitive_data", version: "1.0" },
-          ],
-        },
+        consents: consentsToCreate.length > 0
+          ? { create: consentsToCreate }
+          : undefined,
       },
       include: { profile: true },
-    });
-
-    // Créer le record Ambassador
-    await prisma.ambassador.create({
-      data: {
-        userId: user.id,
-        profileId: user.profile!.id,
-        publicName: name || email.split("@")[0],
-        slug: `amb-${user.id.slice(0, 8)}`,
-        bio: "Ambassadeur·ice EMBIR — accès gratuit à vie",
-        socialLinks: "{}",
-        referralCode: userReferralCode,
-        lifetimePremium: true,
-        status: "active",
-      },
     });
 
     // ── Referral reward: grant 7 premium days to referrer ──
@@ -175,7 +180,7 @@ export async function POST(request: NextRequest) {
       const notifMsg = [
         `🆕 **Nouvelle inscription Embir !**`,
         ``,
-        `📧 Email: \`${email}\``,
+        `📧 Email: \`${validated.email}\``,
         `🆔 ID: \`${user.id}\``,
         userReferralCode ? `🔗 Code: \`${userReferralCode}\`` : "",
         referredById ? `👤 Parrainé: Oui` : "",
