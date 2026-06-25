@@ -6,28 +6,24 @@ export default async function Footer() {
   const t = await getTranslations("footer");
 
   return (
-    <footer className="bg-[#070409] border-t border-white/6 py-12 mt-20 relative">
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff1f5a]/35 via-[#ff5e36]/35 to-transparent opacity-80" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Brand */}
+    <footer className="relative border-t border-white/[0.1] bg-[#09060c] py-12">
+      <div className="mx-auto w-[min(100%-2rem,92rem)]">
+        <div className="grid gap-10 border-b border-white/[0.1] pb-10 md:grid-cols-[1.1fr_1fr_1fr]">
           <div>
-            <EmbirLogo size="md" showTagline />
-            <p className="mt-4 text-sm leading-relaxed text-white/40 max-w-xs">
+            <EmbirLogo size="md" />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
               {t("tagline")}
             </p>
-            <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#ff5e36]/75">
+            <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[#c56f4e]">
               {t("adult")}
             </p>
           </div>
 
-          {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-4">
+            <h3 className="mb-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-[#c56f4e]">
               {t("navigation")}
             </h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 border-t border-white/[0.1]">
               {[
                 { key: "free_launch", href: "/free-dating-app" },
                 { key: "freemium", href: "/freemium" },
@@ -43,7 +39,7 @@ export default async function Footer() {
                   key={key}
                   href={href}
                   prefetch={false}
-                  className="text-sm text-white/35 hover:text-white/70 transition-colors"
+                  className="border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
                 >
                   {t(key)}
                 </Link>
@@ -51,12 +47,11 @@ export default async function Footer() {
             </div>
           </div>
 
-          {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50 mb-4">
+            <h3 className="mb-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-[#c56f4e]">
               {t("legal")}
             </h3>
-            <div className="space-y-2">
+            <div className="border-t border-white/[0.1]">
               {[
                 { key: "terms", href: "/terms" },
                 { key: "privacy", href: "/privacy" },
@@ -68,7 +63,7 @@ export default async function Footer() {
                   key={key}
                   href={href}
                   prefetch={false}
-                  className="block text-sm text-white/35 hover:text-white/70 transition-colors"
+                  className="block border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
                 >
                   {t(key)}
                 </Link>
@@ -77,7 +72,7 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 pt-6 sm:flex-row">
           <p className="text-xs text-white/25">
             &copy; {new Date().getFullYear()} Embir. {t("rights")}
           </p>
