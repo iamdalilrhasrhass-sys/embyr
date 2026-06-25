@@ -74,3 +74,21 @@ test("presents the personal universe as an accessible demonstration", async () =
   assert.match(artifact, /aria-selected/);
   assert.match(artifact, /copy\.demoNotice/);
 });
+
+test("renders intentions, journal and SEO links without invented metadata", async () => {
+  const [intentions, journal, seo] = await Promise.all([
+    readFile("src/components/landing-2100/IntentionsRail.tsx", "utf8"),
+    readFile("src/components/landing-2100/JournalIndex.tsx", "utf8"),
+    readFile("src/components/landing-2100/SeoContinuation.tsx", "utf8"),
+  ]);
+
+  assert.match(intentions, /copy\.items\.map/);
+  assert.match(intentions, /aria-selected/);
+  assert.match(journal, /copy\.items\.map/);
+  assert.doesNotMatch(journal, /author|articleCount|rating/i);
+  assert.match(seo, /copy\.intentions/);
+  assert.match(seo, /copy\.orientations/);
+  assert.match(seo, /copy\.cities/);
+  assert.match(seo, /copy\.faq/);
+  assert.match(seo, /FAQPage/);
+});
