@@ -6,10 +6,12 @@ import {
   type ReactNode,
   useId,
   useRef,
+  useState as useReactState,
   useState,
 } from "react";
 import Link from "next/link";
 import type { LandingCopy } from "./landing-copy";
+import { resetUniverseTilt, tiltFromPointerDelta } from "./universe-tilt";
 
 interface UniverseArtifactProps {
   copy: LandingCopy["universe"];
@@ -21,8 +23,10 @@ export default function UniverseArtifact({
   image,
 }: UniverseArtifactProps) {
   const [activeTab, setActiveTab] = useState(0);
+  const [dragging, setDragging] = useReactState(false);
   const prefix = useId().replaceAll(":", "");
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const dragStart = useRef({ active: false, x: 0, y: 0 });
   const panelCopy = [
     copy.body,
     copy.intentions.join(" · "),
@@ -42,18 +46,37 @@ export default function UniverseArtifact({
     selectTab((index + direction + copy.tabs.length) % copy.tabs.length);
   }
 
+  function applyTilt(node: HTMLDivElement, tilt: { x: number; y: number }) {
+    node.style.setProperty("--tilt-y", `${tilt.x}deg`);
+    node.style.setProperty("--tilt-x", `${tilt.y}deg`);
+  }
+
+  function onObjectDown(event: PointerEvent<HTMLDivElement>) {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    dragStart.current = { active: true, x: event.clientX, y: event.clientY };
+    setDragging(true);
+  }
+
   function onObjectMove(event: PointerEvent<HTMLDivElement>) {
-    if (event.pointerType === "touch") return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-    event.currentTarget.style.setProperty("--tilt-y", `${x * 8}deg`);
-    event.currentTarget.style.setProperty("--tilt-x", `${y * -6}deg`);
+    if (!dragStart.current.active) return;
+    const tilt = tiltFromPointerDelta(
+      event.clientX - dragStart.current.x,
+      event.clientY - dragStart.current.y,
+    );
+    applyTilt(event.currentTarget, tilt);
   }
 
   function resetObject(event: PointerEvent<HTMLDivElement>) {
-    event.currentTarget.style.setProperty("--tilt-y", "0deg");
-    event.currentTarget.style.setProperty("--tilt-x", "0deg");
+    dragStart.current.active = false;
+    applyTilt(event.currentTarget, resetUniverseTilt());
+    setDragging(false);
+  }
+
+  function onObjectUp(event: PointerEvent<HTMLDivElement>) {
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    resetObject(event);
   }
 
   return (
@@ -100,8 +123,11 @@ export default function UniverseArtifact({
 
       <div
         className="e21-universe__object"
+        data-dragging={dragging}
+        onPointerDown={onObjectDown}
         onPointerMove={onObjectMove}
-        onPointerLeave={resetObject}
+        onPointerUp={onObjectUp}
+        onPointerCancel={resetObject}
       >
         <div className="e21-universe__image-wrap">{image}</div>
         <p className="e21-universe__drag">{copy.drag}</p>

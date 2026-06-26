@@ -551,6 +551,13 @@
   display: grid;
   place-items: center;
   perspective: 75rem;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.e21-universe__object[data-dragging="true"] {
+  touch-action: none;
+  cursor: grabbing;
 }
 
 .e21-universe__object::after {
