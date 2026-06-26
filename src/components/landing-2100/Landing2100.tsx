@@ -20,7 +20,7 @@ export default function Landing2100({ locale }: Landing2100Props) {
     <main className="embir2100">
       <SchemaOrg />
       <LandingNav copy={copy.nav} />
-      <HeroChapter copy={copy.hero} />
+      <HeroChapter copy={copy.hero} locale={locale} />
       <ReciprocityChapter copy={copy.reciprocity} />
       <UniverseChapter copy={copy.universe} />
       <IntentionsRail copy={copy.intentions} />

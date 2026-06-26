@@ -21,12 +21,14 @@ test("discovery page is localized, noindexed, and delegates UI to the acquisitio
 
 test("discovery experience has honest states and no anonymous like/favorite actions", async () => {
   const source = await readFile("src/components/acquisition/DiscoveryExperience.tsx", "utf8");
-  assert.match(source, /Aperçus anonymisés/);
-  assert.match(source, /profils réellement publiés/);
-  assert.match(source, /Embir se construit ville par ville/);
-  assert.match(source, /temporairement indisponible/);
+  const copy = await readFile("src/components/acquisition/discovery-copy.ts", "utf8");
+  const combined = `${source}\n${copy}`;
+  assert.match(combined, /Aperçus anonymisés/);
+  assert.match(combined, /profils réellement publiés/);
+  assert.match(combined, /Embir se construit ville par ville/);
+  assert.match(combined, /temporairement indisponible/);
   assert.match(source, /aria-live/);
-  assert.doesNotMatch(source, /favorites|like|Pass|MOCK_PROFILES|DEMO_PROFILES/i);
+  assert.doesNotMatch(combined, /favorites|like|Pass|MOCK_PROFILES|DEMO_PROFILES/i);
 });
 
 test("landing primary CTA routes through localized discovery", async () => {
@@ -36,4 +38,3 @@ test("landing primary CTA routes through localized discovery", async () => {
   assert.match(hero, /href=\{discoveryHref\}/);
   assert.match(landing, /locale=\{locale\}/);
 });
-

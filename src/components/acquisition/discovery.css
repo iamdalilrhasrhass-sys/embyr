@@ -1,0 +1,223 @@
+.discovery {
+  min-height: 100svh;
+  padding: 8rem 1rem 5rem;
+  color: var(--e21-bone, #f2ede4);
+}
+
+.discovery__shell {
+  width: min(100%, 72rem);
+  margin: 0 auto;
+}
+
+.discovery__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 0.7fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.discovery h1 {
+  max-width: 11ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 6.6rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.discovery__subtitle {
+  max-width: 42rem;
+  margin-top: 1.5rem;
+  color: rgba(242, 237, 228, 0.6);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.discovery__disclosure {
+  margin-top: 1.5rem;
+  max-width: 40rem;
+  color: rgba(242, 237, 228, 0.44);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.discovery__form {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid rgba(242, 237, 228, 0.13);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.discovery__field {
+  display: grid;
+  gap: 0.6rem;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+}
+
+.discovery__field legend,
+.discovery__label {
+  color: rgba(242, 237, 228, 0.48);
+  font-family: "SF Mono", "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.discovery__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.discovery__option,
+.discovery__submit,
+.discovery__retry,
+.discovery__unlock {
+  min-height: 44px;
+  border: 1px solid rgba(242, 237, 228, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(242, 237, 228, 0.72);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.discovery__option {
+  padding: 0.75rem 0.55rem;
+  font-size: 0.82rem;
+}
+
+.discovery__option[aria-pressed="true"],
+.discovery__submit,
+.discovery__unlock {
+  border-color: rgba(240, 109, 85, 0.62);
+  background: #f06d55;
+  color: #100a12;
+  font-weight: 700;
+}
+
+.discovery__submit:disabled {
+  cursor: not-allowed;
+  border-color: rgba(242, 237, 228, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(242, 237, 228, 0.32);
+}
+
+.discovery__city {
+  min-height: 48px;
+  width: 100%;
+  border: 1px solid rgba(242, 237, 228, 0.13);
+  background: rgba(255, 255, 255, 0.035);
+  color: #f2ede4;
+  padding: 0 0.9rem;
+  font: inherit;
+}
+
+.discovery__results {
+  margin-top: 4rem;
+}
+
+.discovery__results h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.discovery__status {
+  margin-top: 0.75rem;
+  color: rgba(242, 237, 228, 0.52);
+}
+
+.discovery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.discovery__card {
+  min-height: 16rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: end;
+  padding: 1rem;
+  border: 1px solid rgba(242, 237, 228, 0.11);
+  background:
+    radial-gradient(circle at calc(var(--seed) * 1%) 12%, rgba(240, 109, 85, 0.42), transparent 32%),
+    radial-gradient(circle at 12% 80%, rgba(168, 111, 80, 0.3), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
+}
+
+.discovery__card::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 999px;
+  background: rgba(242, 237, 228, 0.12);
+  filter: blur(32px);
+}
+
+.discovery__card-info {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.35rem;
+  color: rgba(242, 237, 228, 0.78);
+}
+
+.discovery__card-info strong {
+  color: #f2ede4;
+}
+
+.discovery__state {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(242, 237, 228, 0.11);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.discovery__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.3rem;
+}
+
+.discovery__retry,
+.discovery__unlock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.2rem;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .discovery {
+    padding-top: 6rem;
+  }
+
+  .discovery__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .discovery h1 {
+    max-width: 10ch;
+  }
+
+  .discovery__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .discovery__options {
+    grid-template-columns: 1fr;
+  }
+}
+

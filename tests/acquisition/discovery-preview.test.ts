@@ -29,7 +29,7 @@ test("normalizes unknown visitor input to safe defaults", () => {
       gender: "",
       seeking: "",
       intent: "",
-      city: "Genève rive gauche Genève rive gauche Genève rive gauche Genève rive gauche Genève r",
+      city: "Genève rive gauche Genève rive gauche Genève rive gauche Genève rive gauche Genè",
     },
   );
 });
@@ -66,8 +66,7 @@ test("maps missing profile details to honest generic labels", () => {
     city: null,
     intentions: [],
   });
-  assert.equal(preview.ageBand, "25–34");
+  assert.equal(preview.ageBand, "Âge non précisé");
   assert.equal(preview.cityLabel, "Ville non précisée");
   assert.equal(preview.intentLabel, "Rencontre");
 });
-
