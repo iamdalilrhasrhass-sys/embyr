@@ -11,7 +11,10 @@
     "test:landing": "node --experimental-strip-types --test tests/landing-2100/*.test.ts",
     "test:ui": "node --experimental-strip-types --test tests/ui/*.test.ts",
     "test:security": "node --experimental-strip-types --test tests/security/*.test.ts",
+    "test:acquisition": "node --experimental-strip-types --test tests/acquisition/*.test.ts",
+    "test:seo-policy": "node --experimental-strip-types --test tests/seo/programmatic-policy.test.ts",
     "qa:landing": "node scripts/qa-landing-2100.mjs",
+    "qa:v7": "node scripts/qa-v7-consolidation.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "monitor:live": "node scripts/monitor-embir-live.mjs",
     "qa:performance": "node scripts/qa-embir-performance.mjs"
