@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyToken } from "@/lib/auth";
 import { cookies } from "next/headers";
+import { checkMessageRateLimit } from "@/lib/rate-limit";
+import { withApiLogging } from "@/lib/api-logger";
 
-export async function GET(request: NextRequest) {
+async function _GET(request: NextRequest) {
   const token = (await cookies()).get("token")?.value;
   if (!token) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
@@ -36,7 +38,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+async function _POST(request: NextRequest) {
   const token = (await cookies()).get("token")?.value;
   if (!token) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
@@ -44,9 +46,48 @@ export async function POST(request: NextRequest) {
   if (!decoded) return NextResponse.json({ error: "Token invalide" }, { status: 401 });
 
   try {
-    const { receiverId, content } = await request.json();
+    const { receiverId, content, type } = await request.json();
+    const messageType = type || "text";
+
     if (!receiverId || !content) {
       return NextResponse.json({ error: "Contenu ou destinataire manquant" }, { status: 400 });
+    }
+
+    // Vérifier que le destinataire existe
+    const receiverExists = await prisma.user.findUnique({ where: { id: receiverId }, select: { id: true } });
+    if (!receiverExists) {
+      return NextResponse.json({ error: "Destinataire introuvable" }, { status: 404 });
+    }
+
+    // ── Anti-spam rate limit check ─────────────────────────────────
+    const rateCheck = await checkMessageRateLimit(
+      decoded.userId,
+      receiverId,
+      content,
+      messageType,
+    );
+
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        {
+          error: rateCheck.reason,
+          retryAfter: rateCheck.retryAfter,
+        },
+        {
+          status: 429,
+          headers: rateCheck.retryAfter
+            ? { "Retry-After": String(rateCheck.retryAfter) }
+            : undefined,
+        },
+      );
+    }
+
+    // ── Block check ────────────────────────────────────────────────
+    const block = await prisma.block.findFirst({
+      where: { blockerId: receiverId, blockedId: decoded.userId },
+    });
+    if (block) {
+      return NextResponse.json({ error: "Vous ne pouvez pas envoyer de message à cet utilisateur" }, { status: 403 });
     }
 
     // Find or create conversation
@@ -58,6 +99,8 @@ export async function POST(request: NextRequest) {
         ]
       }
     });
+
+    const isNewConversation = !conversation;
 
     if (!conversation) {
       conversation = await prisma.conversation.create({
@@ -74,7 +117,8 @@ export async function POST(request: NextRequest) {
         conversationId: conversation.id,
         senderId: decoded.userId,
         receiverId,
-        content
+        content,
+        type: messageType,
       }
     });
 
@@ -84,9 +128,12 @@ export async function POST(request: NextRequest) {
       data: { lastMessageAt: new Date(), updatedAt: new Date() }
     });
 
-    return NextResponse.json({ success: true, message });
+    return NextResponse.json({ success: true, message, isNewConversation });
   } catch (error) {
     console.error("Send message error:", error);
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 }
+
+export const GET = withApiLogging(_GET);
+export const POST = withApiLogging(_POST);

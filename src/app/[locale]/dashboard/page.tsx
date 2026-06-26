@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,11 +9,16 @@ import { motion, AnimatePresence } from "framer-motion";
  * Embir — Dashboard multi-orientation & multi-intention
  *
  * Affiche un feed de profils compatibles (via /api/match/feed) filtrable par
- * intention. Cartes profil avec badges orientation / intents / vérifié, score
- * de compatibilité, raisons du match et actions Like / Voir profil / Passer.
+ * intention. Gère TOUS les états utilisateur :
  *
- * Les libellés (orientation / intents) sont en dur côté client : on n'importe
- * PAS @/lib/matching qui tirerait Prisma dans le bundle navigateur.
+ *   not_authenticated → /auth/login
+ *   no_profile        → /onboarding
+ *   verification_pending → dashboard limité + bandeau
+ *   verified          → dashboard complet
+ *   banned            → page "compte bloqué"
+ *   error             → page d'erreur propre
+ *
+ * NE JAMAIS afficher "This page couldn't load" — tout crash est capturé.
  * ─────────────────────────────────────────────────────────────────────────── */
 
 const ORIENTATION_LABELS: Record<string, string> = {
@@ -52,80 +57,225 @@ const INTENT_FILTERS: IntentFilterDef[] = [
   { key: "EVENEMENTS", label: "Événements", value: "EVENEMENTS" },
 ];
 
-interface MatchCandidate {
-  profile: any;
-  score: number;
-  reasons: string[];
-  matchedIntents: string[];
+type UserStatus =
+  | "loading"
+  | "not_authenticated"
+  | "no_profile"
+  | "onboarding_incomplete"
+  | "verification_pending"
+  | "verified"
+  | "banned"
+  | "error";
+
+interface ProfileData {
+  id: string;
+  userId: string;
+  username: string;
+  displayName: string | null;
+  age: number;
+  city: string | null;
+  country: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  genderIdentity: string | null;
+  isVerified: boolean;
+  isPremium: boolean;
+  intentions: string[];
+  description: string | null;
+  canReceiveMessages: boolean;
+  [key: string]: unknown;
 }
 
-interface FeedResponse {
-  profiles?: MatchCandidate[];
-  total?: number;
-  filter?: { intent?: string | null; userOrientation?: string | null };
-  error?: string;
-}
-
-/** Distance Haversine (km) entre l'utilisateur et un candidat. */
+/** Distance Haversine (km) */
 function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
   const dLon = ((lon2 - lon1) * Math.PI) / 180;
   const a =
     Math.sin(dLat / 2) ** 2 +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) ** 2;
+    Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.sin(dLon / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(a));
 }
 
-/** Pourcentage de compatibilité borné 0–100 (le score brut peut dépasser 100). */
+/** Pourcentage de compatibilité borné 0–100 */
 function scorePct(score: number): number {
   return Math.max(0, Math.min(100, Math.round(score)));
 }
 
-export default function DashboardPage() {
+/* ───────────── Error Boundary ───────────── */
+class DashboardErrorBoundary extends React.Component<
+  { children: React.ReactNode; onReset?: () => void },
+  { hasError: boolean; error: Error | null }
+> {
+  constructor(props: { children: React.ReactNode; onReset?: () => void }) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
+    console.error("[Dashboard ErrorBoundary]", error, info.componentStack);
+  }
+  handleReset = () => {
+    this.setState({ hasError: false, error: null });
+    this.props.onReset?.();
+  };
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center p-8" style={{
+          background: "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
+        }}>
+          <div className="max-w-md text-center">
+            <div className="mx-auto mb-6 w-16 h-16 rounded-full bg-[#ff1f5a]/10 flex items-center justify-center">
+              <span className="text-2xl">⚠</span>
+            </div>
+            <h2 className="font-serif text-2xl text-white mb-3">Une erreur est survenue</h2>
+            <p className="text-sm text-white/40 mb-6 font-mono">
+              {this.state.error?.message || "Erreur inconnue"}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={this.handleReset}
+                className="px-6 py-3 rounded-xl text-xs font-semibold bg-[#d4a574] text-[#0a0614] hover:bg-[#e0b88a] transition-all"
+              >
+                Réessayer
+              </button>
+              <Link
+                href="/"
+                className="px-6 py-3 rounded-xl text-xs font-semibold border border-white/[0.08] text-white/60 hover:text-white transition-all"
+              >
+                Retour à l'accueil
+              </Link>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+/* ───────────── Composant Dashboard ───────────── */
+function DashboardInner() {
   const router = useRouter();
 
-  const [profile, setProfile] = useState<any>(null);
-  const [authChecked, setAuthChecked] = useState(false);
+  const [status, setStatus] = useState<UserStatus>("loading");
+  const [profile, setProfile] = useState<ProfileData | null>(null);
 
-  const [feed, setFeed] = useState<MatchCandidate[]>([]);
+  const [feed, setFeed] = useState<Record<string, unknown>[]>([]);
   const [feedLoading, setFeedLoading] = useState(true);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState("");
 
-  const [activeIntent, setActiveIntent] = useState<string | null>(null); // null = Tous
+  const [activeIntent, setActiveIntent] = useState<string | null>(null);
   const [reload, setReload] = useState(0);
   const [pendingId, setPendingId] = useState<string | null>(null);
-  const [toast, setToast] = useState<string>("");
+  const [toast, setToast] = useState("");
 
-  /* ── Auth + profil utilisateur (au mount) ── */
+  /* ── Analytics (fire-and-forget, once per mount) ── */
+  const firedRef = useRef(new Set<string>());
+
+  function track(ev: string, props?: Record<string, unknown>) {
+    if (firedRef.current.has(ev)) return;
+    firedRef.current.add(ev);
+    fetch('/api/analytics/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: ev,
+        page: window.location.pathname,
+        properties: props || {},
+        timestamp: Date.now(),
+        language: document.documentElement.lang,
+        referrer: document.referrer,
+      }),
+      keepalive: true,
+    }).catch(() => {});
+  }
+
+  /* ── Étape 1 : Auth + status ── */
   useEffect(() => {
     let cancelled = false;
-    fetch("/api/profile/me")
-      .then(async (res) => {
-        if (res.status === 401) {
-          router.push("/auth/login?redirect=/dashboard");
-          return null;
+
+    async function checkAuth() {
+      try {
+        // D'abord vérifier l'auth
+        const authRes = await fetch("/api/auth/me");
+        const authData = await authRes.json();
+        if (!authData.authenticated) {
+          if (!cancelled) {
+            setStatus("not_authenticated");
+            router.push("/auth/login?redirect=/dashboard");
+          }
+          return;
         }
-        return res.json();
-      })
-      .then((data) => {
+
+        // Ensuite charger le profil
+        const profileRes = await fetch("/api/profile/me");
+
+        if (profileRes.status === 404) {
+          if (!cancelled) {
+            setStatus("no_profile");
+            router.push("/onboarding");
+          }
+          return;
+        }
+
+        if (!profileRes.ok) {
+          if (!cancelled) setStatus("error");
+          return;
+        }
+
+        const profileData: ProfileData = await profileRes.json();
         if (cancelled) return;
-        if (data && !data.error) setProfile(data);
-        setAuthChecked(true);
-      })
-      .catch(() => {
-        if (!cancelled) router.push("/auth/login?redirect=/dashboard");
-      });
-    return () => {
-      cancelled = true;
-    };
+
+        setProfile(profileData);
+
+        // Déterminer le statut
+        if (!profileData.isVerified) {
+          // Vérifier si une demande de vérification a été faite (GET)
+          try {
+            const verifRes = await fetch("/api/verification/request");
+            if (verifRes.ok) {
+              const verifData = await verifRes.json();
+              if (verifData?.status === "pending") {
+                if (!cancelled) { setStatus("verification_pending"); setFeedLoading(false); }
+                return;
+              }
+              if (verifData?.status === "rejected") {
+                // Profil rejeté : on laisse l'utilisateur voir le dashboard mais avec un message
+                // Pas de blocage, juste pas de feed
+                if (!cancelled) { setStatus("verified"); }
+              }
+            }
+          } catch {
+            // GET peut échouer si pas de demande existante
+          }
+
+          // Vérifier si le profil est incomplet
+          if (!profileData.city || !profileData.description || !profileData.genderIdentity) {
+            if (!cancelled) { setStatus("onboarding_incomplete"); setFeedLoading(false); }
+            return;
+          }
+        }
+
+        if (!cancelled) setStatus("verified");
+      } catch (err) {
+        if (!cancelled) {
+          console.error("[Dashboard] Auth check error:", err);
+          setStatus("error");
+        }
+      }
+    }
+
+    checkAuth();
+    return () => { cancelled = true; };
   }, [router]);
 
-  /* ── Feed : fetch au mount + au changement de filtre intent (+ retry) ── */
+  /* ── Feed : fetch au mount + filtre + retry ── */
   useEffect(() => {
-    if (!authChecked) return;
+    if (status !== "verified") return;
     let cancelled = false;
     setFeedLoading(true);
     setError("");
@@ -141,13 +291,15 @@ export default function DashboardPage() {
         }
         return res.json();
       })
-      .then((data: FeedResponse | null) => {
+      .then((data: Record<string, unknown> | null) => {
         if (cancelled || !data) return;
         if (data.error) {
-          setError(data.error);
+          setError(String(data.error));
           setFeed([]);
+          track('dashboard_load_error', { errorType: String(data.error) });
         } else {
-          setFeed(data.profiles ?? []);
+          const profiles = Array.isArray(data.profiles) ? data.profiles : [];
+          setFeed(profiles);
         }
         setFeedLoading(false);
       })
@@ -155,19 +307,29 @@ export default function DashboardPage() {
         if (cancelled) return;
         setError("Impossible de charger le feed.");
         setFeedLoading(false);
+        track('dashboard_load_error', { errorType: 'network' });
       });
 
-    return () => {
-      cancelled = true;
-    };
-  }, [authChecked, activeIntent, reload, router]);
+    return () => { cancelled = true; };
+  }, [status, activeIntent, reload, router]);
 
-  /* ── Like / Pass via /api/match/action ── */
-  function handleAction(candidate: MatchCandidate, action: "like" | "pass") {
-    const targetUserId = candidate.profile?.userId;
+  /* ── Analytics: dashboard_view (fire once when feed is loaded) ── */
+  useEffect(() => {
+    if (status === "verified" && !feedLoading && !error) {
+      track('dashboard_view');
+    }
+  }, [status, feedLoading, error]);
+
+  /* ── Like / Pass ── */
+  function handleAction(candidate: Record<string, unknown>, action: "like" | "pass") {
+    const targetUserId = (candidate?.userId as string) || (candidate?.profile as Record<string, unknown>)?.["userId"] as string;
     if (!targetUserId) return;
-    const id = candidate.profile?.id;
+    const id = (candidate?.id as string) || (candidate?.profile as Record<string, unknown>)?.["id"] as string;
     setPendingId(id ?? null);
+
+    // Analytics
+    if (action === "like") track('dashboard_like');
+    else track('dashboard_pass');
 
     fetch("/api/match/action", {
       method: "POST",
@@ -177,98 +339,190 @@ export default function DashboardPage() {
       .then((r) => r.json())
       .then((data) => {
         if (action === "like" && data?.matched) {
-          setToast(`Match avec ${displayName(candidate)} ! 💞`);
+          setToast(`Match ! 💞`);
+          track('dashboard_match');
           setTimeout(() => setToast(""), 3500);
         }
-        setFeed((prev) => prev.filter((c) => c.profile?.id !== id));
+        setFeed((prev) => prev.filter((c) => (c.id || (c.profile as Record<string, unknown>)?.["id"]) !== id));
       })
-      .catch(() => {
-        /* silencieux : on garde le profil dans le feed */
-      })
+      .catch(() => {})
       .finally(() => setPendingId(null));
   }
 
-  /* ── Helpers d'affichage ── */
-  function displayName(c: MatchCandidate): string {
-    return c.profile?.displayName || c.profile?.username || "Anonyme";
+  /* ── Helpers d'affichage (flat-safe) ── */
+  function displayName(c: Record<string, unknown>): string {
+    // Support both flat (API v1) and nested (interface) structures
+    const p = (c.profile as Record<string, unknown>) || c;
+    return (p?.displayName as string) || (p?.username as string) || "Anonyme";
   }
 
-  function distanceTo(c: MatchCandidate): string | null {
-    const u = profile;
-    const p = c.profile;
+  function distanceStr(c: Record<string, unknown>, user: ProfileData | null): string | null {
+    const p = (c.profile as Record<string, unknown>) || c;
     if (
-      u?.latitude != null &&
-      u?.longitude != null &&
-      p?.latitude != null &&
-      p?.longitude != null
+      user?.latitude != null && user?.longitude != null &&
+      p?.latitude != null && p?.longitude != null
     ) {
-      const km = haversineKm(u.latitude, u.longitude, p.latitude, p.longitude);
+      const km = haversineKm(user.latitude, user.longitude, Number(p.latitude), Number(p.longitude));
       if (km < 1) return "à moins d'1 km";
       return `à ${Math.round(km)} km`;
     }
     return null;
   }
 
-  /* ── Loading plein écran (vérification auth) ── */
-  if (!authChecked) {
+  /* ── Status-specific renders ── */
+
+  if (status === "loading") {
     return (
-      <div
-        className="min-h-screen flex flex-col items-center justify-center gap-4"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
-        }}
-      >
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4" style={{
+        background: "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
+      }}>
         <motion.div
-          className="w-12 h-12 rounded-full border-2 border-[#ff5e36]/20 border-t-[#ff5e36]"
+          className="w-10 h-10 rounded-full border-2 border-[#ff5e36]/20 border-t-[#ff5e36]"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
         />
-        <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/20">
-          Chargement…
-        </span>
       </div>
     );
   }
 
+  if (status === "banned") {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-8" style={{
+        background: "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
+      }}>
+        <div className="max-w-md text-center">
+          <div className="mx-auto mb-6 w-16 h-16 rounded-full bg-[#ff1f5a]/10 flex items-center justify-center">
+            <span className="text-2xl">🚫</span>
+          </div>
+          <h2 className="font-serif text-2xl text-white mb-3">Compte suspendu</h2>
+          <p className="text-sm text-white/40 mb-6">
+            Ton compte a été suspendu. Contacte le support pour plus d'informations.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex px-6 py-3 rounded-xl text-xs font-semibold border border-white/[0.08] text-white/60 hover:text-white transition-all"
+          >
+            Retour à l'accueil
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-8" style={{
+        background: "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
+      }}>
+        <div className="max-w-md text-center">
+          <div className="mx-auto mb-6 w-16 h-16 rounded-full bg-[#ff1f5a]/10 flex items-center justify-center">
+            <span className="text-2xl">⚠</span>
+          </div>
+          <h2 className="font-serif text-2xl text-white mb-3">Erreur de chargement</h2>
+          <p className="text-sm text-white/40 mb-6">
+            Impossible de charger le tableau de bord. Réessaie ou reconnecte-toi.
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 rounded-xl text-xs font-semibold bg-[#d4a574] text-[#0a0614] hover:bg-[#e0b88a] transition-all"
+          >
+            Réessayer
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "no_profile" || status === "onboarding_incomplete") {
+    // These redirect to /onboarding, but show a fallback in case of delay
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 p-8" style={{
+        background: "radial-gradient(ellipse at 50% 30%, #0d0714 0%, #06020c 60%, #020005 100%)",
+      }}>
+        <motion.div
+          className="w-8 h-8 rounded-full border-2 border-[#ff5e36]/20 border-t-[#ff5e36]"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
+        />
+        <p className="text-sm text-white/40">Redirection vers l'onboarding...</p>
+      </div>
+    );
+  }
+
+  if (status === "verification_pending") {
+    return (
+      <div className="relative min-h-screen overflow-hidden" style={{
+        background: "radial-gradient(ellipse at 50% 15%, #0f0718 0%, #080212 50%, #04000a 100%)",
+      }}>
+        <div className="relative z-10 max-w-2xl mx-auto px-4 md:px-6 py-20 text-center">
+          <div className="mx-auto mb-8 w-20 h-20 rounded-full bg-gradient-to-br from-[#d4a574]/20 to-[#ff5e36]/10 flex items-center justify-center">
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="text-3xl"
+            >
+              ⏳
+            </motion.div>
+          </div>
+
+          <h1 className="font-serif text-3xl sm:text-4xl text-white mb-4">
+            Vérification en cours
+          </h1>
+          <p className="text-white/40 text-sm max-w-md mx-auto mb-8 leading-relaxed">
+            Nous vérifions ta photo. C'est généralement rapide — tu recevras une
+            notification sous 24h maximum. En attendant, tu peux compléter ton profil.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/dashboard/profile"
+              className="px-6 py-3 rounded-xl text-xs font-semibold bg-[#d4a574] text-[#0a0614] hover:bg-[#e0b88a] transition-all"
+            >
+              Compléter mon profil
+            </Link>
+            <Link
+              href="/"
+              className="px-6 py-3 rounded-xl text-xs font-semibold border border-white/[0.08] text-white/60 hover:text-white transition-all"
+            >
+              Retour à l'accueil
+            </Link>
+          </div>
+
+          <div className="mt-12 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/30 mb-3">
+              Pourquoi la vérification ?
+            </h3>
+            <p className="text-xs text-white/30 leading-relaxed">
+              Embir est une plateforme 100% gratuite sans pub. La vérification photo
+              garantit que chaque membre est une vraie personne. Pas de bots, pas de faux profils.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /* ── STATUS: verified → Dashboard complet ── */
   const greetingName = profile?.displayName || profile?.username || "toi";
 
   return (
-    <div
-      className="relative min-h-screen overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse at 50% 15%, #0f0718 0%, #080212 50%, #04000a 100%)",
-      }}
-    >
-      {/* Ambiance — orbes doux, palette de la landing */}
-      <div
-        className="absolute pointer-events-none rounded-full opacity-[0.08]"
-        style={{
-          width: 700,
-          height: 700,
-          top: "-12%",
-          right: "-8%",
-          background:
-            "radial-gradient(circle, rgba(255,94,54,0.5) 0%, transparent 60%)",
-          filter: "blur(120px)",
-        }}
+    <div className="relative min-h-screen overflow-hidden" style={{
+      background: "radial-gradient(ellipse at 50% 15%, #0f0718 0%, #080212 50%, #04000a 100%)",
+    }}>
+      {/* Ambiance orbes */}
+      <div className="absolute pointer-events-none rounded-full opacity-[0.08]"
+        style={{ width: 700, height: 700, top: "-12%", right: "-8%",
+          background: "radial-gradient(circle, rgba(255,94,54,0.5) 0%, transparent 60%)",
+          filter: "blur(120px)" }}
       />
-      <div
-        className="absolute pointer-events-none rounded-full opacity-[0.06]"
-        style={{
-          width: 560,
-          height: 560,
-          bottom: "5%",
-          left: "-8%",
-          background:
-            "radial-gradient(circle, rgba(212,165,116,0.4) 0%, transparent 60%)",
-          filter: "blur(110px)",
-        }}
+      <div className="absolute pointer-events-none rounded-full opacity-[0.06]"
+        style={{ width: 560, height: 560, bottom: "5%", left: "-8%",
+          background: "radial-gradient(circle, rgba(212,165,116,0.4) 0%, transparent 60%)",
+          filter: "blur(110px)" }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 py-10">
-        {/* ───────────── En-tête : bienvenue + CTA profil ───────────── */}
+        {/* En-tête */}
         <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <div className="mb-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.16em] bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/20">
@@ -289,26 +543,17 @@ export default function DashboardPage() {
 
           <Link
             href="/dashboard/profile"
+            onClick={() => track('dashboard_to_profile')}
             className="self-start md:self-auto inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-[#d4a574] text-[#0a0614] hover:bg-[#e0b88a] transition-all duration-300 shadow-[0_0_30px_rgba(212,165,116,0.25)]"
           >
             <span>Voir mon profil</span>
-            <svg
-              className="w-3.5 h-3.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2.5"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </Link>
         </div>
 
-        {/* ───────────── Barre de filtres par intention ───────────── */}
+        {/* Barre de filtres */}
         <div className="mb-8 flex flex-wrap items-center gap-2">
           <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/20 mr-1 hidden sm:inline">
             Je cherche
@@ -338,36 +583,24 @@ export default function DashboardPage() {
           )}
         </div>
 
-        {/* ───────────── État : erreur ───────────── */}
+        {/* Erreur */}
         {error && !feedLoading && (
           <div className="rounded-2xl border border-[#ff1f5a]/20 bg-[#ff1f5a]/5 p-8 text-center mb-8">
             <p className="text-sm text-white/70 mb-1">Oups — {error}</p>
-            {/profil/i.test(error) ? (
-              <Link
-                href="/dashboard/profile"
-                className="text-xs font-semibold text-[#d4a574] hover:text-[#e0b88a]"
-              >
-                Compléter mon profil →
-              </Link>
-            ) : (
-              <button
-                onClick={() => setReload((n) => n + 1)}
-                className="text-xs font-semibold text-[#ff5e36] hover:text-[#ffa333]"
-              >
-                Réessayer
-              </button>
-            )}
+            <button
+              onClick={() => setReload((n) => n + 1)}
+              className="text-xs font-semibold text-[#ff5e36] hover:text-[#ffa333]"
+            >
+              Réessayer
+            </button>
           </div>
         )}
 
-        {/* ───────────── Feed : skeletons au chargement ───────────── */}
+        {/* Loading */}
         {feedLoading && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-5 animate-pulse"
-              >
+              <div key={i} className="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-5 animate-pulse">
                 <div className="h-40 rounded-2xl bg-white/[0.04] mb-4" />
                 <div className="h-3 w-2/3 rounded bg-white/[0.05] mb-2" />
                 <div className="h-3 w-1/3 rounded bg-white/[0.04] mb-4" />
@@ -377,92 +610,77 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* ───────────── Feed : profils compatibles ───────────── */}
+        {/* Feed : profils compatibles */}
         {!feedLoading && !error && feed.length > 0 && (
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
             initial="hidden"
             animate="show"
-            variants={{
-              hidden: {},
-              show: { transition: { staggerChildren: 0.06 } },
-            }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
           >
             {feed.map((candidate) => {
-              const p = candidate.profile;
+              // Support flat API (profile fields at top level) and legacy nested format
+              const p = (candidate.profile as Record<string, unknown>) || candidate;
               const name = displayName(candidate);
               const initial = (name.charAt(0) || "?").toUpperCase();
-              const dist = distanceTo(candidate);
-              const pct = scorePct(candidate.score);
+              const dist = distanceStr(candidate, profile);
+              const pct = scorePct(candidate.score as number || 0);
               const orientation = p?.orientation
-                ? ORIENTATION_LABELS[p.orientation] ?? p.orientation
-                : null;
+                ? ORIENTATION_LABELS[p.orientation as string] ?? (p.orientation as string)
+                : (p?.genderIdentity
+                  ? ORIENTATION_LABELS[p.genderIdentity as string] ?? (p.genderIdentity as string)
+                  : null);
               const intents: string[] = Array.isArray(p?.intentions)
-                ? p.intentions
+                ? p.intentions as string[]
                 : [];
-              const isPending = pendingId === p?.id;
+              const id = (candidate.id as string) || (p.id as string) || name;
+              const isPending = pendingId === id;
+              const reasons: string[] = Array.isArray(candidate.reasons)
+                ? candidate.reasons as string[]
+                : [];
 
               return (
                 <motion.div
-                  key={p?.id ?? name}
+                  key={id}
                   variants={{
                     hidden: { opacity: 0, y: 16 },
-                    show: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.35, ease: "easeOut" },
-                    },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
                   }}
                   whileHover={{ y: -4 }}
                   className="group rounded-3xl border border-white/[0.07] bg-white/[0.025] p-5 backdrop-blur-sm transition-colors duration-300 hover:border-[#d4a574]/25"
                 >
-                  {/* Photo / placeholder gradient */}
+                  {/* Photo / placeholder */}
                   <div className="relative h-40 rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-[#d4a574]/20 to-[#ff5e36]/20">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-serif text-5xl text-white/70 select-none">
-                        {initial}
-                      </span>
+                      <span className="font-serif text-5xl text-white/70 select-none">{initial}</span>
                     </div>
-
-                    {/* Badge orientation (gold) */}
                     {orientation && (
                       <span className="absolute top-3 left-3 rounded-full bg-[#d4a574]/10 text-[#d4a574] text-[10px] font-semibold px-2 py-1 border border-[#d4a574]/15">
                         {orientation}
                       </span>
                     )}
-
-                    {/* Badge vérifié (vert) */}
-                    {p?.isVerified && (
-                      <span className="absolute top-3 right-3 inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs">
-                        ✓
-                      </span>
+                    {Boolean(p?.isVerified) && (
+                      <span className="absolute top-3 right-3 inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-xs">✓</span>
                     )}
                   </div>
 
                   {/* Identité */}
                   <div className="mb-1 flex items-center gap-2">
-                    <h3 className="font-serif text-lg text-white truncate">
-                      {name}
-                    </h3>
-                    {p?.age ? (
-                      <span className="text-sm text-white/40">{p.age}</span>
-                    ) : null}
+                    <h3 className="font-serif text-lg text-white truncate">{name}</h3>
+                    {p?.age ? <span className="text-sm text-white/40">{String(p.age)}</span> : null}
                   </div>
 
                   {/* Ville + distance */}
                   <p className="text-xs text-white/35 mb-3 truncate">
-                    {p?.city ? p.city : "Ville non renseignée"}
+                    {p?.city ? String(p.city) : "Ville non renseignée"}
                     {dist ? <span className="text-white/25"> · {dist}</span> : null}
                   </p>
 
-                  {/* Badges intents (ember) */}
+                  {/* Badges intents */}
                   {intents.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {intents.slice(0, 4).map((it) => (
-                        <span
-                          key={it}
-                          className="rounded-full bg-[#ff5e36]/10 text-[#ff5e36] text-[10px] font-semibold px-2 py-1"
-                        >
+                        <span key={it} className="rounded-full bg-[#ff5e36]/10 text-[#ff5e36] text-[10px] font-semibold px-2 py-1">
                           {INTENT_LABELS[it] ?? it}
                         </span>
                       ))}
@@ -472,31 +690,21 @@ export default function DashboardPage() {
                   {/* Score de compatibilité */}
                   <div className="mb-3">
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/25">
-                        Compatibilité
-                      </span>
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/25">Compatibilité</span>
                       <span className="text-[10px] font-bold text-[#d4a574]">
                         {pct}% · {pct >= 80 ? "excellente" : pct >= 60 ? "élevée" : pct >= 40 ? "moyenne" : "faible"}
                       </span>
                     </div>
                     <div className="h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#d4a574]"
-                        style={{ width: `${pct}%` }}
-                      />
+                      <div className="h-full rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#d4a574]" style={{ width: `${pct}%` }} />
                     </div>
                   </div>
 
-                  {/* Raisons du match */}
-                  {candidate.reasons.length > 0 && (
+                  {/* Raisons du match (safe: optional chaining) */}
+                  {reasons.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mb-4">
-                      {candidate.reasons.slice(0, 4).map((r, i) => (
-                        <span
-                          key={i}
-                          className="rounded-md border border-white/[0.06] bg-white/[0.02] text-white/40 text-[10px] px-2 py-1"
-                        >
-                          {r}
-                        </span>
+                      {reasons.slice(0, 4).map((r, i) => (
+                        <span key={i} className="rounded-md border border-white/[0.06] bg-white/[0.02] text-white/40 text-[10px] px-2 py-1">{r}</span>
                       ))}
                     </div>
                   )}
@@ -511,14 +719,12 @@ export default function DashboardPage() {
                     >
                       <span>♥</span> Like
                     </button>
-
                     <Link
-                      href={`/u/${p?.username ?? ""}`}
+                      href={`/u/${p?.username ? String(p.username) : ""}`}
                       className="flex-1 inline-flex items-center justify-center rounded-xl py-2.5 text-xs font-semibold border border-white/[0.08] text-white/60 hover:text-white hover:border-[#d4a574]/25 transition-all duration-300"
                     >
                       Voir profil
                     </Link>
-
                     <button
                       onClick={() => handleAction(candidate, "pass")}
                       disabled={isPending}
@@ -534,15 +740,13 @@ export default function DashboardPage() {
           </motion.div>
         )}
 
-        {/* ───────────── État vide ───────────── */}
+        {/* Empty state */}
         {!feedLoading && !error && feed.length === 0 && (
           <div className="rounded-3xl border border-white/[0.07] bg-white/[0.025] p-10 text-center">
             <div className="mx-auto mb-4 w-14 h-14 rounded-full bg-gradient-to-br from-[#d4a574]/15 to-[#ff5e36]/10 flex items-center justify-center">
               <span className="text-2xl">✦</span>
             </div>
-            <h3 className="font-serif text-xl text-white mb-2">
-              Aucun profil pour l'instant
-            </h3>
+            <h3 className="font-serif text-xl text-white mb-2">Aucun profil pour l'instant</h3>
             <p className="text-sm text-white/35 max-w-md mx-auto mb-6">
               Embir vient de démarrer. Invite quelques amis pour faire grandir la
               communauté et débloquer de nouvelles rencontres compatibles.
@@ -556,13 +760,13 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Pied de page éditorial */}
+        {/* Footer */}
         <p className="mt-12 text-center text-[10px] uppercase tracking-[0.3em] text-white/10">
           Embir · rencontre multi-orientation · 100% gratuit
         </p>
       </div>
 
-      {/* ───────────── Toast match ───────────── */}
+      {/* Toast match */}
       <AnimatePresence>
         {toast && (
           <motion.div
@@ -577,5 +781,15 @@ export default function DashboardPage() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+/* ───────────── Export avec Error Boundary ───────────── */
+export default function DashboardPage() {
+  const [, setResetKey] = useState(0);
+  return (
+    <DashboardErrorBoundary onReset={() => setResetKey((k) => k + 1)}>
+      <DashboardInner />
+    </DashboardErrorBoundary>
   );
 }

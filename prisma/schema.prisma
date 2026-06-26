@@ -148,6 +148,11 @@ model Profile {
   popularityScore        Int            @default(0)
   trustScore             Int            @default(50)
   profileCompletionScore Int            @default(0)
+
+  // Photos
+  profilePhotoUrl        String?        // PUBLIQUE — photo de profil
+  verificationPhotoUrl   String?        // PRIVÉE — photo de vérification (code manuscrit)
+  verificationStatus     String?        // pending | verified | rejected (ou null si pas soumis)
   
   // Nouveaux champs MVP Premium / Ambassadeur
   isFounder           Boolean   @default(false)
