@@ -2,7 +2,8 @@ import type { MetadataRoute } from "next";
 import { seoEntries } from "@/seo/sitemap-data";
 import { hreflangPairs } from "@/seo/hreflang";
 import { absoluteUrl, buildLanguageAlternates, sitemapUrl } from "@/seo/url";
-import { SEO_CITIES, SEO_INTENTS } from "@/seo/seo-cities";
+import { SEO_INTENTS } from "@/seo/seo-cities";
+import { qualifiedProgrammaticParams } from "@/seo/programmatic-policy";
 
 const baseUrl = "https://embir.xyz";
 
@@ -46,26 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routes.push(entry(`${baseUrl}${item.path}`, "weekly", item.priority));
   }
 
-  // ── Programmatic city × intent pages (504 pages) ──
+  // Intent hubs and qualified programmatic pilot.
   for (const intent of SEO_INTENTS) {
     // Hub pages (already exist but ensure in sitemap)
     routes.push(entry(`${baseUrl}/${intent.slug}`, "weekly", 0.9));
     routes.push(entry(`${baseUrl}/fr/${intent.slug}`, "weekly", 0.9));
+  }
 
-    for (const city of SEO_CITIES) {
-      // EN version
-      routes.push(entry(
-        `${baseUrl}/rencontre/${intent.slug}/${city.slug}`,
-        "weekly",
-        0.7
-      ));
-      // FR version
-      routes.push(entry(
-        `${baseUrl}/fr/rencontre/${intent.slug}/${city.slug}`,
-        "weekly",
-        0.7
-      ));
-    }
+  for (const { locale, slug, city } of qualifiedProgrammaticParams()) {
+    routes.push(entry(`${baseUrl}/${locale}/rencontre/${slug}/${city}`, "weekly", 0.7));
   }
 
   // Deduplicate by URL

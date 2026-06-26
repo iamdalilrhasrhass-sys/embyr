@@ -12,26 +12,27 @@ export interface CityData {
   lat: number;
   lng: number;
   population: string;
+  contextFr?: string;
 }
 
 export const SEO_CITIES: CityData[] = [
   // France
-  { slug: "paris", name: "Paris", nameEn: "Paris", country: "FR", region: "Île-de-France", lat: 48.8566, lng: 2.3522, population: "2.1M" },
-  { slug: "lyon", name: "Lyon", nameEn: "Lyon", country: "FR", region: "Auvergne-Rhône-Alpes", lat: 45.7640, lng: 4.8357, population: "520K" },
-  { slug: "marseille", name: "Marseille", nameEn: "Marseille", country: "FR", region: "PACA", lat: 43.2965, lng: 5.3698, population: "870K" },
-  { slug: "toulouse", name: "Toulouse", nameEn: "Toulouse", country: "FR", region: "Occitanie", lat: 43.6047, lng: 1.4442, population: "490K" },
-  { slug: "nice", name: "Nice", nameEn: "Nice", country: "FR", region: "PACA", lat: 43.7102, lng: 7.2620, population: "340K" },
-  { slug: "nantes", name: "Nantes", nameEn: "Nantes", country: "FR", region: "Pays de la Loire", lat: 47.2184, lng: -1.5536, population: "320K" },
-  { slug: "strasbourg", name: "Strasbourg", nameEn: "Strasbourg", country: "FR", region: "Grand Est", lat: 48.5734, lng: 7.7521, population: "290K" },
-  { slug: "montpellier", name: "Montpellier", nameEn: "Montpellier", country: "FR", region: "Occitanie", lat: 43.6108, lng: 3.8767, population: "290K" },
-  { slug: "bordeaux", name: "Bordeaux", nameEn: "Bordeaux", country: "FR", region: "Nouvelle-Aquitaine", lat: 44.8378, lng: -0.5792, population: "260K" },
-  { slug: "lille", name: "Lille", nameEn: "Lille", country: "FR", region: "Hauts-de-France", lat: 50.6292, lng: 3.0573, population: "230K" },
-  { slug: "rennes", name: "Rennes", nameEn: "Rennes", country: "FR", region: "Bretagne", lat: 48.1173, lng: -1.6778, population: "220K" },
+  { slug: "paris", name: "Paris", nameEn: "Paris", country: "FR", region: "Île-de-France", lat: 48.8566, lng: 2.3522, population: "2.1M", contextFr: "Paris concentre une vie culturelle dense, des quartiers très différents et des rythmes de rencontre qui varient du Marais aux Grands Boulevards." },
+  { slug: "lyon", name: "Lyon", nameEn: "Lyon", country: "FR", region: "Auvergne-Rhône-Alpes", lat: 45.7640, lng: 4.8357, population: "520K", contextFr: "Entre Rhône et Saône, Lyon mêle vie étudiante, quartiers créatifs et sorties conviviales de la Presqu’île à la Croix-Rousse." },
+  { slug: "marseille", name: "Marseille", nameEn: "Marseille", country: "FR", region: "PACA", lat: 43.2965, lng: 5.3698, population: "870K", contextFr: "Ouverte sur la Méditerranée, Marseille rassemble des parcours très divers autour du Vieux-Port, des plages et des quartiers populaires." },
+  { slug: "toulouse", name: "Toulouse", nameEn: "Toulouse", country: "FR", region: "Occitanie", lat: 43.6047, lng: 1.4442, population: "490K", contextFr: "Ville rose et étudiante, Toulouse combine vie aéronautique, terrasses du Sud-Ouest et promenades autour de la Garonne." },
+  { slug: "nice", name: "Nice", nameEn: "Nice", country: "FR", region: "PACA", lat: 43.7102, lng: 7.2620, population: "340K", contextFr: "Nice rassemble lumière méditerranéenne, vieille ville, promenade des Anglais et rencontres marquées par le rythme de la Côte d’Azur." },
+  { slug: "nantes", name: "Nantes", nameEn: "Nantes", country: "FR", region: "Pays de la Loire", lat: 47.2184, lng: -1.5536, population: "320K", contextFr: "Nantes relie créativité, bords de Loire et vie culturelle, avec une scène locale qui attire autant étudiants que jeunes actifs." },
+  { slug: "strasbourg", name: "Strasbourg", nameEn: "Strasbourg", country: "FR", region: "Grand Est", lat: 48.5734, lng: 7.7521, population: "290K", contextFr: "Strasbourg mêle ambiance européenne, quartiers étudiants, canaux et influences franco-allemandes autour de la Petite France." },
+  { slug: "montpellier", name: "Montpellier", nameEn: "Montpellier", country: "FR", region: "Occitanie", lat: 43.6108, lng: 3.8767, population: "290K", contextFr: "Montpellier reste l’une des grandes villes étudiantes du Sud, entre l’Écusson, les nouveaux quartiers et les plages proches." },
+  { slug: "bordeaux", name: "Bordeaux", nameEn: "Bordeaux", country: "FR", region: "Nouvelle-Aquitaine", lat: 44.8378, lng: -0.5792, population: "260K", contextFr: "Bordeaux attire étudiants, jeunes actifs et nouveaux arrivants autour de ses quais, de ses quartiers rénovés et de sa culture du vin." },
+  { slug: "lille", name: "Lille", nameEn: "Lille", country: "FR", region: "Hauts-de-France", lat: 50.6292, lng: 3.0573, population: "230K", contextFr: "Lille vit sur la convivialité du Nord, les estaminets, une forte présence étudiante et des liens faciles avec la Belgique." },
+  { slug: "rennes", name: "Rennes", nameEn: "Rennes", country: "FR", region: "Bretagne", lat: 48.1173, lng: -1.6778, population: "220K", contextFr: "Rennes combine énergie étudiante, scènes musicales, rues médiévales et sociabilité bretonne autour de son centre vivant." },
   { slug: "reims", name: "Reims", nameEn: "Reims", country: "FR", region: "Grand Est", lat: 49.2583, lng: 4.0317, population: "180K" },
   { slug: "le-havre", name: "Le Havre", nameEn: "Le Havre", country: "FR", region: "Normandie", lat: 49.4944, lng: 0.1079, population: "170K" },
   { slug: "saint-etienne", name: "Saint-Étienne", nameEn: "Saint-Étienne", country: "FR", region: "Auvergne-Rhône-Alpes", lat: 45.4397, lng: 4.3872, population: "170K" },
   { slug: "toulon", name: "Toulon", nameEn: "Toulon", country: "FR", region: "PACA", lat: 43.1242, lng: 5.9280, population: "170K" },
-  { slug: "grenoble", name: "Grenoble", nameEn: "Grenoble", country: "FR", region: "Auvergne-Rhône-Alpes", lat: 45.1885, lng: 5.7245, population: "160K" },
+  { slug: "grenoble", name: "Grenoble", nameEn: "Grenoble", country: "FR", region: "Auvergne-Rhône-Alpes", lat: 45.1885, lng: 5.7245, population: "160K", contextFr: "Au pied des Alpes, Grenoble attire profils étudiants, scientifiques et amateurs de montagne dans une ville tournée vers l’extérieur." },
   { slug: "dijon", name: "Dijon", nameEn: "Dijon", country: "FR", region: "Bourgogne-Franche-Comté", lat: 47.3220, lng: 5.0415, population: "150K" },
   { slug: "angers", name: "Angers", nameEn: "Angers", country: "FR", region: "Pays de la Loire", lat: 47.4784, lng: -0.5632, population: "150K" },
   { slug: "nimes", name: "Nîmes", nameEn: "Nîmes", country: "FR", region: "Occitanie", lat: 43.8367, lng: 4.3601, population: "140K" },
