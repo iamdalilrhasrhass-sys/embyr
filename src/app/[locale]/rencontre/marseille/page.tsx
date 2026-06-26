@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Rencontre à Marseille — application gratuite et moderne",
-  description: "Découvrez Embir pour faire des rencontres à Marseille. Application de rencontre gratuite au lancement avec profils vérifiés et matching intelligent.",
-  alternates: { canonical: "https://embir.xyz/rencontre/marseille" },
+  description: "Découvrez Embir pour faire des rencontres à Marseille. Application de rencontre gratuite au lancement avec intentions claires, préférences réciproques et découverte plus respectueuse.",
+  alternates: { canonical: "https://embir.xyz/fr/rencontre/marseille" },
   openGraph: {
     title: "Rencontre à Marseille",
-    description: "Application de rencontre gratuite à Marseille. Profils vérifiés, matching IA, zéro pub.",
-    url: "https://embir.xyz/rencontre/marseille",
+    description: "Application de rencontre gratuite au lancement à Marseille, avec intentions lisibles et compatibilité réciproque.",
+    url: "https://embir.xyz/fr/rencontre/marseille",
     locale: "fr_FR",
     images: [`/api/og?title=Rencontre+à+Marseille&variant=market`],
   },
@@ -30,8 +30,8 @@ export default function Page() {
             pensée pour Marseille et ses habitants.
           </p>
           <div className="mt-8 flex gap-4">
-            <Link prefetch={false} href="/auth/register?source=rencontre-marseille" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
-            <Link prefetch={false} href="/rencontre-sans-abonnement" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 hover:border-white/20">Comment ça marche</Link>
+            <Link prefetch={false} href="/fr/auth/register?source=rencontre-marseille" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil au lancement</Link>
+            <Link prefetch={false} href="/fr/application-rencontre-sans-abonnement" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 hover:border-white/20">Comment ça marche</Link>
           </div>
         </div>
       </section>
@@ -44,16 +44,16 @@ export default function Page() {
               <p className="text-sm text-white/45">Embir construit des communautés ville par ville. À Marseille, vous rencontrez des personnes qui vivent et sortent près de chez vous.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3>
-              <p className="text-sm text-white/45">Chaque profil à Marseille est vérifié par selfie. Fini les faux profils et les mauvaises surprises.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Signaux de confiance</h3>
+              <p className="text-sm text-white/45">Le profil met en avant les intentions, les préférences et les signaux utiles pour commencer avec plus de contexte.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Matching intelligent</h3>
-              <p className="text-sm text-white/45">Notre IA comprend vos préférences et vous suggère des profils compatibles à Marseille et dans les environs.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Compatibilité réciproque</h3>
+              <p className="text-sm text-white/45">Embir aide à clarifier vos préférences pour favoriser les profils qui recherchent aussi votre type de rencontre.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">100% gratuit au lancement</h3>
-              <p className="text-sm text-white/45">Messagerie illimitée, profils complets, matching IA. Sans abonnement, sans publicité.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Gratuit au lancement</h3>
+              <p className="text-sm text-white/45">Les fonctionnalités essentielles restent ouvertes pendant la phase de lancement, avec un futur freemium annoncé clairement.</p>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function Page() {
         </div>
       </section>
       <section className="px-4 pb-16 text-center">
-        <Link prefetch={false} href="/auth/register?source=rencontre-marseille" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit à Marseille</Link>
+        <Link prefetch={false} href="/fr/auth/register?source=rencontre-marseille" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil à Marseille</Link>
         <p className="mt-4 text-xs text-white/20">18+ uniquement. Gratuit au lancement. Sans engagement.</p>
       </section>
     </main>

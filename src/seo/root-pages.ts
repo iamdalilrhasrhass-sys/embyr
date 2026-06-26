@@ -112,9 +112,77 @@ const enProductPages = [
   priority: 0.86,
 }));
 
+const frIntentMoneyPages: RootSeoPage[] = [
+  {
+    slug: "rencontre-casual",
+    locale: "fr",
+    type: "product",
+    title: "Rencontre casual claire, consentie et compatible | Embir",
+    h1: "Rencontre casual : claire, consentie, compatible",
+    topic: "rencontre casual",
+    description:
+      "Embir aide les adultes qui cherchent une rencontre casual à annoncer leurs intentions clairement, respecter le consentement et découvrir des profils réciproquement compatibles.",
+    angle:
+      "Cette page répond à l'intention rencontre casual sans tomber dans la promesse agressive : elle explique comment clarifier l'envie, garder le respect au centre et éviter les malentendus avant le premier message.",
+    content:
+      "La rencontre casual n'a pas besoin d'être floue pour être légère. Embir traite cette intention comme une préférence explicite : adulte, assumée, modifiable et lisible. Le but n'est pas de pousser tout le monde vers le même scénario, mais de permettre aux personnes compatibles de se reconnaître sans perdre du temps dans des conversations contradictoires. Gratuit au lancement, Embir met d'abord en avant l'intention, les préférences, les limites et la qualité du contexte.",
+    priority: 0.91,
+  },
+  {
+    slug: "rencontre-hetero",
+    locale: "fr",
+    type: "product",
+    title: "Rencontre hétéro avec intentions claires et compatibilité | Embir",
+    h1: "Rencontre hétéro : intention claire et vraie compatibilité",
+    topic: "rencontre hétéro",
+    description:
+      "Embir propose une approche de la rencontre hétéro moins mécanique : intentions lisibles, préférences réciproques, univers personnels et découverte plus respectueuse.",
+    angle:
+      "Cette page positionne Embir pour les personnes hétéro qui veulent sortir du swipe automatique et comprendre rapidement si l'intention, le rythme et les préférences sont compatibles.",
+    content:
+      "La rencontre hétéro n'a pas besoin d'être un flux infini où chacun devine ce que l'autre veut. Embir repart de signaux simples : orientation, intention, préférences réciproques et univers personnel. L'expérience est pensée pour réduire le bruit, pas pour gonfler artificiellement le nombre de profils. Pendant le lancement, l'accès reste gratuit afin que la communauté fondatrice puisse tester une façon plus claire, plus humaine et plus compatible de se rencontrer.",
+    priority: 0.91,
+  },
+];
+
+const enIntentMoneyPages: RootSeoPage[] = [
+  {
+    slug: "casual-dating",
+    locale: "en",
+    type: "product",
+    title: "Casual dating with clarity, consent and compatibility | Embir",
+    h1: "Casual dating with clarity, consent and compatibility",
+    topic: "casual dating",
+    description:
+      "Embir helps adults approach casual dating with clearer intentions, mutual consent, reciprocal preferences and a more respectful discovery experience.",
+    angle:
+      "This page targets casual dating without overselling instant hookups: it explains how Embir makes intent readable, boundaries easier to respect and compatibility visible before a first message.",
+    content:
+      "Casual dating works better when it is clear, adult and mutual. Embir treats casual intent as a real preference, not as a hidden assumption or a pressure tactic. People can express what they are open to, adjust their pace and discover others through reciprocal compatibility instead of guessing through vague profiles. Free at launch, Embir keeps the first experience focused on consent, context and respectful discovery.",
+    priority: 0.91,
+  },
+  {
+    slug: "straight-dating",
+    locale: "en",
+    type: "product",
+    title: "Straight dating that respects intention and compatibility | Embir",
+    h1: "Straight dating that respects intention and compatibility",
+    topic: "straight dating",
+    description:
+      "Embir gives straight dating a clearer structure: readable intentions, reciprocal preferences, personal universes and compatibility before endless swiping.",
+    angle:
+      "This page positions Embir for straight people who want dating to feel less mechanical, less noisy and more grounded in mutual intent before conversation starts.",
+    content:
+      "Straight dating should not depend on endless swiping, vague bios and one-sided interest. Embir starts from orientation, intent, reciprocal preferences and personal universes so people can understand context before investing energy. During launch, core access is free so the founding community can test a calmer, more transparent and more compatible way to meet.",
+    priority: 0.91,
+  },
+];
+
 export const rootSeoPages: RootSeoPage[] = [
+  ...frIntentMoneyPages,
   ...frProductPages,
   ...frFreemiumPages,
+  ...enIntentMoneyPages,
   ...enProductPages,
   ...enFreemiumPages,
 ];

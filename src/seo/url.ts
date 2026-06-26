@@ -1,5 +1,17 @@
 const baseUrl = "https://embir.xyz";
 
+export const publicLandingLocales = {
+  "en": "/",
+  "fr": "/fr",
+  "es": "/es",
+  "de": "/de",
+  "it": "/it",
+} as const;
+
+export type PublicLandingLocale = keyof typeof publicLandingLocales;
+
+const publicLandingPaths = new Set<string>(Object.values(publicLandingLocales));
+
 export type HreflangGroup = {
   fr?: string;
   us?: string;
@@ -139,14 +151,36 @@ function samePath(a: string, b: string) {
   return normalizePublicPath(a) === normalizePublicPath(b);
 }
 
+function isPublicLandingPath(path: string) {
+  return publicLandingPaths.has(normalizePublicPath(path));
+}
+
+export function buildLandingLanguageAlternates(): Record<string, string> {
+  return {
+    en: absoluteUrl(publicLandingLocales.en),
+    "en-US": absoluteUrl(publicLandingLocales.en),
+    "fr-FR": absoluteUrl(publicLandingLocales.fr),
+    fr: absoluteUrl(publicLandingLocales.fr),
+    "es-ES": absoluteUrl(publicLandingLocales.es),
+    es: absoluteUrl(publicLandingLocales.es),
+    "de-DE": absoluteUrl(publicLandingLocales.de),
+    de: absoluteUrl(publicLandingLocales.de),
+    "it-IT": absoluteUrl(publicLandingLocales.it),
+    it: absoluteUrl(publicLandingLocales.it),
+    "x-default": absoluteUrl(publicLandingLocales.en),
+  };
+}
+
 export function getHreflangGroup(path: string): HreflangGroup | undefined {
   const publicPath = normalizePublicPath(path);
   return priorityGroups.find((group) =>
-    [group.fr, group.us, group.uk, group.defaultPath].some((candidate) => candidate && samePath(candidate, publicPath)),
+    [group.fr, group.us, group.uk, group.ch, group.chFr, group.defaultPath].some((candidate) => candidate && samePath(candidate, publicPath)),
   );
 }
 
 export function buildLanguageAlternates(path: string): Record<string, string> {
+  if (isPublicLandingPath(path)) return buildLandingLanguageAlternates();
+
   const group = getHreflangGroup(path);
   if (!group) {
     const publicPath = normalizePublicPath(path);

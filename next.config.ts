@@ -24,6 +24,8 @@ const nextConfig: NextConfig = {
       { source: "/fr/conditions", destination: "/fr/terms", permanent: true },
       { source: "/fr/verification-age", destination: "/fr/age-verification", permanent: true },
       { source: "/fr/a-propos", destination: "/fr/about", permanent: true },
+      { source: "/fr/casual-dating", destination: "/fr/rencontre-casual", permanent: true },
+      { source: "/fr/straight-dating", destination: "/fr/rencontre-hetero", permanent: true },
       // SEO canonicals — long-form aliases to short canonical URLs
       { source: "/en/uk/free-dating-app", destination: "/uk", permanent: true },
       { source: "/en/us/free-dating-app", destination: "/us", permanent: true },

@@ -138,6 +138,7 @@ export function resolveRootSeoPage(slug: string, locale: Locale): ResolvedSeoPag
     h1: page.h1,
     topic: page.topic,
     angle: page.angle,
+    content: page.content,
     description: page.description,
   };
 }

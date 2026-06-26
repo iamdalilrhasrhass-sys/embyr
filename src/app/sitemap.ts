@@ -38,6 +38,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Homepage
   routes.push(entry(baseUrl, "daily", 1.0));
+  routes.push(entry(`${baseUrl}/fr`, "daily", 0.98));
+  routes.push(entry(`${baseUrl}/es`, "daily", 0.95));
+  routes.push(entry(`${baseUrl}/de`, "daily", 0.95));
+  routes.push(entry(`${baseUrl}/it`, "daily", 0.95));
 
   // Universe of the Day
   routes.push(entry(`${baseUrl}/universe-of-the-day`, "daily", 0.8));
