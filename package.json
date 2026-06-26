@@ -10,6 +10,7 @@
     "lint:seo": "eslint src/seo src/components/seo-pages.tsx src/components/seo/SchemaOrg.tsx src/components/layout/Navbar.tsx src/components/layout/Footer.tsx src/app/sitemap.ts 'src/app/[locale]/layout.tsx' 'src/app/[locale]/page.tsx' 'src/app/[locale]/auth/register/page.tsx' 'src/app/[locale]/france/[slug]/page.tsx' 'src/app/[locale]/usa/[slug]/page.tsx' 'src/app/[locale]/us/page.tsx' 'src/app/[locale]/us/[slug]/page.tsx' 'src/app/[locale]/us/dating/[slug]/page.tsx' 'src/app/[locale]/uk/page.tsx' 'src/app/[locale]/uk/[slug]/page.tsx' 'src/app/[locale]/uk/dating/[slug]/page.tsx' 'src/app/[locale]/guides/[slug]/page.tsx' 'src/app/[locale]/comparisons/[slug]/page.tsx' 'src/app/[locale]/comparaison/[slug]/page.tsx' 'src/app/[locale]/comparison/[slug]/page.tsx' 'src/app/[locale]/product/[slug]/page.tsx' 'src/app/[locale]/freemium/[slug]/page.tsx' 'src/app/[locale]/blog/[slug]/page.tsx' 'src/app/[locale]/rencontre/[slug]/page.tsx' 'src/app/[locale]/[slug]/page.tsx'",
     "test:landing": "node --experimental-strip-types --test tests/landing-2100/*.test.ts",
     "test:ui": "node --experimental-strip-types --test tests/ui/*.test.ts",
+    "test:i18n": "node --experimental-strip-types --test tests/i18n/*.test.ts",
     "test:security": "node --experimental-strip-types --test tests/security/*.test.ts",
     "test:acquisition": "node --experimental-strip-types --test tests/acquisition/*.test.ts",
     "test:seo-policy": "node --experimental-strip-types --test tests/seo/programmatic-policy.test.ts",

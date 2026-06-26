@@ -5,3 +5,4 @@ export { default as MobileSheet } from "./MobileSheet";
 export { default as MobileTabBar } from "./MobileTabBar";
 export { default as Avatar } from "./Avatar";
 export { default as Badge } from "./Badge";
+export { default as LanguageSwitcher } from "./LanguageSwitcher";

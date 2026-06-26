@@ -1,5 +1,11 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  LOCALE_COOKIE,
+  localizePathname,
+  pathnameHasLocalePrefix,
+  pickPreferredLocale,
+} from './i18n/locale-detection';
 import { routing } from './i18n/routing';
 
 const intl = createMiddleware(routing);
@@ -61,6 +67,26 @@ function shouldNoindex(pathname: string): boolean {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (!pathnameHasLocalePrefix(pathname, routing.locales)) {
+    const locale = pickPreferredLocale({
+      cookieLocale: request.cookies.get(LOCALE_COOKIE)?.value,
+      acceptLanguage: request.headers.get('accept-language'),
+    });
+
+    if (locale !== routing.defaultLocale) {
+      const redirectUrl = request.nextUrl.clone();
+      redirectUrl.pathname = localizePathname(pathname, locale);
+      const redirectResponse = NextResponse.redirect(redirectUrl);
+
+      if (shouldNoindex(pathname)) {
+        redirectResponse.headers.set('X-Robots-Tag', 'noindex, nofollow');
+      }
+
+      return redirectResponse;
+    }
+  }
+
   const response = intl(request);
 
   if (shouldNoindex(pathname)) {

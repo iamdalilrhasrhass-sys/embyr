@@ -1,7 +1,6 @@
 import SchemaOrg from "@/components/seo/SchemaOrg";
 import HeroChapter from "./HeroChapter";
 import IntentionsRail from "./IntentionsRail";
-import JournalIndex from "./JournalIndex";
 import LandingNav from "./LandingNav";
 import ReciprocityChapter from "./ReciprocityChapter";
 import SeoContinuation from "./SeoContinuation";
@@ -22,9 +21,8 @@ export default function Landing2100({ locale }: Landing2100Props) {
       <LandingNav copy={copy.nav} />
       <HeroChapter copy={copy.hero} locale={locale} />
       <ReciprocityChapter copy={copy.reciprocity} />
-      <UniverseChapter copy={copy.universe} />
       <IntentionsRail copy={copy.intentions} />
-      <JournalIndex copy={copy.journal} />
+      <UniverseChapter copy={copy.universe} />
       <SeoContinuation copy={copy.seo} finalCopy={copy.final} />
     </main>
   );

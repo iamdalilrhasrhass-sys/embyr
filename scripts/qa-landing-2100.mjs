@@ -18,7 +18,26 @@ const viewports = [
 const locales = [
   { label: "fr", path: "/fr", h1: "Rencontrez ceux qui vous cherchent aussi." },
   { label: "en", path: "/", h1: "Meet the people who are looking for you too." },
+  { label: "es", path: "/es", h1: "Conoce a quienes también te buscan." },
+  { label: "de", path: "/de", h1: "Triff Menschen, die dich ebenfalls suchen." },
+  { label: "it", path: "/it", h1: "Incontra chi sta cercando anche te." },
 ];
+
+const languageHeaders = {
+  fr: "fr-FR,fr;q=0.9,en;q=0.7",
+  en: "en-US,en;q=0.9",
+  es: "es-ES,es;q=0.9,en;q=0.7",
+  de: "de-DE,de;q=0.9,en;q=0.7",
+  it: "it-IT,it;q=0.9,en;q=0.7",
+};
+
+const expectedSportLabel = {
+  fr: "Sport",
+  en: "Sport",
+  es: "Deporte",
+  de: "Sport",
+  it: "Sport",
+};
 
 await fs.mkdir(artifactDir, { recursive: true });
 
@@ -30,9 +49,39 @@ const browser = await puppeteer.launch({
 
 const results = [];
 
+async function newIsolatedPage() {
+  const context = browser.createBrowserContext
+    ? await browser.createBrowserContext()
+    : await browser.createIncognitoBrowserContext();
+  const page = await context.newPage();
+  await page.setCacheEnabled(false);
+  return { context, page };
+}
+
+{
+  const { context, page } = await newIsolatedPage();
+  await page.setExtraHTTPHeaders({ "Accept-Language": languageHeaders.es });
+  const response = await page.goto(`${baseUrl}/`, {
+    waitUntil: "domcontentloaded",
+    timeout: 45_000,
+  });
+  const failures = page.url().endsWith("/es")
+    ? []
+    : [`Expected /es redirect, got ${page.url()}`];
+  results.push({
+    locale: "geo",
+    viewport: "accept-language-es",
+    status: response?.status() || 0,
+    failures,
+    verdict: failures.length === 0 ? "PASS" : "FAIL",
+  });
+  await context.close();
+}
+
 for (const locale of locales) {
   for (const viewport of viewports) {
-    const page = await browser.newPage();
+    const { context, page } = await newIsolatedPage();
+    await page.setExtraHTTPHeaders({ "Accept-Language": languageHeaders[locale.label] });
     await page.setViewport({
       width: viewport.width,
       height: viewport.height,
@@ -47,7 +96,10 @@ for (const locale of locales) {
     });
     page.on("pageerror", (error) => pageErrors.push(error.message));
 
-    const response = await page.goto(`${baseUrl}${locale.path}`, {
+    const qaUrl = new URL(`${baseUrl}${locale.path}`);
+    qaUrl.searchParams.set("qa", `${locale.label}-${viewport.label}-${Date.now()}`);
+
+    const response = await page.goto(qaUrl.toString(), {
       waitUntil: "domcontentloaded",
       timeout: 45_000,
     });
@@ -72,6 +124,7 @@ for (const locale of locales) {
         scrollWidth: root.scrollWidth,
         overflow: root.scrollWidth > root.clientWidth + 1,
         chapterCount: document.querySelectorAll(".e21-chapter").length,
+        majorSectionCount: document.querySelectorAll(".e21-hero, .e21-chapter, .e21-final").length,
         footerVisible: Boolean(document.querySelector("footer")),
       };
     }, locale.h1);
@@ -81,22 +134,24 @@ for (const locale of locales) {
       await page.click(".e21-nav__toggle");
       mobileMenu = await page.evaluate(() => {
         const toggle = document.querySelector(".e21-nav__toggle");
-        const safety = Array.from(document.querySelectorAll(".e21-nav__links a")).find(
-          (link) => /Sécurité|Safety/.test(link.textContent || ""),
+        const intentions = Array.from(document.querySelectorAll(".e21-nav__links a")).find(
+          (link) => /Intentions|Intenciones|Absichten|Intenzioni/.test(link.textContent || ""),
         );
-        const journal = Array.from(document.querySelectorAll(".e21-nav__links a")).find(
-          (link) => /journal/i.test(link.textContent || ""),
+        const universe = Array.from(document.querySelectorAll(".e21-nav__links a")).find(
+          (link) => /Univers|Universe|Universo|Universum/.test(link.textContent || ""),
         );
+        const languageButton = document.querySelector(".e21-language__button");
         return {
           expanded: toggle?.getAttribute("aria-expanded"),
-          safetyVisible: safety ? getComputedStyle(safety).display !== "none" : false,
-          journalVisible: journal ? getComputedStyle(journal).display !== "none" : false,
+          intentionsVisible: intentions ? getComputedStyle(intentions).display !== "none" : false,
+          universeVisible: universe ? getComputedStyle(universe).display !== "none" : false,
+          languageSwitcherVisible: languageButton ? getComputedStyle(languageButton).display !== "none" : false,
         };
       });
       await page.click(".e21-nav__toggle");
     }
 
-    await page.$eval('input[aria-label="Orientation"]', (element) => {
+    await page.$eval('.e21-control input[type="range"]', (element) => {
       const input = element;
       const valueSetter = Object.getOwnPropertyDescriptor(
         HTMLInputElement.prototype,
@@ -145,25 +200,54 @@ for (const locale of locales) {
       preview: document.querySelector(".e21-intentions__preview p")?.textContent?.trim() || "",
     }));
 
+    let mobileIntentionsScreenshotPath = null;
+    if (locale.label === "fr" && viewport.label === "mobile-390") {
+      mobileIntentionsScreenshotPath = path.join(
+        artifactDir,
+        "fr-mobile-390-intentions.png",
+      );
+      await page.screenshot({
+        path: mobileIntentionsScreenshotPath,
+        fullPage: false,
+      });
+    }
+
+    const mobileIntentionsLayout =
+      viewport.width <= 760
+        ? await page.evaluate(() => {
+            const rail = document.querySelector(".e21-intentions__rail");
+            const firstItem = document.querySelector(".e21-intentions__item");
+            const railStyles = rail ? getComputedStyle(rail) : null;
+            const itemStyles = firstItem ? getComputedStyle(firstItem) : null;
+            return {
+              display: railStyles?.display || "",
+              columns: railStyles?.gridTemplateColumns || "",
+              itemFontFamily: itemStyles?.fontFamily || "",
+              itemMinWidth: itemStyles?.minWidth || "",
+            };
+          })
+        : null;
+
     const viewportScreenshotPath = path.join(
       artifactDir,
       `${locale.label}-${viewport.label}-viewport.png`,
     );
-    await page.goto(`${baseUrl}${locale.path}`, {
-      waitUntil: "domcontentloaded",
-      timeout: 45_000,
-    });
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await new Promise((resolve) => setTimeout(resolve, 150));
     await page.screenshot({ path: viewportScreenshotPath, fullPage: false });
 
     if (locale.label === "fr" && viewport.label === "desktop-1536") {
       const chapterScreenshots = [
         [".e21-reciprocity__layout", "fr-desktop-1536-compatibility.png"],
+        [".e21-intentions .e21-shell", "fr-desktop-1536-intentions.png"],
         [".e21-universe__experience", "fr-desktop-1536-universe.png"],
-        [".e21-journal .e21-shell", "fr-desktop-1536-journal.png"],
+        [".e21-final .e21-shell", "fr-desktop-1536-final.png"],
       ];
       for (const [selector, filename] of chapterScreenshots) {
         const element = await page.$(selector);
-        await element?.screenshot({ path: path.join(artifactDir, filename) });
+        await element?.evaluate((node) => node.scrollIntoView({ block: "center" }));
+        await new Promise((resolve) => setTimeout(resolve, 150));
+        await page.screenshot({ path: path.join(artifactDir, filename), fullPage: false });
       }
     }
 
@@ -178,15 +262,26 @@ for (const locale of locales) {
     if (initial.h1Count !== 1) failures.push(`H1 count ${initial.h1Count}`);
     if (initial.h1 !== locale.h1) failures.push(`Unexpected H1: ${initial.h1}`);
     if (initial.overflow) failures.push(`Horizontal overflow ${initial.scrollWidth}/${initial.clientWidth}`);
-    if (initial.chapterCount < 4) failures.push(`Only ${initial.chapterCount} chapters`);
+    if (initial.chapterCount !== 3) failures.push(`Expected 3 story chapters, got ${initial.chapterCount}`);
+    if (initial.majorSectionCount !== 5) failures.push(`Expected 5 major sections, got ${initial.majorSectionCount}`);
     if (!initial.footerVisible) failures.push("Footer missing");
     if (mobileMenu && mobileMenu.expanded !== "true") failures.push("Mobile menu did not open");
-    if (mobileMenu && !mobileMenu.safetyVisible) failures.push("Safety link hidden in mobile menu");
-    if (mobileMenu && !mobileMenu.journalVisible) failures.push("Journal link hidden in mobile menu");
+    if (mobileMenu && !mobileMenu.intentionsVisible) failures.push("Intentions link hidden in mobile menu");
+    if (mobileMenu && !mobileMenu.universeVisible) failures.push("Universe link hidden in mobile menu");
+    if (mobileMenu && !mobileMenu.languageSwitcherVisible) failures.push("Language switcher hidden in mobile menu");
     if (sliderOutput !== "85") failures.push(`Slider output stayed at ${sliderOutput}`);
-    if (!/Intentions/.test(universeTab)) failures.push(`Universe tab stayed at ${universeTab}`);
-    if (intentionState.selected !== "Sport") failures.push(`Intent stayed at ${intentionState.selected}`);
+    if (!/02/.test(universeTab)) failures.push(`Universe tab stayed at ${universeTab}`);
+    if (intentionState.selected !== expectedSportLabel[locale.label]) failures.push(`Intent stayed at ${intentionState.selected}`);
     if (!intentionState.preview) failures.push("Intent preview missing");
+    if (mobileIntentionsLayout && mobileIntentionsLayout.display !== "grid") {
+      failures.push(`Mobile intentions layout stayed ${mobileIntentionsLayout.display}`);
+    }
+    if (mobileIntentionsLayout && !mobileIntentionsLayout.columns.includes(" ")) {
+      failures.push(`Mobile intentions columns invalid: ${mobileIntentionsLayout.columns}`);
+    }
+    if (mobileIntentionsLayout && mobileIntentionsLayout.itemMinWidth !== "0px") {
+      failures.push(`Mobile intentions item min-width ${mobileIntentionsLayout.itemMinWidth}`);
+    }
     if (consoleErrors.length) failures.push(`${consoleErrors.length} console errors`);
     if (pageErrors.length) failures.push(`${pageErrors.length} page errors`);
 
@@ -199,6 +294,8 @@ for (const locale of locales) {
       sliderOutput,
       universeTab,
       intentionState,
+      mobileIntentionsLayout,
+      mobileIntentionsScreenshotPath,
       consoleErrors,
       pageErrors,
       viewportScreenshotPath,
@@ -207,7 +304,7 @@ for (const locale of locales) {
       verdict: failures.length === 0 ? "PASS" : "FAIL",
     });
 
-    await page.close();
+    await context.close();
   }
 }
 

@@ -18,9 +18,8 @@ test("composes the approved landing chapters in order", async () => {
   const chapterOrder = [
     "HeroChapter",
     "ReciprocityChapter",
-    "UniverseChapter",
     "IntentionsRail",
-    "JournalIndex",
+    "UniverseChapter",
     "SeoContinuation",
   ];
   let previousIndex = -1;
@@ -30,6 +29,7 @@ test("composes the approved landing chapters in order", async () => {
     assert.ok(currentIndex > previousIndex, `${chapter} must follow the previous chapter`);
     previousIndex = currentIndex;
   }
+  assert.doesNotMatch(composition, /JournalIndex/);
 });
 
 test("keeps the hero semantic and lightweight", async () => {
@@ -40,9 +40,13 @@ test("keeps the hero semantic and lightweight", async () => {
   ]);
 
   assert.equal((hero.match(/<h1/g) ?? []).length, 1);
+  assert.equal((hero.match(/className="e21-button/g) ?? []).length, 1);
+  assert.doesNotMatch(hero, /e21-hero__body/);
+  assert.doesNotMatch(hero, /copy\.secondary/);
   assert.match(nav, /#compatibility/);
-  assert.match(nav, /#safety/);
-  assert.match(nav, /#journal/);
+  assert.match(nav, /#intentions/);
+  assert.match(nav, /#universe/);
+  assert.match(nav, /LanguageSwitcher/);
   assert.match(compass, /<title/);
   assert.match(compass, /aria-live="polite"/);
   assert.doesNotMatch(`${hero}${nav}${compass}`, /three|@react-three|badge|pill/i);
@@ -75,17 +79,16 @@ test("presents the personal universe as an accessible demonstration", async () =
   assert.match(artifact, /copy\.demoNotice/);
 });
 
-test("renders intentions, journal and SEO links without invented metadata", async () => {
-  const [intentions, journal, seo] = await Promise.all([
+test("renders intentions and SEO continuation without invented metadata", async () => {
+  const [intentions, seo] = await Promise.all([
     readFile("src/components/landing-2100/IntentionsRail.tsx", "utf8"),
-    readFile("src/components/landing-2100/JournalIndex.tsx", "utf8"),
     readFile("src/components/landing-2100/SeoContinuation.tsx", "utf8"),
   ]);
 
   assert.match(intentions, /copy\.items\.map/);
   assert.match(intentions, /aria-selected/);
-  assert.match(journal, /copy\.items\.map/);
-  assert.doesNotMatch(journal, /author|articleCount|rating/i);
+  assert.match(intentions, /onMouseEnter/);
+  assert.match(intentions, /aria-live="polite"/);
   assert.match(seo, /copy\.intentions/);
   assert.match(seo, /copy\.orientations/);
   assert.match(seo, /copy\.cities/);

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import type { LandingCopy } from "./landing-copy";
 
 interface LandingNavProps {
@@ -31,11 +32,14 @@ export default function LandingNav({ copy }: LandingNavProps) {
         <div id="embir-landing-navigation" className="e21-nav__links" data-open={open}>
           <a href="#discover" onClick={close}>{copy.discover}</a>
           <a href="#compatibility" onClick={close}>{copy.compatibility}</a>
-          <a href="#safety" className="e21-nav__optional" onClick={close}>{copy.safety}</a>
-          <a href="#journal" className="e21-nav__optional" onClick={close}>{copy.journal}</a>
-          <Link href="/auth/register" className="e21-button" onClick={close}>
-            {copy.create}
-          </Link>
+          <a href="#intentions" className="e21-nav__optional" onClick={close}>{copy.intentions}</a>
+          <a href="#universe" className="e21-nav__optional" onClick={close}>{copy.universe}</a>
+          <div className="e21-nav__actions">
+            <LanguageSwitcher />
+            <Link href="/auth/register" className="e21-button" onClick={close}>
+              {copy.create}
+            </Link>
+          </div>
         </div>
         <button
           type="button"

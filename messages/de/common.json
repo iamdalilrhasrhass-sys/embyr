@@ -1,4 +1,23 @@
 {
+  "landing2100": {
+    "hero": {
+      "title": "Triff Menschen, die dich ebenfalls suchen.",
+      "subtitle": "In beide Richtungen. Vor der ersten Nachricht.",
+      "cta_primary": "Meine Kompatibilität erkunden"
+    },
+    "intentions": {
+      "amour": "Liebe",
+      "amitie": "Freundschaft",
+      "casual": "Casual",
+      "sport": "Sport",
+      "sorties": "Ausgehen",
+      "conversation": "Gespräch"
+    },
+    "discover": {
+      "title": "Entdecke, wer dich sucht",
+      "cta": "Kostenloses Profil erstellen →"
+    }
+  },
   "hero": {
     "badge": "For every orientation",
     "title1": "Meet",
@@ -8,6 +27,10 @@
     "secondary": "Mitglieder entdecken"
   },
   "nav": {
+    "discover": "Entdecken",
+    "compatibility": "Kompatibilität",
+    "safety": "Sicherheit",
+    "create_universe": "Mein Universum erstellen",
     "home": "Startseite",
     "members": "Mitglieder",
     "messages": "Nachrichten",

@@ -16,7 +16,7 @@ export default function ReciprocityChapter({ copy }: ReciprocityChapterProps) {
             ))}
           </h2>
           <p className="e21-chapter__body">{copy.body}</p>
-          <a className="e21-chapter__link" href="#safety">
+          <a className="e21-chapter__link" href="#intentions">
             {copy.cta}
           </a>
         </div>

@@ -27,6 +27,7 @@ export default function IntentionsRail({ copy }: IntentionsRailProps) {
               aria-selected={selected === index}
               className="e21-intentions__item"
               key={item.label}
+              onMouseEnter={() => setSelected(index)}
               onClick={() => setSelected(index)}
               onFocus={() => setSelected(index)}
             >
@@ -34,7 +35,12 @@ export default function IntentionsRail({ copy }: IntentionsRailProps) {
             </button>
           ))}
         </div>
-        <div className="e21-intentions__preview" role="tabpanel" aria-live="polite">
+        <div
+          className="e21-intentions__preview"
+          role="tabpanel"
+          aria-live="polite"
+          key={active.label}
+        >
           <p>{active.preview}</p>
           <Link href={active.href}>{active.label}</Link>
         </div>
