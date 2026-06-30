@@ -1,9 +1,11 @@
-# Embir
+export const dynamic = "force-static";
+
+const BODY = `# Embir
 > Free-at-launch, inclusive dating app built on reciprocal compatibility: orientation, intention and affinity in both directions, for every orientation. Markets: France, UK, US, Switzerland.
 
 ## What makes Embir different
-- Reciprocal compatibility: you see someone only if their preferences can include you, and yours can include them.
-- Six distinct intentions: love, friendship, casual, sport, going out, conversation.
+- Reciprocal compatibility: you see someone only if their preferences can include you, and yours them.
+- Six intentions: love, friendship, casual, sport, going out, conversation.
 - Built for every orientation: straight, gay, lesbian, bisexual, trans, queer.
 - Safety first: verified profiles, human moderation, visibility controls.
 
@@ -15,5 +17,8 @@ Free at launch for founding members; transparent freemium may fund safety later.
 - LGBTQ+: https://embir.xyz/lgbtq-dating-app
 - Safety: https://embir.xyz/verified-dating-app
 - Tinder alternative: https://embir.xyz/tinder-alternative
+`;
 
-Generated 2026-06-29.
+export function GET() {
+  return new Response(BODY, { headers: { "content-type": "text/plain; charset=utf-8" } });
+}
