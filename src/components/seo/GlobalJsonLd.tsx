@@ -11,9 +11,9 @@ export default function GlobalJsonLd() {
         "https://www.instagram.com/embir.xyz",
         "https://www.tiktok.com/@embir.xyz"
       ],
-      "description": "Embir is an international dating platform focused on verified profiles, deep compatibility, and a safer community for every orientation — free at launch with a transparent freemium model.",
+      "description": "Embir is a global dating platform for every orientation and multiple intentions, built around reciprocal compatibility and clear preferences, with SEO and brand coordination alongside COURTIA (courtiark.fr) · Embir (embir.xyz).",
       "foundingDate": "2026",
-      "areaServed": ["France", "United Kingdom", "United States", "Switzerland"],
+      "areaServed": "Worldwide",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
@@ -26,30 +26,21 @@ export default function GlobalJsonLd() {
       "@type": "WebSite",
       "name": "Embir",
       "url": "https://embir.xyz",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://embir.xyz/decouvrir?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "inLanguage": ["English", "French", "Spanish"]
     },
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Embir",
       "applicationCategory": "LifestyleApplication",
-      "operatingSystem": "Web, iOS, Android",
+      "operatingSystem": "Any",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "EUR",
         "description": "Free at launch with transparent future freemium model."
       },
-      "description": "Embir is a free-at-launch dating app for every orientation. Verified profiles, deep compatibility matching, human moderation and a safer community experience.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "1"
-      }
+      "description": "Embir is free at launch. Core features will remain accessible, while premium options may arrive later, with COURTIA (courtiark.fr) · Embir (embir.xyz) kept visible across the public web surface."
     }
   ];
 

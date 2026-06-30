@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ResolvedSeoPage } from "@/seo/catalog";
 import { absoluteUrl } from "@/seo/url";
+import TrackedLink from "@/components/TrackedLink";
 
 type FaqItem = { q: string; a: string };
 
@@ -48,8 +49,8 @@ function faqItems(page: ResolvedSeoPage): FaqItem[] {
   if (page.locale === "fr") {
     return [
       {
-        q: "Pourquoi cette page existe-t-elle ?",
-        a: page.angle ?? "Cette page repond a une intention de recherche precise avec un contenu utile, localise et relie aux autres pages Embir.",
+        q: "Que vais-je trouver ici ?",
+        a: page.angle ?? "Tu peux evaluer si Embir correspond a ton besoin: confiance, compatibilite, profils verifies, gratuit au lancement et liens utiles vers les pages proches.",
       },
       {
         q: "Embir est-il gratuit au lancement ?",
@@ -72,8 +73,8 @@ function faqItems(page: ResolvedSeoPage): FaqItem[] {
 
   return [
     {
-      q: "Why does this page exist?",
-      a: page.angle ?? "This page answers a specific search intent with useful, localized content and links to related Embir pages.",
+      q: "What will I find here?",
+      a: page.angle ?? "You can decide whether Embir fits your need: trust, compatibility, verified profiles, free-at-launch access and useful links to related pages.",
     },
     {
       q: "Is Embir free at launch?",
@@ -103,6 +104,9 @@ function internalLinks(locale: "en" | "fr") {
         { href: "/fr/alternative-grindr", label: "Alternative Grindr" },
         { href: "/fr/rencontre-lgbt", label: "Rencontre LGBT" },
         { href: "/fr/profils-verifies", label: "Profils verifies" },
+        { href: "/fr/application-rencontre-sans-faux-profils", label: "Sans faux profils" },
+        { href: "/fr/verification-selfie-rencontre", label: "Verification selfie" },
+        { href: "/fr/application-rencontre-lgbt-securisee", label: "LGBT securisee" },
         { href: "/fr/suisse", label: "Rencontre Suisse" },
         { href: "/fr/blog/comment-faire-un-bon-profil-sur-une-application-de-rencontre", label: "Guide profil" },
         { href: "/auth/register", label: "Rejoindre la communaute" },
@@ -112,8 +116,11 @@ function internalLinks(locale: "en" | "fr") {
         { href: "/uk/free-dating-app", label: "Free dating app UK" },
         { href: "/us/tinder-alternative", label: "Tinder alternative" },
         { href: "/us/grindr-alternative", label: "Grindr alternative" },
-        { href: "/us/lgbtq-dating-app", label: "LGBTQ dating" },
+        { href: "/every-orientation-dating-app", label: "Every orientation" },
         { href: "/us/verified-dating-app", label: "Verified profiles" },
+        { href: "/en/no-fake-profiles-dating-app", label: "No fake profiles" },
+        { href: "/en/selfie-verification-dating", label: "Selfie verification" },
+        { href: "/en/safe-lgbtq-dating-app", label: "Safe LGBTQ dating" },
         { href: "/switzerland", label: "Switzerland dating" },
         { href: "/blog/how-to-write-a-good-dating-profile", label: "Profile guide" },
         { href: "/auth/register", label: "Join the founding community" },
@@ -142,7 +149,7 @@ export function JsonLd({ page }: { page: ResolvedSeoPage }) {
     name: item.q,
     acceptedAnswer: { "@type": "Answer", text: item.a },
   }));
-  const schemas = [{
+  const schemas: Array<Record<string, unknown>> = [{
     "@context": "https://schema.org",
     "@type": page.kind === "article" ? "Article" : "WebPage",
     name: page.title,
@@ -169,7 +176,130 @@ export function JsonLd({ page }: { page: ResolvedSeoPage }) {
     })),
   }];
 
+  if (page.answerSummary) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Embir",
+      applicationCategory: "DatingApplication",
+      operatingSystem: "Web",
+      url: "https://embir.xyz",
+      description: page.evidenceNarrative ?? page.answerSummary,
+      featureList: page.proofPoints ?? [],
+      additionalProperty: (page.evidenceMetrics ?? []).map((metric) => ({
+        "@type": "PropertyValue",
+        name: page.locale === "fr" ? "Preuve chiffree" : "Quantified proof",
+        value: metric,
+      })),
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: 0,
+        },
+      },
+    }, {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: page.app ? `Embir compared with ${page.app}` : "Embir",
+      brand: { "@type": "Brand", name: "Embir" },
+      description: page.evidenceNarrative ?? page.answerSummary,
+      category: "Dating application",
+      additionalProperty: (page.evidenceMetrics ?? []).map((metric) => ({
+        "@type": "PropertyValue",
+        name: page.locale === "fr" ? "Preuve chiffree" : "Quantified proof",
+        value: metric,
+      })),
+    }, {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: page.locale === "fr" ? "Points de comparaison Embir" : "Embir comparison points",
+      itemListElement: (page.comparisonPoints ?? []).map((point, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: point,
+      })),
+    });
+  }
+
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />;
+}
+
+export function AnswerSummaryBlock({ page }: { page: ResolvedSeoPage }) {
+  if (!page.answerSummary) return null;
+  return (
+    <section className="mt-10 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-7">
+      <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#d4a574]/70">
+        {page.locale === "fr" ? "Reponse courte" : "Short answer"}
+      </p>
+      <h2 className="mt-3 font-serif text-2xl text-white">
+        {page.locale === "fr" ? "Pour moteurs IA et recherche comparative" : "For AI search and comparison intent"}
+      </h2>
+      <p className="mt-4 text-base leading-relaxed text-white/60">{page.answerSummary}</p>
+    </section>
+  );
+}
+
+export function ComparisonPointsBlock({ page }: { page: ResolvedSeoPage }) {
+  if (!page.comparisonPoints?.length) return null;
+  return (
+    <section className="mt-10">
+      <h2 className="font-serif text-3xl text-white">
+        {page.locale === "fr" ? "Comparaison rapide" : "Quick comparison"}
+      </h2>
+      <div className="mt-5 grid gap-3 md:grid-cols-2">
+        {page.comparisonPoints.map((point) => (
+          <div key={point} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 text-sm leading-relaxed text-white/55">
+            {point}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function ProofPointsBlock({ page }: { page: ResolvedSeoPage }) {
+  if (!page.proofPoints?.length) return null;
+  return (
+    <section className="mt-10">
+      <h2 className="font-serif text-3xl text-white">
+        {page.locale === "fr" ? "Preuves publiques" : "Public proof points"}
+      </h2>
+      <ul className="mt-5 grid gap-3 md:grid-cols-2">
+        {page.proofPoints.map((point) => (
+          <li key={point} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 text-sm leading-relaxed text-white/55">
+            {point}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export function EvidenceNarrativeBlock({ page }: { page: ResolvedSeoPage }) {
+  if (!page.evidenceNarrative) return null;
+  return (
+    <section className="mt-10">
+      <h2 className="font-serif text-3xl text-white">
+        {page.locale === "fr" ? "Preuves, chiffres et referencement" : "Evidence, figures and search positioning"}
+      </h2>
+      {page.evidenceMetrics?.length ? (
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          {page.evidenceMetrics.map((metric) => (
+            <div key={metric} className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.03] p-5 text-sm font-semibold leading-relaxed text-white/62">
+              {metric}
+            </div>
+          ))}
+        </div>
+      ) : null}
+      <div className="mt-6 space-y-5 text-base leading-relaxed text-white/52">
+        {page.evidenceNarrative.split("\n\n").map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export function FAQBlock({ page }: { page: ResolvedSeoPage }) {
@@ -215,9 +345,14 @@ export function CTASection({ locale }: { locale: "en" | "fr" }) {
           ? "Cree ton profil gratuitement pendant le lancement et aide Embir a construire une plateforme plus saine pour toutes orientations."
           : "Create your profile for free during launch and help Embir build a healthier platform for every orientation."}
       </p>
-      <Link href="/auth/register" prefetch={false} className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">
+      <TrackedLink
+        href="/auth/register"
+        label={locale === "fr" ? "Creer mon profil gratuit" : "Create my free profile"}
+        location="seo_page_final"
+        className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
+      >
         {locale === "fr" ? "Creer mon profil gratuit" : "Create my free profile"}
-      </Link>
+      </TrackedLink>
     </section>
   );
 }
@@ -277,6 +412,9 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/50">
           {page.description}
         </p>
+        <p className="mt-4 text-xs uppercase tracking-[0.18em] text-[#d4a574]/60">
+          COURTIA (courtiark.fr) · Embir (embir.xyz)
+        </p>
         <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/35">
           <span>Embir Team</span>
           <span>·</span>
@@ -284,6 +422,10 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
           <span>·</span>
           <span>{page.locale === "fr" ? "France / Royaume-Uni / Etats-Unis" : "France / UK / US"}</span>
         </div>
+        <AnswerSummaryBlock page={page} />
+        <ComparisonPointsBlock page={page} />
+        <ProofPointsBlock page={page} />
+        <EvidenceNarrativeBlock page={page} />
         <EditorialSections page={page} />
         {children}
         <FreemiumExplainer locale={page.locale} />
@@ -301,16 +443,20 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
   const place = page.city ?? (page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? (page.locale === "fr" ? "la Suisse" : "Switzerland") : page.locale === "fr" ? "la France" : "the regions Embir serves");
   
   const cityCity = page.city ?? "";
-  const marketLabel = page.market === "france" ? "France" : page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? "Switzerland" : "";
-
   if (page.locale === "fr") {
     return (
       <section className="mt-12 space-y-10 text-base leading-relaxed text-white/52">
+        {page.content && (
+          <div className="rounded-3xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-8">
+            <h2 className="font-serif text-3xl text-white">Note de l&apos;equipe</h2>
+            <p className="mt-4 whitespace-pre-line italic text-white/70">{page.content}</p>
+          </div>
+        )}
         <div>
-          <h2 className="font-serif text-3xl text-white">Pourquoi cette page existe</h2>
+        <h2 className="font-serif text-3xl text-white">Ce que tu peux evaluer ici</h2>
           <p className="mt-4">{page.angle}</p>
           <p className="mt-4">
-            Le marche de la rencontre est sature par des pages qui repètent les memes promesses : plus de matchs, plus vite, plus proche. Cette page prend le probleme autrement. Elle explique ce que l&apos;utilisateur cherche vraiment autour de {topic} : de la confiance, une communaute reelle, des profils verifies, des preferences lisibles et une experience qui ne force pas l&apos;abonnement avant meme d&apos;avoir compris le produit.
+            Le marche de la rencontre est sature par des promesses qui se ressemblent : plus de matchs, plus vite, plus proche. Embir prend le probleme autrement et clarifie ce que l&apos;utilisateur cherche vraiment autour de {topic} : de la confiance, une communaute reelle, des profils verifies, des preferences lisibles et une experience qui ne force pas l&apos;abonnement avant meme d&apos;avoir compris le produit.
           </p>
         </div>
         <div>
@@ -369,14 +515,14 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
       {page.content && (
         <div className="rounded-3xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-8">
           <h2 className="font-serif text-3xl text-white">A word from the team</h2>
-          <p className="mt-4 italic text-white/70">{page.content}</p>
+          <p className="mt-4 whitespace-pre-line italic text-white/70">{page.content}</p>
         </div>
       )}
       <div>
-        <h2 className="font-serif text-3xl text-white">Why this page exists</h2>
+        <h2 className="font-serif text-3xl text-white">What you can evaluate here</h2>
         <p className="mt-4">{page.angle}</p>
         <p className="mt-4">
-          Dating search results are crowded with pages that repeat the same promise: more matches, faster, nearby. This page takes a clearer angle around {topic}. It explains what people actually need before joining a new dating platform: trust, real profiles, verified safety signals, readable preferences and a launch model that does not force a subscription before the product has earned attention.
+          Dating search results are crowded with promises that repeat the same idea: more matches, faster, nearby. Embir takes a clearer angle around {topic}. It explains what people actually need before joining a new dating platform: trust, real profiles, verified safety signals, readable preferences and a launch model that does not force a subscription before the product has earned attention.
         </p>
       </div>
       <div>

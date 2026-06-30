@@ -8,6 +8,7 @@ import "@/styles/embir-tokens.css";
 import "@/styles/mobile.css";
 import "@/styles/embir-20000x.css";
 import "@/styles/embir-supernova.css";
+import "@/styles/embir-landing.css";
 import CookieConsent from "@/components/CookieConsent";
 import ClientShell from "@/components/ClientShell";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -18,17 +19,22 @@ import GlobalJsonLd from "@/components/seo/GlobalJsonLd";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import InstallPrompt from "@/components/InstallPrompt";
 
+const BRAND_SIGNATURE = "COURTIA (courtiark.fr) · Embir (embir.xyz)";
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   const url = locale === 'en' ? 'https://embir.xyz' : `https://embir.xyz/${locale}`;
+  const title = `${t('title')} | ${BRAND_SIGNATURE}`;
+  const description = `${t('description')} ${BRAND_SIGNATURE}.`;
   return {
-    title: t('title'), description: t('description'),
+    title: { default: title, template: `%s | ${BRAND_SIGNATURE}` },
+    description,
     metadataBase: new URL('https://embir.xyz'),
     verification: { google: 'zhl0TqH5BoVmHCeI9QrtuMd8yoO05uJK_oMM_yEh3ss' },
     alternates: { canonical: url, languages: { 'fr-FR': 'https://embir.xyz/fr', 'en': 'https://embir.xyz', 'x-default': 'https://embir.xyz' } },
-    openGraph: { title: t('title'), description: t('description'), url, siteName: 'Embir', locale: locale === 'fr' ? 'fr_FR' : 'en_US', type: 'website', images: [{ url: `/api/og?title=${encodeURIComponent(t('title'))}&subtitle=${encodeURIComponent(t('description'))}&locale=${locale}&variant=default`, width: 1200, height: 630, alt: 'Embir' }] },
-    twitter: { card: 'summary_large_image', title: t('title'), description: t('description'), images: [`/api/og?title=${encodeURIComponent(t('title'))}&subtitle=${encodeURIComponent(t('description'))}&locale=${locale}&variant=default`] },
+    openGraph: { title, description, url, siteName: 'Embir', locale: locale === 'fr' ? 'fr_FR' : 'en_US', type: 'website', images: [{ url: `/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&locale=${locale}&variant=default`, width: 1200, height: 630, alt: 'Embir' }] },
+    twitter: { card: 'summary_large_image', title, description, images: [`/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}&locale=${locale}&variant=default`] },
     manifest: '/manifest.webmanifest',
     appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'Embir' },
     robots: locale === 'en' || locale === 'fr' ? { index: true, follow: true } : { index: false, follow: false },
@@ -51,12 +57,15 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   if (!routing.locales.some((supportedLocale) => supportedLocale === locale)) notFound();
+  const t = await getTranslations({ locale, namespace: 'meta' });
   const messages = await getMessages();
+  const siteDescription = `${t('description')} ${BRAND_SIGNATURE}.`;
 
   return (
     <html lang={locale} data-site="embir">
       <head>
         <GlobalJsonLd />
+        <meta name="description" content={siteDescription} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>

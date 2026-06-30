@@ -33,6 +33,28 @@ export type SeoEntry = {
 };
 
 export const seoEntries: SeoEntry[] = [
+  // Intent hub pages — multi-orientation Hinge-style (22 Juin 2026)
+  { path: "/en/amour", category: "product" as const, locale: "en" as const, priority: 0.95 },
+  { path: "/fr/amour", category: "product" as const, locale: "fr" as const, priority: 0.95 },
+  { path: "/en/amis", category: "product" as const, locale: "en" as const, priority: 0.92 },
+  { path: "/fr/amis", category: "product" as const, locale: "fr" as const, priority: 0.92 },
+  { path: "/en/fun", category: "product" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/fun", category: "product" as const, locale: "fr" as const, priority: 0.9 },
+  { path: "/en/plan-cul", category: "product" as const, locale: "en" as const, priority: 0.88 },
+  { path: "/fr/plan-cul", category: "product" as const, locale: "fr" as const, priority: 0.88 },
+  { path: "/en/sport", category: "product" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/sport", category: "product" as const, locale: "fr" as const, priority: 0.9 },
+  { path: "/en/evenements", category: "product" as const, locale: "en" as const, priority: 0.9 },
+  { path: "/fr/evenements", category: "product" as const, locale: "fr" as const, priority: 0.9 },
+  // Comparison pages — competitor vs Embir (22 Juin 2026)
+  { path: "/en/hinge-vs-embir", category: "comparison" as const, locale: "en" as const, priority: 0.95 },
+  { path: "/fr/hinge-vs-embir", category: "comparison" as const, locale: "fr" as const, priority: 0.95 },
+  { path: "/en/tinder-vs-embir", category: "comparison" as const, locale: "en" as const, priority: 0.95 },
+  { path: "/fr/tinder-vs-embir", category: "comparison" as const, locale: "fr" as const, priority: 0.95 },
+  { path: "/en/grindr-vs-embir", category: "comparison" as const, locale: "en" as const, priority: 0.95 },
+  { path: "/fr/grindr-vs-embir", category: "comparison" as const, locale: "fr" as const, priority: 0.95 },
+  { path: "/en/bumble-vs-embir", category: "comparison" as const, locale: "en" as const, priority: 0.95 },
+  { path: "/fr/bumble-vs-embir", category: "comparison" as const, locale: "fr" as const, priority: 0.95 },
   // Core legal & safety pages (newly created)
   { path: "/en/terms", category: "product" as const, locale: "en" as const, priority: 0.7 },
   { path: "/fr/terms", category: "product" as const, locale: "fr" as const, priority: 0.7 },
@@ -52,6 +74,12 @@ export const seoEntries: SeoEntry[] = [
   { path: "/en/verified-dating-app", category: "product" as const, locale: "en" as const, priority: 0.88 },
   { path: "/en/site-rencontre-gay", category: "product" as const, locale: "en" as const, priority: 0.85 },
   { path: "/en/serious-dating-app", category: "product" as const, locale: "en" as const, priority: 0.85 },
+  { path: "/casual-dating", category: "product" as const, locale: "en" as const, priority: 0.87 },
+  { path: "/fr/casual-dating", category: "product" as const, locale: "fr" as const, priority: 0.87 },
+  { path: "/straight-dating", category: "product" as const, locale: "en" as const, priority: 0.87 },
+  { path: "/fr/straight-dating", category: "product" as const, locale: "fr" as const, priority: 0.87 },
+  { path: "/en/every-orientation-dating-app", category: "product" as const, locale: "en" as const, priority: 0.89 },
+  { path: "/fr/every-orientation-dating-app", category: "product" as const, locale: "fr" as const, priority: 0.89 },
   { path: "/en/paris", category: "france" as const, locale: "en" as const, priority: 0.9 },
   { path: "/fr/paris", category: "france" as const, locale: "fr" as const, priority: 0.92 },
   { path: "/en/freemium", category: "freemium" as const, locale: "en" as const, priority: 0.88 },
