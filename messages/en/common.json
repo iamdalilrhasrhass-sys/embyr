@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Embir: Free Inclusive Dating App for Every Orientation | France, UK, US & Switzerland",
-    "description": "Join Embir — the free-at-launch dating app built for every orientation. Verified profiles, deep compatibility matching, human moderation and a safer community. Founding members in France, UK, US & Switzerland get priority access."
+    "title": "Embir: Free Inclusive Dating App for Every Orientation | Worldwide",
+    "description": "Join Embir, the free-at-launch dating app open worldwide for every orientation. Verified profiles, deep compatibility matching, human moderation and a safer community."
   },
   "nav": {
     "discover": "Discover",
@@ -20,9 +20,9 @@
     "blog": "Blog"
   },
   "landing": {
-    "badge": "France · Switzerland · UK · US",
+    "badge": "Worldwide · Every orientation",
     "title": "Free Inclusive Dating App for Every Orientation",
-    "subtitle": "Free at launch. Verified profiles, deep compatibility, built for every orientation. Join the founding community in France, UK, US & Switzerland before the freemium transition.",
+    "subtitle": "Free at launch worldwide. Verified profiles, deep compatibility and a safer community for every orientation before the freemium transition.",
     "cta_early_access": "Request early access",
     "cta_create": "Create my universe",
     "founder_strip": "Founder access · Welcome to my world · Deep compatibility",
@@ -82,7 +82,7 @@
     "faq_home_q4": "How is Embir different from Tinder or Bumble?",
     "faq_home_a4": "Embir focuses on deep compatibility and verified profiles instead of endless swiping. No essential features locked behind a subscription from day one. An approach centered on trust, transparency and real inclusivity.",
     "faq_home_q5": "Which countries is Embir available in?",
-    "faq_home_a5": "Embir is launched in France, Switzerland, the United Kingdom and the United States. The platform is available in English and French. More countries will follow after the launch phase.",
+    "faq_home_a5": "Embir is available worldwide on the web. The strongest early communities may grow city by city, but founding members can join from anywhere. The public experience currently supports English and French.",
     "trust_title": "Our safety & inclusivity commitments",
     "trust_1_title": "Human moderation",
     "trust_1_text": "Every report is reviewed by a real team member, not an algorithm. Context matters and decisions are made with judgment, not automation.",
@@ -119,7 +119,7 @@
     "settings": "Settings"
   },
   "footer": {
-    "tagline": "International dating platform for all orientations across France, Switzerland, the UK and the USA. Free at launch, with compatibility-first discovery and safety tools.",
+    "tagline": "International dating platform for all orientations, available worldwide. Free at launch, with compatibility-first discovery and safety tools.",
     "adult": "18+ ONLY",
     "navigation": "Navigation",
     "free_launch": "Free launch",
@@ -138,7 +138,7 @@
     "moderation": "Moderation & Reporting",
     "support": "Support",
     "rights": "All rights reserved.",
-    "regions": "France · Switzerland · UK · USA · all orientations"
+    "regions": "Worldwide · all orientations"
   },
   "dashboard": {
     "title": "Dashboard",

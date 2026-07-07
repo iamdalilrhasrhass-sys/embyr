@@ -7,9 +7,10 @@ import type { LandingCopy } from "./landing-copy";
 
 interface LandingNavProps {
   copy: LandingCopy["nav"];
+  locale: "fr" | "en";
 }
 
-export default function LandingNav({ copy }: LandingNavProps) {
+export default function LandingNav({ copy, locale }: LandingNavProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function LandingNav({ copy }: LandingNavProps) {
           </Link>
         </div>
         <div className="e21-nav__language">
-          <LanguageSwitcher />
+          <LanguageSwitcher initialLocale={locale} />
         </div>
         <button
           type="button"

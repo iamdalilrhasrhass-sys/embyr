@@ -1,6 +1,6 @@
 {
   "slug": "popular-dating-app-by-country",
-  "intro": "Dating app popularity varies significantly by country. Tinder dominates globally but faces strong regional competitors: Happn and Fruitz in France, Badoo in Southern Europe and Latin America, Bumble in English-speaking markets, Grindr for gay men worldwide.\n\nEmbir launched in France, UK, and USA simultaneously — the three markets where the gap between what existing apps offer and what users actually need is widest.",
+  "intro": "Dating app popularity varies significantly by country. Tinder dominates globally but faces strong regional competitors: Happn and Fruitz in France, Badoo in Southern Europe and Latin America, Bumble in English-speaking markets, Grindr for gay men worldwide.\n\nEmbir is open worldwide on the web, while early community density grows city by city where dating apps leave the biggest gaps.",
   "comparisonTable": [
     {
       "criteria": "France",
@@ -35,21 +35,21 @@
   ],
   "sections": [
     {
-      "title": "Why Embir chose France, UK, and USA",
+      "title": "Why Embir is open worldwide",
       "content": "These three markets share a common pattern: high dating app adoption, dissatisfaction with existing options (particularly around LGBTQ+ inclusivity and profile authenticity), and users willing to try a verified, inclusive alternative. The founding community in all three markets is actively shaping the platform's early culture.",
       "highlights": [
-        "Three simultaneous launch markets — France, UK, USA",
+        "Worldwide web access with city-by-city community density",
         "Founding community in all three markets is active",
         "French interface for France, English for UK and USA"
       ]
     }
   ],
-  "verdict": "Embir launched simultaneously in France, UK, and USA — the three markets with the biggest gap between what existing apps offer and what users need. Verified profiles, bidirectional filtering, universal LGBTQ+ inclusivity, and free access at launch.",
+  "verdict": "Embir is available worldwide on the web, with verified profiles, bidirectional filtering, universal LGBTQ+ inclusivity, and free access at launch. Early density grows city by city instead of closing the product to a few countries.",
   "ctaText": "Join Embir in your country — free at launch",
   "faq": [
     {
       "q": "Which countries is Embir available in?",
-      "a": "Embir launched in France, UK, and USA simultaneously. Global expansion is planned based on founding community growth."
+      "a": "Embir is available worldwide on the web. Community growth is managed city by city so local density can build without closing access to founding members elsewhere."
     },
     {
       "q": "What language is Embir available in?",

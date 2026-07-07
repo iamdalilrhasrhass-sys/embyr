@@ -152,7 +152,7 @@ export function JsonLd({ page }: { page: ResolvedSeoPage }) {
     url,
     author: { "@type": "Organization", name: page.locale === "fr" ? "Equipe Embir" : "Embir Team" },
     dateModified: "2026-06-15",
-    areaServed: ["France", "United Kingdom", "United States"],
+    areaServed: "Worldwide",
     about: ["dating platform", "verified profiles", "compatibility", "preferences", "safety", "freemium"],
   }, {
     "@context": "https://schema.org",
@@ -496,13 +496,13 @@ export function SeoGuidePage({ page }: { page: ResolvedSeoPage }) {
             {(page.locale === "fr"
               ? [
                   "Gratuit au lancement, avec un futur modele freemium transparent.",
-                  "Construit pour la France, la Suisse, le Royaume-Uni et les Etats-Unis.",
+                  "Disponible dans le monde entier, avec une experience fiable en francais et en anglais.",
                   "Pense pour toutes les orientations, pas seulement une niche.",
                   "Centre sur les profils verifies, la compatibilite et des conversations plus sures.",
                 ]
               : [
                   "Free at launch, with a transparent future freemium model.",
-                  "Built for France, Switzerland, the UK and the United States.",
+                  "Available worldwide, with a reliable English and French experience.",
                   "Designed for every orientation, not only one dating niche.",
                   "Focused on verified profiles, compatibility and safer conversations.",
                 ]).map((item) => <li key={item}>{item}</li>)}
@@ -571,7 +571,7 @@ export function SeoArticlePage({ page }: { page: ResolvedSeoPage }) {
         <p>
           {page.locale === "fr"
             ? "Les recherches autour des applications de rencontre melangent souvent le prix, la securite, l'orientation, la localisation et la confiance. Embir relie ces questions au lieu de les traiter comme des pages isolees. Une personne qui cherche une application gratuite, une option LGBTQ plus rassurante ou une experience avec profils verifies doit retrouver la meme promesse publique : gratuit au lancement, plus large qu'une seule niche, et transparent sur le futur modele economique."
-            : "Search intent around dating apps is usually split between price, safety, orientation, location and trust. Embir connects those questions instead of treating them as separate landing pages. A person looking for a free dating app in the United States, a safer LGBTQ dating option in the UK, or a verified profile experience in France should find the same public promise: free at launch, broader than a single niche, and transparent about the future business model."}
+            : "Search intent around dating apps is usually split between price, safety, orientation, location and trust. Embir connects those questions instead of treating them as separate landing pages. A person looking for a free dating app, a safer LGBTQ dating option, or a verified profile experience anywhere in the world should find the same public promise: free at launch, broader than a single niche, and transparent about the future business model."}
         </p>
         <h3 className="font-serif text-2xl text-white">{page.locale === "fr" ? "Le positionnement produit" : "The product position"}</h3>
         <p>

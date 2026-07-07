@@ -69,7 +69,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Dans quelles villes Embir est-il disponible ?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir lance ses premières communautés progressivement en France, aux États-Unis et au Royaume-Uni — en commençant par des membres fondateurs dans des villes clés comme Paris, New York et Londres.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Embir est ouvert dans le monde entier sur le web. Les premières communautés se densifient ville par ville, afin de garder des échanges locaux réels tout en accueillant les membres fondateurs partout.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il une alternative à Grindr ?</summary>

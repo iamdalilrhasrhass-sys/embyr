@@ -13,7 +13,7 @@ export default function GlobalJsonLd() {
       ],
       "description": "Embir is an international dating platform focused on verified profiles, deep compatibility, and a safer community for every orientation — free at launch with a transparent freemium model.",
       "foundingDate": "2026",
-      "areaServed": ["France", "United Kingdom", "United States", "Switzerland"],
+      "areaServed": "Worldwide",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",

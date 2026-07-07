@@ -19,7 +19,7 @@ export default function SchemaOrg() {
       url: "https://embir.xyz",
       logo: "https://embir.xyz/brand/embir-mark.svg",
       sameAs: ["https://embir.xyz"],
-      areaServed: ["France", "Switzerland", "United Kingdom", "United States"],
+      areaServed: "Worldwide",
     },
     {
       "@context": "https://schema.org",
@@ -28,14 +28,9 @@ export default function SchemaOrg() {
       url: "https://embir.xyz",
       operatingSystem: "Web",
       applicationCategory: "DatingApplication",
-      description: "Embir is a free-at-launch international dating platform for France, Switzerland, the UK, and the United States. Built for every orientation with reciprocal compatibility, personal universes, and safety tools.",
+      description: "Embir is a free-at-launch international dating platform available worldwide. Built for every orientation with reciprocal compatibility, personal universes, and safety tools.",
       inLanguage: ["en", "fr"],
-      areaServed: [
-        { "@type": "Country", name: "France" },
-        { "@type": "Country", name: "Switzerland" },
-        { "@type": "Country", name: "United Kingdom" },
-        { "@type": "Country", name: "United States" },
-      ],
+      areaServed: "Worldwide",
       audience: {
         "@type": "Audience",
         audienceType: "Adults 18+ looking for dating across all orientations",

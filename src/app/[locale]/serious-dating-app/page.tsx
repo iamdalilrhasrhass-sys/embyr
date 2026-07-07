@@ -74,7 +74,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Where is Embir available?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir is launching its first communities progressively in France, the US, and the UK — starting with founding members in key cities like Paris, New York and London.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Embir is open worldwide on the web. Early communities grow city by city, keeping local density real while welcoming founding members everywhere.</p>
             </details>
           </div>
         </div>

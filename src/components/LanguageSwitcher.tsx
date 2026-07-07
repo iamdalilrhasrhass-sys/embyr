@@ -34,18 +34,22 @@ const findLanguage = (code: string | null | undefined): LanguageOption => {
   return LANGUAGES.find((language) => language.code === code) ?? DEFAULT_LANGUAGE;
 };
 
-export default function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  initialLocale?: PublicLocale;
+}
+
+export default function LanguageSwitcher({ initialLocale = "en" }: LanguageSwitcherProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState<LanguageOption>(DEFAULT_LANGUAGE);
+  const [current, setCurrent] = useState<LanguageOption>(findLanguage(initialLocale));
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const activePath = pathname || window.location.pathname;
     const pathLocale = getLocaleFromPathname(activePath);
     const cookieLocale = activePath === "/" ? getCookie(LOCALE_COOKIE) : null;
-    setCurrent(findLanguage(pathLocale ?? cookieLocale ?? "en"));
-  }, [pathname]);
+    setCurrent(findLanguage(pathLocale ?? cookieLocale ?? initialLocale));
+  }, [initialLocale, pathname]);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {

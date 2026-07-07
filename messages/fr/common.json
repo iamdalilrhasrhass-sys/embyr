@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Embir : App de Rencontre Gratuite & Inclusive pour Toutes les Orientations | France, Suisse, UK & US",
-    "description": "Embir, l'app de rencontre gratuite au lancement pour toutes les orientations. Profils vérifiés, compatibilité profonde, communauté safe et modèle freemium transparent. Rejoins la communauté fondatrice en France, Suisse, Royaume-Uni et États-Unis."
+    "title": "Embir : App de rencontre gratuite et inclusive | Monde entier",
+    "description": "Embir est l'app de rencontre gratuite au lancement, ouverte dans le monde entier pour toutes les orientations. Profils vérifiés, compatibilité profonde, modération humaine et communauté plus sûre."
   },
   "nav": {
     "discover": "Découvrir",
@@ -20,9 +20,9 @@
     "blog": "Blog"
   },
   "landing": {
-    "badge": "France · Suisse · UK · US",
+    "badge": "Monde entier · Toutes orientations",
     "title": "Embir : App de Rencontre Gratuite & Inclusive pour Toutes les Orientations",
-    "subtitle": "Gratuit au lancement. Profils vérifiés, compatibilité profonde, communauté safe. Rejoins la communauté fondatrice en France, Suisse, Royaume-Uni et États-Unis avant le passage en freemium.",
+    "subtitle": "Gratuit au lancement dans le monde entier. Profils vérifiés, compatibilité profonde et communauté plus sûre pour toutes les orientations avant le passage en freemium.",
     "cta_early_access": "Demander un accès anticipé",
     "cta_create": "Créer mon univers",
     "founder_strip": "Accès fondateur · Bienvenue dans mon univers · Compatibilité profonde",
@@ -82,7 +82,7 @@
     "faq_home_q4": "Quelle est la différence avec Tinder ou Bumble ?",
     "faq_home_a4": "Embir mise sur la compatibilité profonde et les profils vérifiés plutôt que le swipe infini. Pas d'options essentielles bloquées derrière un abonnement dès le départ. Une approche centrée sur la confiance, la transparence et l'inclusivité réelle.",
     "faq_home_q5": "Dans quels pays Embir est-il disponible ?",
-    "faq_home_a5": "Embir est lancé en France, en Suisse, au Royaume-Uni et aux États-Unis. La plateforme est disponible en français et en anglais. D'autres pays suivront après la phase de lancement.",
+    "faq_home_a5": "Embir est disponible dans le monde entier sur le web. Les communautés les plus actives peuvent se construire ville par ville, mais les membres fondateurs peuvent rejoindre depuis n'importe où. L'expérience publique prend actuellement en charge le français et l'anglais.",
     "trust_title": "Nos engagements sécurité & inclusivité",
     "trust_1_title": "Modération humaine",
     "trust_1_text": "Chaque signalement est examiné par une équipe réelle, pas un algorithme. Le contexte compte et les décisions sont prises avec discernement.",
@@ -119,7 +119,7 @@
     "settings": "Réglages"
   },
   "footer": {
-    "tagline": "Plateforme de rencontre internationale pour toutes les orientations. France, Suisse, UK et USA. Gratuite au lancement, avec découverte par compatibilité et outils de sécurité.",
+    "tagline": "Plateforme de rencontre internationale pour toutes les orientations, disponible dans le monde entier. Gratuite au lancement, avec découverte par compatibilité et outils de sécurité.",
     "adult": "18+ UNIQUEMENT",
     "navigation": "Navigation",
     "free_launch": "Lancement gratuit",
@@ -138,7 +138,7 @@
     "moderation": "Modération & signalement",
     "support": "Support",
     "rights": "Tous droits réservés.",
-    "regions": "France · Suisse · UK · USA · toutes orientations"
+    "regions": "Monde entier · toutes orientations"
   },
   "dashboard": {
     "title": "Dashboard",

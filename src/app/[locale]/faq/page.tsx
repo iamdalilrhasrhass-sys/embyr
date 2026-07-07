@@ -45,7 +45,7 @@ const faqItems = [
   },
   {
     q: "Is Embir available in my country?",
-    a: "Embir is launching first in France, Switzerland, the United Kingdom, and the United States. If you are outside these markets, you can still join as a founding member — the platform works globally. Additional countries will be added based on community demand and localization readiness.",
+    a: "Yes. Embir is available worldwide on the web. The strongest early communities may grow city by city, but the product is open to founding members everywhere and adapts the public experience from language and location signals when possible.",
   },
   {
     q: "How does Embir protect my privacy?",

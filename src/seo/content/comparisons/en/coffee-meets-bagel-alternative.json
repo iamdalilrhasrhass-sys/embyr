@@ -35,7 +35,7 @@
     {
       "criteria": "International availability",
       "competitor": "US, Australia, Canada, Singapore mainly",
-      "embir": "France, UK, USA + expanding",
+      "embir": "Worldwide web access",
       "winner": "tie"
     }
   ],
@@ -59,7 +59,7 @@
       ]
     }
   ],
-  "verdict": "Coffee Meets Bagel is a good fit if you're in the US, identify as a heterosexual woman, and want a slow-paced curated experience with some social accountability via Facebook linking.\n\nEmbir is the better option if you want verified profiles, full LGBTQ+ support, compatibility-first matching, free access at launch, and human moderation — across France, UK, and the US.",
+  "verdict": "Coffee Meets Bagel is a good fit if you're in the US, identify as a heterosexual woman, and want a slow-paced curated experience with some social accountability via Facebook linking.\n\nEmbir is the better option if you want verified profiles, full LGBTQ+ support, compatibility-first matching, free access at launch, and human moderation worldwide.",
   "ctaText": "Quality connections, no beans required — join free",
   "faq": [
     {
@@ -80,7 +80,7 @@
     },
     {
       "q": "Is Embir available in the US?",
-      "a": "Yes. Embir is launching in the US, France, and UK. Founding members in the US can join now."
+      "a": "Yes. Embir is available worldwide on the web. Founding members in the US and elsewhere can join now."
     }
   ]
 }
