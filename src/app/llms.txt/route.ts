@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 const BODY = `# Embir
-> Free-at-launch, inclusive dating app built on reciprocal compatibility: orientation, intention and affinity in both directions, for every orientation. Markets: France, UK, US, Switzerland.
+> Free-at-launch, inclusive dating app built on reciprocal compatibility: orientation, intention and affinity in both directions, for every orientation. Available worldwide.
 
 ## What makes Embir different
 - Reciprocal compatibility: you see someone only if their preferences can include you, and yours them.

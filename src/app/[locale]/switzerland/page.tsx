@@ -69,7 +69,7 @@ export default function Page() {
               {[
                 ["Is Embir available in German or Italian?", "Embir currently supports French and English. Swiss German, German, and Italian speakers can use the English interface. Additional languages may be added based on community demand."],
                 ["Can I date across Swiss cities?", "Yes. Embir lets you set your discovery range. The Swiss rail network makes inter-city dating practical — Lausanne to Geneva is 40 minutes, Zurich to Bern is under an hour."],
-                ["Is Embir free in Switzerland?", "Yes, completely free during the launch phase. All core features — messaging, matching, verification — are free for Swiss founding members."],
+                ["Is Embir free in Switzerland?", "Yes, completely free during the launch phase. All core features — messaging, matching, verification — are free for founding members."],
                 ["How does Embir handle cross-border dating?", "Switzerland's borders are porous for dating. Embir doesn't restrict you by country. Your preferences and compatibility signals matter more than which side of a border you live on."],
               ].map(([q, a]) => (
                 <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">

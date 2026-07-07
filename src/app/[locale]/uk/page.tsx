@@ -77,7 +77,7 @@ export default function Page() {
                 ["Is Embir available everywhere in the UK?", "The app is accessible from anywhere in the UK, but the founding community is concentrated in London, Manchester, and Birmingham. We're building density before expanding."],
                 ["Is Embir free in the UK?", "Yes, completely free during launch. Messaging, matching, verification — all included. A freemium model will come later to fund the mobile app and safety tools."],
                 ["Will Embir have UK-specific features?", "The core experience is global, but local market pages, city-specific founding communities, and UK-oriented content help make the experience locally relevant."],
-                ["When is the mobile app launching?", "In development. The web version works on mobile browsers. UK founding members will be among the first to access the native apps."],
+                ["When is the mobile app launching?", "In development. The web version works on mobile browsers. Founding members will be among the first to access the native apps."],
               ].map(([q, a]) => (
                 <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <summary className="cursor-pointer text-sm font-semibold text-white/80">{q}</summary>

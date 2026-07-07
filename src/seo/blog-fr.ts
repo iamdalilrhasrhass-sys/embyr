@@ -9,7 +9,7 @@ const topics = [
   "le futur du dating freemium",
   "profils verifies et confiance",
   "rencontre pour toutes orientations",
-  "dating France UK USA",
+  "dating mondial et inclusif",
   "sortir du swipe infini",
   "securite dans les rencontres modernes",
   "preferences et intentions claires",

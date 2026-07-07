@@ -78,7 +78,7 @@ export default function Page() {
                 ["Is Embir available everywhere in the US?", "Embir is building density city by city, starting with New York, Los Angeles, and Miami. The platform is accessible from anywhere in the US, but the founding community is concentrated in these initial cities."],
                 ["Is Embir free in the US?", "Yes, completely free during the launch phase. Messaging, matching, verification — all included for founding members. A freemium model will be introduced later to fund the mobile app."],
                 ["How is Embir different from Hinge or Bumble?", "Embir focuses on orientation-aware visibility and compatibility signals rather than the swipe mechanic. It also serves all orientations on a single platform with preference-based visibility controls."],
-                ["When is the mobile app launching in the US?", "The mobile app is in development. The web version works on mobile browsers. US founding members will be notified first when the native apps are ready."],
+                ["When is the mobile app launching in the US?", "The mobile app is in development. The web version works on mobile browsers. Founding members will be notified first when the native apps are ready."],
               ].map(([q, a]) => (
                 <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <summary className="cursor-pointer text-sm font-semibold text-white/80">{q}</summary>

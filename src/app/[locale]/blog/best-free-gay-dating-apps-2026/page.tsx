@@ -70,7 +70,7 @@ export default function Page() {
 
             <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — Best overall, truly free</h3>
             <p><strong>Price:</strong> Free (no premium tier). <strong>Ads:</strong> None. <strong>Verification:</strong> Mandatory selfie check.</p>
-            <p>Embir is the newest entry on this list and the most honest about what free means. Every feature — unlimited messaging, AI-powered matching, profile discovery, translation — is included with no catch. The mandatory verification means you won&apos;t find bots or catfish here. Available in 25 languages and actively building communities in the US, UK, and France.</p>
+            <p>Embir is the newest entry on this list and the most honest about what free means. Every feature — unlimited messaging, AI-powered matching, profile discovery, translation — is included with no catch. The mandatory verification means you won&apos;t find bots or catfish here. Available worldwide in 25 languages and actively building communities wherever founding members join.</p>
 <p><strong>Best for:</strong> Men who want a free, verified experience and don&apos;t mind being part of a newer, growing community. <strong>Honest note:</strong> Embir is in launch phase — our community is smaller than Grindr and Tinder, but every profile is verified and the app is completely free. If you want maximum user count today, Grindr wins on volume. If you want verified profiles, zero ads, and no paywalls, Embir delivers.</p>
             <p><Link href="/auth/register" prefetch={false} className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
 

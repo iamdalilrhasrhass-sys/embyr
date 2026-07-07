@@ -18,6 +18,14 @@ test("mutual matching records who initiated the pending decision", async () => {
   assert.match(schema, /initiatorId\s+String\?/);
 });
 
+test("production build regenerates Prisma Client before type checking", async () => {
+  const packageJson = JSON.parse(await readFile("package.json", "utf8"));
+  const buildScript = packageJson.scripts.build;
+
+  assert.match(buildScript, /\bprisma generate\b/);
+  assert.ok(buildScript.indexOf("prisma generate") < buildScript.indexOf("next build"));
+});
+
 test("uploads use a shared closed allow-list policy", async () => {
   const audio = await readFile("src/app/api/messages/audio/route.ts", "utf8");
   const verification = await readFile(

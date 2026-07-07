@@ -49,7 +49,7 @@ const topics = [
   "consentement dans le dating",
   "sortir du modele Tinder",
   "alternative au swipe",
-  "rencontre France UK USA",
+  "rencontre partout dans le monde",
   "profils verifies et confiance",
   "preferences relationnelles",
   "orientation et visibilite",

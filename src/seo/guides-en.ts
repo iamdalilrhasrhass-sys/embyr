@@ -49,7 +49,7 @@ const topics = [
   "consent in dating",
   "move beyond Tinder",
   "alternative to swipe apps",
-  "dating across France UK USA",
+  "dating across the world",
   "verified profiles and trust",
   "relationship preferences",
   "orientation and visibility",
