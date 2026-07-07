@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { LandingCopy } from "./landing-copy";
 
 interface LandingNavProps {
@@ -36,6 +37,9 @@ export default function LandingNav({ copy }: LandingNavProps) {
           <Link href="/auth/register" className="e21-button" onClick={close}>
             {copy.create}
           </Link>
+        </div>
+        <div className="e21-nav__language">
+          <LanguageSwitcher />
         </div>
         <button
           type="button"

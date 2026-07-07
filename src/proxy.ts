@@ -1,5 +1,12 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  LOCALE_COOKIE,
+  LOCALE_SOURCE_COOKIE,
+  buildLocalizedPath,
+  detectLocaleFromRequest,
+  getLocaleFromPathname,
+} from './i18n/locale-detection';
 import { routing } from './i18n/routing';
 
 const intl = createMiddleware(routing);
@@ -43,6 +50,20 @@ function shouldNoindex(pathname: string): boolean {
          NOINDEX_PATTERNS.includes(fullPath);
 }
 
+function rememberLocale(response: NextResponse, locale: 'en' | 'fr', source: 'auto' | 'manual' = 'auto') {
+  response.cookies.set(LOCALE_COOKIE, locale, {
+    maxAge: 31536000,
+    path: '/',
+    sameSite: 'lax',
+  });
+  response.cookies.set(LOCALE_SOURCE_COOKIE, source, {
+    maxAge: 31536000,
+    path: '/',
+    sameSite: 'lax',
+  });
+  return response;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -51,15 +72,29 @@ export function proxy(request: NextRequest) {
     return intl(request);
   }
 
+  const detectedLocale = detectLocaleFromRequest({
+    cookies: request.cookies,
+    headers: request.headers,
+    pathname,
+  });
+  const pathLocale = getLocaleFromPathname(pathname);
+  const localeSource = request.cookies.get(LOCALE_SOURCE_COOKIE)?.value === 'manual' ? 'manual' : 'auto';
+
+  if (pathname === '/' && detectedLocale === 'fr') {
+    const localeUrl = request.nextUrl.clone();
+    localeUrl.pathname = buildLocalizedPath(pathname, detectedLocale);
+    return rememberLocale(NextResponse.redirect(localeUrl), detectedLocale, localeSource);
+  }
+
   // Vérifier si la route est protégée
   if (matchFirstSegment(pathname, PROTECTED_ROUTES)) {
     const token = request.cookies.get('token')?.value;
     if (!token) {
       // Extraire la locale pour la redirection
-      const locale = routing.locales.find((l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`) || 'en';
+      const locale = pathLocale ?? detectedLocale;
       const loginUrl = new URL(`/${locale}/auth/login`, request.url);
       loginUrl.searchParams.set('redirect', pathname);
-      return NextResponse.redirect(loginUrl);
+      return rememberLocale(NextResponse.redirect(loginUrl), locale, localeSource);
     }
   }
 
@@ -69,7 +104,7 @@ export function proxy(request: NextRequest) {
     response.headers.set('X-Robots-Tag', 'noindex, nofollow');
   }
 
-  return response;
+  return rememberLocale(response, pathLocale ?? (pathname === '/' ? detectedLocale : 'en'), localeSource);
 }
 
 export const config = {
