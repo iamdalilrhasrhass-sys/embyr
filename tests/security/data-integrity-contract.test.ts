@@ -132,4 +132,9 @@ test("client-awarded achievements fail closed", async () => {
     readFile("src/app/[locale]/achievements/page.tsx", "utf8"),
   ]);
   for (const page of publicPages) assert.match(page, /notFound\(\)/);
+
+  const proxy = await readFile("src/proxy.ts", "utf8");
+  assert.match(proxy, /DISABLED_PUBLIC_ROUTES\s*=\s*\['achievements'\]/);
+  assert.match(proxy, /matchFirstSegment\(pathname, DISABLED_PUBLIC_ROUTES\)/);
+  assert.match(proxy, /status:\s*404/);
 });

@@ -31,6 +31,8 @@ const PROTECTED_ROUTES = [
   'verification', 'welcome', 'connections', 'notifications',
 ];
 
+const DISABLED_PUBLIC_ROUTES = ['achievements'];
+
 function matchFirstSegment(pathname: string, patterns: string[]): boolean {
   let path = pathname;
   for (const locale of routing.locales) {
@@ -82,6 +84,18 @@ export function proxy(request: NextRequest) {
   // Ne pas intercepter les assets statiques.
   if (pathname.startsWith('/_next/') || pathname.startsWith('/uploads/') || pathname.startsWith('/brand/')) {
     return NextResponse.next();
+  }
+
+  if (matchFirstSegment(pathname, DISABLED_PUBLIC_ROUTES)) {
+    return new NextResponse('Not Found', {
+      status: 404,
+      headers: {
+        'Cache-Control': 'no-store',
+        'Content-Type': 'text/plain; charset=utf-8',
+        'X-Content-Type-Options': 'nosniff',
+        'X-Robots-Tag': 'noindex, nofollow',
+      },
+    });
   }
 
   const detectedLocale = detectLocaleFromRequest({
