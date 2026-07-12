@@ -128,9 +128,22 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
         (SELECT COUNT(DISTINCT "userId") FROM events WHERE "userId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '1 day') AS dau,
         (SELECT COUNT(DISTINCT "userId") FROM events WHERE "userId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '7 days') AS wau,
         (SELECT COUNT(DISTINCT "userId") FROM events WHERE "userId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '30 days') AS mau,
-        (SELECT COUNT(*) FROM "Match" WHERE "status" = 'mutual') AS "reciprocalConnections",
-        (SELECT COUNT(*) FROM "Conversation") AS "conversationsStarted",
-        (SELECT COUNT(*) FROM "DatePlan") AS "plansProposed"
+        (SELECT COUNT(*) FROM "Match" m
+          JOIN "User" mu1 ON mu1.id = m."user1Id"
+          JOIN "User" mu2 ON mu2.id = m."user2Id"
+          WHERE m."status" = 'mutual' AND mu1."deletedAt" IS NULL AND mu2."deletedAt" IS NULL
+        ) AS "reciprocalConnections",
+        (SELECT COUNT(*) FROM "Conversation" c
+          JOIN "User" cu1 ON cu1.id = c."user1Id"
+          JOIN "User" cu2 ON cu2.id = c."user2Id"
+          WHERE cu1."deletedAt" IS NULL AND cu2."deletedAt" IS NULL
+        ) AS "conversationsStarted",
+        (SELECT COUNT(*) FROM "DatePlan" dp
+          JOIN "Match" dpm ON dpm.id = dp."matchId"
+          JOIN "User" dpu1 ON dpu1.id = dpm."user1Id"
+          JOIN "User" dpu2 ON dpu2.id = dpm."user2Id"
+          WHERE dpu1."deletedAt" IS NULL AND dpu2."deletedAt" IS NULL
+        ) AS "plansProposed"
     `,
     prisma.$queryRaw<BreakdownRow[]>`
       SELECT stage AS label, total FROM (
@@ -139,9 +152,16 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
           ('signup_completed', (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL AND "createdAt" >= NOW() - INTERVAL '30 days')),
           ('profile_completed', (SELECT COUNT(*) FROM "Profile" WHERE "onboardingCompletedAt" >= NOW() - INTERVAL '30 days')),
           ('signal_activated', (SELECT COUNT(*) FROM "AnalyticsEvent" WHERE "eventName" = 'signal_activated' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('reciprocal_connection_created', (SELECT COUNT(*) FROM "Match" WHERE "matchedAt" >= NOW() - INTERVAL '30 days')),
-          ('conversation_started', (SELECT COUNT(*) FROM "Conversation" WHERE "createdAt" >= NOW() - INTERVAL '30 days')),
-          ('plan_proposed', (SELECT COUNT(*) FROM "DatePlan" WHERE "createdAt" >= NOW() - INTERVAL '30 days'))
+          ('reciprocal_connection_created', (SELECT COUNT(*) FROM "Match" m
+            JOIN "User" u1 ON u1.id = m."user1Id" JOIN "User" u2 ON u2.id = m."user2Id"
+            WHERE m."matchedAt" >= NOW() - INTERVAL '30 days' AND u1."deletedAt" IS NULL AND u2."deletedAt" IS NULL)),
+          ('conversation_started', (SELECT COUNT(*) FROM "Conversation" c
+            JOIN "User" u1 ON u1.id = c."user1Id" JOIN "User" u2 ON u2.id = c."user2Id"
+            WHERE c."createdAt" >= NOW() - INTERVAL '30 days' AND u1."deletedAt" IS NULL AND u2."deletedAt" IS NULL)),
+          ('plan_proposed', (SELECT COUNT(*) FROM "DatePlan" dp
+            JOIN "Match" m ON m.id = dp."matchId"
+            JOIN "User" u1 ON u1.id = m."user1Id" JOIN "User" u2 ON u2.id = m."user2Id"
+            WHERE dp."createdAt" >= NOW() - INTERVAL '30 days' AND u1."deletedAt" IS NULL AND u2."deletedAt" IS NULL))
       ) AS funnel(stage, total)
     `,
     prisma.$queryRaw<BreakdownRow[]>`
