@@ -24,6 +24,11 @@ test("admin authentication never stores or falls back to the raw secret", async 
   assert.doesNotMatch(source, /process\.env\.ADMIN_SECRET\s*\|\|/);
   assert.match(source, /createAdminSessionToken/);
   assert.match(source, /verifyAdminPassword/);
+  assert.match(source, /process\.env\.FRONTEND_URL/);
+  assert.match(source, /process\.env\.NEXT_PUBLIC_BASE_URL/);
+  assert.doesNotMatch(source, /analytics-dashboard.*req\.url/);
+  assert.match(source, /req\.headers\.get\("x-forwarded-host"\)/);
+  assert.match(source, /new URL\(origin\)\.host !== publicHost\(req\)/);
 });
 
 test("admin login attempts are bounded in a fixed window", () => {
