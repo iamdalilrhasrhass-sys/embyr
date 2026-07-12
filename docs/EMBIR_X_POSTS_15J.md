@@ -6,65 +6,65 @@
 ---
 
 ## Jour 1
-1. Embir arrive.  
-   Une app de rencontre gay repensée. Gratuite. IA. 25 langues.  
-   Pas de pubs, pas de swipe abrutissant, juste des vrais mecs.  
+1. Embir arrive.
+   Une app de rencontre gay repensée. Gratuite. IA. pages publiques en français et en anglais.
+   Pas de pubs, pas de swipe abrutissant, juste des vrais mecs.
    👉 embir.xyz
 
-2. On a comparé Grindr et Embir.  
-   Grindr : 15€/mois, pubs partout, swipes limités.  
-   Embir : Gratuit 🎉, zéro pub, messages illimités.  
+2. On a comparé Grindr et Embir.
+   Grindr : 15€/mois, pubs partout, swipes limités.
+   Embir : Gratuit 🎉, zéro pub, messages entre connexions réciproques.
    Tu choisis ton camp. 👉 embir.xyz
 
 ## Jour 2
-3. "L'IA va remplacer les rencontres ?"  
-   Non. L'IA va juste t'éviter de swiper 200 profils pour trouver 3 mecs intéressants.  
-   DeepSeek analyse ta personnalité. Pas ton âge, pas ta distance. Toi.  
+3. "L'IA va remplacer les rencontres ?"
+   Non. L'IA va juste t'éviter de swiper 200 profils pour trouver 3 mecs intéressants.
+   le moteur applique tes préférences déclarées dans les deux sens.
    👉 embir.xyz
 
-4. 25 langues. Jour 1.  
-   Pas "bientôt en anglais". Pas "prochainement en espagnol".  
-   ？Español. Français. English. 中文.  
+4. Une expérience publique en français et en anglais.
+   Pas "bientôt en anglais". Pas "prochainement en espagnol".
+   ？Español. Français. English. 中文.
    Tout le monde est le bienvenu. Dès maintenant. 👉 embir.xyz
 
 ## Jour 3
-5. Le problème des applis de rencontre :  
-   ➡️ Elles veulent que tu restes abonné  
-   ➡️ Pas que tu trouves l'amour  
-   Embir est gratuit. Notre seul objectif : que tu supprimes l'appli parce que t'as rencontré quelqu'un.  
+5. Le problème des applis de rencontre :
+   ➡️ Elles veulent que tu restes abonné
+   ➡️ Pas que tu trouves l'amour
+   Embir est gratuit. Notre seul objectif : que tu supprimes l'appli parce que t'as rencontré quelqu'un.
    👉 embir.xyz
 
-6. On déteste les catfish.  
-   Profil vérifié par selfie obligatoire.  
-   Si t'es pas qui tu dis être, tu restes pas sur Embir.  
+6. On déteste les catfish.
+   Profil vérifié par selfie obligatoire.
+   Si t'es pas qui tu dis être, tu restes pas sur Embir.
    Simple. 👉 embir.xyz
 
 ## Jour 4
-7. Tu parles français mais tu vis à Tokyo ?  
-   Sur Embir, les barrières linguistiques n'existent pas.  
-   25 langues intégrées. Tu parles ta langue, l'autre voit dans la sienne.  
+7. Tu parles français mais tu vis à Tokyo ?
+   Sur Embir, les barrières linguistiques n'existent pas.
+   L'expérience publique actuelle est disponible en français et en anglais.
    L'IA traduit en temps réel. 👉 embir.xyz
 
-8. Gratuit ne veut pas dire "version light".  
-   ✅ Messages illimités  
-   ✅ Photos illimitées  
-   ✅ Matching IA  
-   ✅ Zéro pub  
-   Tout est inclus.  
+8. Gratuit ne veut pas dire "version light".
+   ✅ messages entre connexions réciproques
+   ✅ Photos illimitées
+   ✅ compatibilité réciproque
+   ✅ Zéro pub
+   Tout est inclus.
    On préfère construire une communauté que facturer chaque fonctionnalité. 👉 embir.xyz
 
 ## Jour 5
-9. "Mais comment vous gagnez de l'argent si c'est gratuit ?"  
-   Bonne question. On lance gratuit pour construire une communauté saine.  
-   Un jour, on ajoutera des options premium (pas chères).  
+9. "Mais comment vous gagnez de l'argent si c'est gratuit ?"
+   Bonne question. On lance gratuit pour construire une communauté saine.
+   Un jour, on ajoutera des options premium (pas chères).
    Mais les fondateurs garderont un accès gratuit à vie. 👉 embir.xyz
 
-10. Les comportements toxiques, c'est fini.  
-    Modération humaine + IA. Insultes, harcèlement, comportements abusifs → ban immédiat.  
+10. Les comportements toxiques, c'est fini.
+    Signalement enregistré + blocage immédiat. Aucun délai de traitement ni résultat particulier n'est garanti.
     Embir est un safe space. On le défend. 👉 embir.xyz
 
 ## Jour 6
-11. Le swipe est mort. Vive le matching intelligent. Tu remplis ton profil, DeepSeek analyse ta personnalité, et on te propose des mecs compatibles. Plus besoin de passer 30 minutes par jour à trier des profils au hasard. 👉 embir.xyz
+11. Le swipe est mort. Vive le matching intelligent. Tu remplis ton profil, le moteur applique tes préférences déclarées, et on te propose des mecs compatibles. Plus besoin de passer 30 minutes par jour à trier des profils au hasard. 👉 embir.xyz
 
 12. On lance sans levée de fonds. Pas de pression des investors pour "monétiser à tout prix". Ça nous laisse le temps de construire quelque chose de bien pour la communauté. 👉 embir.xyz
 
@@ -76,7 +76,7 @@
 ## Jour 8
 15. Témoignage : "J'ai rencontré quelqu'un sur Embir en 3 jours. Sur Grindr j'étais abonné depuis 6 mois sans rien trouver de sérieux." C'est exactement pour ça qu'on a construit Embir. 👉 embir.xyz
 
-16. 7 intelligences artificielles analysent ta personnalité pour te trouver les profils les plus compatibles. Pas de "proches de toi" random. Du matching réfléchi. 👉 embir.xyz
+16. le moteur applique tes préférences déclarées dans les deux sens pour te trouver les profils les plus compatibles. Pas de "proches de toi" random. Du matching réfléchi. 👉 embir.xyz
 
 ## Jour 9
 17. On cherche des beta-testeurs passionnés. Si tu veux contribuer à construire la meilleure app de rencontre gay, rejoins-nous. Contact : contact@embir.xyz
@@ -89,7 +89,7 @@
 20. Les applications traditionnelles veulent ton temps. Embir veut ta connexion. On préfère 100 bons matchs que 10 000 swipes vides. 👉 embir.xyz
 
 ## Jour 11
-21. On regarde les chiffres : 90% des profils vérifiés dès l'inscription. Ça veut dire une communauté saine dès le départ, pas des bots qui polluent l'expérience. 👉 embir.xyz
+21. La vérification selfie est facultative. Les profils approuvés affichent un badge visible ; blocage et signalement restent disponibles. 👉 embir.xyz
 
 22. Pas de "plan cul seulement" / "sérieux seulement" / "amis seulement". Sur Embir, tu es qui tu es, tu cherches ce que tu cherches. Pas d'étiquettes imposées. 👉 embir.xyz
 
@@ -106,7 +106,7 @@
 ## Jour 14
 27. 2 semaines de lancement. Ce qu'on a appris : la communauté gay a soif d'une alternative. Pas de bots. Pas de prix abusifs. Pas de mauvaise foi. Juste des vrais mecs qui veulent se rencontrer. Merci. 🙏 embir.xyz
 
-28. Notre IA de matching n'est pas entraînée sur des données biaisées. DeepSeek a été configurée pour ignorer les préjugés et se concentrer sur ce qui compte vraiment : la compatibilité humaine. 👉 embir.xyz
+28. Le moteur de compatibilité utilise les préférences et intentions déclarées dans les deux sens ; il n’invente pas de score psychologique. 👉 embir.xyz
 
 ## Jour 15
 29. Le futur d'Embir : vidéo dating, événements virtuels, communautés par centres d'intérêt. On construit avec vous, pas pour vous. Dites-nous ce que vous voulez voir. 👉 embir.xyz

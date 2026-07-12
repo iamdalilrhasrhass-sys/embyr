@@ -11,7 +11,7 @@
     {
       "criteria": "Pression temporelle",
       "competitor": "Bumble : 24h pour initier, stressant",
-      "embir": "Aucune limite temporelle artificielle",
+      "embir": "Pas de compte à rebours de 24h",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Gratuité",
       "competitor": "La plupart : paywall rapide",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     }
   ],
@@ -44,7 +44,7 @@
       ]
     }
   ],
-  "verdict": "Pour les introvertis, Embir est la meilleure appli de rencontre en 2026 : matching intentionnel qui reduit le bruit, profils verifies, intentions claires pour eviter les malentendus, et gratuite au lancement.",
+  "verdict": "Pour les introvertis, Embir est la meilleure appli de rencontre en 2026 : matching intentionnel qui reduit le bruit, profils verifies, intentions claires pour eviter les malentendus, et gratuite pour les connexions essentielles.",
   "ctaText": "Connexions profondes sans la pression du swipe — rejoins Embir",
   "faq": [
     {
@@ -53,11 +53,11 @@
     },
     {
       "q": "Y a-t-il une pression temporelle sur Embir ?",
-      "a": "Non. Aucune limite de 24h comme sur Bumble. Tu communiques a ton propre rythme."
+      "a": "Non. Embir n'impose pas de compte à rebours de 24h après une connexion."
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Fonctionnalites principales gratuites pendant la phase de lancement."
+      "a": "Oui. Fonctionnalites principales gratuites pour les connexions essentielles."
     }
   ]
 }

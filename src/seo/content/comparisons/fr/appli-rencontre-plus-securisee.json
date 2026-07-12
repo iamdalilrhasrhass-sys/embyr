@@ -1,17 +1,17 @@
 {
   "slug": "appli-rencontre-plus-securisee",
-  "intro": "La sécurité sur une application de rencontre repose sur trois piliers : l'authenticité des profils (est-ce une vraie personne ?), la sécurité comportementale (la plateforme protège-t-elle des harcèlements ?) et la confidentialité des données (que fait l'app de tes informations personnelles ?).\n\nEmbir a été conçu avec ces trois dimensions comme exigences de base, pas comme fonctionnalités ajoutées après coup. Vérification selfie systématique, modération humaine de chaque signalement, politique de tolérance zéro et modèle économique sans publicité — ce sont des décisions d'architecture prises dès le départ.",
+  "intro": "La sécurité sur une application de rencontre repose sur trois piliers : l'authenticité des profils (est-ce une vraie personne ?), la sécurité comportementale (la plateforme protège-t-elle des harcèlements ?) et la confidentialité des données (que fait l'app de tes informations personnelles ?).\n\nEmbir a été conçu avec ces trois dimensions comme exigences de base, pas comme fonctionnalités ajoutées après coup. vérification selfie facultative avec badge visible, outils de signalement et de blocage, politique de tolérance zéro et modèle économique sans publicité — ce sont des décisions d'architecture prises dès le départ.",
   "comparisonTable": [
     {
       "criteria": "Vérification d'identité",
       "competitor": "La plupart : optionnelle ou photo seule",
-      "embir": "Vérification selfie systématique",
+      "embir": "vérification selfie facultative avec badge visible",
       "winner": "embir"
     },
     {
       "criteria": "Modération",
       "competitor": "La plupart : automatisée, lente",
-      "embir": "Équipe humaine, chaque signalement examiné",
+      "embir": "dispositif de signalement, chaque signalement examiné",
       "winner": "embir"
     },
     {
@@ -42,24 +42,24 @@
   "sections": [
     {
       "title": "Les trois piliers de la sécurité sur une app de rencontre",
-      "content": "Authenticité des profils : la vérification selfie d'Embir confirme que la photo de profil correspond à un vrai visage. Ça n'élimine pas tous les risques, mais ça supprime la tromperie la plus commune — les fausses photos.\n\nSécurité comportementale : chaque signalement sur Embir est traité par un modérateur humain, pas juste un algorithme. Les patterns de harcèlement sont contextuels et nuancés — une modération humaine produit des résultats plus rapides et plus précis.\n\nConfidentialité des données : Embir n'a pas de modèle publicitaire. Tes préférences de rencontre, tes matchs et tes conversations ne servent pas à construire un profil publicitaire. Le modèle économique est un freemium transparent — tu paieras (optionnellement) pour financer la sécurité et la modération.",
+      "content": "Authenticité des profils : un badge Embir indique qu’un contrôle selfie avec code unique a été approuvé. Il ne prouve ni l’identité complète, ni les intentions, ni l’absence de risque.\n\nSécurité comportementale : chaque signalement sur Embir est enregistré pour examen et le blocage est immédiat pour le membre qui le déclenche. Aucun délai de traitement ni résultat particulier n’est garanti.\n\nConfidentialité des données : Embir n'a pas de modèle publicitaire. Tes préférences de rencontre, tes matchs et tes conversations ne servent pas à construire un profil publicitaire. Le modèle économique est un freemium transparent — tu paieras (optionnellement) pour financer la sécurité et la modération.",
       "highlights": [
         "Vérification selfie : vraies personnes derrière les vraies photos",
-        "Modération humaine : chaque signalement examiné par une personne",
+        "signalement et blocage : signalements enregistrés pour examen ; blocage immédiat",
         "Pas de modèle publicitaire : tes données ne sont pas le produit"
       ]
     }
   ],
-  "verdict": "Aucune app de rencontre n'est parfaitement sûre. Mais Embir en 2026 offre le meilleur socle de sécurité parmi les options disponibles : vérification systématique, modération humaine, confidentialité des données préservée, tolérance zéro contre le harcèlement, et une sécurité conçue pour toutes les orientations.\n\nPour les utilisateurs — en particulier les femmes, les personnes LGBTQ+, et ceux qui ont vécu de mauvaises expériences sur les apps mainstream — c'est la plateforme qui a mis la sécurité en premier.",
+  "verdict": "Aucune app de rencontre n'est parfaitement sûre. Mais Embir en 2026 offre le meilleur socle de sécurité parmi les options disponibles : vérification disponible, signalement et blocage, confidentialité des données préservée, tolérance zéro contre le harcèlement, et une sécurité conçue pour toutes les orientations.\n\nPour les utilisateurs — en particulier les femmes, les personnes LGBTQ+, et ceux qui ont vécu de mauvaises expériences sur les apps mainstream — c'est la plateforme qui a mis la sécurité en premier.",
   "ctaText": "Sécurisée, vérifiée, modérée — rencontre des gens de confiance",
   "faq": [
     {
       "q": "Embir est-il l'app de rencontre la plus sécurisée en 2026 ?",
-      "a": "Embir offre l'un des meilleurs socles de sécurité : vérification selfie systématique, modération humaine, tolérance zéro et pas de modèle publicitaire."
+      "a": "Embir offre l'un des meilleurs socles de sécurité : vérification selfie facultative avec badge visible, signalement et blocage, tolérance zéro et pas de modèle publicitaire."
     },
     {
       "q": "Comment Embir gère-t-il les signalements de harcèlement ?",
-      "a": "Chaque signalement est traité par une équipe de modération humaine — pas seulement un filtre automatisé. Les violations graves entraînent un ban immédiat et permanent."
+      "a": "Chaque signalement est enregistré pour examen et le blocage est immédiat. Les violations graves entraînent un restriction de compte après examen."
     },
     {
       "q": "Mes données sont-elles en sécurité sur Embir ?",

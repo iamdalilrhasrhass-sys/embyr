@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Gay Dating Near Me — Meet Local Guys",
-  description: "Find gay guys near you on Embir. 100% free app, meet local men in your area.",
+  description: "Find gay guys near you on Embir. app with free core connections, meet local men in your area.",
   alternates: { canonical: "https://embir.xyz/gay-pres-de-chez-moi" },
 };
 
@@ -13,7 +13,7 @@ export default function Page() {
       <section className="py-24 px-4 sm:px-6">
         <div className="emb-container max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-black mb-6 text-white">Gay Dating Near Me</h1>
-          <p className="text-white/50 text-lg mb-8 leading-relaxed">Find gay guys near you on Embir. 100% free app, meet local men in your area.</p>
+          <p className="text-white/50 text-lg mb-8 leading-relaxed">Find gay guys near you on Embir. app with free core connections, meet local men in your area.</p>
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-3">Ready to meet local guys?</h2>
             <p className="text-white/50 mb-6">Join Embir now and discover who's near you.</p>
@@ -23,10 +23,10 @@ export default function Page() {
           </div>
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
             <h2 className="text-white text-xl font-bold">Why Embir?</h2>
-            <p>Unlike other gay dating apps, Embir is 100% free. Unlimited messaging, full profiles, discover guys near you — everything included, no exceptions.</p>
+            <p>Unlike other gay dating apps, Everything needed to meet someone is free. No credit card required. Create a profile, discover compatible people and message reciprocal connections.</p>
             <h3 className="text-white/80 text-lg font-semibold">Truly free</h3>
-            <p>No hidden subscriptions, no freemium that blocks you after 3 messages. Embir is free for everyone, always.</p>
-            <h3 className="text-white/80 text-lg font-semibold">25 languages</h3>
+            <p>No hidden subscriptions, no freemium that blocks you after 3 messages. Everything needed to meet someone is free. No credit card required.</p>
+            <h3 className="text-white/80 text-lg font-semibold">English and French public pages</h3>
             <p>Talk to guys worldwide. Automatic translation is built into the messaging.</p>
           </div>
         </div>

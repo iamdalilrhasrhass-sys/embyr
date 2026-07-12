@@ -1,6 +1,6 @@
 export const coreInternalLinks = [
-  { href: "/free-dating-app", label: "Free at launch" },
-  { href: "/freemium-model", label: "Future freemium" },
+  { href: "/free-dating-app", label: "core connection features are free" },
+  { href: "/freemium-model", label: "transparent optional services" },
   { href: "/us", label: "United States" },
   { href: "/uk", label: "United Kingdom" },
   { href: "/fr/rencontre/paris", label: "France" },

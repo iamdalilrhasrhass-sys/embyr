@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Embir Blog — 5,000+ Gay Dating Tips, City Guides & LGBTQ+ Articles",
-  description: "Over 5,000 articles on gay dating, city guides, relationships, health, pride, and LGBTQ+ culture. The largest gay blog on the web. Free, expert advice.",
+  title: "Embir Blog — Gay Dating Tips, City Guides & LGBTQ+ Articles",
+  description: "Articles on gay dating, city guides, relationships, health, pride, and LGBTQ+ culture.",
   alternates: { canonical: "https://embir.xyz/blog" },
-  openGraph: { title: "Embir Blog — 5,000+ Gay Articles", description: "The largest gay dating and lifestyle blog. City guides, dating tips, health, pride, and more.", url: "https://embir.xyz/blog", type: "website", siteName: "Embir",
-    images: [`/api/og?title=Embir+Blog+—+5,000++Gay+Articles&variant=market`],
+  openGraph: { title: "Embir Blog — Gay Dating & LGBTQ+ Articles", description: "City guides, dating tips, health, pride, and more.", url: "https://embir.xyz/blog", type: "website", siteName: "Embir",
+    images: [`/api/og?title=Embir+Blog+—+Gay+Dating+and+LGBTQ+Articles&variant=market`],
   }
 };
 
@@ -27,8 +27,8 @@ export default function BlogPage() {
       <section className="py-20 px-4 sm:px-6">
         <div className="emb-container max-w-4xl text-center">
           <h1 className="text-4xl md:text-6xl font-black mb-4 text-white">Embir <span className="text-white/30">Blog</span></h1>
-          <p className="text-white/40 text-xl mb-2 max-w-2xl mx-auto">The largest gay dating and lifestyle blog on the web.</p>
-          <p className="text-white/25 text-lg mb-10">5,013 articles · City guides · Dating tips · Pride · Health · Relationships · Culture</p>
+          <p className="text-white/40 text-xl mb-2 max-w-2xl mx-auto">Dating and lifestyle guides for LGBTQ+ readers.</p>
+          <p className="text-white/25 text-lg mb-10">City guides · Dating tips · Pride · Health · Relationships · Culture</p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map(c => (
@@ -40,11 +40,11 @@ export default function BlogPage() {
           </div>
 
           <div className="py-12 rounded-3xl border border-white/[0.04] bg-white/[0.01]">
-            <p className="text-white/30 text-lg mb-4">Search through <strong className="text-white/50">5,013 articles</strong> covering every aspect of gay life</p>
+            <p className="text-white/30 text-lg mb-4">Explore guides covering dating, relationships and LGBTQ+ life</p>
             <p className="text-white/20 text-sm">US cities · UK towns · French cities · Dating advice · Relationships · Coming out · Health & safety · Pride events · Gay culture · Gay travel · LGBTQ+ history · Gay bars & nightlife · Gay apps · Gay marriage · Gay parenting · Gay fitness · Gay fashion · Gay movies · Gay books · Gay music</p>
             <div className="mt-6">
-              <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-black hover:opacity-90 transition-all">Join Embir — 100% Free</Link>
-              <p className="text-white/20 text-xs mt-3">No credit card. No ads. No limits.</p>
+              <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-bold text-black hover:opacity-90 transition-all">Join Embir — free for core connections</Link>
+              <p className="text-white/20 text-xs mt-3">No credit card. No ads. Core connections without a credit card.</p>
             </div>
           </div>
         </div>

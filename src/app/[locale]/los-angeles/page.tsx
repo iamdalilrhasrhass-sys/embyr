@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
   const descriptions: Record<string, string> = {
     en: "LA dating app: verified profiles, compatibility matching, and a founding community across Silver Lake, West Hollywood, Santa Monica, DTLA, and beyond. Free at LA launch.",
-    fr: "Application de rencontre à Los Angeles : profils vérifiés, matching par compatibilité, et une communauté fondatrice. Gratuite au lancement.",
+    fr: "Application de rencontre à Los Angeles : profils vérifiés, matching par compatibilité, et une communauté fondatrice. gratuite pour les connexions essentielles.",
   };
   return {
     title: titles[locale] ?? titles.en,
@@ -47,7 +47,7 @@ export default function Page() {
           <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why Los Angeles</h2>
             <p className="mt-4">LA is one of Embir&apos;s first US launch cities — and for good reason. The city&apos;s geography makes dating uniquely challenging. Someone in Silver Lake and someone in Santa Monica might be 25 miles apart with an hour of traffic between them. The entertainment industry shapes dating culture in ways no other city experiences. And yet, LA is full of people genuinely looking for connection — they just need better tools to find it.</p>
-            <p className="mt-3">We&apos;re building LA neighbourhood by neighbourhood — West Hollywood, Silver Lake, DTLA, Santa Monica, Echo Park, Culver City — starting with a core of founding members who value verification, clear intentions, and compatibility over the endless swipe. No fake profiles. No inflated numbers. Just real Angelenos building a real local community.</p>
+            <p className="mt-3">We&apos;re building LA neighbourhood by neighbourhood — West Hollywood, Silver Lake, DTLA, Santa Monica, Echo Park, Culver City — starting with a core of founding members who value verification, clear intentions, and compatibility over the endless swipe. No system can guarantee the absence of fake profiles. No inflated numbers. Just real Angelenos building a real local community.</p>
           </div>
 
           <div>
@@ -68,8 +68,8 @@ export default function Page() {
           </div>
 
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
-            <h2 className="font-serif text-2xl text-white">Free at launch — no LA premium</h2>
-            <p className="mt-4">LA is expensive enough without another dating app subscription. Embir is free during launch. Create your profile, set your preferences, browse compatible people, send messages — all without paying. When a freemium model arrives later, it will fund the mobile app, verification infrastructure, and human moderation. Core features will remain accessible. Founding members get advance notice of any changes.</p>
+            <h2 className="font-serif text-2xl text-white">Core connections without an LA premium</h2>
+            <p className="mt-4">LA is expensive enough without another dating app subscription. Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
 
           <div>
@@ -95,7 +95,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Frequently asked questions</h2>
             <div className="mt-6 space-y-3">
               {[
-                ["How many members does Embir have in Los Angeles?", "Embir is in its launch phase. We&apos;re building the LA founding community right now — starting with a core of verified members across key neighbourhoods. We don&apos;t publish inflated numbers. Growth is organic, through invitations and word of mouth."],
+                ["How many members does Embir have in Los Angeles?", "Embir is in its core connection experience. We&apos;re building the LA founding community right now — starting with a core of verified members across key neighbourhoods. We don&apos;t publish inflated numbers. Growth is organic, through invitations and word of mouth."],
                 ["Is Embir only for gay dating in LA?", "No. Embir serves all orientations. LA&apos;s LGBTQ+ community is a vital, celebrated part of the platform — but straight, bi, trans, and queer daters all share the same space. Orientation controls ensure everyone only sees compatible profiles."],
                 ["How is Embir different from Tinder in LA?", "Tinder in LA is a numbers game driven by appearances. Embir focuses on verified profiles, compatibility signals, and clearer intentions. Less swiping through people who are &apos;just visiting from New York,&apos; more connections with people who are actually available and aligned."],
                 ["Is Embir a good Hinge alternative in Los Angeles?", "If you want deeper compatibility than a few prompts can provide, yes. Embir&apos;s detailed profiles and compatibility system help you cut through LA&apos;s noise. All orientations welcome, no gendered messaging rules, and a focus on verified, real people."],
@@ -112,7 +112,7 @@ export default function Page() {
 
         <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the LA founding community</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first LA members. Verified profile. Real compatibility. Free during launch. Help build a dating culture that Los Angeles deserves — from the Westside to the Eastside.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first LA members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture that Los Angeles deserves — from the Westside to the Eastside.</p>
           <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
         </section>
 

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gay Dating in Montreal — 100% Free App",
-  description: "Gay dating in Montreal on Embir. 100% free app with no ads. Create your profile and meet guys near you in Montreal.",
+  title: "Gay Dating in Montreal — app with free core connections",
+  description: "Gay dating in Montreal on Embir. app with free core connections with no ads. Create your profile and meet guys near you in Montreal.",
   alternates: { canonical: "https://embir.xyz/rencontre-gay/montreal" },
 };
 
@@ -16,7 +16,7 @@ export default function RencontreGayCityPage() {
             Gay dating in <span className="text-white/70">Montreal</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Looking to meet men in Montreal? Embir is the 100% free gay dating app.
+            Looking to meet men in Montreal? Embir is the gay dating app with free core connections.
             Create your profile in 2 minutes and discover guys near you.
           </p>
 
@@ -52,7 +52,7 @@ export default function RencontreGayCityPage() {
             </p>
             <h3 className="text-white/80 text-lg font-semibold">Quick signup</h3>
             <p>2 minutes is all it takes. Email, password, and you&apos;re in. No endless questionnaire.</p>
-            <h3 className="text-white/80 text-lg font-semibold">Unlimited messaging</h3>
+            <h3 className="text-white/80 text-lg font-semibold">messaging between reciprocal connections</h3>
             <p>Talk to whoever you want, whenever you want. No message limits. No paywalls.</p>
           </div>
         </div>

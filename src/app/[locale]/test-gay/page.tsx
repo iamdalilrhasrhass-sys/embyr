@@ -75,14 +75,14 @@ export default function TestGayPage() {
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
             <h2 className="text-white text-xl font-bold">Why knowing yourself matters</h2>
             <p>
-              Dating apps often reduce compatibility to a swipe. Embir takes a different approach — 
-              we believe the best matches come from self-awareness. When you know what you want 
+              Dating apps often reduce compatibility to a swipe. Embir takes a different approach —
+              we believe the best matches come from self-awareness. When you know what you want
               and what you bring, the right guys naturally gravitate toward you.
             </p>
             <h3 className="text-white/80 text-lg font-semibold">No wrong answers</h3>
             <p>Looking for a husband? Cool. Just got out of something and want to explore? Also cool. There are no wrong answers — only honest ones.</p>
             <h3 className="text-white/80 text-lg font-semibold">Matching that feels human</h3>
-            <p>Embir uses AI to understand your personality, not just your photos. The goal isn&apos;t more matches — it&apos;s better ones.</p>
+            <p>Embir applies declared preferences in both directions. The goal isn't more profiles — it's more relevant ones.</p>
           </div>
         </div>
       </section>

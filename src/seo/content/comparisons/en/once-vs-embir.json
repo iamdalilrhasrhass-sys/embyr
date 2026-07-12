@@ -23,7 +23,7 @@
     {
       "criteria": "Profile verification",
       "competitor": "Manual curation (when active)",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Core features free during the launch phase."
+      "a": "Yes. Free core connection features."
     }
   ]
 }

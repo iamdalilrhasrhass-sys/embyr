@@ -1,6 +1,6 @@
 {
   "slug": "alternative-scruff",
-  "intro": "Scruff est une app de rencontre dediee aux hommes gays, bi et queer avec un focus particulier sur la communaute bear et les voyageurs (Scruff Venture). Elle offre des fonctionnalites sociales solides mais reste fermee aux autres identites et necessite un abonnement pour la plupart des fonctionnalites avancees.\n\nEmbir offre une alternative pour les hommes gays et bi qui cherchent une plateforme avec des profils verifies, une moderation humaine, et une ouverture a toutes les orientations.",
+  "intro": "Scruff est une app de rencontre dediee aux hommes gays, bi et queer avec un focus particulier sur la communaute bear et les voyageurs (Scruff Venture). Elle offre des fonctionnalites sociales solides mais reste fermee aux autres identites et necessite un abonnement pour la plupart des fonctionnalites avancees.\n\nEmbir offre une alternative pour les hommes gays et bi qui cherchent une plateforme avec des profils verifies, des outils de signalement et de blocage, et une ouverture a toutes les orientations.",
   "comparisonTable": [
     {
       "criteria": "Public cible",
@@ -11,13 +11,13 @@
     {
       "criteria": "Verification profils",
       "competitor": "Photo verification, pas de selfie verif",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Tier gratuit",
       "competitor": "Tres limite, Scruff Pro requis",
-      "embir": "Fonctionnalites principales gratuites au lancement",
+      "embir": "Fonctionnalites principales gratuites pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -40,7 +40,7 @@
       "highlights": [
         "Toutes les identites LGBTQ+ incluses — pas seulement les hommes cis",
         "Verification selfie vs photo verification basique de Scruff",
-        "Gratuit pendant le lancement vs Scruff Pro payant"
+        "gratuit pour les connexions essentielles vs Scruff Pro payant"
       ]
     }
   ],
@@ -57,7 +57,7 @@
     },
     {
       "q": "Embir est-il gratuit contrairement a Scruff Pro ?",
-      "a": "Oui. Les fonctionnalites principales sont gratuites pendant la phase de lancement."
+      "a": "Oui. Les fonctionnalites principales sont gratuites pour les connexions essentielles."
     }
   ]
 }

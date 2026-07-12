@@ -1,17 +1,17 @@
 {
   "slug": "meetic",
-  "intro": "Meetic est l'un des pionniers de la rencontre en ligne en France. Depuis 2001, la plateforme a aidé des millions de célibataires à se rencontrer. Mais en 2026, son modèle — abonnement payant obligatoire, interface web-first, matching basique — peine à convaincre face aux nouvelles générations d'applications. Embir arrive avec une proposition moderne : profils vérifiés, compatibilité réelle, gratuité au lancement et inclusivité pour toutes les orientations. Voici comment Embir se compare à Meetic en 2026.",
+  "intro": "Meetic est l'un des pionniers de la rencontre en ligne en France. Depuis 2001, la plateforme a aidé des millions de célibataires à se rencontrer. Mais en 2026, son modèle — abonnement payant obligatoire, interface web-first, matching basique — peine à convaincre face aux nouvelles générations d'applications. Embir arrive avec une proposition moderne : profils vérifiés, compatibilité réelle, gratuité des connexions essentielles et inclusivité pour toutes les orientations. Voici comment Embir se compare à Meetic en 2026.",
   "comparisonTable": [
     {
       "criteria": "Modèle économique",
       "competitor": "Abonnement payant obligatoire",
-      "embir": "Gratuit au lancement + freemium transparent",
+      "embir": "gratuit pour les connexions essentielles + freemium transparent",
       "winner": "embir"
     },
     {
       "criteria": "Vérification des profils",
       "competitor": "Basique, très peu de profils vérifiés",
-      "embir": "Vérification selfie systématique + modération humaine",
+      "embir": "vérification selfie facultative avec badge visible + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -41,21 +41,21 @@
   ],
   "sections": [
     {
-      "title": "Modèle économique — Abonnement obligatoire vs Gratuité au lancement",
-      "content": "C'est la différence la plus frappante entre Meetic et Embir. Meetic fonctionne sur un modèle d'abonnement payant : sans abonnement, tu ne peux quasiment rien faire — pas de messages, pas de photos visibles, pas de vraie interaction. Les prix varient de 20 à 40€ par mois selon la durée d'engagement.\n\nEmbir inverse complètement cette logique. La plateforme est gratuite pendant toute la phase de lancement. Toutes les fonctions essentielles — découverte, messagerie illimitée, matching de compatibilité, vérification de profil — sont accessibles sans paiement. Le futur modèle freemium sera transparent et servira à financer la sécurité, la modération et les applications mobiles — pas à faire payer la connexion humaine de base.\n\nCette différence de philosophie est fondamentale. Meetic part du principe qu'une rencontre sérieuse mérite un investissement financier. Embir part du principe que la confiance et la compatibilité doivent être établies avant toute transaction.",
+      "title": "Modèle économique — Abonnement obligatoire vs gratuité des connexions essentielles",
+      "content": "C'est la différence la plus frappante entre Meetic et Embir. Meetic fonctionne sur un modèle d'abonnement payant : sans abonnement, tu ne peux quasiment rien faire — pas de messages, pas de photos visibles, pas de vraie interaction. Les prix varient de 20 à 40€ par mois selon la durée d'engagement.\n\nEmbir inverse complètement cette logique. La plateforme est gratuite pour tout ce qu’il faut pour rencontrer quelqu’un. Toutes les fonctions essentielles — découverte, Messagerie entre connexions réciproques, matching de compatibilité, vérification de profil — sont accessibles sans paiement. Les options facultatives transparentes seront transparent et servira à financer la sécurité, la modération et les applications mobiles — pas à faire payer la connexion humaine de base.\n\nCette différence de philosophie est fondamentale. Meetic part du principe qu'une rencontre sérieuse mérite un investissement financier. Embir part du principe que la confiance et la compatibilité doivent être établies avant toute transaction.",
       "highlights": [
-        "Aucun paiement requis pour utiliser les fonctions essentielles pendant le lancement",
-        "Messagerie illimitée gratuite, pas de limite de messages par jour",
-        "Freemium transparent : ce qui est gratuit aujourd'hui le restera pour les fonctions de base"
+        "Aucune carte bancaire requise pour utiliser les fonctions essentielles",
+        "Messagerie entre connexions réciproques gratuite, pas de limite de messages par jour",
+        "Connexions essentielles gratuites sans carte bancaire, services facultatifs transparents"
       ]
     },
     {
       "title": "Vérification & Sécurité — Le vrai point faible de Meetic",
-      "content": "C'est peut-être le plus grand angle mort de Meetic. Malgré l'abonnement payant, la plateforme a toujours eu du mal avec les faux profils. Le paiement filtre une partie des comptes malveillants, mais beaucoup de fraudeurs considèrent l'abonnement comme un coût d'entrée acceptable pour leurs activités. La vérification des profils est quasi inexistante.\n\nEmbir fait de la vérification un pilier du produit. La vérification par selfie est systématique et proposée dès l'inscription. Les profils vérifiés sont clairement identifiés et prioritaires dans la découverte. Une équipe de modération humaine traite chaque signalement. La tolérance zéro pour le harcèlement est appliquée de manière cohérente.\n\nPayer ne remplace pas vérifier. C'est la leçon que le marché a apprise et qu'Embir applique dès le premier jour.",
+      "content": "C'est peut-être le plus grand angle mort de Meetic. Malgré l'abonnement payant, la plateforme a toujours eu du mal avec les faux profils. Le paiement filtre une partie des comptes malveillants, mais beaucoup de fraudeurs considèrent l'abonnement comme un coût d'entrée acceptable pour leurs activités. La vérification des profils est quasi inexistante.\n\nEmbir fait de la vérification un pilier du produit. La vérification par selfie est disponible et proposée dès l'inscription. Les profils vérifiés sont clairement identifiés et prioritaires dans la découverte. Une dispositif de signalement enregistre chaque demande. La tolérance zéro pour le harcèlement est appliquée de manière cohérente.\n\nPayer ne remplace pas vérifier. C'est la leçon que le marché a apprise et qu'Embir applique dès le premier jour.",
       "highlights": [
-        "Vérification selfie systématique, pas un filtre optionnel",
+        "vérification selfie facultative avec badge visible, pas un filtre optionnel",
         "Badge vérifié visible sur les profils",
-        "Modération humaine, pas d'algorithme automatique pour les décisions de sécurité"
+        "signalement et blocage, pas d'algorithme automatique pour les décisions de sécurité"
       ]
     },
     {
@@ -86,16 +86,16 @@
       ]
     }
   ],
-  "verdict": "Choisis Embir si tu veux une plateforme gratuite au lancement sans engagement financier obligatoire, des profils vérifiés avec une vraie modération humaine, une découverte intelligente par compatibilité plutôt que par recherche manuelle, et une expérience inclusive conçue pour toutes les orientations et tous les âges. Meetic reste pertinent si tu cherches spécifiquement une plateforme établie avec un positionnement 'rencontre sérieuse' traditionnel — mais pour le reste, Embir représente la nouvelle génération de la rencontre en ligne en 2026.",
+  "verdict": "Choisis Embir si tu veux une plateforme gratuite pour les connexions essentielles sans engagement financier obligatoire, des profils vérifiés avec une vraie signalement et blocage, une découverte intelligente par compatibilité plutôt que par recherche manuelle, et une expérience inclusive conçue pour toutes les orientations et tous les âges. Meetic reste pertinent si tu cherches spécifiquement une plateforme établie avec un positionnement 'rencontre sérieuse' traditionnel — mais pour le reste, Embir représente la nouvelle génération de la rencontre en ligne en 2026.",
   "ctaText": "Rejoins la communauté fondatrice — gratuit, vérifié, pour toutes les orientations",
   "faq": [
     {
       "q": "Embir est-elle vraiment gratuite contrairement à Meetic ?",
-      "a": "Oui. Embir est entièrement gratuite pendant la phase de lancement : messagerie illimitée, découverte complète, matching de compatibilité, vérification de profil — tout est accessible sans paiement. Meetic nécessite un abonnement payant (20-40€/mois) pour utiliser les fonctions de base."
+      "a": "Oui. Embir est gratuite pour les connexions essentielles : Messagerie entre connexions réciproques, découverte complète, matching de compatibilité, vérification de profil — tout est accessible sans paiement. Meetic nécessite un abonnement payant (20-40€/mois) pour utiliser les fonctions de base."
     },
     {
       "q": "Comment Embir vérifie-t-elle les profils par rapport à Meetic ?",
-      "a": "Embir propose une vérification selfie systématique dès l'inscription. Les profils vérifiés sont identifiés par un badge et prioritaires dans la découverte. Meetic a une vérification très basique et la majorité des profils ne sont pas vérifiés malgré l'abonnement payant."
+      "a": "Embir propose une vérification selfie facultative avec badge visible dès l'inscription. Les profils vérifiés sont identifiés par un badge et prioritaires dans la découverte. Meetic a une vérification très basique et la majorité des profils ne sont pas vérifiés malgré l'abonnement payant."
     },
     {
       "q": "Puis-je trouver une relation sérieuse sur Embir comme sur Meetic ?",
@@ -107,7 +107,7 @@
     },
     {
       "q": "Quelle est la différence de prix entre Meetic et Embir ?",
-      "a": "Meetic coûte 20-40€ par mois (abonnement obligatoire pour messagerie et photos). Embir est gratuite au lancement. Le futur freemium sera transparent et les fonctions essentielles de découverte et messagerie resteront accessibles sans abonnement premium obligatoire."
+      "a": "Meetic coûte 20-40€ par mois (abonnement obligatoire pour messagerie et photos). Embir est gratuite pour les connexions essentielles. Le futur freemium sera transparent et les fonctions essentielles de découverte et messagerie resteront accessibles sans abonnement premium obligatoire."
     },
     {
       "q": "Est-ce que je peux utiliser Embir si je suis LGBTQ+ ?",
@@ -115,7 +115,7 @@
     },
     {
       "q": "Embir a-t-elle une application mobile comme Meetic ?",
-      "a": "L'application mobile native est en développement et arrivera après la phase de lancement fondatrice. En attendant, la version web d'Embir est entièrement responsive et optimisée pour une utilisation mobile. Meetic a une app mais l'expérience reste principalement web-first."
+      "a": "L'application mobile native est en développement et arrivera après l'expérience de connexion fondatrice. En attendant, la version web d'Embir est entièrement responsive et optimisée pour une utilisation mobile. Meetic a une app mais l'expérience reste principalement web-first."
     }
   ]
 }

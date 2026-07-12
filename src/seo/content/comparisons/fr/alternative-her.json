@@ -1,6 +1,6 @@
 {
   "slug": "alternative-her",
-  "intro": "HER est une application de rencontre dédiée aux femmes queer, personnes non-binaires et lesbiennes. Elle a construit l'une des communautés LGBTQ+ les plus fiables dans l'écosystème des apps — une vraie réussite dans un marché dominé par les plateformes hétéro-centriques.\n\nEmbir ne concurrence pas le focus communautaire de HER. Il offre quelque chose de complémentaire : une plateforme universelle où les femmes queer, les utilisatrices lesbiennes et bi, et toutes les identités LGBTQ+ sont incluses aux côtés des utilisateurs hétéros — avec des profils vérifiés, un matching de compatibilité profond, et une modération humaine.",
+  "intro": "HER est une application de rencontre dédiée aux femmes queer, personnes non-binaires et lesbiennes. Elle a construit l'une des communautés LGBTQ+ les plus fiables dans l'écosystème des apps — une vraie réussite dans un marché dominé par les plateformes hétéro-centriques.\n\nEmbir ne concurrence pas le focus communautaire de HER. Il offre quelque chose de complémentaire : une plateforme universelle où les femmes queer, les utilisatrices lesbiennes et bi, et toutes les identités LGBTQ+ sont incluses aux côtés des utilisateurs hétéros — avec des profils vérifiés, un matching de compatibilité profond, et des outils de signalement et de blocage.",
   "comparisonTable": [
     {
       "criteria": "Public cible",
@@ -11,13 +11,13 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Confiance communautaire, vérification limitée",
-      "embir": "Vérification selfie + modération humaine",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Tier gratuit",
       "competitor": "Limité, abonnement pour les fonctionnalités clés",
-      "embir": "Fonctionnalités principales gratuites au lancement",
+      "embir": "Fonctionnalités principales gratuites pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Sécurité",
       "competitor": "Modération communautaire, focus femmes aide",
-      "embir": "Équipe humaine + examen systématique",
+      "embir": "dispositif de signalement + examen systématique",
       "winner": "tie"
     },
     {
@@ -50,12 +50,12 @@
       ]
     }
   ],
-  "verdict": "HER est le bon choix si tu veux une communauté de femmes queer dédiée avec de fortes fonctionnalités sociales et une identité communautaire marquée.\n\nEmbir est le bon choix si tu veux une plateforme vérifiée et bien modérée où les femmes queer et les utilisatrices LGBTQ+ sont pleinement incluses sans être séparées de la communauté de rencontres plus large — avec un matching de compatibilité profond et l'accès gratuit au lancement.",
+  "verdict": "HER est le bon choix si tu veux une communauté de femmes queer dédiée avec de fortes fonctionnalités sociales et une identité communautaire marquée.\n\nEmbir est le bon choix si tu veux une plateforme vérifiée et bien modérée où les femmes queer et les utilisatrices LGBTQ+ sont pleinement incluses sans être séparées de la communauté de rencontres plus large — avec un matching de compatibilité profond et l'accès gratuit pour les connexions essentielles.",
   "ctaText": "Inclusive par design, vérifiée par défaut — rejoins gratuitement",
   "faq": [
     {
       "q": "Embir est-il sécurisé pour les femmes queer et les utilisatrices lesbiennes ?",
-      "a": "Oui. Embir a une modération humaine, la vérification selfie, et un matching qui respecte l'orientation. Les femmes queer, lesbiennes, bi et non-binaires sont des participantes à part entière de la plateforme."
+      "a": "Oui. Embir a des outils de signalement et de blocage, la vérification selfie, et un matching qui respecte l'orientation. Les femmes queer, lesbiennes, bi et non-binaires sont des participantes à part entière de la plateforme."
     },
     {
       "q": "Peut-on filtrer les matchs par genre et orientation sur Embir ?",
@@ -63,7 +63,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Les fonctionnalités principales — profil, découverte, messagerie, compatibilité — sont gratuites pendant la phase de lancement. Aucun abonnement requis."
+      "a": "Les fonctionnalités principales — profil, découverte, messagerie, compatibilité — sont gratuites pour les connexions essentielles. Aucun abonnement requis."
     },
     {
       "q": "Peut-on utiliser Embir si l'on est bi ou pan et que l'on date à travers les genres ?",

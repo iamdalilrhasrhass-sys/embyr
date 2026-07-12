@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isFr = locale === "fr";
   return {
     title: isFr ? "Bumble vs Embir — Alternative gratuite a Bumble 2026" : "Bumble vs Embir — Free Bumble alternative 2026",
-    description: isFr ? "Comparatif Bumble vs Embir. Bumble fait payer les fonctionnalites, Embir est gratuit au lancement. Filtre par orientation, multi-intentions, profils verifies." : "Bumble vs Embir comparison. Bumble charges for features, Embir is free at launch. Orientation filter, multi-intention, verified profiles.",
+    description: isFr ? "Comparatif Bumble vs Embir. Bumble fait payer les fonctionnalites, Embir est gratuit pour les connexions essentielles. Filtre par orientation, multi-intentions, profils verifies." : "Bumble vs Embir comparison. Bumble charges for features, Embir's core connection features are free. Orientation filter, multi-intention, verified profiles.",
     alternates: {
       canonical: `https://embir.xyz/${isFr ? "fr/" : ""}bumble-vs-embir`,
       languages: {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     openGraph: {
       title: isFr ? "Bumble vs Embir — Alternative gratuite a Bumble 2026" : "Bumble vs Embir — Free Bumble alternative 2026",
-      description: isFr ? "Comparatif Bumble vs Embir. Bumble fait payer les fonctionnalites, Embir est gratuit au lancement. Filtre par orientation, multi-intentions, profils verifies." : "Bumble vs Embir comparison. Bumble charges for features, Embir is free at launch. Orientation filter, multi-intention, verified profiles.",
+      description: isFr ? "Comparatif Bumble vs Embir. Bumble fait payer les fonctionnalites, Embir est gratuit pour les connexions essentielles. Filtre par orientation, multi-intentions, profils verifies." : "Bumble vs Embir comparison. Bumble charges for features, Embir's core connection features are free. Orientation filter, multi-intention, verified profiles.",
       locale: isFr ? "fr_FR" : "en_US",
       type: "article",
     },
@@ -35,9 +35,9 @@ const DATA = {
     competitor: "Bumble",
     competitorPros: ["Concept women message first", "Modes BFF et Bizz", "Interface soignee"],
     competitorCons: ["Payant (20-40 EUR/mois pour Bumble Premium)", "Limite de 24h pour repondre", "Pas de filtre strict par orientation", "Publicite des abonnements intrusive"],
-    embirPros: ["gratuit au lancement — toutes les fonctionnalites", "Filtre strict par orientation", "Multi-intentions (amour, amis, fun, sport, evenements)", "Pas de limite de temps pour repondre", "Profils verifies par selfie"],
+    embirPros: ["gratuit pour les connexions essentielles — sans carte bancaire", "Filtre strict par orientation", "Multi-intentions (amour, amis, fun, sport, evenements)", "Pas de limite de temps pour repondre", "Profils verifies par selfie"],
     embirCons: ["Base d'utilisateurs plus petite", "Pas de concept women message first"],
-    faq: [["Embir est-il gratuit alors que Bumble fait payer?", "Oui. Embir est gratuit au lancement. Bumble fait payer 20-40 EUR/mois pour Premium (voir qui t'aime, rematch, etc.)."], ["Embir a-t-il un mode ami comme Bumble BFF?", "Oui. Embir propose l'intention Amis qui filtre les profils cherchant de l'amitie. Tu peux aussi chercher des partenaires de sport ou des evenements."], ["Le filtre par orientation d'Embir est-il meilleur que Bumble?", "Oui. Bumble n'a pas de filtre strict par orientation. Embir filtre bidirectionnellement : tu ne vois que les profils qui te correspondent et qui te cherchent."]],
+    faq: [["Embir est-il gratuit alors que Bumble fait payer?", "Oui. Embir est gratuit pour les connexions essentielles. Bumble fait payer 20-40 EUR/mois pour Premium (voir qui t'aime, rematch, etc.)."], ["Embir a-t-il un mode ami comme Bumble BFF?", "Oui. Embir propose l'intention Amis qui filtre les profils cherchant de l'amitie. Tu peux aussi chercher des partenaires de sport ou des evenements."], ["Le filtre par orientation d'Embir est-il meilleur que Bumble?", "Oui. Bumble n'a pas de filtre strict par orientation. Embir filtre bidirectionnellement : tu ne vois que les profils qui te correspondent et qui te cherchent."]],
   },
   en: {
     h1: "Bumble vs Embir: free and multi-orientation",
@@ -45,9 +45,9 @@ const DATA = {
     competitor: "Bumble",
     competitorPros: ["Concept women message first", "Modes BFF et Bizz", "Interface soignee"],
     competitorCons: ["Payant (20-40 EUR/mois pour Bumble Premium)", "Limite de 24h pour repondre", "Pas de filtre strict par orientation", "Publicite des abonnements intrusive"],
-    embirPros: ["gratuit au lancement — toutes les fonctionnalites", "Filtre strict par orientation", "Multi-intentions (amour, amis, fun, sport, evenements)", "Pas de limite de temps pour repondre", "Profils verifies par selfie"],
+    embirPros: ["gratuit pour les connexions essentielles — sans carte bancaire", "Filtre strict par orientation", "Multi-intentions (amour, amis, fun, sport, evenements)", "Pas de limite de temps pour repondre", "Profils verifies par selfie"],
     embirCons: ["Base d'utilisateurs plus petite", "Pas de concept women message first"],
-    faq: [["Is Embir free while Bumble charges?", "Yes. Embir is free at launch. Bumble charges $20-40/month for Premium (see who likes you, rematch, etc.)."], ["Does Embir have a friend mode like Bumble BFF?", "Yes. Embir offers the Friends intention which filters profiles looking for friendship. You can also look for sports partners or events."], ["Is Embir's orientation filter better than Bumble's?", "Yes. Bumble has no strict orientation filter. Embir filters bidirectionally: you only see profiles that match you and are looking for you."]],
+    faq: [["Is Embir free while Bumble charges?", "Yes. Embir's core connection features are free. Bumble charges $20-40/month for Premium (see who likes you, rematch, etc.)."], ["Does Embir have a friend mode like Bumble BFF?", "Yes. Embir offers the Friends intention which filters profiles looking for friendship. You can also look for sports partners or events."], ["Is Embir's orientation filter better than Bumble's?", "Yes. Bumble has no strict orientation filter. Embir filters bidirectionally: you only see profiles that match you and are looking for you."]],
   },
 } as const;
 
@@ -107,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white">Embir</span>
-                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit au lancement</span>
+                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit pour les connexions essentielles</span>
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white/70">{c.competitor}</span>
@@ -116,8 +116,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </div>
             {[
               { label: isFr ? "Prix" : "Price", embir: "0 EUR", competitor: "20-45 EUR/mois" },
-              { label: isFr ? "Likes illimites" : "Unlimited likes", embir: "Oui", competitor: "Non" },
-              { label: isFr ? "Messages illimites" : "Unlimited messages", embir: "Oui", competitor: "Non" },
+              { label: isFr ? "sélection quotidienne courte" : "a short daily selection", embir: "Oui", competitor: "Non" },
+              { label: isFr ? "messages entre connexions réciproques" : "messages between reciprocal connections", embir: "Oui", competitor: "Non" },
               { label: isFr ? "Filtre par orientation" : "Orientation filter", embir: "Oui Strict", competitor: "Non" },
               { label: isFr ? "Multi-intentions" : "Multi-intention", embir: "Oui 6 modes", competitor: "Non" },
               { label: isFr ? "Profils verifies" : "Verified profiles", embir: "Oui Selfie", competitor: "Partiel" },
@@ -230,7 +230,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             {isFr ? "Pret a essayer Embir ?" : "Ready to try Embir?"}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/45">
-            {isFr ? "gratuit au lancement. Aucune pub. Aucun abonnement." : "free at launch. No ads. No subscription."}
+            {isFr ? "gratuit pour les connexions essentielles. Aucune pub. Aucun abonnement." : "core connection features are free. No ads. No subscription."}
           </p>
           <Link
             href="/auth/register"

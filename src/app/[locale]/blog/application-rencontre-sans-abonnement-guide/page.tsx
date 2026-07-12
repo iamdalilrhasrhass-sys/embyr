@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Application de rencontre sans abonnement — le guide 2026",
-  description: "Guide des applis de rencontre vraiment gratuites. Découvrez pourquoi Embir est 100% gratuit au lancement, sans abonnement caché ni pub.",
+  description: "Guide des applis de rencontre vraiment gratuites. Découvrez pourquoi Tout ce qu'il faut pour rencontrer quelqu'un sur Embir est gratuit. Sans carte bancaire, sans abonnement caché ni pub.",
   alternates: { canonical: "https://embir.xyz/blog/application-rencontre-sans-abonnement-guide" },
   openGraph: {
     title: "Application de rencontre sans abonnement — le guide 2026",
-    description: "Guide des applis de rencontre vraiment gratuites. Découvrez pourquoi Embir est 100% gratuit au lancement, sans abonnement caché ni pub.",
+    description: "Guide des applis de rencontre vraiment gratuites. Découvrez pourquoi Tout ce qu'il faut pour rencontrer quelqu'un sur Embir est gratuit. Sans carte bancaire, sans abonnement caché ni pub.",
     url: "https://embir.xyz/blog/application-rencontre-sans-abonnement-guide",
     type: "article",
     locale: "fr_FR",
@@ -28,7 +28,7 @@ export default function Page() {
             <span className="text-xs text-white/20">Juin 2026</span>
           </div>
           <h1 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">Les applications de rencontre sans abonnement existent-elles vraiment ?</h1>
-          <p className="mt-5 text-lg leading-relaxed text-white/45">Guide des applis de rencontre vraiment gratuites. Découvrez pourquoi Embir est 100% gratuit au lancement, sans abonnement caché ni pub.</p>
+          <p className="mt-5 text-lg leading-relaxed text-white/45">Guide des applis de rencontre vraiment gratuites. Découvrez pourquoi Tout ce qu'il faut pour rencontrer quelqu'un sur Embir est gratuit. Sans carte bancaire, sans abonnement caché ni pub.</p>
           <p className="mt-4 text-xs text-white/15">Par l'Équipe Embir · 6 min de lecture</p>
         </div>
       </header>
@@ -40,26 +40,26 @@ export default function Page() {
           [&_ul]:mb-6 [&_li]:mb-2">
           <h2>1. Introduction</h2>
           <p>
-            Le monde des rencontres en ligne évolue rapidement. En 2026, les attentes des utilisateurs 
-            ont changé : on recherche désormais <strong>des connexions authentiques, dans un cadre 
+            Le monde des rencontres en ligne évolue rapidement. En 2026, les attentes des utilisateurs
+            ont changé : on recherche désormais <strong>des connexions authentiques, dans un cadre
             respectueux, sans les frustrations des applis traditionnelles</strong>.
           </p>
           <p>
-            Que vous cherchiez une relation sérieuse, une connexion amicale, ou simplement à élargir 
-            votre cercle social, comprendre le paysage actuel des applications de rencontre est essentiel 
+            Que vous cherchiez une relation sérieuse, une connexion amicale, ou simplement à élargir
+            votre cercle social, comprendre le paysage actuel des applications de rencontre est essentiel
             pour faire les bons choix.
           </p>
 
           <h2>2. Le contexte actuel</h2>
           <p>
-            La plupart des applications de rencontre fonctionnent sur un modèle freemium qui limite 
-            rapidement les fonctionnalités gratuites. Les abonnements coûtent entre 8€ et 40€ par mois, 
+            La plupart des applications de rencontre fonctionnent sur un modèle freemium qui limite
+            rapidement les fonctionnalités gratuites. Les abonnements coûtent entre 8€ et 40€ par mois,
             et les publicités envahissent l'expérience utilisateur.
           </p>
           <p>
-            <strong>Embir fait un choix différent :</strong> tout est gratuit pendant la phase de lancement. 
-            Messagerie illimitée, matching par intelligence artificielle, profils vérifiés, zéro 
-            publicité. Les membres fondateurs conservent cet accès premium à vie.
+            <strong>Embir fait un choix différent :</strong> Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.
+            Messagerie entre connexions réciproques, matching par intelligence artificielle, profils vérifiés, zéro
+            publicité. Les membres fondateurs conservent cet accès prioritaire aux options facultatives.
           </p>
 
           <h2>3. Ce qui fait la différence</h2>
@@ -67,48 +67,48 @@ export default function Page() {
             Trois éléments distinguent une bonne application de rencontre d'une application ordinaire :
           </p>
           <ul>
-            <li><strong>La qualité des profils :</strong> sur Embir, chaque membre est vérifié par selfie.</li>
+            <li><strong>La qualité des profils :</strong> sur Embir, chaque membre peut demander une vérification par selfie et les profils approuvés affichent un badge.</li>
             <li><strong>La pertinence du matching :</strong> notre système de compatibilité suggère des profils adaptés à vos préférences.</li>
-            <li><strong>La confiance dans l'environnement :</strong> zéro pub, données protégées, modération humaine.</li>
+            <li><strong>La confiance dans l'environnement :</strong> zéro pub, données protégées, signalement et blocage.</li>
           </ul>
 
           <h2>4. L'importance de la vérification</h2>
           <p>
-            Un profil vérifié, c'est la garantie que la personne derrière l'écran est réelle. Sur Embir, 
-            chaque nouveau membre passe par une vérification par selfie en temps réel. Notre système 
-            compare la photo de profil avec un selfie pris sur le moment, éliminant radicalement les 
+            Un badge vérifié indique qu’un contrôle selfie a été approuvé ; il ne garantit ni l’identité complète ni les intentions de la personne. Sur Embir,
+            chaque nouveau membre passe par une vérification par selfie en temps réel. Notre système
+            compare la photo de profil avec un selfie pris sur le moment, éliminant radicalement les
             faux profils et les robots.
           </p>
 
           <h2>5. Le matching intelligent</h2>
           <p>
-            Contrairement aux applications qui se contentent de trier les profils par distance, 
-            <strong>Embir utilise l'intelligence artificielle pour comprendre vos préférences</strong> 
-            et vous suggérer des personnes vraiment compatibles. L'algorithme apprend au fil du temps 
+            Contrairement aux applications qui se contentent de trier les profils par distance,
+            <strong>Embir utilise l'intelligence artificielle pour comprendre vos préférences</strong>
+            et vous suggérer des personnes vraiment compatibles. L'algorithme apprend au fil du temps
             ce qui vous correspond, affinant ses recommandations.
           </p>
 
           <h2>6. FAQ</h2>
           <h3>Embir est-il vraiment gratuit ?</h3>
           <p>
-            Oui. Pendant la phase de lancement, toutes les fonctionnalités sont gratuites — messagerie, 
-            matching, profils. Les membres fondateurs conservent l'accès premium à vie.
+            Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.
+            matching, profils. Les membres fondateurs contribuent aux choix produit.
           </p>
           <h3>Comment les profils sont-ils vérifiés ?</h3>
           <p>
-            Par selfie en temps réel. Notre système compare la photo de profil avec un selfie pris sur 
+            Par selfie en temps réel. Notre système compare la photo de profil avec un selfie pris sur
             le moment pour confirmer l'identité de chaque membre.
           </p>
           <h3>Dans quelles villes Embir est-il disponible ?</h3>
           <p>
-            Embir est disponible partout en France, avec des communautés actives dans les grandes villes 
+            Les inscriptions sont ouvertes partout en France ; la densité réelle varie selon la ville et les critères
             comme Paris, Lyon, Marseille, Toulouse, Bordeaux, Lille, Nantes, Nice et bien d'autres.
           </p>
         </div>
       </section>
       <section className="px-4 py-16 text-center border-t border-white/[0.04]">
         <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
-        <p className="mt-3 text-xs text-white/20">Rejoignez Embir · Gratuit au lancement · 18+</p>
+        <p className="mt-3 text-xs text-white/20">Rejoignez Embir · gratuit pour les connexions essentielles · 18+</p>
       </section>
     </article>
   );

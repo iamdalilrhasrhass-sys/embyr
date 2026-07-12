@@ -11,7 +11,7 @@
     {
       "criteria": "Prix",
       "competitor": "~30-50€/mois — très cher",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -23,7 +23,7 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Limitée",
-      "embir": "Selfie + modération humaine",
+      "embir": "Selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -51,20 +51,20 @@
     },
     {
       "title": "Prix — la barrière financière d'Elite Rencontre",
-      "content": "Un abonnement Elite Rencontre coûte 30-50€ par mois. Sur 3 mois, c'est 90-150€ avant d'avoir eu une conversation sérieuse. Ce modèle économique est présenté comme un gage de sérieux — les membres qui paient seraient plus motivés.\n\nEmbir est gratuit au lancement. La sérieux des membres vient de leur déclaration d'intentions à l'inscription, pas de leur capacité à payer. Un abonnement n'est pas un proxy de la qualité relationnelle.",
+      "content": "Un abonnement Elite Rencontre coûte 30-50€ par mois. Sur 3 mois, c'est 90-150€ avant d'avoir eu une conversation sérieuse. Ce modèle économique est présenté comme un gage de sérieux — les membres qui paient seraient plus motivés.\n\nEmbir est gratuit pour les connexions essentielles. La sérieux des membres vient de leur déclaration d'intentions à l'inscription, pas de leur capacité à payer. Un abonnement n'est pas un proxy de la qualité relationnelle.",
       "highlights": [
-        "Gratuit au lancement pour tous",
+        "connexions essentielles gratuites pour tout le monde",
         "La qualité vient des critères de matching, pas du prix d'entrée",
         "Futur freemium annoncé à l'avance — transparent"
       ]
     }
   ],
-  "verdict": "Elite Rencontre est pertinent si tu cherches spécifiquement à rencontrer des cadres ou diplômés et que tu es prêt à payer pour ce critère de sélection.\n\nEmbir est la meilleure alternative si tu veux une vraie compatibilité (valeurs, intentions, mode de vie), des profils vérifiés, l'inclusivité pour toutes les orientations, et la gratuité au lancement.",
+  "verdict": "Elite Rencontre est pertinent si tu cherches spécifiquement à rencontrer des cadres ou diplômés et que tu es prêt à payer pour ce critère de sélection.\n\nEmbir est la meilleure alternative si tu veux une vraie compatibilité (valeurs, intentions, mode de vie), des profils vérifiés, l'inclusivité pour toutes les orientations, et la gratuité des connexions essentielles.",
   "ctaText": "Vraie compatibilité, sans prix d'entrée — rejoins gratuitement",
   "faq": [
     {
       "q": "Embir remplace-t-il Elite Rencontre ?",
-      "a": "Embir est différent : pas de sélection par diplôme, mais un matching profond sur les valeurs, les intentions et l'orientation — gratuit au lancement, inclusif, avec profils vérifiés."
+      "a": "Embir est différent : pas de sélection par diplôme, mais un matching profond sur les valeurs, les intentions et l'orientation — gratuit pour les connexions essentielles, inclusif, avec profils vérifiés."
     },
     {
       "q": "Embir est-il adapté aux rencontres sérieuses ?",
@@ -72,7 +72,7 @@
     },
     {
       "q": "Embir est-il vraiment gratuit ?",
-      "a": "Oui. Les fonctionnalités principales sont gratuites au lancement — découverte, messagerie, compatibilité. Sans abonnement obligatoire."
+      "a": "Oui. Les fonctionnalités principales sont gratuites pour les connexions essentielles — découverte, messagerie, compatibilité. Sans abonnement obligatoire."
     },
     {
       "q": "Embir est-il inclusif LGBTQ+ ?",
@@ -80,7 +80,7 @@
     },
     {
       "q": "Comment Embir vérifie-t-il les profils ?",
-      "a": "Vérification selfie à l'inscription + modération humaine de chaque signalement. Les profils vérifiés sont prioritaires dans la découverte."
+      "a": "Vérification selfie facultative + outils de signalement et de blocage. Les profils vérifiés sont prioritaires dans la découverte."
     }
   ]
 }

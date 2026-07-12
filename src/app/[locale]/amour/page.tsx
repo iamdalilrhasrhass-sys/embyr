@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const isFr = locale === "fr";
   return {
-    title: isFr ? "Rencontre amoureuse sérieuse gratuite par orientation | Embir" : "Serious dating by orientation — 100% free | Embir",
-    description: isFr ? "Trouve l'amour sur Embir. Rencontres sérieuses filtrées par orientation, profils vérifiés, anti-ghosting. 100% gratuit, sans pub, sans abonnement." : "Find love on Embir. Serious dating filtered by orientation, verified profiles, anti-ghosting. 100% free, no ads, no subscription.",
+    title: isFr ? "Rencontre amoureuse sérieuse gratuite par orientation | Embir" : "Serious dating by orientation — free for core connections | Embir",
+    description: isFr ? "Découverte réciproque pour l'amour, intentions déclarées et badge selfie facultatif. Sans carte bancaire pour rencontrer quelqu'un." : "Reciprocal discovery for love, declared intentions, and an optional selfie badge. No credit card required to meet someone.",
     alternates: {
       canonical: `https://embir.xyz/${isFr ? "fr/" : ""}amour`,
       languages: {
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
     },
     openGraph: {
-      title: isFr ? "Rencontre amoureuse sérieuse gratuite par orientation | Embir" : "Serious dating by orientation — 100% free | Embir",
-      description: isFr ? "Trouve l'amour sur Embir. Rencontres sérieuses filtrées par orientation, profils vérifiés, anti-ghosting. 100% gratuit, sans pub, sans abonnement." : "Find love on Embir. Serious dating filtered by orientation, verified profiles, anti-ghosting. 100% free, no ads, no subscription.",
+      title: isFr ? "Rencontre amoureuse sérieuse gratuite par orientation | Embir" : "Serious dating by orientation — free for core connections | Embir",
+      description: isFr ? "Découverte réciproque pour l'amour, intentions déclarées et badge selfie facultatif. Sans carte bancaire pour rencontrer quelqu'un." : "Reciprocal discovery for love, declared intentions, and an optional selfie badge. No credit card required to meet someone.",
       locale: isFr ? "fr_FR" : "en_US",
       type: "website",
     },
@@ -56,7 +56,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         {/* HERO */}
         <section className="mx-auto max-w-5xl py-12 text-center lg:py-20">
           <p className="inline-flex rounded-full border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a574]">
-            {isFr ? "Embir · 100% gratuit" : "Embir · 100% free"}
+            {isFr ? "Embir · sans carte bancaire" : "Embir · free for core connections"}
           </p>
           <div className="mt-8 text-6xl">♥</div>
           <h1 className="mt-6 font-serif text-5xl font-light tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl">
@@ -142,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             {isFr ? "Prêt à commencer ?" : "Ready to start?"}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/45">
-            {isFr ? "100% gratuit. Aucune pub. Aucun abonnement." : "100% free. No ads. No subscription."}
+            {isFr ? "sans carte bancaire. Aucune pub. Aucun abonnement." : "free for core connections. No ads. No subscription."}
           </p>
           <Link
             href="/auth/register?intent=AMOUR"
@@ -160,8 +160,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 const COPY = {
   fr: {
     h1: "Trouve quelqu'un qui cherche la même chose que toi.",
-    sections: [{"title": "Pourquoi Embir pour l'amour", "text": "La plupart des apps de rencontre sont conçues pour te garder. Embir est conçu pour te faire trouver quelqu'un. Quand tu cherches l'amour, tu veux des profils qui partagent tes valeurs, pas une infinité de swipes. Embir filtre par orientation, par intention et par géographie pour te montrer les personnes qui veulent la même chose : une relation durable."}, {"title": "Le filtre bidirectionnel change tout", "text": "Le filtre par orientation est strict dans les deux sens. Tu ne vois que les profils qui te correspondent et qui te cherchent aussi. Fini les matchs unilatéraux, fini les profils qui ne te répondront jamais. Chaque profil dans ton feed est une vraie possibilité."}, {"title": "Profils vérifiés, confiance réelle", "text": "La vérification par selfie élimine les faux profils. Les profils vérifiés ont un badge et sont mis en avant. Tu sais à qui tu parles, dès le premier message. La confiance est la base d'une relation amoureuse — Embir la garantit avant le premier match."}, {"title": "Anti-ghosting et respect", "text": "Embir encourage les réponses et pénalise le ghosting. Les membres qui répondent régulièrement sont mis en avant. Si quelqu'un ne répond pas, Embir ne le montre plus. Parce que chercher l'amour mérite du respect, pas du silence."}],
-    faq: [{"q": "Embir est-il vraiment gratuit pour trouver l'amour ?", "a": "Oui, 100% gratuit. Aucune fonctionnalité payante. Tu peux matcher, discuter et rencontrer sans jamais payer. Pas d'abonnement, pas de pub, pas de limite de likes."}, {"q": "Comment le filtre par orientation fonctionne-t-il ?", "a": "Tu renseignes ton genre et ton orientation à l'inscription, puis tu choisis qui tu cherches. Embir ne te montre que les profils compatibles dans les deux sens : ils te correspondent et ils te cherchent aussi."}, {"q": "Comment éviter ceux qui veulent juste du fun ?", "a": "Chaque membre choisit ses intentions (amour, amis, fun, etc.). Si tu sélectionnes 'amour', tu ne vois que les profils qui ont aussi sélectionné 'amour'. Pas de malentendu possible."}, {"q": "Les profils sont-ils vérifiés ?", "a": "Oui, par selfie. Les profils vérifiés ont un badge bleu et sont mis en avant dans le feed. La vérification est gratuite et élimine les faux profils."}, {"q": "Y a-t-il une limite de likes par jour ?", "a": "Non. Aucune limite. Tu peux liker autant de profils que tu veux, quand tu veux. Embir ne limite pas l'amour pour te vendre un abonnement premium."}],
+    sections: [{"title": "Pourquoi Embir pour l'amour", "text": "Embir organise la découverte autour de l'orientation, des intentions et des préférences déclarées, avec une sélection courte plutôt qu'un swipe infini."}, {"title": "Le filtre bidirectionnel", "text": "Le moteur applique les préférences dans les deux sens. Il réduit les découvertes mal alignées, sans garantir une réponse ou une rencontre."}, {"title": "Badge selfie facultatif", "text": "Une demande de vérification selfie approuvée ajoute un badge visible. Ce badge ne prouve ni l'identité complète, ni les intentions, ni l'absence de risque."}, {"title": "Ghosting et respect", "text": "Embir n'affiche aucun score de réponse et ne promet pas d'empêcher le ghosting. Les membres gardent le contrôle de leurs connexions."}],
+    faq: [{"q": "Embir est-il vraiment gratuit pour trouver l'amour ?", "a": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."}, {"q": "Comment le filtre par orientation fonctionne-t-il ?", "a": "Tu renseignes ton genre, ton orientation et qui tu cherches. Le moteur applique ces préférences dans les deux sens."}, {"q": "Comment éviter ceux qui veulent juste du fun ?", "a": "Les intentions déclarées sont prises en compte dans la sélection. Cela réduit les malentendus sans les éliminer."}, {"q": "Tous les profils sont-ils vérifiés ?", "a": "Non. La vérification selfie est facultative. Un badge visible signale les demandes approuvées, sans garantir l'absence de risque."}, {"q": "Comment fonctionne la découverte ?", "a": "Embir propose une sélection courte de profils compatibles selon les critères déclarés."}],
     links: [
       { href: "/amour", label: "\u2665 Amour" },
       { href: "/amis", label: "\u2726 Amis" },
@@ -173,8 +173,8 @@ const COPY = {
   },
   en: {
     h1: "Find someone who wants the same thing as you.",
-    sections: [{"title": "Why Embir for love", "text": "Most dating apps are designed to keep you. Embir is designed to help you find someone. When you're looking for love, you want profiles that share your values, not endless swipes. Embir filters by orientation, intention, and geography to show you people who want the same: a lasting relationship."}, {"title": "The bidirectional filter changes everything", "text": "The orientation filter is strict in both directions. You only see profiles that match you AND are looking for you. No more one-sided matches, no more profiles that will never respond. Every profile in your feed is a real possibility."}, {"title": "Verified profiles, real trust", "text": "Selfie verification eliminates fake profiles. Verified profiles have a badge and are featured. You know who you're talking to, from the first message. Trust is the foundation of a romantic relationship — Embir guarantees it before the first match."}, {"title": "Anti-ghosting and respect", "text": "Embir encourages responses and penalizes ghosting. Members who reply regularly are featured. If someone doesn't respond, Embir stops showing them. Because looking for love deserves respect, not silence."}],
-    faq: [{"q": "Is Embir really free for finding love?", "a": "Yes, 100% free. No paid features. You can match, chat, and meet without ever paying. No subscription, no ads, no like limits."}, {"q": "How does the orientation filter work?", "a": "You enter your gender and orientation during signup, then choose who you're looking for. Embir only shows you mutually compatible profiles: they match you and they're looking for you too."}, {"q": "How do I avoid people who just want fun?", "a": "Each member chooses their intentions (love, friends, fun, etc.). If you select 'love', you only see profiles that also selected 'love'. No misunderstanding possible."}, {"q": "Are profiles verified?", "a": "Yes, by selfie. Verified profiles have a blue badge and are featured in the feed. Verification is free and eliminates fake profiles."}, {"q": "Is there a daily like limit?", "a": "No. No limits. You can like as many profiles as you want, whenever you want. Embir doesn't limit love to sell you a premium subscription."}],
+    sections: [{"title": "Why Embir for love", "text": "Embir organizes discovery around declared orientation, intentions, and preferences, with a short selection instead of endless swiping."}, {"title": "Bidirectional filtering", "text": "The engine applies preferences in both directions. It reduces misaligned discovery without guaranteeing a reply or a meeting."}, {"title": "Optional selfie badge", "text": "An approved selfie-verification request adds a visible badge. It does not prove full identity, intentions, or the absence of risk."}, {"title": "Ghosting and respect", "text": "Embir does not display response scores or promise to prevent ghosting. Members stay in control of their connections."}],
+    faq: [{"q": "Is Embir free for finding love?", "a": "Everything needed to meet someone is free. No credit card required."}, {"q": "How does the orientation filter work?", "a": "You enter your gender, orientation, and who you seek. The engine applies those preferences in both directions."}, {"q": "How do I avoid people who just want fun?", "a": "Declared intentions are included in the selection. This reduces misunderstandings without eliminating them."}, {"q": "Are all profiles verified?", "a": "No. Selfie verification is optional. A visible badge marks approved requests without guaranteeing the absence of risk."}, {"q": "How does discovery work?", "a": "Embir provides a short selection of compatible profiles based on declared criteria."}],
     links: [
       { href: "/amour", label: "\u2665 Love" },
       { href: "/amis", label: "\u2726 Friends" },

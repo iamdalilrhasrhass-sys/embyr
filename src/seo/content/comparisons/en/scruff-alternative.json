@@ -1,6 +1,6 @@
 {
   "slug": "scruff-alternative",
-  "intro": "Scruff is a niche dating app for gay, bi, and queer men with a strong bear community focus. It offers solid social features but stays closed to other identities and requires Scruff Pro for most advanced features.\n\nEmbir offers an alternative for gay and bi men wanting a platform with verified profiles, human moderation, and openness to all orientations.",
+  "intro": "Scruff is a niche dating app for gay, bi, and queer men with a strong bear community focus. It offers solid social features but stays closed to other identities and requires Scruff Pro for most advanced features.\n\nEmbir offers an alternative for gay and bi men wanting a platform with verified profiles, reporting and blocking, and openness to all orientations.",
   "comparisonTable": [
     {
       "criteria": "Target audience",
@@ -11,13 +11,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Photo verification, no selfie check",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Very limited, Scruff Pro required",
-      "embir": "Core features free at launch",
+      "embir": "Core features core connection features are free",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Safety",
       "competitor": "Community moderation, variable response",
-      "embir": "Human team + fast response",
+      "embir": "Reporting workflow + immediate blocking",
       "winner": "embir"
     }
   ],
@@ -40,7 +40,7 @@
       "highlights": [
         "All LGBTQ+ identities included — not just cis men",
         "Selfie verification vs Scruff's basic photo check",
-        "Free during launch vs Scruff Pro subscription"
+        "free for core connections vs Scruff Pro subscription"
       ]
     }
   ],
@@ -49,7 +49,7 @@
   "faq": [
     {
       "q": "Is Embir good for gay and bi men?",
-      "a": "Yes. Bidirectional filtering ensures you only see profiles matching your orientation and vice versa. Verified profiles and human moderation."
+      "a": "Yes. Bidirectional filtering ensures you only see profiles matching your orientation and vice versa. Verified profiles and reporting and blocking."
     },
     {
       "q": "Does Embir include trans men and non-binary people?",
@@ -57,7 +57,7 @@
     },
     {
       "q": "Is Embir free unlike Scruff Pro?",
-      "a": "Yes. Core features are free during the launch phase. No Pro subscription required."
+      "a": "Yes. Core connection features are free for everyone. No Pro subscription required."
     }
   ]
 }

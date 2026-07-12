@@ -1,6 +1,6 @@
 {
   "slug": "adopte",
-  "intro": "Adopte Un Mec a révolutionné les rencontres en France avec son concept inversé : ce sont les femmes qui choisissent, les hommes qui se proposent. En 2026, la plateforme reste une référence francophone — mais son modèle commence à vieillir : vérification des profils quasi inexistante, frais d'abonnement pour les hommes, inclusivité très limitée pour les utilisateurs LGBTQ+.\n\nEmbir propose une alternative universelle : profils vérifiés dès l'inscription, modération humaine, matching basé sur la compatibilité réelle (orientation, intentions, valeurs), et gratuité totale au lancement pour tous les genres et toutes les orientations.",
+  "intro": "Adopte Un Mec a révolutionné les rencontres en France avec son concept inversé : ce sont les femmes qui choisissent, les hommes qui se proposent. En 2026, la plateforme reste une référence francophone — mais son modèle commence à vieillir : vérification des profils quasi inexistante, frais d'abonnement pour les hommes, inclusivité très limitée pour les utilisateurs LGBTQ+.\n\nEmbir propose une alternative universelle : profils vérifiés dès l'inscription, signalement et blocage, matching basé sur la compatibilité réelle (orientation, intentions, valeurs), et gratuité des connexions essentielles pour tous les genres et toutes les orientations.",
   "comparisonTable": [
     {
       "criteria": "Modèle de découverte",
@@ -11,13 +11,13 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Minimale — photo sans contrôle",
-      "embir": "Vérification selfie + modération humaine",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Accès gratuit",
       "competitor": "Gratuit pour les femmes, payant pour les hommes",
-      "embir": "Gratuit pour tous au lancement",
+      "embir": "Connexions essentielles gratuites",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Sécurité / modération",
       "competitor": "Signalement standard, traitement lent",
-      "embir": "Équipe humaine, réponse rapide",
+      "embir": "Signalement enregistré + blocage immédiat",
       "winner": "embir"
     },
     {
@@ -51,7 +51,7 @@
     },
     {
       "title": "Gratuité et modèle économique",
-      "content": "Sur Adopte, les femmes ont accès gratuit. Les hommes paient un abonnement. Ce modèle a financé la croissance de la plateforme mais crée une asymétrie : les hommes investissent économiquement avant même d'avoir eu une conversation, ce qui n'est pas sans effets sur les dynamiques relationnelles.\n\nEmbir est gratuit pour tout le monde au lancement — quel que soit ton genre ou ton orientation. Le futur modèle freemium sera annoncé de façon transparente et financera la sécurité et la modération, pas l'accès aux fonctionnalités de base.",
+      "content": "Sur Adopte, les femmes ont accès gratuit. Les hommes paient un abonnement. Ce modèle a financé la croissance de la plateforme mais crée une asymétrie : les hommes investissent économiquement avant même d'avoir eu une conversation, ce qui n'est pas sans effets sur les dynamiques relationnelles.\n\nEmbir est gratuit pour toutes les connexions essentielles — quel que soit ton genre ou ton orientation. Les options facultatives transparentes seront annoncé de façon transparente et financera la sécurité et la modération, pas l'accès aux fonctionnalités de base.",
       "highlights": [
         "Gratuit pour tous les genres et toutes les orientations",
         "Aucune asymétrie économique au démarrage",
@@ -68,16 +68,16 @@
       ]
     }
   ],
-  "verdict": "Adopte Un Mec reste pertinent pour les rencontres hétérosexuelles en France avec son concept original. Mais la vérification est faible, les hommes paient, et l'inclusivité LGBTQ+ est quasi inexistante.\n\nEmbir est l'alternative moderne : profils vérifiés, modération humaine, inclusif pour toutes les orientations, gratuit pour tous au lancement — avec un matching basé sur la vraie compatibilité.",
+  "verdict": "Adopte Un Mec reste pertinent pour les rencontres hétérosexuelles en France avec son concept original. Mais la vérification est faible, les hommes paient, et l'inclusivité LGBTQ+ est quasi inexistante.\n\nEmbir est l'alternative moderne : profils vérifiés, signalement et blocage, inclusif pour toutes les orientations, Connexions essentielles gratuites — avec un matching basé sur la vraie compatibilité.",
   "ctaText": "Toutes orientations bienvenues — rejoins gratuitement",
   "faq": [
     {
       "q": "Embir est-il une bonne alternative à Adopte ?",
-      "a": "Oui, surtout si tu es LGBTQ+, si tu veux des profils vérifiés, ou si tu préfères un modèle gratuit pour tous les genres. Embir est gratuit au lancement, inclusif, et basé sur la compatibilité réelle."
+      "a": "Oui, surtout si tu es LGBTQ+, si tu veux des profils vérifiés, ou si tu préfères un modèle gratuit pour tous les genres. Embir est gratuit pour les connexions essentielles, inclusif, et basé sur la compatibilité réelle."
     },
     {
       "q": "Embir est-il gratuit pour les hommes et les femmes ?",
-      "a": "Oui. Contrairement à Adopte où les hommes paient un abonnement, Embir est gratuit pour tous au lancement, quel que soit le genre ou l'orientation."
+      "a": "Oui. Contrairement à Adopte où les hommes paient un abonnement, Embir est Connexions essentielles gratuites, quel que soit le genre ou l'orientation."
     },
     {
       "q": "Embir fonctionne-t-il pour les rencontres gay, lesbiennes ou bi ?",
@@ -85,7 +85,7 @@
     },
     {
       "q": "Comment Embir vérifie-t-il les profils ?",
-      "a": "Vérification selfie à l'inscription — une vérification rapide qui confirme que la photo correspond à une vraie personne. Une équipe de modérateurs humains examine chaque signalement."
+      "a": "Vérification selfie facultative — une vérification rapide qui confirme que la photo correspond à une vraie personne. Une équipe de dispositif de signalement examine chaque signalement."
     },
     {
       "q": "Embir est-il disponible en France ?",

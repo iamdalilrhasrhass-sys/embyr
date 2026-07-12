@@ -11,7 +11,7 @@
     {
       "criteria": "Experience feminine",
       "competitor": "Forte — priorite aux femmes dans le design",
-      "embir": "Securite par verification + moderation humaine",
+      "embir": "Securite par verification + signalement et blocage",
       "winner": "tie"
     },
     {
@@ -23,13 +23,13 @@
     {
       "criteria": "Systeme de credits",
       "competitor": "Credits payants pour fonctionnalites avancees",
-      "embir": "Aucun credit — tout gratuit au lancement",
+      "embir": "Aucun credit — tout gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Verification profils",
       "competitor": "Photo verification partielle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     }
   ],
@@ -40,7 +40,7 @@
       "highlights": [
         "Matching intentionnel — qualite avant quantite",
         "Filtrage bidirectionnel elimine les incompatibilites",
-        "Aucun credit, aucun abonnement pendant le lancement"
+        "Aucun crédit ni carte bancaire pour les connexions essentielles"
       ]
     }
   ],
@@ -49,11 +49,11 @@
   "faq": [
     {
       "q": "Embir est-il adapte aux femmes qui veulent une experience de qualite ?",
-      "a": "Oui. Embir a la verification selfie, la moderation humaine, et un matching intentionnel. Les femmes voient des profils qui correspondent vraiment a leurs criteres."
+      "a": "Oui. Embir a la verification selfie, le signalement et le blocage, et un matching intentionnel. Les femmes voient des profils qui correspondent vraiment a leurs criteres."
     },
     {
       "q": "Embir utilise-t-il un systeme de credits comme CMB ?",
-      "a": "Non. Aucun credit sur Embir. Les fonctionnalites principales sont gratuites pendant le lancement."
+      "a": "Non. Aucun credit sur Embir. Les fonctionnalites principales sont gratuites pour les connexions essentielles."
     },
     {
       "q": "CMB est-il disponible en France ?",

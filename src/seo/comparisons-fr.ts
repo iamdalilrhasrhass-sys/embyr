@@ -1,5 +1,3 @@
-import { slugify } from "./utils";
-
 const comparisons = [
   { app: "Tinder", slug: "alternative-tinder", locale: "fr" as const, title: "Embir vs Tinder 2026 : Quelle app choisir pour des rencontres réelles et vérifiées ?" },
   { app: "Grindr", slug: "alternative-grindr", locale: "fr" as const, title: "Embir vs Grindr : La meilleure alternative inclusive et safe pour toutes les orientations" },
@@ -36,10 +34,10 @@ const comparisons = [
   { app: "Bumble alternative", slug: "alternative-bumble-france", locale: "fr" as const, title: "Embir vs Bumble alternative" },
   { app: "Hinge alternative", slug: "alternative-hinge-france", locale: "fr" as const, title: "Embir vs Hinge alternative" },
   { app: "meilleure application rencontre 2026", slug: "meilleure-application-rencontre-2026", locale: "fr" as const, title: "Embir vs Meilleure App de Rencontre 2026 — Profils Vérifiés & Compatibilité" },
-  { app: "meilleure appli rencontre gratuite", slug: "meilleure-appli-rencontre-gratuite", locale: "fr" as const, title: "Embir vs Meilleure Appli Rencontre Gratuite — Vraiment Gratuit au Lancement" },
+  { app: "meilleure appli rencontre gratuite", slug: "meilleure-appli-rencontre-gratuite", locale: "fr" as const, title: "Embir vs Meilleure Appli Rencontre Gratuite — Vraiment gratuit pour les connexions essentielles" },
   { app: "meilleure appli rencontre serieuse", slug: "meilleure-appli-rencontre-serieuse", locale: "fr" as const, title: "Embir vs meilleure appli rencontre serieuse" },
   { app: "meilleure appli rencontre LGBTQ", slug: "meilleure-appli-rencontre-lgbtq", locale: "fr" as const, title: "Embir vs Meilleure Appli Rencontre LGBTQ+ — Inclusive, Vérifiée & Safe" },
-  { app: "appli rencontre plus securisee", slug: "appli-rencontre-plus-securisee", locale: "fr" as const, title: "Embir vs Appli Rencontre la Plus Sécurisée — Modération Humaine & Vrais Profils" },
+  { app: "appli rencontre plus securisee", slug: "appli-rencontre-plus-securisee", locale: "fr" as const, title: "Embir vs Appli Rencontre la Plus Sécurisée — signalement et blocage & Vrais Profils" },
   { app: "appli rencontre profils verifies", slug: "appli-rencontre-profils-verifies", locale: "fr" as const, title: "Embir vs Appli Rencontre Profils Vérifiés — Vérification Selfie & Confiance" },
   { app: "appli rencontre sans abonnement", slug: "appli-rencontre-sans-abonnement", locale: "fr" as const, title: "Embir vs appli rencontre sans abonnement" },
   { app: "appli rencontre sans paywall", slug: "appli-rencontre-sans-paywall", locale: "fr" as const, title: "Embir vs Appli Rencontre Sans Paywall — Gratuit, Pas de Carte Bancaire" },
@@ -49,7 +47,7 @@ const comparisons = [
   { app: "appli rencontre pour profs", slug: "appli-rencontre-pour-profs", locale: "fr" as const, title: "Embir vs appli rencontre pour profs" },
   { app: "appli rencontre pour freelances", slug: "appli-rencontre-pour-freelances", locale: "fr" as const, title: "Embir vs appli rencontre pour freelances" },
   { app: "appli rencontre meilleur algorithme", slug: "appli-rencontre-meilleur-algorithme", locale: "fr" as const, title: "Embir vs appli rencontre meilleur algorithme" },
-  { app: "appli rencontre moderation humaine", slug: "appli-rencontre-moderation-humaine", locale: "fr" as const, title: "Embir vs Appli Rencontre Modération Humaine — De Vrais Humains Examinent les Signalements" },
+  { app: "appli rencontre signalement et blocage", slug: "appli-rencontre-moderation-humaine", locale: "fr" as const, title: "Embir vs Appli Rencontre signalement et blocage — Signalements enregistrés, blocage immédiat" },
   { app: "Tinder vs Bumble vs Hinge comparatif", slug: "comparatif-tinder-bumble-hinge", locale: "fr" as const, title: "Embir vs Tinder vs Bumble vs Hinge comparatif" },
   { app: "comparatif applications rencontre", slug: "comparatif-applications-rencontre", locale: "fr" as const, title: "Embir vs comparatif applications rencontre" },
   { app: "appli rencontre inclusive", slug: "appli-rencontre-inclusive", locale: "fr" as const, title: "Embir vs Appli Rencontre Inclusive — Toutes les Orientations, Vraie Communauté" },

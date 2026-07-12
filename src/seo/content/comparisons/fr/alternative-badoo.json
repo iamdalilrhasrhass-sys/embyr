@@ -1,11 +1,11 @@
 {
   "slug": "alternative-badoo",
-  "intro": "Badoo est l'une des plus grandes plateformes de social dating au monde avec plus de 400 millions d'utilisateurs. Sa portée est indéniable — notamment en Europe et en Amérique latine. Mais cette taille a un coût bien documenté : taux de faux profils élevé, monétisation agressive, et une expérience centrée sur l'engagement plutôt que sur la connexion réelle.\n\nEmbir cible le même public international avec une philosophie radicalement différente : profils vérifiés dès le départ, modération humaine à l'échelle du lancement, matching de compatibilité pour toutes les orientations, et un lancement gratuit avec un futur modèle freemium transparent.",
+  "intro": "Badoo est l'une des plus grandes plateformes de social dating au monde avec plus de 400 millions d'utilisateurs. Sa portée est indéniable — notamment en Europe et en Amérique latine. Mais cette taille a un coût bien documenté : taux de faux profils élevé, monétisation agressive, et une expérience centrée sur l'engagement plutôt que sur la connexion réelle.\n\nEmbir cible le même public international avec une philosophie radicalement différente : profils vérifiés dès le départ, signalement et blocage à l'échelle du lancement, matching de compatibilité pour toutes les orientations, et un accès essentiel gratuit avec des options facultatives transparentes.",
   "comparisonTable": [
     {
       "criteria": "Vérification des profils",
       "competitor": "Optionnelle, facilement contournée",
-      "embir": "Vérification selfie systématique + modération humaine",
+      "embir": "vérification selfie facultative avec badge visible + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -17,7 +17,7 @@
     {
       "criteria": "Tier gratuit",
       "competitor": "Gratuit mais très monétisé, nombreux paywalls",
-      "embir": "Vraiment gratuit au lancement",
+      "embir": "Vraiment gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -35,7 +35,7 @@
     {
       "criteria": "Sécurité / modération",
       "competitor": "Automatisée + communauté, résultats inégaux",
-      "embir": "Équipe humaine, réponse rapide",
+      "embir": "Signalement enregistré + blocage immédiat",
       "winner": "embir"
     }
   ],
@@ -46,21 +46,21 @@
       "highlights": [
         "Communauté plus petite = engagement plus fort et authenticité",
         "Profils vérifiés uniquement — pas de comptes morts qui encombrent la découverte",
-        "Chaque signalement examiné par un modérateur humain"
+        "Signalements enregistrés pour examen ; blocage immédiat"
       ]
     },
     {
       "title": "Monétisation et accès gratuit",
-      "content": "Le modèle de monétisation de Badoo est agressif. Des crédits pour booster sa visibilité, un abonnement 'Superpower' pour des fonctionnalités basiques, des achats in-app pour presque tout ce qui compte. Le tier gratuit est fonctionnel mais frustrant — conçu pour te pousser à dépenser.\n\nLa phase de lancement d'Embir est vraiment gratuite. La découverte principale, la messagerie et les fonctionnalités de compatibilité fonctionnent sans carte bancaire. Le futur modèle freemium est annoncé à l'avance : il financera l'infrastructure de sécurité et la modération humaine — pas l'accès à la connexion humaine de base.",
+      "content": "Le modèle de monétisation de Badoo est agressif. Des crédits pour booster sa visibilité, un abonnement 'Superpower' pour des fonctionnalités basiques, des achats in-app pour presque tout ce qui compte. Le tier gratuit est fonctionnel mais frustrant — conçu pour te pousser à dépenser.\n\nL'expérience de connexion d'Embir est vraiment gratuite. La découverte principale, la messagerie et les fonctionnalités de compatibilité fonctionnent sans carte bancaire. Les options facultatives transparentes sont présentées à l'avance : il financera l'infrastructure de sécurité et le signalement et le blocage — pas l'accès à la connexion humaine de base.",
       "highlights": [
-        "Pas de crédits, pas de boosts, pas d'urgence artificielle pendant le lancement",
+        "Pas de crédits, de boosts ni d'urgence artificielle sur les connexions essentielles",
         "Messagerie complète gratuite — pas de '5 messages puis payez'",
-        "Transition freemium pré-annoncée et transparente"
+        "Options facultatives pré-annoncée et transparente"
       ]
     }
   ],
   "verdict": "Badoo est utile pour la découverte sociale large dans des marchés où les alternatives sont rares. Si tu es dans une grande ville européenne ou latino-américaine et que tu veux du volume, il le fait.\n\nEmbir est le meilleur choix si tu veux de vraies personnes vérifiées, un matching de compatibilité réel, l'inclusivité LGBTQ+, et une expérience gratuite qui n'essaie pas constamment de te faire payer.",
-  "ctaText": "Qualité avant quantité — rencontres vérifiées, gratuites au lancement",
+  "ctaText": "Qualité avant quantité — rencontres vérifiées, gratuites pour les connexions essentielles",
   "faq": [
     {
       "q": "Embir est-il disponible en France comme Badoo ?",
@@ -68,11 +68,11 @@
     },
     {
       "q": "Comment Embir empêche-t-il les faux profils ?",
-      "a": "Vérification selfie à l'inscription et une équipe de modération humaine qui examine chaque signalement. L'échelle de la phase fondatrice rend une vraie modération possible."
+      "a": "Vérification selfie facultative et un dispositif de signalement et de blocage immédiat. Les procédures de signalement et blocage sont conçues pour évoluer avec la communauté."
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Les fonctionnalités principales sont gratuites pendant le lancement. Aucun crédit, aucun abonnement, aucun frais caché pour envoyer un message."
+      "a": "Oui. Les fonctionnalités principales sont gratuites pour les connexions essentielles. Aucun crédit, aucun abonnement, aucun frais caché pour envoyer un message."
     },
     {
       "q": "Embir fonctionne-t-il pour les rencontres homosexuelles ?",

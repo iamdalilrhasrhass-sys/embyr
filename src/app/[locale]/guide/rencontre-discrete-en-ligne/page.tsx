@@ -18,15 +18,15 @@ export default function Page() {
       <section className="px-4 py-16 sm:px-6 lg:px-8 bg-white/[0.01]">
         <div className="mx-auto max-w-4xl"><h2 className="font-serif text-3xl text-white mb-8">Ce qu'il faut savoir</h2>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3><p className="text-sm text-white/45">Chaque membre est vérifié par selfie. Zéro faux profil, zéro déception.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Gratuit au lancement</h3><p className="text-sm text-white/45">Messagerie illimitée, matching IA, profils complets. Sans engagement.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3><p className="text-sm text-white/45">Chaque membre peut demander une vérification par selfie. Un badge visible identifie les profils vérifiés ; le blocage et le signalement restent disponibles.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">gratuit pour les connexions essentielles</h3><p className="text-sm text-white/45">Messagerie entre connexions réciproques, compatibilité réciproque, profils complets. Sans engagement.</p></div>
           </div>
         </div>
       </section>
       <section className="px-4 py-16 sm:px-6 lg:px-8"><div className="mx-auto max-w-3xl"><h2 className="font-serif text-3xl text-white mb-8">FAQ</h2>
         <div className="space-y-4">
-          <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il vraiment gratuit ?</summary><p className="px-6 pb-4 text-sm text-white/45">Oui. Pendant la phase de lancement, toutes les fonctionnalités sont gratuites.</p></details>
-          <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Comment les profils sont-ils vérifiés ?</summary><p className="px-6 pb-4 text-sm text-white/45">Par selfie en temps réel. Notre IA compare la photo de profil avec un selfie pris sur le moment.</p></details>
+          <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il vraiment gratuit ?</summary><p className="px-6 pb-4 text-sm text-white/45">Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.</p></details>
+          <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Comment les profils sont-ils vérifiés ?</summary><p className="px-6 pb-4 text-sm text-white/45">La vérification est facultative : le membre envoie un selfie avec un code unique. Si la demande est approuvée, un badge visible apparaît sur son profil.</p></details>
         </div></div>
       </section>
       <section className="px-4 pb-16 text-center"><Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link></section>

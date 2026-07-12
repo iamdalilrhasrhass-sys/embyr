@@ -82,7 +82,7 @@ export default function RedditSetupPage() {
                 <span className="text-white font-semibold text-sm">Copie le client_id</span>
               </div>
               <p className="text-white/50 text-xs">
-                C'est la ligne juste sous <strong className="text-white">"personal use script"</strong>. 
+                C'est la ligne juste sous <strong className="text-white">"personal use script"</strong>.
                 Ça ressemble à un code du genre : <span className="font-mono text-amber-400">abc123def45</span>
               </p>
             </div>

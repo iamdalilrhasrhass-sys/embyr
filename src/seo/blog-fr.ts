@@ -60,7 +60,7 @@ const topics = [
   "profils verifies explication",
   "comment reperer faux profils",
   "vie privee applications rencontre",
-  "moderation humaine rencontre",
+  "signalement et blocage rencontre",
   "verification selfie explication",
   "red flags pour les femmes",
   "red flags pour les hommes",

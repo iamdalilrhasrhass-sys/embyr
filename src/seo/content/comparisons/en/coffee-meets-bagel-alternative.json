@@ -1,6 +1,6 @@
 {
   "slug": "coffee-meets-bagel-alternative",
-  "intro": "Coffee Meets Bagel built a reputation for quality-over-quantity dating: a limited number of curated matches per day, a women-first design where women receive and review matches before men can message, and a general philosophy against the endless swipe.\n\nEmbir shares the quality-over-quantity instinct but takes it further: verified profiles, human moderation, full LGBTQ+ inclusion, deep compatibility matching across orientations, and a free-at-launch model that doesn't require a subscription to access meaningful features.",
+  "intro": "Coffee Meets Bagel built a reputation for quality-over-quantity dating: a limited number of curated matches per day, a women-first design where women receive and review matches before men can message, and a general philosophy against the endless swipe.\n\nEmbir shares the quality-over-quantity instinct but takes it further: verified profiles, reporting and blocking, full LGBTQ+ inclusion, deep compatibility matching across orientations, and a model with free core connections that doesn't require a subscription to access meaningful features.",
   "comparisonTable": [
     {
       "criteria": "Matching philosophy",
@@ -16,20 +16,20 @@
     },
     {
       "criteria": "Profile verification",
-      "competitor": "Facebook-linked, no systematic verification",
-      "embir": "Selfie verification + human moderation",
+      "competitor": "Facebook-linked, no available selfie verification",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Beans (in-app currency), many actions paywalled",
-      "embir": "Core features free during launch",
+      "embir": "Free core connection features",
       "winner": "embir"
     },
     {
       "criteria": "Safety tools",
       "competitor": "Basic reporting, community standards",
-      "embir": "Human moderation + systematic review",
+      "embir": "reporting and blocking + systematic review",
       "winner": "embir"
     },
     {
@@ -42,7 +42,7 @@
   "sections": [
     {
       "title": "Quality matching — a shared philosophy, different execution",
-      "content": "CMB and Embir agree on the core problem with swipe culture: volume without context produces shallow interactions. CMB addresses this with daily match limits. Embir addresses it differently: deeper compatibility signals at signup mean every profile you see already meets your stated criteria — no need to artificially limit daily views.\n\nCMB's bean currency for premium actions (opening 'Woo', viewing activity reports, unlocking additional matches) adds friction in ways that feel more like monetization than curation. Embir's free launch phase removes this friction entirely.",
+      "content": "CMB and Embir agree on the core problem with swipe culture: volume without context produces shallow interactions. CMB addresses this with daily match limits. Embir addresses it differently: deeper compatibility signals at signup mean every profile you see already meets your stated criteria — no need to artificially limit daily views.\n\nCMB's bean currency for premium actions (opening 'Woo', viewing activity reports, unlocking additional matches) adds friction in ways that feel more like monetization than curation. Embir's free core connection experience removes this friction entirely.",
       "highlights": [
         "Compatibility filtering means every match already fits your criteria",
         "No artificial daily limits that push you toward premium upgrades",
@@ -59,7 +59,7 @@
       ]
     }
   ],
-  "verdict": "Coffee Meets Bagel is a good fit if you're in the US, identify as a heterosexual woman, and want a slow-paced curated experience with some social accountability via Facebook linking.\n\nEmbir is the better option if you want verified profiles, full LGBTQ+ support, compatibility-first matching, free access at launch, and human moderation worldwide.",
+  "verdict": "Coffee Meets Bagel is a good fit if you're in the US, identify as a heterosexual woman, and want a slow-paced curated experience with some social accountability via Facebook linking.\n\nEmbir is the better option if you want verified profiles, full LGBTQ+ support, compatibility-first matching, free access at launch, and reporting and blocking worldwide.",
   "ctaText": "Quality connections, no beans required — join free",
   "faq": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Core features are free during launch. No beans, no in-app currency, no subscription required to message."
+      "a": "Core connection features are free for everyone. No beans, no in-app currency, no subscription required to message."
     },
     {
       "q": "Does Embir work for LGBTQ+ users?",
@@ -76,7 +76,7 @@
     },
     {
       "q": "How does Embir verify profiles?",
-      "a": "Selfie verification from signup, plus human moderation of every report. The founding community scale makes genuine oversight feasible."
+      "a": "Selfie verification from signup, plus reporting and blocking tools. The founding community scale makes genuine oversight feasible."
     },
     {
       "q": "Is Embir available in the US?",

@@ -3,20 +3,20 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Free Dating App for the US — New York, LA, Miami & More | Embir",
-  description: "Embir is free at launch in the United States. Verified profiles, orientation-aware discovery, compatibility matching, and a founding community — built city by city.",
+  description: "Embir's core connection features are free in the United States. Verified profiles, orientation-aware discovery, compatibility matching, and a founding community — built city by city.",
   alternates: {
     canonical: "https://embir.xyz/us",
     languages: { "fr": "https://embir.xyz/fr/etats-unis" },
   },
   openGraph: {
     title: "Free Dating App for the US — New York, LA, Miami & More | Embir",
-    description: "Embir is free at launch in the United States. Verified profiles, orientation-aware discovery, compatibility matching, and a founding community.",
+    description: "Embir's core connection features are free in the United States. Verified profiles, orientation-aware discovery, compatibility matching, and a founding community.",
     url: "https://embir.xyz/us",
     locale: "en_US",
     siteName: "Embir",
     images: [`/api/og?title=Free+Dating+App+for+the+US+—+New+York,+LA,+Miami+&+More+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Free Dating App for the US | Embir", description: "Embir is free at launch in the US. Verified profiles and compatibility matching.", images: [`/api/og?title=Free+Dating+App+for+the+US+—+New+York,+LA,+Miami+&+More+%7C+Embir&variant=default`] },
+  twitter: { card: "summary_large_image", title: "Free Dating App for the US | Embir", description: "Embir's core connection features are free in the US. Verified profiles and compatibility matching.", images: [`/api/og?title=Free+Dating+App+for+the+US+—+New+York,+LA,+Miami+&+More+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 
@@ -76,7 +76,7 @@ export default function Page() {
             <div className="mt-6 space-y-3">
               {[
                 ["Is Embir available everywhere in the US?", "Embir is building density city by city, starting with New York, Los Angeles, and Miami. The platform is accessible from anywhere in the US, but the founding community is concentrated in these initial cities."],
-                ["Is Embir free in the US?", "Yes, completely free during the launch phase. Messaging, matching, verification — all included for founding members. A freemium model will be introduced later to fund the mobile app."],
+                ["Is Embir free in the US?", "Yes, free for core connections. Messaging, matching, verification — all included for founding members. Optional services can fund safety, moderation and product development."],
                 ["How is Embir different from Hinge or Bumble?", "Embir focuses on orientation-aware visibility and compatibility signals rather than the swipe mechanic. It also serves all orientations on a single platform with preference-based visibility controls."],
                 ["When is the mobile app launching in the US?", "The mobile app is in development. The web version works on mobile browsers. Founding members will be notified first when the native apps are ready."],
               ].map(([q, a]) => (

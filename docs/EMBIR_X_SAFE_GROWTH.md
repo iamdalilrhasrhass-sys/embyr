@@ -18,7 +18,7 @@
 6. **Attendre 48h** sans comportement suspect
 
 ### Exemples de posts Phase 1
-> Embir arrive. Une plateforme de rencontres plus directe, plus internationale, plus simple. 25 langues. Une expérience pensée pour connecter les gens sans friction. embir.xyz
+> Embir arrive. Une plateforme de rencontres plus directe, plus internationale, plus simple. pages publiques en français et en anglais. Une expérience pensée pour connecter les gens sans friction. embir.xyz
 
 > On construit Embir pour ceux qui veulent une vraie expérience de rencontre, sans interface froide ni parcours interminable. Ouverture progressive. embir.xyz
 

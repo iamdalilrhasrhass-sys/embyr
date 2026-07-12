@@ -1,6 +1,6 @@
 {
   "slug": "alternative-hinge-france",
-  "intro": "Hinge a conquis la France avec son positionnement designed to be deleted — une app serieuse avec des prompts creatifs. L'app est populaire dans les grandes villes francaises mais son tier gratuit tres restreint (quelques likes par jour) et son abonnement Preferred (environ 30 EUR/mois) freinent l'adoption.\n\nEmbir partage l'ambition des connexions profondes — gratuitement pendant le lancement, avec des profils verifies et une inclusivite totale.",
+  "intro": "Hinge a conquis la France avec son positionnement designed to be deleted — une app serieuse avec des prompts creatifs. L'app est populaire dans les grandes villes francaises mais son tier gratuit tres restreint (quelques likes par jour) et son abonnement Preferred (environ 30 EUR/mois) freinent l'adoption.\n\nEmbir partage l'ambition des connexions profondes — gratuitement, sans carte bancaire, avec des profils verifies et une inclusivite totale.",
   "comparisonTable": [
     {
       "criteria": "UX conversation",
@@ -11,13 +11,13 @@
     {
       "criteria": "Tier gratuit",
       "competitor": "Tres limite — quelques likes par jour",
-      "embir": "Fonctionnalites completes gratuites au lancement",
+      "embir": "Fonctionnalites completes gratuites pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Verification profils",
       "competitor": "Photo verification optionnelle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Prix",
       "competitor": "Hinge Preferred ~30 EUR/mois",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     }
   ],
@@ -38,13 +38,13 @@
       "title": "Designed to be deleted — la promesse tenue differemment",
       "content": "Hinge veut que tu trouves quelqu'un et que tu supprimes l'app. Mais charger 30 EUR/mois pour l'experience complete contredit l'urgence declaree. Embir ne te donne pas les meilleures fonctionnalites en echange d'un abonnement. La decouverte, la compatibilite et la messagerie sont gratuites. Le but est le meme — des connexions reelles — sans la friction du prix.",
       "highlights": [
-        "Toutes les fonctionnalites de connexion gratuites pendant le lancement",
+        "Toutes les fonctionnalites de connexion gratuites pour les connexions essentielles",
         "Profils verifies = connexions plus authentiques",
         "Matching bidirectionnel = moins de faux espoirs, plus de matchs reels"
       ]
     }
   ],
-  "verdict": "Hinge est une excellente app si tu es pret a payer Preferred pour l'experience complete. Embir est la meilleure alternative si tu veux la meme profondeur de connexion avec des profils verifies, une vraie inclusivite LGBTQ+, et zero abonnement pendant le lancement.",
+  "verdict": "Hinge est une excellente app si tu es pret a payer Preferred pour l'experience complete. Embir est la meilleure alternative si tu veux la meme profondeur de connexion avec des profils verifies, une vraie inclusivite LGBTQ+, et aucune carte bancaire pour les connexions essentielles.",
   "ctaText": "Connexions profondes, zero abonnement — rejoins Embir",
   "faq": [
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Embir est-il gratuit contrairement a Hinge Preferred ?",
-      "a": "Oui. Les fonctionnalites principales sont gratuites pendant la phase de lancement."
+      "a": "Oui. Les fonctionnalites principales sont gratuites pour les connexions essentielles."
     }
   ]
 }

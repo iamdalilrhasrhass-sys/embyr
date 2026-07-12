@@ -1,6 +1,6 @@
 {
   "slug": "feeld-alternative",
-  "intro": "Feeld made its name in open and non-monogamous dating: couples, solo explorers, every sexual identity you can imagine, presented with minimal judgment. Its audience is progressive, queer-friendly, and often looking for connection beyond traditional frameworks.\n\nEmbir occupies adjacent territory but comes from a different angle: universal inclusivity across all orientations combined with verified profiles, human moderation, and a compatibility system that works for every relationship model — monogamous, non-monogamous, casual, serious, or open exploration. For users who feel Feeld is either too niche or too permissive, Embir offers a middle ground that doesn't compromise on inclusivity.",
+  "intro": "Feeld made its name in open and non-monogamous dating: couples, solo explorers, every sexual identity you can imagine, presented with minimal judgment. Its audience is progressive, queer-friendly, and often looking for connection beyond traditional frameworks.\n\nEmbir occupies adjacent territory but comes from a different angle: universal inclusivity across all orientations combined with verified profiles, reporting and blocking, and a compatibility system that works for every relationship model — monogamous, non-monogamous, casual, serious, or open exploration. For users who feel Feeld is either too niche or too permissive, Embir offers a middle ground that doesn't compromise on inclusivity.",
   "comparisonTable": [
     {
       "criteria": "Audience scope",
@@ -11,19 +11,19 @@
     {
       "criteria": "Profile verification",
       "competitor": "Optional, community-trust model",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Paid subscription required for most features",
-      "embir": "Core features free during launch",
+      "embir": "Free core connection features",
       "winner": "embir"
     },
     {
       "criteria": "Safety tools",
       "competitor": "Community moderation, slow escalation",
-      "embir": "Human team + immediate response",
+      "embir": "Reporting workflow + immediate blocking",
       "winner": "embir"
     },
     {
@@ -51,15 +51,15 @@
     },
     {
       "title": "Safety and verification — trust as infrastructure",
-      "content": "Feeld operates on a community-trust model. Profiles can be linked to a Facebook account as a verification signal, but there's no systematic verification process. For a platform dealing with intimate contexts, the lack of rigorous identity verification is a meaningful gap.\n\nEmbir's verification system is designed for exactly this kind of trust-critical environment: selfie verification, human moderation of every report, and a zero-tolerance policy for harassment and bad actors. The founding community is small enough for genuine oversight.",
+      "content": "Feeld operates on a community-trust model. Profiles can be linked to a Facebook account as a verification signal, but there's no available selfie verification process. For a platform dealing with intimate contexts, the lack of rigorous identity verification is a meaningful gap.\n\nEmbir's verification system is designed for exactly this kind of trust-critical environment: selfie verification, reporting and blocking tools, and a zero-tolerance policy for harassment and bad actors. The founding community is small enough for genuine oversight.",
       "highlights": [
-        "Selfie verification from day one — you know who you're talking to",
-        "Human moderation team, not algorithm-only filtering",
+        "Optional selfie badge — an approved check is visible but does not prove full identity",
+        "Reporting and blocking workflow, not algorithm-only filtering",
         "Safe space by design, not by community norms alone"
       ]
     }
   ],
-  "verdict": "Feeld is excellent for its specific niche — open relationships, non-monogamous exploration, and kink-positive community. If that describes you precisely, it delivers.\n\nEmbir is a strong alternative if you want the same openness and inclusivity without the niche focus — with added verification, human moderation, free access during launch, and matching that works equally well for every orientation and relationship model.",
+  "verdict": "Feeld is excellent for its specific niche — open relationships, non-monogamous exploration, and kink-positive community. If that describes you precisely, it delivers.\n\nEmbir is a strong alternative if you want the same openness and inclusivity without the niche focus — with added verification, reporting and blocking, free access to core connection features, and matching that works equally well for every orientation and relationship model.",
   "ctaText": "Your orientation, your intentions, your rules — join free",
   "faq": [
     {
@@ -72,11 +72,11 @@
     },
     {
       "q": "How does Embir compare to Feeld on price?",
-      "a": "Feeld requires a subscription for most meaningful features. Embir is free at launch — core discovery, messaging and compatibility are accessible without payment."
+      "a": "Feeld requires a subscription for most meaningful features. Embir's core connection features are free — core discovery, messaging and compatibility are accessible without payment."
     },
     {
       "q": "Does Embir verify profiles?",
-      "a": "Yes. Selfie verification is available from signup. Verified members receive a badge and are prioritized in discovery. Human moderators review every report."
+      "a": "Yes. Selfie verification is available from signup. Verified members receive a badge and are prioritized in discovery. Reports are recorded for review, and blocking is immediate."
     },
     {
       "q": "Can I use Embir for casual dating?",

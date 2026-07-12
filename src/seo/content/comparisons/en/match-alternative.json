@@ -1,17 +1,17 @@
 {
   "slug": "match-alternative",
-  "intro": "Match.com charges ~$40/month for serious dating. Embir offers the same serious relationship matching with verified profiles, bidirectional filtering, and human moderation — completely free during the launch phase.",
+  "intro": "Match.com charges ~$40/month for serious dating. Embir offers the same serious relationship matching with verified profiles, bidirectional filtering, and reporting and blocking — free for core connections.",
   "comparisonTable": [
     {
       "criteria": "Price",
       "competitor": "~$40/month",
-      "embir": "100% free at launch",
+      "embir": "Core connection features are free",
       "winner": "embir"
     },
     {
       "criteria": "Profile verification",
       "competitor": "Not systematic",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -40,11 +40,11 @@
       "highlights": [
         "Serious relationship as a matching filter, not just a preference",
         "Verified profiles — authentic connections from the start",
-        "Free during launch — no subscription required"
+        "free for core connections — no subscription required"
       ]
     }
   ],
-  "verdict": "Match.com works for serious dating if you're willing to pay. Embir offers the same depth with verified profiles, human moderation, and LGBTQ+ inclusivity — free at launch.",
+  "verdict": "Match.com works for serious dating if you're willing to pay. Embir offers the same depth with verified profiles, reporting and blocking, and LGBTQ+ inclusivity — core connection features are free.",
   "ctaText": "Serious connections, free — join Embir",
   "faq": [
     {
@@ -53,11 +53,11 @@
     },
     {
       "q": "How much does Embir cost vs Match?",
-      "a": "Match costs ~$40/month. Embir is free during the launch phase."
+      "a": "Match costs ~$40/month. Embir's core connection features are free."
     },
     {
       "q": "Does Embir verify profiles?",
-      "a": "Yes. Selfie verification at signup and human moderation of every report."
+      "a": "Yes. Selfie verification at signup and reporting and blocking tools."
     }
   ]
 }

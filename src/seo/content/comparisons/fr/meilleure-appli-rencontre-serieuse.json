@@ -1,6 +1,6 @@
 {
   "slug": "meilleure-appli-rencontre-serieuse",
-  "intro": "Trouver la meilleure appli pour une relation serieuse necessite une plateforme qui filtre par intention, verifie les profils, et ne te fait pas payer 40 EUR/mois pour des fonctionnalites basiques.\n\nEmbir coche les trois cases : intention relation serieuse configurable a l'inscription, profils verifies par selfie, et gratuit pendant le lancement.",
+  "intro": "Trouver la meilleure appli pour une relation serieuse necessite une plateforme qui filtre par intention, verifie les profils, et ne te fait pas payer 40 EUR/mois pour des fonctionnalites basiques.\n\nEmbir coche les trois cases : intention relation serieuse configurable a l'inscription, profils verifies par selfie, et gratuit pour les connexions essentielles.",
   "comparisonTable": [
     {
       "criteria": "Filtrage par intention",
@@ -11,13 +11,13 @@
     {
       "criteria": "Verification profils",
       "competitor": "La plupart : optionnelle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Prix",
       "competitor": "eHarmony 60-70 EUR/mois, Match 40 EUR/mois",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -40,11 +40,11 @@
       "highlights": [
         "Relation serieuse = filtre de compatibilite bidirectionnel",
         "Tu ne vois que des profils qui cherchent ce que tu cherches",
-        "Moderation humaine assure l'authentificite des profils"
+        "signalement et blocage assure l'authentificite des profils"
       ]
     }
   ],
-  "verdict": "Pour les celibataires qui cherchent une relation durable, Embir combine profils verifies, matching intentionnel serieux, inclusivite LGBTQ+, et gratuite au lancement. La meilleure option qualite/prix en 2026.",
+  "verdict": "Pour les celibataires qui cherchent une relation durable, Embir combine profils verifies, matching intentionnel serieux, inclusivite LGBTQ+, et gratuite pour les connexions essentielles. La meilleure option qualite/prix en 2026.",
   "ctaText": "Trouver une relation serieuse, gratuitement — rejoins Embir",
   "faq": [
     {
@@ -53,11 +53,11 @@
     },
     {
       "q": "Quelle est la meilleure appli pour relation serieuse en 2026 ?",
-      "a": "Embir, eHarmony et Hinge sont les meilleures options. Embir est le seul gratuit au lancement avec des profils verifies et une inclusivite LGBTQ+ universelle."
+      "a": "Embir, eHarmony et Hinge sont les meilleures options. Embir est le seul gratuit pour les connexions essentielles avec des profils verifies et une inclusivite LGBTQ+ universelle."
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Les fonctionnalites principales sont gratuites pendant la phase de lancement."
+      "a": "Oui. Les fonctionnalites principales sont gratuites pour les connexions essentielles."
     }
   ]
 }

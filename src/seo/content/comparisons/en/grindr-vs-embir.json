@@ -1,17 +1,17 @@
 {
   "slug": "grindr-vs-embir",
-  "intro": "Grindr dominates gay male dating but remains closed to other orientations and has documented security issues. Trans, bi, and pan users have little space on the platform.\n\nEmbir offers an inclusive alternative for gay and bi men, with verified profiles and human moderation.",
+  "intro": "Grindr dominates gay male dating but remains closed to other orientations and has documented security issues. Trans, bi, and pan users have little space on the platform.\n\nEmbir offers an inclusive alternative for gay and bi men, with verified profiles and reporting and blocking.",
   "comparisonTable": [
     {
       "criteria": "Profile verification",
       "competitor": "Partial / optional",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Grindr Unlimited ~$30/month",
-      "embir": "Full features free at launch",
+      "embir": "Full features core connection features are free",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Moderation",
       "competitor": "Automated / community",
-      "embir": "Human team + fast response",
+      "embir": "Reporting workflow + immediate blocking",
       "winner": "embir"
     }
   ],
@@ -40,7 +40,7 @@
       "highlights": [
         "Bidirectional filtering — your orientation applies both ways",
         "Verified profiles — fewer bots and fake accounts",
-        "100% free at launch — no credit card required"
+        "Core connection features are free — no credit card required"
       ]
     }
   ],
@@ -49,11 +49,11 @@
   "faq": [
     {
       "q": "Is Embir better than Grindr?",
-      "a": "Embir has verified profiles, bidirectional filtering and human moderation that Grindr doesn't offer. For LGBTQ+ inclusivity and safety, Embir is superior."
+      "a": "Embir has verified profiles, bidirectional filtering and reporting and blocking that Grindr doesn't offer. For LGBTQ+ inclusivity and safety, Embir is superior."
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Discovery, matching and messaging are free during the launch phase."
+      "a": "Yes. Discovery, matching and messaging are free for core connections."
     },
     {
       "q": "How does Embir compare to Grindr for LGBTQ+ dating?",

@@ -3,20 +3,20 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "LGBTQ+ Dating App — Safe, Inclusive, Verified | Embir",
-  description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, human moderation and a free launch for founding members.",
+  description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, reporting and blocking and free core connections.",
   alternates: {
     canonical: "https://embir.xyz/lgbtq-dating-app",
     languages: { "fr": "https://embir.xyz/fr/rencontre-lgbt" },
   },
   openGraph: {
     title: "LGBTQ+ Dating App — Safe, Inclusive, Verified | Embir",
-    description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, human moderation and a free launch for founding members.",
+    description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, reporting and blocking and free core connections.",
     url: "https://embir.xyz/lgbtq-dating-app",
     locale: "en_US",
     siteName: "Embir",
     images: [{ url: `/api/og?title=LGBTQ++Dating+App+—+Safe,+Inclusive,+Verified+%7C+Embir&variant=default`, width: 1200, height: 630, alt: "Embir LGBTQ+ dating" }],
   },
-  twitter: { card: "summary_large_image", title: "LGBTQ+ Dating App — Safe, Inclusive, Verified | Embir", description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, human moderation and a free launch.", images: [`/api/og?title=LGBTQ++Dating+App+—+Safe,+Inclusive,+Verified+%7C+Embir&variant=default`] },
+  twitter: { card: "summary_large_image", title: "LGBTQ+ Dating App — Safe, Inclusive, Verified | Embir", description: "Embir is built for LGBTQ+ dating with orientation-aware visibility, verified profiles, preference filters, reporting and blocking and free core connections.", images: [`/api/og?title=LGBTQ++Dating+App+—+Safe,+Inclusive,+Verified+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 
@@ -41,12 +41,12 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Why Embir for LGBTQ+ dating</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {[
-                ["Safety by design", "Orientation visibility controls, verified profiles, human moderation, and instant blocking. Your safety isn't a feature — it's the foundation."],
+                ["Safety by design", "Orientation visibility controls, verified profiles, reporting and blocking, and instant blocking. Your safety isn't a feature — it's the foundation."],
                 ["No fetishization", "We moderate against fetishizing behavior. Being trans or bi isn't a 'category' to browse — it's who you are."],
                 ["All identities welcome", "Gay, lesbian, bi, trans, queer, non-binary, questioning, and anyone who doesn't fit a label. You define yourself."],
                 ["Verified community", "Selfie verification reduces fake profiles and catfishing. LGBTQ+ users are disproportionately targeted by fake accounts — verification helps."],
-                ["Free during launch", "No paywall to message or match. Test the full experience. Founding members shape the community before any premium features arrive."],
-                ["Human moderation", "Reports of homophobia, transphobia, or harassment are reviewed by real people, not algorithms. Serious violations = immediate ban."],
+                ["free for core connections", "No paywall to message or match. Test the full experience. Founding members shape the community while helping shape the product."],
+                ["reporting and blocking", "Reports of homophobia, transphobia, or harassment are reviewed by real people, not algorithms. Serious violations = immediate ban."],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <h3 className="font-semibold text-white/85">{title}</h3>
@@ -58,7 +58,7 @@ export default function Page() {
 
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">How we handle safety for LGBTQ+ users</h2>
-            <p className="mt-4">LGBTQ+ dating comes with unique safety concerns. Embir addresses them with multiple layers: orientation-based visibility controls (you choose who sees your profile), selfie verification (fewer fake accounts targeting LGBTQ+ users), human moderation (real people reviewing reports of harassment or hate speech), and instant blocking with no appeals for offenders.</p>
+            <p className="mt-4">LGBTQ+ dating comes with unique safety concerns. Embir addresses them with multiple layers: orientation-based visibility controls (you choose who sees your profile), selfie verification (fewer fake accounts targeting LGBTQ+ users), reporting and blocking (real people reviewing reports of harassment or hate speech), and instant blocking with no appeals for offenders.</p>
             <p className="mt-3">We know no platform can eliminate all risk. But we can make it much harder for bad actors to operate and much easier for you to control your experience.</p>
           </div>
 

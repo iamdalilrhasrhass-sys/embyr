@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isFr = locale === "fr";
   return {
     title: isFr ? "Plan cul gratuit avec consentement et respect | Embir" : "Casual encounters free with consent and respect | Embir",
-    description: isFr ? "Du plaisir clair, du consentement, zéro jugement. Embir filtre par orientation pour des rencontres sans engagement sûres. 100% gratuit." : "Clear pleasure, consent, zero judgment. Embir filters by orientation for safe casual encounters. 100% free.",
+    description: isFr ? "Du plaisir clair, du consentement, zéro jugement. Embir filtre par orientation pour des rencontres sans engagement sûres. Sans carte bancaire." : "Clear pleasure, consent, zero judgment. Embir filters by orientation for safe casual encounters. Core connections are free.",
     alternates: {
       canonical: `https://embir.xyz/${isFr ? "fr/" : ""}plan-cul`,
       languages: {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     openGraph: {
       title: isFr ? "Plan cul gratuit avec consentement et respect | Embir" : "Casual encounters free with consent and respect | Embir",
-      description: isFr ? "Du plaisir clair, du consentement, zéro jugement. Embir filtre par orientation pour des rencontres sans engagement sûres. 100% gratuit." : "Clear pleasure, consent, zero judgment. Embir filters by orientation for safe casual encounters. 100% free.",
+      description: isFr ? "Du plaisir clair, du consentement, zéro jugement. Embir filtre par orientation pour des rencontres sans engagement sûres. Sans carte bancaire." : "Clear pleasure, consent, zero judgment. Embir filters by orientation for safe casual encounters. Core connections are free.",
       locale: isFr ? "fr_FR" : "en_US",
       type: "website",
     },
@@ -56,7 +56,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         {/* HERO */}
         <section className="mx-auto max-w-5xl py-12 text-center lg:py-20">
           <p className="inline-flex rounded-full border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a574]">
-            {isFr ? "Embir · 100% gratuit" : "Embir · 100% free"}
+            {isFr ? "Embir · sans carte bancaire" : "Embir · free for core connections"}
           </p>
           <div className="mt-8 text-6xl">✸</div>
           <h1 className="mt-6 font-serif text-5xl font-light tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl">
@@ -142,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             {isFr ? "Prêt à commencer ?" : "Ready to start?"}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/45">
-            {isFr ? "100% gratuit. Aucune pub. Aucun abonnement." : "100% free. No ads. No subscription."}
+            {isFr ? "sans carte bancaire. Aucune pub. Aucun abonnement." : "free for core connections. No ads. No subscription."}
           </p>
           <Link
             href="/auth/register?intent=PLAN_CUL"
@@ -160,8 +160,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 const COPY = {
   fr: {
     h1: "Du plaisir clair, du consentement, zéro jugement.",
-    sections: [{"title": "Transparence sur les intentions", "text": "Sur Embir, l'intention 'plan cul' est explicite. Pas de mensonge, pas de fausse promesse. Chaque profil dans ton feed cherche la même chose que toi. La transparence élimine les malentendus et le ghosting."}, {"title": "Consentement et respect", "text": "Embir promeut le consentement explicite. Les profils vérifiés sont mis en avant. Les signalements sont traités rapidement par une équipe humaine. Le respect n'est pas optionnel — c'est la condition pour rester sur la plateforme."}, {"title": "Sécurité par la vérification", "text": "La vérification par selfie garantit que tu sais à qui tu parles. Les faux profils sont éliminés. Les profils vérifiés ont un badge. Pour des rencontres sans engagement, la confiance est encore plus importante — Embir la garantit."}, {"title": "100% gratuit, aucune limite", "text": "Pas de paywall pour voir qui a liké ton profil. Pas de limite de messages. Pas d'abonnement pour débloquer des fonctionnalités. Tout est gratuit, pour tout le monde. Le plaisir n'a pas de prix mensuel."}],
-    faq: [{"q": "Embir est-il sûr pour les plans cul ?", "a": "Embir intègre la vérification par selfie, la modération humaine, et le traitement rapide des signalements. Les profils vérifiés sont mis en avant. Comme partout, reste prudent : rencontre en public la première fois."}, {"q": "Le plan cul est-il vraiment gratuit ?", "a": "Oui, 100% gratuit. Aucune limite de messages, aucun paywall, aucun abonnement. Toutes les fonctionnalités sont accessibles à tous."}, {"q": "Comment garantir le consentement ?", "a": "Embir promeut le consentement explicite. Les profils sont transparents sur leurs intentions. Les signalements pour comportement inapproprié sont traités rapidement par notre équipe de modération."}, {"q": "Le filtre par orientation est-il actif ?", "a": "Oui. Le filtre bidirectionnel par orientation est actif sur toutes les intentions, y compris plan cul. Tu ne vois que les profils compatibles qui te cherchent aussi."}, {"q": "Puis-je chercher plan cul ET autre chose ?", "a": "Oui. Tu peux sélectionner plusieurs intentions. Embir te montrera les profils qui partagent au moins une de tes intentions."}],
+    sections: [{"title": "Transparence sur les intentions", "text": "L'intention casual est déclarée et prise en compte dans la sélection. Cela réduit les malentendus sans les éliminer."}, {"title": "Consentement et respect", "text": "Une intention affichée n'est jamais un consentement à une interaction. Le signalement est enregistré et le blocage prend effet immédiatement."}, {"title": "Badge selfie facultatif", "text": "Un badge indique qu'un contrôle selfie a été approuvé ; il ne prouve ni l'identité complète ni les intentions. Aucun outil ne garantit la sécurité d'une rencontre."}, {"title": "Connexions essentielles", "text": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."}],
+    faq: [{"q": "Embir garantit-il la sécurité des rencontres casual ?", "a": "Non. Aucun service ne peut garantir la sécurité. La vérification facultative, le blocage et le signalement sont disponibles ; rencontre d'abord dans un lieu public."}, {"q": "Le parcours casual est-il gratuit ?", "a": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."}, {"q": "Comment le consentement est-il traité ?", "a": "Le consentement doit être explicite et peut être retiré à tout moment. Une intention de profil ne vaut jamais consentement."}, {"q": "Le filtre par orientation est-il actif ?", "a": "Le moteur applique les préférences déclarées dans les deux sens, y compris pour l'intention casual."}, {"q": "Puis-je sélectionner plusieurs intentions ?", "a": "Oui. La sélection tient compte des intentions partagées."}],
     links: [
       { href: "/amour", label: "\u2665 Amour" },
       { href: "/amis", label: "\u2726 Amis" },
@@ -173,8 +173,8 @@ const COPY = {
   },
   en: {
     h1: "Clear pleasure, consent, zero judgment.",
-    sections: [{"title": "Transparency on intentions", "text": "On Embir, the 'casual' intention is explicit. No lying, no false promises. Every profile in your feed is looking for the same thing. Transparency eliminates misunderstandings and ghosting."}, {"title": "Consent and respect", "text": "Embir promotes explicit consent. Verified profiles are featured. Reports are handled quickly by a human team. Respect is not optional — it's the condition to stay on the platform."}, {"title": "Safety through verification", "text": "Selfie verification guarantees you know who you're talking to. Fake profiles are eliminated. Verified profiles have a badge. For casual encounters, trust is even more important — Embir guarantees it."}, {"title": "100% free, no limits", "text": "No paywall to see who liked your profile. No message limits. No subscription to unlock features. Everything is free, for everyone. Pleasure doesn't have a monthly price."}],
-    faq: [{"q": "Is Embir safe for casual encounters?", "a": "Embir includes selfie verification, human moderation, and fast report handling. Verified profiles are featured. As anywhere, be cautious: meet in public the first time."}, {"q": "Is casual dating really free?", "a": "Yes, 100% free. No message limits, no paywall, no subscription. All features are available to everyone."}, {"q": "How is consent guaranteed?", "a": "Embir promotes explicit consent. Profiles are transparent about their intentions. Reports for inappropriate behavior are handled quickly by our moderation team."}, {"q": "Is the orientation filter active?", "a": "Yes. The bidirectional orientation filter is active on all intentions, including casual. You only see compatible profiles that are also looking for you."}, {"q": "Can I look for casual AND something else?", "a": "Yes. You can select multiple intentions. Embir will show you profiles that share at least one of your intentions."}],
+    sections: [{"title": "Transparency on intentions", "text": "The casual intention is declared and included in selection. This reduces misunderstandings without eliminating them."}, {"title": "Consent and respect", "text": "A displayed intention is never consent to an interaction. Reports are recorded and blocking takes effect immediately."}, {"title": "Optional selfie badge", "text": "A badge shows that a selfie check was approved; it does not prove full identity or intentions. No tool guarantees the safety of a meeting."}, {"title": "Core connections", "text": "Everything needed to meet someone is free. No credit card required."}],
+    faq: [{"q": "Does Embir guarantee safe casual meetings?", "a": "No. No service can guarantee safety. Optional verification, blocking, and reporting are available; meet in public first."}, {"q": "Is the casual path free?", "a": "Everything needed to meet someone is free. No credit card required."}, {"q": "How is consent handled?", "a": "Consent must be explicit and can be withdrawn at any time. A profile intention is never consent."}, {"q": "Is reciprocal filtering active?", "a": "The engine applies declared preferences in both directions, including the casual intention."}, {"q": "Can I select multiple intentions?", "a": "Yes. Selection takes shared intentions into account."}],
     links: [
       { href: "/amour", label: "\u2665 Love" },
       { href: "/amis", label: "\u2726 Friends" },

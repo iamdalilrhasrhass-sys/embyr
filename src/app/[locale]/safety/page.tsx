@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const url = locale === "fr" ? "https://embir.xyz/fr/securite" : "https://embir.xyz/safety";
   const title = locale === "fr" ? "Sécurité et conseils — Embir" : "Safety Tips & Tools — Embir";
   const description = locale === "fr"
-    ? "Sécurité sur Embir : vérification des profils, signalement, blocage, modération humaine, règles communautaires, conseils de rencontre et protection des mineurs."
-    : "Embir safety: profile verification, reporting, blocking, human moderation, community rules, dating safety tips and minor protection.";
+    ? "Sécurité sur Embir : vérification des profils, signalement, blocage, signalement et blocage, règles communautaires, conseils de rencontre et protection des mineurs."
+    : "Embir safety: profile verification, reporting, blocking, reporting and blocking, community rules, dating safety tips and minor protection.";
   return {
     title, description,
     metadataBase: new URL("https://embir.xyz"),
@@ -42,19 +42,19 @@ export default async function SafetyPage({ params }: { params: Params }) {
           {/* Verification */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">{isFr ? "🛡️ Vérification des profils" : "🛡️ Profile Verification"}</h2>
-            <p className="mt-4">{isFr ? "Embir propose une vérification par selfie. Lorsque vous voyez le badge vérifié sur un profil, cela signifie que la personne a confirmé son identité en prenant un selfie en temps réel. Cette vérification réduit considérablement le risque de faux profils et de catfishing. Nous encourageons tous les membres à se faire vérifier." : "Embir offers selfie verification. When you see the verified badge on a profile, it means the person confirmed their identity by taking a real-time selfie. This verification significantly reduces the risk of fake profiles and catfishing. We encourage all members to get verified."}</p>
+            <p className="mt-4">{isFr ? "La vérification selfie est facultative. Un badge indique qu'une demande avec selfie et code unique a été approuvée ; il ne prouve ni l'identité complète, ni l'âge, ni les intentions de la personne." : "Selfie verification is optional. A badge shows that a request using a selfie and unique code was approved; it does not prove full identity, age, or intentions."}</p>
           </div>
 
           {/* Reporting */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">{isFr ? "🚩 Signalement" : "🚩 Reporting"}</h2>
-            <p className="mt-4">{isFr ? "Chaque profil et chaque conversation dispose d'un bouton de signalement. Vous pouvez signaler un comportement inapproprié, un faux profil, du harcèlement ou tout contenu qui vous semble dangereux. Tous les signalements sont examinés par notre équipe de modération humaine — pas seulement par un algorithme." : "Every profile and every conversation has a report button. You can report inappropriate behavior, fake profiles, harassment, or any content that feels unsafe. All reports are reviewed by our human moderation team — not just an algorithm."}</p>
+            <p className="mt-4">{isFr ? "Chaque profil et chaque conversation dispose d'un bouton de signalement. Vous pouvez signaler un comportement inapproprié, un faux profil, du harcèlement ou tout contenu qui vous semble dangereux. Tous les signalements sont enregistrés pour examen et le blocage est immédiat pour le membre qui signale." : "Every profile and every conversation has a report button. You can report inappropriate behavior, fake profiles, harassment, or any content that feels unsafe. All reports are recorded for review, and blocking is immediate for the reporting member."}</p>
           </div>
 
           {/* Blocking */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">{isFr ? "🚫 Blocage" : "🚫 Blocking"}</h2>
-            <p className="mt-4">{isFr ? "Vous pouvez bloquer n'importe quel utilisateur à tout moment, sans justification. Une fois bloquée, la personne ne peut plus voir votre profil, vous envoyer de messages, ni interagir avec vous d'aucune façon. Le blocage est immédiat et définitif." : "You can block any user at any time, without justification. Once blocked, the person can no longer see your profile, send you messages, or interact with you in any way. Blocking is immediate and permanent."}</p>
+            <p className="mt-4">{isFr ? "Vous pouvez bloquer un utilisateur à tout moment. Le blocage prend effet immédiatement et reste actif jusqu'à ce que vous décidiez de le retirer." : "You can block a user at any time. Blocking takes effect immediately and remains active until you decide to remove it."}</p>
           </div>
 
           {/* Community Rules */}
@@ -111,20 +111,20 @@ export default async function SafetyPage({ params }: { params: Params }) {
           {/* Minor Protection */}
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">{isFr ? "🔞 Protection des mineurs" : "🔞 Minor Protection"}</h2>
-            <p className="mt-4">{isFr ? "Embir est strictement réservé aux personnes de 18 ans et plus. Nous utilisons une déclaration d'âge obligatoire à l'inscription. Tout profil soupçonné d'appartenir à un mineur est immédiatement suspendu et supprimé après vérification. Si vous pensez qu'un mineur utilise la plateforme, signalez-le immédiatement." : "Embir is strictly for adults aged 18 and over. We require an age declaration at sign-up. Any profile suspected of belonging to a minor is immediately suspended and deleted upon verification. If you believe a minor is using the platform, report it immediately."}</p>
+            <p className="mt-4">{isFr ? "Embir est réservé aux personnes de 18 ans et plus et demande une déclaration d'âge à l'inscription. Cette déclaration n'est pas une preuve d'identité : signalez tout compte qui pourrait appartenir à un mineur." : "Embir is for adults aged 18 and over and asks for an age declaration at sign-up. That declaration is not proof of identity: report any account that may belong to a minor."}</p>
           </div>
 
           {/* Limits */}
           <div>
             <h2 className="font-serif text-3xl text-white">{isFr ? "Limites et honnêteté" : "Limits & Honesty"}</h2>
-            <p className="mt-4">{isFr ? "Aucune plateforme ne peut garantir une sécurité absolue. Même avec la vérification, la modération et le signalement, des risques subsistent. La vérification par selfie confirme qu'une personne est réelle, pas qu'elle est bien intentionnée. Nous faisons tout notre possible pour réduire les risques, mais votre vigilance reste essentielle. La sécurité est une responsabilité partagée entre la plateforme et ses membres." : "No platform can guarantee absolute safety. Even with verification, moderation, and reporting, risks remain. Selfie verification confirms someone is a real person, not that they have good intentions. We do everything we can to reduce risks, but your vigilance remains essential. Safety is a shared responsibility between the platform and its members."}</p>
+            <p className="mt-4">{isFr ? "Aucune plateforme ne peut garantir une sécurité absolue. Un badge indique seulement qu'un contrôle selfie a été approuvé. Des risques subsistent : utilisez le blocage, le signalement et les précautions de rencontre hors ligne." : "No platform can guarantee absolute safety. A badge only shows that a selfie check was approved. Risks remain: use blocking, reporting, and offline dating precautions."}</p>
           </div>
         </section>
 
         <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">{isFr ? "Rejoindre une communauté plus sûre" : "Join a safer community"}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
-            {isFr ? "Crée ton profil vérifié gratuitement et fais partie d'une communauté où la sécurité est prise au sérieux." : "Create your verified profile for free and be part of a community where safety is taken seriously."}
+            {isFr ? "Crée ton profil et demande le badge vérifié si tu le souhaites. Aucun système ne remplace ta vigilance." : "Create your profile and request the verified badge if you choose. No system replaces your judgment."}
           </p>
           <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">{isFr ? "Créer mon profil gratuit" : "Create my free profile"}</Link>
         </section>

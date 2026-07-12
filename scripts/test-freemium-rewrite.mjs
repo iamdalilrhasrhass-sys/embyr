@@ -2,25 +2,25 @@ import assert from "node:assert/strict";
 import { rewriteFreemiumCopy } from "./rewrite-freemium-contract.mjs";
 
 const cases = [
-  ["Embir is 100% free.", "Embir is free at launch."],
-  ["Embir est 100% gratuit.", "Embir est gratuit au lancement."],
-  ["L'application est 100% gratuite.", "L'application est gratuite au lancement."],
-  ["Free forever", "Free at launch"],
-  ["Gratuit pour toujours", "Gratuit au lancement"],
-  ["Lifetime premium access", "Priority access to future premium options"],
-  ["Accès premium à vie", "Avantages de lancement"],
-  ["No premium tiers", "No premium paywall at launch"],
+  ["Embir is 100% free.", "Embir's core connection features are free."],
+  ["Embir est 100% gratuit.", "Embir est gratuit pour les connexions essentielles."],
+  ["L'application est 100% gratuite.", "L'application est gratuite pour les connexions essentielles."],
+  ["Free forever", "Free for core connections"],
+  ["Gratuit pour toujours", "Gratuit pour les connexions essentielles"],
+  ["Lifetime premium access", "Early access to optional services"],
+  ["Accès premium à vie", "Accès anticipé aux services facultatifs"],
+  ["No premium tiers", "No credit card for core connections"],
   [
     "We're not going to tell you everything will be free forever.",
-    "We're not going to promise permanent universal access at no cost.",
+    "Everything needed to meet someone is free. No credit card required.",
   ],
   [
     "Why not just stay free forever?",
-    "Why move to a transparent freemium model later?",
+    "How does Embir fund the service?",
   ],
   [
     "Pourquoi ne pas rester gratuit pour toujours ?",
-    "Pourquoi adopter ensuite un modèle freemium transparent ?",
+    "Comment Embir finance-t-il le service ?",
   ],
 ];
 

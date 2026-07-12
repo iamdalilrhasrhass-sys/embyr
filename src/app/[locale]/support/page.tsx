@@ -39,15 +39,15 @@ export default async function SupportPage({ params }: { params: Params }) {
   const faq = isFr ? [
     { q: "Comment supprimer mon compte ?", a: "Allez dans les paramètres de votre profil, puis 'Supprimer mon compte'. La suppression est immédiate et irréversible. Vos données sont effacées dans un délai de 30 jours." },
     { q: "Comment signaler un utilisateur ?", a: "Sur le profil de l'utilisateur ou dans votre conversation, cliquez sur le bouton 'Signaler'. Décrivez le problème. Notre équipe de modération examinera votre signalement." },
-    { q: "Embir est-il vraiment gratuit ?", a: "Oui, pendant toute la phase de lancement. Toutes les fonctions essentielles sont accessibles sans frais. Un modèle freemium pourra être introduit plus tard, mais les membres fondateurs en seront informés à l'avance." },
+    { q: "Embir est-il vraiment gratuit ?", a: "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire." },
     { q: "Quand l'application mobile sera-t-elle disponible ?", a: "L'application mobile est en développement. Nous nous concentrons d'abord sur la version web et la constitution de la communauté fondatrice. La sortie mobile sera annoncée à tous les membres." },
-    { q: "Comment fonctionne la vérification de profil ?", a: "Depuis les paramètres de votre profil, lancez la vérification par selfie. Prenez une photo en temps réel. Notre système compare ce selfie avec vos photos de profil. Si tout correspond, vous recevez le badge vérifié." },
+    { q: "Comment fonctionne la vérification de profil ?", a: "La vérification est facultative. Envoyez un selfie avec le code unique demandé. Si la demande est approuvée, un badge visible apparaît ; il ne prouve ni l'identité complète ni les intentions." },
   ] : [
     { q: "How do I delete my account?", a: "Go to your profile settings, then 'Delete my account'. Deletion is immediate and irreversible. Your data is erased within 30 days." },
     { q: "How do I report a user?", a: "On the user's profile or in your conversation, click the 'Report' button. Describe the issue. Our moderation team will review your report." },
-    { q: "Is Embir really free?", a: "Yes, during the entire launch phase. All core features are accessible at no cost. A freemium model may be introduced later, but founding members will be informed in advance." },
+    { q: "Is Embir really free?", a: "Everything needed to meet someone is free. No credit card required." },
     { q: "When will the mobile app be available?", a: "The mobile app is in development. We're focusing first on the web version and building the founding community. The mobile release will be announced to all members." },
-    { q: "How does profile verification work?", a: "From your profile settings, start the selfie verification. Take a real-time photo. Our system compares this selfie with your profile photos. If everything matches, you receive the verified badge." },
+    { q: "How does profile verification work?", a: "Verification is optional. Submit a selfie with the requested unique code. If the request is approved, a visible badge appears; it does not prove full identity or intentions." },
   ];
 
   return (

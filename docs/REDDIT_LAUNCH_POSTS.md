@@ -22,18 +22,18 @@
 After years of watching Grindr get worse (ads every 4 swipes, €30/month for basic features, bots everywhere), I finally built what I wanted to exist.
 
 **What it is:**
-EMBIR — a gay dating app that's actually free. Not "freemium." Not "first month free." Free.
+EMBIR — a connection platform where everything needed to meet someone is free. No credit card required.
 
 **What makes it different:**
-- Zero ads. Not one. Ever.
-- Every feature is free for everyone. No paywalls.
-- Profile verification + ML spam detection = no bots
+- The path to a meeting works without a credit card.
+- Optional selfie verification adds a visible badge after approval.
+- Reporting and blocking tools are available; no system removes every risk.
 - Privacy-first: encrypted chats, no data selling
 - Open source on GitHub so anyone can audit it
 
 **Tech stack:** Next.js, PostgreSQL, Tailwind CSS. Hosted on a VPS.
 
-**Numbers so far:** 30 blog articles, 500+ indexed pages, real users connecting daily.
+**Current status:** Embir is live, accepts registrations, and publishes public guides.
 
 **Why I built this:** Dating apps optimize for engagement (more time in app = more ad revenue). EMBIR optimizes for connection quality. I want you to meet someone and DELETE the app.
 
@@ -102,4 +102,3 @@ I want to share a project I've been building: EMBIR — a dating platform for th
 **Blog:** https://embir.xyz/blog
 
 I built this because I believe dating should empower connections, not exploit them. Would love to hear what the community thinks.
-

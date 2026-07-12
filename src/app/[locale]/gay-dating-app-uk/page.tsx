@@ -4,8 +4,8 @@ import TrackedLink from "@/components/TrackedLink";
 import PageTypeTracker from "@/components/PageTypeTracker";
 
 export const metadata: Metadata = {
-  title: "Free Gay Dating App in the UK — Verified, Safe, No Ads",
-  description: "Embir is a free gay dating app built for the UK. Verified profiles, AI-powered matching, zero ads, and free unlimited messaging. Available in London, Manchester, Birmingham, Brighton and beyond.",
+  title: "Gay Dating App in the UK — Reciprocal Preferences",
+  description: "Embir is available across the UK with reciprocal preferences, an optional selfie badge, reporting, blocking, and messaging after a mutual connection.",
   alternates: {
     canonical: "https://embir.xyz/gay-dating-app-uk",
     languages: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free Gay Dating App in the UK",
-    description: "Free, safe, and built for the UK. Verified profiles, AI matching, and unlimited messaging — no ads, no paywalls.",
+    description: "Reciprocal preferences, an optional selfie badge, reporting, blocking, and a core connection path without a credit card.",
     url: "https://embir.xyz/gay-dating-app-uk",
     locale: "en_GB",
     images: [`/api/og?title=Free+Gay+Dating+App+in+the+UK&variant=market`],
@@ -39,8 +39,8 @@ export default function Page() {
             <span className="text-[#d4a574]">actually respects you.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/50">
-            Embir is a new free gay dating app for men across the UK. No ads, no fake profiles, 
-            no hidden paywalls — just verified people, smarter matching, and a community built 
+            Embir is a new free gay dating app for men across the UK. No ads, Blocking and reporting tools,
+            no hidden paywalls — just verified people, smarter matching, and a community built
             around respect. Launching in London, Manchester, Birmingham, and Brighton.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -64,30 +64,30 @@ export default function Page() {
               <span className="text-white/50">than what&apos;s available.</span>
             </h2>
             <p className="mt-5 text-white/45 leading-relaxed">
-              British gay men know the frustration: apps that nickel-and-dime you for every feature, 
-              profiles that turn out to be fake, conversations that fizzle because nobody&apos;s verified, 
+              British gay men know the frustration: apps that nickel-and-dime you for every feature,
+              profiles that turn out to be fake, conversations that fizzle because nobody&apos;s verified,
               and an experience that feels more like a marketplace than a community.
             </p>
             <p className="mt-4 text-white/45 leading-relaxed">
-              Embir was built to fix this. We started with a simple question: what would a gay dating 
-              app look like if it actually respected its users? The answer: free, verified, ad-free, 
+              Embir was built to fix this. We started with a simple question: what would a gay dating
+              app look like if it actually respected its users? The answer: free, verified, ad-free,
               and built around genuine compatibility — not just proximity.
             </p>
             <p className="mt-4 text-white/45 leading-relaxed">
-              During our UK launch, every feature is completely free. Founding members keep lifetime 
-              premium access — no catches, no small print.
+              Everything needed to meet someone is free. No credit card required. Founding members help shape
+              the product and its community.
             </p>
           </div>
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
             <h3 className="text-lg font-bold text-white mb-6">What makes Embir different</h3>
             <ul className="space-y-4">
               {[
-                { label: "Mandatory verification", desc: "Selfie check for every new profile. No bots, no catfish, no fake accounts." },
-                { label: "Completely free during launch", desc: "Unlimited messages, full discovery, AI matching — all included." },
+                { label: "optional selfie verification", desc: "Selfie check for every new profile. a visible badge for approved checks, plus blocking and reporting." },
+                { label: "free for core connections", desc: "messages between reciprocal connections, full discovery, reciprocal compatibility — all included." },
                 { label: "Zero advertising", desc: "No banner ads, no promoted profiles, no third-party trackers." },
                 { label: "Smarter matching", desc: "Our system suggests people based on shared preferences and genuine compatibility." },
                 { label: "UK cities covered", desc: "London, Manchester, Birmingham, Brighton, Edinburgh, and expanding weekly." },
-                { label: "Safety-first design", desc: "Granular privacy controls, block and report tools, and human moderation." },
+                { label: "Safety-first design", desc: "Granular privacy controls, block and report tools, and reporting and blocking." },
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span className="mt-0.5 shrink-0 h-5 w-5 rounded-full bg-[#d4a574]/10 text-[#d4a574] flex items-center justify-center text-xs">✓</span>
@@ -136,9 +136,9 @@ export default function Page() {
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { title: "Verified profiles", desc: "Every member verifies with a real-time selfie. No exceptions. If someone can't verify, they can't join." },
-              { title: "Your data stays yours", desc: "We don't sell your data to advertisers. We don't track you across the web. Your privacy is not our business model." },
-              { title: "Human moderation", desc: "Reports are reviewed by real people, not just algorithms. Toxic behaviour gets removed quickly and permanently." },
+              { title: "Verified profiles", desc: "Every member can request selfie verification. Approved profiles display a visible badge." },
+              { title: "Privacy controls", desc: "Audience measurement is consent-gated. Profile visibility and account controls are available in the product." },
+              { title: "Reporting and blocking", desc: "Reports are recorded for review and blocking takes effect immediately. No response time or outcome is guaranteed." },
             ].map((item, i) => (
               <div key={i} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-left">
                 <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
@@ -157,11 +157,11 @@ export default function Page() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Is Embir actually free in the UK?", a: "Yes. Every feature — unlimited messaging, profile discovery, AI matching, and more — is completely free during our UK launch. Founding members who join now keep lifetime premium access at no cost." },
-              { q: "How is Embir different from Grindr or Tinder?", a: "Three fundamental differences: (1) Embir is free with no paywalls, while Grindr and Tinder lock features behind subscriptions up to £25/month. (2) Every Embir profile is verified via selfie check — no bots, no catfish. (3) Embir uses AI to match based on compatibility, not just how close someone is geographically." },
+              { q: "Is Embir actually free in the UK?", a: "Yes. Everything needed to meet someone is free. No credit card required. Founding members help shape the product." },
+              { q: "How is Embir different from Grindr or Tinder?", a: "Three fundamental differences: (1) Embir is free with no paywalls, while Grindr and Tinder lock features behind subscriptions up to £25/month. (2) Embir offers selfie verification with a visible badge, plus blocking and reporting tools; no system eliminates every risk. (3) Embir uses declared reciprocal preferences, not just how close someone is geographically." },
               { q: "Is my privacy protected?", a: "Yes. Embir does not sell user data, does not run third-party ads, and does not track you outside the app. Your profile preferences are only visible to people you're compatible with." },
-              { q: "Which UK cities have the most Embir members?", a: "London has our largest UK community, followed by Manchester, Birmingham, Brighton, Edinburgh, and Bristol. We're actively growing in all major British cities." },
-              { q: "Can I use Embir outside the UK?", a: "Yes. Embir is available worldwide in 25 languages. Your profile and matches travel with you — perfect if you split time between the UK and elsewhere." },
+              { q: "Where is Embir available in the UK?", a: "Membership is open across the UK. Embir does not publish city-density rankings until they can be supported by measured data." },
+              { q: "Can I use Embir outside the UK?", a: "Yes. Embir is Available worldwide on the web, with public pages in English and French. Your profile and matches travel with you — perfect if you split time between the UK and elsewhere." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                 <summary className="cursor-pointer px-6 py-5 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">
@@ -185,7 +185,7 @@ export default function Page() {
           <Link href="/auth/register?source=uk-landing" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
             Create my free profile
           </Link>
-          <p className="mt-4 text-xs text-white/20">18+ only. Free during UK launch. No credit card required.</p>
+          <p className="mt-4 text-xs text-white/20">18+ only. Core connections are free. No credit card required.</p>
         </div>
       </section>
 

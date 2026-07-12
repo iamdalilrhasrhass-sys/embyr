@@ -1,6 +1,6 @@
 {
   "slug": "blk-alternative",
-  "intro": "BLK is a dating app designed specifically for Black singles. It has built a strong community with culturally relevant features and a clear audience focus.\n\nEmbir is a universal alternative where Black singles are fully included alongside all orientations and backgrounds — with verified profiles, human moderation, and deep compatibility matching for free.",
+  "intro": "BLK is a dating app designed specifically for Black singles. It has built a strong community with culturally relevant features and a clear audience focus.\n\nEmbir is a universal alternative where Black singles are fully included alongside all orientations and backgrounds — with verified profiles, reporting and blocking, and deep compatibility matching for free.",
   "comparisonTable": [
     {
       "criteria": "Community focus",
@@ -11,7 +11,7 @@
     {
       "criteria": "Profile verification",
       "competitor": "Limited verification",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -23,7 +23,7 @@
     {
       "criteria": "Free tier",
       "competitor": "Limited features free",
-      "embir": "Full features free at launch",
+      "embir": "Full features core connection features are free",
       "winner": "embir"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Core features are free during the launch phase."
+      "a": "Yes. Core connection features are free for everyone."
     }
   ]
 }

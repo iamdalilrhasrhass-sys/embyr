@@ -1,6 +1,6 @@
 {
   "slug": "once-vs-embir",
-  "intro": "Once proposait une idée séduisante : un seul match par jour, sélectionné par algorithme. Contre la fatigue du swipe, Once pariait sur la rareté comme facteur d'attention. En 2026, l'app a été rachetée et intégrée dans l'écosystème MagicLab (Badoo, Bumble). Le concept original a été dilué.\n\nEmbir partage la philosophie qualité-avant-quantité — moins de profils, mais vraiment compatibles — avec en plus la vérification systématique des profils, la modération humaine, et une vraie inclusivité pour toutes les orientations.",
+  "intro": "Once proposait une idée séduisante : un seul match par jour, sélectionné par algorithme. Contre la fatigue du swipe, Once pariait sur la rareté comme facteur d'attention. En 2026, l'app a été rachetée et intégrée dans l'écosystème MagicLab (Badoo, Bumble). Le concept original a été dilué.\n\nEmbir partage la philosophie qualité-avant-quantité — moins de profils, mais vraiment compatibles — avec en plus la vérification selfie disponible avec badge visible, le signalement et le blocage, et une vraie inclusivité pour toutes les orientations.",
   "comparisonTable": [
     {
       "criteria": "Qualité vs volume",
@@ -11,7 +11,7 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Minimale",
-      "embir": "Selfie + modération humaine",
+      "embir": "Selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -23,7 +23,7 @@
     {
       "criteria": "Accès gratuit",
       "competitor": "Très limité sans abonnement",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -50,7 +50,7 @@
       ]
     }
   ],
-  "verdict": "Once avait une belle idée mais un futur incertain depuis son rachat. Embir offre la même philosophie (qualité avant quantité) avec en plus des profils vérifiés, la modération humaine, l'inclusivité LGBTQ+ et la gratuité au lancement.",
+  "verdict": "Once avait une belle idée mais un futur incertain depuis son rachat. Embir offre la même philosophie (qualité avant quantité) avec en plus des profils vérifiés, le signalement et le blocage, l'inclusivité LGBTQ+ et la gratuité des connexions essentielles.",
   "ctaText": "Un match qui compte vraiment — rejoins gratuitement",
   "faq": [
     {
@@ -63,7 +63,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Les fonctionnalités principales sont gratuites au lancement : découverte, messagerie, compatibilité."
+      "a": "Oui. Les fonctionnalités principales sont gratuites pour les connexions essentielles : découverte, messagerie, compatibilité."
     },
     {
       "q": "Embir est-il inclusif LGBTQ+ ?",
@@ -71,7 +71,7 @@
     },
     {
       "q": "Comment Embir vérifie-t-il les profils ?",
-      "a": "Vérification selfie à l'inscription + modération humaine de chaque signalement."
+      "a": "Vérification selfie facultative + outils de signalement et de blocage."
     }
   ]
 }

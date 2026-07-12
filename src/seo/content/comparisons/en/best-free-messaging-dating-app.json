@@ -1,17 +1,17 @@
 {
   "slug": "best-free-messaging-dating-app",
-  "intro": "The best dating app with free messaging in 2026 is the one that doesn't lock conversation behind a paywall. Most major apps do: Tinder Gold for messaging priority, Hinge Preferred for more features, OkCupid A-List for unlimited likes.\n\nEmbir is the exception during its launch phase: full messaging free for everyone, no subscription required.",
+  "intro": "The best dating app with free messaging in 2026 is the one that doesn't lock conversation behind a paywall. Most major apps do: Tinder Gold for messaging priority, Hinge Preferred for more features, OkCupid A-List for a short daily selection.\n\nEmbir is the exception for core connection features: full messaging free for everyone, no subscription required.",
   "comparisonTable": [
     {
       "criteria": "Messaging cost",
       "competitor": "Tinder: subscription / Hinge: limited free",
-      "embir": "100% free at launch",
+      "embir": "Core connection features are free",
       "winner": "embir"
     },
     {
       "criteria": "Verification",
       "competitor": "Most: optional",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -29,14 +29,14 @@
     {
       "criteria": "Transparency",
       "competitor": "Most: opaque pricing",
-      "embir": "Freemium transition pre-announced",
+      "embir": "optional-service policy pre-announced",
       "winner": "embir"
     }
   ],
   "sections": [
     {
       "title": "Why free messaging matters",
-      "content": "Paywalling messaging is the oldest trick in dating apps: you match someone, you want to say hi, and suddenly you need a subscription. Embir's launch phase removes this barrier entirely. Match and message, no friction, no credit card.",
+      "content": "Paywalling messaging is the oldest trick in dating apps: you match someone, you want to say hi, and suddenly you need a subscription. Embir's core connection experience removes this barrier entirely. Match and message, no friction, no credit card.",
       "highlights": [
         "Match and message immediately — no subscription gate",
         "Send and receive without daily limits",
@@ -44,16 +44,16 @@
       ]
     }
   ],
-  "verdict": "The best dating app with truly free messaging in 2026 is Embir during launch. Full messaging, no paywall, no ads, verified profiles, universal LGBTQ+ inclusivity.",
+  "verdict": "The best dating app with truly free messaging in 2026 is Embir while the community grows. Full messaging, no paywall, no ads, verified profiles, universal LGBTQ+ inclusivity.",
   "ctaText": "Message freely — join Embir at launch",
   "faq": [
     {
       "q": "Can I message matches for free on Embir?",
-      "a": "Yes. Messaging is completely free during the launch phase. No subscription, no daily limit."
+      "a": "Yes. Messaging is free for core connections. No subscription, no daily limit."
     },
     {
-      "q": "What happens when Embir adds premium?",
-      "a": "Founding members are notified in advance. Basic messaging remains accessible. The transition will be transparent."
+      "q": "How do optional services work?",
+      "a": "Everything needed to meet someone is free. No credit card required. Optional services are clearly separated and cannot replace compatibility, reciprocity or consent."
     },
     {
       "q": "Is Embir verified?",

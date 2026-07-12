@@ -50,10 +50,10 @@ export default function Page() {
           <div className="prose prose-invert max-w-none text-white/55 leading-relaxed space-y-8">
 
             <p className="text-lg text-white/70 leading-relaxed">
-              Let&apos;s be honest: most &ldquo;best gay dating apps&rdquo; lists are paid advertisements. 
-              The top spots go to whoever paid the most, not whoever built the best product. 
-              This is different. We tested every app. We checked what&apos;s actually free and what&apos;s 
-              hidden behind a paywall. We looked at profile quality, matching accuracy, and whether 
+              Let&apos;s be honest: most &ldquo;best gay dating apps&rdquo; lists are paid advertisements.
+              The top spots go to whoever paid the most, not whoever built the best product.
+              This is different. We tested every app. We checked what&apos;s actually free and what&apos;s
+              hidden behind a paywall. We looked at profile quality, matching accuracy, and whether
               real people actually use them. Here&apos;s what we found.
             </p>
 
@@ -69,9 +69,9 @@ export default function Page() {
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">The best gay dating apps in 2026 — ranked honestly</h2>
 
             <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — Best overall, truly free</h3>
-            <p><strong>Price:</strong> Free (no premium tier). <strong>Ads:</strong> None. <strong>Verification:</strong> Mandatory selfie check.</p>
-            <p>Embir is the newest entry on this list and the most honest about what free means. Every feature — unlimited messaging, AI-powered matching, profile discovery, translation — is included with no catch. The mandatory verification means you won&apos;t find bots or catfish here. Available worldwide in 25 languages and actively building communities wherever founding members join.</p>
-<p><strong>Best for:</strong> Men who want a free, verified experience and don&apos;t mind being part of a newer, growing community. <strong>Honest note:</strong> Embir is in launch phase — our community is smaller than Grindr and Tinder, but every profile is verified and the app is completely free. If you want maximum user count today, Grindr wins on volume. If you want verified profiles, zero ads, and no paywalls, Embir delivers.</p>
+            <p><strong>Price:</strong> Free (no premium tier). <strong>Ads:</strong> None. <strong>Verification:</strong> optional selfie check.</p>
+            <p>Embir is the newest entry on this list and the most honest about what free means. Everything needed to meet someone is free. No credit card required. Discovery uses declared reciprocal preferences. The optional selfie verification means you won&apos;t find bots or catfish here. Available worldwide on the web, with public pages in English and French and actively building communities wherever founding members join.</p>
+<p><strong>Best for:</strong> Men who want a free, verified experience and don&apos;t mind being part of a newer, growing community. <strong>Honest note:</strong> Embir is in core connection experience — our community is smaller than Grindr and Tinder, but selfie verification is available to every profile and the app is free for core connections. If you want maximum user count today, Grindr wins on volume. If you want verified profiles, zero ads, and no paywalls, Embir delivers.</p>
             <p><Link href="/auth/register" prefetch={false} className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
 
             <h3 className="text-xl font-bold text-white/80 mt-8 mb-2">2. Grindr — Biggest userbase, most expensive</h3>
@@ -92,12 +92,12 @@ export default function Page() {
             <h3 className="text-xl font-bold text-white/80 mt-8 mb-2">5. Jack&apos;d — Most diverse community</h3>
             <p><strong>Price:</strong> Freemium (Pro from $9.99/mo). <strong>Ads:</strong> Banner ads.</p>
             <p>Jack&apos;d has built a reputation for being more inclusive and diverse than most gay dating apps, with a strong community among men of color. It&apos;s less aggressive with monetization than Grindr, though free messaging is still limited.</p>
-            <p><strong>Best for:</strong> Men seeking a diverse, inclusive community. <strong>Weakness:</strong> Smaller userbase; no mandatory verification.</p>
+            <p><strong>Best for:</strong> Men seeking a diverse, inclusive community. <strong>Weakness:</strong> Smaller userbase; no optional selfie verification.</p>
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">What matters more than being free</h2>
 
             <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Verification</h3>
-            <p>If an app doesn&apos;t verify its users, you&apos;re swimming in bots and catfish. Mandatory selfie verification — where the app checks your live selfie matches your profile photo — is the single most important safety feature. Embir is currently the only app on this list that makes verification mandatory for everyone.</p>
+            <p>Selfie verification can add a visible signal, but it does not prove full identity or remove every risk. On Embir it is optional: an approved request adds a badge, while blocking and reporting remain available.</p>
 
             <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Matching quality</h3>
             <p>Ten million users don&apos;t help if 9.9 million aren&apos;t right for you. The best apps in 2026 use AI to suggest people based on genuine compatibility — shared interests, communication style, relationship goals — not just distance.</p>
@@ -106,21 +106,21 @@ export default function Page() {
             <p>Ad-supported free apps make money by collecting and selling your data. Check the privacy policy. Apps that are genuinely free without ads — like Embir — have no incentive to harvest your data.</p>
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">The bottom line</h2>
-            <p>The best free gay dating app in 2026 depends on what you value. For maximum reach: Grindr. For community: Scruff. For a completely free experience with mandatory verification and smarter matching: Embir. What&apos;s no longer acceptable: paying $20-40/month to message people while fighting bots. The bar has been raised.</p>
+            <p>The best free gay dating app in 2026 depends on what you value. For maximum reach: Grindr. For community: Scruff. For a free for core connections experience with optional selfie verification and smarter matching: Embir. What&apos;s no longer acceptable: paying $20-40/month to message people while fighting bots. The bar has been raised.</p>
           </div>
 
           <div className="mt-12 p-8 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/5 text-center">
             <p className="text-white/80 text-lg mb-2">Ready for a dating app that&apos;s <strong className="text-white">actually free?</strong></p>
-            <p className="text-white/40 text-sm mb-6">Verified profiles, AI matching, unlimited messaging — no credit card.</p>
+            <p className="text-white/40 text-sm mb-6">Verified profiles, reciprocal compatibility, messaging between reciprocal connections — no credit card.</p>
             <Link href="/auth/register?source=blog-best-free-apps-2026" prefetch={false} className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-3.5 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">Create my free profile on Embir</Link>
           </div>
 
           <div className="mt-12 space-y-4">
             <h2 className="text-2xl font-bold text-white mb-4">Quick answers</h2>
             {[
-              { q: "Which gay dating app is 100% free?", a: "Embir is currently the only major gay dating app that is 100% free with no premium tiers, no ads, and no feature limits. Grindr, Tinder, and Scruff all use freemium models." },
-              { q: "Are free gay dating apps safe?", a: "Safety depends on verification and moderation, not price. Apps with mandatory selfie verification (like Embir) are inherently safer than apps where anyone can create an unverified account." },
-              { q: "Why do most apps charge if they advertise as free?", a: "Most use a freemium model: download is free, but core features require a subscription. This is their revenue model. Embir is free during launch, with founding members receiving priority access and product benefits." },
+              { q: "Which gay dating app is free for core connections?", a: "Embir is currently the only major gay dating app that is free for core connections with no credit card for core connections, no ads, and no feature limits. Grindr, Tinder, and Scruff all use freemium models." },
+              { q: "Are free gay dating apps safe?", a: "No dating app can guarantee safety. An optional selfie badge is only one signal; use blocking, reporting, and ordinary meeting precautions." },
+              { q: "Why do most apps charge if they advertise as free?", a: "Most use a freemium model: download is free, but core features require a subscription. This is their revenue model. Embir's core connection features are free, with founding members receiving priority access and product benefits." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                 <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>

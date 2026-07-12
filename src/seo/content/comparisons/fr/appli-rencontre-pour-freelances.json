@@ -17,13 +17,13 @@
     {
       "criteria": "Verification profils",
       "competitor": "La plupart : optionnelle",
-      "embir": "Selfie verif + moderation humaine",
+      "embir": "Selfie verif + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Prix",
       "competitor": "15-40 EUR/mois pour l'experience complete",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -38,7 +38,7 @@
       "title": "Des connexions authentiques pour les gens aux horaires atypiques",
       "content": "Un freelance ne peut pas initier une conversation a 14h un mercredi puis se retrouver bloque par une limite de 24h. Embir n'a pas de mecanique temporelle artificielle. Tu communiques quand tu es disponible, a ton rythme. Le matching intentionnel assure que quand tu te connectes, c'est pour quelque chose qui a du sens.",
       "highlights": [
-        "Aucune limite de 24h — ton rythme, tes regles",
+        "Pas de compte à rebours de 24h",
         "Matching intentionnel = pertinence immediate",
         "Profils verifies = moins de temps gache sur des faux"
       ]
@@ -53,7 +53,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Fonctionnalites principales gratuites au lancement."
+      "a": "Oui. Fonctionnalites principales gratuites pour les connexions essentielles."
     },
     {
       "q": "Embir est-il disponible en France ?",

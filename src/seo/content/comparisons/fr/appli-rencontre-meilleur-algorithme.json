@@ -23,7 +23,7 @@
     {
       "criteria": "Verification profils",
       "competitor": "La plupart : optionnelle",
-      "embir": "Selfie verif + moderation humaine",
+      "embir": "Selfie verif + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Gratuit pendant la phase de lancement."
+      "a": "Oui. Les connexions essentielles sont gratuites."
     }
   ]
 }

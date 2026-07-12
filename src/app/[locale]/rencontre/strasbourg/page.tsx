@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Rencontre à Strasbourg — application gratuite et moderne",
-  description: "Découvrez Embir pour faire des rencontres à Strasbourg. Application de rencontre gratuite au lancement avec profils vérifiés et matching intelligent.",
+  description: "Découvrez Embir pour faire des rencontres à Strasbourg. Application de rencontre gratuite pour les connexions essentielles avec profils vérifiés et matching intelligent.",
   alternates: { canonical: "https://embir.xyz/rencontre/strasbourg" },
   openGraph: {
     title: "Rencontre à Strasbourg",
-    description: "Application de rencontre gratuite à Strasbourg. Profils vérifiés, matching IA, zéro pub.",
+    description: "Application de rencontre gratuite à Strasbourg. Profils vérifiés, compatibilité réciproque, zéro pub.",
     url: "https://embir.xyz/rencontre/strasbourg",
     locale: "fr_FR",
     images: [`/api/og?title=Rencontre+à+Strasbourg&variant=market`],
@@ -25,8 +25,8 @@ export default function Page() {
           </div>
           <h1 className="font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-5xl">Faire des rencontres à Strasbourg<br/><span className="text-[#d4a574]">n'a jamais été aussi simple.</span></h1>
           <p className="mt-6 text-lg leading-relaxed text-white/50">
-            Strasbourg, la capitale européenne, offre un cadre idéal pour les rencontres. Que vous cherchiez une relation sérieuse, 
-            une connexion amicale ou simplement élargir votre cercle social, Embir est l'application de rencontre gratuite 
+            Strasbourg, la capitale européenne, offre un cadre idéal pour les rencontres. Que vous cherchiez une relation sérieuse,
+            une connexion amicale ou simplement élargir votre cercle social, Embir est l'application de rencontre gratuite
             pensée pour Strasbourg et ses habitants.
           </p>
           <div className="mt-8 flex gap-4">
@@ -45,15 +45,15 @@ export default function Page() {
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3>
-              <p className="text-sm text-white/45">Chaque profil à Strasbourg est vérifié par selfie. Fini les faux profils et les mauvaises surprises.</p>
+              <p className="text-sm text-white/45">La vérification par selfie est disponible à Strasbourg. Un badge visible identifie les profils vérifiés ; aucun système n’élimine tout risque.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Matching intelligent</h3>
-              <p className="text-sm text-white/45">Notre IA comprend vos préférences et vous suggère des profils compatibles à Strasbourg et dans les environs.</p>
+              <p className="text-sm text-white/45">Le moteur applique vos préférences déclarées dans les deux sens à Strasbourg et dans les environs.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">100% gratuit au lancement</h3>
-              <p className="text-sm text-white/45">Messagerie illimitée, profils complets, matching IA. Sans abonnement, sans publicité.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Connexions essentielles gratuites</h3>
+              <p className="text-sm text-white/45">Messagerie entre connexions réciproques, profils complets, compatibilité réciproque. Sans abonnement, sans publicité.</p>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Combien de profils sont disponibles à Strasbourg ?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Embir est en phase de lancement. La communauté Strasbourg grandit chaque jour. En tant que membre fondateur, vous faites partie des premiers à rejoindre.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Embir est en expérience de connexion. La communauté Strasbourg grandit chaque jour. En tant que membre fondateur, vous faites partie des premiers à rejoindre.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Puis-je rencontrer des personnes d'autres villes ?</summary>
@@ -85,7 +85,7 @@ export default function Page() {
       </section>
       <section className="px-4 pb-16 text-center">
         <Link prefetch={false} href="/auth/register?source=rencontre-strasbourg" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit à Strasbourg</Link>
-        <p className="mt-4 text-xs text-white/20">18+ uniquement. Gratuit au lancement. Sans engagement.</p>
+        <p className="mt-4 text-xs text-white/20">18+ uniquement. Les connexions essentielles sont gratuites. Sans engagement.</p>
       </section>
     </main>
   );

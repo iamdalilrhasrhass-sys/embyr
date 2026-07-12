@@ -17,13 +17,13 @@
     {
       "criteria": "Hinge",
       "competitor": "Prompts creatifs, ties oriente hetero, Preferred 30 EUR/mois",
-      "embir": "Profondeur de connexion, universel, gratuit au lancement",
+      "embir": "Profondeur de connexion, universel, gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Verification profils",
       "competitor": "Les 3 : partielle ou optionnelle",
-      "embir": "Selfie verif + moderation humaine",
+      "embir": "Selfie verif + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -62,7 +62,7 @@
       ]
     }
   ],
-  "verdict": "Tinder, Bumble et Hinge ont chacun des atouts reels — mais partagent les memes limites : filtrage unidirectionnel, moderation insuffisante, et paywalls agressifs. Embir adresse ces trois points avec un filtrage bidirectionnel, une moderation humaine, et la gratuite au lancement.",
+  "verdict": "Tinder, Bumble et Hinge ont chacun des atouts reels — mais partagent les memes limites : filtrage unidirectionnel, moderation insuffisante, et paywalls agressifs. Embir adresse ces trois points avec un filtrage bidirectionnel, des outils de signalement et de blocage, et la gratuite pour les connexions essentielles.",
   "ctaText": "Au-dela de Tinder/Bumble/Hinge — rejoins Embir gratuitement",
   "faq": [
     {
@@ -71,11 +71,11 @@
     },
     {
       "q": "Pourquoi choisir Embir plutot que les trois ?",
-      "a": "Embir combine filtrage bidirectionnel strict, profils verifies, moderation humaine, inclusivite universelle et gratuite au lancement."
+      "a": "Embir combine filtrage bidirectionnel strict, profils verifies, signalement et blocage, inclusivite universelle et gratuite pour les connexions essentielles."
     },
     {
       "q": "Embir est-il plus cher que Tinder, Bumble ou Hinge ?",
-      "a": "Non. Embir est gratuit pendant la phase de lancement. Tinder Gold coute 30 EUR+/mois, Bumble Premium ~25 EUR/mois, Hinge Preferred ~30 EUR/mois."
+      "a": "Non. Embir est gratuit pour les connexions essentielles. Tinder Gold coute 30 EUR+/mois, Bumble Premium ~25 EUR/mois, Hinge Preferred ~30 EUR/mois."
     }
   ]
 }

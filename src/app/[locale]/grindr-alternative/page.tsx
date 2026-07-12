@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Grindr Alternative — More Compatibility, Less Noise | Embir",
-  description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions, and a free launch — for all orientations, not just gay men.",
+  description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions, and free core connections — for all orientations, not just gay men.",
   alternates: {
     canonical: "https://embir.xyz/grindr-alternative",
     languages: { "fr": "https://embir.xyz/fr/alternative-grindr" },
   },
   openGraph: {
     title: "Grindr Alternative — More Compatibility, Less Noise | Embir",
-    description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions, and a free launch — for all orientations, not just gay men.",
+    description: "Looking for a Grindr alternative? Embir offers verified profiles, compatibility matching, clearer intentions, and free core connections — for all orientations, not just gay men.",
     url: "https://embir.xyz/grindr-alternative",
     locale: "en_US",
     siteName: "Embir",
@@ -34,12 +34,12 @@ export default function Page() {
           <div className="overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02]">
             <h2 className="p-5 font-serif text-2xl text-white border-b border-white/[0.04]">How Embir compares</h2>
             {[
-              ["Launch price", "Free with paid tiers", "Free during launch phase"],
+              ["Core access", "Free with paid tiers", "free for core connections"],
               ["Core audience", "Gay, bi, trans, queer men", "All orientations (gay, lesbian, bi, trans, queer, straight)"],
               ["Discovery method", "Distance-first grid", "Preferences and compatibility first"],
               ["Profile depth", "Photos + short bio", "Personal universe with interests, intentions, preferences"],
               ["Verification", "Optional photo verification", "Selfie verification to reduce fake profiles"],
-              ["Safety tools", "Blocking and reporting", "Blocking, reporting, human moderation, orientation visibility controls"],
+              ["Safety tools", "Blocking and reporting", "Blocking, reporting, reporting and blocking, orientation visibility controls"],
               ["Future model", "Subscription tiers (Xtra, Unlimited)", "Transparent freemium to fund mobile app and safety"],
             ].map(([feature, grindr, embir]) => (
               <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
@@ -63,7 +63,7 @@ export default function Page() {
                 ["Not just for gay men", "Embir welcomes everyone. Gay and bi men share the platform with lesbians, trans people, queer folks, and straight people — but orientation controls ensure you only see compatible profiles."],
                 ["Verified, not anonymous", "Selfie verification means fewer blank profiles and catfish accounts. You know you're talking to a real person."],
                 ["Intentions that matter", "Looking for a relationship? Open to casual? Just exploring? Your intentions are visible and filterable."],
-                ["Free at launch", "No subscription needed to message, match, or browse. The founding community tests everything before any premium features arrive."],
+                ["core connection features are free", "No subscription needed to message, match, or browse. The founding community tests everything while helping shape the product."],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <h3 className="font-semibold text-white/85">{title}</h3>
@@ -79,8 +79,8 @@ export default function Page() {
               {[
                 ["Is Embir trying to replace Grindr?", "No. Grindr serves a specific purpose well. Embir is for people who want a different experience: more compatibility context, verified profiles, and a platform that serves all orientations — not just gay men."],
                 ["Can I use both Embir and Grindr?", "Of course. Many people use multiple dating apps for different purposes. Embir might be where you look for more meaningful connections while using other apps for different needs."],
-                ["Is Embir free like Grindr?", "Embir is completely free during launch with no paywalls on core features. A freemium model may come later, but it will be transparent — founding members will know what's changing before it changes."],
-                ["Does Embir have the same user base as Grindr?", "Embir is in its launch phase, building its community city by city. The user base starts smaller but with verified profiles and clearer intentions — quality over quantity from day one."],
+                ["Is Embir free like Grindr?", "Embir's core connection features are free with no paywalls on core features. Optional services can fund safety, moderation and product development."],
+                ["Does Embir have the same user base as Grindr?", "Embir is in its core connection experience, building its community city by city. The user base starts smaller but with verified profiles and clearer intentions — quality over quantity from day one."],
               ].map(([q, a]) => (
                 <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <summary className="cursor-pointer text-sm font-semibold text-white/80">{q}</summary>

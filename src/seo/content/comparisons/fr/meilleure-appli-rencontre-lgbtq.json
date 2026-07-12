@@ -1,6 +1,6 @@
 {
   "slug": "meilleure-appli-rencontre-lgbtq",
-  "intro": "Le paysage des apps de rencontre LGBTQ+ en 2026 se divise en deux types : les apps de niche construites pour des identités spécifiques (Grindr pour les hommes gays, HER pour les femmes queer, Feeld pour les relations ouvertes) et les apps mainstream qui supportent les utilisateurs LGBTQ+ avec des degrés variables de sérieux. Ni l'un ni l'autre ne résout complètement le problème pour les utilisateurs qui veulent une inclusion universelle avec la profondeur de sécurité et de compatibilité d'une plateforme purpose-built.\n\nEmbir est la troisième option : une plateforme universelle où chaque orientation — gay, lesbienne, bi, pan, queer, trans, non-binaire — est un citoyen de première classe, matché avec la même profondeur de signaux de compatibilité, protégé par la même modération humaine.",
+  "intro": "Le paysage des apps de rencontre LGBTQ+ en 2026 se divise en deux types : les apps de niche construites pour des identités spécifiques (Grindr pour les hommes gays, HER pour les femmes queer, Feeld pour les relations ouvertes) et les apps mainstream qui supportent les utilisateurs LGBTQ+ avec des degrés variables de sérieux. Ni l'un ni l'autre ne résout complètement le problème pour les utilisateurs qui veulent une inclusion universelle avec la profondeur de sécurité et de compatibilité d'une plateforme purpose-built.\n\nEmbir est la troisième option : une plateforme universelle où chaque orientation — gay, lesbienne, bi, pan, queer, trans, non-binaire — est un citoyen de première classe, matché avec la même profondeur de signaux de compatibilité, protégé par la même signalement et blocage.",
   "comparisonTable": [
     {
       "criteria": "Hommes gays",
@@ -35,7 +35,7 @@
     {
       "criteria": "Profils vérifiés",
       "competitor": "Apps LGBTQ+ niche : modèles confiance communautaire",
-      "embir": "Vérification selfie + modération humaine",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     }
   ],
@@ -50,12 +50,12 @@
       ]
     }
   ],
-  "verdict": "La meilleure app de rencontre LGBTQ+ dépend de tes besoins. Pour les hommes gays en ville : Grindr a la densité. Pour les femmes queer qui cherchent une communauté : HER a la profondeur. Pour les relations ouvertes : Feeld a la communauté.\n\nPour les utilisateurs bi, pan, trans, non-binaires et queer qui veulent une plateforme universelle avec profils vérifiés, modération humaine, compatibilité profonde, et accès gratuit — Embir est l'option la plus solide en 2026.",
-  "ctaText": "Toutes orientations, une plateforme, gratuit au lancement — rejoins Embir",
+  "verdict": "La meilleure app de rencontre LGBTQ+ dépend de tes besoins. Pour les hommes gays en ville : Grindr a la densité. Pour les femmes queer qui cherchent une communauté : HER a la profondeur. Pour les relations ouvertes : Feeld a la communauté.\n\nPour les utilisateurs bi, pan, trans, non-binaires et queer qui veulent une plateforme universelle avec profils vérifiés, signalement et blocage, compatibilité profonde, et accès gratuit — Embir est l'option la plus solide en 2026.",
+  "ctaText": "Toutes orientations, une plateforme, gratuit pour les connexions essentielles — rejoins Embir",
   "faq": [
     {
       "q": "Embir est-il meilleur que Grindr pour les hommes gays ?",
-      "a": "Grindr a une densité plus élevée dans la plupart des villes. Embir offre des profils vérifiés, une modération humaine, un matching de compatibilité, et un environnement communautaire plus sûr. Meilleur pour la qualité ; Grindr pour le volume."
+      "a": "Grindr a une densité plus élevée dans la plupart des villes. Embir offre des profils vérifiés, des outils de signalement et de blocage, un matching de compatibilité, et un environnement communautaire plus sûr. Meilleur pour la qualité ; Grindr pour le volume."
     },
     {
       "q": "Embir est-il bon pour les utilisateurs bi et pan ?",
@@ -67,7 +67,7 @@
     },
     {
       "q": "Embir est-il gratuit pour les utilisateurs LGBTQ+ ?",
-      "a": "Oui. Les fonctionnalités principales sont gratuites pendant la phase de lancement pour tous les utilisateurs, quelle que soit leur orientation."
+      "a": "Oui. Les fonctionnalités principales sont gratuites pour les connexions essentielles pour tous les utilisateurs, quelle que soit leur orientation."
     },
     {
       "q": "Qu'est-ce que le filtrage bidirectionnel ?",

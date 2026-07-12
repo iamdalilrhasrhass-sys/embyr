@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dating App in Paris — Verified Profiles, Real Compatibility | Embir",
-  description: "Paris dating app: LGBTQ+ and inclusive, with verified profiles, compatibility matching, and a founding community. Free at launch for Paris founding members.",
+  description: "Paris dating app: LGBTQ+ and inclusive, with verified profiles, compatibility matching, and a founding community. core connection features are free for Paris founding members.",
   alternates: {
     canonical: "https://embir.xyz/paris",
     languages: { "fr": "https://embir.xyz/fr/rencontre-paris" },
   },
   openGraph: {
     title: "Dating App in Paris — Verified Profiles, Real Compatibility | Embir",
-    description: "Paris dating app: inclusive, verified profiles, compatibility matching, and a founding community. Free at launch.",
+    description: "Paris dating app: inclusive, verified profiles, compatibility matching, and a founding community. core connection features are free.",
     url: "https://embir.xyz/paris",
     locale: "en_US",
     siteName: "Embir",
@@ -55,8 +55,8 @@ export default function Page() {
           </div>
 
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
-            <h2 className="font-serif text-2xl text-white">Free at launch — no Parisian price tag</h2>
-            <p className="mt-4">Paris isn&apos;t cheap, but Embir is free during launch. Create your profile, set your preferences, browse compatible people, send messages — all without paying. When a freemium model arrives later, it will fund the mobile app, verification, and human moderation. Core features will remain accessible. Founding members will be informed well in advance.</p>
+            <h2 className="font-serif text-2xl text-white">Core connections without a Parisian price tag</h2>
+            <p className="mt-4">Paris isn&apos;t cheap, but Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
 
           <div>
@@ -82,7 +82,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Frequently asked questions</h2>
             <div className="mt-6 space-y-3">
               {[
-                ["How many members does Embir have in Paris?", "Embir is in its launch phase. We're building the Paris founding community right now — starting with a core of verified members. We don't publish inflated numbers. The community grows through invitations and word of mouth."],
+                ["How many members does Embir have in Paris?", "Embir is in its core connection experience. We're building the Paris founding community right now — starting with a core of verified members. We don't publish inflated numbers. The community grows through invitations and word of mouth."],
                 ["Is Embir only for gay dating in Paris?", "No. Embir is for all orientations. Gay and bi men use the same platform as everyone else, but orientation controls ensure everyone only sees compatible profiles. Straight, lesbian, bi, trans, and queer Parisians all share the same community."],
                 ["How is Embir different from Tinder in Paris?", "Tinder in Paris is high-volume, swipe-fatigue central. Embir focuses on compatibility, verified profiles, and clearer intentions. Fewer random matches, more connections that have a real chance."],
                 ["Is Embir a good Grindr alternative in Paris?", "If you want more substance than instant proximity, yes. Embir focuses on compatibility and verified profiles. It serves all orientations, not just gay men, but gay and bi men are a core part of the community."],
@@ -100,7 +100,7 @@ export default function Page() {
 
         <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the Paris founding community</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Paris members. Verified profile. Real compatibility. Free during launch. Help build a dating culture Paris deserves.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Paris members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture Paris deserves.</p>
           <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
         </section>
 

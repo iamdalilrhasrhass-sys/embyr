@@ -1,6 +1,6 @@
 {
   "slug": "alternative-feeld",
-  "intro": "Feeld s'est fait un nom dans les rencontres ouvertes et non-monogames : couples, explorateurs solo, chaque identité sexuelle imaginable présentée avec un minimum de jugement. Son audience est progressiste, queer-friendly, et cherche souvent des connexions hors des cadres traditionnels.\n\nEmbir occupe un territoire adjacent mais vient d'un angle différent : inclusivité universelle pour toutes les orientations combinée à des profils vérifiés, une modération humaine, et un système de compatibilité qui fonctionne pour tous les modèles relationnels — monogames, non-monogames, casual, sérieux ou exploration ouverte. Pour les utilisateurs qui trouvent Feeld trop niche ou trop permissif, Embir offre un milieu qui ne compromet pas sur l'inclusivité.",
+  "intro": "Feeld s'est fait un nom dans les rencontres ouvertes et non-monogames : couples, explorateurs solo, chaque identité sexuelle imaginable présentée avec un minimum de jugement. Son audience est progressiste, queer-friendly, et cherche souvent des connexions hors des cadres traditionnels.\n\nEmbir occupe un territoire adjacent mais vient d'un angle différent : inclusivité universelle pour toutes les orientations combinée à des profils vérifiés, des outils de signalement et de blocage, et un système de compatibilité qui fonctionne pour tous les modèles relationnels — monogames, non-monogames, casual, sérieux ou exploration ouverte. Pour les utilisateurs qui trouvent Feeld trop niche ou trop permissif, Embir offre un milieu qui ne compromet pas sur l'inclusivité.",
   "comparisonTable": [
     {
       "criteria": "Portée de l'audience",
@@ -11,19 +11,19 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Optionnelle, modèle confiance communautaire",
-      "embir": "Vérification selfie + modération humaine",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Tier gratuit",
       "competitor": "Abonnement payant pour la plupart des fonctionnalités",
-      "embir": "Fonctionnalités principales gratuites au lancement",
+      "embir": "Fonctionnalités principales gratuites pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Sécurité",
       "competitor": "Modération communautaire, escalade lente",
-      "embir": "Équipe humaine + réponse immédiate",
+      "embir": "Signalement enregistré + blocage immédiat",
       "winner": "embir"
     },
     {
@@ -50,7 +50,7 @@
       ]
     }
   ],
-  "verdict": "Feeld est excellent pour sa niche spécifique — relations ouvertes, exploration non-monogame, communauté kink-positive. Si c'est exactement ce que tu cherches, il le fait bien.\n\nEmbir est une solide alternative si tu veux la même ouverture d'esprit et inclusivité sans le focus niche — avec en plus la vérification, la modération humaine, l'accès gratuit au lancement, et un matching qui fonctionne pour toutes les orientations et tous les styles relationnels.",
+  "verdict": "Feeld est excellent pour sa niche spécifique — relations ouvertes, exploration non-monogame, communauté kink-positive. Si c'est exactement ce que tu cherches, il le fait bien.\n\nEmbir est une solide alternative si tu veux la même ouverture d'esprit et inclusivité sans le focus niche — avec en plus la vérification, le signalement et le blocage, l'accès gratuit pour les connexions essentielles, et un matching qui fonctionne pour toutes les orientations et tous les styles relationnels.",
   "ctaText": "Ton orientation, tes intentions, tes règles — rejoins gratuitement",
   "faq": [
     {
@@ -63,11 +63,11 @@
     },
     {
       "q": "Comment Embir se compare à Feeld sur le prix ?",
-      "a": "Feeld exige un abonnement pour la plupart des fonctionnalités importantes. Embir est gratuit au lancement — découverte, messagerie et compatibilité accessibles sans paiement."
+      "a": "Feeld exige un abonnement pour la plupart des fonctionnalités importantes. Embir est gratuit pour les connexions essentielles — découverte, messagerie et compatibilité accessibles sans paiement."
     },
     {
       "q": "Embir vérifie-t-il les profils ?",
-      "a": "Oui. Vérification selfie disponible dès l'inscription. Les membres vérifiés reçoivent un badge et sont prioritaires dans la découverte. Les modérateurs humains examinent chaque signalement."
+      "a": "Oui. Vérification selfie disponible dès l'inscription. Les membres vérifiés reçoivent un badge et sont prioritaires dans la découverte. Les signalements sont enregistrés pour examen et le blocage est immédiat."
     },
     {
       "q": "Peut-on utiliser Embir pour du casual ?",

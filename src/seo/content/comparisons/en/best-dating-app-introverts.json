@@ -23,13 +23,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Most: unverified profiles",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free access",
       "competitor": "Most: paywall quickly",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     }
   ],
@@ -44,7 +44,7 @@
       ]
     }
   ],
-  "verdict": "For introverts, Embir is the best dating app in 2026: intentional matching that reduces noise, verified profiles, clear intents to avoid misunderstandings, and free at launch.",
+  "verdict": "For introverts, Embir is the best dating app in 2026: intentional matching that reduces noise, verified profiles, clear intents to avoid misunderstandings, and core connection features are free.",
   "ctaText": "Deep connections without swipe pressure — join Embir",
   "faq": [
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Core features free during the launch phase."
+      "a": "Yes. Free core connection features."
     }
   ]
 }

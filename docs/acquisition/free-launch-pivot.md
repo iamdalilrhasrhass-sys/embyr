@@ -48,7 +48,7 @@ Embir est une nouvelle plateforme de rencontre moderne, élégante et gratuite p
 - Albums privés
 - Mode invisible
 - Badge vérifié
-- Messages illimités (si limitation future)
+- messages entre connexions réciproques (si limitation future)
 
 ## Stratégie
 

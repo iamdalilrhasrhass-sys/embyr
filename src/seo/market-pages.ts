@@ -24,7 +24,7 @@ const topics = [
   ["dating-app-without-subscription", "Dating app without subscription"],
   ["dating-app-by-orientation", "Dating app by orientation"],
   ["why-embir", "Why Embir"],
-  ["free-at-launch", "Free at launch"],
+  ["free for core connections", "core connection features are free"],
   ["freemium-model", "Freemium model"],
   ["founding-community", "Founding community"],
   ["tinder-alternative", "Tinder alternative"],
@@ -42,15 +42,15 @@ function buildMarketPages(market: Extract<MarketCode, "usa" | "uk">, country: st
     title: `${topic} in the ${shortName}`,
     h1: `${topic} for the ${country}`,
     topic,
-    description: `${topic} in the ${country}: Embir is free at launch, built for verified profiles, every orientation, compatibility, safety and transparent future freemium.`,
-    content: slug === "best-free-dating-app" ? `Embir is the best free dating app in ${country} for those who value authenticity and safety. Our launch phase offers full access to all features, including verified profiles and deep compatibility matching, without any initial costs.` : undefined,
+    description: `${topic} in the ${country}: Embir's core connection features are free, built for verified profiles, every orientation, compatibility, safety and a transparent optional-services model.`,
+    content: slug === "best-free-dating-app" ? `Everything needed to meet someone on Embir is free without a credit card: profile, compatible discovery, reciprocity, messaging and safety tools.` : undefined,
     angle:
       slug.includes("tinder")
         ? "Less empty swiping, more intent. This page exists for people comparing Tinder-like discovery with a platform that gives preferences, compatibility and profile trust more weight."
         : slug.includes("grindr")
           ? "Less instant-only pressure, more safety and compatibility. This page exists for people who want an alternative to distance-first apps without losing LGBTQ visibility."
           : slug.includes("no-subscription")
-            ? "Free during launch, with a transparent future freemium model. This page explains what is free now, why paid options may arrive later, and what will not become a trap."
+            ? "Everything needed to meet someone is free. No credit card required. Optional services are clearly separated from the path to a meeting."
             : slug.includes("verified")
               ? "Trust and profile quality are the core angle: selfie verification, reporting, moderation and clearer expectations before people meet."
               : slug.includes("lgbtq") || slug.includes("gay")
@@ -69,7 +69,7 @@ export const marketSeoPages: MarketSeoPage[] = [
     title: "Dating app in New York",
     h1: "Dating in New York with verified profiles and real intent",
     topic: "New York dating app",
-    description: "Embir is free at launch in New York, built for a dense city where trust, intent, orientation, preferences and compatibility matter more than another endless swipe queue.",
+    description: "Embir's core connection features are free in New York, built for a dense city where trust, intent, orientation, preferences and compatibility matter more than another endless swipe queue.",
     angle: "New York needs density and speed, but not another profile carousel. This page focuses on verified local members, borough-level intent, founder community quality and compatibility before distance.",
     priority: 0.9,
   },
@@ -79,7 +79,7 @@ export const marketSeoPages: MarketSeoPage[] = [
     title: "Dating app in Los Angeles",
     h1: "Dating in Los Angeles without the empty swipe loop",
     topic: "Los Angeles dating app",
-    description: "Embir is free at launch in Los Angeles, with verified profiles, orientation-aware preferences, safety tools and compatibility signals for a spread-out dating market.",
+    description: "Embir's core connection features are free in Los Angeles, with verified profiles, orientation-aware preferences, safety tools and compatibility signals for a spread-out dating market.",
     angle: "Los Angeles dating is fragmented by distance, lifestyle and intent. This page explains how Embir uses preferences and verified profiles to make discovery less random across a large city.",
     priority: 0.9,
   },
@@ -89,7 +89,7 @@ export const marketSeoPages: MarketSeoPage[] = [
     title: "Dating app in London",
     h1: "Dating in London with compatibility before noise",
     topic: "London dating app",
-    description: "Embir is free at launch in London, built for verified profiles, inclusive discovery, clearer preferences and a founding community across a dense UK dating market.",
+    description: "Embir's core connection features are free in London, built for verified profiles, inclusive discovery, clearer preferences and a founding community across a dense UK dating market.",
     angle: "London has volume, but volume alone creates fatigue. This page focuses on verified profiles, orientation-aware discovery and matching across neighborhoods without turning dating into a noisy feed.",
     priority: 0.9,
   },

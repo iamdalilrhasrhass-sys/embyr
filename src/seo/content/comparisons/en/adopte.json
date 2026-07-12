@@ -17,13 +17,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Basic, not systematic",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Price",
       "competitor": "Subscription required for men",
-      "embir": "100% free at launch for all",
+      "embir": "Core connection features are free for all",
       "winner": "embir"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Is Embir free unlike Adopte for men?",
-      "a": "Yes. All features are free during the launch phase, regardless of gender."
+      "a": "Yes. everything needed to meet someone is free, regardless of gender."
     }
   ]
 }

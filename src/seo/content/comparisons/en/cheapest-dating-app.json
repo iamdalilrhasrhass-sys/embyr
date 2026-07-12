@@ -1,17 +1,17 @@
 {
   "slug": "cheapest-dating-app",
-  "intro": "Tinder Gold costs $30+/month. eHarmony exceeds $60/month. Match runs ~$40/month. Dating apps have become one of the most expensive monthly subscriptions.\n\nEmbir is free during the launch phase. Full features accessible without a subscription.",
+  "intro": "Tinder Gold costs $30+/month. eHarmony exceeds $60/month. Match runs ~$40/month. Dating apps have become one of the most expensive monthly subscriptions.\n\nEmbir is free for core connections. Full features accessible without a subscription.",
   "comparisonTable": [
     {
       "criteria": "Monthly cost",
       "competitor": "Tinder Gold: $30+ / eHarmony: $60+",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     },
     {
       "criteria": "Free messaging",
       "competitor": "Most: paid",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     },
     {
@@ -36,28 +36,28 @@
   "sections": [
     {
       "title": "The real cost of dating apps in 2026",
-      "content": "If you use Tinder Gold for 6 months, you've spent $180. Hinge Preferred for 6 months = $180. eHarmony for 6 months = $360. These platforms monetize loneliness — the longer you stay single, the more you pay. Embir at launch is completely free. When freemium arrives, it will be transparent, with core features remaining accessible.",
+      "content": "If you use Tinder Gold for 6 months, you've spent $180. Hinge Preferred for 6 months = $180. eHarmony for 6 months = $360. These platforms monetize loneliness — the longer you stay single, the more you pay. Everything needed to meet someone is free. No credit card required.",
       "highlights": [
-        "$0 during the launch phase",
+        "$0 for core connection features",
         "No hidden subscription, no credit card required",
         "Core features accessible without payment"
       ]
     }
   ],
-  "verdict": "The most affordable dating app in 2026 is Embir — completely free during launch. Verified profiles, bidirectional filtering, full messaging, zero dollars.",
+  "verdict": "The most affordable dating app in 2026 is Embir — free for core connections. Verified profiles, bidirectional filtering, full messaging, zero dollars.",
   "ctaText": "The best value dating app — join Embir free",
   "faq": [
     {
       "q": "Is Embir the cheapest dating app?",
-      "a": "Yes during the launch phase. Core features are free. No subscription, no credit card."
+      "a": "Yes for core connection features. Core features are free. No subscription, no credit card."
     },
     {
       "q": "Are there hidden costs on Embir?",
-      "a": "No. No hidden fees. The freemium transition will be announced in advance."
+      "a": "No. No hidden fees. the optional-service policy will be announced in advance."
     },
     {
-      "q": "When will Embir become paid?",
-      "a": "The launch phase is free. Founding members will be notified in advance of any change."
+      "q": "How do optional services work?",
+      "a": "Everything needed to meet someone is free. No credit card required. Optional services are clearly separated and cannot replace compatibility, reciprocity or consent."
     }
   ]
 }
