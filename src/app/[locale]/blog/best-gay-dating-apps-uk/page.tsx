@@ -36,8 +36,8 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">The best gay dating apps in the UK — ranked</h2>
 
 <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — Best for genuine connections, truly free</h3>
-<p><strong>Price:</strong> Free (no premium tier). <strong>Ads:</strong> None. <strong>Verification:</strong> Mandatory selfie check.</p>
-<p>Embir is the newest app on this list and the most fundamentally different. It's completely free — no £20/month subscription, no premium tiers, no ads. Every profile is verified via mandatory selfie, which means no bots. The AI matching learns what you like and suggests compatible people, rather than just sorting by distance. Available across London, Manchester, Birmingham, Brighton, and growing fast in other UK cities.</p>
+<p><strong>Price:</strong> Free (no premium tier). <strong>Ads:</strong> None. <strong>Verification:</strong> optional selfie check.</p>
+<p>Embir is the newest app on this list and the most fundamentally different. It's free for core connections — no £20/month subscription, no credit card for core connections, no ads. Selfie verification is available and approved profiles display a badge; no system guarantees the absence of bots. The reciprocal compatibility learns what you like and suggests compatible people, rather than just sorting by distance. Available across London, Manchester, Birmingham, Brighton, and available to early members in other UK cities.</p>
 <p><strong>Best for:</strong> British men who want real connections without the monthly tax. <strong>Weakness:</strong> Newer app — community is growing but still smaller than Grindr's.</p>
 <p><Link href="/auth/register" className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
 
@@ -58,11 +58,11 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">City-by-city: where each app shines</h2>
 <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">London</h3>
-<p>All major apps have strong London presence. Grindr has the most profiles. Embir is growing fastest among men seeking genuine connections. Scruff has strong communities in Vauxhall and Soho.</p>
+<p>All major apps have strong London presence. Grindr has the most profiles. Embir is accepting early members among men seeking genuine connections. Scruff has strong communities in Vauxhall and Soho.</p>
 <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Manchester</h3>
 <p>Canal Street is the heart of Manchester's gay village. Scruff and Grindr dominate, but Embir is gaining traction among men who want something more substantial than a quick meet.</p>
 <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Brighton</h3>
-<p>The UK's unofficial gay capital has a diverse, engaged community. Embir's mandatory verification is particularly appealing here, where users are more conscious about safety and authenticity.</p>
+<p>The UK's unofficial gay capital has a diverse, engaged community. Embir's optional selfie verification is particularly appealing here, where users are more conscious about safety and authenticity.</p>
 <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Birmingham</h3>
 <p>The Gay Village around Hurst Street is active across most apps. Grindr has the numbers, but the paywall frustration is driving users to free alternatives like Embir.</p>
 
@@ -70,7 +70,7 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 <p>Under UK GDPR (the post-Brexit version of EU data protection law), dating apps must handle your personal data with care. Apps that serve targeted advertising — like Grindr and Tinder — collect extensive data about your location, preferences, and behaviour. Apps that don't rely on advertising revenue, like Embir, have no incentive to harvest or sell your data. For privacy-conscious British men, this matters.</p>
 
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">The bottom line</h2>
-<p>The best gay dating app in the UK depends on what you value. For sheer numbers in London: Grindr. For community: Scruff. For a completely free experience with mandatory verification and smarter matching: Embir. What's clear is that British men are increasingly unwilling to pay £20-40/month for apps that don't respect their time, privacy, or intelligence. The alternatives are here.</p>
+<p>The best gay dating app in the UK depends on what you value. For sheer numbers in London: Grindr. For community: Scruff. For a free for core connections experience with optional selfie verification and smarter matching: Embir. What's clear is that British men are increasingly unwilling to pay £20-40/month for apps that don't respect their time, privacy, or intelligence. The alternatives are here.</p>
 </div>
 
 <div className="mt-12 p-8 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/5 text-center">
@@ -79,7 +79,7 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 <Link href="/auth/register?source=blog-uk-apps" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-3.5 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">Create my free profile</Link></div>
 
 <div className="mt-12 space-y-4"><h2 className="text-2xl font-bold text-white mb-4">Quick answers</h2>
-{[{q:"What's the best free gay dating app in the UK?",a:"Embir is the best completely free option — no subscription, no ads, unlimited messaging, and mandatory profile verification."},{q:"Is there a good Grindr alternative in London?",a:"Yes. Embir is growing fast in London and offers a completely different experience: free, verified, and AI-matched. No more £25/month subscriptions."},{q:"Which UK cities have the most gay dating app users?",a:"London has the largest concentration, followed by Manchester, Brighton, Birmingham, and Edinburgh. Embir is launching progressively across these cities."}].map((faq,i)=>(<details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary><p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p></details>))}</div>
+{[{q:"What's the best free gay dating app in the UK?",a:"Embir is the best free for core connections option — no subscription, no ads, messaging between reciprocal connections, and optional selfie verification with a visible badge."},{q:"Is there a good Grindr alternative in London?",a:"Yes. Embir is available in London and is still building its community and offers a completely different experience: free, verified, and matched through reciprocal preferences. No more £25/month subscriptions."},{q:"Which UK cities have the most gay dating app users?",a:"London has the largest concentration, followed by Manchester, Brighton, Birmingham, and Edinburgh. Embir is launching progressively across these cities."}].map((faq,i)=>(<details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary><p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p></details>))}</div>
 
 <div className="mt-12 pt-8 border-t border-white/[0.04] text-center"><p className="text-xs text-white/20 mb-3">Related</p><div className="flex flex-wrap justify-center gap-3 text-sm">
 <Link href="/gay-dating-app-uk" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Gay Dating App UK</Link><span className="text-white/10">·</span>

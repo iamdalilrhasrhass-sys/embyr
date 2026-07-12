@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Gay Dating in Paris — Free App for Authentic Connections",
-  description: "Discover gay dating in Paris with Embir. A free app with verified profiles, AI matching, and no ads. Meet real people in the City of Light.",
+  description: "Discover gay dating in Paris with Embir. A free app with verified profiles, reciprocal compatibility, and no ads. Meet real people in the City of Light.",
   alternates: { canonical: "https://embir.xyz/gay-dating-in-paris" },
   openGraph: {
     title: "Gay Dating in Paris — Free App for Authentic Connections",
-    description: "Discover gay dating in Paris with Embir. A free app with verified profiles, AI matching, and no ads. Meet real people in the City of Light.",
+    description: "Discover gay dating in Paris with Embir. A free app with verified profiles, reciprocal compatibility, and no ads. Meet real people in the City of Light.",
     url: "https://embir.xyz/gay-dating-in-paris",
     locale: "en_US",
     siteName: "Embir",
@@ -25,7 +25,7 @@ export default function Page() {
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#d4a574]/80">Paris</span>
           </div>
           <h1 className="font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-5xl">Gay dating in Paris, reimagined.</h1>
-          <p className="mt-6 text-lg leading-relaxed text-white/50">Discover gay dating in Paris with Embir. A free app with verified profiles, AI matching, and no ads. Meet real people in the City of Light.</p>
+          <p className="mt-6 text-lg leading-relaxed text-white/50">Discover gay dating in Paris with Embir. A free app with verified profiles, reciprocal compatibility, and no ads. Meet real people in the City of Light.</p>
           <div className="mt-8 flex gap-4">
             <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2]">Create Free Profile</Link>
             <Link href="/" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 hover:border-white/20">Home</Link>
@@ -38,19 +38,19 @@ export default function Page() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Verified Profiles</h3>
-              <p className="text-sm text-white/45">Every member verifies their identity by selfie. No fake profiles, no bots, no disappointments.</p>
+              <p className="text-sm text-white/45">Every member can request selfie verification. A visible badge identifies verified profiles; block and report tools remain available.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">100% Free During Launch</h3>
-              <p className="text-sm text-white/45">Unlimited messaging, AI matching, complete profiles. No subscription, no ads.</p>
+              <h3 className="text-lg font-bold text-white mb-2">Core connection features are free</h3>
+              <p className="text-sm text-white/45">messaging between reciprocal connections, reciprocal compatibility, complete profiles. No subscription, no ads.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3>
+              <h3 className="text-lg font-bold text-white mb-2">reciprocal compatibility</h3>
               <p className="text-sm text-white/45">Our our compatibility system suggests profiles based on your preferences to suggest truly compatible profiles.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Privacy & Respect</h3>
-              <p className="text-sm text-white/45">Your data is never sold. Zero intrusive ads. Human moderation.</p>
+              <p className="text-sm text-white/45">Your data is never sold. Zero intrusive ads. reporting and blocking.</p>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Page() {
           <div className="space-y-4">
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Is Embir really free?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Yes. During the launch phase, all features are free — messaging, matching, profiles. Founding members will receive priority access and product benefits.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Yes. Everything needed to meet someone is free. No credit card required. Founding members will receive priority access and product benefits.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">How are profiles verified?</summary>
@@ -76,7 +76,7 @@ export default function Page() {
       </section>
       <section className="px-4 pb-16 text-center">
         <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create Free Profile</Link>
-        <p className="mt-4 text-xs text-white/20">18+ only. Free during launch. No commitment.</p>
+        <p className="mt-4 text-xs text-white/20">18+ only. Core connection features are free. No commitment.</p>
       </section>
     </main>
   );

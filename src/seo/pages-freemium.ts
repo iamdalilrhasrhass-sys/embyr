@@ -1,10 +1,10 @@
 import { slugify } from "./utils";
 
 const topics = [
-  "free at launch dating app",
-  "future freemium dating model",
+  "dating app with free core connections",
+  "transparent optional services dating model",
   "transparent freemium dating platform",
-  "free messaging during launch",
+  "messaging for reciprocal connections is free",
   "founder access dating app",
   "freemium model for safety",
   "freemium model for moderation",

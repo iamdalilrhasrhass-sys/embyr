@@ -3,20 +3,20 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Free Dating App for the UK — London, Manchester, Birmingham | Embir",
-  description: "Embir is free at launch in the UK. Verified profiles, compatibility-first dating, clear intentions, and a founding community across London, Manchester and Birmingham.",
+  description: "Embir's core connection features are free in the UK. Verified profiles, compatibility-first dating, clear intentions, and a founding community across London, Manchester and Birmingham.",
   alternates: {
     canonical: "https://embir.xyz/uk",
     languages: { "fr": "https://embir.xyz/fr/royaume-uni" },
   },
   openGraph: {
     title: "Free Dating App for the UK — London, Manchester, Birmingham | Embir",
-    description: "Embir is free at launch in the UK. Verified profiles, compatibility-first dating, and a founding community across London, Manchester and Birmingham.",
+    description: "Embir's core connection features are free in the UK. Verified profiles, compatibility-first dating, and a founding community across London, Manchester and Birmingham.",
     url: "https://embir.xyz/uk",
     locale: "en_GB",
     siteName: "Embir",
     images: [`/api/og?title=Free+Dating+App+for+the+UK+—+London,+Manchester,+Birmingham+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Free Dating App for the UK | Embir", description: "Embir is free at launch in the UK. Verified profiles and compatibility-first dating.", images: [`/api/og?title=Free+Dating+App+for+the+UK+—+London,+Manchester,+Birmingham+%7C+Embir&variant=default`] },
+  twitter: { card: "summary_large_image", title: "Free Dating App for the UK | Embir", description: "Embir's core connection features are free in the UK. Verified profiles and compatibility-first dating.", images: [`/api/og?title=Free+Dating+App+for+the+UK+—+London,+Manchester,+Birmingham+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 
@@ -75,7 +75,7 @@ export default function Page() {
             <div className="mt-6 space-y-3">
               {[
                 ["Is Embir available everywhere in the UK?", "The app is accessible from anywhere in the UK, but the founding community is concentrated in London, Manchester, and Birmingham. We're building density before expanding."],
-                ["Is Embir free in the UK?", "Yes, completely free during launch. Messaging, matching, verification — all included. A freemium model will come later to fund the mobile app and safety tools."],
+                ["Is Embir free in the UK?", "Yes, free for core connections. Messaging, matching, verification — all included. Optional services can fund safety, moderation and product development."],
                 ["Will Embir have UK-specific features?", "The core experience is global, but local market pages, city-specific founding communities, and UK-oriented content help make the experience locally relevant."],
                 ["When is the mobile app launching?", "In development. The web version works on mobile browsers. Founding members will be among the first to access the native apps."],
               ].map(([q, a]) => (

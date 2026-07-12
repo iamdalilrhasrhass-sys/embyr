@@ -23,7 +23,7 @@
     {
       "criteria": "Verification profils",
       "competitor": "Selection manuelle (quand actif)",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -44,7 +44,7 @@
       ]
     }
   ],
-  "verdict": "Once a ferme en 2022. Si tu cherches l'alternative en 2026 qui respecte la meme philosophie qualite-avant-quantite — Embir est la reponse, avec en plus les profils verifies, l'inclusivite LGBTQ+, et la gratuité au lancement.",
+  "verdict": "Once a ferme en 2022. Si tu cherches l'alternative en 2026 qui respecte la meme philosophie qualite-avant-quantite — Embir est la reponse, avec en plus les profils verifies, l'inclusivite LGBTQ+, et la gratuité des connexions essentielles.",
   "ctaText": "La philosophie d'Once, moderne et gratuite — rejoins Embir",
   "faq": [
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Fonctionnalites principales gratuites pendant la phase de lancement."
+      "a": "Oui. Fonctionnalites principales gratuites pour les connexions essentielles."
     }
   ]
 }

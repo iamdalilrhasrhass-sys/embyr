@@ -1,6 +1,6 @@
 {
   "slug": "zoosk-alternative",
-  "intro": "Zoosk's Behavioral Matchmaking algorithm learns from your swiping behavior over time — who you engage with, who you skip, how long you view a profile. It was an interesting approach to passive compatibility learning. In 2026, Zoosk has faded from top-tier relevance but maintains a base, particularly among older demographics.\n\nEmbir takes active compatibility matching — you declare your preferences explicitly rather than letting the algorithm infer them — combined with verified profiles and human moderation that Zoosk lacks.",
+  "intro": "Zoosk's Behavioral Matchmaking algorithm learns from your swiping behavior over time — who you engage with, who you skip, how long you view a profile. It was an interesting approach to passive compatibility learning. In 2026, Zoosk has faded from top-tier relevance but maintains a base, particularly among older demographics.\n\nEmbir takes active compatibility matching — you declare your preferences explicitly rather than letting the algorithm infer them — combined with verified profiles and reporting and blocking that Zoosk lacks.",
   "comparisonTable": [
     {
       "criteria": "Matching model",
@@ -11,13 +11,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Social account linking, no systematic check",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Very limited — coins required for most actions",
-      "embir": "Core features free at launch",
+      "embir": "Core features core connection features are free",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Safety",
       "competitor": "Standard moderation, inconsistent",
-      "embir": "Human team, fast response",
+      "embir": "Reporting workflow + immediate blocking",
       "winner": "embir"
     },
     {
@@ -50,16 +50,16 @@
       ]
     }
   ],
-  "verdict": "Zoosk was innovative in its time. In 2026, the behavioral matchmaking concept hasn't been maintained with the investment needed to compete with modern alternatives. Profile verification is weak, free features are heavily coin-gated, and LGBTQ+ support is minimal.\n\nEmbir offers stronger verification, better compatibility signals, full LGBTQ+ inclusion, and free core features during launch.",
+  "verdict": "Zoosk was innovative in its time. In 2026, the behavioral matchmaking concept hasn't been maintained with the investment needed to compete with modern alternatives. Profile verification is weak, free features are heavily coin-gated, and LGBTQ+ support is minimal.\n\nEmbir offers stronger verification, better compatibility signals, full LGBTQ+ inclusion, and core connection features are free.",
   "ctaText": "Modern matching, verified profiles — join free",
   "faq": [
     {
       "q": "Is Embir better than Zoosk?",
-      "a": "Embir offers selfie verification, human moderation, full LGBTQ+ inclusion, and free core features during launch. Zoosk's free tier is coin-gated and verification is minimal."
+      "a": "Embir offers selfie verification, reporting and blocking, full LGBTQ+ inclusion, and core connection features are free. Zoosk's free tier is coin-gated and verification is minimal."
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Core features — discovery, messaging, compatibility — are free during the launch phase."
+      "a": "Yes. Core features — discovery, messaging, compatibility — are free for core connections."
     },
     {
       "q": "Does Embir work for older users?",
@@ -67,7 +67,7 @@
     },
     {
       "q": "How does Embir verify profiles?",
-      "a": "Selfie verification from signup — quick, secure, and confirms the photo matches a real person. Human moderation reviews every report."
+      "a": "Selfie verification from signup — quick, secure, and confirms the photo matches a real person. the reporting workflow records every report."
     },
     {
       "q": "Is Embir inclusive?",

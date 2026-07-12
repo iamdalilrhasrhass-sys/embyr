@@ -7,7 +7,7 @@ export default function EditProfile() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState("");
-  
+
   const [formData, setFormData] = useState({
     username: "",
     age: "",
@@ -52,7 +52,7 @@ export default function EditProfile() {
         body: JSON.stringify(formData)
       });
       if (!res.ok) throw new Error("Erreur de sauvegarde");
-      
+
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
     } catch (err: any) {
@@ -79,7 +79,7 @@ export default function EditProfile() {
       <p className="text-white/30 text-xs mb-8">
         Plus ton profil est complet, plus il sera visible.
       </p>
-      
+
       <form onSubmit={handleSave} className="space-y-6">
         {error && (
           <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
@@ -91,7 +91,7 @@ export default function EditProfile() {
             Profil enregistré. Tu peux maintenant découvrir les membres.
           </div>
         )}
-        
+
         {/* Profile Card */}
         <div className="p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

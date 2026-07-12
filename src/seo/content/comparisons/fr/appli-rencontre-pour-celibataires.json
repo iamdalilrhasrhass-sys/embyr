@@ -5,13 +5,13 @@
     {
       "criteria": "Gratuité",
       "competitor": "La plupart : abonnement requis rapidement",
-      "embir": "100% gratuit au lancement",
+      "embir": "Connexions essentielles gratuites",
       "winner": "embir"
     },
     {
       "criteria": "Verification profils",
       "competitor": "La plupart : partielle ou optionnelle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -29,22 +29,22 @@
     {
       "criteria": "Securite",
       "competitor": "Variable",
-      "embir": "Moderation humaine systematique",
+      "embir": "signalement et blocage systematique",
       "winner": "embir"
     }
   ],
   "sections": [
     {
       "title": "La meilleure appli de rencontre pour celibataires en 2026",
-      "content": "Les celibataires en 2026 ont des besoins clairs : trouver des connexions reelles, sans arnaques, sans payer une fortune, et sans passer des heures a swiper des profils incompatibles. Embir repond a ces besoins : profils verifies, matching de compatibilite profond, gratuit pendant le lancement.",
+      "content": "Les celibataires en 2026 ont des besoins clairs : trouver des connexions reelles, sans arnaques, sans payer une fortune, et sans passer des heures a swiper des profils incompatibles. Embir repond a ces besoins : profils verifies, matching de compatibilite profond, gratuit pour les connexions essentielles.",
       "highlights": [
         "Profils verifies — connexions authentiques",
         "Matching bidirectionnel — pertinence immediate",
-        "100% gratuit — aucune barriere a l'entree"
+        "sans carte bancaire — aucune barriere a l'entree"
       ]
     }
   ],
-  "verdict": "Pour les celibataires qui veulent la meilleure appli de rencontre en 2026, Embir combine profils verifies, moderation humaine, inclusivite universelle et gratuite au lancement.",
+  "verdict": "Pour les celibataires qui veulent la meilleure appli de rencontre en 2026, Embir combine profils verifies, signalement et blocage, inclusivite universelle et gratuite pour les connexions essentielles.",
   "ctaText": "Rejoins Embir gratuitement — pour tous les celibataires",
   "faq": [
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Les fonctionnalites principales sont gratuites pendant la phase de lancement."
+      "a": "Oui. Les fonctionnalites principales sont gratuites pour les connexions essentielles."
     }
   ]
 }

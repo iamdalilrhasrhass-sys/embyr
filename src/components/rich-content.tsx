@@ -238,8 +238,8 @@ function CTAFooter({ text, isFr }: { text: string; isFr: boolean }) {
       <h2 className="font-serif text-3xl text-white">{text}</h2>
       <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
         {isFr
-          ? "Crée ton profil gratuitement pendant le lancement et rejoins la communauté fondatrice qui construit une plateforme de rencontre plus sûre, plus inclusive et plus compatible."
-          : "Create your profile for free during launch and join the founding community building a safer, more inclusive and more compatible dating platform."}
+          ? "Crée ton profil gratuitement, sans carte bancaire et rejoins la communauté fondatrice qui construit une plateforme de rencontre plus sûre, plus inclusive et plus compatible."
+          : "Create your profile without a credit card and join the founding community building a safer, more inclusive and more compatible dating platform."}
       </p>
       <Link
         href="/auth/register"

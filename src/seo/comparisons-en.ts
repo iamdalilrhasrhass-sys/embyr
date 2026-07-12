@@ -1,5 +1,3 @@
-import { slugify } from "./utils";
-
 const comparisons = [
   { app: "Tinder", slug: "tinder-alternative", locale: "en" as const, title: "Embir vs Tinder 2026 — Which App for Real, Verified Dating?" },
   { app: "Grindr", slug: "grindr-alternative", locale: "en" as const, title: "Embir vs Grindr — The Best Inclusive & Safe Alternative for Every Orientation" },
@@ -45,7 +43,7 @@ const comparisons = [
   { app: "Facebook Dating alternative", slug: "facebook-dating-alternative", locale: "en" as const, title: "Embir vs Facebook Dating alternative" },
   { app: "Tinder vs Bumble vs Hinge", slug: "tinder-bumble-hinge-comparison", locale: "en" as const, title: "Embir vs Tinder vs Bumble vs Hinge" },
   { app: "best dating app 2026", slug: "best-dating-app-2026", locale: "en" as const, title: "Embir vs Best Dating App 2026 — Why Verified Profiles & Compatibility Win" },
-  { app: "best free dating app", slug: "best-free-dating-app-2026", locale: "en" as const, title: "Embir vs Best Free Dating App 2026 — Truly Free at Launch, No Hidden Paywalls" },
+  { app: "best free dating app", slug: "best-free-dating-app-2026", locale: "en" as const, title: "Embir vs Best Free Dating App 2026 — Truly core connection features are free, No Hidden Paywalls" },
   { app: "best LGBTQ dating app", slug: "best-lgbtq-dating-app", locale: "en" as const, title: "Embir vs Best LGBTQ Dating App — Inclusive, Verified & Safe for Every Orientation" },
   { app: "best dating app for serious relationships", slug: "best-dating-serious-relationships", locale: "en" as const, title: "Embir vs Best Dating App for Serious Relationships" },
   { app: "best dating app for casual dating", slug: "best-dating-app-casual", locale: "en" as const, title: "Embir vs best dating app for casual dating" },
@@ -55,7 +53,7 @@ const comparisons = [
   { app: "best dating app for college students", slug: "best-dating-app-college", locale: "en" as const, title: "Embir vs best dating app for college students" },
   { app: "most popular dating app by country", slug: "popular-dating-app-by-country", locale: "en" as const, title: "Embir vs most popular dating app by country" },
   { app: "dating app with highest success rate", slug: "highest-success-dating-app", locale: "en" as const, title: "Embir vs dating app with highest success rate" },
-  { app: "safest dating app", slug: "safest-dating-app", locale: "en" as const, title: "Embir vs Safest Dating App — Human Moderation, Verified Profiles & Real Trust" },
+  { app: "safest dating app", slug: "safest-dating-app", locale: "en" as const, title: "Embir vs Safest Dating App — reporting and blocking, Verified Profiles & Real Trust" },
   { app: "most inclusive dating app", slug: "most-inclusive-dating-app", locale: "en" as const, title: "Embir vs Most Inclusive Dating App — Built for Every Orientation, Not a Niche" },
   { app: "best verified dating app", slug: "best-verified-dating-app", locale: "en" as const, title: "Embir vs Best Verified Dating App — Selfie Verification & Trust by Design" },
   { app: "best free messaging dating app", slug: "best-free-messaging-dating-app", locale: "en" as const, title: "Embir vs best free messaging dating app" },
@@ -68,6 +66,6 @@ const comparisons = [
   { app: "best dating app for remote workers", slug: "best-dating-app-remote", locale: "en" as const, title: "Embir vs best dating app for remote workers" },
   { app: "best dating app for creatives", slug: "best-dating-app-creatives", locale: "en" as const, title: "Embir vs best dating app for creatives" },
   { app: "dating app with best matching algorithm", slug: "best-matching-algorithm-dating", locale: "en" as const, title: "Embir vs dating app with best matching algorithm" },
-  { app: "dating app with human moderation", slug: "human-moderation-dating-app", locale: "en" as const, title: "Embir vs Dating App with Human Moderation — Real People Review Reports" },
+  { app: "dating app with reporting and blocking", slug: "human-moderation-dating-app", locale: "en" as const, title: "Embir vs Dating App with reporting and blocking — Real People Review Reports" },
 ];
 export const comparisonsEn = comparisons;

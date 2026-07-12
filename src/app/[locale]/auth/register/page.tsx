@@ -152,14 +152,14 @@ export default function Register() {
           {/* ── SUBTITLE ── */}
           <p className="text-white/40 mb-6 font-medium text-sm leading-relaxed relative z-10">
             {isParisFounder
-              ? "Crée ton profil réel pour aider Embir à lancer sa première communauté active à Paris."
-              : "Free at launch worldwide. Verified profiles, preferences, compatibility and a transparent future freemium model."}
+              ? "Crée ton profil pour rejoindre les premiers membres à Paris."
+              : "core connection features are free worldwide. Verified profiles, preferences, compatibility and a transparent optional-services model."}
           </p>
 
           {/* ── FEATURE TAGS ── */}
           <div className="mb-8 grid grid-cols-3 gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.12em] text-white/35 relative z-10">
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] px-2 py-3 backdrop-blur-sm">18+</div>
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] px-2 py-3 backdrop-blur-sm">Free launch</div>
+            <div className="rounded-2xl border border-white/5 bg-white/[0.02] px-2 py-3 backdrop-blur-sm">free core connections</div>
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] px-2 py-3 backdrop-blur-sm">Worldwide</div>
           </div>
 

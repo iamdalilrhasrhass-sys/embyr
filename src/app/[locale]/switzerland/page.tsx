@@ -3,20 +3,20 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Free Dating App for Switzerland — Geneva, Lausanne, Zurich | Embir",
-  description: "Embir arrives in Switzerland: free at launch, with verified profiles, multilingual expectations, and compatibility-first dating across Geneva, Lausanne, Zurich, Basel and Bern.",
+  description: "Embir arrives in Switzerland: core connection features are free, with verified profiles, multilingual expectations, and compatibility-first dating across Geneva, Lausanne, Zurich, Basel and Bern.",
   alternates: {
     canonical: "https://embir.xyz/switzerland",
     languages: { "fr": "https://embir.xyz/fr/suisse" },
   },
   openGraph: {
     title: "Free Dating App for Switzerland — Geneva, Lausanne, Zurich | Embir",
-    description: "Embir arrives in Switzerland: free at launch, with verified profiles, multilingual expectations, and compatibility-first dating.",
+    description: "Embir arrives in Switzerland: core connection features are free, with verified profiles, multilingual expectations, and compatibility-first dating.",
     url: "https://embir.xyz/switzerland",
     locale: "en_US",
     siteName: "Embir",
     images: [`/api/og?title=Free+Dating+App+for+Switzerland+—+Geneva,+Lausanne,+Zurich+%7C+Embir&variant=market`],
   },
-  twitter: { card: "summary_large_image", title: "Free Dating App for Switzerland | Embir", description: "Embir arrives in Switzerland: free at launch, verified profiles, and compatibility-first dating.", images: [`/api/og?title=Free+Dating+App+for+Switzerland+—+Geneva,+Lausanne,+Zurich+%7C+Embir&variant=default`] },
+  twitter: { card: "summary_large_image", title: "Free Dating App for Switzerland | Embir", description: "Embir arrives in Switzerland: core connection features are free, verified profiles, and compatibility-first dating.", images: [`/api/og?title=Free+Dating+App+for+Switzerland+—+Geneva,+Lausanne,+Zurich+%7C+Embir&variant=default`] },
   robots: { index: true, follow: true },
 };
 
@@ -69,7 +69,7 @@ export default function Page() {
               {[
                 ["Is Embir available in German or Italian?", "Embir currently supports French and English. Swiss German, German, and Italian speakers can use the English interface. Additional languages may be added based on community demand."],
                 ["Can I date across Swiss cities?", "Yes. Embir lets you set your discovery range. The Swiss rail network makes inter-city dating practical — Lausanne to Geneva is 40 minutes, Zurich to Bern is under an hour."],
-                ["Is Embir free in Switzerland?", "Yes, completely free during the launch phase. All core features — messaging, matching, verification — are free for founding members."],
+                ["Is Embir free in Switzerland?", "Yes, free for core connections. All core features — messaging, matching, verification — are free for founding members."],
                 ["How does Embir handle cross-border dating?", "Switzerland's borders are porous for dating. Embir doesn't restrict you by country. Your preferences and compatibility signals matter more than which side of a border you live on."],
               ].map(([q, a]) => (
                 <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">

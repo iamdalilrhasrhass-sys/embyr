@@ -67,7 +67,7 @@ export default function MembresPage() {
           {!isPremium && !loading && (
             <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-[#ff5e36]/15 bg-[#ff5e36]/[0.035] backdrop-blur-sm">
               <span className="text-white/50">
-                Accès gratuit au lancement.{" "}
+                Accès gratuit pour les connexions essentielles.{" "}
                 <span className="text-[#ffa333]/90">
                   Invite des vrais profils Paris / IDF pour densifier la communauté.
                 </span>

@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     fr: "Rencontres à Manchester — Profils Vérifiés, Compatibilité Réelle | Embir",
   };
   const descriptions: Record<string, string> = {
-    en: "Manchester dating app: verified profiles, compatibility matching, and a founding community across Northern Quarter, Didsbury, Chorlton, and beyond. Free at launch for Manchester founding members.",
-    fr: "Application de rencontre à Manchester : profils vérifiés, matching par compatibilité, et une communauté fondatrice. Gratuite au lancement.",
+    en: "Manchester dating app: verified profiles, compatibility matching, and a founding community across Northern Quarter, Didsbury, Chorlton, and beyond. core connection features are free for Manchester founding members.",
+    fr: "Application de rencontre à Manchester : profils vérifiés, matching par compatibilité, et une communauté fondatrice. gratuite pour les connexions essentielles.",
   };
   return {
     title: titles[locale] ?? titles.en,
@@ -68,8 +68,8 @@ export default function Page() {
           </div>
 
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
-            <h2 className="font-serif text-2xl text-white">Free at launch — because Manchester rents are enough</h2>
-            <p className="mt-4">Manchester living costs have soared, but Embir is free during launch. Create your profile, set your preferences, browse compatible people, send messages — all without a subscription. When a freemium model arrives later, it will fund the mobile app, verification, and moderation. Core features stay accessible. Founding members get advance notice.</p>
+            <h2 className="font-serif text-2xl text-white">Core connections without another Manchester subscription</h2>
+            <p className="mt-4">Manchester living costs have soared, but Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
 
           <div>
@@ -95,7 +95,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Frequently asked questions</h2>
             <div className="mt-6 space-y-3">
               {[
-                ["How many members does Embir have in Manchester?", "Embir is in its launch phase. We&apos;re building the Manchester founding community right now — starting with a core of verified members. No inflated numbers. Growth happens through invitations and word of mouth across neighbourhoods like the Northern Quarter, Chorlton, and Didsbury."],
+                ["How many members does Embir have in Manchester?", "Embir is in its core connection experience. We&apos;re building the Manchester founding community right now — starting with a core of verified members. No inflated numbers. Growth happens through invitations and word of mouth across neighbourhoods like the Northern Quarter, Chorlton, and Didsbury."],
                 ["Is Embir only for gay dating in Manchester?", "No. Embir serves all orientations. Manchester&apos;s LGBTQ+ community is a vital part of the platform, but straight, bi, trans, and queer daters all share the same space. Orientation controls ensure you only see compatible profiles."],
                 ["How is Embir different from Tinder in Manchester?", "Tinder in Manchester is the same swipe grind you&apos;ll find anywhere. Embir focuses on compatibility, verified profiles, and clearer intentions. Fewer dead-end matches, more connections with potential — in a city where everyone deserves better than endless swiping."],
                 ["Is Embir a good alternative to Bumble in Manchester?", "If you want a platform where all genders initiate equally and compatibility matters more than who messages first, yes. Embir doesn&apos;t impose gendered messaging rules. Verified profiles and compatibility signals help you find people you&apos;re genuinely aligned with."],
@@ -112,7 +112,7 @@ export default function Page() {
 
         <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the Manchester founding community</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Manchester members. Verified profile. Real compatibility. Free during launch. Help build a dating culture that Manchester can be proud of — from the Northern Quarter to the suburbs.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Manchester members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture that Manchester can be proud of — from the Northern Quarter to the suburbs.</p>
           <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
         </section>
 

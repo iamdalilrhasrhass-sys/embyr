@@ -32,7 +32,6 @@ const focusRing =
 
 export default function Navbar({ showLogo }: { showLogo?: boolean }) {
   const t = useTranslations("nav");
-  const tAuth = useTranslations("auth");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);

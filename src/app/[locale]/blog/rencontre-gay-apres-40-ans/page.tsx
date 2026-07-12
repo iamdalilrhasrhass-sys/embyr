@@ -36,12 +36,12 @@ export default function Page() {
           <h2>2. Le contexte</h2>
           <p>Les utilisateurs d'applis de rencontre expriment une lassitude croissante face au swipe infini, aux profils non vérifiés et aux abonnements coûteux. <strong>Embir répond à ces frustrations</strong> avec une approche radicalement différente.</p>
           <h2>3. Ce qui fait la différence</h2>
-          <ul><li><strong>Profils vérifiés :</strong> la vérification par selfie est proposée à tous les membres.</li><li><strong>Matching IA :</strong> notre système de compatibilité suggère des profils adaptés à vos préférences.</li><li><strong>100% gratuit au lancement :</strong> messagerie illimitée, zéro pub.</li></ul>
+          <ul><li><strong>Profils vérifiés :</strong> la vérification par selfie est proposée à tous les membres.</li><li><strong>compatibilité réciproque :</strong> notre système de compatibilité suggère des profils adaptés à vos préférences.</li><li><strong>Connexions essentielles gratuites :</strong> Messagerie entre connexions réciproques, zéro pub.</li></ul>
           <h2>4. Nos recommandations</h2>
           <p>Pour une expérience de rencontre réussie, privilégiez toujours les plateformes qui vérifient leurs membres, respectent votre vie privée et ne vous enferment pas dans un abonnement.</p>
           <h2>5. FAQ</h2>
-          <h3>Embir est-il vraiment gratuit ?</h3><p>Oui. Pendant la phase de lancement, toutes les fonctionnalités sont gratuites.</p>
-          <h3>Comment les profils sont-ils vérifiés ?</h3><p>Par selfie en temps réel. Notre IA compare la photo de profil avec un selfie pris sur le moment.</p>
+          <h3>Embir est-il vraiment gratuit ?</h3><p>Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.</p>
+          <h3>Comment les profils sont-ils vérifiés ?</h3><p>La vérification est facultative : le membre envoie un selfie avec un code unique. Si la demande est approuvée, un badge visible apparaît sur son profil.</p>
         </div>
       </section>
       <section className="px-4 py-16 text-center">

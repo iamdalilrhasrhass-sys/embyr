@@ -1,23 +1,23 @@
 {
   "slug": "meilleure-appli-rencontre-gratuite",
-  "intro": "Trouver la meilleure appli de rencontre gratuite en 2026 est plus difficile qu'il n'y parait. La plupart des grandes plateformes pretendent etre gratuites mais bridgent l'experience essentielle derriere un paywall.\n\nEmbir est vraiment gratuit pendant la phase de lancement. Decouverte, matching et messagerie accessibles sans carte bancaire.",
+  "intro": "Trouver la meilleure appli de rencontre gratuite en 2026 est plus difficile qu'il n'y parait. La plupart des grandes plateformes pretendent etre gratuites mais bridgent l'experience essentielle derriere un paywall.\n\nEmbir est vraiment gratuit pour les connexions essentielles. Decouverte, matching et messagerie accessibles sans carte bancaire.",
   "comparisonTable": [
     {
       "criteria": "Messagerie gratuite",
       "competitor": "La plupart : necessite abonnement",
-      "embir": "Gratuite au lancement",
+      "embir": "gratuite pour les connexions essentielles",
       "winner": "embir"
     },
     {
-      "criteria": "Likes illimites",
+      "criteria": "sélection quotidienne courte",
       "competitor": "La plupart : limite quotidienne puis paywall",
-      "embir": "Pas de limites artificielles pendant le lancement",
+      "embir": "Pas de limites artificielles sur les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Voir qui a like mon profil",
       "competitor": "La plupart : payant",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -36,7 +36,7 @@
   "sections": [
     {
       "title": "Ce que gratuit veut vraiment dire selon les apps",
-      "content": "Tinder Gratuit : swiper, matcher, mais pas de filtres avances, pas de rewind, pas de boost. Bumble Gratuit : quelques fonctionnalites, pas d'extensions de matchs. Hinge Gratuit : quelques likes par jour puis paywall. Embir Phase de Lancement : decouverte, matching de compatibilite, messagerie. Sans carte bancaire. Sans limite artificielle. Sans frustration engineeree.",
+      "content": "Tinder Gratuit : swiper, matcher, mais pas de filtres avances, pas de rewind, pas de boost. Bumble Gratuit : quelques fonctionnalites, pas d'extensions de matchs. Hinge Gratuit : quelques likes par jour puis paywall. L’expérience Embir : decouverte, matching de compatibilite, messagerie. Sans carte bancaire. Sans limite artificielle. Sans frustration engineeree.",
       "highlights": [
         "Messagerie complete gratuite — envoie et recois sans mur",
         "Decouverte et matching sans limites quotidiennes",
@@ -44,20 +44,20 @@
       ]
     }
   ],
-  "verdict": "La meilleure app de rencontre vraiment gratuite en 2026 est Embir pendant sa phase de lancement. Fonctionnalites completes, aucun abonnement requis, pas de carte bancaire necessaire, aucune pub.",
-  "ctaText": "Vraiment gratuit — rejoins pendant le lancement",
+  "verdict": "La meilleure app de rencontre vraiment gratuite en 2026 est Embir pendant sa expérience de connexion. Fonctionnalites completes, aucun abonnement requis, pas de carte bancaire necessaire, aucune pub.",
+  "ctaText": "Rencontre sans carte bancaire",
   "faq": [
     {
       "q": "Embir est-il vraiment completement gratuit ?",
-      "a": "Pendant la phase de lancement, les fonctionnalites principales — decouverte, compatibilite, messagerie — sont gratuites. Aucun abonnement, aucune carte bancaire, aucune limite cachee."
+      "a": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."
     },
     {
       "q": "Embir a-t-il des pubs sur le tier gratuit ?",
       "a": "Non. Embir n'a aucun modele publicitaire."
     },
     {
-      "q": "Quand Embir ajoutera-t-il un tier premium ?",
-      "a": "Les membres fondateurs sont prevenus a l'avance. Les fonctionnalites de connexion principales restent accessibles."
+      "q": "Comment fonctionnent les services facultatifs ?",
+      "a": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les services facultatifs restent séparés et ne remplacent ni la compatibilité, ni la réciprocité, ni le consentement."
     }
   ]
 }

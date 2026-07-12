@@ -23,13 +23,13 @@
     {
       "criteria": "Verification",
       "competitor": "Most: optional",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free access",
       "competitor": "Most: paywall before success",
-      "embir": "Full access free during launch",
+      "embir": "Full access free for core connections",
       "winner": "embir"
     }
   ],
@@ -53,7 +53,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Core features free during the launch phase."
+      "a": "Yes. Free core connection features."
     },
     {
       "q": "Is Embir available worldwide?",

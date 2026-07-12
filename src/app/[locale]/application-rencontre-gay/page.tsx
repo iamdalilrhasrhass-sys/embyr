@@ -5,7 +5,7 @@ import PageTypeTracker from "@/components/PageTypeTracker";
 
 export const metadata: Metadata = {
   title: "Application de rencontre gay gratuite en France — Profils vérifiés, sans pub",
-  description: "Embir est une application de rencontre gay 100% gratuite pensée pour la France. Profils vérifiés, matching intelligent, zéro pub et messagerie illimitée. Disponible à Paris, Lyon, Marseille, Toulouse et partout en France.",
+  description: "Embir est une application de rencontre gay dont les connexions essentielles sont gratuites pensée pour la France. Profils vérifiés, matching intelligent, zéro pub et Messagerie entre connexions réciproques. Disponible à Paris, Lyon, Marseille, Toulouse et partout en France.",
   alternates: {
     canonical: "https://embir.xyz/application-rencontre-gay",
     languages: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Application de rencontre gay gratuite en France",
-    description: "100% gratuite, profils vérifiés, sans publicité. L'application de rencontre gay pensée pour les hommes en France.",
+    description: "connexions essentielles gratuites, profils vérifiés, sans publicité. L'application de rencontre gay pensée pour les hommes en France.",
     url: "https://embir.xyz/application-rencontre-gay",
     locale: "fr_FR",
     images: [`/api/og?title=Application+de+rencontre+gay+gratuite+en+France&variant=market`],
@@ -40,9 +40,9 @@ export default function Page() {
             <span className="text-[#d4a574]">vraiment gratuite en France.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/50">
-            Embir est une nouvelle application de rencontre gay, conçue pour les hommes 
-            qui cherchent des connexions authentiques. Profils vérifiés, matching intelligent, 
-            zéro publicité, messagerie illimitée et gratuite — disponible à Paris, Lyon, 
+            Embir est une nouvelle application de rencontre gay, conçue pour les hommes
+            qui cherchent des connexions authentiques. Profils vérifiés, matching intelligent,
+            zéro publicité, Messagerie entre connexions réciproques et gratuite — disponible à Paris, Lyon,
             Marseille, Toulouse, Nice et dans toute la France.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -66,32 +66,31 @@ export default function Page() {
               <span className="text-white/50">sont devenues des supermarchés.</span>
             </h2>
             <p className="mt-5 text-white/45 leading-relaxed">
-              Entre les abonnements à 15-30 € par mois, les pubs toutes les trois secondes, 
-              les faux profils qui pullulent et les fonctionnalités basiques verrouillées derrière 
-              des paywalls, les applications de rencontre gay ressemblent plus à des machines 
+              Entre les abonnements à 15-30 € par mois, les pubs toutes les trois secondes,
+              les faux profils qui pullulent et les fonctionnalités basiques verrouillées derrière
+              des paywalls, les applications de rencontre gay ressemblent plus à des machines
               à cash qu&apos;à des espaces de connexion humaine.
             </p>
             <p className="mt-4 text-white/45 leading-relaxed">
-              Embir repart de zéro avec une question simple : à quoi ressemblerait une appli 
-              de rencontre si elle respectait vraiment ses utilisateurs ? La réponse : gratuite, 
-              vérifiée, sans pub, et pensée pour la compatibilité réelle — pas juste la proximité 
+              Embir repart de zéro avec une question simple : à quoi ressemblerait une appli
+              de rencontre si elle respectait vraiment ses utilisateurs ? La réponse : gratuite,
+              vérifiée, sans pub, et pensée pour la compatibilité réelle — pas juste la proximité
               géographique.
             </p>
             <p className="mt-4 text-white/45 leading-relaxed">
-              Pendant le lancement en France, tout est gratuit. Les membres fondateurs conservent 
-              l&apos;accès premium à vie — sans condition, sans astérisque.
+              Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les membres fondateurs contribuent aux choix produit.
             </p>
           </div>
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
             <h3 className="text-lg font-bold text-white mb-6">Ce qu&apos;Embir vous offre</h3>
             <ul className="space-y-4">
               {[
-                { label: "Messagerie illimitée", desc: "Pas de quotas, pas de match obligatoire pour parler, pas de paywall." },
-                { label: "Profils vérifiés", desc: "Chaque membre vérifie son identité par selfie. Pas de bots, pas de faux comptes." },
-                { label: "Matching intelligent", desc: "Notre IA DeepSeek analyse vos préférences et suggère des personnes vraiment compatibles." },
+                { label: "Messagerie réciproque", desc: "La conversation s'ouvre après une connexion mutuelle et les étapes de révélation prévues." },
+                { label: "Profils vérifiés", desc: "Chaque membre peut demander une vérification par selfie. Les profils approuvés affichent un badge ; aucun système ne garantit l’absence de bots ou de faux comptes." },
+                { label: "Matching intelligent", desc: "Le moteur applique vos préférences déclarées dans les deux sens et explique les principaux points de compatibilité." },
                 { label: "Zéro publicité", desc: "Pas de bannières, pas de pubs interstitielles, pas de profils sponsorisés." },
                 { label: "Présent dans toute la France", desc: "Paris, Lyon, Marseille, Toulouse, Nice, Lille, Bordeaux, et partout ailleurs." },
-                { label: "Respect et sécurité", desc: "Modération humaine, confidentialité stricte, signalement facile." },
+                { label: "Outils de sécurité", desc: "Blocage immédiat, signalement enregistré et contrôles de confidentialité." },
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span className="mt-0.5 shrink-0 h-5 w-5 rounded-full bg-[#d4a574]/10 text-[#d4a574] flex items-center justify-center text-xs">✓</span>
@@ -150,10 +149,10 @@ export default function Page() {
               ["Prix", "~15€/mois", "~20€/mois", "Gratuit"],
               ["Publicités", "Partout", "Fréquentes", "Zéro"],
               ["Vérification", "Optionnelle", "Optionnelle", "Obligatoire"],
-              ["Matching IA", "Aucun", "Basique", "DeepSeek IA"],
+              ["compatibilité réciproque", "Aucun", "Basique", "DeepSeek IA"],
               ["Messages gratuits", "Limités", "Match requis", "Illimités"],
               ["Profils", "Basiques", "Basiques", "Détaillés + Tags"],
-              ["Sécurité", "Minimale", "Minimale", "Modération humaine"],
+              ["Sécurité", "Minimale", "Minimale", "signalement et blocage"],
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-4 border-b border-white/[0.02] px-6 py-3.5 last:border-b-0 hover:bg-white/[0.01] transition-colors">
                 <div className="text-sm text-white/60">{row[0]}</div>
@@ -174,11 +173,11 @@ export default function Page() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Est-ce qu'Embir est vraiment gratuit en France ?", a: "Oui. Pendant notre phase de lancement, toutes les fonctionnalités sont entièrement gratuites — messagerie illimitée, profils complets, matching IA, et plus encore. Les membres fondateurs conservent l'accès premium à vie, sans aucun frais." },
-              { q: "Comment Embir vérifie-t-il les profils ?", a: "Chaque nouveau membre passe par une vérification par selfie en temps réel. Notre système vérifie que la photo de profil correspond à un selfie pris sur le moment, ce qui élimine les bots et les faux comptes avant qu'ils n'atteignent la plateforme." },
-              { q: "Embir est-il une alternative à Grindr ?", a: "Oui — et fondamentalement différente. Contrairement à Grindr, Embir n'a aucune publicité, une vérification obligatoire des profils, un matching par IA au lieu d'un simple tri par distance, et c'est entièrement gratuit pendant le lancement. Si vous en avez assez de payer 15€ par mois pour des fonctions basiques, Embir est fait pour vous." },
-              { q: "Dans quelles villes françaises Embir est-il disponible ?", a: "Embir est disponible partout en France, avec nos plus fortes communautés à Paris, Lyon, Marseille, Toulouse, Nice, Lille, Bordeaux et Nantes. Nous grandissons dans de nouvelles villes chaque semaine." },
-              { q: "Est-ce que mes données sont protégées ?", a: "Oui. Embir ne vend pas vos données, n'affiche pas de publicités tierces et ne vous suit pas en dehors de l'application. Vos préférences de profil ne sont visibles que par les personnes avec qui vous êtes compatible." },
+              { q: "Est-ce qu'Embir est vraiment gratuit en France ?", a: "Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les membres fondateurs contribuent aux choix produit." },
+              { q: "Comment fonctionne la vérification ?", a: "La vérification selfie est facultative. Une demande approuvée ajoute un badge visible ; ce badge ne prouve ni l'identité complète ni les intentions." },
+              { q: "Embir est-il une alternative à Grindr ?", a: "Embir utilise les préférences déclarées dans les deux sens plutôt qu'un simple tri par distance. Le blocage, le signalement et un badge selfie facultatif sont disponibles. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire." },
+              { q: "Dans quelles villes françaises Embir est-il disponible ?", a: "Les inscriptions sont ouvertes partout en France. Embir ne publie pas de classement de densité locale sans données mesurées suffisantes." },
+              { q: "Comment la mesure d'audience fonctionne-t-elle ?", a: "La mesure d'audience est soumise au consentement. Les préférences sensibles restent protégées par les contrôles d'accès du produit." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                 <summary className="cursor-pointer px-6 py-5 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">
@@ -202,7 +201,7 @@ export default function Page() {
           <Link href="/auth/register?source=fr-landing" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
             Créer mon profil gratuit
           </Link>
-          <p className="mt-4 text-xs text-white/20">18+ uniquement. Gratuit pendant le lancement. Sans engagement.</p>
+          <p className="mt-4 text-xs text-white/20">18+ uniquement. Les connexions essentielles sont gratuites. Sans engagement.</p>
         </div>
       </section>
 

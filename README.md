@@ -1,6 +1,6 @@
-# Embir — Free Gay Dating App
+# Embir — Connection platform
 
-**Verified profiles. AI-powered matching. Zero ads. Free at launch.**
+**Reciprocal preferences, optional selfie badge, reporting and blocking.**
 
 [embir.xyz](https://embir.xyz) — Create your free profile
 
@@ -12,19 +12,19 @@ Most gay dating apps charge $20-40/month for basic messaging, are flooded with b
 
 | Feature | Grindr | Tinder | Scruff | Embir |
 |---------|:------:|:------:|:------:|:-----:|
-| Monthly price | ~$30 | ~$25 | ~$20 | Free |
-| Ads | Yes | Yes | Yes | Zero |
-| Free messages | Limited | Limited | Limited | Unlimited |
-| Profile verification | Optional | Optional | Optional | Mandatory |
-| AI matching | No | Basic | No | DeepSeek |
-| Languages | 10+ | 40+ | 10+ | 25+ |
+| Core connection path | Varies | Varies | Varies | No credit card |
+| Discovery | Varies | Varies | Varies | Short reciprocal selection |
+| Messaging | Varies | Varies | Varies | Reciprocal connections |
+| Selfie badge | Varies | Varies | Varies | Optional |
+| Compatibility | Varies | Varies | Varies | Declared reciprocal preferences |
+| Public languages | Varies | Varies | Varies | English and French |
 
 ## Features
 
-- **100% free at launch** — everything unlocked, zero paywalls
-- **25 languages** — built-in message translation
-- **Verified profiles** — mandatory selfie check, no catfish
-- **AI matching** — DeepSeek analyzes compatibility
+- **Core connection path** — everything needed to meet someone is free; no credit card required
+- **English and French** — current public experience
+- **Optional selfie badge** — approved requests display a visible badge; no system eliminates every risk
+- **reciprocal compatibility** — uses declared reciprocal preferences
 - **Zero ads** — no banners, no interstitials, no sponsored profiles
 - **Privacy-first** — email signup, no data selling
 
@@ -48,8 +48,8 @@ Most gay dating apps charge $20-40/month for basic messaging, are flooded with b
 
 ## Tech Stack
 
-Next.js 16 · TypeScript · Prisma · PostgreSQL · DeepSeek AI
+Next.js 16 · TypeScript · Prisma · PostgreSQL
 
 ---
 
-Built from real frustration with existing dating apps. Free during founding member phase. No ads, no data selling, no paywalls.
+Built from real frustration with existing dating apps. Everything needed to meet someone is free. No credit card required.

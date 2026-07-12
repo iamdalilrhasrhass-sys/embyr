@@ -1,23 +1,23 @@
 {
   "slug": "best-dating-app-no-paywall",
-  "intro": "Every major dating app claims to be 'free'. In practice, most free tiers are deliberately limited: you can create a profile and see some matches, but messaging, seeing who liked you, and compatibility filters require a subscription.\n\nEmbir's launch phase is genuinely free. Core discovery, compatibility matching, and messaging work without a credit card.",
+  "intro": "Every major dating app claims to be 'free'. In practice, most free tiers are deliberately limited: you can create a profile and see some matches, but messaging, seeing who liked you, and compatibility filters require a subscription.\n\nEmbir's core connection experience is genuinely free. Core discovery, compatibility matching, and messaging work without a credit card.",
   "comparisonTable": [
     {
       "criteria": "Free messaging",
       "competitor": "Most: requires subscription",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     },
     {
-      "criteria": "Unlimited likes",
+      "criteria": "a short daily selection",
       "competitor": "Most: daily limit then paywall",
-      "embir": "No artificial limits during launch",
+      "embir": "no artificial frustration in core connections",
       "winner": "embir"
     },
     {
       "criteria": "See who liked you",
       "competitor": "Most: paid feature",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     },
     {
@@ -36,7 +36,7 @@
   "sections": [
     {
       "title": "What 'free' actually means on each app",
-      "content": "Tinder Free: swipe and match, but can't see who liked you, no advanced filters, no rewind. Bumble Free: some features, but 24h pressure mechanics. Hinge Free: a few likes per day then paywall. Embir Launch Phase: core discovery, compatibility matching, messaging — all free. No credit card. No daily limit. No engineered frustration.",
+      "content": "Tinder Free: swipe and match, but can't see who liked you, no advanced filters, no rewind. Bumble Free: some features, but 24h pressure mechanics. Hinge Free: a few likes per day then paywall. Embir's core connection experience: core discovery, compatibility matching, messaging — all free. No credit card. No daily limit. No engineered frustration.",
       "highlights": [
         "Full messaging free — send and receive without walls",
         "Discovery and compatibility matching without daily limits",
@@ -44,20 +44,20 @@
       ]
     }
   ],
-  "verdict": "The best dating app with no paywall in 2026 is Embir during its launch phase. Full features, no subscription required, no credit card, no ads.",
-  "ctaText": "Genuinely free — join during launch",
+  "verdict": "The best dating app with no paywall in 2026 is Embir for core connection features. Full features, no subscription required, no credit card, no ads.",
+  "ctaText": "Genuinely free — join without a credit card",
   "faq": [
     {
-      "q": "Is Embir genuinely completely free?",
-      "a": "During the launch phase, core features — discovery, compatibility, messaging — are free. No subscription, no credit card, no hidden limits."
+      "q": "Is Embir genuinely free for core connections?",
+      "a": "for core connection features, core features — discovery, compatibility, messaging — are free. No subscription, no credit card, no hidden limits."
     },
     {
       "q": "Does Embir have ads?",
       "a": "No. Embir has no advertising model."
     },
     {
-      "q": "When will Embir add a premium tier?",
-      "a": "Founding members are notified in advance. Core connection features remain accessible. The transition will be fully transparent."
+      "q": "How do optional services work?",
+      "a": "Everything needed to meet someone is free. No credit card required. Optional services are clearly separated and cannot replace compatibility, reciprocity or consent."
     }
   ]
 }

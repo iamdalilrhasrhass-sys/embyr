@@ -10,8 +10,8 @@ test("resolves Swiss landing and city pages in English and French", () => {
   const zurich = resolveMarketCityPage("switzerland", "zurich", "en");
   const geneva = resolveMarketCityPage("switzerland", "geneve", "fr");
 
-  assert.equal(englishLanding?.h1, "A free-at-launch dating platform for Switzerland");
-  assert.equal(frenchLanding?.h1, "Une application de rencontre gratuite au lancement en Suisse");
+  assert.equal(englishLanding?.h1, "Dating in Switzerland — core connections without a credit card");
+  assert.equal(frenchLanding?.h1, "Application de rencontre gratuite en Suisse — Genève, Lausanne, Zurich");
   assert.equal(zurich?.city, "Zurich");
   assert.equal(geneva?.city, "Geneve");
   assert.ok(staticParams.switzerland.some((item) => item.locale === "fr" && item.slug === "geneve"));

@@ -7,11 +7,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale } = await params;
   const url = locale === "fr" ? "https://embir.xyz/fr/profils-verifies" : "https://embir.xyz/verified-dating-app";
   const title = locale === "fr"
-    ? "Application de rencontre vérifiée — Profils selfie, vraies personnes | Embir"
-    : "Verified Dating App — Selfie-Checked Profiles, Real People | Embir";
+    ? "Badge selfie facultatif : fonctionnement et limites | Embir"
+    : "Optional Selfie Badge: How It Works and Its Limits | Embir";
   const description = locale === "fr"
-    ? "Embir vérifie les profils par selfie pour réduire les faux comptes. Moins de catfish, moins de bots, plus de vraies connexions. Gratuit pendant le lancement pour les membres fondateurs."
-    : "Embir verifies profiles by selfie to reduce fake accounts. Less catfishing, fewer bots, more real connections. Free during launch for founding members.";
+    ? "La vérification selfie est facultative sur Embir. Une demande approuvée ajoute un badge visible, sans garantir l'identité complète ni l'absence de risque."
+    : "Selfie verification is optional on Embir. An approved request adds a visible badge without guaranteeing full identity or the absence of risk.";
   return {
     title, description,
     metadataBase: new URL("https://embir.xyz"),
@@ -28,74 +28,73 @@ export default async function VerifiedDatingAppPage({ params }: { params: Params
 
   const content = isFr ? {
     badge: "Confiance",
-    h1: "Rencontre vérifiée : savoir à qui tu parles vraiment",
-    intro: "La plus grande frustration avec les applis de rencontre, ce n'est pas le matching. C'est de découvrir que la personne avec qui tu échanges depuis des jours n'existe pas. Embir s'attaque à ce problème de front avec la vérification par selfie — une barrière simple et efficace contre les faux profils.",
+    h1: "Badge selfie : ce qu'il indique, et ce qu'il ne prouve pas",
+    intro: "Embir propose une vérification selfie facultative avec un code unique. Une demande approuvée ajoute un badge visible, sans prouver l'identité complète, l'âge, les intentions ou la sécurité d'une rencontre.",
     sections: [
       {
         title: "Le problème des faux profils sur les applis de rencontre",
         paragraphs: [
-          "Les faux profils ne sont pas une nuisance mineure — ils sont le problème numéro un qui pourrit l'expérience des applis de rencontre. Catfish, bots, arnaqueurs, profils qui utilisent des photos volées : tout ça érode la confiance et rend chaque interaction suspecte. Quand tu ne sais pas si la personne derrière l'écran est réelle, chaque conversation devient une enquête.",
-          "Les études montrent qu'entre 10% et 30% des profils sur les applis de rencontre grand public sont faux ou inactifs. Sur certaines plateformes, ce chiffre grimpe encore plus haut. Le résultat : les utilisateurs légitimes passent leur temps à filtrer le bruit au lieu de faire de vraies rencontres. La fatigue s'installe, la confiance s'effrite, et l'appli devient un jeu de détective plutôt qu'un outil de connexion humaine.",
+          "Les faux profils, les bots et les photos volées peuvent éroder la confiance. Aucun pourcentage universel ne s'applique à toutes les plateformes, donc Embir ne publie pas d'estimation de marché non sourcée.",
           "Embir part d'un constat simple : la confiance doit être la fondation, pas une fonctionnalité secondaire. C'est pour ça que la vérification est intégrée au cœur du produit, pas ajoutée après coup comme un bonus."
         ],
       },
       {
         title: "Comment fonctionne la vérification par selfie",
         paragraphs: [
-          "Quand tu crées ton profil sur Embir, tu peux le vérifier en prenant un selfie en temps réel. Notre système compare ce selfie avec tes photos de profil. S'ils correspondent, tu reçois un badge vérifié sur ton profil. Ce badge indique à tout le monde que tu es une vraie personne — pas un catfish, pas un bot, pas quelqu'un qui utilise des photos volées.",
-          "La vérification est optionnelle mais fortement encouragée. Les profils sans badge ne sont pas pénalisés, mais les profils vérifiés obtiennent généralement plus d'interactions authentiques parce que les autres membres savent qu'ils sont réels.",
-          "Le selfie de vérification n'est pas stocké publiquement. Il est comparé avec tes photos de profil puis supprimé. Seul le badge vérifié reste visible. Nous ne conservons pas l'image du selfie au-delà de la vérification, sauf obligation légale contraire."
+          "La vérification est facultative : tu envoies un selfie avec le code unique demandé. Si la demande est approuvée, un badge visible apparaît. Ce badge ne prouve ni l'identité complète, ni l'âge, ni les intentions.",
+          "Les profils sans badge restent accessibles selon les mêmes critères de compatibilité. Le badge est un signal limité et ne garantit aucun niveau d'interaction.",
+          "Le selfie de vérification n'est pas public. Il est stocké dans un espace privé pour le traitement de la demande et n'est accessible qu'aux comptes autorisés."
         ],
       },
       {
         title: "Pourquoi la vérification change tout",
         cards: [
-          ["Moins de faux profils", "La vérification selfie crée une vraie barrière. Créer un faux compte nécessite de passer un contrôle photo en direct, ce qui est nettement plus difficile que de télécharger des photos volées. Les bots et les usines à faux profils évitent les plateformes qui demandent ce type de vérification."],
-          ["Moins de catfishing", "Le catfishing repose sur de fausses photos. La vérification rend beaucoup plus difficile de se faire passer pour quelqu'un d'autre. Les signalements de catfish sont pris au sérieux et les comptes concernés sont supprimés après enquête."],
-          ["Confiance plus rapide", "Quand tu vois le badge vérifié, tu peux sauter la phase « est-ce que cette personne est réelle ? » et te concentrer sur ce qui compte vraiment : êtes-vous compatibles ?"],
-          ["Premiers rendez-vous plus sûrs", "Rencontrer quelqu'un qui a vérifié son identité réduit un risque majeur. Tu dois toujours prendre des précautions normales, mais au moins tu sais que la personne correspond à ses photos."],
+          ["Un signal visible", "Le badge indique seulement qu'une demande avec selfie et code unique a été approuvée."],
+          ["Blocage et signalement", "Si un profil paraît suspect, tu peux le bloquer immédiatement et transmettre un signalement pour examen."],
+          ["Confiance plus rapide", "Le badge indique seulement qu'un contrôle selfie a été approuvé. Continue à évaluer le profil et la conversation avec prudence."],
+          ["Précautions de rencontre", "Un badge ne garantit ni l'identité complète ni la sécurité d'une rencontre. Garde les précautions habituelles, badge ou non."],
         ],
       },
       {
         title: "Les limites honnêtes de la vérification",
         paragraphs: [
-          "Soyons transparents. La vérification selfie confirme qu'une personne est réelle et correspond à ses photos. Elle ne garantit PAS les bonnes intentions, l'honnêteté sur l'âge ou la situation amoureuse, ni un comportement sûr.",
+          "Soyons transparents. La vérification selfie indique qu'un contrôle selfie a été approuvé. Elle ne garantit PAS les bonnes intentions, l'honnêteté sur l'âge ou la situation amoureuse, ni un comportement sûr.",
           "Un badge vérifié ne veut pas dire « cette personne est sûre » — il veut dire « cette personne a passé un contrôle photo ». Cette distinction est importante, et nous ne la masquons pas derrière un discours marketing rassurant.",
-          "C'est pour ça qu'Embir combine la vérification avec d'autres couches de sécurité : modération humaine, signalement facile, blocage instantané, et des règles communautaires claires. Aucun outil ne garantit la sécurité à lui seul — c'est la combinaison des outils qui réduit le risque."
+          "C'est pour ça qu'Embir combine la vérification avec d'autres couches de sécurité : signalement et blocage, signalement facile, blocage instantané, et des règles communautaires claires. Aucun outil ne garantit la sécurité à lui seul — c'est la combinaison des outils qui réduit le risque."
         ],
       },
       {
         title: "Au-delà de la vérification : nos couches de confiance",
         cards: [
-          ["Signalement", "Chaque profil et chaque conversation a un bouton de signalement en un clic. Les signalements vont à des modérateurs humains, pas juste à un algorithme."],
+          ["Signalement", "Chaque profil et conversation dispose d'un bouton de signalement. Le signalement est enregistré pour examen et le blocage est immédiat."],
           ["Blocage", "Bloque n'importe qui instantanément. La personne perd tout accès à ton profil et à vos messages. Pas d'appel, pas de contournement."],
-          ["Modération humaine", "Notre équipe examine les signalements quotidiennement. Les faux profils sont supprimés. Le harcèlement entraîne la suspension ou le bannissement."],
+          ["signalement et blocage", "Les outils de signalement enregistrent les alertes et le blocage est immédiat. Aucun système ne garantit l’absence de faux profil ou de harcèlement."],
           ["Préférences et visibilité", "Tes paramètres d'orientation et de préférences contrôlent qui peut voir ton profil. Ça réduit l'attention non désirée avant même qu'elle n'arrive."],
         ],
       },
       {
         title: "Ce que la vérification ne remplace pas",
         paragraphs: [
-          "La vérification est un outil puissant, pas une solution magique. Elle réduit le risque de faux profils, mais elle ne remplace pas le bon sens. Voici nos conseils pour des rencontres plus sûres, même avec des profils vérifiés :",
+          "La vérification est un signal limité, pas une solution magique. Elle ne remplace pas le jugement ni les précautions habituelles :",
         ],
         bullets: [
           "Garde les conversations sur Embir jusqu'à ce que tu sois à l'aise pour passer à une autre plateforme",
-          "Fais un appel vidéo avant un premier rendez-vous en personne — voir quelqu'un en mouvement confirme ce que la vérification a déjà établi",
+          "Fais un appel vidéo avant un premier rendez-vous si tu le souhaites ; cela ne remplace pas les précautions habituelles",
           "Choisis un lieu public pour le premier rendez-vous et préviens un ami de l'endroit où tu vas",
           "Fais confiance à ton instinct — si quelque chose te semble anormal, n'hésite pas à partir ou à annuler",
-          "Signale tout comportement suspect, même si tu n'es pas sûr — l'équipe de modération examinera le contexte",
+          "Signale tout comportement suspect ; le signalement est enregistré pour examen et tu peux bloquer immédiatement",
         ],
       },
     ],
     faq: [
       ["La vérification est-elle obligatoire ?", "Non, mais nous la recommandons fortement. Les profils vérifiés ont tendance à avoir de meilleures expériences parce que les autres membres leur font confiance plus rapidement."],
-      ["Qu'arrive-t-il à mon selfie de vérification ?", "Il est comparé avec tes photos de profil puis supprimé. Il n'est pas stocké, affiché ni partagé. La seule chose qui reste, c'est ton badge vérifié."],
+      ["Qu'arrive-t-il à mon selfie de vérification ?", "Il n'est pas public. Il est stocké dans un espace privé pour traiter la demande et son accès est limité aux comptes autorisés."],
       ["Peut-on contourner la vérification selfie ?", "Aucun système n'est parfait, mais la vérification par selfie en direct est nettement plus difficile à falsifier que le téléchargement de photos statiques. Nous améliorons continuellement notre détection."],
       ["Que faire si une personne vérifiée me harcèle ?", "Signale-la. La vérification ne protège personne des conséquences d'un mauvais comportement. Les utilisateurs vérifiés qui violent les règles perdent leur compte comme tout le monde."],
       ["Embir vend-il mes données de vérification ?", "Non. Embir ne vend aucune donnée utilisateur. Notre modèle économique est un futur freemium, pas la monétisation des données."],
-      ["La vérification remplace-t-elle un background check ?", "Non. La vérification selfie confirme l'identité visuelle, pas les antécédents judiciaires ou le statut marital. C'est une couche de confiance, pas un service d'enquête."],
+      ["La vérification remplace-t-elle un background check ?", "Non. La vérification selfie indique qu'un contrôle selfie a été approuvé, pas les antécédents judiciaires ou le statut marital. C'est une couche de confiance, pas un service d'enquête."],
     ],
-    cta: { title: "Rejoins une communauté vérifiée", text: "Crée ton profil, vérifie-le par selfie, et rencontre de vraies personnes qui ont fait la même chose. Gratuit pendant le lancement.", button: "Créer mon profil vérifié gratuit" },
+    cta: { title: "Demande un badge selfie si tu le souhaites", text: "Crée ton profil et demande la vérification facultative si tu le souhaites. Aucun badge ne garantit l'identité complète ni la sécurité.", button: "Créer mon profil vérifié gratuit" },
     explore: [
       ["/safety", "Sécurité"],
       ["/moderation", "Modération"],
@@ -106,74 +105,74 @@ export default async function VerifiedDatingAppPage({ params }: { params: Params
     ],
   } : {
     badge: "Trust",
-    h1: "Verified dating: know who you're talking to",
-    intro: "The biggest frustration with dating apps isn't the matching. It's discovering the person you've been talking to for days doesn't exist. Embir tackles this head-on with selfie verification — a simple, effective barrier against fake profiles that makes the entire experience more trustworthy.",
+    h1: "Selfie badge: what it shows and what it cannot prove",
+    intro: "Embir offers optional selfie verification using a unique code. An approved request adds a visible badge without proving full identity, age, intentions, or the safety of a meeting.",
     sections: [
       {
         title: "The fake profile problem on dating apps",
         paragraphs: [
-          "Fake profiles aren't a minor nuisance — they're the number one issue that ruins the dating app experience. Catfish, bots, scammers, profiles using stolen photos: all of this erodes trust and makes every interaction suspicious. When you don't know if the person behind the screen is real, every conversation becomes an investigation.",
-          "Studies suggest between 10% and 30% of profiles on mainstream dating apps are fake or inactive. On some platforms, the number climbs even higher. The result: legitimate users spend their time filtering noise instead of making real connections. Fatigue sets in, trust erodes, and the app becomes a detective game rather than a tool for human connection.",
+          "Fake profiles, bots, and stolen photos can undermine trust. No universal percentage applies across platforms, so Embir does not publish an unsupported market estimate.",
+          "Fake and inactive profiles can undermine trust. No universal percentage applies across services, so Embir does not publish an unsupported market estimate.",
           "Embir starts from a simple observation: trust should be the foundation, not an afterthought. That's why verification is built into the core of the product, not tacked on as a bonus feature."
         ],
       },
       {
         title: "How selfie verification works",
         paragraphs: [
-          "When you create your profile on Embir, you can verify it by taking a real-time selfie. Our system compares this selfie with your profile photos. If they match, you receive a verified badge on your profile. This badge tells everyone you're a real person — not a catfish, not a bot, not someone using stolen photos.",
-          "Verification is optional but strongly encouraged. Profiles without the badge aren't penalized, but verified profiles tend to get more genuine interactions because other members know they're real.",
-          "The verification selfie is not stored publicly. It is compared with your profile photos and then discarded. Only the verified badge remains visible. We don't retain the selfie image beyond verification, unless legally required otherwise."
+          "Verification is optional: submit a selfie with the requested unique code. If the request is approved, a visible badge appears. It does not prove full identity, age, or intentions.",
+          "Profiles without a badge remain eligible under the same compatibility criteria. The badge is a limited signal and does not guarantee interaction quality.",
+          "The verification selfie is not public. It is stored in private storage to process the request, with access limited to authorized accounts."
         ],
       },
       {
         title: "Why verification changes everything",
         cards: [
-          ["Fewer fake profiles", "Selfie verification creates a real barrier. Creating a fake account requires passing a live photo check, which is significantly harder than uploading stolen photos. Bots and fake profile farms avoid platforms that require this kind of verification."],
-          ["Less catfishing", "Catfishing relies on fake photos. Verification makes it much harder to pretend to be someone else. Reported catfish accounts are investigated and removed."],
-          ["Faster trust", "When you see the verified badge, you can skip the 'are they real?' phase and focus on what actually matters: are you compatible?"],
-          ["Safer first dates", "Meeting someone who has verified their identity reduces one major risk. You still need to practice normal safety precautions, but at least you know the person matches their photos."],
+          ["A visible signal", "The badge only shows that a request using a selfie and unique code was approved."],
+          ["Blocking and reporting", "If a profile seems suspicious, you can block it immediately and submit a report for review."],
+          ["Faster trust", "The badge only shows that a selfie check was approved. Continue to assess the profile and conversation carefully."],
+          ["Meeting precautions", "A badge does not guarantee full identity or the safety of a meeting. Use normal precautions whether a badge is present or not."],
         ],
       },
       {
         title: "Honest limits: what verification doesn't do",
         paragraphs: [
-          "Let's be transparent. Selfie verification confirms a person is real and matches their photos. It does NOT guarantee good intentions, honesty about age or relationship status, or safe behavior.",
+          "Let's be transparent. Selfie verification shows that a selfie check was approved. It does NOT guarantee good intentions, honesty about age or relationship status, or safe behavior.",
           "A verified badge doesn't mean 'this person is safe' — it means 'this person passed a photo check.' This distinction matters, and we don't hide it behind reassuring marketing language.",
-          "That's why Embir combines verification with other safety layers: human moderation, easy reporting, instant blocking, and clear community rules. No single tool guarantees safety — the combination of tools reduces risk."
+          "That's why Embir combines verification with other safety layers: reporting and blocking, easy reporting, instant blocking, and clear community rules. No single tool guarantees safety — the combination of tools reduces risk."
         ],
       },
       {
         title: "Beyond verification: our trust layers",
         cards: [
-          ["Reporting", "Every profile and conversation has a one-tap report button. Reports go to human moderators, not just an algorithm."],
+          ["Reporting", "Every profile and conversation has a report button. Reports are recorded for review and blocking is immediate."],
           ["Blocking", "Block anyone instantly. They lose all access to your profile and messages. No appeals, no workarounds."],
-          ["Human moderation", "Our team reviews reports daily. Fake profiles are removed. Harassment gets accounts suspended or banned."],
+          ["reporting and blocking", "Reporting records alerts and blocking is immediate. No system can guarantee the absence of fake profiles or harassment."],
           ["Preferences & visibility", "Your orientation and preference settings control who can see your profile. This reduces unwanted attention before it happens."],
         ],
       },
       {
         title: "What verification doesn't replace",
         paragraphs: [
-          "Verification is a powerful tool, not a magic solution. It reduces the risk of fake profiles, but it doesn't replace common sense. Here's our advice for safer dating, even with verified profiles:",
+          "Verification is a limited signal, not a magic solution. It does not replace judgment or ordinary safety precautions:",
         ],
         bullets: [
           "Keep conversations on Embir until you're comfortable moving to another platform",
-          "Do a video call before meeting in person — seeing someone in motion confirms what verification already established",
+          "Consider a video call before meeting; it does not replace normal safety precautions",
           "Choose a public place for the first date and let a friend know where you're going",
           "Trust your instincts — if something feels off, don't hesitate to leave or cancel",
-          "Report any suspicious behavior, even if you're not sure — the moderation team will review the context",
+          "Report suspicious behavior; the report is recorded for review and you can block immediately",
         ],
       },
     ],
     faq: [
-      ["Is verification mandatory?", "No, but we strongly encourage it. Verified profiles tend to have better experiences because other members trust them more quickly."],
-      ["What happens to my verification selfie?", "It is compared with your profile photos and then discarded. It is not stored, displayed, or shared. The only thing that remains is your verified badge."],
+      ["Is verification optional?", "Yes. Verification is optional. An approved request adds a visible badge without proving full identity or intentions."],
+      ["What happens to my verification selfie?", "It is not public. It is stored privately to process the request, with access limited to authorized accounts."],
       ["Can someone fake the selfie verification?", "No system is perfect, but live selfie verification is significantly harder to fake than uploading static photos. We continuously improve our detection."],
       ["What if someone with a verified badge harasses me?", "Report them. Verification doesn't protect anyone from the consequences of bad behavior. Verified users who violate community rules lose their accounts just like anyone else."],
-      ["Does Embir sell my verification data?", "No. Embir does not sell any user data. Our business model is a future freemium, not data monetization."],
-      ["Does verification replace a background check?", "No. Selfie verification confirms visual identity, not criminal history or marital status. It's a layer of trust, not an investigation service."],
+      ["Does Embir sell my verification data?", "No. Embir does not sell any user data. Our business model is transparent optional services, not data monetization."],
+      ["Does verification replace a background check?", "No. Selfie verification shows that a selfie check was approved, not criminal history or marital status. It's a layer of trust, not an investigation service."],
     ],
-    cta: { title: "Join a verified community", text: "Create your profile, verify it by selfie, and meet real people who've done the same. Free during launch.", button: "Create my free verified profile" },
+    cta: { title: "Request a selfie badge if you choose", text: "Create your profile and request optional verification if you choose. No badge guarantees full identity or safety.", button: "Create my free verified profile" },
     explore: [
       ["/safety", "Safety tools"],
       ["/moderation", "How we moderate"],

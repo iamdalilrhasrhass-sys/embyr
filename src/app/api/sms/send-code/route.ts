@@ -1,73 +1,65 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { verifyToken } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { sendSmsCode } from "@/lib/sms";
+import {
+  digestPhoneVerificationCode,
+  generatePhoneVerificationCode,
+  normalizePhoneNumber,
+} from "@/lib/phone-verification";
+import { consumeSensitiveAction } from "@/lib/sensitive-action-rate-limit";
 
 export async function POST(req: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get("token")?.value;
-    if (!token) {
+    const auth = await getCurrentUser();
+    if (!auth) {
       return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     }
-
-    const payload = verifyToken(token);
-    if (!payload) {
-      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    const rateLimit = consumeSensitiveAction("sms-send", auth.id, 3);
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        { error: "Trop de demandes. Réessaie plus tard." },
+        { status: 429, headers: { "Retry-After": String(rateLimit.retryAfterSeconds) } },
+      );
     }
 
-    const { phone } = await req.json();
+    const body = await req.json().catch(() => null) as { phone?: unknown } | null;
+    const phone = normalizePhoneNumber(body?.phone);
     if (!phone) {
-      return NextResponse.json({ error: "Numéro de téléphone requis" }, { status: 400 });
-    }
-
-    // Basic French phone validation
-    const phoneClean = phone.replace(/\s/g, "").replace(/\./g, "");
-    const frenchPhoneRegex = /^(0[1-9]\d{8}|\+33[1-9]\d{8})$/;
-    if (!frenchPhoneRegex.test(phoneClean)) {
-      return NextResponse.json({ error: "Numéro de téléphone français invalide (ex: 0612345678)" }, { status: 400 });
+      return NextResponse.json({ error: "Numéro de téléphone international invalide" }, { status: 400 });
     }
 
     // Check if phone already used by another user
-    const existing = await prisma.user.findUnique({ where: { phone: phoneClean } });
-    if (existing && existing.id !== payload.userId) {
+    const existing = await prisma.user.findUnique({ where: { phone }, select: { id: true } });
+    if (existing && existing.id !== auth.id) {
       return NextResponse.json({ error: "Ce numéro est déjà utilisé" }, { status: 409 });
     }
 
-    // Send SMS code
-    const result = await sendSmsCode(phoneClean);
+    const code = generatePhoneVerificationCode();
+    const verification = await prisma.$transaction(async (tx) => {
+      await tx.smsVerification.deleteMany({ where: { userId: auth.id, usedAt: null } });
+      return tx.smsVerification.create({
+        data: {
+          userId: auth.id,
+          phone,
+          code: digestPhoneVerificationCode({ userId: auth.id, phone, code }),
+          expiresAt: new Date(Date.now() + 5 * 60 * 1000),
+        },
+        select: { id: true },
+      });
+    });
+
+    const result = await sendSmsCode(phone, code);
 
     if (!result.success) {
-      return NextResponse.json({ error: result.message }, { status: 500 });
+      await prisma.smsVerification.deleteMany({ where: { id: verification.id, usedAt: null } });
+      return NextResponse.json({ error: result.message }, { status: 503 });
     }
-
-    // Store verification code in database
-    const expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes
-
-    // Delete old codes for this user
-    await prisma.smsVerification.deleteMany({ where: { userId: payload.userId } });
-
-    await prisma.smsVerification.create({
-      data: {
-        userId: payload.userId,
-        phone: phoneClean,
-        code: result.code || "000000",
-        expiresAt,
-      },
-    });
-
-    // Update user's phone
-    await prisma.user.update({
-      where: { id: payload.userId },
-      data: { phone: phoneClean, phoneVerified: false },
-    });
 
     return NextResponse.json({
       success: true,
       message: "Code envoyé par SMS",
-      // In dev mode, return code for auto-fill
-      ...(result.code ? { devCode: result.code } : {}),
+      ...(process.env.NODE_ENV === "development" ? { devCode: code } : {}),
     });
   } catch (e) {
     console.error("[sms/send-code] error:", (e as Error).message);

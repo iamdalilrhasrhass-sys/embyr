@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tinder Alternative — Less Swiping, More Compatibility | Embir",
-  description: "Tired of swipe fatigue? Embir is a Tinder alternative built on compatibility, verified profiles, clear intentions, and a free launch for all orientations.",
+  description: "Tired of swipe fatigue? Embir is a Tinder alternative built on compatibility, verified profiles, clear intentions, and free core connections for all orientations.",
   alternates: {
     canonical: "https://embir.xyz/tinder-alternative",
     languages: { "fr": "https://embir.xyz/fr/alternative-tinder" },
   },
   openGraph: {
     title: "Tinder Alternative — Less Swiping, More Compatibility | Embir",
-    description: "Tired of swipe fatigue? Embir is a Tinder alternative built on compatibility, verified profiles, clear intentions, and a free launch for all orientations.",
+    description: "Tired of swipe fatigue? Embir is a Tinder alternative built on compatibility, verified profiles, clear intentions, and free core connections for all orientations.",
     url: "https://embir.xyz/tinder-alternative",
     locale: "en_US",
     siteName: "Embir",
@@ -34,12 +34,12 @@ export default function Page() {
           <div className="overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02]">
             <h2 className="p-5 font-serif text-2xl text-white border-b border-white/[0.04]">How Embir compares</h2>
             {[
-              ["Launch price", "Free with Tinder Plus/Gold/Platinum", "Free during launch phase"],
+              ["Core access", "Free with Tinder Plus/Gold/Platinum", "free for core connections"],
               ["Discovery method", "Swipe on photos", "Preferences, compatibility, and intentions first"],
               ["Profile depth", "Photos + short bio", "Personal universe with interests, intentions, preferences"],
               ["Audience", "Primarily straight, some LGBTQ+", "All orientations with orientation-aware visibility"],
               ["Verification", "Photo verification available", "Selfie verification encouraged"],
-              ["Paywall timing", "Limited likes on free tier", "No core feature paywalls during launch"],
+              ["Paywall timing", "Limited likes on free tier", "No core feature paywalls while the community grows"],
               ["Future model", "Subscription tiers", "Transparent freemium for mobile app and safety"],
             ].map(([feature, tinder, embir]) => (
               <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
@@ -63,8 +63,8 @@ export default function Page() {
                 ["Intentions are clear", "Looking for a relationship? Casual dating? Not sure yet? Your intentions are visible on your profile. Filter out people who want different things."],
                 ["Verified profiles", "Selfie verification reduces fake accounts, bots, and catfish. Fewer 'is this person real?' moments before a date."],
                 ["All orientations, one platform", "Embir doesn't separate people by orientation. Everyone uses the same app, but orientation controls ensure you only see compatible profiles."],
-                ["Free at launch", "No limited likes, no paywall on messaging. Test the full experience. Founding members get to shape the community before any premium features exist."],
-                ["Safer by design", "Reporting, blocking, human moderation, and orientation visibility controls are built in, not bolted on."],
+                ["core connection features are free", "Everything needed to meet someone is free. No credit card required. Founding members help shape the community."],
+                ["Safer by design", "Reporting, blocking, reporting and blocking, and orientation visibility controls are built in, not bolted on."],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <h3 className="font-semibold text-white/85">{title}</h3>
@@ -78,10 +78,10 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Frequently asked questions</h2>
             <div className="mt-6 space-y-3">
               {[
-                ["Is Embir better than Tinder?", "It depends on what you want. If you enjoy the swipe mechanic and want maximum volume, Tinder works well. If you want more context before matching, verified profiles, clearer intentions, and a free-at-launch model, Embir might be a better fit."],
-                ["Can I use both Embir and Tinder?", "Absolutely. Many people use multiple apps. Embir is free during launch, so there's no cost to trying both and seeing which works better for you."],
+                ["Is Embir better than Tinder?", "It depends on what you want. If you enjoy the swipe mechanic and want maximum volume, Tinder works well. If you want more context before matching, verified profiles, clearer intentions, and a model with free core connections, Embir might be a better fit."],
+                ["Can I use both Embir and Tinder?", "Absolutely. Many people use multiple apps. Embir's core connection features are free, so there's no cost to trying both and seeing which works better for you."],
                 ["Does Embir have a swipe feature?", "Embir is designed around profile exploration and compatibility signals rather than binary swiping. You browse profiles, read about people's interests and intentions, and connect when you find real compatibility."],
-                ["Why is Embir free at launch?", "We want to build a quality founding community before introducing any paid features. The first members help establish the culture and give feedback that shapes the platform. A future freemium model will fund the mobile app, safety tools, and moderation."],
+                ["Why Are Embir's core connection features free?", "Everything needed to meet someone is free. No credit card required. Optional services can fund the mobile app, safety tools and moderation."],
               ].map(([q, a]) => (
                 <details key={q} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
                   <summary className="cursor-pointer text-sm font-semibold text-white/80">{q}</summary>

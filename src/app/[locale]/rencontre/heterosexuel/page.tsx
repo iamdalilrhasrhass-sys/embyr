@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Embir, l'application de rencontre gratuite pour hétérosexuels. Matching intelligent, profils vérifiés, toutes intentions. Rejoignez la communauté Embir.",
   alternates: { canonical: "https://embir.xyz/fr/rencontre/heterosexuel" },
   openGraph: {
-    title: "Rencontre Hétérosexuelle — 100% gratuit | Embir",
+    title: "Rencontre Hétérosexuelle — sans carte bancaire | Embir",
     description: "L'appli de rencontre gratuite pour hétérosexuels. Matching bidirectionnel, profils vérifiés, sans abonnement.",
     url: "https://embir.xyz/fr/rencontre/heterosexuel",
     locale: "fr_FR",
@@ -44,7 +44,7 @@ export default function Page() {
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Profils vérifiés par selfie</h3>
-              <p className="text-sm text-white/45">Chaque profil sur Embir est vérifié par selfie en temps réel. Fini les faux profils, les photos volées et les mauvaises surprises.</p>
+              <p className="text-sm text-white/45">La vérification selfie est facultative. Les profils approuvés affichent un badge visible ; aucun système ne garantit l’absence de faux profil ou de photo volée.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Toutes les intentions</h3>
@@ -52,7 +52,7 @@ export default function Page() {
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h3 className="text-lg font-bold text-white mb-2">Gratuit, sans condition</h3>
-              <p className="text-sm text-white/45">Messagerie illimitée, profils complets, matching IA. Pas de boost payant pour être vu, pas d'abonnement pour débloquer les messages.</p>
+              <p className="text-sm text-white/45">Messagerie entre connexions réciproques, profils complets, compatibilité réciproque. Pas de boost payant pour être vu, pas d'abonnement pour débloquer les messages.</p>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function Page() {
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl text-white mb-6">Pourquoi choisir Embir plutôt que Tinder ou Bumble ?</h2>
-          <p className="text-white/45 mb-4">Les grandes applications de rencontre comme Tinder ou Bumble ont transformé la rencontre en abonnement : payez pour voir qui vous a liké, payez pour remonter dans les profils, payez pour envoyer un Super Like. Sur Embir, tout est gratuit au lancement.</p>
+          <p className="text-white/45 mb-4">Les grandes applications de rencontre comme Tinder ou Bumble ont transformé la rencontre en abonnement : payez pour voir qui vous a liké, payez pour remonter dans les profils, payez pour envoyer un Super Like. Sur Embir, tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.</p>
           <p className="text-white/45 mb-4">De plus, Embir propose un filtrage par orientation réellement efficace grâce à un matching bidirectionnel — si vous êtes hétérosexuel(le), vous ne verrez que des profils hétérosexuels compatibles avec votre genre. Pas de paramétrage compliqué, juste la bonne personne.</p>
           <p className="text-white/45">Et parce qu'Embir accueille toutes les orientations, la communauté est diverse et respectueuse — sans ségrégation entre les utilisateurs.</p>
         </div>
@@ -79,14 +79,14 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il gratuit pour les rencontres hétérosexuelles ?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Oui, Embir est 100% gratuit au lancement pour toutes les orientations, y compris les hétérosexuels. Messagerie, matching et profils complets sans abonnement.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Oui, tout ce qu'il faut pour rencontrer quelqu'un sur Embir est gratuit. Sans carte bancaire pour toutes les orientations, y compris les hétérosexuels. Messagerie, matching et profils complets sans abonnement.</p>
             </details>
           </div>
         </div>
       </section>
       <section className="px-4 pb-16 text-center">
         <Link prefetch={false} href="/auth/register?source=rencontre-heterosexuel" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Rejoindre Embir gratuitement</Link>
-        <p className="mt-4 text-xs text-white/20">18+ uniquement. Gratuit au lancement. Sans engagement.</p>
+        <p className="mt-4 text-xs text-white/20">18+ uniquement. Les connexions essentielles sont gratuites. Sans engagement.</p>
       </section>
     </main>
   );

@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Crée ton compte", desc: "Email + âge vérifié. 2 minutes, sans engagement.", color: "from-[var(--color-premium-rose)] to-[var(--color-premium-purple)]" },
-  { num: "02", title: "Vérifie ton identité", desc: "Selfie avec code unique. Badge Vérifié en 24h.", color: "from-[var(--color-premium-purple)] to-[var(--color-premium-purple)]" },
-  { num: "03", title: "Découvre des profils", desc: "Parcours les membres vérifiés, filtre par intentions.", color: "from-purple-500 to-pink-500" },
-  { num: "04", title: "Échange en toute sécurité", desc: "Messagerie chiffrée, modération active, signalement", color: "from-pink-500 to-rose-400" },
+  { num: "01", title: "Crée ton compte", desc: "Email et déclaration de majorité.", color: "from-[var(--color-premium-rose)] to-[var(--color-premium-purple)]" },
+  { num: "02", title: "Demande un badge si tu le souhaites", desc: "Selfie avec code unique. Le badge apparaît si la demande est approuvée.", color: "from-[var(--color-premium-purple)] to-[var(--color-premium-purple)]" },
+  { num: "03", title: "Découvre une sélection courte", desc: "Les préférences et intentions déclarées s'appliquent dans les deux sens.", color: "from-purple-500 to-pink-500" },
+  { num: "04", title: "Garde le contrôle", desc: "Messagerie après connexion réciproque, blocage et signalement.", color: "from-pink-500 to-rose-400" },
 ];
 
 function StepCard({ num, title, desc, color, index }: any) {

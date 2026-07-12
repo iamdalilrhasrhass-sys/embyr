@@ -1,13 +1,24 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import ScrollReveal from "@/components/motion/ScrollReveal";
 import EmbirLogo from "@/components/brand/EmbirLogo";
 import Particles3D from "@/components/Particles3D";
 import { AuroraBubbles } from "@/components/VibeEffects";
+import { localePath, supportedLocale, type SupportedLocale } from "@/components/connection-os/types";
+
+const copy = {
+  fr: { titleA: "Bon", titleB: "retour", subtitle: "Connecte-toi à ton espace Embir.", email: "Email", password: "Mot de passe", help: "Aide ?", submit: "Se connecter", loading: "Connexion…", fallback: "Identifiants incorrects", new: "Pas encore de compte ?", join: "Créer mon profil" },
+  en: { titleA: "Welcome", titleB: "back", subtitle: "Sign in to your Embir space.", email: "Email", password: "Password", help: "Help?", submit: "Sign in", loading: "Signing in…", fallback: "Incorrect credentials", new: "New to Embir?", join: "Create my profile" },
+  es: { titleA: "Qué bueno", titleB: "verte", subtitle: "Accede a tu espacio Embir.", email: "Email", password: "Contraseña", help: "¿Ayuda?", submit: "Entrar", loading: "Accediendo…", fallback: "Credenciales incorrectas", new: "¿Aún no tienes cuenta?", join: "Crear mi perfil" },
+} satisfies Record<SupportedLocale, Record<string, string>>;
+
 export default function Login() {
   const router = useRouter();
+  const params = useParams<{ locale?: string }>();
+  const locale = supportedLocale(params.locale ?? "en");
+  const text = copy[locale];
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,12 +38,12 @@ export default function Login() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Identifiants incorrects");
+        throw new Error(data.error || text.fallback);
       }
 
-      router.push("/dashboard");
-    } catch (err: any) {
-      setError(err.message);
+      router.push(localePath(locale, "/dashboard"));
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : text.fallback);
     } finally {
       setLoading(false);
     }
@@ -71,15 +82,15 @@ export default function Login() {
             {/* ── Title — super title ── */}
             <div className="emb-parallax-layer mb-2" data-depth="0.6">
               <h1 className="emb-super-title text-center text-5xl md:text-6xl text-white">
-                <span className="emb-word">Bon</span>{" "}
-                <span className="emb-word emb-gradient-text-super">retour</span>
+                <span className="emb-word">{text.titleA}</span>{" "}
+                <span className="emb-word emb-gradient-text-super">{text.titleB}</span>
               </h1>
             </div>
 
             {/* ── Subtitle — parallax depth 0.8 ── */}
             <div className="emb-parallax-layer mb-8" data-depth="0.8">
               <p className="text-center text-sm font-medium text-white/20">
-                Connecte-toi à ton espace embir.xyz.
+                {text.subtitle}
               </p>
             </div>
 
@@ -97,11 +108,13 @@ export default function Login() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Email input */}
                 <div className="group">
-                  <label className="mb-2 block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
-                    Email
+                  <label htmlFor="login-email" className="mb-2 block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
+                    {text.email}
                   </label>
                   <input
+                    id="login-email"
                     type="email"
+                    autoComplete="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -113,18 +126,20 @@ export default function Login() {
                 {/* Password input */}
                 <div className="group">
                   <div className="mb-2 flex justify-between">
-                    <label className="block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
-                      Mot de passe
+                    <label htmlFor="login-password" className="block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
+                      {text.password}
                     </label>
                     <Link
-                      href="#"
+                      href={localePath(locale, "/support")}
                       className="text-xs text-[#d4a574] transition-colors hover:text-white"
                     >
-                      Oublié&nbsp;?
+                      {text.help}
                     </Link>
                   </div>
                   <input
+                    id="login-password"
                     type="password"
+                    autoComplete="current-password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -140,7 +155,7 @@ export default function Login() {
                   className="emb-cta-mega group relative mt-4 inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] px-10 py-4 text-base font-bold text-white shadow-[0_25px_70px_rgba(255,31,90,0.35)] transition-all duration-500 disabled:opacity-50"
                 >
                   <span className="relative z-10">
-                    {loading ? "Connexion..." : "Se connecter"}
+                    {loading ? text.loading : text.submit}
                   </span>
                   <div className="absolute inset-0 -translate-x-full animate-[embCtaShimmer_2s_ease-in-out_infinite] skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                 </button>
@@ -150,12 +165,12 @@ export default function Login() {
             {/* ── Register link — parallax depth 1.2 ── */}
             <div className="emb-parallax-layer mt-8" data-depth="1.2">
               <p className="text-center text-sm font-medium text-white/20">
-                Pas encore de compte&nbsp;?{" "}
+                {text.new}{" "}
                 <Link
-                  href="/paris"
+                  href={localePath(locale, "/auth/register")}
                   className="ml-1 font-bold text-[#d4a574] transition-colors hover:text-white"
                 >
-                  Rejoindre les fondateurs
+                  {text.join}
                 </Link>
               </p>
             </div>

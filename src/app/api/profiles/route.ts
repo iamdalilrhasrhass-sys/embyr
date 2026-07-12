@@ -1,35 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import type { ConnectionIntent } from "@prisma/client";
+import { getCurrentUser } from "@/lib/auth";
+import { getCompatibleCandidates, INTENTS } from "@/lib/matching";
 
 export async function GET(request: NextRequest) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+  const rawIntent = request.nextUrl.searchParams.get("intent");
+  const intentFilter = rawIntent && INTENTS.includes(rawIntent as ConnectionIntent)
+    ? rawIntent as ConnectionIntent
+    : undefined;
   try {
-    const profiles = await prisma.profile.findMany({
-      where: { publicVisibility: true },
-      select: {
-        id: true,
-        userId: true,
-        username: true,
-        age: true,
-        city: true,
-        genderIdentity: true,
-        description: true,
-        isVerified: true,
-        isPremium: true,
-        onlineStatus: true,
-        createdAt: true,
-        lastSeenAt: true,
-      },
-      take: 20,
-      orderBy: { createdAt: 'desc' }
-    });
-
-    // Return only real database profiles — empty array if none exist
-    return NextResponse.json(profiles);
+    const result = await getCompatibleCandidates(auth.id, { limit: 5, intentFilter });
+    const profiles = result.candidates.map((candidate) => ({ ...candidate.profile, reasons: candidate.reasons }));
+    return NextResponse.json({ profiles, setupRequired: result.setupRequired, hasMore: result.hasMore });
   } catch (error) {
-    console.error("DB Error on profiles:", error);
-    return NextResponse.json(
-      { error: "Profiles temporarily unavailable" },
-      { status: 503 }
-    );
+    console.error("Profiles compatibility error:", error);
+    return NextResponse.json({ error: "Profiles temporarily unavailable" }, { status: 503 });
   }
 }

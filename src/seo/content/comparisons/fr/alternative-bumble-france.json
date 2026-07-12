@@ -5,7 +5,7 @@
     {
       "criteria": "Experience feminine",
       "competitor": "Women-first — les femmes initient (24h)",
-      "embir": "Securite par verification + moderation humaine",
+      "embir": "Securite par verification + signalement et blocage",
       "winner": "tie"
     },
     {
@@ -17,13 +17,13 @@
     {
       "criteria": "Tier gratuit",
       "competitor": "Limite — nombreux paywalls",
-      "embir": "Fonctionnalites completes gratuites au lancement",
+      "embir": "Fonctionnalites completes gratuites pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Verification profils",
       "competitor": "Photo verification optionnelle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -36,10 +36,10 @@
   "sections": [
     {
       "title": "L'experience feminine repensee",
-      "content": "Bumble a popularise une idee importante : les femmes devraient avoir plus de controle sur leur experience de rencontre. En pratique, la contrainte des 24h cree une pression artificielle et ne resout pas le vrai probleme — la securite et la qualite des profils. Embir protege l'experience feminine differemment : verification selfie pour tous les profils, moderation humaine de chaque signalement, et un matching qui garantit que les profils que tu vois correspondent vraiment a ton orientation et tes intentions.",
+      "content": "Bumble a popularise une idee importante : les femmes devraient avoir plus de controle sur leur experience de rencontre. En pratique, la contrainte des 24h cree une pression artificielle et ne resout pas le vrai probleme — la securite et la qualite des profils. Embir protege l'experience feminine differemment : verification selfie pour tous les profils, signalements enregistrés pour examen et blocage immédiat, et un matching qui garantit que les profils que tu vois correspondent vraiment a ton orientation et tes intentions.",
       "highlights": [
         "Verification selfie obligatoire = moins de profils douteux",
-        "Moderation humaine = reponse rapide aux comportements inappropries",
+        "signalement et blocage = reponse rapide aux comportements inappropries",
         "Filtrage bidirectionnel = pas de profils incompatibles"
       ]
     }
@@ -53,7 +53,7 @@
     },
     {
       "q": "Comment Embir protege-t-il l'experience feminine ?",
-      "a": "Verification selfie obligatoire, moderation humaine de chaque signalement, et filtrage bidirectionnel pour garantir que seuls des profils compatibles apparaissent."
+      "a": "Verification selfie obligatoire, signalements enregistrés pour examen et blocage immédiat, et filtrage bidirectionnel pour garantir que seuls des profils compatibles apparaissent."
     },
     {
       "q": "Embir fonctionne-t-il pour les matchs lesbiennes et gay hommes ?",

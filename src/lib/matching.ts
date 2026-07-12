@@ -1,142 +1,84 @@
-import { prisma } from "@/lib/prisma";
-
-/**
- * EMBIR Matching Engine — Multi-orientation & Hinge-style intents
- * 
- * Règle d'or : un hétéro ne voit jamais un gay (sauf si catégorisé autrement),
- * un gay voit des gays, etc. Filtre BIDIRECTIONNEL strict.
- *
- * 22 Juin 2026 — Refonte totale
- */
-
-// ── Valeurs standardisées ──
+import type {
+  ConnectionIntent,
+  GenderIdentity,
+  ProfileModerationState,
+  ProfileVisibility,
+  SexualOrientation,
+} from "@prisma/client";
+import { prisma } from "./prisma.ts";
+import { publicProfileSelect } from "./profile-contract.ts";
 
 export const INTENTS = [
-  "AMOUR",       // relation amoureuse sérieuse
-  "AMIS",        // rencontres amicales
-  "FUN",         // s'amuser, faire la fête
-  "PLAN_CUL",    // rencontres sans engagement
-  "SPORT",       // activités sportives
-  "EVENEMENTS",  // créer/participer à des événements
-  "DISCUSSION",  // discuter, échanger
+  "AMOUR",
+  "AMIS",
+  "FUN",
+  "PLAN_CUL",
+  "SPORT",
+  "EVENEMENTS",
+  "DISCUSSION",
   "AUTRE",
-] as const;
+] as const satisfies readonly ConnectionIntent[];
 
-export const ORIENTATIONS = [
-  "HETERO",
-  "HOMOSEXUEL",
-  "LESBIENNE",
-  "BI",
-  "QUEER",
-  "PAN",
-  "FLUIDE",
-  "DEMI",
-  "ASEXUEL",
-  "AUTRE",
-] as const;
-
-export const GENDER_VALUES = [
-  "HOMME",
-  "FEMME",
-  "FEMME_TRANS",
-  "TRAVESTI",
-  "PERSONNE_FEMININE",
-  "COUPLE",
-  "AUTRE",
-] as const;
-
-export type Intent = typeof INTENTS[number];
-export type Orientation = typeof ORIENTATIONS[number];
-export type GenderValue = typeof GENDER_VALUES[number];
-
-export interface MatchCandidate {
-  profile: any;
-  score: number;
-  reasons: string[];
-  matchedIntents: string[];
-}
-
-interface UserProfile {
-  id: string;
+export type CompatibilityProfile = {
   userId: string;
-  genderIdentity?: string | null;
-  seekingGenders?: string[];
-  intentions?: string[];
-  orientation?: string | null;
-  city?: string | null;
-  country?: string | null;
-  age?: number | null;
-  seekingAgeMin?: number | null;
-  seekingAgeMax?: number | null;
-  latitude?: number | null;
-  longitude?: number | null;
-  seekingRadiusKm?: number | null;
-  activities?: string[];
-}
+  age: number;
+  city: string | null;
+  country: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  genderIdentity: GenderIdentity | null;
+  orientation: SexualOrientation | null;
+  seekingGenders: GenderIdentity[];
+  primaryIntent: ConnectionIntent | null;
+  acceptedIntents: ConnectionIntent[];
+  activities: string[];
+  seekingAgeMin: number | null;
+  seekingAgeMax: number | null;
+  seekingRadiusKm: number | null;
+  visibilityStatus: ProfileVisibility;
+  moderationState: ProfileModerationState;
+  publicVisibility: boolean;
+  onboardingCompletedAt: Date | null;
+  isVerified: boolean;
+  lastActiveAt: Date | null;
+  profileCompletionScore: number;
+};
 
-/**
- * Vérifie la compatibilité BIDIRECTIONNELLE d'orientation.
- * 
- * - user.seekingGenders doit contenir candidate.genderIdentity
- * - candidate.seekingGenders doit contenir user.genderIdentity
- * 
- * Si l'un des deux n'a pas rempli seekingGenders, on reste permissif
- * (rétrocompatibilité — mais le onboarding encourage à remplir).
- */
-export function isOrientationCompatible(
-  user: UserProfile,
-  candidate: UserProfile
-): boolean {
-  const userSeeks = user.seekingGenders ?? [];
-  const candidateSeeks = candidate.seekingGenders ?? [];
+export type ActiveSignalForMatching = {
+  intent: ConnectionIntent;
+  expiresAt: Date;
+  visible: boolean;
+  active: boolean;
+};
 
-  // Permissif si l'un des deux n'a pas rempli ses préférences
-  if (userSeeks.length === 0 || candidateSeeks.length === 0) {
-    return true;
-  }
+export type CompatibilityResult =
+  | {
+      eligible: true;
+      score: number;
+      reasonCodes: string[];
+      reasons: string[];
+      matchedIntents: ConnectionIntent[];
+      distanceKm: number | null;
+    }
+  | { eligible: false; reasonCode: string };
 
-  if (!user.genderIdentity || !candidate.genderIdentity) {
-    return true;
-  }
+export type PublicCandidate = {
+  profile: Record<string, unknown>;
+  reasons: string[];
+  reasonCodes: string[];
+  matchedIntents: ConnectionIntent[];
+  incomingSignal: boolean;
+};
 
-  const userAcceptsCandidate = userSeeks.includes(candidate.genderIdentity);
-  const candidateAcceptsUser = candidateSeeks.includes(user.genderIdentity);
+const DAY = 24 * 60 * 60 * 1000;
 
-  return userAcceptsCandidate && candidateAcceptsUser;
-}
-
-/**
- * Vérifie la compatibilité d'âge bidirectionnelle.
- */
-export function isAgeCompatible(
-  user: UserProfile,
-  candidate: UserProfile
-): boolean {
-  if (!candidate.age) return true;
-
-  // L'utilisateur a-t-il un filtre d'âge ?
-  if (user.seekingAgeMin != null && candidate.age < user.seekingAgeMin) return false;
-  if (user.seekingAgeMax != null && candidate.age > user.seekingAgeMax) return false;
-
-  // Le candidat a-t-il un filtre d'âge qui exclut l'utilisateur ?
-  if (user.age != null) {
-    if (candidate.seekingAgeMin != null && user.age < candidate.seekingAgeMin) return false;
-    if (candidate.seekingAgeMax != null && user.age > candidate.seekingAgeMax) return false;
-  }
-
-  return true;
-}
-
-/**
- * Calcule la distance entre deux points (Haversine, en km).
- */
 export function haversineKm(
   lat1: number,
   lon1: number,
   lat2: number,
-  lon2: number
+  lon2: number,
 ): number {
-  const R = 6371;
+  const earthRadiusKm = 6371;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
   const dLon = ((lon2 - lon1) * Math.PI) / 180;
   const a =
@@ -144,200 +86,292 @@ export function haversineKm(
     Math.cos((lat1 * Math.PI) / 180) *
       Math.cos((lat2 * Math.PI) / 180) *
       Math.sin(dLon / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(a));
+  return 2 * earthRadiusKm * Math.asin(Math.sqrt(a));
 }
 
-/**
- * Score de compatibilité entre deux profils.
- * 
- * Facteurs :
- * - Intents communs : +30 par intent commun (max 90)
- * - Même ville : +25 / Même pays : +15
- * - Profil vérifié : +15
- * - Actif < 7 jours : +10
- * - Profil complet : +10
- * - Activités communes : +5 par activité (max 20)
- * - Distance < rayon : +10
- */
-export function scoreCandidate(
-  user: UserProfile,
-  candidate: UserProfile
-): { score: number; reasons: string[]; matchedIntents: string[] } {
-  let score = 0;
-  const reasons: string[] = [];
-  const matchedIntents: string[] = [];
+export function isOrientationCompatible(
+  user: Pick<CompatibilityProfile, "genderIdentity" | "seekingGenders">,
+  candidate: Pick<CompatibilityProfile, "genderIdentity" | "seekingGenders">,
+): boolean {
+  if (!user.genderIdentity || !candidate.genderIdentity) return false;
+  if (user.seekingGenders.length === 0 || candidate.seekingGenders.length === 0) return false;
+  return (
+    user.seekingGenders.includes(candidate.genderIdentity) &&
+    candidate.seekingGenders.includes(user.genderIdentity)
+  );
+}
 
-  // Intents communs — affichage concret
-  const userIntents = user.intentions ?? [];
-  const candidateIntents = candidate.intentions ?? [];
-  const commonIntents = userIntents.filter((i) => candidateIntents.includes(i));
-  matchedIntents.push(...commonIntents);
-  if (commonIntents.length > 0) {
-    score += Math.min(90, commonIntents.length * 30);
-    const intentLabels: Record<string, string> = {
-      AMOUR: "Amour", AMIS: "Amis", FUN: "Fun", PLAN_CUL: "Plan cul",
-      SPORT: "Sport", EVENEMENTS: "Événements", DISCUSSION: "Discussion", AUTRE: "Autre",
-    };
-    const labels = commonIntents.map((i) => intentLabels[i] ?? i).join(", ");
-    reasons.push(`Même intention: ${labels}`);
+export function isAgeCompatible(
+  user: Pick<CompatibilityProfile, "age" | "seekingAgeMin" | "seekingAgeMax">,
+  candidate: Pick<CompatibilityProfile, "age" | "seekingAgeMin" | "seekingAgeMax">,
+): boolean {
+  const userMin = user.seekingAgeMin ?? 18;
+  const userMax = user.seekingAgeMax ?? 120;
+  const candidateMin = candidate.seekingAgeMin ?? 18;
+  const candidateMax = candidate.seekingAgeMax ?? 120;
+  return (
+    candidate.age >= userMin &&
+    candidate.age <= userMax &&
+    user.age >= candidateMin &&
+    user.age <= candidateMax
+  );
+}
+
+function activeSignal(
+  signal: ActiveSignalForMatching | null | undefined,
+  now: Date,
+): signal is ActiveSignalForMatching {
+  return Boolean(signal?.active && signal.visible && signal.expiresAt > now);
+}
+
+export function evaluateCompatibility(
+  user: CompatibilityProfile,
+  candidate: CompatibilityProfile,
+  options: {
+    now?: Date;
+    intentFilter?: ConnectionIntent;
+    userSignal?: ActiveSignalForMatching | null;
+    candidateSignal?: ActiveSignalForMatching | null;
+  } = {},
+): CompatibilityResult {
+  const now = options.now ?? new Date();
+  if (user.userId === candidate.userId) return { eligible: false, reasonCode: "SELF" };
+  if (!user.onboardingCompletedAt || !candidate.onboardingCompletedAt) {
+    return { eligible: false, reasonCode: "ONBOARDING_INCOMPLETE" };
   }
-
-  // Géographie
-  if (user.city && candidate.city && user.city === candidate.city) {
-    score += 25;
-    reasons.push("Même ville");
-  } else if (user.country && candidate.country && user.country === candidate.country) {
-    score += 15;
-    reasons.push("Même pays");
-  }
-
-  // Distance
   if (
-    user.latitude != null &&
-    user.longitude != null &&
-    candidate.latitude != null &&
-    candidate.longitude != null &&
-    user.seekingRadiusKm != null
+    !user.publicVisibility ||
+    !candidate.publicVisibility ||
+    user.visibilityStatus === "HIDDEN" ||
+    candidate.visibilityStatus === "HIDDEN"
   ) {
-    const dist = haversineKm(
-      user.latitude!,
-      user.longitude!,
-      candidate.latitude!,
-      candidate.longitude!
+    return { eligible: false, reasonCode: "INVISIBLE" };
+  }
+  if (user.moderationState !== "ACTIVE" || candidate.moderationState !== "ACTIVE") {
+    return { eligible: false, reasonCode: "MODERATION" };
+  }
+  if (!isOrientationCompatible(user, candidate)) {
+    return { eligible: false, reasonCode: "GENDER_PREFERENCES" };
+  }
+  if (!isAgeCompatible(user, candidate)) return { eligible: false, reasonCode: "AGE" };
+
+  const userIntents = new Set([
+    ...user.acceptedIntents,
+    ...(user.primaryIntent ? [user.primaryIntent] : []),
+  ]);
+  const candidateIntents = new Set([
+    ...candidate.acceptedIntents,
+    ...(candidate.primaryIntent ? [candidate.primaryIntent] : []),
+  ]);
+  const matchedIntents = [...userIntents].filter((intent) => candidateIntents.has(intent));
+  if (userIntents.size === 0 || candidateIntents.size === 0 || matchedIntents.length === 0) {
+    return { eligible: false, reasonCode: "INTENT" };
+  }
+  if (options.intentFilter && !matchedIntents.includes(options.intentFilter)) {
+    return { eligible: false, reasonCode: "INTENT_FILTER" };
+  }
+
+  let distanceKm: number | null = null;
+  const hasCoordinates =
+    user.latitude !== null &&
+    user.longitude !== null &&
+    candidate.latitude !== null &&
+    candidate.longitude !== null;
+  if (hasCoordinates) {
+    distanceKm = haversineKm(
+      user.latitude as number,
+      user.longitude as number,
+      candidate.latitude as number,
+      candidate.longitude as number,
     );
-    if (dist <= user.seekingRadiusKm) {
-      score += 10;
-      reasons.push(`À ${Math.round(dist)} km`);
+    const userRadius = user.seekingRadiusKm ?? 500;
+    const candidateRadius = candidate.seekingRadiusKm ?? 500;
+    if (distanceKm > userRadius || distanceKm > candidateRadius) {
+      return { eligible: false, reasonCode: "DISTANCE" };
     }
+  } else if (
+    (user.seekingRadiusKm || candidate.seekingRadiusKm) &&
+    (!user.city || !candidate.city || user.city.toLocaleLowerCase() !== candidate.city.toLocaleLowerCase())
+  ) {
+    return { eligible: false, reasonCode: "DISTANCE_UNKNOWN" };
   }
 
-  // Vérifié
-  if ((candidate as any).isVerified) {
-    score += 15;
-    reasons.push("Profil vérifié");
+  const reasonCodes = ["RECIPROCAL_PREFERENCES"];
+  const reasons = ["Vos préférences sont réciproquement compatibles"];
+  let score = 45 + Math.min(24, matchedIntents.length * 8);
+
+  reasonCodes.push("SHARED_INTENT");
+  reasons.push(
+    matchedIntents.length === 1
+      ? "Vous recherchez la même forme de connexion"
+      : `Vous partagez ${matchedIntents.length} intentions`,
+  );
+
+  if (distanceKm !== null) {
+    score += distanceKm <= 25 ? 15 : distanceKm <= 100 ? 8 : 3;
+    reasonCodes.push("WITHIN_DISTANCE");
+    reasons.push(`Vous êtes à environ ${Math.max(1, Math.round(distanceKm))} km`);
+  } else if (user.city && candidate.city && user.city.toLocaleLowerCase() === candidate.city.toLocaleLowerCase()) {
+    score += 12;
+    reasonCodes.push("SAME_CITY_APPROX");
+    reasons.push("Vous êtes dans la même ville");
   }
 
-  // Activité récente
-  if ((candidate as any).lastActiveAt) {
-    const lastActive = new Date((candidate as any).lastActiveAt);
-    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-      if (lastActive > sevenDaysAgo) {
-      score += 10;
-      const daysAgo = Math.floor((Date.now() - lastActive.getTime()) / (24 * 60 * 60 * 1000));
-      if (daysAgo === 0) reasons.push("Actif aujourd'hui");
-      else if (daysAgo === 1) reasons.push("Actif hier");
-      else reasons.push(`Actif il y a ${daysAgo} jours`);
-    }
+  const candidateActivities = new Set(candidate.activities.map((value) => value.toLocaleLowerCase()));
+  const sharedActivities = user.activities.filter((value) => candidateActivities.has(value.toLocaleLowerCase()));
+  if (sharedActivities.length) {
+    score += Math.min(12, sharedActivities.length * 4);
+    reasonCodes.push("SHARED_ACTIVITIES");
+    reasons.push(
+      sharedActivities.length === 1
+        ? `Vous partagez l’activité « ${sharedActivities[0]} »`
+        : `Vous partagez ${sharedActivities.length} activités`,
+    );
   }
 
-  // Complétude du profil
-  const completion = (candidate as any).profileCompletionScore ?? 0;
-  if (completion > 0) {
-    score += Math.min(10, Math.round(completion / 10));
+  const currentUserSignal = options.userSignal;
+  const currentCandidateSignal = options.candidateSignal;
+  const userSignalActive = activeSignal(currentUserSignal, now);
+  const candidateSignalActive = activeSignal(currentCandidateSignal, now);
+  if (userSignalActive && candidateSignalActive && currentUserSignal.intent === currentCandidateSignal.intent) {
+    score += 18;
+    reasonCodes.push("SYNCHRONIZED_AVAILABILITY");
+    reasons.push("Vos signaux sont actifs pour la même intention");
   }
+  if (candidate.isVerified) score += 4;
+  if (candidate.lastActiveAt && candidate.lastActiveAt > new Date(now.getTime() - 7 * DAY)) score += 5;
+  score += Math.min(5, Math.floor(candidate.profileCompletionScore / 20));
 
-  // Activités communes — affichage concret
-  const userActivities = user.activities ?? [];
-  const candidateActivities = candidate.activities ?? [];
-  const commonActivities = userActivities.filter((a) => candidateActivities.includes(a));
-  if (commonActivities.length > 0) {
-    score += Math.min(20, commonActivities.length * 5);
-    const activityLabels = commonActivities.slice(0, 3).join(", ");
-    reasons.push(`${commonActivities.length} passion${commonActivities.length > 1 ? "s" : ""} commune${commonActivities.length > 1 ? "s" : ""}: ${activityLabels}`);
-  }
-
-  return { score, reasons, matchedIntents };
+  return { eligible: true, score, reasonCodes, reasons, matchedIntents, distanceKm };
 }
 
-/**
- * Récupère les candidats compatibles pour un utilisateur.
- * 
- * Applique le filtre bidirectionnel d'orientation + âge + intents,
- * puis score et trie.
- */
+export const internalCandidateSelect = {
+  ...publicProfileSelect,
+  latitude: true,
+  longitude: true,
+  orientation: true,
+  seekingGenders: true,
+  seekingAgeMin: true,
+  seekingAgeMax: true,
+  seekingRadiusKm: true,
+  visibilityStatus: true,
+  moderationState: true,
+  publicVisibility: true,
+  onboardingCompletedAt: true,
+  profileCompletionScore: true,
+} as const;
+
 export async function getCompatibleCandidates(
   userId: string,
-  options: { limit?: number; intentFilter?: string } = {}
-): Promise<MatchCandidate[]> {
-  const { limit = 20, intentFilter } = options;
+  options: { limit?: number; intentFilter?: ConnectionIntent } = {},
+): Promise<{ candidates: PublicCandidate[]; hasMore: boolean; setupRequired: boolean }> {
+  const limit = Math.min(5, Math.max(1, options.limit ?? 5));
+  const now = new Date();
+  const exposureCutoff = new Date(now.getTime() - 7 * DAY);
 
-  const userProfile = await prisma.profile.findUnique({ where: { userId } });
-  if (!userProfile) {
-    throw new Error("Profil introuvable");
-  }
-
-  // Exclure les matchs existants + blocks + l'utilisateur lui-même
-  const [existingMatches, blocksMade, blocksReceived] = await Promise.all([
+  const [userProfile, matches, blocks, recentExposures, userSignal] = await Promise.all([
+    prisma.profile.findUnique({ where: { userId }, select: internalCandidateSelect }),
     prisma.match.findMany({
       where: { OR: [{ user1Id: userId }, { user2Id: userId }] },
-      select: { user1Id: true, user2Id: true },
+      select: { user1Id: true, user2Id: true, initiatorId: true, state: true, status: true },
     }),
     prisma.block.findMany({
-      where: { blockerId: userId },
-      select: { blockedId: true },
+      where: { OR: [{ blockerId: userId }, { blockedId: userId }] },
+      select: { blockerId: true, blockedId: true },
     }),
-    prisma.block.findMany({
-      where: { blockedId: userId },
-      select: { blockerId: true },
+    prisma.profileExposure.findMany({
+      where: { viewerId: userId, exposedAt: { gte: exposureCutoff } },
+      select: { candidateId: true },
+    }),
+    prisma.presenceSignal.findFirst({
+      where: { userId, active: true, visible: true, expiresAt: { gt: now } },
+      orderBy: { activatedAt: "desc" },
+      select: { intent: true, expiresAt: true, active: true, visible: true },
     }),
   ]);
 
-  const excludeIds = new Set<string>([userId]);
-  existingMatches.forEach((m) => {
-    if (m.user1Id === userId) excludeIds.add(m.user2Id);
-    else excludeIds.add(m.user1Id);
-  });
-  blocksMade.forEach((b) => excludeIds.add(b.blockedId));
-  blocksReceived.forEach((b) => excludeIds.add(b.blockerId));
-
-  // Récupérer les candidats — on en prend plus car on va filtrer en mémoire
-  // (le filtre bidirectionnel d'orientation ne peut pas se faire en SQL simplement)
-  const candidates = await prisma.profile.findMany({
-    where: {
-      userId: { notIn: Array.from(excludeIds) },
-      publicVisibility: true,
-      ...(intentFilter ? { intentions: { has: intentFilter } } : {}),
-    },
-    take: 200,
-    orderBy: { lastActiveAt: "desc" },
-  });
-
-  // Filtrer bidirectionnellement + scorer
-  const scored: MatchCandidate[] = [];
-
-  for (const candidate of candidates) {
-    // Filtre orientation bidirectionnel STRICT
-    if (!isOrientationCompatible(userProfile as any, candidate as any)) {
-      continue;
-    }
-
-    // Filtre âge bidirectionnel
-    if (!isAgeCompatible(userProfile as any, candidate as any)) {
-      continue;
-    }
-
-    const { score, reasons, matchedIntents } = scoreCandidate(
-      userProfile as any,
-      candidate as any
-    );
-
-    scored.push({
-      profile: candidate,
-      score,
-      reasons,
-      matchedIntents,
-    });
+  if (!userProfile) throw new Error("Profil introuvable");
+  if (!userProfile.onboardingCompletedAt || userProfile.seekingGenders.length === 0) {
+    return { candidates: [], hasMore: false, setupRequired: true };
   }
 
-  // Trier par score décroissant
-  scored.sort((a, b) => b.score - a.score);
+  const excluded = new Set<string>([userId, ...recentExposures.map((item) => item.candidateId)]);
+  const incoming = new Set<string>();
+  for (const match of matches) {
+    const otherId = match.user1Id === userId ? match.user2Id : match.user1Id;
+    const isIncoming =
+      (match.state === "SIGNAL_SENT" || match.status === "pending") &&
+      match.initiatorId !== null &&
+      match.initiatorId !== userId;
+    if (isIncoming) {
+      incoming.add(otherId);
+      excluded.delete(otherId);
+    } else {
+      excluded.add(otherId);
+    }
+  }
+  for (const block of blocks) {
+    excluded.add(block.blockerId === userId ? block.blockedId : block.blockerId);
+  }
 
-  return scored.slice(0, limit);
+  const candidates = await prisma.profile.findMany({
+    where: {
+      userId: { notIn: [...excluded] },
+      publicVisibility: true,
+      visibilityStatus: { not: "HIDDEN" },
+      moderationState: "ACTIVE",
+      onboardingCompletedAt: { not: null },
+      user: { is: { bannedAt: null, deletedAt: null } },
+    },
+    select: internalCandidateSelect,
+    take: 200,
+    orderBy: [{ lastActiveAt: "desc" }, { createdAt: "desc" }],
+  });
+
+  const candidateIds = candidates.map((candidate) => candidate.userId);
+  const [candidateSignals, exposureCounts] = await Promise.all([
+    prisma.presenceSignal.findMany({
+      where: { userId: { in: candidateIds }, active: true, visible: true, expiresAt: { gt: now } },
+      orderBy: { activatedAt: "desc" },
+      select: { userId: true, intent: true, expiresAt: true, active: true, visible: true },
+    }),
+    prisma.profileExposure.groupBy({
+      by: ["candidateId"],
+      where: { candidateId: { in: candidateIds }, exposedAt: { gte: new Date(now.getTime() - 30 * DAY) } },
+      _count: { _all: true },
+    }),
+  ]);
+  const signalsByUser = new Map(candidateSignals.map((signal) => [signal.userId, signal]));
+  const countsByUser = new Map(exposureCounts.map((row) => [row.candidateId, row._count._all]));
+
+  const eligible = candidates.flatMap((candidate) => {
+    const evaluated = evaluateCompatibility(userProfile, candidate, {
+      now,
+      intentFilter: options.intentFilter,
+      userSignal,
+      candidateSignal: signalsByUser.get(candidate.userId),
+    });
+    if (!evaluated.eligible) return [];
+    const exposurePenalty = (countsByUser.get(candidate.userId) ?? 0) * 5;
+    const incomingBoost = incoming.has(candidate.userId) ? 1000 : 0;
+    const publicProfile = Object.fromEntries(
+      Object.keys(publicProfileSelect).map((key) => [key, candidate[key as keyof typeof candidate]]),
+    );
+    return [{
+      sortScore: evaluated.score - exposurePenalty + incomingBoost,
+      profile: publicProfile,
+      reasons: evaluated.reasons.slice(0, 3),
+      reasonCodes: evaluated.reasonCodes,
+      matchedIntents: evaluated.matchedIntents,
+      incomingSignal: incoming.has(candidate.userId),
+    }];
+  });
+
+  eligible.sort((a, b) => b.sortScore - a.sortScore);
+  const selected = eligible.slice(0, limit).map(({ sortScore: _sortScore, ...candidate }) => candidate);
+  return { candidates: selected, hasMore: eligible.length > limit, setupRequired: false };
 }
 
-/**
- * Construit une description lisible de l'orientation pour l'affichage.
- */
 export function describeOrientation(orientation?: string | null): string {
   if (!orientation) return "";
   const labels: Record<string, string> = {
@@ -355,27 +389,20 @@ export function describeOrientation(orientation?: string | null): string {
   return labels[orientation] ?? orientation;
 }
 
-/**
- * Construit une description lisible des intents.
- */
 export function describeIntents(intents?: string[] | null): string[] {
-  if (!intents || intents.length === 0) return [];
   const labels: Record<string, string> = {
     AMOUR: "Amour",
     AMIS: "Amis",
-    FUN: "Fun",
-    PLAN_CUL: "Plan cul",
+    FUN: "Rencontre légère",
+    PLAN_CUL: "Sans engagement",
     SPORT: "Sport",
-    EVENEMENTS: "Événements",
+    EVENEMENTS: "Sortie",
     DISCUSSION: "Discussion",
     AUTRE: "Autre",
   };
-  return intents.map((i) => labels[i] ?? i).filter(Boolean);
+  return (intents ?? []).map((intent) => labels[intent] ?? intent);
 }
 
-/**
- * Construit une description lisible du genre.
- */
 export function describeGender(gender?: string | null): string {
   if (!gender) return "";
   const labels: Record<string, string> = {

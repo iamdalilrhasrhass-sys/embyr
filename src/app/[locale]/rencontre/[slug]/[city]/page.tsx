@@ -51,8 +51,8 @@ export async function generateMetadata({
   const country = COUNTRY_NAMES[ct.country];
   const titleFr = `Rencontre ${int.label.toLowerCase()} à ${ct.name} | Embir`;
   const titleEn = `${int.labelEn} dating in ${ct.nameEn} | Embir`;
-  const descFr = `Rencontre ${int.label.toLowerCase()} à ${ct.name} : découvrez Embir, une approche par intentions déclarées et préférences réciproques. Profil gratuit au lancement.`;
-  const descEn = `${int.labelEn} dating in ${ct.nameEn}, ${country.en}: explore Embir through declared intentions and reciprocal preferences. Free profile creation during launch.`;
+  const descFr = `Rencontre ${int.label.toLowerCase()} à ${ct.name} : découvrez Embir, une approche par intentions déclarées et préférences réciproques. Profil gratuit pour les connexions essentielles.`;
+  const descEn = `${int.labelEn} dating in ${ct.nameEn}, ${country.en}: explore Embir through declared intentions and reciprocal preferences. free profile creation without a credit card.`;
   const path = localizedPath(locale, `/rencontre/${int.slug}/${ct.slug}`);
   const canonical = `https://embir.xyz${path}`;
 
@@ -177,7 +177,7 @@ export default async function Page({
         },
         {
           q: "Why are some cities not indexed?",
-          a: "Embir deliberately limits indexable programmatic pages during launch to keep the public corpus useful and maintainable.",
+          a: "Embir deliberately limits indexable programmatic pages while the community grows to keep the public corpus useful and maintainable.",
         },
       ];
 

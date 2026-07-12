@@ -4,7 +4,7 @@ import PageTypeTracker from "@/components/PageTypeTracker";
 
 export const metadata: Metadata = {
   title: "Gay Dating in New York — Free, Verified, No Ads",
-  description: "Find authentic gay connections in New York City with Embir. Verified profiles, AI matching, zero ads, and unlimited free messaging. Manhattan, Brooklyn, Queens and beyond.",
+  description: "Find authentic gay connections in New York City with Embir. Verified profiles, reciprocal compatibility, zero ads, and unlimited free messaging. Manhattan, Brooklyn, Queens and beyond.",
   alternates: { canonical: "https://embir.xyz/new-york" },
   openGraph: {
     title: "Gay Dating in New York",
@@ -31,9 +31,9 @@ export default function Page() {
             <span className="text-[#d4a574]">Why is it so hard to meet one?</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/50">
-            New York is the densest city in America, and yet gay dating here can feel lonelier than 
-            a small town. The apps are flooded with tourists, ghost profiles, and guys who never reply. 
-            Embir is different: verified profiles, real conversations, and matching that goes deeper 
+            New York is the densest city in America, and yet gay dating here can feel lonelier than
+            a small town. The apps are flooded with tourists, ghost profiles, and guys who never reply.
+            Embir is different: verified profiles, real conversations, and matching that goes deeper
             than your GPS coordinates.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -57,13 +57,13 @@ export default function Page() {
               <span className="text-white/50">Fewer real connections.</span>
             </h2>
             <p className="mt-5 text-white/45 leading-relaxed">
-              New York gay dating has a unique problem: abundance without depth. You can swipe through 
-              a hundred profiles in a Chelsea coffee shop, but most are tourists passing through, bots 
+              New York gay dating has a unique problem: abundance without depth. You can swipe through
+              a hundred profiles in a Chelsea coffee shop, but most are tourists passing through, bots
               with stolen photos, or guys who treat the apps like a game they never intend to play seriously.
             </p>
             <p className="mt-4 text-white/45 leading-relaxed">
-              Embir fixes this by making verification mandatory. Every profile you see in New York 
-              belongs to a real person who actually lives here — not a tourist in Times Square for 
+              Embir fixes this by making verification optional. Every profile you see in New York
+              belongs to a real person who actually lives here — not a tourist in Times Square for
               the weekend, not a bot scraping photos from Instagram. Real New Yorkers, real connections.
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function Page() {
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               { title: "No tourists", desc: "Verification confirms people actually live here. No more matching with someone who's boarding a flight tomorrow." },
-              { title: "Compatibility over proximity", desc: "Our AI matches based on who you are, not just how many feet away you happen to be standing." },
+              { title: "Compatibility over proximity", desc: "Our compatibility engine applies declared preferences in both directions rather than sorting only by distance." },
               { title: "Real pace", desc: "New York moves fast. Embir doesn't waste your time with endless swiping — it gets to the conversations that matter." },
             ].map((item, i) => (
               <div key={i} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
@@ -105,8 +105,8 @@ export default function Page() {
           <h2 className="text-center font-serif text-3xl font-light tracking-[-0.02em] text-white sm:text-4xl mb-12">NYC Dating FAQ</h2>
           <div className="space-y-4">
             {[
-              { q: "Is Embir free in New York?", a: "Yes — completely free during launch. Unlimited messages, full profiles, and AI matching with no subscription required. Founding members in NYC will receive priority access and product benefits." },
-              { q: "How many active users does Embir have in NYC?", a: "We're in our launch phase, which means our NYC community is growing daily. The advantage of joining now: you're part of the founding group that shapes the community from day one." },
+              { q: "Is Embir free in New York?", a: "Yes — free for core connections. messages between reciprocal connections, full profiles, and reciprocal compatibility with no subscription required. Founding members in NYC will receive priority access and product benefits." },
+              { q: "How many active users does Embir have in NYC?", a: "We're in our core connection experience, which means our NYC community is growing daily. The advantage of joining now: you're part of the founding group that shapes the community from day one." },
               { q: "Which NYC neighborhoods have the most Embir members?", a: "Hell's Kitchen, Chelsea, and Williamsburg currently have our strongest concentrations, but we have verified members in all five boroughs." },
               { q: "How does verification work for New Yorkers?", a: "Quick selfie check. Our system matches your live selfie to your profile photo — no personal data stored, no third-party verification services. Takes under a minute." },
             ].map((faq, i) => (
@@ -123,7 +123,7 @@ export default function Page() {
         <Link href="/auth/register?source=new-york" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
           Create my free NYC profile
         </Link>
-        <p className="mt-4 text-xs text-white/20">18+ only. Free during launch. No credit card.</p>
+        <p className="mt-4 text-xs text-white/20">18+ only. Core connection features are free. No credit card.</p>
       </section>
     </main>
   );

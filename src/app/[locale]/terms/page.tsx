@@ -39,7 +39,7 @@ export default async function TermsPage({ params }: { params: Params }) {
             <div>
               <h2 className="font-serif text-2xl text-white">1. Objet du service</h2>
               <p className="mt-3">Embir est une plateforme de rencontre en ligne accessible via le web (embir.xyz) et destinée aux personnes majeures de toutes orientations. Le service permet de créer un profil, de découvrir d&apos;autres profils selon des préférences déclarées, d&apos;échanger des messages et de participer à une communauté fondatrice.</p>
-              <p className="mt-3">Cette page sera complétée avec les informations légales définitives de l&apos;éditeur avant le lancement commercial complet. Les présentes conditions constituent un cadre de référence pendant la phase de lancement.</p>
+              <p className="mt-3">Cette page sera complétée avec les informations légales définitives de l&apos;éditeur avant le lancement commercial complet. Les présentes conditions constituent un cadre de référence pendant l'expérience de connexion.</p>
             </div>
 
             <div>
@@ -79,12 +79,12 @@ export default async function TermsPage({ params }: { params: Params }) {
 
             <div>
               <h2 className="font-serif text-2xl text-white">7. Disponibilité du service</h2>
-              <p className="mt-3">Embir est actuellement en phase de lancement. Le service est fourni « en l&apos;état » et nous ne garantissons pas une disponibilité ininterrompue. Nous pouvons interrompre le service pour maintenance, mises à jour ou améliorations. Nous nous efforçons de communiquer ces interruptions à l&apos;avance lorsque cela est possible.</p>
+              <p className="mt-3">Embir est actuellement en expérience de connexion. Le service est fourni « en l&apos;état » et nous ne garantissons pas une disponibilité ininterrompue. Nous pouvons interrompre le service pour maintenance, mises à jour ou améliorations. Nous nous efforçons de communiquer ces interruptions à l&apos;avance lorsque cela est possible.</p>
             </div>
 
             <div>
               <h2 className="font-serif text-2xl text-white">8. Modèle économique</h2>
-              <p className="mt-3">Pendant la phase de lancement, Embir est gratuit. Les fonctions essentielles (profil, découverte, messagerie, compatibilité) sont accessibles sans frais. Un modèle freemium pourra être introduit ultérieurement pour financer l&apos;application mobile, la sécurité, la modération et l&apos;infrastructure. Les membres fondateurs seront informés de toute évolution du modèle économique avec un préavis raisonnable.</p>
+              <p className="mt-3">Pendant l'expérience de connexion, Embir est gratuit. Les fonctions essentielles (profil, découverte, messagerie, compatibilité) sont accessibles sans frais. Un modèle freemium pourra être introduit ultérieurement pour financer l&apos;application mobile, la sécurité, la modération et l&apos;infrastructure. Les membres fondateurs seront informés de toute évolution du modèle économique avec un préavis raisonnable.</p>
             </div>
 
             <div>
@@ -115,7 +115,7 @@ export default async function TermsPage({ params }: { params: Params }) {
 
           <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
             <h2 className="font-serif text-3xl text-white">Rejoindre la communauté fondatrice</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Crée ton profil gratuitement pendant le lancement et aide Embir à construire une plateforme plus saine pour toutes les orientations.</p>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Crée ton profil gratuitement, sans carte bancaire et aide Embir à construire une plateforme plus saine pour toutes les orientations.</p>
             <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
           </section>
         </article>
@@ -134,7 +134,7 @@ export default async function TermsPage({ params }: { params: Params }) {
           <div>
             <h2 className="font-serif text-2xl text-white">1. Purpose of the service</h2>
             <p className="mt-3">Embir is an online dating platform accessible via the web (embir.xyz) designed for adults of all orientations. The service allows users to create a profile, discover other profiles based on declared preferences, exchange messages, and participate in a founding community.</p>
-            <p className="mt-3">This page will be completed with the publisher&apos;s definitive legal information before full commercial launch. These terms serve as a reference framework during the launch phase.</p>
+            <p className="mt-3">This page will be completed with the publisher&apos;s definitive legal information before full commercial launch. These terms serve as a reference framework for core connection features.</p>
           </div>
 
           <div>
@@ -174,12 +174,12 @@ export default async function TermsPage({ params }: { params: Params }) {
 
           <div>
             <h2 className="font-serif text-2xl text-white">7. Service availability</h2>
-            <p className="mt-3">Embir is currently in its launch phase. The service is provided &quot;as is&quot; and we do not guarantee uninterrupted availability. We may interrupt the service for maintenance, updates, or improvements. We strive to communicate these interruptions in advance when possible.</p>
+            <p className="mt-3">Embir is currently in its core connection experience. The service is provided &quot;as is&quot; and we do not guarantee uninterrupted availability. We may interrupt the service for maintenance, updates, or improvements. We strive to communicate these interruptions in advance when possible.</p>
           </div>
 
           <div>
             <h2 className="font-serif text-2xl text-white">8. Business model</h2>
-            <p className="mt-3">During the launch phase, Embir is free. Core features (profile, discovery, messaging, compatibility) are accessible at no cost. A freemium model may be introduced later to fund the mobile app, security, moderation, and infrastructure. Founding members will be informed of any changes to the business model with reasonable notice.</p>
+            <p className="mt-3">Everything needed to meet someone is free. No credit card required.</p>
           </div>
 
           <div>
@@ -210,7 +210,7 @@ export default async function TermsPage({ params }: { params: Params }) {
 
         <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the founding community</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your profile for free during launch and help Embir build a healthier platform for every orientation.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your profile without a credit card and help Embir build a healthier platform for every orientation.</p>
           <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
         </section>
       </article>

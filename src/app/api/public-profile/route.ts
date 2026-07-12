@@ -1,65 +1,31 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { publicProfileSelect } from "@/lib/profile-contract";
 
 export const dynamic = "force-dynamic";
 
-interface PublicProfile {
-  username: string;
-  displayName: string | null;
-  age: number;
-  city: string | null;
-  country: string | null;
-  description: string | null;
-  isVerified: boolean;
-  isFounder: boolean;
-  genderIdentity: string | null;
-  lookingFor: string | null;
-  popularityScore: number;
-  trustScore: number;
-  profileCompletionScore: number;
-}
-
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const username = searchParams.get("username");
-
-  if (!username) {
-    return Response.json({ error: "Username required" }, { status: 400 });
+export async function GET(request: NextRequest) {
+  const username = request.nextUrl.searchParams.get("username")?.trim();
+  if (!username || username.length > 30) {
+    return NextResponse.json({ error: "Username required" }, { status: 400 });
   }
-
   try {
-    const profile = await prisma.profile.findUnique({
-      where: { username },
-      select: {
-        username: true,
-        displayName: true,
-        age: true,
-        city: true,
-        country: true,
-        description: true,
-        isVerified: true,
-        isFounder: true,
-        genderIdentity: true,
-        lookingFor: true,
-        popularityScore: true,
-        trustScore: true,
-        profileCompletionScore: true,
+    const profile = await prisma.profile.findFirst({
+      where: {
+        username,
         publicVisibility: true,
+        visibilityStatus: "PUBLIC",
+        moderationState: "ACTIVE",
+        user: { is: { bannedAt: null, deletedAt: null } },
       },
+      select: publicProfileSelect,
     });
-
-    if (!profile || !profile.publicVisibility) {
-      return Response.json({ error: "Universe not found" }, { status: 404 });
-    }
-
-    // Strip publicVisibility before returning
-    const { publicVisibility, ...publicData } = profile;
-    return Response.json(publicData, {
-      headers: {
-        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
-      },
+    if (!profile) return NextResponse.json({ error: "Universe not found" }, { status: 404 });
+    const { id: _profileId, userId: _userId, ...publicProfile } = profile;
+    return NextResponse.json(publicProfile, {
+      headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600" },
     });
-  } catch (e) {
-    return Response.json({ error: "Server error" }, { status: 500 });
+  } catch {
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

@@ -17,7 +17,7 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Vérification selfie disponible",
-      "embir": "Vérification systématique + modération humaine",
+      "embir": "vérification disponible + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Gratuité",
       "competitor": "Base gratuite, Preferred à 30€+/mois",
-      "embir": "Essentiel gratuit au lancement + freemium transparent",
+      "embir": "Essentiel gratuit pour les connexions essentielles + freemium transparent",
       "winner": "embir"
     },
     {
@@ -51,10 +51,10 @@
     },
     {
       "title": "Vérification des profils & Confiance",
-      "content": "Hinge propose la vérification selfie, mais elle n'est pas mise en avant et de nombreux profils restent non vérifiés. La réputation de l'app pour le 'dating sérieux' aide, mais la réputation seule n'arrête pas les faux profils.\n\nEmbir fait de la vérification une partie centrale de l'expérience. La vérification selfie est proposée dès l'onboarding. Les profils vérifiés sont prioritaires dans la découverte. L'équipe de modération humaine supprime activement les faux comptes et traite les signalements. Cette approche par couches — vérification systématique, modération et règles communautaires — construit une confiance qui va plus loin que le positionnement marketing d'une app.",
+      "content": "Hinge propose la vérification selfie, mais elle n'est pas mise en avant et de nombreux profils restent non vérifiés. La réputation de l'app pour le 'dating sérieux' aide, mais la réputation seule n'arrête pas les faux profils.\n\nEmbir fait de la vérification une partie centrale de l'expérience. La vérification selfie est proposée dès l'onboarding. Les profils vérifiés sont prioritaires dans la découverte. L'Dispositif de signalement et de blocage supprime activement les faux comptes et traite les signalements. Cette approche par couches — vérification disponible, modération et règles communautaires — construit une confiance qui va plus loin que le positionnement marketing d'une app.",
       "highlights": [
         "Vérification proposée à l'inscription, pas cachée dans les paramètres",
-        "Modération humaine derrière chaque décision de sécurité",
+        "signalement et blocage derrière chaque décision de sécurité",
         "Confiance construite par les systèmes, pas seulement par la réputation"
       ]
     },
@@ -69,9 +69,9 @@
     },
     {
       "title": "Gratuit vs Payant — Ce que Hinge Preferred coûte vs l'approche Embir",
-      "content": "Les fonctionnalités de base de Hinge sont gratuites, ce qui est mieux que Tinder. Mais l'expérience devient nettement meilleure avec Hinge Preferred (30€+/mois ou 100€/an) : likes illimités, filtres avancés, voir tout le monde qui t'a liké. Ce ne sont pas des options cosmétiques — ce sont des fonctionnalités essentielles de découverte derrière un paywall.\n\nEmbir est entièrement gratuite au lancement. Likes illimités, découverte complète, messagerie complète, vérification complète — aucun abonnement requis. Le futur modèle freemium sera transparent et financera la sécurité, l'infrastructure et les applications mobiles, sans bloquer les fonctionnalités essentielles de connexion humaine. Les membres fondateurs reçoivent un accès prioritaire aux fonctionnalités premium quand elles arrivent.",
+      "content": "Les fonctionnalités de base de Hinge sont gratuites, ce qui est mieux que Tinder. Mais l'expérience devient nettement meilleure avec Hinge Preferred (30€+/mois ou 100€/an) : sélection quotidienne courte, filtres avancés, voir tout le monde qui t'a liké. Ce ne sont pas des options cosmétiques — ce sont des fonctionnalités essentielles de découverte derrière un paywall.\n\nEmbir est gratuite pour les connexions essentielles. sélection quotidienne courte, découverte complète, messagerie complète, vérification complète — aucun abonnement requis. Les options facultatives transparentes seront transparent et financera la sécurité, l'infrastructure et les applications mobiles, sans bloquer les fonctionnalités essentielles de connexion humaine. Les membres fondateurs reçoivent un accès prioritaire aux fonctionnalités premium quand elles arrivent.",
       "highlights": [
-        "Likes illimités et découverte complète gratuits au lancement",
+        "sélection quotidienne courte et découverte complète gratuits pour les connexions essentielles",
         "Aucun abonnement nécessaire pour les fonctions essentielles",
         "Freemium transparent qui ne bloquera pas la connexion essentielle"
       ]
@@ -86,8 +86,8 @@
       ]
     }
   ],
-  "verdict": "Choisis Embir si tu veux un matching de compatibilité qui va plus loin que les prompts, des profils vérifiés et une modération humaine par conception, une plateforme inclusive qui traite chaque orientation comme une expérience de premier ordre, et des fonctions essentielles vraiment gratuites pendant la phase fondatrice. Hinge reste excellent si la découverte par prompts et la philosophie 'conçue pour être supprimée' te parlent — mais pour une compatibilité structurée, une confiance vérifiée et une inclusivité réelle, Embir est le choix le plus complet en 2026.",
-  "ctaText": "Rejoins la communauté fondatrice — compatibilité, vérifié, gratuit au lancement",
+  "verdict": "Choisis Embir si tu veux un matching de compatibilité qui va plus loin que les prompts, des profils vérifiés et des outils de signalement et de blocage par conception, une plateforme inclusive qui traite chaque orientation comme une expérience de premier ordre, et des fonctions essentielles vraiment gratuites sans carte bancaire. Hinge reste excellent si la découverte par prompts et la philosophie 'conçue pour être supprimée' te parlent — mais pour une compatibilité structurée, une confiance vérifiée et une inclusivité réelle, Embir est le choix le plus complet en 2026.",
+  "ctaText": "Rejoins la communauté fondatrice — compatibilité, vérifié, gratuit pour les connexions essentielles",
   "faq": [
     {
       "q": "En quoi la compatibilité d'Embir est-elle différente des prompts Hinge ?",
@@ -103,7 +103,7 @@
     },
     {
       "q": "Embir est-elle gratuite comme Hinge ?",
-      "a": "Embir est gratuite au lancement avec toutes les fonctions essentielles débloquées — likes illimités, découverte complète, vérification. La base de Hinge est gratuite mais les fonctionnalités utiles (likes illimités, filtres avancés, voir tous les likes) sont derrière Hinge Preferred à 30€+/mois."
+      "a": "Embir est gratuite pour les connexions essentielles avec toutes les fonctions essentielles débloquées — sélection quotidienne courte, découverte complète, vérification. La base de Hinge est gratuite mais les fonctionnalités utiles (sélection quotidienne courte, filtres avancés, voir tous les likes) sont derrière Hinge Preferred à 30€+/mois."
     },
     {
       "q": "Les utilisateurs LGBTQ+ peuvent-ils avoir une bonne expérience sur Embir ?",
@@ -111,7 +111,7 @@
     },
     {
       "q": "Comment Embir gère-t-elle les faux profils par rapport à Hinge ?",
-      "a": "Embir combine la vérification selfie systématique (proposée à l'inscription) avec une modération humaine active. Hinge propose la vérification mais ne la met pas en avant. Les profils vérifiés d'Embir sont prioritaires dans la découverte, et chaque signalement est examiné par une vraie personne."
+      "a": "Embir combine la vérification selfie facultative avec badge visible (disponible pour les membres) avec des outils de signalement et de blocage. Hinge propose la vérification mais ne la met pas en avant. Les profils vérifiés d'Embir sont prioritaires dans la découverte, et chaque signalement est enregistré pour examen."
     },
     {
       "q": "Embir a-t-elle une fonction 'Compatibilité du jour' comme Hinge ?",

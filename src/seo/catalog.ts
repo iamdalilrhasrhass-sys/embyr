@@ -70,8 +70,8 @@ export function resolveMarketCityPage(market: "france" | "usa" | "uk" | "switzer
         : `This page exists for local dating intent in ${cityName}: density, verified profiles, safer discovery, clearer preferences and links to related market pages.`,
     description:
       locale === "fr"
-        ? `Embir est gratuit au lancement a ${cityName}. Profils verifies, preferences, compatibilite, securite et communaute fondatrice en ${label}.`
-        : `Embir is free at launch in ${cityName}. Verified profiles, orientation, preferences, compatibility, safety and a founding community in ${label}.`,
+        ? `Embir est gratuit pour les connexions essentielles a ${cityName}. Profils verifies, preferences, compatibilite, securite et communaute fondatrice en ${label}.`
+        : `Embir's core connection features are free in ${cityName}. Verified profiles, orientation, preferences, compatibility, safety and a founding community in ${label}.`,
   };
 }
 
@@ -93,7 +93,7 @@ export function resolveMarketLandingPage(market: "usa" | "uk" | "switzerland", l
       h1: "Application de rencontre gratuite en Suisse — Genève, Lausanne, Zurich",
       topic: "rencontre en Suisse",
       angle: "Cette page explique la strategie de lancement Embir en Suisse : Zurich, Geneve, Lausanne, Bale, Berne, profils verifies, attentes multilingues, compatibilite et futur freemium transparent.",
-      description: "Embir arrive en Suisse avec une application de rencontre gratuite au lancement, profils verifies, preferences, compatibilite et securite pour Zurich, Geneve, Lausanne, Bale et Berne.",
+      description: "Embir arrive en Suisse avec une application de rencontre gratuite pour les connexions essentielles, profils verifies, preferences, compatibilite et securite pour Zurich, Geneve, Lausanne, Bale et Berne.",
     };
   }
   return {
@@ -104,7 +104,7 @@ export function resolveMarketLandingPage(market: "usa" | "uk" | "switzerland", l
     title: `${config.label} dating platform`,
     h1: config.headline,
     topic: `${config.label} dating`,
-    angle: `This market page explains the ${config.label} launch strategy: founding density, verified profiles, orientation-aware preferences, compatibility and a transparent future freemium model.`,
+    angle: `This market page explains the ${config.label} launch strategy: founding density, verified profiles, orientation-aware preferences, compatibility and a transparent optional-services model.`,
     description: config.intro,
   };
 }
@@ -114,7 +114,7 @@ export function resolveMarketProductPage(market: "usa" | "uk", slug: string, loc
   const page = marketSeoPages.find((item) => item.market === market && item.slug === slug);
   if (!page) return undefined;
   return {
-    kind: page.slug.includes("freemium") || page.slug.includes("free-at-launch") || page.slug.includes("founding") ? "freemium" : "product",
+    kind: page.slug.includes("freemium") || page.slug.includes("free for core connections") || page.slug.includes("founding") ? "freemium" : "product",
     locale,
     slug,
     market,
@@ -158,8 +158,8 @@ export function resolveGuidePage(slug: string, locale: Locale): ResolvedSeoPage 
         : `This guide answers informational search intent around ${guide.topic}, then naturally links to the most relevant Embir product and market pages.`,
     description:
       locale === "fr"
-        ? `Guide Embir : ${guide.topic}. Une approche de rencontre pour tous, gratuite au lancement, avec preferences, compatibilite et profils verifies.`
-        : `Embir guide: ${guide.topic}. A dating platform for everyone, free at launch, with preferences, compatibility and verified profiles.`,
+        ? `Guide Embir : ${guide.topic}. Une approche de rencontre pour tous, gratuite pour les connexions essentielles, avec preferences, compatibilite et profils verifies.`
+        : `Embir guide: ${guide.topic}. A dating platform for everyone, core connection features are free, with preferences, compatibility and verified profiles.`,
   };
 }
 
@@ -180,8 +180,8 @@ export function resolveComparisonPage(slug: string, locale: Locale): ResolvedSeo
         : `This comparison explains concrete differences between ${comparison.app} and Embir: price, trust, verified profiles, intent, orientation and swipe fatigue.`,
     description:
       locale === "fr"
-        ? `${comparison.app} vs Embir 2026 : comparatif complet sur le prix, les profils vérifiés, la compatibilité, les orientations, la sécurité, la gratuité au lancement et le modèle freemium transparent. Découvre quelle app correspond le mieux à tes attentes.`
-        : `${comparison.app} vs Embir 2026: complete comparison of pricing, verified profiles, compatibility, orientations, safety, free-at-launch access and transparent freemium model. Find the app that fits your dating goals best.`,
+        ? `${comparison.app} vs Embir 2026 : comparatif complet sur le prix, les profils vérifiés, la compatibilité, les orientations, la sécurité, la gratuité des connexions essentielles et le modèle freemium transparent. Découvre quelle app correspond le mieux à tes attentes.`
+        : `${comparison.app} vs Embir 2026: complete comparison of pricing, verified profiles, compatibility, orientations, safety, access to free core connections and transparent freemium model. Find the app that fits your dating goals best.`,
   };
 }
 
@@ -203,8 +203,8 @@ export function resolveArticlePage(slug: string, locale: Locale): ResolvedSeoPag
         : `This article targets long-tail informational search intent and links back to Embir money pages without turning the guide into a sales page.`,
     description:
       locale === "fr"
-        ? `${post.title}. Analyse Embir sur les rencontres modernes, la securite, les preferences, la compatibilite et le lancement gratuit.`
-        : `${post.title}. Embir insight on modern dating, safety, preferences, compatibility and the free-at-launch model.`,
+        ? `${post.title}. Analyse Embir sur les rencontres modernes, la securite, les preferences, la compatibilite et l'accès essentiel gratuit.`
+        : `${post.title}. Embir insight on modern dating, safety, preferences, compatibility and the model with free core connections.`,
   };
 }
 
@@ -224,8 +224,8 @@ export function resolveProductPage(slug: string, locale: Locale): ResolvedSeoPag
         : `This product page explains ${page.topic} with useful sections about how it works, who it serves, differences from classic apps and internal links.`,
     description:
       locale === "fr"
-        ? `${page.topic} avec Embir : page produit dediee sur le lancement gratuit, les profils verifies, les preferences, la compatibilite et la securite.`
-        : `${page.topic} with Embir: a dedicated product page about free launch access, verified profiles, preferences, compatibility and safer discovery.`,
+        ? `${page.topic} avec Embir : page produit dediee sur l'accès essentiel gratuit, les profils verifies, les preferences, la compatibilite et la securite.`
+        : `${page.topic} with Embir: a dedicated product page about free core connection access, verified profiles, preferences, compatibility and safer discovery.`,
   };
 }
 
@@ -245,8 +245,8 @@ export function resolveFreemiumPage(slug: string, locale: Locale): ResolvedSeoPa
         : `This page explains the ${page.topic} model so users understand what is free, what funds safety and how freemium stays transparent.`,
     description:
       locale === "fr"
-        ? `${page.topic} sur Embir : ce qui est gratuit au lancement, ce qui financera la securite, la moderation, les profils verifies et la compatibilite.`
-        : `${page.topic} on Embir: what is free at launch, what will fund safety, moderation, verified profiles and compatibility algorithms.`,
+        ? `${page.topic} sur Embir : ce qui est gratuit pour les connexions essentielles, ce qui financera la securite, la moderation, les profils verifies et la compatibilite.`
+        : `${page.topic} on Embir: which core connection features are free, what will fund safety, moderation, verified profiles and compatibility algorithms.`,
   };
 }
 

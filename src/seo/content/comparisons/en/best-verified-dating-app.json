@@ -1,6 +1,6 @@
 {
   "slug": "best-verified-dating-app",
-  "intro": "The central problem with dating apps in 2026: fake profiles, bots, and scams erode trust. Profile verification is the solution — but most apps make it optional or hide it behind a subscription.\n\nOn Embir, selfie verification is available at signup for all users. Human moderation reviews every report.",
+  "intro": "The central problem with dating apps in 2026: fake profiles, bots, and scams erode trust. Profile verification is the solution — but most apps make it optional or hide it behind a subscription.\n\nOn Embir, selfie verification is available at signup for all users. the reporting workflow records every report.",
   "comparisonTable": [
     {
       "criteria": "Selfie verification",
@@ -9,9 +9,9 @@
       "winner": "embir"
     },
     {
-      "criteria": "Human moderation",
+      "criteria": "reporting and blocking",
       "competitor": "Most: automated",
-      "embir": "Human team + review of every report",
+      "embir": "reporting workflow + reports recorded for review",
       "winner": "embir"
     },
     {
@@ -36,20 +36,20 @@
   "sections": [
     {
       "title": "Why verification changes the experience",
-      "content": "A verified profile means the person confirmed their identity with a real-time selfie. It doesn't eliminate all bad behavior, but it creates significant friction for fake accounts and bots. On Embir, verified profiles are prioritized in discovery. You see people who made the effort to verify first.",
+      "content": "A verified profile means the person completed an approved selfie check. It doesn't eliminate all bad behavior, but it creates significant friction for fake accounts and bots. On Embir, verified profiles are prioritized in discovery. You see people who made the effort to verify first.",
       "highlights": [
         "Selfie verification = significant barrier to bots",
         "Verified profiles prioritized in discovery",
-        "Human moderation = fast action on reports"
+        "reporting and blocking = fast action on reports"
       ]
     }
   ],
-  "verdict": "If verified profiles are your priority in a dating app, Embir is the best choice in 2026: free selfie verification for all, systematic human moderation, and verified profiles prioritized in discovery.",
+  "verdict": "If verified profiles are your priority in a dating app, Embir is the best choice in 2026: free selfie verification for all, reporting and blocking tools, and verified profiles prioritized in discovery.",
   "ctaText": "Verified profiles, real people — join Embir",
   "faq": [
     {
       "q": "How does Embir verify profiles?",
-      "a": "Selfie verification at signup: you take a photo in a specific pose that confirms you're the person in your photos. Human moderators review every report."
+      "a": "Selfie verification at signup: you take a photo in a specific pose that adds a visible badge after approval. Reports are recorded for review, and blocking is immediate."
     },
     {
       "q": "Is verification free on Embir?",

@@ -9,7 +9,14 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { action, targetId } = await request.json();
+    const body: unknown = await request.json();
+    if (typeof body !== "object" || body === null || Array.isArray(body)) {
+      return NextResponse.json({ error: "Requête invalide" }, { status: 400 });
+    }
+    const { action, targetId } = body as Record<string, unknown>;
+    if (typeof action !== "string" || typeof targetId !== "string" || targetId.length > 64) {
+      return NextResponse.json({ error: "Requête invalide" }, { status: 400 });
+    }
 
     if (action === "dismiss_report") {
       await prisma.userReport.update({

@@ -1,17 +1,17 @@
 {
   "slug": "safest-dating-app",
-  "intro": "Safety on dating apps has three dimensions: profile authenticity (is this a real person?), behavioral safety (does the platform protect users from harassment?), and data privacy (what does the app do with your personal information?).\n\nEmbir was designed with all three as core requirements, not afterthoughts. Systematic selfie verification, human moderation of every report, a zero-tolerance harassment policy, and a business model that doesn't require selling your data — these are infrastructure decisions made at the start, not features bolted on after a safety scandal.",
+  "intro": "Safety on dating apps has three dimensions: profile authenticity (is this a real person?), behavioral safety (does the platform protect users from harassment?), and data privacy (what does the app do with your personal information?).\n\nEmbir was designed with all three as core requirements, not afterthoughts. optional selfie verification with a visible badge, reporting and blocking tools, a zero-tolerance harassment policy, and a business model that doesn't require selling your data — these are infrastructure decisions made at the start, not features bolted on after a safety scandal.",
   "comparisonTable": [
     {
       "criteria": "Profile verification",
       "competitor": "Most apps: optional or photo-only",
-      "embir": "Systematic selfie verification",
+      "embir": "optional selfie verification with a visible badge",
       "winner": "embir"
     },
     {
       "criteria": "Moderation speed",
       "competitor": "Most apps: automated, slow escalation",
-      "embir": "Human team — every report reviewed",
+      "embir": "reporting workflow — every report reviewed",
       "winner": "embir"
     },
     {
@@ -42,10 +42,10 @@
   "sections": [
     {
       "title": "The three pillars of dating app safety",
-      "content": "Profile authenticity: Embir's selfie verification confirms that a profile photo matches a real face. It doesn't replace all other safety measures but eliminates the most common deception — fake photos.\n\nBehavioral safety: Every report on Embir goes to a human moderator, not just an algorithm. This matters because harassment patterns are contextual and nuanced in ways that keyword filters miss. Human review means faster, more accurate outcomes.\n\nData privacy: Embir has no advertising model. Your dating preferences, your matches, and your conversations are not used to build advertising profiles. The business model is transparent freemium — you pay (eventually, optionally) for safety infrastructure, not for the privilege of using a free tier without ads.",
+      "content": "Profile authenticity: Embir's selfie verification shows that a selfie check with a unique code was approved. It doesn't replace all other safety measures but eliminates the most common deception — fake photos.\n\nBehavioral safety: Every report on Embir is recorded for review, and blocking is immediate. This matters because harassment patterns are contextual and nuanced in ways that keyword filters miss. Human review means faster, more accurate outcomes.\n\nData privacy: Embir has no advertising model. Your dating preferences, your matches, and your conversations are not used to build advertising profiles. The business model is transparent freemium — you pay (eventually, optionally) for safety infrastructure, not for the privilege of using a free tier without ads.",
       "highlights": [
         "Selfie verification: confirms real people behind real photos",
-        "Human moderation: every report reviewed by a person, not just an algorithm",
+        "reporting and blocking: reports recorded for review; blocking is immediate",
         "No ad model: your data isn't the product"
       ]
     },
@@ -59,16 +59,16 @@
       ]
     }
   ],
-  "verdict": "No dating app is perfectly safe. But Embir in 2026 offers the strongest safety baseline among currently available apps: systematic verification, human moderation, no ad-based data model, zero-tolerance harassment policy, and safety design built for every orientation.\n\nFor users — especially women, LGBTQ+ users, and anyone who's had a bad experience on mainstream apps — this is the platform that put safety first before scaling.",
+  "verdict": "No dating app is perfectly safe. But Embir in 2026 offers the strongest safety baseline among currently available apps: available selfie verification, reporting and blocking, no ad-based data model, zero-tolerance harassment policy, and safety design built for every orientation.\n\nFor users — especially women, LGBTQ+ users, and anyone who's had a bad experience on mainstream apps — this is the platform that put safety first before scaling.",
   "ctaText": "Safe, verified, moderated — meet people you can trust",
   "faq": [
     {
       "q": "Is Embir the safest dating app in 2026?",
-      "a": "Embir offers one of the strongest safety baselines: systematic selfie verification, human moderation of every report, zero-tolerance harassment policy, and no advertising data model."
+      "a": "Embir offers one of the strongest safety baselines: optional selfie verification with a visible badge, reporting and blocking tools, zero-tolerance harassment policy, and no advertising data model."
     },
     {
       "q": "How does Embir handle harassment reports?",
-      "a": "Every report goes to a human moderation team — not just an automated filter. Serious violations result in immediate and permanent bans. Context is always considered."
+      "a": "Every report is recorded for review, and blocking is immediate. Serious violations result in account restrictions after review. Context is always considered."
     },
     {
       "q": "Is my data safe on Embir?",

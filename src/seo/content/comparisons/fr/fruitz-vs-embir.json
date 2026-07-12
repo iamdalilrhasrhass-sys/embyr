@@ -10,8 +10,8 @@
     },
     {
       "criteria": "Vérification des profils",
-      "competitor": "Aucune vérification systématique",
-      "embir": "Vérification selfie + modération humaine",
+      "competitor": "Aucune vérification disponible",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -23,7 +23,7 @@
     {
       "criteria": "Accès gratuit",
       "competitor": "Limité — abonnement pour les fonctionnalités clés",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -35,7 +35,7 @@
     {
       "criteria": "Modération",
       "competitor": "Signalement standard",
-      "embir": "Équipe humaine, réponse rapide",
+      "embir": "Signalement enregistré + blocage immédiat",
       "winner": "embir"
     }
   ],
@@ -59,12 +59,12 @@
       ]
     }
   ],
-  "verdict": "Fruitz a une vraie valeur ajoutée pour les rencontres hétéro casual à sérieuses en France. Son concept d'intentions visuelles est malin.\n\nEmbir est la meilleure alternative si tu cherches des profils vérifiés, une vraie inclusivité LGBTQ+, un matching plus profond, et l'accès gratuit au lancement — sans abonnement obligatoire.",
+  "verdict": "Fruitz a une vraie valeur ajoutée pour les rencontres hétéro casual à sérieuses en France. Son concept d'intentions visuelles est malin.\n\nEmbir est la meilleure alternative si tu cherches des profils vérifiés, une vraie inclusivité LGBTQ+, un matching plus profond, et l'accès gratuit pour les connexions essentielles — sans abonnement obligatoire.",
   "ctaText": "Intentions claires, profils vérifiés — rejoins gratuitement",
   "faq": [
     {
       "q": "Embir est-il une bonne alternative à Fruitz ?",
-      "a": "Oui, surtout si tu es LGBTQ+ ou si tu veux des profils vérifiés. Embir est gratuit au lancement, inclusif pour toutes les orientations, avec un matching basé sur les intentions et les valeurs."
+      "a": "Oui, surtout si tu es LGBTQ+ ou si tu veux des profils vérifiés. Embir est gratuit pour les connexions essentielles, inclusif pour toutes les orientations, avec un matching basé sur les intentions et les valeurs."
     },
     {
       "q": "Embir exprime-t-il les intentions comme Fruitz ?",
@@ -72,7 +72,7 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui, les fonctionnalités principales sont gratuites au lancement : découverte, compatibilité, messagerie."
+      "a": "Oui, les fonctionnalités principales sont gratuites pour les connexions essentielles : découverte, compatibilité, messagerie."
     },
     {
       "q": "Fruitz ou Embir pour les rencontres gay ou lesbiennes ?",
@@ -80,7 +80,7 @@
     },
     {
       "q": "Embir vérifie-t-il les profils ?",
-      "a": "Oui. Vérification selfie à l'inscription et une équipe de modérateurs humains examine chaque signalement."
+      "a": "Oui. Vérification selfie facultative et une équipe de dispositif de signalement examine chaque signalement."
     }
   ]
 }

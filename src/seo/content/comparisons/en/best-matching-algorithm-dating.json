@@ -23,7 +23,7 @@
     {
       "criteria": "Profile verification",
       "competitor": "Most: optional",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Free during the launch phase."
+      "a": "Yes. Core connection features are free."
     }
   ]
 }

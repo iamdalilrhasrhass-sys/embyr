@@ -6,7 +6,7 @@ import EarlyAccessForm from "@/components/early-access-form";
 
 export const metadata: Metadata = {
   title: "Early Access Founders",
-  description: "Join the founding community of Embir. Create your personal universe and meet compatible people in your area. Free at launch.",
+  description: "Join the founding community of Embir. Create your personal universe and meet compatible people in your area. core connection features are free.",
 };
 
 export default function EarlyAccessPage() {

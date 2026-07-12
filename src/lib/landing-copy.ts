@@ -144,14 +144,14 @@ export interface CopySet {
 }
 
 const fr: CopySet = {
-  hero_badge: "Plateforme 100% gratuite",
+  hero_badge: "Connexions essentielles gratuites",
   hero_title_line1: "Toutes les orientations.",
   hero_title_line2: "Toutes les envies.",
   hero_subtitle:
     "L'amour, l'amitié, le fun — par orientation, sans bruit, sans prix. Embir filtre pour que tu trouves, pas pour que tu scrolles.",
   hero_cta_primary: "Créer mon profil gratuit",
   hero_cta_secondary: "Vivre l'expérience",
-  hero_strip: ["Gratuit pour toujours", "Profils vérifiés", "Modération humaine", "Multi-orientation"],
+  hero_strip: ["Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.", "Badge selfie disponible", "Signalement et blocage", "Multi-orientation"],
   hero_scroll_hint: "Fais défiler pour entrer",
 
   manifest_eyebrow: "Le manifeste",
@@ -160,8 +160,8 @@ const fr: CopySet = {
     "Les applications de rencontre mélangent tout le monde. Embir sépare. Chaque communauté obtient son propre espace, filtré par orientation et par intention. Pas de bruit. Pas de profils indésirables. Juste les bonnes personnes.",
   manifest_pillars: [
     { title: "Séparation réelle", body: "Le filtre est bidirectionnel et strict. Tu ne vois que les profils qui te correspondent et qui te cherchent aussi." },
-    { title: "Gratuité totale", body: "Aucun abonnement. Aucune pub. Aucune fonctionnalité payante. Toutes les orientations, le même prix : zéro." },
-    { title: "Vérification humaine", body: "Selfie de vérification, modération par une équipe réelle. Les profils vérifiés ont 10× plus de connexions." },
+    { title: "Sans carte bancaire", body: "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit : profil, sélection, réciprocité et messages." },
+    { title: "Vérification disponible", body: "Un membre peut envoyer un selfie avec un code unique. Si la demande est approuvée, un badge visible apparaît ; aucun badge ne garantit l’absence de risque." },
   ],
 
   model_eyebrow: "Comment ça marche",
@@ -174,19 +174,19 @@ const fr: CopySet = {
   model_outro: "Tu choisis. Embir filtre. Tout le monde est heureux.",
 
   econ_eyebrow: "Modèle économique",
-  econ_title: "Gratuit pour toi. Durable pour nous.",
+  econ_title: "L'essentiel sans carte. Un produit durable.",
   econ_body:
-    "Embir ne vend pas tes données. Ne montre pas de pubs. Ne verrouille pas de fonctionnalités. Notre modèle repose sur la transparence et la confiance.",
+    "Embir ne vend pas tes données et ne transforme pas la sécurité ou les connexions essentielles en leviers de frustration payante.",
   econ_cards: [
-    { title: "Gratuit à vie", body: "Toutes les fonctionnalités, pour tous, pour toujours. Messagerie, matching, vérification — zéro euro.", tag: "Utilisateurs" },
+    { title: "Connexions essentielles", body: "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.", tag: "Utilisateurs" },
     { title: "Embassadeurs", body: "Des membres de confiance animent les communautés locales et créent des événements réels.", tag: "Communauté" },
     { title: "Partenariats éthiques", body: "Collaborations avec des marques et associations alignées sur nos valeurs. Pas de pub intrusive.", tag: "Revenus" },
   ],
-  econ_pledge: "Nos engagements : gratuité, vie privée, sécurité. Non négociables.",
+  econ_pledge: "Nos engagements : transparence, vie privée et sécurité. Non négociables.",
 
   universe_eyebrow: "Choisis ton intention",
   universe_title: "Une application. Toutes les raisons de se rencontrer.",
-  universe_subtitle: "Pas de confusion. Tu dis ce que tu veux, Embir te montre les personnes qui veulent la même chose.",
+  universe_subtitle: "Moins de confusion. Tu dis ce que tu veux, Embir te montre les personnes qui veulent la même chose.",
   universe_cards: [
     { icon: "♥", title: "Amour", body: "Relation sérieuse. Trouve quelqu'un avec qui construire." },
     { icon: "✦", title: "Amis", body: "Élargis ton cercle, partage tes passions." },
@@ -215,10 +215,10 @@ const fr: CopySet = {
   proof_eyebrow: "La communauté",
   proof_title: "Ce que les membres vivent.",
   proof_stats: [
-    { value: "100%", label: "Gratuit, pour toujours" },
+    { value: "0 €", label: "Pour une connexion essentielle" },
     { value: "10", label: "Orientations respectées" },
     { value: "6", label: "Intentions claires" },
-    { value: "0", label: "Publicité, zéro tracking" },
+    { value: "Choix", label: "Mesure d’audience soumise au consentement" },
   ],
 
   journal_eyebrow: "Le journal",
@@ -254,9 +254,9 @@ const fr: CopySet = {
 
   member_eyebrow: "Rejoins l'écosystème",
   member_title: "Un univers, plusieurs portes d'entrée.",
-  member_body: "Embir est gratuit, mais l'écosystème va plus loin. Deviens ambassadeur, crée des événements, ou soutiens la plateforme.",
+  member_body: "Les connexions essentielles sont gratuites. Tu peux aussi devenir ambassadeur, créer des événements ou soutenir la plateforme.",
   member_tiers: [
-    { name: "Membre", price: "0 €", perks: ["Accès complet", "Messagerie illimitée", "Vérification de profil", "Toutes les intentions"], cta: "Créer mon profil" },
+    { name: "Membre", price: "0 €", perks: ["Sélection compatible", "Messagerie réciproque", "Vérification de profil", "Toutes les intentions"], cta: "Créer mon profil" },
     { name: "Ambassadeur", price: "Sur candidature", perks: ["Anime ta ville", "Crée des événements", "Badge officiel", "Accès anticipé aux features"], cta: "Postuler" },
     { name: "Soutien", price: "Libre", perks: ["Financer la gratuité", "Mention sur le mur", "Newsletter exclusive", "Pas de contrepartie materielle"], cta: "Soutenir" },
   ],
@@ -276,16 +276,16 @@ const fr: CopySet = {
 
   final_eyebrow: "Rejoins le mouvement",
   final_title: "Ton prochain chapitre commence ici.",
-  final_body: "Gratuit pour toujours. Aucune pub. Aucun abonnement caché. Juste des rencontres authentiques, pour toutes les orientations et toutes les envies.",
+  final_body: "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Juste des rencontres authentiques, pour toutes les orientations et toutes les envies.",
   final_cta: "Commencer maintenant",
 
   faq_title: "Questions fréquentes",
   faq_items: [
-    { q: "Embir est-il vraiment gratuit ?", a: "Oui, 100% gratuit. Aucun abonnement, aucune pub, aucune fonctionnalité payante. Toutes les orientations, toutes les envies, le même prix : zéro." },
+    { q: "Embir est-il vraiment gratuit ?", a: "Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire : profil, sélection compatible, réciprocité et messages." },
     { q: "Un hétéro peut-il voir des profils gays ?", a: "Non, sauf si tu choisis explicitement de chercher plusieurs genres. Le filtre est bidirectionnel et strict." },
     { q: "Embir est-il seulement pour la communauté LGBTQ+ ?", a: "Non. Embir est pour tout le monde. L'objectif est que chaque communauté trouve son espace sans empiéter sur les autres." },
     { q: "Puis-je chercher plusieurs choses à la fois ?", a: "Oui. Tu peux sélectionner plusieurs intentions : amour ET amis, fun ET plan cul, sport ET événements." },
-    { q: "Comment fonctionne la vérification des profils ?", a: "Par selfie : tu prends une photo en direct, notre système vérifie que tu es bien la personne sur tes photos." },
+    { q: "Comment fonctionne la vérification des profils ?", a: "Tu peux envoyer un selfie avec un code unique. Si la demande est approuvée, un badge vérifié visible apparaît sur ton profil." },
   ],
 
   footer_tagline: "Là où chaque regard trouve sa suite.",
@@ -311,14 +311,14 @@ const fr: CopySet = {
 };
 
 const en: CopySet = {
-  hero_badge: "100% free platform",
+  hero_badge: "Free core connections",
   hero_title_line1: "Every orientation.",
   hero_title_line2: "Every intention.",
   hero_subtitle:
     "Love, friendship, fun — by orientation, without noise, without price. Embir filters so you find, not so you scroll.",
   hero_cta_primary: "Create your free profile",
   hero_cta_secondary: "Experience it",
-  hero_strip: ["Free forever", "Verified profiles", "Human moderation", "Multi-orientation"],
+  hero_strip: ["Everything needed to meet someone is free. No credit card required", "Optional verified badge", "Reporting and blocking", "Multi-orientation"],
   hero_scroll_hint: "Scroll to enter",
 
   manifest_eyebrow: "The manifesto",
@@ -327,8 +327,8 @@ const en: CopySet = {
     "Dating apps mix everyone together. Embir separates. Each community gets its own space, filtered by orientation and intention. No noise. No unwanted profiles. Just the right people.",
   manifest_pillars: [
     { title: "Real separation", body: "The filter is bidirectional and strict. You only see profiles that match you AND are looking for you too." },
-    { title: "Total freedom", body: "No subscription. No ads. No paid features. Every orientation, the same price: zero." },
-    { title: "Human verification", body: "Selfie verification, moderation by a real team. Verified profiles get 10× more connections." },
+    { title: "No credit card", body: "Everything needed to meet someone is free: profile, selection, reciprocity and messages." },
+    { title: "Verification available", body: "A member can submit a selfie with a unique code. If approved, a visible badge appears; no badge guarantees the absence of risk." },
   ],
 
   model_eyebrow: "How it works",
@@ -341,19 +341,19 @@ const en: CopySet = {
   model_outro: "You choose. Embir filters. Everyone's happy.",
 
   econ_eyebrow: "Business model",
-  econ_title: "Free for you. Sustainable for us.",
+  econ_title: "No card for the essentials. Built to last.",
   econ_body:
-    "Embir doesn't sell your data. Doesn't show ads. Doesn't lock features. Our model is built on transparency and trust.",
+    "Embir does not sell your data or turn safety and core connections into paid frustration levers.",
   econ_cards: [
-    { title: "Free for life", body: "All features, for everyone, forever. Messaging, matching, verification — zero euros.", tag: "Users" },
+    { title: "Core connections", body: "Everything needed to meet someone is free. No credit card required.", tag: "Users" },
     { title: "Ambassadors", body: "Trusted members run local communities and create real-world events.", tag: "Community" },
     { title: "Ethical partnerships", body: "Collaborations with brands and associations aligned with our values. No intrusive ads.", tag: "Revenue" },
   ],
-  econ_pledge: "Our commitments: free, private, secure. Non-negotiable.",
+  econ_pledge: "Our commitments: transparency, privacy and safety. Non-negotiable.",
 
   universe_eyebrow: "Choose your intention",
   universe_title: "One app. Every reason to meet.",
-  universe_subtitle: "No confusion. You say what you want, Embir shows you people who want the same.",
+  universe_subtitle: "Less confusion. You say what you want, Embir shows you people who want the same.",
   universe_cards: [
     { icon: "♥", title: "Love", body: "Serious relationship. Find someone to build with." },
     { icon: "✦", title: "Friends", body: "Expand your circle, share your passions." },
@@ -382,10 +382,10 @@ const en: CopySet = {
   proof_eyebrow: "The community",
   proof_title: "What members experience.",
   proof_stats: [
-    { value: "100%", label: "Free, forever" },
+    { value: "€0", label: "For a core connection" },
     { value: "10", label: "Orientations respected" },
     { value: "6", label: "Clear intentions" },
-    { value: "0", label: "Ads, zero tracking" },
+    { value: "Choice", label: "Audience measurement requires consent" },
   ],
 
   journal_eyebrow: "The journal",
@@ -421,9 +421,9 @@ const en: CopySet = {
 
   member_eyebrow: "Join the ecosystem",
   member_title: "One universe, several entry points.",
-  member_body: "Embir is free, but the ecosystem goes further. Become an ambassador, create events, or support the platform.",
+  member_body: "Core connections are free. You can also become an ambassador, create events or support the platform.",
   member_tiers: [
-    { name: "Member", price: "€0", perks: ["Full access", "Unlimited messaging", "Profile verification", "All intentions"], cta: "Create my profile" },
+    { name: "Member", price: "€0", perks: ["Compatible selection", "Reciprocal messaging", "Profile verification", "All intentions"], cta: "Create my profile" },
     { name: "Ambassador", price: "By application", perks: ["Run your city", "Create events", "Official badge", "Early feature access"], cta: "Apply" },
     { name: "Supporter", price: "Pay what you want", perks: ["Fund the free model", "Wall mention", "Exclusive newsletter", "No material rewards"], cta: "Support" },
   ],
@@ -443,12 +443,12 @@ const en: CopySet = {
 
   final_eyebrow: "Join the movement",
   final_title: "Your next chapter starts here.",
-  final_body: "Free forever. No ads. No hidden subscriptions. Just authentic connections, for every orientation and every intention.",
+  final_body: "Everything needed to meet someone is free. No credit card required. No ads. No hidden subscriptions. Just authentic connections, for every orientation and every intention.",
   final_cta: "Get started now",
 
   faq_title: "Frequently asked questions",
   faq_items: [
-    { q: "Is Embir really free?", a: "Yes, 100% free. No subscription, no ads, no paid features. Every orientation, every intention, same price: zero." },
+    { q: "Is Embir really free?", a: "Yes. Everything needed to meet someone is free. No credit card required: profile, compatible selection, reciprocity and messaging." },
     { q: "Can a straight person see gay profiles?", a: "No, unless you explicitly choose to look for multiple genders. The filter is bidirectional and strict." },
     { q: "Is Embir only for the LGBTQ+ community?", a: "No. Embir is for everyone. The goal is for each community to find its space without encroaching on others." },
     { q: "Can I look for multiple things at once?", a: "Yes. You can select multiple intentions: love AND friends, fun AND casual, sports AND events." },
@@ -478,14 +478,14 @@ const en: CopySet = {
 };
 
 const es: CopySet = {
-  hero_badge: "Plataforma 100% gratuita",
+  hero_badge: "Conexiones esenciales gratis",
   hero_title_line1: "Todas las orientaciones.",
   hero_title_line2: "Todas las intenciones.",
   hero_subtitle:
     "Amor, amistad, diversión — por orientación, sin ruido, sin precio. Embir filtra para que encuentres, no para que hagas scroll.",
   hero_cta_primary: "Crear mi perfil gratis",
   hero_cta_secondary: "Vivir la experiencia",
-  hero_strip: ["Gratis para siempre", "Perfiles verificados", "Moderación humana", "Multi-orientación"],
+  hero_strip: ["Todo lo necesario para conocer a alguien es gratis. Sin tarjeta bancaria.", "Insignia verificada opcional", "Denuncia y bloqueo", "Multi-orientación"],
   hero_scroll_hint: "Desplázate para entrar",
 
   manifest_eyebrow: "El manifiesto",
@@ -494,8 +494,8 @@ const es: CopySet = {
     "Las apps de citas mezclan a todos. Embir separa. Cada comunidad obtiene su propio espacio, filtrado por orientación e intención. Sin ruido. Sin perfiles no deseados. Solo las personas correctas.",
   manifest_pillars: [
     { title: "Separación real", body: "El filtro es bidireccional y estricto. Solo ves los perfiles que te corresponden Y que también te buscan." },
-    { title: "Libertad total", body: "Sin suscripción. Sin anuncios. Sin funciones de pago. Cada orientación, el mismo precio: cero." },
-    { title: "Verificación humana", body: "Verificación por selfie, moderación por un equipo real. Los perfiles verificados tienen 10× más conexiones." },
+    { title: "Sin tarjeta bancaria", body: "Todo lo necesario para conocer a alguien es gratis: perfil, selección, reciprocidad y mensajes." },
+    { title: "Verificación disponible", body: "Un miembro puede enviar un selfie con un código único. Si se aprueba, aparece una insignia visible; ninguna insignia elimina todos los riesgos." },
   ],
 
   model_eyebrow: "Cómo funciona",
@@ -508,15 +508,15 @@ const es: CopySet = {
   model_outro: "Tú eliges. Embir filtra. Todos felices.",
 
   econ_eyebrow: "Modelo económico",
-  econ_title: "Gratis para ti. Sostenible para nosotros.",
+  econ_title: "Lo esencial sin tarjeta. Un producto sostenible.",
   econ_body:
-    "Embir no vende tus datos. No muestra anuncios. No bloquea funciones. Nuestro modelo se basa en la transparencia y la confianza.",
+    "Embir no vende tus datos ni convierte la seguridad o las conexiones esenciales en palancas de frustración de pago.",
   econ_cards: [
-    { title: "Gratis para siempre", body: "Todas las funciones, para todos, para siempre. Mensajería, matching, verificación — cero euros.", tag: "Usuarios" },
+    { title: "Conexiones esenciales", body: "Todo lo necesario para conocer a alguien es gratis. Sin tarjeta bancaria.", tag: "Usuarios" },
     { title: "Embajadores", body: "Miembros de confianza animan las comunidades locales y crean eventos reales.", tag: "Comunidad" },
     { title: "Alianzas éticas", body: "Colaboraciones con marcas y asociaciones alineadas con nuestros valores. Sin anuncios intrusivos.", tag: "Ingresos" },
   ],
-  econ_pledge: "Nuestros compromisos: gratis, privado, seguro. No negociables.",
+  econ_pledge: "Nuestros compromisos: transparencia, privacidad y seguridad. No negociables.",
 
   universe_eyebrow: "Elige tu intención",
   universe_title: "Una app. Todas las razones para encontrarse.",
@@ -549,10 +549,10 @@ const es: CopySet = {
   proof_eyebrow: "La comunidad",
   proof_title: "Lo que viven los miembros.",
   proof_stats: [
-    { value: "100%", label: "Gratis, para siempre" },
+    { value: "0 €", label: "Para una conexión esencial" },
     { value: "10", label: "Orientaciones respetadas" },
     { value: "6", label: "Intenciones claras" },
-    { value: "0", label: "Anuncios, cero tracking" },
+    { value: "Elección", label: "La medición de audiencia requiere consentimiento" },
   ],
 
   journal_eyebrow: "El diario",
@@ -588,9 +588,9 @@ const es: CopySet = {
 
   member_eyebrow: "Únete al ecosistema",
   member_title: "Un universo, varias puertas de entrada.",
-  member_body: "Embir es gratis, pero el ecosistema va más allá. Conviértete en embajador, crea eventos o apoya la plataforma.",
+  member_body: "Las conexiones esenciales son gratis. También puedes ser embajador, crear eventos o apoyar la plataforma.",
   member_tiers: [
-    { name: "Miembro", price: "0 €", perks: ["Acceso completo", "Mensajería ilimitada", "Verificación de perfil", "Todas las intenciones"], cta: "Crear mi perfil" },
+    { name: "Miembro", price: "0 €", perks: ["Selección compatible", "Mensajería recíproca", "Verificación de perfil", "Todas las intenciones"], cta: "Crear mi perfil" },
     { name: "Embajador", price: "Por candidatura", perks: ["Animas tu ciudad", "Creas eventos", "Insignia oficial", "Acceso anticipado"], cta: "Postular" },
     { name: "Apoyo", price: "Libre", perks: ["Financiar el modelo gratis", "Mención en el muro", "Newsletter exclusiva", "Sin recompensas materiales"], cta: "Apoyar" },
   ],
@@ -610,16 +610,16 @@ const es: CopySet = {
 
   final_eyebrow: "Únete al movimiento",
   final_title: "Tu próximo capítulo empieza aquí.",
-  final_body: "Gratis para siempre. Sin anuncios. Sin suscripciones ocultas. Solo conexiones auténticas, para todas las orientaciones e intenciones.",
+  final_body: "Todo lo necesario para conocer a alguien es gratis. Sin tarjeta bancaria. Conexiones auténticas para todas las orientaciones e intenciones.",
   final_cta: "Empezar ahora",
 
   faq_title: "Preguntas frecuentes",
   faq_items: [
-    { q: "¿Embir es realmente gratis?", a: "Sí, 100% gratis. Sin suscripción, sin anuncios, sin funciones de pago. Cada orientación, cada intención, mismo precio: cero." },
+    { q: "¿Embir es realmente gratis?", a: "Sí. Todo lo necesario para conocer a alguien es gratis. Sin tarjeta bancaria: perfil, selección compatible, reciprocidad y mensajes." },
     { q: "¿Puede una persona hetero ver perfiles gays?", a: "No, a menos que elijas explícitamente buscar varios géneros. El filtro es bidireccional y estricto." },
     { q: "¿Embir es solo para la comunidad LGBTQ+?", a: "No. Embir es para todos. El objetivo es que cada comunidad encuentre su espacio sin invadir a las demás." },
     { q: "¿Puedo buscar varias cosas a la vez?", a: "Sí. Puedes seleccionar varias intenciones: amor Y amigos, diversión Y casual, deportes Y eventos." },
-    { q: "¿Cómo funciona la verificación de perfiles?", a: "Por selfie: tomas una foto en vivo, nuestro sistema verifica que eres la persona en tus fotos." },
+    { q: "¿Cómo funciona la verificación de perfiles?", a: "Puedes enviar un selfie con un código único. Si se aprueba la solicitud, aparece una insignia visible en tu perfil." },
   ],
 
   footer_tagline: "Donde cada mirada encuentra lo que sigue.",

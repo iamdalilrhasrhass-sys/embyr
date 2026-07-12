@@ -21,7 +21,7 @@ We got tired of dating apps that feel like slot machines — designed to keep yo
 Everyone. Gay, straight, bi, trans, queer — you choose who you want to see and who sees you. No algorithmic assumptions about who you should date.
 
 **What's next?**
-We're a small, bootstrapped team. Right now EMBIR is live in Paris with ~200 early users. We're iterating fast based on real feedback. Next: expanding to more cities.
+We're a small, bootstrapped team. Right now EMBIR is live and accepts registrations. We're iterating on the product and community. Next: expanding to more cities.
 
 **Try it:** [embir.xyz/paris](https://embir.xyz/paris)
 

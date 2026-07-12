@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import crypto from "crypto";
+import { randomUUID } from "node:crypto";
 import { prisma } from "@/lib/prisma";
 import { verifyToken } from "@/lib/auth";
 
 // ── Types ──
 
-export type ApiHandler = (
+export type ApiHandler<TArgs extends unknown[] = unknown[]> = (
   request: NextRequest,
-  ...args: any[]
+  ...args: TArgs
 ) => Promise<NextResponse | Response>;
 
 export interface ApiLogEntry {
@@ -19,7 +19,7 @@ export interface ApiLogEntry {
   duration_ms: number;
   error_message: string | null;
   browser: string | null;
-  ip_hash: string | null;
+  device_category: "bot" | "mobile" | "tablet" | "desktop" | "unknown";
 }
 
 // ── Helpers ──
@@ -67,19 +67,12 @@ function parseBrowser(ua: string | null): string | null {
   return "Unknown";
 }
 
-/** Hash IP address for privacy — SHA-256 so it's not reversible */
-function hashIp(ip: string | null): string | null {
-  if (!ip) return null;
-  return crypto.createHash("sha256").update(ip).digest("hex").slice(0, 16);
-}
-
-/** Extract client IP from request headers */
-function extractIp(req: NextRequest): string | null {
-  const forwarded = req.headers.get("x-forwarded-for");
-  if (forwarded) return forwarded.split(",")[0].trim();
-  const realIp = req.headers.get("x-real-ip");
-  if (realIp) return realIp.trim();
-  return req.headers.get("x-client-ip") ?? null;
+function deviceCategory(ua: string | null): ApiLogEntry["device_category"] {
+  if (!ua) return "unknown";
+  if (/bot|crawler|spider|slurp|headless/i.test(ua)) return "bot";
+  if (/ipad|tablet|kindle/i.test(ua)) return "tablet";
+  if (/mobile|iphone|ipod|android/i.test(ua)) return "mobile";
+  return "desktop";
 }
 
 /** Detect if a request body might contain sensitive data we should never log */
@@ -100,13 +93,14 @@ function isSensitiveRoute(url: string): boolean {
  * Logs to console AND stores in the AnalyticsEvent table.
  * NEVER logs: passwords, tokens, photos, message content, or raw IP addresses.
  */
-export function withApiLogging(handler: ApiHandler): ApiHandler {
-  return async (request: NextRequest, ...args: any[]) => {
+export function withApiLogging<TArgs extends unknown[]>(
+  handler: ApiHandler<TArgs>,
+): ApiHandler<TArgs> {
+  return async (request: NextRequest, ...args: TArgs) => {
     const start = performance.now();
     const route = new URL(request.url).pathname;
     const method = request.method;
     const userAgent = request.headers.get("user-agent");
-    const ip = extractIp(request);
 
     // Extract user_id without logging the token
     const userId = extractUserId(request);
@@ -114,8 +108,7 @@ export function withApiLogging(handler: ApiHandler): ApiHandler {
     // Parse browser name from UA (never store raw UA in log body)
     const browser = parseBrowser(userAgent);
 
-    // Hash IP — never store raw IP
-    const ipHash = hashIp(ip);
+    const coarseDevice = deviceCategory(userAgent);
 
     let response: NextResponse | Response;
     let statusCode = 500;
@@ -125,24 +118,10 @@ export function withApiLogging(handler: ApiHandler): ApiHandler {
       response = await handler(request, ...args);
       statusCode = response.status;
 
-      // Clone the response so we can read its body for error detection
-      // (without consuming the original stream)
-      if (statusCode >= 400 && !isSensitiveRoute(route)) {
-        try {
-          const clone = response.clone();
-          const body = await clone.json();
-          if (body?.error && typeof body.error === "string") {
-            errorMessage = body.error.slice(0, 200);
-          }
-        } catch {
-          // Response body isn't JSON or is empty — that's fine
-        }
-      }
-    } catch (err: any) {
+      if (statusCode >= 400 && !isSensitiveRoute(route)) errorMessage = "request_failed";
+    } catch {
       // Catch unhandled errors from the handler
-      errorMessage = err?.message
-        ? err.message.slice(0, 200)
-        : "Internal server error";
+      errorMessage = "internal_error";
       // Re-throw the error as a proper Response
       response = NextResponse.json(
         { error: "Erreur serveur" },
@@ -163,32 +142,31 @@ export function withApiLogging(handler: ApiHandler): ApiHandler {
       duration_ms: durationMs,
       error_message: errorMessage,
       browser,
-      ip_hash: ipHash,
+      device_category: coarseDevice,
     };
-    console.log(`[API] ${method} ${route} ${statusCode} ${durationMs}ms`, {
-      userId,
-      browser,
-      error: errorMessage,
-    });
+    console.log(`[API] ${method} ${route} ${statusCode} ${durationMs}ms`, logEntry);
 
     // ── Store in AnalyticsEvent table (fire-and-forget) ──
     prisma.analyticsEvent
       .create({
         data: {
-          eventName: `api_${method.toLowerCase()}_${statusCode < 400 ? "success" : "error"}`,
+          eventId: randomUUID(),
+          eventName: "api_request",
+          eventVersion: 1,
+          occurredAt: new Date(),
           properties: {
             route,
             method,
             statusCode,
             durationMs,
             browser,
-            ipHash, // hashed, not raw
-            ...(errorMessage ? { errorMessage } : {}),
+            outcome: statusCode < 400 ? "success" : "error",
           },
           userId: userId ?? undefined,
           page: route,
-          userAgent: userAgent ?? undefined,
-          ipAddress: ipHash ?? undefined,
+          deviceCategory: coarseDevice,
+          userAgent: null,
+          ipAddress: null,
         },
       })
       .catch((err: Error) => {

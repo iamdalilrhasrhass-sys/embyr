@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { cookies, headers } from "next/headers";
+import { prisma } from "@/lib/prisma";
 
 function getJwtSecret(): string {
   const secret = process.env.JWT_SECRET;
@@ -64,5 +65,15 @@ export async function getCurrentUser() {
   if (!token) return null;
   const payload = verifyToken(token);
   if (!payload) return null;
-  return { id: payload.userId, email: payload.email };
+
+  // A signed token is only an identity hint. Account state is authoritative.
+  return prisma.user.findFirst({
+    where: {
+      id: payload.userId,
+      email: payload.email,
+      bannedAt: null,
+      deletedAt: null,
+    },
+    select: { id: true, email: true, role: true },
+  });
 }

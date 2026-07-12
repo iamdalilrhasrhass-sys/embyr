@@ -1,39 +1,16 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { motion, useInView, animate, useMotionValue, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const badges = [
-  { icon: "🔒", title: "Paiement Sécurisé", sub: "Stripe + 3D Secure" },
-  { icon: "🛡️", title: "RGPD Conforme", sub: "Données protégées UE" },
-  { icon: "👁️", title: "Modération 24/7", sub: "Équipe humaine" },
-  { icon: "✅", title: "Profils Vérifiés", sub: "Selfie avec code" },
-  { icon: "📱", title: "Paiement Local", sub: "Allopass SMS+" },
-  { icon: "", title: "Premium Qualité", sub: "Expérience soignée" },
+  { icon: "🔒", title: "Connexions essentielles", sub: "Sans carte bancaire" },
+  { icon: "🛡️", title: "Confidentialité", sub: "Contrôles de visibilité" },
+  { icon: "👁️", title: "Signalement", sub: "Blocage immédiat" },
+  { icon: "✅", title: "Badge Vérifié", sub: "Selfie avec code" },
+  { icon: "📱", title: "Préférences réciproques", sub: "Dans les deux sens" },
+  { icon: "", title: "Sélection courte", sub: "Pas de swipe infini" },
 ];
-
-function AnimatedCounter({ value, label }: { value: number; label: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v));
-
-  useEffect(() => {
-    if (isInView) {
-      const controls = animate(count, value, { duration: 2, ease: "easeOut" });
-      return controls.stop;
-    }
-  }, [isInView, count, value]);
-
-  return (
-    <div ref={ref} className="text-center">
-      <motion.span className="text-3xl md:text-4xl font-black text-white tabular-nums">
-        {rounded}
-      </motion.span>
-      <span className="block text-xs text-gray-500 mt-1 tracking-wide uppercase">{label}</span>
-    </div>
-  );
-}
 
 export default function LandingTrust() {
   const ref = useRef<HTMLDivElement>(null);
@@ -64,13 +41,6 @@ export default function LandingTrust() {
       >
         Tout est pensé pour votre sérénité.
       </motion.p>
-
-      {/* Animated counters */}
-      <div className="flex justify-center gap-8 md:gap-16 mb-16">
-        <AnimatedCounter value={2480} label="Profils" />
-        <AnimatedCounter value={892} label="Vérifiés" />
-        <AnimatedCounter value={124} label="Premium" />
-      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {badges.map((b, i) => (

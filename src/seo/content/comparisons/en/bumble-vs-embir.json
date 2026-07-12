@@ -1,17 +1,17 @@
 {
   "slug": "bumble-vs-embir",
-  "intro": "Bumble forces women to initiate contact within 24 hours — an artificial mechanic that creates pressure and doesn't work well for same-sex matches. Its free tier is increasingly restricted.\n\nEmbir offers the same respect for the feminine experience through verification and human moderation, without the 24h constraint or paywall.",
+  "intro": "Bumble forces women to initiate contact within 24 hours — an artificial mechanic that creates pressure and doesn't work well for same-sex matches. Its free tier is increasingly restricted.\n\nEmbir offers the same respect for the feminine experience through verification and reporting and blocking, without the 24h constraint or paywall.",
   "comparisonTable": [
     {
       "criteria": "Profile verification",
       "competitor": "Partial / optional",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Premium ~$25/month",
-      "embir": "Full features free at launch",
+      "embir": "Full features core connection features are free",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Moderation",
       "competitor": "Automated / community",
-      "embir": "Human team + fast response",
+      "embir": "Reporting workflow + immediate blocking",
       "winner": "embir"
     }
   ],
@@ -40,7 +40,7 @@
       "highlights": [
         "Bidirectional filtering — your orientation applies both ways",
         "Verified profiles — fewer bots and fake accounts",
-        "100% free at launch — no credit card required"
+        "Core connection features are free — no credit card required"
       ]
     }
   ],
@@ -49,11 +49,11 @@
   "faq": [
     {
       "q": "Is Embir better than Bumble?",
-      "a": "Embir has verified profiles, bidirectional filtering and human moderation that Bumble doesn't offer. For LGBTQ+ inclusivity and safety, Embir is superior."
+      "a": "Embir has verified profiles, bidirectional filtering and reporting and blocking that Bumble doesn't offer. For LGBTQ+ inclusivity and safety, Embir is superior."
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Discovery, matching and messaging are free during the launch phase."
+      "a": "Yes. Discovery, matching and messaging are free for core connections."
     },
     {
       "q": "How does Embir compare to Bumble for LGBTQ+ dating?",

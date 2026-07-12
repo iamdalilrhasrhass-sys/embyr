@@ -11,7 +11,7 @@
     {
       "criteria": "Protection utilisateurs vulnerables",
       "competitor": "La plupart : moderation automatique insuffisante",
-      "embir": "Verification + moderation humaine",
+      "embir": "Verification + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -38,13 +38,13 @@
       "title": "Ce que l'inclusivite veut vraiment dire en 2026",
       "content": "La plupart des grandes apps ont ajoute des options LGBTQ+ progressivement. Le resultat est souvent cosmetique : l'algorithme reste optimise pour l'experience hetero, et les options LGBTQ+ sont des filtres supplementaires plutot que des citoyens de premiere classe.\n\nEmbir a ete concu de zero pour toutes les orientations. Gay, lesbienne, bi, pansexuel, queer, trans — chaque identite a le meme poids dans l'algorithme de matching. Le filtrage bidirectionnel fonctionne exactement pareil pour toutes les combinaisons d'orientation.",
       "highlights": [
-        "10 orientations — pas juste un menu deroulant, un vrai matching",
+        "10 orientations — pas juste un menu deroulant, un vrreciprocal compatibility",
         "Filtrage bidirectionnel identique pour toutes les orientations",
         "Moderation anti-discrimination active, pas reactive"
       ]
     }
   ],
-  "verdict": "En 2026, l'appli de rencontre la plus inclusive pour toutes les orientations et identites de genre est Embir : 10 orientations en premiere classe dans l'algorithme, filtrage bidirectionnel, moderation humaine anti-discrimination, et gratuite au lancement.",
+  "verdict": "En 2026, l'appli de rencontre la plus inclusive pour toutes les orientations et identites de genre est Embir : 10 orientations en premiere classe dans l'algorithme, filtrage bidirectionnel, signalement et blocage anti-discrimination, et gratuite pour les connexions essentielles.",
   "ctaText": "La plateforme de rencontres inclusive de 2026 — rejoins gratuitement",
   "faq": [
     {
@@ -53,7 +53,7 @@
     },
     {
       "q": "Comment Embir protege-t-il les utilisateurs LGBTQ+ ?",
-      "a": "Verification selfie, moderation humaine de chaque signalement, zero tolerance pour la discrimination, et filtrage bidirectionnel pour eviter les contacts non souhaites."
+      "a": "Verification selfie, signalements enregistrés pour examen et blocage immédiat, zero tolerance pour la discrimination, et filtrage bidirectionnel pour eviter les contacts non souhaites."
     },
     {
       "q": "Embir est-il gratuit pour les utilisateurs LGBTQ+ ?",

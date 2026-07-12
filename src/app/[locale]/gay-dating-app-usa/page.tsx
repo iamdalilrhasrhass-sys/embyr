@@ -4,8 +4,8 @@ import TrackedLink from "@/components/TrackedLink";
 import PageTypeTracker from "@/components/PageTypeTracker";
 
 export const metadata: Metadata = {
-  title: "Free Gay Dating App in the USA — Verified Profiles, No Ads",
-  description: "Embir is a free gay dating app built for the USA. Verified profiles, smarter AI matching, zero ads, and unlimited messaging. Available in New York, Los Angeles, Miami, Chicago and beyond.",
+  title: "Gay Dating App in the USA — Reciprocal Preferences",
+  description: "Embir is available across the USA with reciprocal preferences, an optional selfie badge, reporting, blocking, and messaging after a mutual connection.",
   alternates: {
     canonical: "https://embir.xyz/gay-dating-app-usa",
     languages: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Free Gay Dating App in the USA",
-    description: "Free, safe, and built for the USA. Verified profiles, AI matching, and unlimited messaging — no ads, no paywalls.",
+    description: "Reciprocal preferences, an optional selfie badge, reporting, blocking, and a core connection path without a credit card.",
     url: "https://embir.xyz/gay-dating-app-usa",
     locale: "en_US",
     images: [`/api/og?title=Free+Gay+Dating+App+in+the+USA&variant=market`],
@@ -39,9 +39,9 @@ export default function Page() {
             <span className="text-[#d4a574]">built for the USA.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/50">
-            Embir is a new gay dating app designed for American men who want something real. 
-            Verified profiles, AI-powered matching, zero ads, and unlimited free messaging — 
-            launching in New York, Los Angeles, Miami, and Chicago, with more cities to come.
+            Embir is a new gay dating app designed for American men who want something real.
+            Reciprocal preferences, an optional selfie badge, reporting, blocking, and messaging
+            after a mutual connection. Membership is open across the United States.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <TrackedLink href="/auth/register?source=usa-landing" label="Create my free profile" location="usa-landing-hero" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
@@ -64,25 +64,24 @@ export default function Page() {
               <span className="text-white/50">to meet real people.</span>
             </h2>
             <p className="mt-5 text-white/45 leading-relaxed">
-              Most gay dating apps in the US lock basic features behind monthly subscriptions. 
-              Grindr charges up to $30/month for features that should be free. Tinder limits your 
+              Most gay dating apps in the US lock basic features behind monthly subscriptions.
+              Grindr charges up to $30/month for features that should be free. Tinder limits your
               swipes. Scruff paywalls messages. The result? You pay more and meet fewer genuine people.
             </p>
             <p className="mt-4 text-white/45 leading-relaxed">
-              Embir takes a different approach. During launch, everything is free — unlimited messages, 
-              full profiles, smart matching, and zero ads. Founding members keep lifetime access to 
-              premium features without ever paying.
+              Embir takes a different approach. Everything needed to meet someone is free. No credit card required.
+              Founding members help shape the product and its community.
             </p>
           </div>
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
             <h3 className="text-lg font-bold text-white mb-6">What you get with Embir</h3>
             <ul className="space-y-4">
               {[
-                { label: "Unlimited messaging", desc: "No daily limits, no match requirements, no paywalls." },
-                { label: "Verified profiles", desc: "Every profile goes through selfie verification. No bots, no catfish." },
-                { label: "AI-powered matching", desc: "Our DeepSeek AI learns what you like and suggests genuinely compatible people." },
+                { label: "Messaging after reciprocity", desc: "A conversation opens after a mutual connection and the required reveal steps." },
+                { label: "Verified profiles", desc: "Selfie verification is available to every member. A visible badge identifies approved profiles; no system can eliminate every risk." },
+                { label: "Reciprocal compatibility", desc: "The engine applies declared preferences and intentions in both directions." },
                 { label: "Zero ads", desc: "No banner ads, no interstitials, no sponsored profiles. Clean experience." },
-                { label: "Cities across the US", desc: "Launching in New York, Los Angeles, Miami, and Chicago. More cities coming soon." },
+                { label: "Available across the US", desc: "Membership is open nationwide; real profile density varies by location and criteria." },
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span className="mt-0.5 shrink-0 h-5 w-5 rounded-full bg-[#d4a574]/10 text-[#d4a574] flex items-center justify-center text-xs">✓</span>
@@ -139,7 +138,7 @@ export default function Page() {
               ["Price", "~$30/mo", "~$20/mo", "Free"],
               ["Ads", "Everywhere", "Frequent", "Zero"],
               ["Verification", "Optional", "Optional", "Mandatory"],
-              ["AI Matching", "None", "Basic", "DeepSeek AI"],
+              ["Reciprocal preferences", "Varies", "Varies", "Declared criteria"],
               ["Free Messages", "Limited", "Match only", "Unlimited"],
               ["Profiles", "Basic", "Basic", "Detailed + Tags"],
             ].map((row, i) => (
@@ -162,11 +161,11 @@ export default function Page() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Is Embir really free in the USA?", a: "Yes. During our launch phase, every feature is completely free — unlimited messaging, full profiles, AI matching, and more. Founding members keep lifetime access to premium features without ever paying." },
-              { q: "Which US cities is Embir available in?", a: "Embir is available across the entire United States, with our strongest communities currently in New York, Los Angeles, Miami, Chicago, San Francisco, and Atlanta. We're growing into more cities every week." },
-              { q: "How does profile verification work?", a: "Every new member goes through a selfie verification process. Our system checks that your profile photo matches a real-time selfie, eliminating bots and fake accounts before they ever reach the platform." },
-              { q: "Is Embir a Grindr alternative?", a: "Yes — and a fundamentally different one. Unlike Grindr, Embir has zero ads, mandatory verification, AI-powered matching instead of just sorting by distance, and it's completely free during launch. If you're tired of paying $30/month for basic features, Embir is built for you." },
-              { q: "Can I use Embir if I'm not in a major city?", a: "Absolutely. While our largest communities are in major metropolitan areas, Embir works anywhere in the US. Our AI matching looks beyond just distance to find people you're genuinely compatible with, wherever they are." },
+              { q: "Is Embir really free in the USA?", a: "Yes. Everything needed to meet someone is free. No credit card required." },
+              { q: "Where is Embir available in the USA?", a: "Membership is open across the United States. Embir does not publish city-density rankings until they can be supported by measured data." },
+              { q: "How does profile verification work?", a: "Selfie verification is optional: a member submits a photo with a unique code. If approved, a visible badge appears; no system eliminates every risk." },
+              { q: "Is Embir a Grindr alternative?", a: "Embir uses declared reciprocal preferences rather than sorting only by distance. Optional selfie verification, blocking and reporting are available. Everything needed to meet someone is free. No credit card required." },
+              { q: "Can I use Embir if I'm not in a major city?", a: "Yes. Membership is open nationwide. Results depend on the real profiles currently available around your criteria and location." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
                 <summary className="cursor-pointer px-6 py-5 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">
@@ -190,7 +189,7 @@ export default function Page() {
           <Link href="/auth/register?source=usa-landing" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
             Create my free profile
           </Link>
-          <p className="mt-4 text-xs text-white/20">18+ only. Free during launch. No credit card required.</p>
+          <p className="mt-4 text-xs text-white/20">18+ only. Core connection features are free. No credit card required.</p>
         </div>
       </section>
 

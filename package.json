@@ -4,20 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build --webpack",
+    "build": "prisma generate && NODE_OPTIONS=--max-old-space-size=6144 next build --webpack",
     "start": "next start",
     "lint": "npm run lint:seo",
     "lint:seo": "eslint src/seo src/components/seo-pages.tsx src/components/seo/SchemaOrg.tsx src/components/layout/Navbar.tsx src/components/layout/Footer.tsx src/app/sitemap.ts 'src/app/[locale]/layout.tsx' 'src/app/[locale]/page.tsx' 'src/app/[locale]/auth/register/page.tsx' 'src/app/[locale]/france/[slug]/page.tsx' 'src/app/[locale]/usa/[slug]/page.tsx' 'src/app/[locale]/us/page.tsx' 'src/app/[locale]/us/[slug]/page.tsx' 'src/app/[locale]/us/dating/[slug]/page.tsx' 'src/app/[locale]/uk/page.tsx' 'src/app/[locale]/uk/[slug]/page.tsx' 'src/app/[locale]/uk/dating/[slug]/page.tsx' 'src/app/[locale]/guides/[slug]/page.tsx' 'src/app/[locale]/comparisons/[slug]/page.tsx' 'src/app/[locale]/comparaison/[slug]/page.tsx' 'src/app/[locale]/comparison/[slug]/page.tsx' 'src/app/[locale]/product/[slug]/page.tsx' 'src/app/[locale]/freemium/[slug]/page.tsx' 'src/app/[locale]/blog/[slug]/page.tsx' 'src/app/[locale]/rencontre/[slug]/page.tsx' 'src/app/[locale]/[slug]/page.tsx'",
-    "test:landing": "node --experimental-strip-types --test tests/landing-2100/*.test.ts",
-    "test:ui": "node --experimental-strip-types --test tests/ui/*.test.ts",
-    "test:security": "node --experimental-strip-types --test tests/security/*.test.ts",
-    "test:acquisition": "node --experimental-strip-types --test tests/acquisition/*.test.ts",
-    "test:seo-policy": "node --experimental-strip-types --test tests/seo/programmatic-policy.test.ts",
+    "test:landing": "tsx --test tests/landing-2100/*.test.ts",
+    "test:ui": "tsx --test tests/ui/*.test.ts",
+    "test:security": "tsx --test tests/security/*.test.ts",
+    "test:acquisition": "tsx --test tests/acquisition/*.test.ts",
+    "test:seo-policy": "tsx --test tests/seo/programmatic-policy.test.ts",
+    "test:operations": "tsx --test tests/operations/*.test.ts",
+    "test:product": "tsx --test tests/product/*.test.ts",
+    "job:hourly": "node --env-file=.env --import tsx scripts/run-embir-job.ts hourly",
+    "job:daily": "node --env-file=.env --import tsx scripts/run-embir-job.ts daily",
+    "job:weekly": "node --env-file=.env --import tsx scripts/run-embir-job.ts weekly",
+    "feature-flag:evaluate": "node --env-file=.env --import tsx scripts/evaluate-feature-flag.ts",
+    "backup:production": "node --env-file=.env --import tsx scripts/backup-production.ts",
     "qa:landing": "node scripts/qa-landing-2100.mjs",
     "qa:v7": "node scripts/qa-v7-consolidation.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "monitor:live": "node scripts/monitor-embir-live.mjs",
-    "qa:performance": "node scripts/qa-embir-performance.mjs"
+    "qa:performance": "node scripts/qa-embir-performance.mjs",
+    "qa:connection-os": "bash scripts/qa-connection-os-e2e.sh"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
@@ -25,10 +33,9 @@
     "bcryptjs": "^3.0.3",
     "framer-motion": "^12.38.0",
     "jsonwebtoken": "^9.0.3",
-    "next": "16.2.6",
+    "next": "^16.2.10",
     "next-intl": "^4.12.0",
-    "nodemailer": "^8.0.11",
-    "prisma": "^7.8.0",
+    "nodemailer": "^9.0.3",
     "puppeteer": "^25.1.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
@@ -37,7 +44,8 @@
     "socket.io": "^4.8.3",
     "socket.io-client": "^4.8.3",
     "stripe": "^22.1.1",
-    "twilio": "^6.0.2"
+    "twilio": "^6.0.2",
+    "tsx": "^4.23.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -47,8 +55,16 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "16.2.10",
+    "prisma": "^7.8.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@hono/node-server": "1.19.13",
+    "form-data": "4.0.6",
+    "hono": "4.12.29",
+    "postcss": "8.5.17",
+    "ws": "8.21.0"
   }
 }

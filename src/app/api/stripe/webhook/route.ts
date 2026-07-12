@@ -1,307 +1,273 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { Pool } from "pg";
 
-const SK = process.env.STRIPE_SECRET_KEY;
-const WS = process.env.STRIPE_WEBHOOK_SECRET;
-
-let stripe: any = null;
-try {
-  if (SK) {
-    const Stripe = require("stripe");
-    stripe = new Stripe(SK, { apiVersion: "2024-06-20" });
-  }
-} catch (e) {
-  console.warn("[stripe webhook] init failed:", (e as Error).message);
-}
-
-// Use raw PG pool for idempotency (avoids Prisma model issues with adapter-pg)
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-
-// ── Plan durations ────────────────────────────────────────
-const PLAN_DURATIONS: Record<string, { label: string; days: number; isPremium: boolean; isBoost: boolean; isVIP: boolean }> = {
-  decouverte_24h: { label: "Découverte 24h",      days: 1,    isPremium: true,  isBoost: false, isVIP: false },
-  premium_1w:     { label: "Premium 1 semaine",    days: 7,    isPremium: true,  isBoost: false, isVIP: false },
-  premium_1m:     { label: "Premium 1 mois",       days: 30,   isPremium: true,  isBoost: false, isVIP: false },
-  premium_3m:     { label: "Premium 3 mois",       days: 90,   isPremium: true,  isBoost: false, isVIP: false },
-  premium_12m:    { label: "Premium 12 mois",       days: 365,  isPremium: true,  isBoost: false, isVIP: false },
-  highlight_7d:   { label: "VIP annuel",            days: 365,  isPremium: true,  isBoost: false, isVIP: true  },
-  boost_24h:      { label: "Boost profil 24h",      days: 1,    isPremium: false, isBoost: true,  isVIP: false },
+type StripeClient = import("stripe").default;
+type PlanConfig = {
+  label: string;
+  days: number;
+  isPremium: boolean;
 };
 
-function getPlanConfig(planSlug: string) {
-  return PLAN_DURATIONS[planSlug] || PLAN_DURATIONS.premium_1m;
+let stripePromise: Promise<StripeClient> | null = null;
+
+const PLAN_DURATIONS = {
+  decouverte_24h: { label: "Découverte 24h", days: 1, isPremium: true },
+  premium_1w: { label: "Premium 1 semaine", days: 7, isPremium: true },
+  premium_1m: { label: "Premium 1 mois", days: 30, isPremium: true },
+  premium_3m: { label: "Premium 3 mois", days: 90, isPremium: true },
+  premium_12m: { label: "Premium 12 mois", days: 365, isPremium: true },
+  highlight_7d: { label: "Option annuelle", days: 365, isPremium: true },
+  boost_24h: { label: "Option 24h", days: 1, isPremium: false },
+} as const satisfies Record<string, PlanConfig>;
+
+type PlanSlug = keyof typeof PLAN_DURATIONS;
+
+function planSlug(value: unknown): PlanSlug | null {
+  return typeof value === "string" && Object.prototype.hasOwnProperty.call(PLAN_DURATIONS, value)
+    ? value as PlanSlug
+    : null;
 }
 
-// ── Event log helper ──────────────────────────────────────
-function log(...args: any[]) {
-  const ts = new Date().toISOString();
-  console.log(`[stripe webhook] ${ts} —`, ...args);
+async function getStripe(): Promise<StripeClient | null> {
+  const secret = process.env.STRIPE_SECRET_KEY;
+  if (!secret) return null;
+  stripePromise ??= import("stripe").then(({ default: Stripe }) => new Stripe(secret));
+  return stripePromise;
 }
 
-// ── Activate plan for one-time payment ────────────────────
-async function activateOneTimePlan(userId: string, planSlug: string, eventId: string) {
-  const cfg = getPlanConfig(planSlug);
-  const expiresAt = new Date(Date.now() + cfg.days * 86400_000);
-
-  log(`plan=${planSlug} label="${cfg.label}" user=${userId} expiresAt=${expiresAt.toISOString()}`);
-
-  // Create subscription record
-  const sub = await prisma.subscription.create({
-    data: {
-      userId,
-      status: "ACTIVE",
-      provider: "stripe",
-      providerSubscriptionId: `one_${eventId.slice(0, 14)}`,
-      planId: null,
-      startedAt: new Date(),
-      expiresAt,
-    },
-  });
-  log(`subscription created id=${sub.id}`);
-
-  // Update profile
-  if (cfg.isPremium) {
-    await prisma.profile.update({
-      where: { userId },
-      data: {
-        isPremium: true,
-        premiumUntil: expiresAt,
-        ...(cfg.isVIP ? { popularityScore: { increment: 100 } } : {}),
-      },
-    });
-    log(`profile premium activated until ${expiresAt.toISOString()}`);
+function externalId(value: unknown): string | null {
+  if (typeof value === "string" && value.length > 0 && value.length <= 255) return value;
+  if (value && typeof value === "object" && "id" in value) {
+    const id = (value as { id?: unknown }).id;
+    return typeof id === "string" && id.length <= 255 ? id : null;
   }
-
-  if (cfg.isBoost) {
-    await prisma.profile.update({
-      where: { userId },
-      data: {
-        popularityScore: { increment: 50 },
-      },
-    });
-    log(`boost profile 24h set until ${expiresAt.toISOString()}`);
-  }
-
-  return sub;
+  return null;
 }
 
-// ── Activate/renew subscription plan ──────────────────────
-async function activateSubscriptionPlan(userId: string, planSlug: string, expiryDate: Date, subId: string) {
-  const cfg = getPlanConfig(planSlug);
-
-  log(`plan=${planSlug} label="${cfg.label}" user=${userId} stripeSub=${subId} expiresAt=${expiryDate.toISOString()}`);
-
-  const existing = await prisma.subscription.findFirst({
-    where: { providerSubscriptionId: subId },
+async function requireActiveBillingUser(userId: string) {
+  if (!userId || userId.length > 64) throw new Error("invalid_billing_user");
+  const user = await prisma.user.findFirst({
+    where: { id: userId, bannedAt: null, deletedAt: null },
+    select: { id: true, profile: { select: { id: true } } },
   });
+  if (!user?.profile) throw new Error("billing_user_unavailable");
+}
 
-  if (existing) {
-    await prisma.subscription.update({
-      where: { id: existing.id },
-      data: { status: "ACTIVE", expiresAt: expiryDate, startedAt: new Date() },
+async function subscriptionPeriodEnd(stripe: StripeClient, subscriptionId: string): Promise<Date> {
+  const subscription = await stripe.subscriptions.retrieve(subscriptionId) as unknown as {
+    current_period_end?: number;
+  };
+  if (!Number.isFinite(subscription.current_period_end)) throw new Error("invalid_subscription_period");
+  const periodEnd = new Date((subscription.current_period_end as number) * 1000);
+  if (!Number.isFinite(periodEnd.getTime()) || periodEnd <= new Date()) {
+    throw new Error("invalid_subscription_period");
+  }
+  return periodEnd;
+}
+
+async function activatePlan(input: {
+  userId: string;
+  plan: PlanSlug;
+  providerSubscriptionId: string;
+  expiresAt: Date;
+}) {
+  await requireActiveBillingUser(input.userId);
+  const config = PLAN_DURATIONS[input.plan];
+
+  await prisma.$transaction(async (tx) => {
+    const existing = await tx.subscription.findFirst({
+      where: { provider: "stripe", providerSubscriptionId: input.providerSubscriptionId },
+      select: { id: true, userId: true },
     });
-    log(`subscription renewed id=${existing.id}`);
-  } else {
-    const sub = await prisma.subscription.create({
-      data: {
-        userId,
+    if (existing && existing.userId !== input.userId) throw new Error("subscription_owner_mismatch");
+
+    if (existing) {
+      await tx.subscription.update({
+        where: { id: existing.id },
+        data: { status: "ACTIVE", expiresAt: input.expiresAt, canceledAt: null },
+      });
+    } else {
+      await tx.subscription.create({
+        data: {
+          userId: input.userId,
+          status: "ACTIVE",
+          provider: "stripe",
+          providerSubscriptionId: input.providerSubscriptionId,
+          startedAt: new Date(),
+          expiresAt: input.expiresAt,
+        },
+      });
+    }
+
+    if (config.isPremium) {
+      const profile = await tx.profile.findUnique({
+        where: { userId: input.userId },
+        select: { premiumUntil: true },
+      });
+      const premiumUntil = profile?.premiumUntil && profile.premiumUntil > input.expiresAt
+        ? profile.premiumUntil
+        : input.expiresAt;
+      await tx.profile.update({
+        where: { userId: input.userId },
+        data: { isPremium: true, premiumUntil },
+      });
+    }
+  });
+}
+
+async function deactivateSubscription(providerSubscriptionId: string) {
+  const subscription = await prisma.subscription.findFirst({
+    where: { provider: "stripe", providerSubscriptionId },
+    select: { id: true, userId: true },
+  });
+  if (!subscription) return;
+
+  await prisma.$transaction(async (tx) => {
+    await tx.subscription.update({
+      where: { id: subscription.id },
+      data: { status: "CANCELLED", canceledAt: new Date() },
+    });
+    const remaining = await tx.subscription.findMany({
+      where: {
+        userId: subscription.userId,
         status: "ACTIVE",
-        provider: "stripe",
-        providerSubscriptionId: subId,
-        planId: null,
-        startedAt: new Date(),
-        expiresAt: expiryDate,
+        expiresAt: { gt: new Date() },
+        id: { not: subscription.id },
       },
+      select: { expiresAt: true },
+      orderBy: { expiresAt: "desc" },
+      take: 1,
     });
-    log(`subscription created id=${sub.id}`);
-  }
-
-  if (cfg.isPremium) {
-    await prisma.profile.update({
-      where: { userId },
+    await tx.profile.updateMany({
+      where: { userId: subscription.userId },
       data: {
-        isPremium: true,
-        premiumUntil: expiryDate,
-        ...(cfg.isVIP ? { courtesyBadges: { set: ["vip"] } } : {}),
+        isPremium: remaining.length > 0,
+        premiumUntil: remaining[0]?.expiresAt ?? null,
       },
     });
-    log(`profile premium updated until ${expiryDate.toISOString()}`);
-  }
+  });
 }
 
-// ── Deactivate user premium ───────────────────────────────
-async function deactivatePremium(userId: string, reason: string) {
-  await prisma.subscription.updateMany({
-    where: { userId, status: "ACTIVE" },
-    data: { status: "EXPIRED", canceledAt: new Date() },
-  });
-
-  await prisma.profile.update({
-    where: { userId },
-    data: { isPremium: false, premiumUntil: null },
-  });
-
-  log(`user=${userId} premium deactivated: ${reason}`);
-}
-
-// ──────────────────────────────────────────────────────────
-// MAIN HANDLER
-// ──────────────────────────────────────────────────────────
-export async function POST(req: NextRequest) {
-  if (!stripe || !WS) {
-    log("Stripe not configured, skipping");
-    return NextResponse.json({ received: true, note: "stripe_not_configured" });
-  }
-
-  const body = await req.text();
-  const sig = req.headers.get("stripe-signature");
-
-  if (!sig) {
-    return NextResponse.json({ error: "missing_signature" }, { status: 400 });
-  }
-
-  // Verify signature
-  let event: any;
+async function claimEvent(eventId: string, type: string): Promise<boolean> {
   try {
-    event = stripe.webhooks.constructEvent(body, sig, WS);
-  } catch (e) {
-    console.error(`[stripe webhook] ❌ SIGNATURE VERIFICATION FAILED: ${(e as Error).message}`);
+    await prisma.stripeEvent.create({ data: { id: eventId, type, status: "processing" } });
+    return true;
+  } catch (error) {
+    if (typeof error === "object" && error !== null && "code" in error && error.code === "P2002") {
+      const reclaimed = await prisma.stripeEvent.updateMany({
+        where: {
+          id: eventId,
+          status: "processing",
+          processedAt: { lt: new Date(Date.now() - 15 * 60 * 1000) },
+        },
+        data: { type, processedAt: new Date() },
+      });
+      return reclaimed.count === 1;
+    }
+    throw error;
+  }
+}
+async function processEvent(
+  stripe: StripeClient,
+  type: string,
+  eventId: string,
+  object: Record<string, unknown>,
+) {
+  if (type === "checkout.session.completed") {
+    if (object.payment_status !== "paid") throw new Error("checkout_not_paid");
+    const metadata = object.metadata && typeof object.metadata === "object"
+      ? object.metadata as Record<string, unknown>
+      : {};
+    const userId = typeof metadata.user_id === "string" ? metadata.user_id : "";
+    const plan = planSlug(metadata.plan);
+    if (!userId || !plan) throw new Error("invalid_checkout_metadata");
+
+    const stripeSubscriptionId = externalId(object.subscription);
+    const config = PLAN_DURATIONS[plan];
+    const expiresAt = stripeSubscriptionId
+      ? await subscriptionPeriodEnd(stripe, stripeSubscriptionId)
+      : new Date(Date.now() + config.days * 24 * 60 * 60 * 1000);
+    await activatePlan({
+      userId,
+      plan,
+      providerSubscriptionId: stripeSubscriptionId ?? `checkout:${eventId}`,
+      expiresAt,
+    });
+    return;
+  }
+
+  if (type === "invoice.paid" || type === "invoice.payment_succeeded") {
+    const stripeSubscriptionId = externalId(object.subscription);
+    if (!stripeSubscriptionId) return;
+    const stripeSubscription = await stripe.subscriptions.retrieve(stripeSubscriptionId) as unknown as {
+      current_period_end?: number;
+      metadata?: Record<string, unknown>;
+    };
+    const plan = planSlug(stripeSubscription.metadata?.plan);
+    if (!plan || !Number.isFinite(stripeSubscription.current_period_end)) {
+      throw new Error("invalid_invoice_subscription");
+    }
+    const databaseSubscription = await prisma.subscription.findFirst({
+      where: { provider: "stripe", providerSubscriptionId: stripeSubscriptionId },
+      select: { userId: true },
+    });
+    if (!databaseSubscription) throw new Error("subscription_not_found");
+    const expiresAt = new Date((stripeSubscription.current_period_end as number) * 1000);
+    if (!Number.isFinite(expiresAt.getTime())) throw new Error("invalid_subscription_period");
+    await activatePlan({ userId: databaseSubscription.userId, plan, providerSubscriptionId: stripeSubscriptionId, expiresAt });
+    return;
+  }
+
+  if (type === "customer.subscription.deleted") {
+    const stripeSubscriptionId = externalId(object.id);
+    if (stripeSubscriptionId) await deactivateSubscription(stripeSubscriptionId);
+  }
+}
+
+export async function POST(request: NextRequest) {
+  if (process.env.PAYMENTS_ENABLED !== "true") {
+    return NextResponse.json(
+      { error: "payments_disabled" },
+      { status: 410, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+  const stripe = await getStripe();
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!stripe || !webhookSecret) {
+    return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
+  }
+  const declaredLength = Number(request.headers.get("content-length") ?? 0);
+  if (declaredLength > 1_000_000) return NextResponse.json({ error: "payload_too_large" }, { status: 413 });
+
+  const signature = request.headers.get("stripe-signature");
+  if (!signature) return NextResponse.json({ error: "missing_signature" }, { status: 400 });
+  const body = await request.text();
+  if (body.length > 1_000_000) return NextResponse.json({ error: "payload_too_large" }, { status: 413 });
+
+  let event: import("stripe").default.Event;
+  try {
+    event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+  } catch {
     return NextResponse.json({ error: "invalid_signature" }, { status: 400 });
   }
 
-  const { type, id: eventId, data } = event;
-  const obj = data?.object || {};
-
-  log(`📩 EVENT received: ${type} (id=${eventId})`);
-
-  // ── Idempotency: atomic check-and-mark (avoids race conditions) ──
-  let isNewEvent = false;
   try {
-    const result = await pool.query(
-      'INSERT INTO "StripeEvent" (id, type, status, "processedAt") VALUES ($1, $2, $3, NOW()) ON CONFLICT (id) DO NOTHING RETURNING id',
-      [eventId, type, "processing"]
+    const claimed = await claimEvent(event.id, event.type);
+    if (!claimed) return NextResponse.json({ received: true, skipped: true });
+    await processEvent(
+      stripe,
+      event.type,
+      event.id,
+      event.data.object as unknown as Record<string, unknown>,
     );
-    isNewEvent = result.rows.length > 0;
-  } catch (e) {
-    log(`⚠️ idempotency table error (proceeding): ${(e as Error).message}`);
-    isNewEvent = true; // proceed if we can't check
+    await prisma.stripeEvent.update({
+      where: { id: event.id },
+      data: { status: "processed", processedAt: new Date() },
+    });
+    return NextResponse.json({ received: true });
+  } catch {
+    await prisma.stripeEvent.deleteMany({ where: { id: event.id, status: "processing" } }).catch(() => undefined);
+    console.error("[stripe webhook] processing failed");
+    return NextResponse.json({ error: "processing_failed" }, { status: 500 });
   }
-
-  if (!isNewEvent) {
-    log(`⏭️ SKIP (already processed): ${eventId}`);
-    return NextResponse.json({ received: true, skipped: true });
-  }
-
-  // ── Process event ──────────────────────────────────
-  let processingError: string | null = null;
-  try {
-    switch (type) {
-      case "checkout.session.completed": {
-        const session = obj;
-        const userId = session.metadata?.user_id;
-        const plan = (session.metadata?.plan || "premium_1m") as string;
-        const stripeSubId = session.subscription;
-
-        if (!userId) {
-          log(`❌ no user_id in session metadata`);
-          break;
-        }
-
-        log(`💰 CHECKOUT completed: user=${userId} plan=${plan} stripeSub=${stripeSubId || "one-time"}`);
-
-        if (stripeSubId) {
-          let periodEnd: Date;
-          try {
-            const stripeSub = await stripe.subscriptions.retrieve(stripeSubId);
-            periodEnd = new Date(stripeSub.current_period_end * 1000);
-          } catch (subErr) {
-            const cfg = getPlanConfig(plan);
-            periodEnd = new Date(Date.now() + cfg.days * 86400_000);
-            log(`⚠️ sub fetch failed (${(subErr as Error).message}), using calculated end: ${periodEnd.toISOString()}`);
-          }
-          await activateSubscriptionPlan(userId, plan, periodEnd, stripeSubId);
-        } else {
-          await activateOneTimePlan(userId, plan, eventId);
-        }
-
-        log(`✅ DONE checkout: user=${userId} plan=${plan}`);
-        break;
-      }
-
-      case "invoice.paid":
-      case "invoice.payment_succeeded": {
-        const invoice = obj;
-        const stripeSubId = invoice.subscription;
-        if (!stripeSubId) {
-          log(`skipped invoice without subscription`);
-          break;
-        }
-
-        let periodEnd: Date;
-        let plan = "premium_1m";
-        try {
-          const stripeSub = await stripe.subscriptions.retrieve(stripeSubId);
-          periodEnd = new Date(stripeSub.current_period_end * 1000);
-          plan = (stripeSub.metadata?.plan || "premium_1m") as string;
-        } catch (subErr) {
-          log(`⚠️ sub fetch for invoice failed (${(subErr as Error).message}), skipping`);
-          break;
-        }
-
-        const dbSub = await prisma.subscription.findFirst({
-          where: { providerSubscriptionId: stripeSubId },
-        });
-
-        if (!dbSub) {
-          log(`⚠️ INVOICE paid but no matching subscription: stripeSub=${stripeSubId}`);
-          break;
-        }
-
-        await activateSubscriptionPlan(dbSub.userId, plan, periodEnd, stripeSubId);
-        log(`✅ INVOICE paid: user=${dbSub.userId} plan=${plan} until=${periodEnd.toISOString()}`);
-        break;
-      }
-
-      case "invoice.payment_failed": {
-        const failInvoice = obj;
-        const failSubId = failInvoice.subscription;
-        if (!failSubId) break;
-
-        const failSub = await prisma.subscription.findFirst({
-          where: { providerSubscriptionId: failSubId },
-        });
-
-        if (failSub) {
-          log(`⚠️ PAYMENT FAILED: user=${failSub.userId}`);
-        }
-        break;
-      }
-
-      case "customer.subscription.deleted": {
-        const cancelledSub = obj;
-        const cancelledId = cancelledSub.id;
-
-        const existing = await prisma.subscription.findFirst({
-          where: { providerSubscriptionId: cancelledId },
-        });
-
-        if (existing) {
-          await deactivatePremium(existing.userId, "stripe_cancellation");
-          log(`🗑️ CANCELLED: user=${existing.userId}`);
-        }
-        break;
-      }
-
-      default:
-        log(`unhandled event type: ${type}`);
-    }
-  } catch (e) {
-    const errMsg = (e as Error).message;
-    processingError = errMsg;
-    console.error(`[stripe webhook] 💥 ERROR handling ${type}: ${errMsg}`);
-    console.error(`[stripe webhook] 💥 Stack:`, (e as Error).stack);
-  }
-
-  return NextResponse.json({ received: true });
 }

@@ -38,8 +38,8 @@ export default function Page() {
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">The 5 best Grindr alternatives — ranked</h2>
 
 <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — The best free alternative</h3>
-<p>Embir was built as a direct response to everything wrong with Grindr. It's completely free — no subscription tiers, no premium features locked away, no ads. Every profile is verified via mandatory selfie check, so you never talk to bots. Matching is designed to support compatibility-based discovery, rather than just showing you whoever happens to be closest. Available worldwide in 25 languages, with communities opening wherever founding members join.</p>
-<p><strong>Why it beats Grindr:</strong> Free. No ads. Verified profiles. Smarter matching. <strong>Trade-off:</strong> Newer, so the community is smaller but growing fast.</p>
+<p>Embir was built as a direct response to everything wrong with Grindr. It's free for core connections — no subscription tiers, no premium features locked away, no ads. Selfie verification is available and approved profiles display a badge; no system guarantees the absence of bots. Matching is designed to support compatibility-based discovery, rather than just showing you whoever happens to be closest. Available worldwide on the web, with public pages in English and French, with communities opening wherever founding members join.</p>
+<p><strong>Why it beats Grindr:</strong> Free. No ads. Verified profiles. Smarter matching. <strong>Trade-off:</strong> Newer, so the community is still being built.</p>
 <p><Link href="/auth/register" className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
 
 <h3 className="text-xl font-bold text-white/80 mt-8 mb-2">2. Scruff — Best for community features</h3>
@@ -59,15 +59,15 @@ export default function Page() {
 <p><strong>Why it beats Grindr:</strong> Massive userbase. <strong>Trade-off:</strong> Not built for gay dating; limited free swipes.</p>
 
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">What to look for in a Grindr alternative</h2>
-<h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Is verification mandatory?</h3>
-<p>This is the single most important question. If verification is optional, bots and fake profiles will flood the platform. Embir is the only app on this list that makes verification mandatory for every new user.</p>
+<h3 className="text-lg font-bold text-white/80 mt-6 mb-2">Is verification optional?</h3>
+<p>This is the single most important question. If verification is optional, bots and fake profiles will flood the platform. Embir is the only app on this list that makes verification optional for every new user.</p>
 <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">What does "free" actually include?</h3>
 <p>Read beyond the marketing. Can you message people for free? How many? Can you see full profiles? Are filters free? Most apps advertise as "free" but lock core functionality behind a subscription.</p>
 <h3 className="text-lg font-bold text-white/80 mt-6 mb-2">How does matching work?</h3>
 <p>Grindr sorts people by distance. That's it. Alternative apps increasingly use AI to match based on compatibility — shared interests, communication style, what you're actually looking for. This makes a huge difference in the quality of connections.</p>
 
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">The bottom line</h2>
-<p>Grindr isn't going anywhere. It has the largest userbase, the most brand recognition, and a decade-plus head start. But if you're tired of paying $20-40/month to message people through a wall of ads while fighting off bots, you have real options now. Embir is the strongest free alternative with mandatory verification. Scruff wins on community. Romeo dominates Europe. The right choice depends on what you value — but the days of Grindr being the only game in town are over.</p>
+<p>Grindr has long-standing brand recognition, while alternatives take different approaches to discovery and community. Embir uses reciprocal preferences, a short selection and optional selfie verification. The right choice depends on your criteria, local profile availability and the current terms of each service.</p>
 </div>
 
 <div className="mt-12 p-8 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/5 text-center">
@@ -76,7 +76,7 @@ export default function Page() {
 <Link href="/auth/register?source=blog-grindr-alternatives" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-3.5 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">Create my free profile</Link></div>
 
 <div className="mt-12 space-y-4"><h2 className="text-2xl font-bold text-white mb-4">Quick answers</h2>
-{[{q:"What is the best free Grindr alternative?",a:"Embir is the best completely free alternative — no premium tiers, no ads, unlimited messaging, and mandatory profile verification."},{q:"Is there an app like Grindr but with no bots?",a:"Yes. Embir requires every new user to verify with a real-time selfie, which eliminates bots and fake profiles before they reach the platform."},{q:"Why is Grindr so expensive?",a:"Grindr was acquired and taken private. The new owners dramatically increased subscription prices (XTRA from $12 to $20/mo, introduced Unlimited at $40/mo) to maximize revenue."}].map((faq,i)=>(<details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary><p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p></details>))}</div>
+{[{q:"What is the best free Grindr alternative?",a:"Embir is the best free for core connections alternative — no credit card for core connections, no ads, messaging between reciprocal connections, and optional selfie verification with a visible badge."},{q:"Is there an app like Grindr but with no bots?",a:"Yes. Embir lets every member request a selfie check; approved profiles display a badge, while blocking and reporting remain available."},{q:"Why is Grindr so expensive?",a:"Grindr was acquired and taken private. The new owners dramatically increased subscription prices (XTRA from $12 to $20/mo, introduced Unlimited at $40/mo) to maximize revenue."}].map((faq,i)=>(<details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary><p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p></details>))}</div>
 
 <div className="mt-12 pt-8 border-t border-white/[0.04] text-center"><p className="text-xs text-white/20 mb-3">Related articles</p><div className="flex flex-wrap justify-center gap-3 text-sm">
 <Link href="/blog/best-free-gay-dating-apps-2026" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Best Free Gay Dating Apps 2026</Link><span className="text-white/10">·</span>

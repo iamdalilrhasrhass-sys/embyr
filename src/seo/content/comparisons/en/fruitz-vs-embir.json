@@ -11,7 +11,7 @@
     {
       "criteria": "Profile verification",
       "competitor": "Photo verification, limited moderation",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Price",
       "competitor": "Subscription ~$15-20/month",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     }
   ],

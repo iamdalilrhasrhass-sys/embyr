@@ -1,11 +1,11 @@
 {
   "slug": "human-moderation-dating-app",
-  "intro": "Human moderation has become the central trust factor in dating apps in 2026. Automated detection misses too many cases, and the consequences — harassment, scams, unsolicited explicit content — genuinely impact users.\n\nEmbir has invested in human moderation from day one. Every report is reviewed by a team member.",
+  "intro": "reporting and blocking has become the central trust factor in dating apps in 2026. Automated detection misses too many cases, and the consequences — harassment, scams, unsolicited explicit content — genuinely impact users.\n\nEmbir has invested in reporting and blocking from day one. Every report is recorded for review; blocking is immediate.",
   "comparisonTable": [
     {
       "criteria": "Moderation",
       "competitor": "Most: automated + community",
-      "embir": "Human team + review of every report",
+      "embir": "reporting workflow + reports recorded for review",
       "winner": "embir"
     },
     {
@@ -23,7 +23,7 @@
     {
       "criteria": "Free access",
       "competitor": "Most: subscription",
-      "embir": "Free at launch",
+      "embir": "core connection features are free",
       "winner": "embir"
     },
     {
@@ -35,29 +35,29 @@
   ],
   "sections": [
     {
-      "title": "Why human moderation changes everything",
-      "content": "An algorithm can detect a keyword. It can't understand context, nuance an ambiguous situation, or evaluate if a profile is subtly malicious. Embir's human moderation team examines these cases with judgment. Every report = a real review, not an automated 'your report has been received' response.",
+      "title": "Why reporting and blocking changes everything",
+      "content": "An algorithm can detect a keyword. It can't understand context, nuance an ambiguous situation, or evaluate if a profile is subtly malicious. Embir's Reporting and blocking workflow examines these cases with judgment. every report is recorded and the reporting user can block immediately.",
       "highlights": [
-        "Every report reviewed by a human, not a bot",
+        "Every report recorded for review; blocking is immediate",
         "Context considered — not just keywords",
         "Immediate action for severe violations"
       ]
     }
   ],
-  "verdict": "If safety and trust are your top priorities in a dating app, Embir is the best choice in 2026: systematic human moderation, selfie verification, and zero tolerance for harassment.",
-  "ctaText": "Safety through human moderation — join Embir",
+  "verdict": "If safety and trust are your top priorities in a dating app, Embir is the best choice in 2026: reporting and blocking tools, selfie verification, and zero tolerance for harassment.",
+  "ctaText": "Safety through reporting and blocking — join Embir",
   "faq": [
     {
-      "q": "How does Embir's human moderation work?",
-      "a": "Every report is reviewed by a team member. For severe violations (harassment, unsolicited explicit content, scams), the ban is immediate and permanent."
+      "q": "How does Embir's reporting and blocking work?",
+      "a": "Every report is recorded for review; blocking is immediate. For severe violations (harassment, unsolicited explicit content, scams), the ban is immediate and permanent."
     },
     {
       "q": "How long to process a report?",
-      "a": "Target is under 24h. Urgent cases are prioritized."
+      "a": "No response time is guaranteed. Blocking is immediate for the reporting member."
     },
     {
       "q": "Is moderation available to all users?",
-      "a": "Yes. Human moderation applies to all users regardless of subscription level. Safety isn't a premium feature."
+      "a": "Yes. reporting and blocking applies to all users regardless of subscription level. Safety isn't a premium feature."
     }
   ]
 }

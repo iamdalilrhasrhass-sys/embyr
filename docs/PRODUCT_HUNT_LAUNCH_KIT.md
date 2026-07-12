@@ -3,10 +3,10 @@
 ## Upcoming Page (producthunt.com/upcoming/embir)
 
 ### Tagline
-The free gay dating app — no ads, no subscriptions, no paywalls.
+Meet through reciprocal preferences, without a credit card.
 
 ### Description (260 chars max)
-EMBIR is a gay dating app built for real connections. No ads, no algorithms optimizing for engagement, and no paywalls blocking features. Every feature is free for everyone. Authentic profiles, zero spam, real conversations.
+EMBIR uses declared reciprocal preferences, a short discovery selection, optional selfie verification, reporting, and blocking. Everything needed to meet someone is free. No credit card required.
 
 ### Topics (select 3-5)
 - Dating
@@ -38,18 +38,18 @@ I'm Dalil, the maker behind EMBIR.
 
 **The problem:** Gay dating apps are broken. Grindr charges €30/month for basic features. Tinder hides matches behind paywalls. Ads interrupt every interaction. And bots? Don't get me started.
 
-**The solution:** EMBIR is a gay dating app where EVERY feature is free. No "premium," no "unlimited plan," no "subscription tier." You create a profile, you connect, you chat — that's it. No games.
+**The solution:** EMBIR makes the full path to a meeting available without a credit card: profile, reciprocal discovery, connection, and messaging.
 
 **What makes it different:**
-- **Actually free** — not "freemium," not "first 30 days free." Free. Period.
+- **Core connection path** — everything needed to meet someone is free; no credit card required
 - **No ads** — our business model doesn't involve selling your attention
-- **Verified profiles** — machine learning spam detection keeps bots out
+- **Optional selfie badge** — approved requests display a visible badge; no system removes every risk
 - **Privacy-first** — encrypted chats, no data selling
 - **Open source** — the code is on GitHub
 
-**Tech stack:** Next.js, PostgreSQL, Tailwind CSS. Hosted on a VPS in France. No third-party analytics. No tracking scripts.
+**Tech stack:** Next.js, PostgreSQL, Tailwind CSS. Hosted on a VPS. Audience measurement is consent-gated.
 
-We launched 2 weeks ago and already have real users connecting every day. The blog has 30 articles reaching 500+ indexed pages on Google.
+Embir is live and accepts registrations. Public guides are available on the site.
 
 **What's next:** Community features, events, and mobile apps.
 
@@ -65,7 +65,7 @@ Thanks for checking out EMBIR! A few things I want to be transparent about:
 
 1. **Why free?** Because dating shouldn't have a price tag. We're exploring ethical monetization (optional donations, community events) but core features will ALWAYS be free.
 
-2. **Safety:** Every profile is verified. We use ML-based spam detection + manual review. Your data is encrypted and never sold.
+2. **Safety:** Selfie verification is available and approved profiles display a visible badge. Members can block and report accounts. Your data is encrypted and never sold.
 
 3. **The vision:** Dating apps optimize for engagement (more time in app = more ad revenue). EMBIR optimizes for connection quality. We want you to meet someone and DELETE the app.
 

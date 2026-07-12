@@ -11,7 +11,7 @@ export default function GlobalJsonLd() {
         "https://www.instagram.com/embir.xyz",
         "https://www.tiktok.com/@embir.xyz"
       ],
-      "description": "Embir is an international dating platform focused on verified profiles, deep compatibility, and a safer community for every orientation — free at launch with a transparent freemium model.",
+      "description": "Embir is a dating platform with reciprocal preferences, an optional selfie badge, reporting, blocking, and free core connections.",
       "foundingDate": "2026",
       "areaServed": "Worldwide",
       "contactPoint": {
@@ -37,19 +37,14 @@ export default function GlobalJsonLd() {
       "@type": "SoftwareApplication",
       "name": "Embir",
       "applicationCategory": "LifestyleApplication",
-      "operatingSystem": "Web, iOS, Android",
+      "operatingSystem": "Web",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "EUR",
-        "description": "Free at launch with transparent future freemium model."
+        "description": "core connection features are free with a transparent optional-services model."
       },
-      "description": "Embir is a free-at-launch dating app for every orientation. Verified profiles, deep compatibility matching, human moderation and a safer community experience.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "1"
-      }
+      "description": "Embir is a web dating app with free core connections, reciprocal preferences, an optional selfie badge, reporting, and blocking."
     }
   ];
 

@@ -5,7 +5,7 @@
     {
       "criteria": "Prix",
       "competitor": "60-70 EUR/mois — parmi les plus chers",
-      "embir": "100% gratuit au lancement",
+      "embir": "Connexions essentielles gratuites",
       "winner": "embir"
     },
     {
@@ -23,7 +23,7 @@
     {
       "criteria": "Verification profils",
       "competitor": "Manuelle limitee",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -40,11 +40,11 @@
       "highlights": [
         "Matching base sur orientation + intentions + valeurs",
         "Aucun questionnaire interminable a l'inscription",
-        "Gratuit pendant la phase de lancement"
+        "gratuit pour les connexions essentielles"
       ]
     }
   ],
-  "verdict": "eHarmony est pertinent si tu cherches une relation serieuse et que tu es pret a payer 60-70 EUR/mois. Embir offre un matching de compatibilite profond avec une meilleure inclusivite LGBTQ+ — entierement gratuit au lancement.",
+  "verdict": "eHarmony est pertinent si tu cherches une relation serieuse et que tu es pret a payer 60-70 EUR/mois. Embir offre un matching de compatibilite profond avec une meilleure inclusivite LGBTQ+ — gratuit pour les connexions essentielles.",
   "ctaText": "Compatibilite serieuse, zero frais — rejoins Embir",
   "faq": [
     {
@@ -57,7 +57,7 @@
     },
     {
       "q": "Combien coute Embir ?",
-      "a": "Gratuit pendant la phase de lancement. Pas d'abonnement obligatoire."
+      "a": "gratuit pour les connexions essentielles. Pas d'abonnement obligatoire."
     }
   ]
 }

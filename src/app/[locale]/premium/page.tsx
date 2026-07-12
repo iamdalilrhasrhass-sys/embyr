@@ -15,23 +15,23 @@ export default function PremiumPage() {
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4"
               style={{ background: "linear-gradient(135deg, #FFFFFF 55%, #ff5e36 78%, #ffa333 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Gratuit pendant le lancement
+              gratuit pour les connexions essentielles
             </h1>
             <p className="text-white/50 max-w-xl mx-auto text-lg">
               Avant de vendre du Premium, embir.xyz doit réussir le plus important :
-              créer une vraie communauté active à Paris.
+              créer une vraie inscriptions ouvertes à Paris.
             </p>
           </div>
 
-          {/* Gratuit pendant le lancement */}
+          {/* gratuit pour les connexions essentielles */}
           <div className="rounded-2xl p-6 md:p-8 mb-8 border border-green-500/10 bg-green-500/[0.02] backdrop-blur-sm">
             <div className="flex items-start gap-4">
               <span className="text-3xl">🎁</span>
               <div>
-                <h2 className="text-xl font-bold text-white mb-2">Gratuit pendant le lancement</h2>
+                <h2 className="text-xl font-bold text-white mb-2">gratuit pour les connexions essentielles</h2>
                 <p className="text-white/50">
                   Tu peux créer ton profil, découvrir les membres et utiliser les
-                  fonctions essentielles gratuitement pendant la phase de lancement.
+                  fonctions essentielles gratuitement pendant l'expérience de connexion.
                 </p>
                 <Link href="/paris" className="inline-block mt-4 px-6 py-2.5 rounded-xl text-sm font-semibold text-white"
                   style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
@@ -52,7 +52,7 @@ export default function PremiumPage() {
               { title: "Mode invisible", desc: "Navigue discrètement", icon: "🕶️" },
               { title: "Badge vérifié", desc: "Profil certifié authentique", icon: "🛡️" },
               { title: "Mise en avant", desc: "Apparais en priorité", icon: "" },
-              { title: "Messages illimités", desc: "Aucune limite d'échange", icon: "💬" },
+              { title: "Messages réciproques", desc: "Conversation ouverte après connexion mutuelle", icon: "💬" },
             ].map((item) => (
               <TiltCard key={item.title} className="emb-card rounded-2xl p-5 text-center">
                 <div className="text-2xl mb-2">{item.icon}</div>

@@ -4,9 +4,9 @@ import EmbirLogo from "@/components/brand/EmbirLogo";
 
 export default function EmbirProductMockup() {
   const profiles = [
-    { name: 'Lucas', meta: 'Paris · actif', score: '94%' },
-    { name: 'Rayan', meta: 'Marais · vérifié', score: '88%' },
-    { name: 'Gabriel', meta: '11e · fondateur', score: '91%' },
+    { name: 'Profil A', meta: 'Démonstration', reason: 'Intentions alignées' },
+    { name: 'Profil B', meta: 'Démonstration', reason: 'Préférences réciproques' },
+    { name: 'Profil C', meta: 'Démonstration', reason: 'Activité partagée' },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function EmbirProductMockup() {
                     <div className="text-[10px] text-white/42">{profile.meta}</div>
                   </div>
                   <div className="rounded-full border border-white/10 bg-black/24 px-2 py-0.5 text-[8px] font-bold text-[#ffa333]">
-                    {profile.score}
+                    {profile.reason}
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function EmbirProductMockup() {
               “Vous avez le même rythme, les mêmes quartiers et une vraie compatibilité de discussion.”
             </div>
             <div className="mt-3 flex items-center gap-1.5">
-              <div className="rounded-full bg-[#ff5e36]/10 px-2 py-0.5 text-[8px] font-semibold text-[#ffa333]">Profil vérifié</div>
+              <div className="rounded-full bg-[#ff5e36]/10 px-2 py-0.5 text-[8px] font-semibold text-[#ffa333]">Badge facultatif</div>
               <div className="rounded-full bg-white/5 px-2 py-0.5 text-[8px] text-white/38">Sans pub</div>
             </div>
           </div>

@@ -78,7 +78,7 @@ export default function GrindrCostCalculator() {
       </div>
 
       <p className="text-white/30 text-xs text-center">
-        Embir is 100% free. No ads, no limits, no catch.{" "}
+        Everything needed to meet someone is free. No credit card required. Create a profile, discover compatible people and message reciprocal connections.{" "}
         <a href="/auth/register" className="text-white/50 hover:text-white/70 underline">Join now</a>
       </p>
     </div>

@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     en: "Dating in Lyon — Verified Profiles, Real Compatibility | Embir",
   };
   const descriptions: Record<string, string> = {
-    fr: "Application de rencontre à Lyon : profils vérifiés, matching par compatibilité, communauté fondatrice. Gratuite au lancement. Presqu&apos;île, Croix-Rousse, Vieux Lyon et au-delà.",
-    en: "Lyon dating app: verified profiles, compatibility matching, and a founding community. Free at launch. Presqu&apos;île, Croix-Rousse, Vieux Lyon and beyond.",
+    fr: "Application de rencontre à Lyon : profils vérifiés, matching par compatibilité, communauté fondatrice. gratuite pour les connexions essentielles. Presqu&apos;île, Croix-Rousse, Vieux Lyon et au-delà.",
+    en: "Lyon dating app: verified profiles, compatibility matching, and a founding community. core connection features are free. Presqu&apos;île, Croix-Rousse, Vieux Lyon and beyond.",
   };
   return {
     title: titles[locale] ?? titles.fr,
@@ -68,8 +68,8 @@ export default function Page() {
           </div>
 
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
-            <h2 className="font-serif text-2xl text-white">Gratuit au lancement — sans étiquette lyonnaise</h2>
-            <p className="mt-4">Lyon n&apos;est pas bon marché, mais Embir est gratuit pendant le lancement. Créez votre profil, définissez vos préférences, parcourez les personnes compatibles, envoyez des messages — tout cela sans payer. Quand un modèle freemium arrivera plus tard, il financera l&apos;application mobile, la vérification et la modération humaine. Les fonctionnalités essentielles resteront accessibles. Les membres fondateurs seront informés bien à l&apos;avance.</p>
+            <h2 className="font-serif text-2xl text-white">gratuit pour les connexions essentielles — sans étiquette lyonnaise</h2>
+            <p className="mt-4">Lyon n&apos;est pas bon marché, mais Embir est gratuit pour les connexions essentielles. Créez votre profil, définissez vos préférences, parcourez les personnes compatibles, envoyez des messages — tout cela sans payer. Des services facultatifs peuvent financer l’application mobile, la sécurité et la modération, sans bloquer le chemin vers une rencontre.</p>
           </div>
 
           <div>
@@ -95,7 +95,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Questions fréquentes</h2>
             <div className="mt-6 space-y-3">
               {[
-                ["Combien de membres Embir a-t-il à Lyon ?", "Embir est en phase de lancement. Nous construisons la communauté fondatrice lyonnaise en ce moment — en commençant par un noyau de membres vérifiés. Nous ne publions pas de chiffres gonflés. La communauté grandit par invitations et bouche-à-oreille."],
+                ["Combien de membres Embir a-t-il à Lyon ?", "Embir est en expérience de connexion. Nous construisons la communauté fondatrice lyonnaise en ce moment — en commençant par un noyau de membres vérifiés. Nous ne publions pas de chiffres gonflés. La communauté grandit par invitations et bouche-à-oreille."],
                 ["Est-ce qu&apos;Embir est uniquement pour les rencontres gay à Lyon ?", "Non. Embir est pour toutes les orientations. Les hommes gays et bi, les femmes lesbiennes et bi, les personnes trans et queer, et les hétérosexuels partagent tous la même plateforme. Les contrôles d&apos;orientation garantissent que chacun ne voit que les profils compatibles."],
                 ["En quoi Embir est différent de Tinder à Lyon ?", "Tinder à Lyon, c&apos;est du swipe à haut volume et de la fatigue. Embir mise sur la compatibilité, les profils vérifiés et des intentions plus claires. Moins de matchs aléatoires, plus de connexions qui ont une vraie chance d&apos;aboutir."],
                 ["Est-ce qu&apos;Embir est une bonne alternative à Fruitz à Lyon ?", "Si vous voulez plus de substance que des icônes de fruits, oui. Embir se concentre sur les signaux de compatibilité et les profils vérifiés. Toutes les intentions relationnelles sont les bienvenues — sérieuses, légères, ou à définir."],
@@ -112,7 +112,7 @@ export default function Page() {
 
         <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Rejoignez la communauté fondatrice de Lyon</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Soyez parmi les premiers membres lyonnais. Profil vérifié. Vraie compatibilité. Gratuit pendant le lancement. Aidez à construire une culture de la rencontre dont Lyon mérite.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Soyez parmi les premiers membres lyonnais. Profil vérifié. Vraie compatibilité. Les connexions essentielles sont gratuites. Aidez à construire une culture de la rencontre dont Lyon mérite.</p>
           <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
         </section>
 

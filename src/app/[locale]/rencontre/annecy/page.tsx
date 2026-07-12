@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Rencontre à Annecy — application gratuite et moderne",
-  description: "Découvrez Embir pour faire des rencontres à Annecy. Application de rencontre gratuite au lancement avec profils vérifiés et matching intelligent.",
+  description: "Découvrez Embir pour faire des rencontres à Annecy. Application de rencontre gratuite pour les connexions essentielles avec profils vérifiés et matching intelligent.",
   alternates: { canonical: "https://embir.xyz/rencontre/annecy" },
 };
 
@@ -29,9 +29,9 @@ export default function Page() {
           <h2 className="font-serif text-3xl text-white mb-6">Pourquoi Annecy adopte Embir</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Communauté locale</h3><p className="text-sm text-white/45">Embir construit des communautés ville par ville. À Annecy, rencontrez des gens près de chez vous.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3><p className="text-sm text-white/45">Chaque profil est vérifié par selfie. Fini les faux profils à Annecy.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Matching intelligent</h3><p className="text-sm text-white/45">Notre IA comprend vos préférences et suggère des profils compatibles à Annecy.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">100% gratuit</h3><p className="text-sm text-white/45">Messagerie illimitée, matching IA, zéro pub. Sans engagement.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Profils vérifiés</h3><p className="text-sm text-white/45">La vérification par selfie est disponible à Annecy. Un badge visible identifie les profils vérifiés ; aucun système n’élimine tout risque.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Matching intelligent</h3><p className="text-sm text-white/45">La sélection applique vos préférences déclarées dans les deux sens à Annecy.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">sans carte bancaire</h3><p className="text-sm text-white/45">Messagerie entre connexions réciproques, compatibilité réciproque, zéro pub. Sans engagement.</p></div>
           </div>
         </div>
       </section>

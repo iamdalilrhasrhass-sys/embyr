@@ -17,13 +17,13 @@
     {
       "criteria": "Verification profils",
       "competitor": "La plupart : optionnelle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Prix",
       "competitor": "La plupart : 15-40 EUR/mois",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -44,7 +44,7 @@
       ]
     }
   ],
-  "verdict": "Pour les professionnels qui veulent des rencontres efficaces sans passer des heures a swiper, Embir offre un matching intentionnel, des profils verifies, et la gratuite au lancement.",
+  "verdict": "Pour les professionnels qui veulent des rencontres efficaces sans passer des heures a swiper, Embir offre un matching intentionnel, des profils verifies, et la gratuite pour les connexions essentielles.",
   "ctaText": "Rencontres efficaces pour gens occupes — rejoins Embir",
   "faq": [
     {
@@ -53,11 +53,11 @@
     },
     {
       "q": "Embir est-il gratuit ?",
-      "a": "Oui. Fonctionnalites principales gratuites au lancement."
+      "a": "Oui. Fonctionnalites principales gratuites pour les connexions essentielles."
     },
     {
-      "q": "Comment Embir garantit-il la qualite des profils ?",
-      "a": "Verification selfie a l'inscription et moderation humaine de chaque signalement."
+      "q": "Quels signaux de confiance Embir propose-t-il ?",
+      "a": "verification selfie facultative et signalements enregistrés pour examen et blocage immédiat."
     }
   ]
 }

@@ -11,13 +11,13 @@
     {
       "criteria": "Tier gratuit",
       "competitor": "Tres limite — messagerie quasi impossible sans abo",
-      "embir": "Decouverte + messagerie gratuites au lancement",
+      "embir": "Decouverte + messagerie gratuites pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Verification profils",
       "competitor": "Photo verification optionnelle",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Prix abonnement",
       "competitor": "~29 EUR/mois",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     }
   ],
@@ -44,12 +44,12 @@
       ]
     }
   ],
-  "verdict": "Zoosk avait la bonne idee sur le matching adaptatif mais le monetise de maniere trop agressive. Embir offre un matching intelligent avec des profils verifies et une vraie inclusivite LGBTQ+, gratuitement pendant le lancement.",
+  "verdict": "Zoosk avait la bonne idee sur le matching adaptatif mais le monetise de maniere trop agressive. Embir offre un matching intelligent avec des profils verifies et une vraie inclusivite LGBTQ+, gratuitement, sans carte bancaire.",
   "ctaText": "Matching intelligent, zero abonnement — rejoins Embir",
   "faq": [
     {
       "q": "Embir est-il vraiment gratuit contrairement a Zoosk ?",
-      "a": "Oui. Decouverte, matching et messagerie sont gratuits pendant la phase de lancement. Zoosk limite la messagerie sans abonnement."
+      "a": "Oui. Decouverte, matching et messagerie sont gratuits pour les connexions essentielles. Zoosk limite la messagerie sans abonnement."
     },
     {
       "q": "Comment l'algorithme Embir apprend-il mes preferences ?",

@@ -11,7 +11,7 @@
     {
       "criteria": "Verification profils",
       "competitor": "Photo verification, moderation limitee",
-      "embir": "Verification selfie + moderation humaine",
+      "embir": "Verification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Prix",
       "competitor": "Abonnement ~15-20 EUR/mois",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     }
   ],
@@ -44,7 +44,7 @@
       ]
     }
   ],
-  "verdict": "Fruitz est bien concu pour les rencontres fun et explicites dans les grandes villes francaises. Embir est la meilleure alternative si tu veux la meme clarte d'intention avec plus de profondeur, de verification, d'inclusivite LGBTQ+, et la gratuité au lancement.",
+  "verdict": "Fruitz est bien concu pour les rencontres fun et explicites dans les grandes villes francaises. Embir est la meilleure alternative si tu veux la meme clarte d'intention avec plus de profondeur, de verification, d'inclusivite LGBTQ+, et la gratuité des connexions essentielles.",
   "ctaText": "Intentions claires, profils verifies — rejoins Embir",
   "faq": [
     {

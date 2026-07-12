@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     fr: "Rencontres à Londres — Profils Vérifiés, Compatibilité Réelle | Embir",
   };
   const descriptions: Record<string, string> = {
-    en: "London dating app: inclusive, verified profiles, compatibility matching, and a founding community across Soho, Shoreditch, Clapham, and beyond. Free during London launch.",
-    fr: "Application de rencontre à Londres : inclusive, profils vérifiés, matching par compatibilité, et une communauté fondatrice. Gratuite au lancement.",
+    en: "London dating app: inclusive, verified profiles, compatibility matching, and a founding community across Soho, Shoreditch, Clapham, and beyond. Core connections are free.",
+    fr: "Application de rencontre à Londres : inclusive, profils vérifiés, matching par compatibilité, et une communauté fondatrice. gratuite pour les connexions essentielles.",
   };
   return {
     title: titles[locale] ?? titles.en,
@@ -68,8 +68,8 @@ export default function Page() {
           </div>
 
           <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
-            <h2 className="font-serif text-2xl text-white">Free at launch — no London price tag</h2>
-            <p className="mt-4">London is expensive enough without adding another £25/month subscription. Embir is free during launch. Create your profile, set your preferences, browse compatible people, send messages — all without paying. When a freemium model arrives later, it will fund the mobile app, verification, and human moderation. Core features will remain accessible. Founding members will be informed well in advance.</p>
+            <h2 className="font-serif text-2xl text-white">Core connections without a London price tag</h2>
+            <p className="mt-4">London is expensive enough without another subscription. Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
 
           <div>
@@ -95,7 +95,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl text-white">Frequently asked questions</h2>
             <div className="mt-6 space-y-3">
               {[
-                ["How many members does Embir have in London?", "Embir is in its launch phase. We&apos;re building the London founding community right now — starting with a core of verified members. We don&apos;t publish inflated numbers. The community grows through invitations and word of mouth across neighbourhoods like Soho, Shoreditch, and Clapham."],
+                ["How many members does Embir have in London?", "Embir is in its core connection experience. We&apos;re building the London founding community right now — starting with a core of verified members. We don&apos;t publish inflated numbers. The community grows through invitations and word of mouth across neighbourhoods like Soho, Shoreditch, and Clapham."],
                 ["Is Embir only for gay dating in London?", "No. Embir is for all orientations. Gay and bi men, lesbian and bi women, trans and queer people, and straight daters all share the same platform. Orientation controls ensure everyone only sees compatible profiles. London&apos;s LGBTQ+ community is a core part of Embir, but they&apos;re not the only part."],
                 ["How is Embir different from Tinder in London?", "Tinder in London is high-volume swipe fatigue central. Embir focuses on compatibility, verified profiles, and clearer intentions. Fewer random matches, more connections that have a real chance — especially in a city where everyone&apos;s too busy for dead-end conversations."],
                 ["Is Embir a good Hinge alternative in London?", "If you want more than prompts and time-limited matches, yes. Embir&apos;s compatibility signals and verified profiles help you find people you&apos;re actually aligned with. All genders initiate equally. No pressure, no timers."],
@@ -112,7 +112,7 @@ export default function Page() {
 
         <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the London founding community</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first London members. Verified profile. Real compatibility. Free during launch. Help build a dating culture London deserves — from Soho to Stratford.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first London members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture London deserves — from Soho to Stratford.</p>
           <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
         </section>
 

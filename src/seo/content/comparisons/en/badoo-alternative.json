@@ -1,11 +1,11 @@
 {
   "slug": "badoo-alternative",
-  "intro": "Badoo is one of the world's largest social discovery platforms with over 400 million users. Its reach is undeniable — particularly in Europe, Latin America, and Asia. But size comes with well-documented costs: fake profile rates, aggressive monetization, and a UX that prioritizes engagement over meaningful connection.\n\nEmbir targets the same international audience with a fundamentally different philosophy: verified profiles from day one, human moderation at launch scale, compatibility-first matching across every orientation, and a free-at-launch model with transparent freemium.",
+  "intro": "Badoo is one of the world's largest social discovery platforms with over 400 million users. Its reach is undeniable — particularly in Europe, Latin America, and Asia. But size comes with well-documented costs: fake profile rates, aggressive monetization, and a UX that prioritizes engagement over meaningful connection.\n\nEmbir targets the same international audience with a fundamentally different philosophy: verified profiles from day one, reporting and blocking at launch scale, compatibility-first matching across every orientation, and a model with free core connections with transparent freemium.",
   "comparisonTable": [
     {
       "criteria": "Profile verification",
       "competitor": "Optional photo verification, easy to bypass",
-      "embir": "Systematic selfie verification + human review",
+      "embir": "optional selfie verification with a visible badge + human review",
       "winner": "embir"
     },
     {
@@ -35,7 +35,7 @@
     {
       "criteria": "Safety / moderation",
       "competitor": "Automated + community, inconsistent",
-      "embir": "Human moderation team, fast response",
+      "embir": "Reporting and blocking workflow, fast response",
       "winner": "embir"
     }
   ],
@@ -46,21 +46,21 @@
       "highlights": [
         "Smaller community = higher engagement and authenticity",
         "Verified profiles only — no dead accounts cluttering discovery",
-        "Every reported profile reviewed by a human moderator"
+        "Every report is recorded; blocking is immediate"
       ]
     },
     {
       "title": "Monetization and free access",
-      "content": "Badoo's monetization model is aggressive. 'Credits' to boost visibility, 'Superpower' subscription for basic features like seeing who liked you, in-app purchases for almost everything meaningful. The free tier is functional but frustrating — designed to push you toward spending.\n\nEmbir's launch phase is genuinely free. Core discovery, messaging, and compatibility features work without a credit card. The future freemium model is announced up front: it will fund safety infrastructure and human moderation, not gate essential human connection behind a paywall.",
+      "content": "Badoo's monetization model is aggressive. 'Credits' to boost visibility, 'Superpower' subscription for basic features like seeing who liked you, in-app purchases for almost everything meaningful. The free tier is functional but frustrating — designed to push you toward spending.\n\nEmbir's core connection experience is genuinely free. Core discovery, messaging, and compatibility features work without a credit card. the optional-services model is announced up front: it will fund safety infrastructure and reporting and blocking, not gate essential human connection behind a paywall.",
       "highlights": [
-        "No credits, no boosts, no artificial urgency during launch",
+        "no credits, boosts or artificial urgency in core connections",
         "Full messaging free — no 'send 5 messages then pay'",
-        "Freemium transition pre-announced and transparent"
+        "optional-service policy pre-announced and transparent"
       ]
     }
   ],
   "verdict": "Badoo is good for broad social discovery across markets where alternatives are thin. If you're in a major European or Latin American city and want volume, it delivers.\n\nEmbir is the better choice if you want verified humans, real compatibility matching, LGBTQ+ inclusion, and a free experience that doesn't constantly try to upsell you.",
-  "ctaText": "Quality over quantity — verified dating, free at launch",
+  "ctaText": "Quality over quantity — verified dating, core connection features are free",
   "faq": [
     {
       "q": "Is Embir available internationally like Badoo?",
@@ -68,11 +68,11 @@
     },
     {
       "q": "How does Embir prevent fake profiles?",
-      "a": "Selfie verification is required at signup and a human moderation team reviews every report. The founding phase scale makes real moderation feasible — which is why the launch community is intentionally curated."
+      "a": "selfie verification is optional and a reporting workflow records every report. reporting and blocking processes are designed to grow with the community."
     },
     {
       "q": "Is Embir free?",
-      "a": "Yes. Core features are free during the launch phase. No credits, no subscription, no hidden charges to message someone."
+      "a": "Yes. Core connection features are free for everyone. No credits, no subscription, no hidden charges to message someone."
     },
     {
       "q": "Does Embir work for same-sex dating?",

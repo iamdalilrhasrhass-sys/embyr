@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isFr = locale === "fr";
   return {
     title: isFr ? "Tinder vs Embir — Alternative gratuite a Tinder 2026" : "Tinder vs Embir — Free Tinder alternative 2026",
-    description: isFr ? "Comparatif Tinder vs Embir. Tinder fait payer les likes illimites, Embir est gratuit au lancement. Filtre par orientation, profils verifies. Decouvre la difference." : "Tinder vs Embir comparison. Tinder charges for unlimited likes, Embir is free at launch. Orientation filter, verified profiles. See the difference.",
+    description: isFr ? "Comparatif Tinder vs Embir. Tinder fait payer les sélection quotidienne courte, Embir est gratuit pour les connexions essentielles. Filtre par orientation, profils verifies. Decouvre la difference." : "Tinder vs Embir comparison. Tinder charges for a short daily selection, Embir's core connection features are free. Orientation filter, verified profiles. See the difference.",
     alternates: {
       canonical: `https://embir.xyz/${isFr ? "fr/" : ""}tinder-vs-embir`,
       languages: {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     openGraph: {
       title: isFr ? "Tinder vs Embir — Alternative gratuite a Tinder 2026" : "Tinder vs Embir — Free Tinder alternative 2026",
-      description: isFr ? "Comparatif Tinder vs Embir. Tinder fait payer les likes illimites, Embir est gratuit au lancement. Filtre par orientation, profils verifies. Decouvre la difference." : "Tinder vs Embir comparison. Tinder charges for unlimited likes, Embir is free at launch. Orientation filter, verified profiles. See the difference.",
+      description: isFr ? "Comparatif Tinder vs Embir. Tinder fait payer les sélection quotidienne courte, Embir est gratuit pour les connexions essentielles. Filtre par orientation, profils verifies. Decouvre la difference." : "Tinder vs Embir comparison. Tinder charges for a short daily selection, Embir's core connection features are free. Orientation filter, verified profiles. See the difference.",
       locale: isFr ? "fr_FR" : "en_US",
       type: "article",
     },
@@ -35,9 +35,9 @@ const DATA = {
     competitor: "Tinder",
     competitorPros: ["Enorme base d'utilisateurs", "Interface simple et rapide", "Tinder Plus/Gold/Platinum bien etablis"],
     competitorCons: ["Payant (20-45 EUR/mois pour les fonctionnalites de base)", "Beaucoup de faux profils et bots", "Pas de filtre par orientation LGBT+", "Publicite agressive", "Focus sur le swipe superficiel"],
-    embirPros: ["gratuit au lancement — zero paywall", "Filtre strict par orientation", "Profils verifies par selfie (anti-bot)", "Multi-intentions (amour, amis, fun, sport, evenements)", "Aucune pub, aucune limite de likes"],
+    embirPros: ["Connexions essentielles sans carte bancaire", "Préférences appliquées dans les deux sens", "Badge selfie facultatif et visible", "Intentions déclarées", "Sélection courte"],
     embirCons: ["Base d'utilisateurs plus petite", "Moins de notoriete"],
-    faq: [["Embir est-il une meilleure alternative a Tinder?", "Oui si tu cherches une app gratuite au lancement avec de vrais filtres. Tinder fait payer 20-45 EUR/mois pour les likes illimites et les super likes. Embir donne tout gratuitement."], ["Embir a-t-il moins de faux profils que Tinder?", "Oui. La verification par selfie d'Embir elimine la plupart des bots. Les profils verifies ont un badge et sont mis en avant. Tinder est connu pour son probleme de faux profils."], ["Puis-je chercher autre chose que de l'amour sur Embir?", "Oui. Contrairement a Tinder qui se concentre sur le dating, Embir propose 6 intentions : amour, amis, fun, plan cul, sport, evenements."]],
+    faq: [["En quoi Embir diffère-t-il de Tinder ?", "Embir utilise une sélection courte, les intentions déclarées et des préférences réciproques. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."], ["Embir a-t-il moins de faux profils que Tinder ?", "Embir ne publie pas de comparaison chiffrée sur les faux profils. La vérification selfie facultative ajoute un badge visible ; le blocage et le signalement restent disponibles."], ["Puis-je chercher autre chose que de l'amour ?", "Oui. Embir propose plusieurs intentions, dont amour, amitié, casual, sport, sorties et conversation."]],
   },
   en: {
     h1: "Tinder vs Embir: the end of the paywall",
@@ -45,9 +45,9 @@ const DATA = {
     competitor: "Tinder",
     competitorPros: ["Enorme base d'utilisateurs", "Interface simple et rapide", "Tinder Plus/Gold/Platinum bien etablis"],
     competitorCons: ["Payant (20-45 EUR/mois pour les fonctionnalites de base)", "Beaucoup de faux profils et bots", "Pas de filtre par orientation LGBT+", "Publicite agressive", "Focus sur le swipe superficiel"],
-    embirPros: ["gratuit au lancement — zero paywall", "Filtre strict par orientation", "Profils verifies par selfie (anti-bot)", "Multi-intentions (amour, amis, fun, sport, evenements)", "Aucune pub, aucune limite de likes"],
+    embirPros: ["Core connections without a credit card", "Preferences applied in both directions", "Optional visible selfie badge", "Declared intentions", "Short selection"],
     embirCons: ["Base d'utilisateurs plus petite", "Moins de notoriete"],
-    faq: [["Is Embir a better alternative to Tinder?", "Yes if you want a free-at-launch app with real filters. Tinder charges $20-45/month for unlimited likes and super likes. Embir gives everything for free."], ["Does Embir have fewer fake profiles than Tinder?", "Yes. Embir's selfie verification eliminates most bots. Verified profiles have a badge and are featured. Tinder is known for its fake profile problem."], ["Can I look for things other than love on Embir?", "Yes. Unlike Tinder which focuses on dating, Embir offers 6 intentions: love, friends, fun, casual, sports, events."]],
+    faq: [["How is Embir different from Tinder?", "Embir uses a short selection, declared intentions, and reciprocal preferences. Everything needed to meet someone is free. No credit card required."], ["Does Embir have fewer fake profiles than Tinder?", "Embir does not publish a measured fake-profile comparison. Optional selfie verification adds a visible badge; blocking and reporting remain available."], ["Can I look for things other than love?", "Yes. Embir supports multiple intentions including love, friendship, casual, sports, outings, and conversation."]],
   },
 } as const;
 
@@ -107,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white">Embir</span>
-                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit au lancement</span>
+                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit pour les connexions essentielles</span>
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white/70">{c.competitor}</span>
@@ -115,14 +115,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </div>
             </div>
             {[
-              { label: isFr ? "Prix" : "Price", embir: "0 EUR", competitor: "20-45 EUR/mois" },
-              { label: isFr ? "Likes illimites" : "Unlimited likes", embir: "Oui", competitor: "Non" },
-              { label: isFr ? "Messages illimites" : "Unlimited messages", embir: "Oui", competitor: "Non" },
+              { label: isFr ? "Connexions essentielles" : "Core connections", embir: isFr ? "Sans carte bancaire" : "No credit card", competitor: isFr ? "Offres variables" : "Plans vary" },
+              { label: isFr ? "Découverte" : "Discovery", embir: isFr ? "Sélection courte" : "Short selection", competitor: isFr ? "Selon l'offre" : "Depends on plan" },
+              { label: isFr ? "Messagerie" : "Messaging", embir: isFr ? "Connexions réciproques" : "Reciprocal connections", competitor: isFr ? "Selon l'offre" : "Depends on plan" },
               { label: isFr ? "Filtre par orientation" : "Orientation filter", embir: "Oui Strict", competitor: "Non" },
               { label: isFr ? "Multi-intentions" : "Multi-intention", embir: "Oui 6 modes", competitor: "Non" },
-              { label: isFr ? "Profils verifies" : "Verified profiles", embir: "Oui Selfie", competitor: "Partiel" },
+              { label: isFr ? "Badge selfie" : "Selfie badge", embir: isFr ? "Facultatif" : "Optional", competitor: isFr ? "Variable" : "Varies" },
               { label: isFr ? "Publicites" : "Ads", embir: "Aucune", competitor: "Intrusives" },
-              { label: isFr ? "Parrainage viral" : "Viral referral", embir: "Oui 7j premium", competitor: "Non" },
+              { label: isFr ? "Invitations" : "Invitations", embir: isFr ? "Partage facultatif" : "Optional sharing", competitor: isFr ? "Variable" : "Varies" },
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-3 border-b border-white/[0.05] last:border-0">
                 <div className="p-4 text-sm text-white/60">{row.label}</div>
@@ -230,7 +230,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             {isFr ? "Pret a essayer Embir ?" : "Ready to try Embir?"}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/45">
-            {isFr ? "gratuit au lancement. Aucune pub. Aucun abonnement." : "free at launch. No ads. No subscription."}
+            {isFr ? "gratuit pour les connexions essentielles. Aucune pub. Aucun abonnement." : "core connection features are free. No ads. No subscription."}
           </p>
           <Link
             href="/auth/register"

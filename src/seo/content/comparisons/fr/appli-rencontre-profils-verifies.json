@@ -1,6 +1,6 @@
 {
   "slug": "appli-rencontre-profils-verifies",
-  "intro": "Le probleme central des applis de rencontre en 2026 : les faux profils, les bots et les arnaques erodent la confiance. La verification des profils est la solution — mais la plupart des apps la rendent optionnelle ou la cachent derriere un abonnement.\n\nSur Embir, la verification selfie est disponible des l'inscription pour tous les utilisateurs. La moderation humaine examine chaque signalement.",
+  "intro": "Le probleme central des applis de rencontre en 2026 : les faux profils, les bots et les arnaques erodent la confiance. La verification des profils est la solution — mais la plupart des apps la rendent optionnelle ou la cachent derriere un abonnement.\n\nSur Embir, la verification selfie est disponible des l'inscription pour tous les utilisateurs. le signalement et le blocage examine chaque signalement.",
   "comparisonTable": [
     {
       "criteria": "Verification selfie",
@@ -9,9 +9,9 @@
       "winner": "embir"
     },
     {
-      "criteria": "Moderation humaine",
+      "criteria": "signalement et blocage",
       "competitor": "La plupart : automatisee",
-      "embir": "Equipe humaine + examen de chaque signalement",
+      "embir": "Equipe humaine + examen des signalements enregistrés pour examen",
       "winner": "embir"
     },
     {
@@ -40,16 +40,16 @@
       "highlights": [
         "Verification selfie = barriere significative pour les bots",
         "Profils verifies prioritaires dans la decouverte",
-        "Moderation humaine = action rapide sur les signalements"
+        "signalement et blocage = action rapide sur les signalements"
       ]
     }
   ],
-  "verdict": "Si les profils verifies sont ta priorite dans une appli de rencontre, Embir est le meilleur choix en 2026 : verification selfie gratuite pour tous, moderation humaine systematique, et profils verifies prioritaires dans la decouverte.",
+  "verdict": "Si les profils verifies sont ta priorite dans une appli de rencontre, Embir est le meilleur choix en 2026 : verification selfie gratuite pour tous, signalement et blocage systematique, et profils verifies prioritaires dans la decouverte.",
   "ctaText": "Des profils verifies, des vraies personnes — rejoins Embir",
   "faq": [
     {
       "q": "Comment Embir verifie-t-il les profils ?",
-      "a": "Verification selfie a l'inscription : tu prends une photo dans une pose specifique qui confirme que tu es bien la personne sur tes photos. Les moderes examinent chaque signalement."
+      "a": "verification selfie facultative : tu prends une photo dans une pose specifique qui confirme que tu es bien la personne sur tes photos. Les moderes examinent chaque signalement."
     },
     {
       "q": "La verification est-elle gratuite sur Embir ?",

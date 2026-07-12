@@ -1,52 +1,124 @@
 import { NextRequest, NextResponse } from "next/server";
+import type { ConnectionIntent } from "@prisma/client";
+import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { verifyToken } from "@/lib/auth";
-import { cookies } from "next/headers";
+import { getCompatibleCandidates, INTENTS } from "@/lib/matching";
+import { getServerFeatureFlag } from "@/lib/feature-flags";
+import { withApiLogging } from "@/lib/api-logger";
 
-export async function GET(req: NextRequest) {
+async function handleGet(request: NextRequest) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+
+  const rawIntent = request.nextUrl.searchParams.get("intent");
+  const intentFilter = rawIntent && INTENTS.includes(rawIntent as ConnectionIntent)
+    ? (rawIntent as ConnectionIntent)
+    : undefined;
+  if (rawIntent && !intentFilter) {
+    return NextResponse.json({ error: "Filtre d’intention invalide" }, { status: 400 });
+  }
+
+  const requestedLimit = Number(request.nextUrl.searchParams.get("limit") ?? 5);
+  const profile = await prisma.profile.findUnique({
+    where: { userId: auth.id },
+    select: { city: true },
+  });
+  const feedFlag = await getServerFeatureFlag<{ selectionSize?: number }>("connection_os_feed", {
+    userId: auth.id,
+    city: profile?.city,
+  });
+  if (!feedFlag.enabled) {
+    return NextResponse.json({
+      selectionId: null,
+      profiles: [],
+      hasMore: false,
+      nextCursor: null,
+      setupRequired: false,
+      endOfSelection: true,
+      featureDisabled: true,
+      expansionOptions: [],
+    });
+  }
+  const configuredLimit = typeof feedFlag.config.selectionSize === "number"
+    ? Math.min(5, Math.max(1, Math.floor(feedFlag.config.selectionSize)))
+    : 5;
+  const limit = Number.isInteger(requestedLimit)
+    ? Math.min(configuredLimit, Math.max(1, requestedLimit))
+    : configuredLimit;
+
   try {
-    const token = (await cookies()).get("token")?.value;
-    if (!token) return NextResponse.json({ error: "Non autorisé." }, { status: 401 });
-    const decoded = verifyToken(token);
-    if (!decoded) return NextResponse.json({ error: "Token invalide." }, { status: 401 });
-    const userId = decoded.userId;
+    const result = await getCompatibleCandidates(auth.id, { limit, intentFilter });
+    const selectionId = crypto.randomUUID();
+    const now = new Date();
 
-    const profile = await prisma.profile.findUnique({ where: { userId } });
-    if (!profile) return NextResponse.json({ error: "Complète ton profil d'abord." }, { status: 400 });
+    await prisma.$transaction(async (tx) => {
+      if (result.candidates.length) {
+        await tx.profileExposure.createMany({
+          data: result.candidates.map((candidate, index) => ({
+            viewerId: auth.id,
+            candidateId: String(candidate.profile.userId),
+            selectionId,
+            rank: index + 1,
+            reasonCodes: candidate.reasonCodes,
+          })),
+          skipDuplicates: true,
+        });
+      }
 
-    const existingMatches = await prisma.match.findMany({
-      where: { OR: [{ user1Id: userId }, { user2Id: userId }] },
-      select: { user1Id: true, user2Id: true, status: true }
+      await tx.analyticsEvent.createMany({
+        data: [
+          {
+            eventId: crypto.randomUUID(),
+            eventName: "feed_viewed",
+            eventVersion: 1,
+            userId: auth.id,
+            occurredAt: now,
+            properties: {
+              selectionId,
+              resultCount: result.candidates.length,
+              intentFilter: intentFilter ?? null,
+            },
+          },
+          ...result.candidates.map((candidate, index) => ({
+            eventId: crypto.randomUUID(),
+            eventName: "profile_exposed",
+            eventVersion: 1,
+            userId: auth.id,
+            occurredAt: now,
+            properties: {
+              selectionId,
+              candidateId: String(candidate.profile.userId),
+              rank: index + 1,
+              incomingSignal: candidate.incomingSignal,
+            },
+          })),
+        ],
+      });
     });
-    const excludeIds = new Set<string>();
-    existingMatches.forEach(m => {
-      if (m.user1Id === userId) excludeIds.add(m.user2Id);
-      else excludeIds.add(m.user1Id);
+
+    const profiles = result.candidates.map((candidate) => ({
+      ...candidate.profile,
+      reasons: candidate.reasons,
+      reasonCodes: candidate.reasonCodes,
+      matchedIntents: candidate.matchedIntents,
+      incomingSignal: candidate.incomingSignal,
+    }));
+
+    return NextResponse.json({
+      selectionId,
+      profiles,
+      hasMore: result.hasMore,
+      nextCursor: result.hasMore ? selectionId : null,
+      setupRequired: result.setupRequired,
+      endOfSelection: !result.hasMore,
+      expansionOptions: profiles.length < limit
+        ? ["augmenter volontairement le rayon", "élargir les intentions acceptées"]
+        : [],
     });
-    excludeIds.add(userId);
-
-    const candidates = await prisma.profile.findMany({
-      where: { userId: { notIn: Array.from(excludeIds) }, publicVisibility: true },
-      take: 50,
-      orderBy: { lastActiveAt: "desc" }
-    });
-
-    const scored = candidates.map(c => {
-      let score = 0;
-      if (profile.intentions?.some((i: string) => c.intentions?.includes(i))) score += 25;
-      if (profile.city && c.city && profile.city === c.city) score += 25;
-      else if (profile.country && c.country && profile.country === c.country) score += 15;
-      if (c.isVerified) score += 15;
-      if (c.lastActiveAt && c.lastActiveAt > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)) score += 10;
-      score += Math.min(10, Math.round((c.profileCompletionScore || 0) / 10));
-      return { ...c, score };
-    });
-
-    scored.sort((a: any, b: any) => b.score - a.score);
-    return NextResponse.json({ profiles: scored.slice(0, 10) });
-
-  } catch (e: any) {
-    console.error("Feed error:", e);
-    return NextResponse.json({ error: "Erreur serveur." }, { status: 500 });
+  } catch (error) {
+    console.error("Feed error:", error);
+    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 }
+
+export const GET = withApiLogging(handleGet);

@@ -11,13 +11,13 @@
     {
       "criteria": "Profils vérifiés",
       "competitor": "Option payante limitée",
-      "embir": "Vérification systématique + modération humaine",
+      "embir": "vérification disponible + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Gratuité",
       "competitor": "Version gratuite très limitée",
-      "embir": "Fonctions essentielles gratuites au lancement + freemium transparent",
+      "embir": "Fonctions essentielles gratuites pour les connexions essentielles + freemium transparent",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Sécurité & modération",
       "competitor": "Signalements classiques",
-      "embir": "Modération humaine + outils de sécurité avancés",
+      "embir": "signalement et blocage + outils de sécurité avancés",
       "winner": "embir"
     },
     {
@@ -51,18 +51,18 @@
     },
     {
       "title": "Profils vérifiés & Sécurité — La confiance dès le départ",
-      "content": "C'est l'un des plus gros points faibles de Tinder : le nombre de profils faux, bots ou malveillants reste élevé malgré les efforts. La vérification photo existe mais elle est optionnelle et limitée.\n\nSur Embir, la vérification de profil est systématique. Chaque membre passe par un processus de vérification. La plateforme dispose d'une équipe de modération humaine active. Les signalements sont traités rapidement et la culture communautaire est pensée pour être bienveillante et respectueuse dès le premier jour.\n\nCe n'est pas juste une question de détecter les bots — c'est construire une fondation de confiance. Quand tu sais que le profil que tu regardes appartient à une vraie personne qui a elle aussi été vérifiée, toute la dynamique de la conversation change. Tu peux te concentrer sur la découverte de l'autre plutôt que de te demander s'il est vraiment celui qu'il prétend être.",
+      "content": "C'est l'un des plus gros points faibles de Tinder : le nombre de profils faux, bots ou malveillants reste élevé malgré les efforts. La vérification photo existe mais elle est optionnelle et limitée.\n\nSur Embir, la vérification par selfie est facultative. Les profils approuvés affichent un badge visible. La plateforme dispose d'un dispositif de signalement et de blocage active. Les signalements sont enregistrés pour examen et la culture communautaire est pensée pour être bienveillante et respectueuse dès le premier jour.\n\nCe n'est pas juste une question de détecter les bots — c'est construire une fondation de confiance. Quand tu sais que le profil que tu regardes appartient à une vraie personne qui a elle aussi été vérifiée, toute la dynamique de la conversation change. Tu peux te concentrer sur la découverte de l'autre plutôt que de te demander s'il est vraiment celui qu'il prétend être.",
       "highlights": [
         "Vérification par selfie disponible dès le premier jour",
-        "Équipe de modération humaine examine chaque signalement",
-        "Tolérance zéro pour le harcèlement — bannissement immédiat et définitif"
+        "Dispositif de signalement et de blocage examine chaque signalement",
+        "Tolérance zéro pour le harcèlement — restrictions de compte après examen"
       ]
     },
     {
       "title": "Gratuité réelle vs Freemium — Ce que tu obtiens vraiment sans payer",
-      "content": "La version gratuite de Tinder est notoirement limitée. La plupart des fonctionnalités intéressantes — voir qui t'a liké, les rewinds, les super likes illimités — sont derrière un paywall qui peut coûter 20-30€/mois. Résultat : une expérience frustrante où tu te heurtes constamment à des limites.\n\nEmbir est gratuite au lancement pour les membres fondateurs. Les fonctions essentielles de découverte et de messagerie sont accessibles sans paiement. Le passage en freemium est annoncé de manière transparente et servira uniquement à financer l'infrastructure de sécurité, la modération et le développement des applications mobiles — pas à bloquer la connexion humaine derrière une carte bancaire.\n\nCette transparence est importante. Une application de rencontre ne devrait pas cacher son modèle économique derrière des limites artificielles qui arrivent avant même que les utilisateurs aient compris la communauté.",
+      "content": "La version gratuite de Tinder est notoirement limitée. La plupart des fonctionnalités intéressantes — voir qui t'a liké, les rewinds, les super sélection quotidienne courte — sont derrière un paywall qui peut coûter 20-30€/mois. Résultat : une expérience frustrante où tu te heurtes constamment à des limites.\n\nEmbir est gratuite pour les connexions essentielles pour les membres fondateurs. Les fonctions essentielles de découverte et de messagerie sont accessibles sans paiement. l'évolution des options facultatives est annoncé de manière transparente et servira uniquement à financer l'infrastructure de sécurité, la modération et le développement des applications mobiles — pas à bloquer la connexion humaine derrière une carte bancaire.\n\nCette transparence est importante. Une application de rencontre ne devrait pas cacher son modèle économique derrière des limites artificielles qui arrivent avant même que les utilisateurs aient compris la communauté.",
       "highlights": [
-        "Messagerie et découverte complètes gratuites pendant la phase de lancement",
+        "Messagerie et découverte complètes gratuites pour les connexions essentielles",
         "Aucune carte bancaire requise pour commencer à échanger",
         "Modèle freemium annoncé à l'avance, sans pièges cachés"
       ]
@@ -86,12 +86,12 @@
       ]
     }
   ],
-  "verdict": "Choisis Embir en 2026 si tu veux des profils vérifiés et une vraie modération humaine, une découverte basée sur la compatibilité plutôt que le hasard, une expérience inclusive pour toutes les orientations, une application gratuite au lancement avec un modèle transparent, et une communauté construite sur le respect et l'authenticité.\n\nTinder reste pertinent si tu cherches avant tout du volume et de la simplicité de swipe — même si la qualité des connexions en souffre souvent.",
-  "ctaText": "Rejoins la communauté fondatrice — gratuit pendant le lancement",
+  "verdict": "Choisis Embir en 2026 si tu veux des profils vérifiés et une vraie signalement et blocage, une découverte basée sur la compatibilité plutôt que le hasard, une expérience inclusive pour toutes les orientations, une application gratuite pour les connexions essentielles avec un modèle transparent, et une communauté construite sur le respect et l'authenticité.\n\nTinder reste pertinent si tu cherches avant tout du volume et de la simplicité de swipe — même si la qualité des connexions en souffre souvent.",
+  "ctaText": "Rejoins la communauté fondatrice — gratuit pour les connexions essentielles",
   "faq": [
     {
       "q": "Embir est-elle vraiment gratuite ?",
-      "a": "Oui. Embir est gratuite pendant toute la phase de lancement. Les fonctions essentielles — profil, découverte, messagerie, compatibilité — sont accessibles sans frais. Le futur modèle freemium sera transparent et financera la sécurité, la modération et les applications mobiles."
+      "a": "Oui. Embir est gratuite pour tout ce qu’il faut pour rencontrer quelqu’un. Les fonctions essentielles — profil, découverte, messagerie, compatibilité — sont accessibles sans frais. Les options facultatives transparentes seront transparent et financera la sécurité, la modération et les applications mobiles."
     },
     {
       "q": "Comment fonctionne la vérification des profils ?",
@@ -107,15 +107,15 @@
     },
     {
       "q": "Quelle est la différence principale avec Tinder ?",
-      "a": "La différence fondamentale est l'approche : Tinder est axé sur le volume (culture du swipe), Embir est axée sur la compatibilité (découverte vérifiée). Embir propose aussi une vérification systématique, une modération humaine, une inclusivité réelle pour toutes les orientations et un modèle freemium transparent."
+      "a": "La différence fondamentale est l'approche : Tinder est axé sur le volume (culture du swipe), Embir est axée sur la compatibilité (découverte vérifiée). Embir propose aussi une vérification disponible, des outils de signalement et de blocage, une inclusivité réelle pour toutes les orientations et un modèle freemium transparent."
     },
     {
       "q": "Comment signaler un comportement inapproprié ?",
-      "a": "Chaque profil et conversation dispose d'un bouton 'Signaler'. Les signalements sont transmis à une équipe de modération humaine, pas à un filtre automatique. Les violations graves entraînent un bannissement immédiat et définitif. Le contexte est toujours pris en compte."
+      "a": "Chaque profil et conversation dispose d'un bouton 'Signaler'. Les signalements sont transmis à un dispositif de signalement et de blocage, pas à un filtre automatique. Les violations graves entraînent des restrictions de compte après examen. Le contexte est toujours pris en compte."
     },
     {
-      "q": "Quand Embir passera-t-elle en freemium ?",
-      "a": "La phase fondatrice se déroule pendant toute la période de lancement. La transition vers le freemium sera annoncée bien à l'avance avec une transparence totale sur ce qui change et pourquoi. Tous les membres fondateurs recevront un accès prioritaire aux fonctionnalités premium."
+      "q": "Comment fonctionnent les services facultatifs ?",
+      "a": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les services facultatifs restent séparés et ne remplacent ni la compatibilité, ni la réciprocité, ni le consentement."
     }
   ]
 }

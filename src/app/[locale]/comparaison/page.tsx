@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Gay Dating Apps Compared — Why Embir?",
-  description: "Compare gay dating apps side by side. See why Embir is the only 100% free option with no ads, unlimited messaging, and 25 languages.",
+  description: "Compare gay dating apps side by side. See why Embir is the only free for core connections option with no ads, messaging between reciprocal connections, and English and French public pages.",
   alternates: { canonical: "https://embir.xyz/comparaison" },
 };
 

@@ -5,19 +5,19 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Minimale — photos sans contrôle",
-      "embir": "Vérification selfie + modération humaine",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Qualité de la modération",
       "competitor": "Taux élevé de faux/bots, suppression lente",
-      "embir": "Modérateurs humains, réponse rapide",
+      "embir": "dispositif de signalement, réponse rapide",
       "winner": "embir"
     },
     {
       "criteria": "Tier gratuit",
       "competitor": "Gratuit mais bourré de pubs, chargé",
-      "embir": "Gratuit, épuré, messagerie complète au lancement",
+      "embir": "Gratuit pour les connexions essentielles, interface épurée, messagerie incluse",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Sécurité",
       "competitor": "Signalement basique, réponse aléatoire",
-      "embir": "Équipe humaine + action immédiate sur violations",
+      "embir": "Signalement enregistré + blocage immédiat",
       "winner": "embir"
     },
     {
@@ -42,7 +42,7 @@
   "sections": [
     {
       "title": "Volume vs qualité — le vrai compromis",
-      "content": "POF a des millions de profils. Ça semble être un avantage jusqu'à ce que tu passes une heure à filtrer des bots, des profils obsolètes et des gens qui ne se sont pas connectés depuis 18 mois. Le volume sans curation produit du bruit, pas des opportunités.\n\nEmbir fait le pari inverse : une communauté plus petite et plus intentionnelle où chaque profil est lié à une vraie personne vérifiée. La phase fondatrice est le bon moment pour rejoindre — la communauté est compacte, engagée, et construit quelque chose ensemble.",
+      "content": "POF a des millions de profils. Ça semble être un avantage jusqu'à ce que tu passes une heure à filtrer des bots, des profils obsolètes et des gens qui ne se sont pas connectés depuis 18 mois. Le volume sans curation produit du bruit, pas des opportunités.\n\nEmbir fait le pari inverse : une communauté plus petite et plus intentionnelle où chaque profil peut afficher un badge après une vérification selfie approuvée. Embir construit une communauté plus intentionnelle où les membres contribuent à la culture et au produit.",
       "highlights": [
         "Profils vérifiés uniquement — pas de comptes abandonnés en tête de liste",
         "Communauté fondatrice engagée et intentionnelle",
@@ -51,28 +51,28 @@
     },
     {
       "title": "Sécurité — le point faible de POF",
-      "content": "Les problèmes de modération de POF sont bien documentés. Arnaques, messages explicites non sollicités, réponse lente aux signalements — les plaintes sont récurrentes. À l'échelle de la plateforme, une modération humaine exhaustive est impossible.\n\nL'équipe de modération humaine d'Embir examine chaque signalement. C'est uniquement tenable à l'échelle du lancement — et c'est intentionnel. Construire une communauté de haute confiance dès le début est moins coûteux que de reconstruire cette confiance après l'avoir perdue.",
+      "content": "Les problèmes de modération de POF sont bien documentés. Arnaques, messages explicites non sollicités, réponse lente aux signalements — les plaintes sont récurrentes. À l'échelle de la plateforme, des outils de signalement et de blocage exhaustive est impossible.\n\nL'Dispositif de signalement et de blocage d'Embir examine chaque signalement. C'est uniquement tenable à l'échelle du lancement — et c'est intentionnel. Construire une communauté de haute confiance dès le début est moins coûteux que de reconstruire cette confiance après l'avoir perdue.",
       "highlights": [
-        "Chaque signalement examiné par un humain, pas juste un algorithme",
-        "Tolérance zéro — ban immédiat et permanent pour violations graves",
-        "Infrastructure de sécurité financée par le futur modèle freemium transparent"
+        "Signalements enregistrés pour examen ; blocage immédiat",
+        "Tolérance zéro — restriction de compte après examen pour violations graves",
+        "Infrastructure de sécurité financée par les options facultatives transparentes"
       ]
     }
   ],
-  "verdict": "POF est utile si tu veux un maximum de profils sans payer. Si ta priorité est de rencontrer de vraies personnes vérifiées et compatibles — le calcul change rapidement.\n\nEmbir est gratuit au lancement, plus petit, mais significativement plus fiable. Qualité avant quantité, avec un système de compatibilité qui respecte ton temps.",
-  "ctaText": "Des vraies personnes vérifiées — gratuit au lancement",
+  "verdict": "POF est utile si tu veux un maximum de profils sans payer. Si ta priorité est de rencontrer de vraies personnes vérifiées et compatibles — le calcul change rapidement.\n\nEmbir est gratuit pour les connexions essentielles, plus petit, mais significativement plus fiable. Qualité avant quantité, avec un système de compatibilité qui respecte ton temps.",
+  "ctaText": "Des vraies personnes vérifiées — gratuit pour les connexions essentielles",
   "faq": [
     {
       "q": "Embir est-il vraiment gratuit comme POF ?",
-      "a": "Oui. Les fonctionnalités principales — profil, découverte, messagerie — sont gratuites pendant la phase de lancement. Aucun abonnement requis."
+      "a": "Oui. Les fonctionnalités principales — profil, découverte, messagerie — sont gratuites pour les connexions essentielles. Aucun abonnement requis."
     },
     {
       "q": "Comment Embir gère-t-il les faux profils ?",
-      "a": "Vérification selfie à l'inscription et modération humaine de chaque signalement. L'échelle de la communauté fondatrice rend une modération réelle faisable."
+      "a": "Vérification selfie facultative et outils de signalement et de blocage. L'échelle de la communauté fondatrice rend une modération réelle faisable."
     },
     {
       "q": "Embir a-t-il des pubs ?",
-      "a": "Non. Aucune publicité sur Embir. Les revenus viendront d'un futur modèle freemium transparent qui finance la sécurité et la modération."
+      "a": "Non. Aucune publicité sur Embir. Les revenus viendront d'un options facultatives transparentes qui finance la sécurité et la modération."
     },
     {
       "q": "Embir est-il inclusif pour les rencontres LGBTQ+ ?",

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Embir, l'appli de rencontre casual gratuite. Rencontres légères, sans engagement, pour tous les profils et orientations. Matching intelligent et profils vérifiés.",
   alternates: { canonical: "https://embir.xyz/fr/rencontre/casual" },
   openGraph: {
-    title: "Rencontre Casual — Sans engagement, 100% gratuit",
+    title: "Rencontre Casual — Sans engagement, sans carte bancaire",
     description: "L'application de rencontre casual gratuite pour tous les profils. Sans abonnement, sans publicité.",
     url: "https://embir.xyz/fr/rencontre/casual",
     locale: "fr_FR",
@@ -51,8 +51,8 @@ export default function Page() {
               <p className="text-sm text-white/45">Notre algorithme de matching tient compte de votre orientation ET de celle de l'autre profil. Vous ne verrez que des personnes réellement compatibles avec vous.</p>
             </div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <h3 className="text-lg font-bold text-white mb-2">100% gratuit, sans surprise</h3>
-              <p className="text-sm text-white/45">Messagerie illimitée, accès complet aux profils, matching IA. Pas d'abonnement caché, pas de paywall pour envoyer un message.</p>
+              <h3 className="text-lg font-bold text-white mb-2">sans carte bancaire, sans surprise</h3>
+              <p className="text-sm text-white/45">Messagerie entre connexions réciproques, accès complet aux profils, compatibilité réciproque. Pas d'abonnement caché, pas de paywall pour envoyer un message.</p>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Faut-il payer pour accéder au casual dating sur Embir ?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Non. Embir est 100% gratuit au lancement. Toutes les fonctionnalités — matching, messagerie, profils complets — sont accessibles sans abonnement.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Non. Tout ce qu'il faut pour rencontrer quelqu'un sur Embir est gratuit. Sans carte bancaire. Toutes les fonctionnalités — matching, messagerie, profils complets — sont accessibles sans abonnement.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Puis-je changer d'intention plus tard ?</summary>
@@ -85,7 +85,7 @@ export default function Page() {
       </section>
       <section className="px-4 pb-16 text-center">
         <Link prefetch={false} href="/auth/register?source=rencontre-casual" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Commencer les rencontres casual gratuitement</Link>
-        <p className="mt-4 text-xs text-white/20">18+ uniquement. Gratuit au lancement. Sans engagement.</p>
+        <p className="mt-4 text-xs text-white/20">18+ uniquement. Les connexions essentielles sont gratuites. Sans engagement.</p>
       </section>
     </main>
   );

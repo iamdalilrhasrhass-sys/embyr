@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dating in Birmingham — Free App for Authentic Connections",
-  description: "Discover Embir for dating in Birmingham. Free dating app with verified profiles, smart AI matching, and zero ads. Join Birmingham's dating community.",
+  description: "Discover Embir for dating in Birmingham. Free dating app with verified profiles, reciprocal compatibility, and zero ads. Join Birmingham's dating community.",
   alternates: { canonical: "https://embir.xyz/dating/birmingham" },
   openGraph: {
     title: "Dating in Birmingham",
-    description: "Free dating app in Birmingham. Verified profiles, AI matching, no ads.",
+    description: "Free dating app in Birmingham. Verified profiles, reciprocal compatibility, no ads.",
     url: "https://embir.xyz/dating/birmingham",
     locale: "en_US",
     siteName: "Embir",
@@ -25,7 +25,7 @@ export default function Page() {
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#d4a574]/80">Birmingham · UK</span>
           </div>
           <h1 className="font-serif text-4xl font-light text-white sm:text-5xl">Dating in Birmingham<br/><span className="text-[#d4a574]">is about to get better.</span></h1>
-          <p className="mt-6 text-lg text-white/50">Birmingham, England's second city, is full of people looking for genuine connections. Embir brings verified profiles and AI matching to Birmingham's dating scene — completely free during launch.</p>
+          <p className="mt-6 text-lg text-white/50">Birmingham, England's second city, is full of people looking for genuine connections. Embir brings verified profiles and reciprocal compatibility to Birmingham's dating scene — free for core connections.</p>
           <div className="mt-8 flex gap-4">
             <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create Free Profile</Link>
             <Link href="/free-dating-app" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 hover:border-white/20">How It Works</Link>
@@ -36,9 +36,9 @@ export default function Page() {
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl text-white mb-6">Why Birmingham chooses Embir</h2>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Verified Profiles</h3><p className="text-sm text-white/45">Every member in Birmingham is verified by selfie. No bots, no fakes.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Free During Launch</h3><p className="text-sm text-white/45">Unlimited messaging, AI matching, zero ads. No subscription needed.</p></div>
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Smart AI Matching</h3><p className="text-sm text-white/45">our compatibility system suggests profiles based on your preferences for truly compatible matches in Birmingham.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Verified Profiles</h3><p className="text-sm text-white/45">Selfie verification is available in Birmingham. A visible badge identifies verified profiles; no system can eliminate every risk.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">free for core connections</h3><p className="text-sm text-white/45">messaging between reciprocal connections, reciprocal compatibility, zero ads. No subscription needed.</p></div>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">reciprocal compatibility</h3><p className="text-sm text-white/45">our compatibility system suggests profiles based on your preferences for truly compatible matches in Birmingham.</p></div>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6"><h3 className="text-lg font-bold text-white mb-2">Inclusive for All</h3><p className="text-sm text-white/45">Gay, lesbian, bi, trans, queer — Embir welcomes everyone in Birmingham.</p></div>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Page() {
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
               <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Is it really free in Birmingham?</summary>
-              <p className="px-6 pb-4 text-sm text-white/45">Yes. During launch, every feature is free — unlimited messages, AI matching, full profiles.</p>
+              <p className="px-6 pb-4 text-sm text-white/45">Yes. Everything needed to meet someone is free. No credit card is required — messages between reciprocal connections, reciprocal compatibility, full profiles.</p>
             </details>
           </div>
         </div>

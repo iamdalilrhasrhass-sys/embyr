@@ -129,7 +129,7 @@ async function main() {
   const passes = results.filter((r) => r.status === 'pass');
 
   console.log(`  PASS: ${passes.length}  WARN: ${warns.length}  FAIL: ${fails.length}`);
-  
+
   for (const r of fails) {
     console.log(`  ❌ ${r.name}: ${r.detail}`);
   }

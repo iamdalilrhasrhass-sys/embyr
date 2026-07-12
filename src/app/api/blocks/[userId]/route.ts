@@ -1,28 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
+import { blockUser, unblockUser } from "@/lib/block-service";
+import { withApiLogging } from "@/lib/api-logger";
 
-export async function POST(req: NextRequest, { params }: { params: Promise<{ userId: string }> }) {
+async function handlePost(
+  _request: NextRequest,
+  { params }: { params: Promise<{ userId: string }> },
+) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   const { userId } = await params;
-  const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
-  if (userId === user.id) return NextResponse.json({ error: "Impossible" }, { status: 400 });
-  const existing = await prisma.block.findUnique({
-    where: { blockerId_blockedId: { blockerId: user.id, blockedId: userId } }
-  });
-  if (existing) return NextResponse.json({ blocked: true, message: "Déjà bloqué" });
-  await prisma.block.create({ data: { blockerId: user.id, blockedId: userId } });
-  return NextResponse.json({ blocked: true, message: "Bloqué" });
+  if (userId === auth.id) return NextResponse.json({ error: "Cible invalide" }, { status: 400 });
+  try {
+    return NextResponse.json(await blockUser(auth.id, userId));
+  } catch (error) {
+    if (error instanceof Error && error.message === "TARGET_NOT_FOUND") {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
+  }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: Promise<{ userId: string }> }) {
+async function handleDelete(
+  _request: NextRequest,
+  { params }: { params: Promise<{ userId: string }> },
+) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   const { userId } = await params;
-  const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
-  const existing = await prisma.block.findUnique({
-    where: { blockerId_blockedId: { blockerId: user.id, blockedId: userId } }
-  });
-  if (!existing) return NextResponse.json({ blocked: false, message: "Pas bloqué" });
-  await prisma.block.delete({ where: { id: existing.id } });
-  return NextResponse.json({ blocked: false, message: "Débloqué" });
+  return NextResponse.json(await unblockUser(auth.id, userId));
 }
+
+export const POST = withApiLogging(handlePost);
+export const DELETE = withApiLogging(handleDelete);

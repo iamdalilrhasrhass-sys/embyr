@@ -369,7 +369,7 @@ Remove from the template:
 - `Profils verifies`;
 - `100% gratuit, sans pub, sans abonnement`;
 - selfie verification guarantees;
-- unlimited likes or all-feature claims;
+- a short daily selection or all-feature claims;
 - statements that a local community already exists.
 
 Use truthful launch language:

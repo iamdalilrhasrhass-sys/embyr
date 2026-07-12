@@ -9,7 +9,7 @@ export const markets = {
     currency: "EUR",
     headline: "Dating in France with verified profiles and real compatibility",
     intro:
-      "Embir is free at launch in France and built for every orientation, with preferences, compatibility, safety and a future transparent freemium model.",
+      "Embir's core connection features are free in France and built for every orientation, with preferences, compatibility, safety and a future transparent freemium model.",
   },
   usa: {
     label: "United States",
@@ -17,7 +17,7 @@ export const markets = {
     language: "en",
     country: "United States",
     currency: "USD",
-    headline: "Free dating app in the US — New York, Los Angeles & Miami",
+    headline: "Dating in the US — core connections without a credit card",
     intro:
       "Embir helps people in the United States meet through orientation, preferences, compatibility, verified profiles and a founding community before the mobile app rollout.",
   },
@@ -27,9 +27,9 @@ export const markets = {
     language: "en",
     country: "United Kingdom",
     currency: "GBP",
-    headline: "Free dating app for the UK — London, Manchester & Birmingham",
+    headline: "Dating in the UK — core connections without a credit card",
     intro:
-      "Embir is built for UK dating with verified profiles, compatibility-led discovery, clear intent and a fair freemium model coming after launch.",
+      "Embir is built for UK dating with reciprocal preferences, compatibility-led discovery, clear intent and core connections without a credit card.",
   },
   switzerland: {
     label: "Switzerland",
@@ -37,8 +37,8 @@ export const markets = {
     language: "en",
     country: "Switzerland",
     currency: "CHF",
-    headline: "Free dating app for Switzerland — Geneva, Lausanne & Zurich",
+    headline: "Dating in Switzerland — core connections without a credit card",
     intro:
-      "Embir is built for Swiss dating across Zurich, Geneva, Lausanne, Basel and Bern, with verified profiles, multilingual expectations, compatibility and a transparent future freemium model.",
+      "Embir is built for Swiss dating across Zurich, Geneva, Lausanne, Basel and Bern, with verified profiles, multilingual expectations, compatibility and a transparent optional-services model.",
   },
 } as const;

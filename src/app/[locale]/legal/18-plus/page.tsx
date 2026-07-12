@@ -13,7 +13,7 @@ export default function EighteenPlusPage() {
         Embir est une plateforme strictement réservée aux personnes majeures.
         L'accès à ce site nécessite d'avoir 18 ans révolus ou l'âge de la majorité légale dans votre pays de résidence.
       </p>
-      
+
       <div className="glass-card p-8 rounded-2xl text-left text-gray-300 space-y-4 mb-12">
         <p>
           <strong>Vérification d'âge :</strong> Nous mettons en œuvre des mesures pour vérifier l'âge de nos membres. La création d'un profil implique l'acceptation de nos Conditions Générales et la confirmation formelle de votre majorité.

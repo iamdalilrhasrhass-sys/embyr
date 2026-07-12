@@ -17,13 +17,13 @@
     {
       "criteria": "Hinge",
       "competitor": "Creative prompts, hetero-dominant, Preferred $30/mo",
-      "embir": "Connection depth, universal, free at launch",
+      "embir": "Connection depth, universal, core connection features are free",
       "winner": "embir"
     },
     {
       "criteria": "Profile verification",
       "competitor": "All 3: partial or optional",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -62,7 +62,7 @@
       ]
     }
   ],
-  "verdict": "Tinder, Bumble, and Hinge each have real strengths — but share the same limitations: unidirectional filtering, insufficient moderation, and aggressive paywalls. Embir addresses all three with strict bidirectional filtering, human moderation, and free access at launch.",
+  "verdict": "Tinder, Bumble, and Hinge each have real strengths — but share the same limitations: unidirectional filtering, insufficient moderation, and aggressive paywalls. Embir addresses all three with strict bidirectional filtering, reporting and blocking, and free access at launch.",
   "ctaText": "Beyond Tinder/Bumble/Hinge — join Embir free",
   "faq": [
     {
@@ -71,11 +71,11 @@
     },
     {
       "q": "Why choose Embir over all three?",
-      "a": "Embir combines strict bidirectional filtering, verified profiles, human moderation, universal inclusivity, and free access at launch — criteria none of the three meet simultaneously."
+      "a": "Embir combines strict bidirectional filtering, verified profiles, reporting and blocking, universal inclusivity, and free access at launch — criteria none of the three meet simultaneously."
     },
     {
       "q": "Is Embir cheaper than Tinder, Bumble, or Hinge?",
-      "a": "Yes. Embir is free during launch. Tinder Gold costs $30+/month, Bumble Premium ~$25/month, Hinge Preferred ~$30/month."
+      "a": "Yes. Embir's core connection features are free. Tinder Gold costs $30+/month, Bumble Premium ~$25/month, Hinge Preferred ~$30/month."
     }
   ]
 }

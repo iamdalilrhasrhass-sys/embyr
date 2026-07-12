@@ -1,71 +1,92 @@
-# Embir Deployment Guide
+# Embir — déploiement de production
 
-## Initial Setup
+## Préconditions
+
+- dépôt live : `/root/embyr` ;
+- processus PM2 : `embyr-web` ;
+- port applicatif : `3100` ;
+- fichier d’environnement : `/root/embyr/.env`, mode `0600` ;
+- sauvegardes : `/root/embir-backups`, mode `0700`.
+
+Ne jamais afficher ni copier un secret dans une commande, un log ou cette documentation.
+
+## Sauvegarde avant migration
+
 ```bash
-git clone https://github.com/iamdalilrhasrhass-sys/embyr.git
-cd embyr
-npm install
-cp .env.example .env.local   # Configure environment variables
+cd /root/embyr
+npm run backup:production
+```
+
+Le script produit un dump PostgreSQL custom, vérifie son catalogue avec
+`pg_restore --list` et publie `last-success.json` uniquement après succès.
+Sauvegarder aussi le worktree, la configuration Nginx, la crontab et les
+stockages privés avant toute bascule.
+
+## Cas particulier : première adoption de Prisma Migrate sur la DB historique
+
+La production historique possède déjà le schéma du baseline
+`20260624000000_baseline`, mais pas nécessairement la table
+`_prisma_migrations`. Après sauvegarde, comparaison exacte du schéma et
+validation des préconditions, marquer uniquement ce baseline comme appliqué :
+
+```bash
+cd /root/embyr
+npx prisma migrate resolve --applied 20260624000000_baseline
 npx prisma migrate deploy
+npx prisma migrate status
+```
+
+Ne jamais exécuter `migrate resolve` sur une base vierge ou dont le schéma ne
+correspond pas au baseline. Une installation neuve utilise directement
+`npx prisma migrate deploy`.
+
+## Mise à jour applicative
+
+```bash
+cd /root/embyr
+npm ci
 npx prisma generate
 npm run build
-pm2 start npm --name embir-web -- start
+pm2 restart embyr-web --update-env
 pm2 save
 ```
 
-## Environment Variables (.env.local)
-```
-DATABASE_URL=postgresql://user:pass@localhost:5432/embyr
-JWT_SECRET=your-secret-key
-STRIPE_SECRET_KEY=sk_...
-STRIPE_WEBHOOK_SECRET=whsec_...
-TWILIO_ACCOUNT_SID=...
-TWILIO_AUTH_TOKEN=...
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-...    # Optional: Google Analytics 4
-```
+Vérifier ensuite le commit live, `pm2 status`, les logs, Nginx, HTTPS et les
+parcours réels avant de considérer la bascule réussie.
 
-## Update Workflow
-```bash
-git pull
-npm install                        # Only if package.json changed
-npx prisma migrate deploy          # Only if schema changed
-npx prisma generate                # Regenerate client
-npm run build
-pm2 restart embir-web
-```
+## Variables opérationnelles
 
-## PM2 Commands
-```bash
-pm2 status              # List all processes
-pm2 logs embir-web      # View logs
-pm2 restart embir-web   # Restart app
-pm2 stop embir-web      # Stop app
-pm2 monit               # Real-time dashboard
+- `DATABASE_URL`, `JWT_SECRET`, `ADMIN_SECRET`, `GIT_COMMIT` ;
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` ;
+- `ADMIN_REPORT_EMAIL` ;
+- `EMAIL_PROVIDER=resend` avec `RESEND_API_KEY` et `RESEND_FROM`, ou les
+  variables `SMTP_*` complètes ;
+- `PRIVATE_UPLOAD_DIR=/var/lib/embir/private` ;
+- `EMBIR_BACKUP_DIR` et `EMBIR_BACKUP_STATUS_FILE` ;
+- `PAYMENTS_ENABLED=false` tant que la monétisation n’est pas activée
+  explicitement.
+
+## Planification Europe/Zurich
+
+```cron
+CRON_TZ=Europe/Zurich
+7 * * * * cd /root/embyr && npm run job:hourly >> /var/log/embir-jobs.log 2>&1
+40 6 * * * cd /root/embyr && npm run backup:production >> /var/log/embir-jobs.log 2>&1
+0 7 * * * cd /root/embyr && npm run job:daily >> /var/log/embir-jobs.log 2>&1
+0 8 * * 1 cd /root/embyr && npm run job:weekly >> /var/log/embir-jobs.log 2>&1
 ```
 
-## Backup
-```bash
-# Daily backup (add to crontab: 0 2 * * *)
-pg_dump -U postgres embyr > /root/backups/embir-$(date +%Y%m%d).sql
+Chaque job applicatif possède un verrou advisory, une clé d’idempotence et un
+historique `JobRun`. Déclencher un run contrôlé après installation et vérifier
+la ligne DB ainsi que le log.
 
-# Restore
-psql -U postgres embyr < backup-20260614.sql
-```
+## Rollback
 
-## Cron Jobs
-```
-# SEO Monitor — daily at 6 AM
-0 6 * * * cd /root/embir && npx tsx scripts/seo-monitor.ts >> /root/embir/data/seo-reports/cron.log 2>&1
+1. arrêter `embyr-web` ;
+2. restaurer le dump vérifié dans une base recréée avec le même propriétaire ;
+3. remettre le worktree et le fichier d’environnement sauvegardés ;
+4. redémarrer PM2 avec `--update-env` ;
+5. vérifier le parcours public et authentifié.
 
-# Performance Check — every 4 hours
-0 */4 * * * cd /root/embir && npx tsx scripts/performance-check.ts >> /root/embir/data/performance/cron.log 2>&1
-
-# Sitemap refresh — daily at 3 AM
-0 3 * * * curl -s https://embir.xyz/sitemap.xml > /dev/null
-```
-
-## SSL (Let's Encrypt)
-```bash
-certbot --nginx -d embir.xyz -d www.embir.xyz
-# Auto-renewal: certbot renew --dry-run
-```
+Conserver les anciens fichiers de vérification en mode `0600` pendant toute la
+fenêtre de rollback.

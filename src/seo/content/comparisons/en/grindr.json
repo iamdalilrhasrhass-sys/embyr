@@ -17,13 +17,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Limited, not systematic",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Safety features",
       "competitor": "Basic reporting",
-      "embir": "Human moderation, verified profiles, zero tolerance",
+      "embir": "reporting and blocking, verified profiles, zero tolerance",
       "winner": "embir"
     },
     {
@@ -35,7 +35,7 @@
     {
       "criteria": "Free access",
       "competitor": "Free tier with heavy ad load",
-      "embir": "Free at launch, transparent freemium",
+      "embir": "core connection features are free, transparent freemium",
       "winner": "embir"
     }
   ],
@@ -51,10 +51,10 @@
     },
     {
       "title": "Profile Verification & Safety — Beyond the basics",
-      "content": "Grindr offers limited profile verification and has faced ongoing criticism over safety concerns. Catfishing, harassment and scams remain significant issues that the grid-based model can amplify.\n\nEmbir makes verified profiles a core feature, not an afterthought. Selfie verification is available from day one. Every report goes to a human moderation team, not an automated filter. The platform enforces zero tolerance for harassment — immediate and permanent bans with no appeals for serious violations.\n\nFor LGBTQ+ users who have experienced harassment or felt unsafe on other apps, this focus on safety is not just a nice-to-have — it's essential. Feeling safe enough to be yourself is the foundation of any meaningful connection.",
+      "content": "Grindr offers limited profile verification and has faced ongoing criticism over safety concerns. Catfishing, harassment and scams remain significant issues that the grid-based model can amplify.\n\nEmbir makes verified profiles a core feature, not an afterthought. Selfie verification is available from day one. Every report is recorded for review, and blocking is immediate. The platform enforces zero tolerance for harassment — account restrictions after review with no appeals for serious violations.\n\nFor LGBTQ+ users who have experienced harassment or felt unsafe on other apps, this focus on safety is not just a nice-to-have — it's essential. Feeling safe enough to be yourself is the foundation of any meaningful connection.",
       "highlights": [
-        "Systematic selfie verification",
-        "Human moderation, not AI filters",
+        "optional selfie verification with a visible badge",
+        "reporting and blocking, not AI filters",
         "Zero tolerance for harassment and hate speech"
       ]
     },
@@ -78,10 +78,10 @@
     },
     {
       "title": "Free Access & Business Model",
-      "content": "Grindr's free tier exists but is increasingly cluttered with ads. Grindr XTRA and Unlimited subscriptions unlock essential features like seeing more profiles, advanced filters and removing ads — which can feel like paying to make the app usable.\n\nEmbir is completely free at launch. Core features — discovery, messaging, compatibility matching, verification — are accessible without payment. The future freemium will fund safety, moderation and mobile app development transparently. No hidden paywalls, no feature-gating of basic human connection.",
+      "content": "Grindr's free tier exists but is increasingly cluttered with ads. Grindr XTRA and Unlimited subscriptions unlock essential features like seeing more profiles, advanced filters and removing ads — which can feel like paying to make the app usable.\n\nEmbir's core connection features are free. Core features — discovery, messaging, compatibility matching, verification — are accessible without payment. optional services will fund safety, moderation and mobile app development transparently. No hidden paywalls, no feature-gating of basic human connection.",
       "highlights": [
-        "Full core features free at launch",
-        "No ads during the founding phase",
+        "Full core features core connection features are free",
+        "No ads in core discovery",
         "Transparent freemium roadmap"
       ]
     }
@@ -95,7 +95,7 @@
     },
     {
       "q": "How is Embir different from Grindr for safety?",
-      "a": "Embir offers systematic selfie verification, a human moderation team that reviews every report, zero tolerance for harassment, and community guidelines built around respect. Safety is a core feature, not an afterthought."
+      "a": "Embir offers optional selfie verification with a visible badge, a reporting workflow and immediate blocking, zero tolerance for harassment, and community guidelines built around respect. Safety is a core feature, not an afterthought."
     },
     {
       "q": "Does Embir have a grid view like Grindr?",
@@ -107,11 +107,11 @@
     },
     {
       "q": "Is Embir free like Grindr?",
-      "a": "Embir is free at launch with full access to core features — no ads, no feature paywalls. The future freemium model will fund safety and infrastructure transparently, but essential discovery and messaging will always be accessible."
+      "a": "Embir's core connection features are free with full access to core features — no ads, no feature paywalls. optional services will fund safety and infrastructure transparently, but essential discovery and messaging will always be accessible."
     },
     {
       "q": "How does Embir handle harassment differently?",
-      "a": "Harassment reports go to a real human moderation team, not an automated filter. Serious violations lead to immediate and permanent bans. The community guidelines are enforced consistently, and context is always considered before action is taken."
+      "a": "Harassment reports go to a real Reporting and blocking workflow, not an automated filter. Serious violations lead to account restrictions after review. The community guidelines are enforced consistently, and context is always considered before action is taken."
     },
     {
       "q": "Is Embir available where Grindr is popular?",

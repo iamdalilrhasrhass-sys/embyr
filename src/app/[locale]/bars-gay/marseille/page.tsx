@@ -16,7 +16,7 @@ export default function BarsGayCityPage() {
             Best gay bars in <span className="text-white/70">Marseille</span>
           </h1>
           <p className="text-white/50 text-lg mb-8 leading-relaxed">
-            Explore Marseille&apos;s LGBTQ nightlife. From cozy neighborhood pubs to vibrant dance clubs, 
+            Explore Marseille&apos;s LGBTQ nightlife. From cozy neighborhood pubs to vibrant dance clubs,
             find the spots where the local community comes together.
           </p>
 
@@ -46,7 +46,7 @@ export default function BarsGayCityPage() {
           <div className="prose prose-invert max-w-none text-white/50 space-y-4">
             <h2 className="text-white text-xl font-bold">Navigating the gay scene in Marseille</h2>
             <p>
-              Marseille has a rich LGBTQ nightlife. Whether you&apos;re into relaxed wine bars, 
+              Marseille has a rich LGBTQ nightlife. Whether you&apos;re into relaxed wine bars,
               high-energy dance floors, or drag shows, there&apos;s a place for every vibe.
               Embir connects you with guys who actually go to these places — not just tourists.
             </p>

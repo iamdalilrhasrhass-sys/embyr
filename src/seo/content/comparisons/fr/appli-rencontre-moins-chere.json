@@ -1,17 +1,17 @@
 {
   "slug": "appli-rencontre-moins-chere",
-  "intro": "Tinder Gold coute 30 EUR+/mois. eHarmony depasse 60 EUR/mois. Match tourne autour de 40 EUR/mois. Les applications de rencontre sont devenues une des abonnements les plus chers du quotidien.\n\nEmbir est gratuit pendant la phase de lancement. Fonctionnalites completes accessibles sans abonnement.",
+  "intro": "Tinder Gold coute 30 EUR+/mois. eHarmony depasse 60 EUR/mois. Match tourne autour de 40 EUR/mois. Les applications de rencontre sont devenues l'un des abonnements les plus chers du quotidien.\n\nEmbir est gratuit pour les connexions essentielles. profil, découverte, réciprocité et messagerie accessibles sans carte bancaire.",
   "comparisonTable": [
     {
       "criteria": "Prix mensuel",
       "competitor": "Tinder Gold: 30+ EUR / eHarmony: 60+ EUR",
-      "embir": "Gratuit au lancement",
+      "embir": "gratuit pour les connexions essentielles",
       "winner": "embir"
     },
     {
       "criteria": "Messagerie gratuite",
       "competitor": "La plupart : payante",
-      "embir": "Gratuite au lancement",
+      "embir": "gratuite pour les connexions essentielles",
       "winner": "embir"
     },
     {
@@ -36,28 +36,28 @@
   "sections": [
     {
       "title": "Le vrai cout des applis de rencontre en 2026",
-      "content": "Si tu utilises Tinder Gold (30 EUR/mois) pendant 6 mois, tu as depense 180 EUR. Hinge Preferred sur 6 mois = 180 EUR. eHarmony sur 6 mois = 360 EUR. Ces plateformes monetisent la loneliness — plus tu restes celibataire, plus tu paies. Embir au lancement est entierement gratuit. Quand le freemium arrivera, il sera transparent, avec les fonctionnalites de base gratuites.",
+      "content": "Si tu utilises Tinder Gold (30 EUR/mois) pendant 6 mois, tu as depense 180 EUR. Hinge Preferred sur 6 mois = 180 EUR. eHarmony sur 6 mois = 360 EUR. Ces plateformes monetisent la loneliness — plus tu restes celibataire, plus tu paies. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les services facultatifs restent transparents et séparés du chemin vers une rencontre.",
       "highlights": [
-        "Zero EUR pendant la phase de lancement",
+        "Zero EUR pendant l'expérience de connexion",
         "Aucun abonnement cache, aucune carte bancaire requise",
         "Fonctionnalites principales accessibles sans paiement"
       ]
     }
   ],
-  "verdict": "L'appli de rencontre la moins chere en 2026 est Embir — entierement gratuite pendant le lancement. Profils verifies, matching bidirectionnel, messagerie complete, zero EUR.",
+  "verdict": "L'appli de rencontre la moins chere en 2026 est Embir — gratuite pour les connexions essentielles. Profils verifies, matching bidirectionnel, messagerie complete, zero EUR.",
   "ctaText": "La meilleure appli de rencontre gratuite — rejoins maintenant",
   "faq": [
     {
       "q": "Embir est-il la moins chere des applis de rencontre ?",
-      "a": "Oui pendant la phase de lancement. Les fonctionnalites principales sont gratuites. Aucun abonnement, aucune carte bancaire."
+      "a": "Oui pendant l'expérience de connexion. Les fonctionnalites principales sont gratuites. Aucun abonnement, aucune carte bancaire."
     },
     {
       "q": "Y a-t-il des frais caches sur Embir ?",
-      "a": "Non. Aucun frais cache. La transition freemium sera annoncee a l'avance."
+      "a": "Non. Aucun frais cache. La politique des options facultatives sera annoncee a l'avance."
     },
     {
-      "q": "Quand Embir deviendra-t-il payant ?",
-      "a": "La phase de lancement est gratuite. Les membres fondateurs seront prevenus a l'avance de tout changement."
+      "q": "Comment fonctionnent les services facultatifs ?",
+      "a": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les services facultatifs restent séparés et ne remplacent ni la compatibilité, ni la réciprocité, ni le consentement."
     }
   ]
 }

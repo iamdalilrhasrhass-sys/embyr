@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const url = locale === "fr" ? "https://embir.xyz/fr/about" : "https://embir.xyz/about";
   const title = locale === "fr" ? "À propos d'Embir — Application de rencontre inclusive" : "About Embir — Inclusive Dating App";
   const description = locale === "fr"
-    ? "Embir est une application de rencontre inclusive, gratuite au lancement. Pour toutes les orientations, avec profils vérifiés, compatibilité réelle et modèle freemium transparent."
-    : "Embir is a free-at-launch inclusive dating app. For all orientations, with verified profiles, real compatibility, and a transparent freemium model.";
+    ? "Embir est une application de rencontre inclusive, gratuite pour les connexions essentielles. Pour toutes les orientations, avec profils vérifiés, compatibilité réelle et modèle freemium transparent."
+    : "Embir is an inclusive dating app with free core connections. For all orientations, with verified profiles, real compatibility, and a transparent freemium model.";
   return {
     title, description,
     metadataBase: new URL("https://embir.xyz"),
@@ -45,16 +45,16 @@ export default async function AboutPage({ params }: { params: Params }) {
               {(isFr ? [
                 ["Orientation et visibilité", "Vous déclarez votre orientation et vos préférences. Votre profil n'est visible que par les personnes compatibles. Pas de mauvaise surprise."],
                 ["Profils vérifiés", "La vérification par selfie réduit les faux profils. Pas de promesse magique — juste une barrière concrète contre le catfishing."],
-                ["Gratuit au lancement", "Pas de paywall précoce. Rejoignez la communauté fondatrice, testez tout, et voyez par vous-même avant qu'un modèle freemium n'arrive."],
+                ["gratuit pour les connexions essentielles", "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."],
                 ["Compatibilité réelle", "Notre matching ne se limite pas à la distance. Préférences, intentions, style de vie : nous connectons les personnes qui se ressemblent vraiment."],
-                ["Modération humaine", "Chaque signalement est examiné par une vraie personne. Pas seulement un algorithme qui ferme les yeux."],
+                ["signalement et blocage", "Chaque signalement est enregistré pour examen ; tu peux bloquer immédiatement le compte concerné. Pas seulement un algorithme qui ferme les yeux."],
                 ["Transparence économique", "Nous expliquons clairement ce qui est gratuit, ce qui deviendra premium, et pourquoi. Pas de frais cachés."],
               ] : [
                 ["Orientation & Visibility", "You declare your orientation and preferences. Your profile is only visible to compatible people. No awkward surprises."],
                 ["Verified Profiles", "Selfie verification reduces fake profiles. No magic promise — just a real barrier against catfishing."],
-                ["Free at Launch", "No early paywall. Join the founding community, test everything, and see for yourself before a freemium model arrives."],
+                ["core connection features are free", "Everything needed to meet someone is free. No credit card required."],
                 ["Real Compatibility", "Our matching goes beyond distance. Preferences, intentions, lifestyle: we connect people who truly align."],
-                ["Human Moderation", "Every report is reviewed by a real person. Not just an algorithm that looks the other way."],
+                ["reporting and blocking", "Every report is recorded for review; you can block the account immediately. Not just an algorithm that looks the other way."],
                 ["Economic Transparency", "We clearly explain what's free, what will become premium, and why. No hidden fees."],
               ]).map(([title, text]) => (
                 <div key={title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
@@ -67,8 +67,8 @@ export default async function AboutPage({ params }: { params: Params }) {
 
           <div>
             <h2 className="font-serif text-3xl text-white">{isFr ? "Notre approche du lancement" : "Our launch approach"}</h2>
-            <p className="mt-4">{isFr ? "Embir est en phase de lancement mondial. La communauté se construit ville par ville pour garder une vraie densité locale, mais l'accès est ouvert aux membres fondateurs partout dans le monde. Votre feedback, vos signalements et votre participation façonnent la plateforme de demain." : "Embir is in its worldwide launch phase. The community grows city by city to keep real local density, but access is open to founding members everywhere. Your feedback, reports, and participation shape tomorrow's platform."}</p>
-            <p className="mt-4">{isFr ? "L'application mobile est en développement et sera disponible après la phase de lancement web. Le futur modèle freemium financera cette application mobile, ainsi que la sécurité, la modération et l'amélioration continue du service." : "The mobile app is in development and will be available after the web launch phase. The future freemium model will fund this mobile app, as well as security, moderation, and continuous service improvement."}</p>
+            <p className="mt-4">{isFr ? "Embir est en expérience de connexion mondial. La communauté se construit ville par ville pour garder une vraie densité locale, mais l'accès est ouvert aux membres fondateurs partout dans le monde. Votre feedback, vos signalements et votre participation façonnent la plateforme de demain." : "Embir is in its worldwide core connection experience. The community grows city by city to keep real local density, but access is open to founding members everywhere. Your feedback, reports, and participation shape tomorrow's platform."}</p>
+            <p className="mt-4">{isFr ? "L'application mobile est en développement et sera disponible après l'expérience de connexion web. Les options facultatives transparentes financeront cette application mobile, ainsi que la sécurité, la modération et l'amélioration continue du service." : "The mobile app is in development and will be available after the web core connection experience. optional services will fund this mobile app, as well as security, moderation, and continuous service improvement."}</p>
           </div>
         </section>
 

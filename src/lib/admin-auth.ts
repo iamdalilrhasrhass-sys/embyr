@@ -5,9 +5,9 @@ import { verifyToken } from "@/lib/auth";
 
 function getAdminSecret(): Buffer {
   const secret = process.env.ADMIN_SECRET;
-  if (!secret || secret.length < 16) {
+  if (!secret || secret.length < 32) {
     throw new Error(
-      "ADMIN_SECRET must be configured with at least 16 characters"
+      "ADMIN_SECRET must be configured with at least 32 characters"
     );
   }
   return Buffer.from(secret, "utf8");
@@ -24,10 +24,8 @@ export function verifyAdminPassword(candidate: string): boolean {
   try {
     const secret = getAdminSecret();
     const candidateBuf = Buffer.from(candidate, "utf8");
-    // Pad to same length for timing-safe comparison
-    const paddedCandidate = Buffer.alloc(secret.length);
-    candidateBuf.copy(paddedCandidate, 0, 0, Math.min(candidateBuf.length, secret.length));
-    return timingSafeEqual(paddedCandidate, secret);
+    if (candidateBuf.length !== secret.length) return false;
+    return timingSafeEqual(candidateBuf, secret);
   } catch {
     return false;
   }
@@ -84,11 +82,17 @@ export async function requireAdmin(): Promise<{
   if (userToken) {
     const payload = verifyToken(userToken);
     if (payload) {
-      const user = await prisma.user.findUnique({
-        where: { id: payload.userId },
+      const user = await prisma.user.findFirst({
+        where: {
+          id: payload.userId,
+          email: payload.email,
+          role: "ADMIN",
+          bannedAt: null,
+          deletedAt: null,
+        },
         select: { id: true, role: true },
       });
-      if (user && (user.role === "ADMIN")) {
+      if (user) {
         return { type: "user", userId: user.id };
       }
     }

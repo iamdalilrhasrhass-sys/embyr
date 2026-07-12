@@ -11,7 +11,7 @@
     {
       "criteria": "Moderation quality",
       "competitor": "High fake/bot rate, slow removal",
-      "embir": "Human moderators, fast response",
+      "embir": "reporting workflow, fast response",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Safety tools",
       "competitor": "Basic report button, slow response",
-      "embir": "Human team + immediate action on violations",
+      "embir": "Reporting workflow + immediate blocking",
       "winner": "embir"
     },
     {
@@ -42,7 +42,7 @@
   "sections": [
     {
       "title": "Volume vs quality — the core trade-off",
-      "content": "POF has millions of profiles. That sounds like a strength until you've spent an hour filtering through bots, outdated profiles, and people who last logged in 18 months ago. Volume without curation produces noise, not opportunity.\n\nEmbir makes the opposite bet: a smaller, more intentional community where every profile is tied to a verified human being. The founding phase is the moment to join — the community is compact, engaged, and actively building something. Early members shape the culture, get priority feature access, and arrive before the noise.",
+      "content": "POF has millions of profiles. That sounds like a strength until you've spent an hour filtering through bots, outdated profiles, and people who last logged in 18 months ago. Volume without curation produces noise, not opportunity.\n\nEmbir makes the opposite bet: a smaller, more intentional community where each profile can display a badge after an approved selfie check. Embir is building a smaller, intentional community where members help shape the culture and product.",
       "highlights": [
         "Verified profiles only — no bots, no abandoned accounts surfaced first",
         "Founding community is engaged and intentional",
@@ -51,24 +51,24 @@
     },
     {
       "title": "Safety and moderation — where POF falls short",
-      "content": "POF's moderation struggles are well-documented. Scam accounts, unsolicited explicit messages, and slow response to reports are common complaints. The platform's scale makes comprehensive human review impossible — automation catches some bad actors, but many slip through.\n\nEmbir's human moderation team reviews every report. This is only sustainable at launch scale — and intentionally so. Building a high-trust community early is cheaper than trying to rebuild trust after it's been damaged at scale.",
+      "content": "POF's moderation struggles are well-documented. Scam accounts, unsolicited explicit messages, and slow response to reports are common complaints. The platform's scale makes comprehensive human review impossible — automation catches some bad actors, but many slip through.\n\nEmbir's reporting workflow records every report. This is only sustainable at launch scale — and intentionally so. Building a high-trust community early is cheaper than trying to rebuild trust after it's been damaged at scale.",
       "highlights": [
-        "Every report reviewed by a human, not just an algorithm",
+        "Every report recorded for review; blocking is immediate",
         "Zero-tolerance policy with immediate bans for serious violations",
         "Safety infrastructure funded by transparent freemium model"
       ]
     }
   ],
-  "verdict": "POF is free and large. If your priority is sheer number of profiles to browse, it delivers. If your priority is actually meeting someone real, verified, and compatible — the math changes quickly.\n\nEmbir is free at launch, smaller, but significantly more trustworthy. Quality over quantity, with a compatibility system that respects your time.",
-  "ctaText": "Meet real, verified people — free during launch",
+  "verdict": "POF is free and large. If your priority is sheer number of profiles to browse, it delivers. If your priority is actually meeting someone real, verified, and compatible — the math changes quickly.\n\nEmbir's core connection features are free, smaller, but significantly more trustworthy. Quality over quantity, with a compatibility system that respects your time.",
+  "ctaText": "Meet real, verified people — free for core connections",
   "faq": [
     {
       "q": "Is Embir really free like POF?",
-      "a": "Yes. During the launch phase, Embir's core features — profile, discovery, messaging — are free. No subscription required. The future freemium model will be announced transparently."
+      "a": "Yes. for core connection features, Embir's core features — profile, discovery, messaging — are free. No subscription required. optional services will be announced transparently."
     },
     {
       "q": "How does Embir handle fake profiles?",
-      "a": "Through selfie verification at signup and a human moderation team that reviews every report. The founding community scale makes genuine moderation feasible in ways that aren't possible on platforms with 100M users."
+      "a": "Through selfie verification at signup and a reporting workflow and immediate blocking. The founding community scale makes genuine moderation feasible in ways that aren't possible on platforms with 100M users."
     },
     {
       "q": "Does Embir have ads?",

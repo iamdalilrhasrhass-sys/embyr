@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: Params }) {
 
           {/* Header */}
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">
-            COMPARATIF · Gratuit au lancement
+            COMPARATIF · gratuit pour les connexions essentielles
           </p>
           <h1 className="mt-5 max-w-4xl font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">
             {page.h1}

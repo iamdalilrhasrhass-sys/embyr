@@ -1,6 +1,6 @@
 {
   "slug": "her-dating-alternative",
-  "intro": "HER is a dedicated dating app for queer women, non-binary people, and lesbians. It built one of the most trusted LGBTQ+ communities in the app space — a real achievement in an ecosystem dominated by hetero-first platforms.\n\nEmbir doesn't compete with HER's community focus. Instead, it offers something complementary: a universal platform where queer women, lesbian and bi users, and every LGBTQ+ identity are included alongside straight users — with verified profiles, deep compatibility matching, and human moderation. For users who want the safety of a verified environment without being siloed into a niche app, Embir is a strong option.",
+  "intro": "HER is a dedicated dating app for queer women, non-binary people, and lesbians. It built one of the most trusted LGBTQ+ communities in the app space — a real achievement in an ecosystem dominated by hetero-first platforms.\n\nEmbir doesn't compete with HER's community focus. Instead, it offers something complementary: a universal platform where queer women, lesbian and bi users, and every LGBTQ+ identity are included alongside straight users — with verified profiles, deep compatibility matching, and reporting and blocking. For users who want the safety of a verified environment without being siloed into a niche app, Embir is a strong option.",
   "comparisonTable": [
     {
       "criteria": "Target audience",
@@ -11,13 +11,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Community-trust, limited verification",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Limited free, subscription for key features",
-      "embir": "Core features free during launch",
+      "embir": "Free core connection features",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Safety tools",
       "competitor": "Community moderation, women-only focus helps",
-      "embir": "Human moderation team + systematic review",
+      "embir": "Reporting and blocking workflow + systematic review",
       "winner": "tie"
     },
     {
@@ -51,20 +51,20 @@
     },
     {
       "title": "Safety in different models",
-      "content": "HER's safety model relies partly on the women-only environment — removing straight men from the equation eliminates one category of bad actor by design. This is genuinely effective at a community level.\n\nEmbir's safety model is different: systematic selfie verification, human moderation of every report, and a zero-tolerance policy regardless of gender or orientation. The founding community scale makes this feasible. Users of every gender and orientation are protected by the same infrastructure.",
+      "content": "HER's safety model relies partly on the women-only environment — removing straight men from the equation eliminates one category of bad actor by design. This is genuinely effective at a community level.\n\nEmbir's safety model is different: optional selfie verification with a visible badge, reporting and blocking tools, and a zero-tolerance policy regardless of gender or orientation. The founding community scale makes this feasible. Users of every gender and orientation are protected by the same infrastructure.",
       "highlights": [
-        "Human moderation team reviews every report, regardless of gender",
+        "reporting workflow records every report, regardless of gender",
         "Selfie verification applies to all users — not just women",
         "Clear community guidelines with fast enforcement"
       ]
     }
   ],
-  "verdict": "HER is the right choice if you want a dedicated queer women's community with strong social features and community identity.\n\nEmbir is the right choice if you want a verified, well-moderated platform where queer women and LGBTQ+ users are fully included without being separated from the broader dating community — with deep compatibility matching and free access during launch.",
+  "verdict": "HER is the right choice if you want a dedicated queer women's community with strong social features and community identity.\n\nEmbir is the right choice if you want a verified, well-moderated platform where queer women and LGBTQ+ users are fully included without being separated from the broader dating community — with deep compatibility matching and free access to core connection features.",
   "ctaText": "Inclusive by design, verified by default — join free",
   "faq": [
     {
       "q": "Is Embir safe for queer women and lesbian users?",
-      "a": "Yes. Embir has human moderation, selfie verification, and orientation-aware matching. Queer women, lesbian, bi and non-binary users are full participants in the platform — not an add-on audience."
+      "a": "Yes. Embir has reporting and blocking, selfie verification, and orientation-aware matching. Queer women, lesbian, bi and non-binary users are full participants in the platform — not an add-on audience."
     },
     {
       "q": "Can I filter matches by gender and orientation on Embir?",
@@ -72,7 +72,7 @@
     },
     {
       "q": "Is Embir free?",
-      "a": "Core features — profile, discovery, messaging, compatibility — are free during the launch phase. No subscription required to start connecting."
+      "a": "Core features — profile, discovery, messaging, compatibility — are free for core connections. No subscription required to start connecting."
     },
     {
       "q": "Does Embir have a community feature like HER?",

@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Invite Friends — Build the Embir Founding Community Together | Embir",
-  description: "Invite people you trust to join Embir during the launch phase. Help build a verified, respectful dating community from the ground up. Free for everyone during launch.",
+  description: "Invite people you trust to join Embir for core connection features. Help build a verified, respectful dating community from the ground up. Free for everyone while the community grows.",
   alternates: {
     canonical: "https://embir.xyz/invite",
     languages: { "fr": "https://embir.xyz/fr/invitation" },
   },
   openGraph: {
     title: "Invite Friends — Build the Embir Founding Community Together",
-    description: "Invite people you trust to join Embir during the launch phase. Help build a verified, respectful dating community from the ground up.",
+    description: "Invite people you trust to join Embir for core connection features. Help build a verified, respectful dating community from the ground up.",
     url: "https://embir.xyz/invite",
     locale: "en_US",
     siteName: "Embir",
@@ -29,7 +29,7 @@ export default function InvitePage() {
           Invite people you trust. Build a <span className="text-[#d4a574]">better dating community</span> together.
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
-          The best dating communities aren't built by algorithms. They're built by people inviting people they know and trust. During Embir's launch phase, every invitation matters — you're not just adding users, you're shaping the culture.
+          The best dating communities aren't built by algorithms. They're built by people inviting people they know and trust. During Embir's core connection experience, every invitation matters — you're not just adding users, you're shaping the culture.
         </p>
 
         <section className="mt-12 space-y-8 text-base leading-relaxed text-white/55">
@@ -39,7 +39,7 @@ export default function InvitePage() {
               {[
                 ["Better matches for everyone", "More verified profiles in your area means better compatibility suggestions and more genuine conversations."],
                 ["Shape the culture early", "Founding members set the tone. Invite people who share your values about respect, honesty, and real connections."],
-                ["Free for everyone right now", "Every core feature is free during launch. No one you invite will hit a paywall. No credit card needed."],
+                ["Free for everyone right now", "Every core feature is free for core connections. No one you invite will hit a paywall. No credit card needed."],
                 ["Verified community", "Selfie verification means the people you invite — and the people they meet — are real. Less catfishing, more trust."],
               ].map(([title, text]) => (
                 <div key={title} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
@@ -104,7 +104,7 @@ export default function InvitePage() {
               {[
                 ["Do I need to invite people to use Embir?", "No. Invitations are completely optional. You can create your profile, browse, match, and message without ever inviting anyone."],
                 ["Is there a limit on invitations?", "No hard limits, but we encourage quality over quantity. Inviting a few people you actually know is more valuable than blasting a link to strangers."],
-                ["Do I get anything for inviting people?", "During the launch phase, the main benefit is building a better community in your area — which means better matches for you too. There are no financial rewards or credits."],
+                ["Do I get anything for inviting people?", "for core connection features, the main benefit is building a better community in your area — which means better matches for you too. There are no financial rewards or credits."],
                 ["Can I invite people from other countries?", "Yes. Embir is available in France, the UK, the US, and Switzerland. You can invite people in any of these markets."],
                 ["What if someone I invite doesn't want to verify?", "Verification is optional but encouraged. They can still use Embir without the verified badge — though verified profiles tend to get more genuine interactions."],
                 ["How does this compare to 'invite-only' dating apps?", "Embir isn't invite-only. Anyone can join directly. Invitations are a way for founding members to bring in people they trust, making the community better for everyone."],

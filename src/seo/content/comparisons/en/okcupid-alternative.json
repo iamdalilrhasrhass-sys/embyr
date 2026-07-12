@@ -1,6 +1,6 @@
 {
   "slug": "okcupid-alternative",
-  "intro": "OkCupid built its reputation on questionnaires, percentages, and the idea that compatibility could be measured. In 2026, it remains one of the more thoughtful legacy apps. But thoughtful isn't the same as trustworthy — profile verification is weak, the free tier is increasingly restricted, and the interface hasn't aged gracefully.\n\nEmbir takes the same core belief — that compatibility matters more than volume — and rebuilds it for 2026: verified profiles, systematic human moderation, full inclusivity for every orientation, and a transparent launch phase where core features are genuinely free.",
+  "intro": "OkCupid built its reputation on questionnaires, percentages, and the idea that compatibility could be measured. In 2026, it remains one of the more thoughtful legacy apps. But thoughtful isn't the same as trustworthy — profile verification is weak, the free tier is increasingly restricted, and the interface hasn't aged gracefully.\n\nEmbir takes the same core belief — that compatibility matters more than volume — and rebuilds it for 2026: verified profiles, reporting and blocking tools, full inclusivity for every orientation, and a transparent core connection experience where core features are genuinely free.",
   "comparisonTable": [
     {
       "criteria": "Compatibility model",
@@ -11,13 +11,13 @@
     {
       "criteria": "Profile verification",
       "competitor": "Photo upload only, no checks",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free tier",
       "competitor": "Heavily paywalled (messaging, likes)",
-      "embir": "Core discovery + messaging free at launch",
+      "embir": "Core discovery + messaging core connection features are free",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Safety tools",
       "competitor": "Standard reporting, slow response",
-      "embir": "Human moderation team + fast response",
+      "embir": "Reporting and blocking workflow + fast response",
       "winner": "embir"
     },
     {
@@ -51,24 +51,24 @@
     },
     {
       "title": "Verified profiles — the critical gap",
-      "content": "OkCupid has no systematic profile verification. Anyone can upload any photo and create a profile. While some fake accounts are removed via reporting, the platform's sheer size makes comprehensive moderation impossible.\n\nEmbir requires and encourages selfie verification from day one. Every report is reviewed by a human moderator, not just an algorithm. The founding community is smaller and more intentional — which makes trust easier to build and bad actors easier to spot and remove quickly.",
+      "content": "OkCupid does not require selfie verification. Anyone can upload any photo and create a profile. While some fake accounts are removed via reporting, the platform's sheer size makes comprehensive moderation impossible.\n\nEmbir offers selfie verification to members. Every report is recorded for review; blocking is immediate. The founding community is smaller and more intentional — which makes trust easier to build and bad actors easier to spot and remove quickly.",
       "highlights": [
         "Selfie-based verification from signup",
-        "Human moderation team reviews every report",
+        "reporting workflow records every report",
         "Smaller, intentional community = higher trust baseline"
       ]
     },
     {
       "title": "Free access — what 'free' actually means",
-      "content": "OkCupid has progressively restricted its free tier. Basic likes are visible but responding to certain messages, seeing who liked you, and using advanced filters require a subscription starting at $15-30/month. Many users report hitting paywalls before they've even had their first conversation.\n\nEmbir is free during the launch phase. Discovery, messaging, and compatibility features are accessible without a credit card. The freemium model, when it arrives, will fund safety and moderation infrastructure — and will be announced transparently in advance.",
+      "content": "OkCupid has progressively restricted its free tier. Basic likes are visible but responding to certain messages, seeing who liked you, and using advanced filters require a subscription starting at $15-30/month. Many users report hitting paywalls before they've even had their first conversation.\n\nEmbir is free for core connections. Discovery, messaging, and compatibility features are accessible without a credit card. The freemium model, when it arrives, will fund safety and moderation infrastructure — and will be announced transparently in advance.",
       "highlights": [
-        "Full messaging and discovery free during launch",
+        "Full messaging and discovery free for core connections",
         "No paywall before your first real conversation",
-        "Freemium transition disclosed upfront, not hidden"
+        "optional-service policy disclosed upfront, not hidden"
       ]
     }
   ],
-  "verdict": "OkCupid had the right idea — compatibility over volume. But verification gaps, an aging interface, and aggressive paywall expansion have eroded its original promise.\n\nEmbir inherits that philosophy with modern standards: verified profiles, human moderation, true inclusivity, and a free-at-launch model that doesn't punish users for arriving first.",
+  "verdict": "OkCupid had the right idea — compatibility over volume. But verification gaps, an aging interface, and aggressive paywall expansion have eroded its original promise.\n\nEmbir inherits that philosophy with modern standards: verified profiles, reporting and blocking, true inclusivity, and a model with free core connections that doesn't punish users for arriving first.",
   "ctaText": "Build connections that actually fit — join free",
   "faq": [
     {
@@ -77,15 +77,15 @@
     },
     {
       "q": "Can I message for free on Embir?",
-      "a": "Yes. During the launch phase, messaging and core discovery features are free. No credit card required."
+      "a": "Yes. for core connection features, messaging and core discovery features are free. No credit card required."
     },
     {
       "q": "How does Embir verify profiles?",
       "a": "Members can complete selfie verification — a quick photo check that confirms the profile belongs to a real person. Verified profiles get a badge and are prioritized in discovery."
     },
     {
-      "q": "What happens when Embir goes freemium?",
-      "a": "Founding members are notified well in advance. The freemium model will fund safety, moderation and mobile development. Core connection features remain free — the premium layer adds convenience, not access."
+      "q": "How do optional services work?",
+      "a": "Everything needed to meet someone is free. No credit card required. Optional services are clearly separated and cannot replace compatibility, reciprocity or consent."
     },
     {
       "q": "Does Embir have questionnaires like OkCupid?",

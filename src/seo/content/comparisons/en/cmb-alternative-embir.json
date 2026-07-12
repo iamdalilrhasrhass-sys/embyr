@@ -1,6 +1,6 @@
 {
   "slug": "cmb-alternative-embir",
-  "intro": "Coffee Meets Bagel (CMB) bets on quality over quantity: limited curated daily matches, a female-friendly focus. The concept is solid but CMB remains very hetero-dominant and its credit system can get expensive.\n\nEmbir shares the quality-over-quantity philosophy: intentional matching, verification for female safety, and total inclusivity for all orientations — free at launch.",
+  "intro": "Coffee Meets Bagel (CMB) bets on quality over quantity: limited curated daily matches, a female-friendly focus. The concept is solid but CMB remains very hetero-dominant and its credit system can get expensive.\n\nEmbir shares the quality-over-quantity philosophy: intentional matching, verification for female safety, and total inclusivity for all orientations — core connection features are free.",
   "comparisonTable": [
     {
       "criteria": "Matching philosophy",
@@ -11,7 +11,7 @@
     {
       "criteria": "Female experience",
       "competitor": "Strong — women get prioritized design",
-      "embir": "Safety via verification + human moderation",
+      "embir": "Safety via verification + reporting and blocking",
       "winner": "tie"
     },
     {
@@ -23,13 +23,13 @@
     {
       "criteria": "Credit system",
       "competitor": "Paid credits for advanced features",
-      "embir": "No credits — everything free at launch",
+      "embir": "No credits — everything core connection features are free",
       "winner": "embir"
     },
     {
       "criteria": "Profile verification",
       "competitor": "Partial photo verification",
-      "embir": "Selfie verification + human moderation",
+      "embir": "Selfie verification + reporting and blocking",
       "winner": "embir"
     }
   ],
@@ -40,7 +40,7 @@
       "highlights": [
         "Intentional matching — quality before quantity",
         "Bidirectional filtering eliminates incompatibilities",
-        "No credits, no subscription during launch"
+        "no credits or subscription for core connections"
       ]
     }
   ],
@@ -49,11 +49,11 @@
   "faq": [
     {
       "q": "Is Embir good for women wanting a quality experience?",
-      "a": "Yes. Embir has selfie verification, human moderation, and intentional matching. Women see profiles that truly match their criteria."
+      "a": "Yes. Embir has selfie verification, reporting and blocking, and intentional matching. Women see profiles that truly match their criteria."
     },
     {
       "q": "Does Embir use a credit system like CMB?",
-      "a": "No. No credits on Embir. Core features are free during launch."
+      "a": "No. No credits on Embir. Core connection features are free for everyone."
     },
     {
       "q": "Is CMB available internationally?",

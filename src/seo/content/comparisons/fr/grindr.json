@@ -17,13 +17,13 @@
     {
       "criteria": "Vérification des profils",
       "competitor": "Limitée, non systématique",
-      "embir": "Vérification selfie + modération humaine",
+      "embir": "Vérification selfie + signalement et blocage",
       "winner": "embir"
     },
     {
       "criteria": "Sécurité",
       "competitor": "Signalements basiques",
-      "embir": "Modération humaine, profils vérifiés, tolérance zéro",
+      "embir": "signalement et blocage, profils vérifiés, tolérance zéro",
       "winner": "embir"
     },
     {
@@ -35,7 +35,7 @@
     {
       "criteria": "Gratuité",
       "competitor": "Version gratuite avec pubs lourdes",
-      "embir": "Gratuit au lancement, freemium transparent",
+      "embir": "gratuit pour les connexions essentielles, freemium transparent",
       "winner": "embir"
     }
   ],
@@ -51,10 +51,10 @@
     },
     {
       "title": "Vérification des profils & Sécurité — Au-delà des basiques",
-      "content": "Grindr propose une vérification de profil limitée et a fait face à des critiques récurrentes sur les problèmes de sécurité. Le catfishing, le harcèlement et les arnaques restent des problèmes significatifs que le modèle de grille peut amplifier.\n\nEmbir fait des profils vérifiés une fonctionnalité centrale, pas une réflexion après coup. La vérification par selfie est disponible dès le premier jour. Chaque signalement est transmis à une équipe de modération humaine, pas à un filtre automatique. La plateforme applique une tolérance zéro pour le harcèlement — bannissements immédiats et définitifs sans appel pour les violations graves.\n\nPour les utilisateurs LGBTQ+ qui ont subi du harcèlement ou se sont sentis en insécurité sur d'autres applis, cette attention à la sécurité n'est pas un simple bonus — c'est essentiel. Se sentir assez en sécurité pour être soi-même est la base de toute connexion significative.",
+      "content": "Grindr propose une vérification de profil limitée et a fait face à des critiques récurrentes sur les problèmes de sécurité. Le catfishing, le harcèlement et les arnaques restent des problèmes significatifs que le modèle de grille peut amplifier.\n\nEmbir fait des profils vérifiés une fonctionnalité centrale, pas une réflexion après coup. La vérification par selfie est disponible dès le premier jour. Chaque signalement est enregistré pour examen et le blocage est immédiat. La plateforme applique une tolérance zéro pour le harcèlement — restrictions de compte après examen sans appel pour les violations graves.\n\nPour les utilisateurs LGBTQ+ qui ont subi du harcèlement ou se sont sentis en insécurité sur d'autres applis, cette attention à la sécurité n'est pas un simple bonus — c'est essentiel. Se sentir assez en sécurité pour être soi-même est la base de toute connexion significative.",
       "highlights": [
-        "Vérification selfie systématique",
-        "Modération humaine, pas de filtres IA",
+        "vérification selfie facultative avec badge visible",
+        "signalement et blocage, pas de filtres IA",
         "Tolérance zéro pour le harcèlement et les discours de haine"
       ]
     },
@@ -78,15 +78,15 @@
     },
     {
       "title": "Gratuité & Modèle économique",
-      "content": "La version gratuite de Grindr existe mais est de plus en plus envahie par les publicités. Les abonnements XTRA et Unlimited débloquent des fonctionnalités essentielles comme voir plus de profils, les filtres avancés et la suppression des pubs — ce qui peut donner l'impression de payer pour rendre l'app utilisable.\n\nEmbir est entièrement gratuite au lancement. Les fonctions essentielles — découverte, messagerie, matching de compatibilité, vérification — sont accessibles sans paiement. Le futur freemium financera la sécurité, la modération et le développement des apps mobiles de façon transparente. Pas de paywalls cachés, pas de fonctionnalités essentielles bloquées derrière un abonnement.",
+      "content": "La version gratuite de Grindr existe mais est de plus en plus envahie par les publicités. Les abonnements XTRA et Unlimited débloquent des fonctionnalités essentielles comme voir plus de profils, les filtres avancés et la suppression des pubs — ce qui peut donner l'impression de payer pour rendre l'app utilisable.\n\nEmbir est gratuite pour les connexions essentielles. Les fonctions essentielles — découverte, messagerie, matching de compatibilité, vérification — sont accessibles sans paiement. Le futur freemium financera la sécurité, la modération et le développement des apps mobiles de façon transparente. Pas de paywalls cachés, pas de fonctionnalités essentielles bloquées derrière un abonnement.",
       "highlights": [
-        "Fonctions essentielles complètes gratuites au lancement",
-        "Pas de publicités pendant la phase fondatrice",
+        "Fonctions essentielles complètes gratuites pour les connexions essentielles",
+        "Pas de publicité dans la découverte essentielle",
         "Feuille de route freemium transparente"
       ]
     }
   ],
-  "verdict": "Choisis Embir si tu veux une expérience de rencontre inclusive où la compatibilité et la confiance passent avant la proximité, où la vérification est systématique et la modération humaine, et où chaque orientation et intention relationnelle est respectée de manière égale. Grindr reste pertinent pour les connexions immédiates basées sur la localisation — mais si tu cherches plus de profondeur, de sécurité et de compatibilité réelle, Embir est le meilleur choix en 2026.",
+  "verdict": "Choisis Embir si tu veux une expérience de rencontre inclusive où la compatibilité et la confiance passent avant la proximité, où la vérification est disponible et le signalement et le blocage, et où chaque orientation et intention relationnelle est respectée de manière égale. Grindr reste pertinent pour les connexions immédiates basées sur la localisation — mais si tu cherches plus de profondeur, de sécurité et de compatibilité réelle, Embir est le meilleur choix en 2026.",
   "ctaText": "Rejoins la communauté fondatrice — gratuit pour toutes les orientations",
   "faq": [
     {
@@ -95,7 +95,7 @@
     },
     {
       "q": "En quoi Embir est-elle différente de Grindr pour la sécurité ?",
-      "a": "Embir propose une vérification selfie systématique, une équipe de modération humaine qui examine chaque signalement, une tolérance zéro pour le harcèlement et des règles communautaires construites autour du respect. La sécurité est une fonctionnalité centrale, pas une réflexion après coup."
+      "a": "Embir propose une vérification selfie facultative avec badge visible, un dispositif de signalement et de blocage immédiat, une tolérance zéro pour le harcèlement et des règles communautaires construites autour du respect. La sécurité est une fonctionnalité centrale, pas une réflexion après coup."
     },
     {
       "q": "Embir a-t-elle une vue en grille comme Grindr ?",
@@ -107,11 +107,11 @@
     },
     {
       "q": "Embir est-elle gratuite comme Grindr ?",
-      "a": "Embir est gratuite au lancement avec un accès complet aux fonctions essentielles — pas de pubs, pas de paywalls. Le futur modèle freemium financera la sécurité et l'infrastructure de façon transparente, mais la découverte et la messagerie essentielles resteront toujours accessibles."
+      "a": "Embir est gratuite pour les connexions essentielles avec un accès complet aux fonctions essentielles — pas de pubs, pas de paywalls. Les options facultatives transparentes financeront la sécurité et l'infrastructure de façon transparente, mais la découverte et la messagerie essentielles resteront toujours accessibles."
     },
     {
       "q": "Comment Embir gère-t-elle le harcèlement différemment ?",
-      "a": "Les signalements de harcèlement sont transmis à une vraie équipe de modération humaine, pas à un filtre automatique. Les violations graves entraînent des bannissements immédiats et définitifs. Les règles communautaires sont appliquées de manière cohérente, et le contexte est toujours pris en compte."
+      "a": "Les signalements de harcèlement sont transmis à une vraie Dispositif de signalement et de blocage, pas à un filtre automatique. Les violations graves entraînent des restrictions de compte après examen. Les règles communautaires sont appliquées de manière cohérente, et le contexte est toujours pris en compte."
     },
     {
       "q": "Embir est-elle disponible là où Grindr est populaire ?",

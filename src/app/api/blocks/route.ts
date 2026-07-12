@@ -1,49 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-import { cookies } from "next/headers";
-import { verifyToken } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
+import { blockUser, unblockUser } from "@/lib/block-service";
+import { withApiLogging } from "@/lib/api-logger";
 
-
-
-export async function POST(req: NextRequest) {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("token")?.value;
-  if (!token) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
-  const payload = verifyToken(token);
-  if (!payload) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
-  const { targetUserId } = await req.json();
-
-  if (!targetUserId) {
-    return NextResponse.json({ error: "targetUserId is required" }, { status: 400 });
+async function handlePost(request: NextRequest) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+  const body = await request.json().catch(() => null) as { targetUserId?: unknown } | null;
+  if (typeof body?.targetUserId !== "string" || body.targetUserId === auth.id) {
+    return NextResponse.json({ error: "Cible invalide" }, { status: 400 });
   }
-
   try {
-    const existing = await prisma.block.findUnique({
-      where: {
-        blockerId_blockedId: {
-          blockerId: payload.userId,
-          blockedId: targetUserId
-        }
-      }
-    });
-
-    if (existing) {
-      await prisma.block.delete({
-        where: { id: existing.id }
-      });
-      return NextResponse.json({ message: "unblocked", active: false });
-    } else {
-      await prisma.block.create({
-        data: {
-          blockerId: payload.userId,
-          blockedId: targetUserId
-        }
-      });
-      return NextResponse.json({ message: "blocked", active: true });
-    }
+    const result = body && "blocked" in body && body.blocked === false
+      ? await unblockUser(auth.id, body.targetUserId)
+      : await blockUser(auth.id, body.targetUserId);
+    return NextResponse.json(result);
   } catch (error) {
-    return NextResponse.json({ error: "internal_error" }, { status: 500 });
+    if (error instanceof Error && error.message === "TARGET_NOT_FOUND") {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+    console.error("Block user error:", error);
+    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 }
+
+export const POST = withApiLogging(handlePost);

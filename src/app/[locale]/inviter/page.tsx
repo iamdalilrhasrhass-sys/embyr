@@ -4,7 +4,6 @@ import AppShell from "@/components/layout/AppShell";
 export default function InviterPage() {
   const [referralCode, setReferralCode] = useState<string | null>(null);
   const [referralCount, setReferralCount] = useState<number>(0);
-  const [referralDays, setReferralDays] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -15,7 +14,6 @@ export default function InviterPage() {
         if (data.referralCode) {
           setReferralCode(data.referralCode);
           setReferralCount(data.referralCount || 0);
-          setReferralDays(data.referralDays || data.referralCount * 7 || 0);
         }
       })
       .catch(() => {})
@@ -27,8 +25,8 @@ export default function InviterPage() {
     : "";
 
   const message = referralCode
-    ? ` Rejoins-moi sur Embir, la nouvelle app de rencontre gay élégante et gratuite ! Inscris-toi avec mon code ${referralCode} ou via ce lien : ${referralLink}`
-    : "Je viens de rejoindre Embir, une nouvelle app de rencontre gay gratuite pendant son lancement. Rejoins les premiers membres : https://embir.xyz";
+    ? `Rejoins-moi sur Embir, une app fondée sur les préférences réciproques et une vraie progression. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Code ${referralCode} : ${referralLink}`
+    : "Découvre Embir, une app fondée sur les préférences réciproques et une vraie progression : https://embir.xyz";
 
   const lien = referralLink || "https://embir.xyz";
 
@@ -51,7 +49,7 @@ export default function InviterPage() {
             Invite tes amis sur Embir
           </h1>
           <p className="text-white/40 mb-8">
-            Embir est gratuit pendant le lancement. Invite quelques personnes
+            Embir est gratuit pour les connexions essentielles. Invite quelques personnes
             à rejoindre les premiers membres.
           </p>
 
@@ -172,30 +170,9 @@ export default function InviterPage() {
           {/* Notes */}
           <div className="rounded-2xl border border-amber-500/10 bg-amber-500/[0.02] p-5">
             <p className="text-xs text-amber-400/70">
-              ✦ Les premiers membres actifs recevront le badge Fondateur et
-              des avantages Premium offerts lors du lancement des options payantes.
+              ✦ Invite uniquement des personnes que tu connais réellement. Embir n’accorde aucun avantage de sécurité, de visibilité ou de matching contre des invitations.
             </p>
           </div>
-
-          {/* Premium reward banner */}
-          {referralCode && (
-            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-6 mb-6">
-              <div className="flex items-start gap-4">
-                <div className="text-3xl">🎁</div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">7 jours Premium offerts par filleul</h3>
-                  <p className="text-sm text-white/50 mb-3">
-                    Chaque ami qui s'inscrit avec ton lien te rapporte <strong className="text-emerald-400">7 jours de Premium</strong>.
-                    Les jours s'accumulent automatiquement. Plus tu invites, plus tu gagnes !
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <span className="text-emerald-400 text-2xl font-black">{referralCount}</span>
-                    <span className="text-white/40 text-sm">filleuls · {referralDays} jours Premium cumulés</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </main>
     </AppShell>

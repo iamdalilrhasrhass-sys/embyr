@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 import {
   INDEXABLE_PROGRAMMATIC_CITIES,
@@ -31,3 +31,37 @@ test("programmatic route uses policy-driven static params and robots", async () 
   assert.doesNotMatch(source, /Profils verifies|100% gratuit|100% free|No subscription|no subscription|no ads|aucune pub|selfie verification/i);
 });
 
+test("public Embir copy rejects unsupported trust, growth, and AI claims", async () => {
+  const roots = ["src/app", "src/components", "src/seo", "messages"];
+  const files = ["README.md"];
+
+  for (const root of roots) {
+    const entries = await readdir(root, { recursive: true });
+    files.push(
+      ...entries
+        .filter((entry) => /\.(?:ts|tsx|json)$/.test(entry))
+        .map((entry) => `${root}/${entry}`),
+    );
+  }
+
+  const forbidden = [
+    /chaque (?:membre|profil)(?: sur Embir)? est vérifié/i,
+    /every (?:member|profile) (?:is verified|verifies|goes through)/i,
+    /mandatory (?:profile )?verification/i,
+    /(?:zéro|zero) faux profil/i,
+    /no fake profiles/i,
+    /(?:matching IA|AI-powered matching)/i,
+    /every report (?:is )?reviewed by (?:a )?(?:human|person|team member)/i,
+    /(?:5,013|5,000\+|2,480|90% des profils)/i,
+    /(?:anti-ghosting|25 languages|25 langues)/i,
+    /(?:communautés actives|active communities|growing fastest)/i,
+    /(?:messagerie illimitée|unlimited messaging|unlimited likes)/i,
+  ];
+
+  for (const file of files) {
+    const source = await readFile(file, "utf8");
+    for (const claim of forbidden) {
+      assert.doesNotMatch(source, claim, `${file}: ${claim}`);
+    }
+  }
+});

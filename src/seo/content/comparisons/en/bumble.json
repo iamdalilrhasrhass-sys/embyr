@@ -17,7 +17,7 @@
     {
       "criteria": "Profile verification",
       "competitor": "Photo verification available",
-      "embir": "Systematic selfie verification + human moderation",
+      "embir": "optional selfie verification with a visible badge + reporting and blocking",
       "winner": "embir"
     },
     {
@@ -29,13 +29,13 @@
     {
       "criteria": "Free access",
       "competitor": "Limited free tier, Boost/Premium subscriptions",
-      "embir": "Core free at launch + transparent freemium",
+      "embir": "Core core connection features are free + transparent freemium",
       "winner": "embir"
     },
     {
       "criteria": "Safety approach",
       "competitor": "Basic reporting + photo verification",
-      "embir": "Human moderation, verified profiles, safety tools",
+      "embir": "reporting and blocking, verified profiles, safety tools",
       "winner": "embir"
     }
   ],
@@ -51,9 +51,9 @@
     },
     {
       "title": "Profile Verification & Safety — Trust first",
-      "content": "Bumble offers photo verification, which is a step in the right direction. But verification alone doesn't solve the safety equation — especially when moderation is largely automated and reports can feel like they disappear into a void.\n\nEmbir combines selfie verification with an active human moderation team. Every report is read by a real person. The platform enforces zero tolerance for harassment with immediate and permanent bans. Safety tools — from message filters to profile visibility controls — are built into the product foundation.\n\nFor women and marginalized users who have experienced harassment on dating apps, knowing there's a human behind the report button changes the calculus of whether to report at all.",
+      "content": "Bumble offers photo verification, which is a step in the right direction. But verification alone doesn't solve the safety equation — especially when moderation is largely automated and reports can feel like they disappear into a void.\n\nEmbir combines selfie verification with an active Reporting and blocking workflow. Every report is recorded for review, and blocking is immediate. The platform enforces zero tolerance for harassment with account restrictions after review. Safety tools — from message filters to profile visibility controls — are built into the product foundation.\n\nFor women and marginalized users who have experienced harassment on dating apps, knowing there's a human behind the report button changes the calculus of whether to report at all.",
       "highlights": [
-        "Human moderation examines every report",
+        "reporting and blocking examines every report",
         "Selfie verification system is core, not optional",
         "Advanced privacy controls: who sees you, who messages you"
       ]
@@ -69,16 +69,16 @@
     },
     {
       "title": "Features & Paywalls — What's actually free",
-      "content": "Bumble's free tier lets you swipe and message (if the 24h window holds). But Boost and Premium unlock the features that make the app truly useful: seeing who liked you, extending matches, rematching expired connections, advanced filters, travel mode. These can add up to $20-30/month.\n\nEmbir is free at launch. Core features — discovery, messaging, compatibility matching, verification — are accessible without payment. The future freemium model will fund safety and infrastructure transparently. The difference: Embir doesn't lock basic human connection behind a subscription from day one.",
+      "content": "Bumble's free tier lets you swipe and message (if the 24h window holds). But Boost and Premium unlock the features that make the app truly useful: seeing who liked you, extending matches, rematching expired connections, advanced filters, travel mode. These can add up to $20-30/month.\n\nEmbir's core connection features are free. Core features — discovery, messaging, compatibility matching, verification — are accessible without payment. optional services will fund safety and infrastructure transparently. The difference: Embir doesn't lock basic human connection behind a subscription from day one.",
       "highlights": [
-        "All core features free at launch",
+        "All core features core connection features are free",
         "No artificial feature gating",
         "Transparent freemium roadmap shared with community"
       ]
     },
     {
       "title": "Community Culture — Empowerment vs Compatibility",
-      "content": "Bumble built its brand on empowerment — a powerful message that resonated with millions. But as the app matured, the experience started to feel more like Tinder with a twist. The swipe mechanic, the subscription upsells, the gamified notifications — they erode the initial promise.\n\nEmbir takes a different cultural approach. Instead of empowerment through a single mechanic, it builds trust through multiple signals: verified identity, transparent intentions, compatibility-based discovery, human moderation. The result is a community where people feel respected not because of a feature, but because the entire system is designed for respect.",
+      "content": "Bumble built its brand on empowerment — a powerful message that resonated with millions. But as the app matured, the experience started to feel more like Tinder with a twist. The swipe mechanic, the subscription upsells, the gamified notifications — they erode the initial promise.\n\nEmbir takes a different cultural approach. Instead of empowerment through a single mechanic, it builds trust through multiple signals: verified identity, transparent intentions, compatibility-based discovery, reporting and blocking. The result is a community where people feel respected not because of a feature, but because the entire system is designed for respect.",
       "highlights": [
         "Trust built through multiple signals, not one mechanic",
         "Community culture shaped by founding members",
@@ -86,7 +86,7 @@
       ]
     }
   ],
-  "verdict": "Choose Embir if you want verified compatibility without artificial urgency, an inclusive platform that works equally for every orientation and identity, human moderation you can trust, and truly free core features during the founding phase. Bumble remains a solid choice if you specifically value the women-first messaging mechanic — but for everything else, Embir offers a more complete and modern dating experience in 2026.",
+  "verdict": "Choose Embir if you want verified compatibility without artificial urgency, an inclusive platform that works equally for every orientation and identity, reporting and blocking you can trust, and free core connection features without a credit card. Bumble remains a solid choice if you specifically value the women-first messaging mechanic — but for everything else, Embir offers a more complete and modern dating experience in 2026.",
   "ctaText": "Join the founding community — free, verified, inclusive",
   "faq": [
     {
@@ -95,7 +95,7 @@
     },
     {
       "q": "Is Embir safe for women?",
-      "a": "Yes. Embir was built with safety as a foundation, not an afterthought. Selfie verification, human moderation, zero tolerance for harassment, and granular privacy controls protect all users — with a particular focus on safety for women and marginalized groups."
+      "a": "Yes. Embir was built with safety as a foundation, not an afterthought. Selfie verification, reporting and blocking, zero tolerance for harassment, and granular privacy controls protect all users — with a particular focus on safety for women and marginalized groups."
     },
     {
       "q": "Are there time limits on matches like Bumble?",
@@ -107,11 +107,11 @@
     },
     {
       "q": "How does Embir compare to Bumble on price?",
-      "a": "Embir is completely free at launch with full core features. Bumble's useful features are largely behind Boost/Premium subscriptions ($20-30/month). Embir's future freemium will be announced transparently and won't gate essential discovery or messaging."
+      "a": "Embir's core connection features are free with full core features. Bumble's useful features are largely behind Boost/Premium subscriptions ($20-30/month). Embir's Optional services will be announced transparently and won't gate essential discovery or messaging."
     },
     {
       "q": "Does Embir have profile verification like Bumble?",
-      "a": "Yes — and it goes further. Embir offers systematic selfie verification combined with human moderation. Verified profiles are clearly marked and prioritized in discovery. Every report is reviewed by a real person, not an algorithm."
+      "a": "Yes — and it goes further. Embir offers optional selfie verification with a visible badge combined with reporting and blocking. Verified profiles are clearly marked and prioritized in discovery. every report is recorded for review and blocking is immediate."
     },
     {
       "q": "What makes Embir's inclusivity different from Bumble?",

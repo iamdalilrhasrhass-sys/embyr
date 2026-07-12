@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyPassword, signToken } from "@/lib/auth";
+import { withApiLogging } from "@/lib/api-logger";
 
-export async function POST(request: NextRequest) {
+async function handlePost(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
@@ -11,7 +12,7 @@ export async function POST(request: NextRequest) {
     }
 
     const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) {
+    if (!user || user.bannedAt || user.deletedAt) {
       return Response.json({ error: "Email ou mot de passe incorrect" }, { status: 401 });
     }
 
@@ -21,6 +22,24 @@ export async function POST(request: NextRequest) {
     }
 
     const token = signToken({ userId: user.id, email: user.email });
+
+    const loginAt = new Date();
+    await prisma.$transaction([
+      prisma.user.update({
+        where: { id: user.id },
+        data: { lastLoginAt: loginAt },
+      }),
+      prisma.analyticsEvent.create({
+        data: {
+          eventId: crypto.randomUUID(),
+          eventName: "login_completed",
+          eventVersion: 1,
+          userId: user.id,
+          occurredAt: loginAt,
+          properties: {},
+        },
+      }),
+    ]);
 
     const response = Response.json({
       user: {
@@ -42,3 +61,5 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Erreur lors de la connexion" }, { status: 500 });
   }
 }
+
+export const POST = withApiLogging(handlePost);

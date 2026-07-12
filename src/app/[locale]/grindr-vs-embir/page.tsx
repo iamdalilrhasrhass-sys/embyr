@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const isFr = locale === "fr";
   return {
     title: isFr ? "Grindr vs Embir — Alternative gratuite a Grindr 2026" : "Grindr vs Embir — Free Grindr alternative 2026",
-    description: isFr ? "Comparatif Grindr vs Embir. Grindr fait payer 30 EUR/mois, Embir est gratuit au lancement. Filtre par orientation, profils verifies, multi-intentions." : "Grindr vs Embir comparison. Grindr charges $30/month, Embir is free at launch. Orientation filter, verified profiles, multi-intention.",
+    description: isFr ? "Comparatif Grindr vs Embir. Grindr fait payer 30 EUR/mois, Embir est gratuit pour les connexions essentielles. Filtre par orientation, profils verifies, multi-intentions." : "Grindr vs Embir comparison. Grindr charges $30/month, Embir's core connection features are free. Orientation filter, verified profiles, multi-intention.",
     alternates: {
       canonical: `https://embir.xyz/${isFr ? "fr/" : ""}grindr-vs-embir`,
       languages: {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     openGraph: {
       title: isFr ? "Grindr vs Embir — Alternative gratuite a Grindr 2026" : "Grindr vs Embir — Free Grindr alternative 2026",
-      description: isFr ? "Comparatif Grindr vs Embir. Grindr fait payer 30 EUR/mois, Embir est gratuit au lancement. Filtre par orientation, profils verifies, multi-intentions." : "Grindr vs Embir comparison. Grindr charges $30/month, Embir is free at launch. Orientation filter, verified profiles, multi-intention.",
+      description: isFr ? "Comparatif Grindr vs Embir. Grindr fait payer 30 EUR/mois, Embir est gratuit pour les connexions essentielles. Filtre par orientation, profils verifies, multi-intentions." : "Grindr vs Embir comparison. Grindr charges $30/month, Embir's core connection features are free. Orientation filter, verified profiles, multi-intention.",
       locale: isFr ? "fr_FR" : "en_US",
       type: "article",
     },
@@ -35,9 +35,9 @@ const DATA = {
     competitor: "Grindr",
     competitorPros: ["Enorme base d'utilisateurs gays", "Geolocalisation en temps reel", "Bien etabli depuis 2009"],
     competitorCons: ["Payant (30 EUR/mois pour Grindr Unlimited)", "Beaucoup de pubs intrusives en version gratuite", "Problemes recurrents de confidentialite", "Focus quasi exclusif sur le plan cul", "Pas de filtre multi-orientation"],
-    embirPros: ["gratuit au lancement — zero pub, zero paywall", "Filtre strict par orientation (gay, bi, queer, etc.)", "Multi-intentions (amour, amis, fun, sport, evenements, plan cul)", "Profils verifies par selfie", "Confidentialite respectee"],
+    embirPros: ["gratuit pour les connexions essentielles — zero pub, zero paywall", "Filtre strict par orientation (gay, bi, queer, etc.)", "Multi-intentions (amour, amis, fun, sport, evenements, plan cul)", "Profils verifies par selfie", "Confidentialite respectee"],
     embirCons: ["Base d'utilisateurs plus petite", "Moins de notoriete dans la communaute gay"],
-    faq: [["Embir est-il vraiment gratuit alors que Grindr fait payer 30 EUR/mois?", "Oui. Embir est gratuit au lancement : messages illimites, profils illimites, tous les filtres. Grindr limite la version gratuite avec des pubs et fait payer 30 EUR/mois pour Grindr Unlimited."], ["Embir est-il seulement pour les gays?", "Non. Embir est pour toutes les orientations : heteros, gays, lesbiennes, bi, queer, pan. Le filtre strict garantit que chaque communaute a son espace sans empieter sur les autres."], ["Embir est-il plus sur que Grindr?", "Embir met l'accent sur la securite avec verification par selfie, moderation humaine et filtre strict par orientation. Grindr a eu plusieurs scandales de confidentialite."]],
+    faq: [["Embir est-il vraiment gratuit alors que Grindr fait payer 30 EUR/mois?", "Oui. Embir est gratuit pour les connexions essentielles : messages entre connexions réciproques, sélection compatible courte, tous les filtres. Grindr limite la version gratuite avec des pubs et fait payer 30 EUR/mois pour Grindr Unlimited."], ["Embir est-il seulement pour les gays?", "Non. Embir est pour toutes les orientations : heteros, gays, lesbiennes, bi, queer, pan. Le filtre strict garantit que chaque communaute a son espace sans empieter sur les autres."], ["Embir est-il plus sur que Grindr?", "Embir met l'accent sur la securite avec verification par selfie, signalement et blocage et filtre strict par orientation. Grindr a eu plusieurs scandales de confidentialite."]],
   },
   en: {
     h1: "Grindr vs Embir: free vs $30/month",
@@ -45,9 +45,9 @@ const DATA = {
     competitor: "Grindr",
     competitorPros: ["Enorme base d'utilisateurs gays", "Geolocalisation en temps reel", "Bien etabli depuis 2009"],
     competitorCons: ["Payant (30 EUR/mois pour Grindr Unlimited)", "Beaucoup de pubs intrusives en version gratuite", "Problemes recurrents de confidentialite", "Focus quasi exclusif sur le plan cul", "Pas de filtre multi-orientation"],
-    embirPros: ["gratuit au lancement — zero pub, zero paywall", "Filtre strict par orientation (gay, bi, queer, etc.)", "Multi-intentions (amour, amis, fun, sport, evenements, plan cul)", "Profils verifies par selfie", "Confidentialite respectee"],
+    embirPros: ["gratuit pour les connexions essentielles — zero pub, zero paywall", "Filtre strict par orientation (gay, bi, queer, etc.)", "Multi-intentions (amour, amis, fun, sport, evenements, plan cul)", "Profils verifies par selfie", "Confidentialite respectee"],
     embirCons: ["Base d'utilisateurs plus petite", "Moins de notoriete dans la communaute gay"],
-    faq: [["Is Embir really free while Grindr charges $30/month?", "Yes. Embir is free at launch: unlimited messages, unlimited profiles, all filters. Grindr limits the free version with ads and charges $30/month for Grindr Unlimited."], ["Is Embir only for gays?", "No. Embir is for all orientations: straight, gay, lesbian, bi, queer, pan. The strict filter ensures each community has its space without encroaching on others."], ["Is Embir safer than Grindr?", "Embir emphasizes safety with selfie verification, human moderation, and strict orientation filter. Grindr has had several privacy scandals."]],
+    faq: [["Is Embir really free while Grindr charges $30/month?", "Yes. Embir's core connection features are free: messages between reciprocal connections, a short compatible selection, all filters. Grindr limits the free version with ads and charges $30/month for Grindr Unlimited."], ["Is Embir only for gays?", "No. Embir is for all orientations: straight, gay, lesbian, bi, queer, pan. The strict filter ensures each community has its space without encroaching on others."], ["Is Embir safer than Grindr?", "Embir emphasizes safety with selfie verification, reporting and blocking, and strict orientation filter. Grindr has had several privacy scandals."]],
   },
 } as const;
 
@@ -107,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white">Embir</span>
-                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit au lancement</span>
+                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit pour les connexions essentielles</span>
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white/70">{c.competitor}</span>
@@ -116,8 +116,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </div>
             {[
               { label: isFr ? "Prix" : "Price", embir: "0 EUR", competitor: "20-45 EUR/mois" },
-              { label: isFr ? "Likes illimites" : "Unlimited likes", embir: "Oui", competitor: "Non" },
-              { label: isFr ? "Messages illimites" : "Unlimited messages", embir: "Oui", competitor: "Non" },
+              { label: isFr ? "sélection quotidienne courte" : "a short daily selection", embir: "Oui", competitor: "Non" },
+              { label: isFr ? "messages entre connexions réciproques" : "messages between reciprocal connections", embir: "Oui", competitor: "Non" },
               { label: isFr ? "Filtre par orientation" : "Orientation filter", embir: "Oui Strict", competitor: "Non" },
               { label: isFr ? "Multi-intentions" : "Multi-intention", embir: "Oui 6 modes", competitor: "Non" },
               { label: isFr ? "Profils verifies" : "Verified profiles", embir: "Oui Selfie", competitor: "Partiel" },
@@ -230,7 +230,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             {isFr ? "Pret a essayer Embir ?" : "Ready to try Embir?"}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/45">
-            {isFr ? "gratuit au lancement. Aucune pub. Aucun abonnement." : "free at launch. No ads. No subscription."}
+            {isFr ? "gratuit pour les connexions essentielles. Aucune pub. Aucun abonnement." : "core connection features are free. No ads. No subscription."}
           </p>
           <Link
             href="/auth/register"

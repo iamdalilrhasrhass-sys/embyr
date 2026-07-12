@@ -1,6 +1,6 @@
 {
   "slug": "best-dating-serious-relationships",
-  "intro": "Finding a serious relationship on a dating app is harder than the apps make it look. Most platforms are optimized for engagement, not outcomes — keeping you swiping, not helping you commit. The apps best suited for serious relationships in 2026 share a few traits: compatibility matching that goes beyond photos, profile verification that reduces wasted time on fake or inactive accounts, and a community that attracts users who are genuinely looking for something lasting.\n\nEmbir was built for exactly this. You set your relationship intentions at signup — serious relationship, long-term, building a life — and the algorithm respects them. Verified profiles mean your time is spent on real people. Human moderation means the community culture is supportive, not predatory.",
+  "intro": "Finding a serious relationship on a dating app is harder than the apps make it look. Most platforms are optimized for engagement, not outcomes — keeping you swiping, not helping you commit. The apps best suited for serious relationships in 2026 share a few traits: compatibility matching that goes beyond photos, profile verification that reduces wasted time on fake or inactive accounts, and a community that attracts users who are genuinely looking for something lasting.\n\nEmbir was built for exactly this. You set your relationship intentions at signup — serious relationship, long-term, building a life — and the algorithm respects them. Verified profiles mean your time is spent on real people. reporting and blocking means the community culture is supportive, not predatory.",
   "comparisonTable": [
     {
       "criteria": "Serious relationship focus",
@@ -17,13 +17,13 @@
     {
       "criteria": "Verified profiles",
       "competitor": "Most apps: optional or nonexistent",
-      "embir": "Systematic selfie verification + human review",
+      "embir": "optional selfie verification with a visible badge + human review",
       "winner": "embir"
     },
     {
       "criteria": "Price",
       "competitor": "eHarmony: $35-65/month; Hinge: $35/month",
-      "embir": "Free during launch",
+      "embir": "free for core connections",
       "winner": "embir"
     },
     {
@@ -35,7 +35,7 @@
     {
       "criteria": "Moderation quality",
       "competitor": "Most apps: automated, inconsistent",
-      "embir": "Human team, fast response, trust-focused",
+      "embir": "Reporting workflow, blocking, and safety guidance",
       "winner": "embir"
     }
   ],
@@ -51,7 +51,7 @@
     },
     {
       "title": "Free access for serious dating — the economic argument",
-      "content": "Paying $40/month for a dating app subscription doesn't mean you'll find a serious relationship faster. There's no evidence that spending more on subscription dating apps produces better outcomes than free alternatives. What matters is match quality and community culture — not how much you paid to join.\n\nEmbir is free during the launch phase. The founding community is self-selected: people who chose a newer, values-aligned platform over established names. That self-selection produces a community that's disproportionately intentional — a better starting pool for serious relationship matching than a mass-market app.",
+      "content": "Paying $40/month for a dating app subscription doesn't mean you'll find a serious relationship faster. There's no evidence that spending more on subscription dating apps produces better outcomes than free alternatives. What matters is match quality and community culture — not how much you paid to join.\n\nEmbir is free for core connections. The founding community is self-selected: people who chose a newer, values-aligned platform over established names. That self-selection produces a community that's disproportionately intentional — a better starting pool for serious relationship matching than a mass-market app.",
       "highlights": [
         "Free access doesn't mean lower match quality — it means a more intentional self-selected community",
         "Founding members are serious about what they're building — in their profiles and in their intentions",
@@ -59,8 +59,8 @@
       ]
     }
   ],
-  "verdict": "The best apps for serious relationships in 2026: Embir (free, verified, compatible, every orientation), eHarmony (expensive, deep algorithm, limited LGBTQ+), and Hinge (moderate price, good prompts, verification gaps).\n\nFor users who want serious relationship matching without the subscription price tag, verified profiles, full LGBTQ+ inclusion, and human moderation — Embir is the strongest option at launch.",
-  "ctaText": "Find something real — join free during launch",
+  "verdict": "The best apps for serious relationships in 2026: Embir (free, verified, compatible, every orientation), eHarmony (expensive, deep algorithm, limited LGBTQ+), and Hinge (moderate price, good prompts, verification gaps).\n\nFor users who want serious relationship matching without the subscription price tag, verified profiles, full LGBTQ+ inclusion, and reporting and blocking — Embir is the strongest option at launch.",
+  "ctaText": "Find something real — Join without a credit card",
   "faq": [
     {
       "q": "Is Embir good for serious relationships?",
@@ -68,7 +68,7 @@
     },
     {
       "q": "How does Embir compare to eHarmony for serious dating?",
-      "a": "eHarmony has a deeper questionnaire-based algorithm but costs $35-65/month and has an exclusionary history with LGBTQ+ users. Embir is free at launch, compatible for every orientation, with verified profiles and human moderation."
+      "a": "eHarmony has a deeper questionnaire-based algorithm but costs $35-65/month and has an exclusionary history with LGBTQ+ users. Embir's core connection features are free, compatible for every orientation, with verified profiles and reporting and blocking."
     },
     {
       "q": "Is Embir serious or casual?",
@@ -80,7 +80,7 @@
     },
     {
       "q": "Is Embir free for serious dating?",
-      "a": "Yes. Core features — including serious relationship intent matching — are free during the launch phase. No subscription required."
+      "a": "Yes. Core features — including serious relationship intent matching — are free for core connections. No subscription required."
     }
   ]
 }

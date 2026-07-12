@@ -7,11 +7,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale } = await params;
   const url = locale === "fr" ? "https://embir.xyz/fr/application-rencontre-gratuite" : "https://embir.xyz/free-dating-app";
   const title = locale === "fr"
-    ? "Application de rencontre gratuite — Sans paywall au lancement | Embir"
-    : "Free Dating App — No Paywall During Launch | Embir";
+    ? "Application de rencontre gratuite — Sans carte bancaire | Embir"
+    : "Free Dating App — No Credit Card Required | Embir";
   const description = locale === "fr"
-    ? "Embir est gratuit au lancement : messagerie illimitée, profils vérifiés, matching par compatibilité, découverte complète — sans frais pour les membres fondateurs. Sans fausse promesse."
-    : "Embir is free during launch: unlimited messaging, verified profiles, compatibility matching, and full discovery — all at no cost for founding members. No bait-and-switch.";
+    ? "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire : profil, sélection compatible, réciprocité, messages et sécurité."
+    : "Everything needed to meet someone is free. No credit card required: profile, compatible discovery, reciprocity, messaging and safety.";
   return {
     title, description,
     metadataBase: new URL("https://embir.xyz"),
@@ -27,71 +27,52 @@ export default async function FreeDatingAppPage({ params }: { params: Params }) 
   const isFr = locale === "fr";
 
   const content = isFr ? {
-    badge: "Gratuit au lancement",
-    h1: "Une appli de rencontre vraiment gratuite au lancement — sans piège",
-    intro: "« Application de rencontre gratuite » signifie presque toujours « téléchargement gratuit, utilisation payante ». Embir est différent. Pendant notre phase de lancement, chaque fonction essentielle est gratuite — messagerie, matching, profils vérifiés, découverte par compatibilité. Sans piège, sans période d'essai, sans carte bancaire.",
+    badge: "Sans carte bancaire",
+    h1: "Une application gratuite là où cela compte : rencontrer quelqu’un",
+    intro: "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Le profil, la sélection compatible, la réciprocité, les messages et les outils de sécurité forment un seul parcours accessible.",
     sections: [
       {
-        title: "Pourquoi les applis de rencontre bloquent tout trop vite",
+        title: "Pas de paywall au milieu d'une connexion",
         paragraphs: [
-          "Tu l'as sûrement vécu : tu télécharges une appli, tu crées ton profil, tu commences à swiper, et puis — paywall. Messagerie limitée, likes bloqués, profils floutés. L'appli t'a laissé entrer juste assez pour te donner envie, puis elle te ferme la porte. C'est le modèle standard de l'industrie : frustrer l'utilisateur gratuit pour le pousser vers l'abonnement.",
-          "Ce modèle n'est pas un accident. Il est conçu pour maximiser la conversion vers le payant, pas pour offrir une bonne expérience. Le résultat : des millions d'utilisateurs qui passent 5 minutes sur l'appli, se font bloquer, désinstallent, et passent à la suivante. L'industrie de la rencontre est devenue une machine à frustration, pas à connexion.",
-          "Embir refuse cette logique. Nous pensons qu'une appli de rencontre doit d'abord prouver sa valeur avant de demander quoi que ce soit. Pas l'inverse."
+          "Certaines applications laissent créer un profil puis bloquent la découverte, les likes reçus ou les messages. Embir applique une règle plus simple : un paiement ne doit pas interrompre le chemin vers une rencontre réciproque.",
+          "La compatibilité vient des préférences, des intentions et de l'intérêt mutuel. Elle ne s'achète pas.",
         ],
       },
       {
-        title: "Ce qui est gratuit — vraiment — pendant le lancement",
+        title: "Ce que comprend le parcours",
         cards: [
-          ["Création de profil complète", "Crée un profil riche avec photos, centres d'intérêt, préférences et intentions. Aucune limite sur ce que tu peux partager. Pas de champs bloqués derrière un abonnement."],
-          ["Messagerie illimitée", "Échange avec toutes tes compatibilités. Pas de quota, pas de limite de messages, pas de « passe à l'abonnement pour continuer la conversation ». La messagerie est un droit fondamental sur une appli de rencontre."],
-          ["Découverte par préférences", "Parcours les profils filtrés par orientation, âge, intentions et centres d'intérêt. Les préférences déterminent qui tu vois, pas ton abonnement."],
-          ["Signaux de compatibilité", "Vois ce que tu as en commun avant d'engager la conversation. Pas un score opaque, mais des éléments concrets qui t'aident à décider."],
+          ["Profil", "Présente tes intentions, tes préférences réciproques et ce qui te ressemble."],
+          ["Sélection compatible", "Découvre une sélection courte fondée sur les critères des deux personnes."],
+          ["Réciprocité et messages", "Réagis avec du contexte, puis échange quand l'intérêt devient mutuel."],
+          ["Plan et sécurité", "Prépare une rencontre et utilise les outils de blocage ou de signalement si nécessaire."],
         ],
       },
       {
-        title: "La transparence plutôt que le piège",
+        title: "Services facultatifs : une frontière claire",
         paragraphs: [
-          "On ne va pas te dire que tout sera gratuit pour toujours. Ce serait mentir. Faire tourner une plateforme de rencontre à grande échelle coûte de l'argent : serveurs, modération humaine, infrastructure de sécurité, développement de l'application mobile.",
-          "Mais on va être honnêtes sur ce qui va changer et ce qui ne changera pas. Quand un modèle freemium arrivera, les fonctions essentielles que tu utilises aujourd'hui resteront gratuites. Le premium ajoutera des options, il ne retirera rien de ce que tu as déjà.",
-          "Et surtout, les membres fondateurs seront les premiers informés et les derniers impactés. Pas de changement surprise du jour au lendemain. Pas de fonction qu'on t'enlève pour te la revendre."
+          "Des services supplémentaires de personnalisation, de confort ou d'expérience peuvent être proposés séparément. Ils ne remplacent ni la compatibilité, ni la réciprocité, ni le consentement.",
+          "La question de contrôle est concrète : peux-tu aller du profil à une rencontre réciproque sans carte bancaire ? Sur Embir, la réponse doit rester oui.",
         ],
       },
       {
-        title: "Pourquoi tu ne devrais pas avoir à payer avant d'avoir testé",
-        paragraphs: [
-          "Imagine un restaurant qui te fait payer l'addition avant que tu aies vu le menu. C'est absurde. Pourtant, c'est exactement ce que font la plupart des applis de rencontre : elles te demandent un abonnement avant que tu saches si la communauté te correspond, si les profils sont réels, si l'expérience vaut le coup.",
-          "Embir fait l'inverse. La phase de lancement est une période ouverte où tout le monde peut tester la plateforme sans barrière. L'objectif est simple : construire une communauté fondatrice suffisamment grande et diverse pour que l'expérience soit utile dès le départ. Si le produit fonctionne pour toi, tant mieux. S'il ne te correspond pas, tu n'as rien perdu.",
-          "On préfère gagner ta confiance par l'usage que par une période d'essai chronométrée qui te met la pression. La confiance ne se facture pas."
-        ],
-      },
-      {
-        title: "Membres fondateurs : ce qui t'attend",
+        title: "Le contrat en cinq points",
         bullets: [
-          "Accès complet et gratuit à toutes les fonctions essentielles pendant le lancement",
-          "Priorité d'accès et avantages produit quand le modèle premium sera introduit",
-          "Information en avance sur toute évolution du modèle économique",
-          "Participation à la construction de la culture et des normes de la plateforme",
-          "Aucune pression d'abonnement — le premium sera optionnel et clairement communiqué",
-        ],
-      },
-      {
-        title: "Ce que « gratuit au lancement » ne veut PAS dire",
-        paragraphs: [
-          "Gratuit ne veut pas dire bac à sable. Les profils que tu verras sont réels, la vérification est active, la modération est humaine. Ce n'est pas une version bridée en attendant le payant — c'est le vrai produit, avec toutes ses fonctions, ouvert pendant la phase fondatrice.",
-          "Gratuit ne veut pas dire données revendues. Embir ne vend pas tes données et ne les vendra jamais. Notre futur modèle économique repose sur des options premium, pas sur la monétisation de ta vie privée.",
-          "Gratuit ne veut pas dire jetable. Les membres fondateurs font partie de l'histoire d'Embir. Vos retours, vos signalements, votre participation façonnent le produit. Quand le premium arrivera, vous serez reconnus, pas poussés dehors."
+          "Créer et compléter son profil",
+          "Découvrir une sélection compatible",
+          "Former une connexion réciproque",
+          "Échanger et proposer un plan de rencontre",
+          "Bloquer, signaler et contrôler sa visibilité",
         ],
       },
     ],
     faq: [
-      ["Est-ce qu'Embir est vraiment gratuit ? Sans piège ?", "Oui, pendant la phase de lancement. Les fonctions essentielles — profil, découverte, messagerie, matching — sont gratuites pour les membres fondateurs. Pas de frais cachés, pas de carte bancaire demandée."],
-      ["Quand Embir commencera-t-il à faire payer ?", "Un modèle freemium sera introduit après la phase de lancement, une fois la communauté fondatrice établie. Tous les membres seront informés bien à l'avance de tout changement."],
-      ["Que deviennent les membres fondateurs quand le freemium arrive ?", "Les membres fondateurs conservent l'accès aux fonctions essentielles qu'ils utilisent déjà. Les fonctions premium seront des ajouts optionnels, pas des remplacements."],
-      ["Pourquoi Embir fait ça différemment ?", "Parce que la confiance se construit en apportant de la valeur d'abord. Une appli qui te demande de payer avant d'avoir fait ses preuves te demande une confiance aveugle. On préfère mériter la tienne."],
-      ["Est-ce que mes données sont utilisées pour financer la gratuité ?", "Non. Embir ne vend pas tes données. La gratuité au lancement est un choix stratégique pour construire la communauté. Le futur modèle repose sur des options premium, pas sur la revente de données."],
-      ["L'expérience gratuite est-elle limitée par rapport au futur payant ?", "Non. Pendant le lancement, tu as accès à toutes les fonctions du produit. Le futur premium ajoutera des suppléments optionnels — il ne retirera rien de ce que tu utilises aujourd'hui."],
+      ["Embir demande-t-il une carte bancaire ?", "Non. Aucun moyen de paiement n'est demandé pour suivre le parcours vers une rencontre."],
+      ["Puis-je discuter sans abonnement ?", "Oui. La messagerie entre connexions réciproques fait partie du parcours de rencontre gratuit."],
+      ["Une option payante peut-elle créer un match ?", "Non. Une connexion dépend de la compatibilité et de la réciprocité, pas d'un achat."],
+      ["Comment Embir finance-t-il le service ?", "Des services supplémentaires clairement facultatifs peuvent financer la sécurité, la modération, l'infrastructure et l'amélioration du produit."],
+      ["Quel est le contrat public ?", "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."],
     ],
-    cta: { title: "Rejoins gratuitement, reste pour la communauté", text: "Crée ton profil gratuit. Pas de carte bancaire. Pas de période d'essai. Juste une plateforme de rencontre qui veut gagner ta confiance avant de demander quoi que ce soit.", button: "Créer mon profil gratuit" },
+    cta: { title: "Commence sans carte bancaire", text: "Crée ton profil, précise tes préférences et découvre une sélection compatible.", button: "Créer mon profil" },
     explore: [
       ["/freemium", "Modèle freemium"],
       ["/verified-dating-app", "Profils vérifiés"],
@@ -101,71 +82,52 @@ export default async function FreeDatingAppPage({ params }: { params: Params }) 
       ["/about", "À propos d'Embir"],
     ],
   } : {
-    badge: "Free at launch",
-    h1: "A dating app that's actually free during launch — no catch",
-    intro: "'Free dating app' usually means 'free to download, pay to use.' Embir is different. During our launch phase, every core feature is free — messaging, matching, verified profiles, compatibility discovery. No bait-and-switch, no trial period, no credit card required.",
+    badge: "No credit card required",
+    h1: "A dating app that is free where it matters: meeting someone",
+    intro: "Everything needed to meet someone is free. No credit card required. Profile, compatible discovery, reciprocity, messaging and safety tools form one accessible path.",
     sections: [
       {
-        title: "Why dating apps lock you out too fast",
+        title: "No paywall in the middle of a connection",
         paragraphs: [
-          "You know the pattern: you download an app, create your profile, start swiping, and then — paywall. Limited messaging, locked likes, blurred profiles. The app let you in just enough to get hooked, then slammed the door. This is the industry's standard model: frustrate the free user to push them toward a subscription.",
-          "This model isn't an accident. It's designed to maximize paid conversion, not to provide a good experience. The result: millions of users who spend 5 minutes on the app, hit a wall, uninstall, and move to the next one. The dating industry has become a frustration machine, not a connection engine.",
-          "Embir rejects this logic. We believe a dating app should prove its value before asking for anything. Not the other way around."
+          "Some apps let you create a profile and then block discovery, incoming likes or messages. Embir applies a simpler rule: payment must not interrupt the path to a reciprocal meeting.",
+          "Compatibility comes from preferences, intentions and mutual interest. It cannot be purchased.",
         ],
       },
       {
-        title: "What's free — really — during launch",
+        title: "What the path includes",
         cards: [
-          ["Full profile creation", "Build a rich profile with photos, interests, preferences, and intentions. No limits on what you can share. No fields locked behind a subscription."],
-          ["Unlimited messaging", "Talk to everyone you're compatible with. No quotas, no message caps, no 'upgrade to continue the conversation.' Messaging is a basic right on a dating app."],
-          ["Preference-based discovery", "Browse profiles filtered by orientation, age, intentions, and interests. Your preferences determine who you see, not your subscription level."],
-          ["Compatibility signals", "See what you have in common before starting a conversation. Not an opaque score, but concrete elements that help you decide."],
+          ["Profile", "Share your intentions, reciprocal preferences and what makes you distinct."],
+          ["Compatible discovery", "Explore a short selection based on both people's criteria."],
+          ["Reciprocity and messaging", "React with context, then talk when interest becomes mutual."],
+          ["Plan and safety", "Prepare a meeting and use blocking or reporting tools when needed."],
         ],
       },
       {
-        title: "Transparency instead of bait-and-switch",
+        title: "Optional services: a clear boundary",
         paragraphs: [
-          "We're not going to tell you everything will be free forever. That would be dishonest. Running a dating platform at scale costs real money: servers, human moderation, safety infrastructure, mobile app development.",
-          "But we'll be honest about what will change and what won't. When a freemium model arrives, the core features you use today will remain free. Premium will add options — it won't take away what you already have.",
-          "And above all, founding members will be the first to know and the last to be affected. No overnight surprises. No features being taken away and sold back to you."
+          "Additional personalization, convenience or experience services may be offered separately. They do not replace compatibility, reciprocity or consent.",
+          "The control question is concrete: can you move from profile to reciprocal meeting without a credit card? On Embir, the answer must remain yes.",
         ],
       },
       {
-        title: "Why you shouldn't have to pay before testing the product",
-        paragraphs: [
-          "Imagine a restaurant that charges you before you've seen the menu. Absurd, right? Yet that's exactly what most dating apps do: they ask for a subscription before you know if the community fits you, if the profiles are real, if the experience is worthwhile.",
-          "Embir does the opposite. The launch phase is an open period where everyone can test the platform without barriers. The goal is simple: build a founding community large enough and diverse enough for the experience to be useful from day one. If the product works for you, great. If it doesn't fit, you've lost nothing.",
-          "We'd rather earn your trust through use than through a countdown trial that pressures you. Trust isn't something you charge for."
-        ],
-      },
-      {
-        title: "Founding members: what's in it for you",
+        title: "The contract in five points",
         bullets: [
-          "Full, free access to all core features during the launch phase",
-          "Priority access and product benefits when the premium model is introduced",
-          "Advance notice of any changes to the business model",
-          "A voice in shaping the platform's culture and norms",
-          "No subscription pressure — premium will be optional and clearly communicated",
-        ],
-      },
-      {
-        title: "What 'free at launch' does NOT mean",
-        paragraphs: [
-          "Free doesn't mean sandbox. The profiles you see are real, verification is active, moderation is human. This isn't a stripped-down version waiting for paid features — it's the real product, fully functional, open during the founding phase.",
-          "Free doesn't mean your data is being sold. Embir doesn't sell your data and never will. Our future business model relies on optional premium features, not on monetizing your private life.",
-          "Free doesn't mean disposable. Founding members are part of Embir's story. Your feedback, your reports, your participation shape the product. When premium arrives, you'll be recognized — not pushed out."
+          "Create and complete a profile",
+          "Discover a compatible selection",
+          "Form a reciprocal connection",
+          "Message and suggest a meeting plan",
+          "Block, report and control visibility",
         ],
       },
     ],
     faq: [
-      ["Is Embir really free? No catch?", "Yes, during the launch phase. Core features — profile, discovery, messaging, matching — are free for founding members. No hidden fees, no credit card required."],
-      ["When will Embir start charging?", "A freemium model will be introduced after the launch phase, once the founding community is established. All members will be informed well in advance of any changes."],
-      ["What happens to founding members when freemium arrives?", "Founding members retain access to the core features they already use. Premium features will be optional add-ons, not replacements for what was previously free."],
-      ["Why is Embir doing this differently?", "Because trust is built by delivering value first. A dating app that asks for payment before proving itself is asking for blind faith. We'd rather earn yours."],
-      ["Is my data being monetized to keep things free?", "No. Embir doesn't sell your data. Free access during launch is a strategic choice to build the community. The future model relies on optional premium features, not data resale."],
-      ["Is the free experience limited compared to future paid tiers?", "No. During launch, you have access to all product features. Future premium will add optional extras — it won't take away what you use today."],
+      ["Does Embir require a credit card?", "No. No payment method is required to follow the path to a meeting."],
+      ["Can I message without a subscription?", "Yes. Messaging between reciprocal connections is part of the free meeting path."],
+      ["Can a paid option create a match?", "No. A connection depends on compatibility and reciprocity, not a purchase."],
+      ["How does Embir fund the service?", "Clearly optional additional services can fund safety, moderation, infrastructure and product improvements."],
+      ["What is the public contract?", "Everything needed to meet someone is free. No credit card required."],
     ],
-    cta: { title: "Join for free, stay for the community", text: "Create your free profile. No credit card. No trial period. Just a dating platform that wants to earn your trust before asking for anything.", button: "Create my free profile" },
+    cta: { title: "Start without a credit card", text: "Create your profile, set your preferences and discover a compatible selection.", button: "Create my profile" },
     explore: [
       ["/freemium", "Freemium model"],
       ["/verified-dating-app", "Verified dating"],

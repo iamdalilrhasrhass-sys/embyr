@@ -112,7 +112,7 @@ export default function AdminDashboard() {
               <p className="text-xs text-gray-500 mt-1">{ambassadorStats.approved} approuvées</p>
             </div>
           </div>
-          
+
           <h3 className="text-2xl font-bold mb-6">Derniers Signalements</h3>
             {reports.length === 0 && <p className="text-gray-400">Aucun signalement.</p>}
             <div className="space-y-4">
@@ -221,7 +221,7 @@ export default function AdminDashboard() {
                   {a.status === 'PENDING' && (
                     <div className="flex gap-2 pt-2 border-t border-white/10">
                       <button onClick={async () => {
-                        if (!confirm(`Valider ${a.name || a.email} comme ambassadrice ? Cela créera un compte VIP.`)) return;
+                        if (!confirm(`Valider la candidature de ${a.name || a.email} ?`)) return;
                         await fetch("/api/admin/ambassadors/action", {
                           method: "POST",
                           headers: {"Content-Type":"application/json"},
@@ -229,7 +229,7 @@ export default function AdminDashboard() {
                         });
                         fetchData();
                       }} className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:opacity-90">
-                        ✅ Valider (créer VIP)
+                        ✅ Valider la candidature
                       </button>
                       <button onClick={async () => {
                         const reason = prompt("Raison du rejet (optionnel) :");

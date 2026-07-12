@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Embir FAQ — Free dating platform questions and answers | Embir",
   description:
-    "Frequently asked questions about Embir — the free-at-launch dating platform for every orientation. Pricing, safety, verified profiles, compatibility, and the future freemium model.",
+    "Frequently asked questions about Embir — the dating platform with free core connections for every orientation. Pricing, safety, verified profiles, compatibility, and the transparent optional services.",
   alternates: {
     canonical: "https://embir.xyz/faq",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "Is Embir really free?",
-    a: "Yes. Embir is completely free during the launch phase so the founding community can test profiles, discovery, messaging and compatibility before any paid options arrive. When the freemium model launches later, core features will remain free and premium options will be clearly marked — no hidden paywalls on essential functions.",
+    a: "Yes. Embir's core connection features are free so the founding community can test profiles, discovery, messaging and compatibility while helping shape the product. Optional services are clearly separated from core connections.",
   },
   {
     q: "Is Embir open to all orientations?",
@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     q: "How does Embir keep profiles real?",
-    a: "Embir uses a combination of selfie verification, behavioral signals, community reporting, and human moderation. Verified profiles show a badge. Suspicious accounts are flagged and reviewed. The goal is a community where you can trust that the person you are talking to is who they say they are — without turning verification into a barrier to joining.",
+    a: "Embir uses a combination of selfie verification, behavioral signals, community reporting, and reporting and blocking. Verified profiles show a badge. Suspicious accounts are flagged and reviewed. The goal is a community where you can trust that the person you are talking to is who they say they are — without turning verification into a barrier to joining.",
   },
   {
     q: "How is Embir different from other dating apps?",
@@ -41,7 +41,7 @@ const faqItems = [
   },
   {
     q: "What will the freemium model look like?",
-    a: "The future freemium model will be transparent: core discovery, messaging, and profile creation will stay free. Premium features will likely include advanced filters, visibility boosts, read receipts, and extra universe customisation — all clearly marked with a price, never hidden behind a vague 'subscribe to see who liked you' wall. The goal is to fund safety, moderation, and mobile development without exploiting loneliness.",
+    a: "Everything needed to meet someone is free. No credit card required. Optional services are clearly labelled and fund safety, moderation and product development.",
   },
   {
     q: "Is Embir available in my country?",
@@ -85,7 +85,7 @@ export default function FaqPage() {
           Embir FAQ
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
-          Clear answers about the free-at-launch dating platform built for every
+          Clear answers about the dating platform with free core connections built for every
           orientation.
         </p>
 

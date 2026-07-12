@@ -11,13 +11,13 @@
     {
       "criteria": "Verified profiles",
       "competitor": "Limited paid option",
-      "embir": "Systematic verification + human moderation",
+      "embir": "available selfie verification + reporting and blocking",
       "winner": "embir"
     },
     {
       "criteria": "Free access",
       "competitor": "Heavily limited free tier",
-      "embir": "Core features free at launch + transparent freemium",
+      "embir": "Core features core connection features are free + transparent freemium",
       "winner": "embir"
     },
     {
@@ -29,7 +29,7 @@
     {
       "criteria": "Safety & moderation",
       "competitor": "Standard reporting",
-      "embir": "Human moderation + advanced safety tools",
+      "embir": "reporting and blocking + advanced safety tools",
       "winner": "embir"
     },
     {
@@ -51,18 +51,18 @@
     },
     {
       "title": "Verified Profiles & Safety — Trust by design",
-      "content": "One of Tinder's most persistent pain points: the number of fake profiles, bots and bad actors remains high despite ongoing efforts. Photo verification exists but is optional and limited in scope.\n\nOn Embir, profile verification is systematic. Every member goes through a verification process. The platform has an active human moderation team. Reports are processed quickly and community culture is designed to be supportive and respectful from day one.\n\nThis isn't just about catching bots — it's about building a foundation of trust. When you know the profile you're looking at belongs to a real person who's also been verified, the entire dynamic of the conversation shifts. You can focus on getting to know someone instead of wondering if they're who they claim to be.",
+      "content": "One of Tinder's most persistent pain points: the number of fake profiles, bots and bad actors remains high despite ongoing efforts. Photo verification exists but is optional and limited in scope.\n\nOn Embir, selfie verification is available. Every member can request selfie verification; approved profiles display a badge. The platform has an active Reporting and blocking workflow. Reports are recorded for review and community culture is designed to be supportive and respectful from day one.\n\nThis isn't just about catching bots — it's about building a foundation of trust. When you know the profile you're looking at belongs to a real person who's also been verified, the entire dynamic of the conversation shifts. You can focus on getting to know someone instead of wondering if they're who they claim to be.",
       "highlights": [
         "Selfie verification available from day one",
-        "Human moderation team reviews every report",
-        "Zero tolerance for harassment — immediate and permanent bans"
+        "reporting workflow records every report",
+        "Zero tolerance for harassment — account restrictions after review"
       ]
     },
     {
       "title": "Free vs Freemium — What you actually get without paying",
-      "content": "Tinder's free tier is famously limited. Most interesting features — seeing who liked you, rewinds, unlimited super likes — sit behind a paywall that can cost $20-30/month. The result is a frustrating experience where you constantly hit limits.\n\nEmbir is free at launch for founding members. Core discovery and messaging features are accessible without payment. The future freemium transition is announced transparently and will only fund safety infrastructure, moderation and mobile app development — not gate essential human connection behind a credit card.\n\nThis transparency matters. A dating app should not hide its business model behind artificial limits that appear before users have even understood the community.",
+      "content": "Tinder's free tier is famously limited. Most interesting features — seeing who liked you, rewinds, unlimited super likes — sit behind a paywall that can cost $20-30/month. The result is a frustrating experience where you constantly hit limits.\n\nEmbir's core connection features are free for founding members. Core discovery and messaging features are accessible without payment. the optional-service policy is announced transparently and will only fund safety infrastructure, moderation and mobile app development — not gate essential human connection behind a credit card.\n\nThis transparency matters. A dating app should not hide its business model behind artificial limits that appear before users have even understood the community.",
       "highlights": [
-        "Full messaging and discovery free during launch phase",
+        "Full messaging and discovery free for core connections",
         "No credit card required to start connecting",
         "Freemium model disclosed upfront, no hidden catches"
       ]
@@ -86,12 +86,12 @@
       ]
     }
   ],
-  "verdict": "Choose Embir in 2026 if you want verified profiles and real human moderation, discovery based on compatibility rather than chance, an inclusive experience for every orientation, a free-at-launch app with a transparent model, and a community built on respect and authenticity.\n\nTinder remains relevant if you're primarily after sheer volume and maximum simplicity — even if connection quality often suffers.",
-  "ctaText": "Join the founding community — free during launch",
+  "verdict": "Choose Embir in 2026 if you want verified profiles and real reporting and blocking, discovery based on compatibility rather than chance, an inclusive experience for every orientation, an app with free core connections with a transparent model, and a community built on respect and authenticity.\n\nTinder remains relevant if you're primarily after sheer volume and maximum simplicity — even if connection quality often suffers.",
+  "ctaText": "Join the founding community — free for core connections",
   "faq": [
     {
       "q": "Is Embir really free?",
-      "a": "Yes. Embir is free throughout the launch phase. Core features — profile, discovery, messaging, compatibility — are accessible at no cost. The future freemium model will be transparent and fund safety, moderation and mobile apps."
+      "a": "Yes. Embir is free for everything needed to meet someone. Core features — profile, discovery, messaging, compatibility — are accessible at no cost. optional services will be transparent and fund safety, moderation and mobile apps."
     },
     {
       "q": "How does profile verification work?",
@@ -107,15 +107,15 @@
     },
     {
       "q": "What is the main difference from Tinder?",
-      "a": "The core difference is approach: Tinder is volume-first (swipe culture), Embir is compatibility-first (verified discovery). Embir also offers systematic verification, human moderation, real inclusivity across all orientations, and a transparent freemium model."
+      "a": "The core difference is approach: Tinder is volume-first (swipe culture), Embir is compatibility-first (verified discovery). Embir also offers available selfie verification, reporting and blocking, real inclusivity across all orientations, and a transparent freemium model."
     },
     {
       "q": "How do I report inappropriate behavior?",
-      "a": "Every profile and conversation has a 'Report' button. Reports go to a human moderation team, not an automated filter. Serious violations lead to immediate and permanent bans. Context is always considered."
+      "a": "Every profile and conversation has a 'Report' button. Reports go to a Reporting and blocking workflow, not an automated filter. Serious violations lead to account restrictions after review. Context is always considered."
     },
     {
-      "q": "When will Embir switch to freemium?",
-      "a": "The founding phase runs through the launch period. The freemium transition will be announced well in advance with full transparency about what changes and why. All founding members will receive priority access to premium features."
+      "q": "How do optional services work?",
+      "a": "Everything needed to meet someone is free. No credit card required. Optional services are clearly separated and cannot replace compatibility, reciprocity or consent."
     }
   ]
 }
