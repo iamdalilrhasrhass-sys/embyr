@@ -15,14 +15,35 @@ function loginKey(req: NextRequest): string {
 }
 
 function dashboardUrl(req: NextRequest, failed = false): URL {
-  return new URL(`/analytics-dashboard${failed ? "?error=1" : ""}`, req.url);
+  const publicBaseUrl =
+    process.env.FRONTEND_URL || process.env.NEXT_PUBLIC_BASE_URL || req.url;
+  return new URL(
+    `/analytics-dashboard${failed ? "?error=1" : ""}`,
+    publicBaseUrl,
+  );
+}
+
+function publicHost(req: NextRequest): string | null {
+  const publicBaseUrl = process.env.FRONTEND_URL || process.env.NEXT_PUBLIC_BASE_URL;
+  if (publicBaseUrl) {
+    try {
+      return new URL(publicBaseUrl).host;
+    } catch {
+      return null;
+    }
+  }
+  return (
+    req.headers.get("x-forwarded-host")?.split(",", 1)[0]?.trim() ||
+    req.headers.get("host") ||
+    req.nextUrl.host
+  );
 }
 
 export async function POST(req: NextRequest) {
   const origin = req.headers.get("origin");
   if (origin) {
     try {
-      if (new URL(origin).host !== req.nextUrl.host) {
+      if (new URL(origin).host !== publicHost(req)) {
         return NextResponse.json({ error: "Origine invalide" }, { status: 403 });
       }
     } catch {
