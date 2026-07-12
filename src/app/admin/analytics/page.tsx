@@ -65,7 +65,11 @@ export default async function AdminAnalytics() {
           <Metric label="Utilisateurs" value={metrics.overview.totalUsers} />
           <Metric label="Profils complétés" value={metrics.overview.completedProfiles} />
           <Metric label="DAU / WAU / MAU" value={`${metrics.overview.dau} / ${metrics.overview.wau} / ${metrics.overview.mau}`} />
-          <Metric label="Visite → inscription" value={`${metrics.overview.visitToSignup}%`} />
+          <Metric
+            label="Visite → inscription"
+            value={metrics.overview.visitToSignup === null ? "—" : `${metrics.overview.visitToSignup}%`}
+            detail={metrics.overview.visitToSignup === null ? "fenêtre first-party en cours" : undefined}
+          />
           <Metric label="Connexions réciproques" value={metrics.overview.reciprocalConnections} />
           <Metric label="Conversations" value={metrics.overview.conversationsStarted} />
           <Metric label="Rencontres proposées" value={metrics.overview.plansProposed} />

@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { getBackupHealth, getMigrationHealth } from "@/lib/deployment-health";
 import type { BackupHealth, MigrationHealth } from "@/lib/deployment-health";
+import { comparablePercentage } from "@/lib/metrics";
 
 type CountValue = bigint | number;
 const count = (value: CountValue | null | undefined) => Number(value ?? 0);
@@ -63,7 +64,7 @@ export interface AdminMetrics {
     reciprocalConnections: number;
     conversationsStarted: number;
     plansProposed: number;
-    visitToSignup: number;
+    visitToSignup: number | null;
   };
   funnel: Array<{ label: string; total: number; conversionFromPrevious: number | null }>;
   acquisition: Array<{ label: string; total: number }>;
@@ -300,7 +301,10 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
       reciprocalConnections: count(overview?.reciprocalConnections),
       conversationsStarted: count(overview?.conversationsStarted),
       plansProposed: count(overview?.plansProposed),
-      visitToSignup: conversion(signups30d, count(overview?.visitors30d)) ?? 0,
+      visitToSignup: comparablePercentage(
+        signups30d,
+        count(overview?.visitors30d),
+      ),
     },
     funnel,
     acquisition: breakdown(acquisitionRows),

@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type { AggregateReportData } from "./email-core.ts";
+import { comparablePercentage } from "./metrics.ts";
 import { prisma } from "./prisma.ts";
 
 interface AggregateCountRow {
@@ -147,7 +148,8 @@ export async function collectAggregateReport(input: {
     `,
   ]);
   const uniqueVisitors = toSafeCount(row.uniqueVisitors);
-  const visitToSignupRate = uniqueVisitors ? Math.round((toSafeCount(row.newUsers) / uniqueVisitors) * 10_000) / 100 : 0;
+  const newUsers = toSafeCount(row.newUsers);
+  const visitToSignupRate = comparablePercentage(newUsers, uniqueVisitors) ?? undefined;
   const rate = (retained: bigint | number, eligible: bigint | number) => {
     const denominator = toSafeCount(eligible);
     return denominator ? Math.round((toSafeCount(retained) / denominator) * 10_000) / 100 : 0;
@@ -155,7 +157,8 @@ export async function collectAggregateReport(input: {
   const alerts: string[] = [];
   if (toSafeCount(row.emailsFailed) > 0) alerts.push("Des emails ont échoué et nécessitent une vérification.");
   if (uniqueVisitors === 0) alerts.push("Aucun visiteur mesuré sur la période : vérifier le tracking et la disponibilité.");
-  if (visitToSignupRate < 2 && uniqueVisitors >= 20) alerts.push("La conversion visite → inscription est inférieure à 2 %.");
+  if (newUsers > uniqueVisitors) alerts.push("Le taux visite → inscription est indisponible : les données visiteurs historiques ne sont pas comparables.");
+  if (visitToSignupRate !== undefined && visitToSignupRate < 2 && uniqueVisitors >= 20) alerts.push("La conversion visite → inscription est inférieure à 2 %.");
   const recommendations = [
     uniqueVisitors < 10 ? "Renforcer une seule source d’acquisition mesurable." : "Concentrer l’acquisition sur les deux sources qui convertissent le mieux.",
     toSafeCount(row.mutualMatches) === 0 ? "Améliorer la densité compatible et l’activation des signaux." : "Mesurer le passage connexion réciproque → conversation.",
@@ -166,7 +169,7 @@ export async function collectAggregateReport(input: {
     cadence: input.cadence,
     periodStart: input.periodStart.toISOString(),
     periodEnd: input.periodEnd.toISOString(),
-    newUsers: toSafeCount(row.newUsers),
+    newUsers,
     activePresenceSignals: toSafeCount(row.activePresenceSignals),
     mutualMatches: toSafeCount(row.mutualMatches),
     messagesSent: toSafeCount(row.messagesSent),

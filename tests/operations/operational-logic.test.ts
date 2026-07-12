@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { isWithinQuietHours } from "../../src/lib/email-outbox.ts";
 import { detectAggregateAnomalies } from "../../src/lib/job-maintenance.ts";
+import { comparablePercentage } from "../../src/lib/metrics.ts";
 import type { AggregateReportData } from "../../src/lib/email-core.ts";
 
 const baseReport: AggregateReportData = {
@@ -18,6 +19,12 @@ const baseReport: AggregateReportData = {
   emailsPending: 0,
   emailsFailed: 0,
 };
+
+test("conversion is unavailable when visitor and signup populations are not comparable", () => {
+  assert.equal(comparablePercentage(12, 1), null);
+  assert.equal(comparablePercentage(1, 0), null);
+  assert.equal(comparablePercentage(2, 20), 10);
+});
 
 test("quiet hours work across midnight in the recipient timezone", () => {
   assert.equal(
