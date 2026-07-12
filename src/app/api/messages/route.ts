@@ -1,139 +1,140 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { verifyToken } from "@/lib/auth";
-import { cookies } from "next/headers";
+import { authorizeConversation, canonicalPair, findConversationForConnection, MESSAGEABLE_STATES } from "@/lib/connection-policy";
 import { checkMessageRateLimit } from "@/lib/rate-limit";
 import { withApiLogging } from "@/lib/api-logger";
 
-async function _GET(request: NextRequest) {
-  const token = (await cookies()).get("token")?.value;
-  if (!token) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+const safeParticipant = {
+  id: true,
+  profile: { select: { displayName: true, username: true, profilePhotoUrl: true } },
+} as const;
 
-  const decoded = verifyToken(token);
-  if (!decoded) return NextResponse.json({ error: "Token invalide" }, { status: 401 });
-
+async function handleGet() {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   try {
-    // Get all conversations for the user
-    const conversations = await prisma.conversation.findMany({
-      where: {
-        OR: [
-          { user1Id: decoded.userId },
-          { user2Id: decoded.userId }
-        ]
-      },
-      include: {
-        user1: { include: { profile: true } },
-        user2: { include: { profile: true } },
-        messages: {
-          orderBy: { createdAt: 'asc' },
-        }
-      },
-      orderBy: { updatedAt: 'desc' }
+    const [conversations, blocks, mutualMatches] = await Promise.all([
+      prisma.conversation.findMany({
+        where: { OR: [{ user1Id: auth.id }, { user2Id: auth.id }] },
+        select: {
+          id: true,
+          user1Id: true,
+          user2Id: true,
+          matchId: true,
+          user1: { select: safeParticipant },
+          user2: { select: safeParticipant },
+          match: { select: { id: true, status: true, state: true } },
+          messages: {
+            where: { status: { not: "DELETED" } },
+            orderBy: { createdAt: "asc" },
+            take: 100,
+            select: {
+              id: true,
+              senderId: true,
+              receiverId: true,
+              content: true,
+              type: true,
+              status: true,
+              durationSeconds: true,
+              createdAt: true,
+              readAt: true,
+            },
+          },
+        },
+        orderBy: { updatedAt: "desc" },
+        take: 25,
+      }),
+      prisma.block.findMany({
+        where: { OR: [{ blockerId: auth.id }, { blockedId: auth.id }] },
+        select: { blockerId: true, blockedId: true },
+      }),
+      prisma.match.findMany({
+        where: { status: "mutual", OR: [{ user1Id: auth.id }, { user2Id: auth.id }] },
+        select: { id: true, user1Id: true, user2Id: true, status: true, state: true },
+      }),
+    ]);
+    const blockedIds = new Set(blocks.map((block) => block.blockerId === auth.id ? block.blockedId : block.blockerId));
+    const mutualByPair = new Map(mutualMatches.map((match) => [`${match.user1Id}:${match.user2Id}`, match]));
+    const safe = conversations.filter((conversation) => {
+      const otherId = conversation.user1Id === auth.id ? conversation.user2Id : conversation.user1Id;
+      if (blockedIds.has(otherId)) return false;
+      const [user1Id, user2Id] = canonicalPair(conversation.user1Id, conversation.user2Id);
+      const match = conversation.match ?? mutualByPair.get(`${user1Id}:${user2Id}`);
+      if (!match || match.status !== "mutual") return false;
+      return !conversation.matchId || MESSAGEABLE_STATES.includes(match.state as typeof MESSAGEABLE_STATES[number]);
     });
-
-    return NextResponse.json(conversations);
+    return NextResponse.json(safe);
   } catch (error) {
     console.error("Fetch messages error:", error);
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 }
 
-async function _POST(request: NextRequest) {
-  const token = (await cookies()).get("token")?.value;
-  if (!token) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
-
-  const decoded = verifyToken(token);
-  if (!decoded) return NextResponse.json({ error: "Token invalide" }, { status: 401 });
-
-  try {
-    const { receiverId, content, type } = await request.json();
-    const messageType = type || "text";
-
-    if (!receiverId || !content) {
-      return NextResponse.json({ error: "Contenu ou destinataire manquant" }, { status: 400 });
-    }
-
-    // Vérifier que le destinataire existe
-    const receiverExists = await prisma.user.findUnique({ where: { id: receiverId }, select: { id: true } });
-    if (!receiverExists) {
-      return NextResponse.json({ error: "Destinataire introuvable" }, { status: 404 });
-    }
-
-    // ── Anti-spam rate limit check ─────────────────────────────────
-    const rateCheck = await checkMessageRateLimit(
-      decoded.userId,
-      receiverId,
-      content,
-      messageType,
-    );
-
-    if (!rateCheck.allowed) {
-      return NextResponse.json(
-        {
-          error: rateCheck.reason,
-          retryAfter: rateCheck.retryAfter,
-        },
-        {
-          status: 429,
-          headers: rateCheck.retryAfter
-            ? { "Retry-After": String(rateCheck.retryAfter) }
-            : undefined,
-        },
-      );
-    }
-
-    // ── Block check ────────────────────────────────────────────────
-    const block = await prisma.block.findFirst({
-      where: { blockerId: receiverId, blockedId: decoded.userId },
-    });
-    if (block) {
-      return NextResponse.json({ error: "Vous ne pouvez pas envoyer de message à cet utilisateur" }, { status: 403 });
-    }
-
-    // Find or create conversation
-    let conversation = await prisma.conversation.findFirst({
-      where: {
-        OR: [
-          { user1Id: decoded.userId, user2Id: receiverId },
-          { user1Id: receiverId, user2Id: decoded.userId }
-        ]
-      }
-    });
-
-    const isNewConversation = !conversation;
-
-    if (!conversation) {
-      conversation = await prisma.conversation.create({
-        data: {
-          user1Id: decoded.userId,
-          user2Id: receiverId,
-        }
-      });
-    }
-
-    // Create Message
-    const message = await prisma.message.create({
-      data: {
-        conversationId: conversation.id,
-        senderId: decoded.userId,
-        receiverId,
-        content,
-        type: messageType,
-      }
-    });
-
-    // Update conversation timestamp
-    await prisma.conversation.update({
-      where: { id: conversation.id },
-      data: { lastMessageAt: new Date(), updatedAt: new Date() }
-    });
-
-    return NextResponse.json({ success: true, message, isNewConversation });
-  } catch (error) {
-    console.error("Send message error:", error);
-    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
+async function handlePost(request: NextRequest) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+  const body = await request.json().catch(() => null) as Record<string, unknown> | null;
+  if (typeof body?.content !== "string" || !body.content.trim() || body.content.trim().length > 2000) {
+    return NextResponse.json({ error: "Message requis (2 000 caractères maximum)" }, { status: 400 });
   }
+
+  const access = typeof body.conversationId === "string"
+    ? await authorizeConversation(prisma, auth.id, body.conversationId)
+    : typeof body.receiverId === "string"
+      ? await findConversationForConnection(prisma, auth.id, body.receiverId)
+      : { ok: false as const, status: 400 as const, error: "Conversation requise" };
+  if (!access.ok) return NextResponse.json({ error: access.error }, { status: access.status });
+  if (typeof body.receiverId === "string" && body.receiverId !== access.value.receiverId) {
+    return NextResponse.json({ error: "Destinataire invalide" }, { status: 403 });
+  }
+  const content = body.content.trim();
+  const rateCheck = await checkMessageRateLimit(auth.id, access.value.receiverId, content, "text");
+  if (!rateCheck.allowed) {
+    return NextResponse.json(
+      { error: rateCheck.reason, retryAfter: rateCheck.retryAfter },
+      { status: 429, headers: rateCheck.retryAfter ? { "Retry-After": String(rateCheck.retryAfter) } : undefined },
+    );
+  }
+  const now = new Date();
+  const message = await prisma.$transaction(async (tx) => {
+    const created = await tx.message.create({
+      data: {
+        conversationId: access.value.conversation.id,
+        senderId: auth.id,
+        receiverId: access.value.receiverId,
+        content,
+        type: "text",
+      },
+      select: { id: true, senderId: true, receiverId: true, content: true, type: true, status: true, createdAt: true },
+    });
+    await tx.conversation.update({ where: { id: access.value.conversation.id }, data: { lastMessageAt: now } });
+    await tx.analyticsEvent.create({
+      data: {
+        eventId: crypto.randomUUID(),
+        eventName: "message_sent",
+        eventVersion: 1,
+        userId: auth.id,
+        occurredAt: now,
+        properties: { matchId: access.value.matchId, conversationId: access.value.conversation.id, messageType: "text" },
+      },
+    });
+    await tx.notification.upsert({
+      where: { dedupeKey: `message:${created.id}` },
+      update: {},
+      create: {
+        userId: access.value.receiverId,
+        type: "new_message",
+        title: "Nouveau message",
+        body: "Une connexion active t’a écrit.",
+        link: "/messages",
+        dedupeKey: `message:${created.id}`,
+      },
+    });
+    return created;
+  });
+  return NextResponse.json({ success: true, message, isNewConversation: false });
 }
 
-export const GET = withApiLogging(_GET);
-export const POST = withApiLogging(_POST);
+export const GET = withApiLogging(handleGet);
+export const POST = withApiLogging(handlePost);
