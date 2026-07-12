@@ -126,4 +126,10 @@ test("client-awarded achievements fail closed", async () => {
   assert.match(source, /ACHIEVEMENTS_DISABLED/);
   assert.match(source, /status:\s*410/);
   assert.doesNotMatch(source, /userId|prisma\.achievement\.create/);
+
+  const publicPages = await Promise.all([
+    readFile("src/app/achievements/page.tsx", "utf8"),
+    readFile("src/app/[locale]/achievements/page.tsx", "utf8"),
+  ]);
+  for (const page of publicPages) assert.match(page, /notFound\(\)/);
 });
