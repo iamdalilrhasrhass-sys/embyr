@@ -28,7 +28,7 @@ export default function SchemaOrg() {
       url: "https://embir.xyz",
       operatingSystem: "Web",
       applicationCategory: "DatingApplication",
-      description: "Embir is a free-at-launch international dating platform available worldwide. Built for every orientation with reciprocal compatibility, personal universes, and safety tools.",
+      description: "Embir is an international dating platform with free core connections available worldwide. Built for every orientation with reciprocal compatibility, personal universes, and safety tools.",
       inLanguage: ["en", "fr"],
       areaServed: "Worldwide",
       audience: {
@@ -39,7 +39,7 @@ export default function SchemaOrg() {
         "@type": "Offer",
         price: "0",
         priceCurrency: "EUR",
-        description: "Free at launch. Future freemium model.",
+        description: "core connection features are free. transparent optional services.",
       },
       author: {
         "@type": "Organization",

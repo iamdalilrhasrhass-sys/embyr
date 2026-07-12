@@ -2,7 +2,7 @@
 
 ## Stack
 - **Frontend:** Next.js 16 (App Router), React 19, TypeScript
-- **i18n:** next-intl (25 languages)
+- **i18n:** next-intl (English and French public pages)
 - **Database:** PostgreSQL (localhost), Prisma ORM
 - **Auth:** Custom (SMS verification via Twilio, JWT sessions)
 - **Payments:** Stripe

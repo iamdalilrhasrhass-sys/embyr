@@ -48,6 +48,9 @@ export default async function UniverseOfTheDayPage() {
     const profiles = await prisma.profile.findMany({
       where: {
         publicVisibility: true,
+        visibilityStatus: "PUBLIC",
+        moderationState: "ACTIVE",
+        user: { is: { bannedAt: null, deletedAt: null } },
       },
       select: {
         username: true,

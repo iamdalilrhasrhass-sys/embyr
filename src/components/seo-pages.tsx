@@ -52,8 +52,8 @@ function faqItems(page: ResolvedSeoPage): FaqItem[] {
         a: page.angle ?? "Cette page repond a une intention de recherche precise avec un contenu utile, localise et relie aux autres pages Embir.",
       },
       {
-        q: "Embir est-il gratuit au lancement ?",
-        a: "Oui. Embir est gratuit pendant la phase de lancement afin que la communaute fondatrice puisse tester les profils, la decouverte, les messages et la compatibilite avant l'arrivee du futur freemium.",
+        q: "Embir est-il gratuit pour les connexions essentielles ?",
+        a: "Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.",
       },
       {
         q: "Embir est-il fait seulement pour une orientation ?",
@@ -61,7 +61,7 @@ function faqItems(page: ResolvedSeoPage): FaqItem[] {
       },
       {
         q: "Comment Embir limite les faux profils ?",
-        a: "La confiance repose sur des profils verifies, des signalements visibles, une moderation humaine et des choix produit qui privilegient la qualite de la communaute plutot que le volume artificiel.",
+        a: "La vérification selfie facultative ajoute un badge visible après approbation. Le signalement et le blocage sont disponibles ; aucun outil ne garantit la sécurité.",
       },
       {
         q: "Quelle est la difference avec les apps classiques ?",
@@ -76,8 +76,8 @@ function faqItems(page: ResolvedSeoPage): FaqItem[] {
       a: page.angle ?? "This page answers a specific search intent with useful, localized content and links to related Embir pages.",
     },
     {
-      q: "Is Embir free at launch?",
-      a: "Yes. Embir is free during the launch phase so founding members can test profiles, discovery, messaging and compatibility before the future freemium model arrives.",
+      q: "Are Embir's core connection features free?",
+      a: "Everything needed to meet someone is free. No credit card required.",
     },
     {
       q: "Is Embir only for one orientation?",
@@ -85,7 +85,7 @@ function faqItems(page: ResolvedSeoPage): FaqItem[] {
     },
     {
       q: "How does Embir reduce fake profiles?",
-      a: "Trust is built through verified profiles, visible reporting, human moderation and product decisions that prioritize community quality over artificial volume.",
+      a: "Optional selfie verification adds a visible badge after approval. Reporting and blocking are available; no tool guarantees safety.",
     },
     {
       q: "How is Embir different from classic dating apps?",
@@ -102,7 +102,7 @@ function internalLinks(locale: "en" | "fr") {
         { href: "/fr/alternative-tinder", label: "Alternative Tinder" },
         { href: "/fr/alternative-grindr", label: "Alternative Grindr" },
         { href: "/fr/rencontre-lgbt", label: "Rencontre LGBT" },
-        { href: "/fr/profils-verifies", label: "Profils verifies" },
+        { href: "/fr/profils-verifies", label: "badge selfie facultatif" },
         { href: "/fr/suisse", label: "Rencontre Suisse" },
         { href: "/fr/blog/comment-faire-un-bon-profil-sur-une-application-de-rencontre", label: "Guide profil" },
         { href: "/auth/register", label: "Rejoindre la communaute" },
@@ -113,7 +113,7 @@ function internalLinks(locale: "en" | "fr") {
         { href: "/us/tinder-alternative", label: "Tinder alternative" },
         { href: "/us/grindr-alternative", label: "Grindr alternative" },
         { href: "/us/lgbtq-dating-app", label: "LGBTQ dating" },
-        { href: "/us/verified-dating-app", label: "Verified profiles" },
+        { href: "/us/verified-dating-app", label: "optional selfie badge" },
         { href: "/switzerland", label: "Switzerland dating" },
         { href: "/blog/how-to-write-a-good-dating-profile", label: "Profile guide" },
         { href: "/auth/register", label: "Join the founding community" },
@@ -153,7 +153,7 @@ export function JsonLd({ page }: { page: ResolvedSeoPage }) {
     author: { "@type": "Organization", name: page.locale === "fr" ? "Equipe Embir" : "Embir Team" },
     dateModified: "2026-06-15",
     areaServed: "Worldwide",
-    about: ["dating platform", "verified profiles", "compatibility", "preferences", "safety", "freemium"],
+    about: ["dating platform", "optional selfie badge", "compatibility", "preferences", "safety", "freemium"],
   }, {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -212,8 +212,8 @@ export function CTASection({ locale }: { locale: "en" | "fr" }) {
       </h2>
       <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
         {locale === "fr"
-          ? "Cree ton profil gratuitement pendant le lancement et aide Embir a construire une plateforme plus saine pour toutes orientations."
-          : "Create your profile for free during launch and help Embir build a healthier platform for every orientation."}
+          ? "Cree ton profil gratuitement, sans carte bancaire et aide Embir a construire une plateforme plus saine pour toutes orientations."
+          : "Create your profile without a credit card and help Embir build a healthier platform for every orientation."}
       </p>
       <Link href="/auth/register" prefetch={false} className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">
         {locale === "fr" ? "Creer mon profil gratuit" : "Create my free profile"}
@@ -227,12 +227,12 @@ export function FreemiumExplainer({ locale }: { locale: "en" | "fr" }) {
     <section className="mt-12 grid gap-4 md:grid-cols-2">
       {(locale === "fr"
         ? [
-            ["Gratuit au lancement", "Les fonctions essentielles restent ouvertes pendant la phase fondatrice : profil, decouverte, messages et compatibilite."],
-            ["Freemium futur transparent", "Le futur freemium financera l'app mobile, la securite, la moderation, les profils verifies et l'amelioration continue."],
+            ["gratuit pour les connexions essentielles", "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."],
+            ["Freemium futur transparent", "Le futur freemium financera l'app mobile, la securite, la moderation, les badge selfie facultatif et l'amelioration continue."],
           ]
         : [
-            ["Free at launch", "Core features stay open during the founding phase: profile, discovery, messages and compatibility."],
-            ["Future transparent freemium", "Future freemium funds the mobile app, safety, moderation, verified profiles and continuous improvement."],
+            ["core connection features are free", "Everything needed to meet someone is free. No credit card required."],
+            ["Future transparent freemium", "transparent optional services funds the mobile app, safety, moderation, optional selfie badge and continuous improvement."],
           ]).map(([title, text]) => (
         <article key={title} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
           <h3 className="font-serif text-xl text-white">{title}</h3>
@@ -254,8 +254,8 @@ export function FoundingCommunityBlock({ locale }: { locale: "en" | "fr" }) {
       </h2>
       <p className="mt-4 text-sm leading-relaxed text-white/45">
         {locale === "fr"
-          ? "Embir n'est pas seulement une alternative a Grindr. C'est une plateforme de rencontre pour tous, pensee autour des orientations, preferences, profils verifies et conversations plus saines."
-          : "Embir is not just a Grindr alternative. It is a dating platform for everyone, designed around orientations, preferences, verified profiles and healthier conversations."}
+          ? "Embir n'est pas seulement une alternative a Grindr. C'est une plateforme de rencontre pour tous, pensee autour des orientations, preferences, badge selfie facultatif et conversations plus saines."
+          : "Embir is not just a Grindr alternative. It is a dating platform for everyone, designed around orientations, preferences, optional selfie badge and healthier conversations."}
       </p>
     </section>
   );
@@ -269,7 +269,7 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
       <article className="mx-auto max-w-5xl">
         <Breadcrumbs items={breadcrumbs} />
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">
-          {page.market ? page.market.toUpperCase() : sectionLabel(page).toUpperCase()} · {page.locale === "fr" ? "Gratuit au lancement" : "Free at launch"}
+          {page.market ? page.market.toUpperCase() : sectionLabel(page).toUpperCase()} · {page.locale === "fr" ? "gratuit pour les connexions essentielles" : "core connection features are free"}
         </p>
         <h1 className="mt-5 max-w-4xl font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">
           {page.h1}
@@ -299,10 +299,8 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
 function EditorialSections({ page }: { page: ResolvedSeoPage }) {
   const topic = page.topic ?? page.h1;
   const place = page.city ?? (page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? (page.locale === "fr" ? "la Suisse" : "Switzerland") : page.locale === "fr" ? "la France" : "the regions Embir serves");
-  
-  const cityCity = page.city ?? "";
-  const marketLabel = page.market === "france" ? "France" : page.market === "usa" ? "the United States" : page.market === "uk" ? "the United Kingdom" : page.market === "switzerland" ? "Switzerland" : "";
 
+  const cityCity = page.city ?? "";
   if (page.locale === "fr") {
     return (
       <section className="mt-12 space-y-10 text-base leading-relaxed text-white/52">
@@ -310,16 +308,16 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
           <h2 className="font-serif text-3xl text-white">Pourquoi cette page existe</h2>
           <p className="mt-4">{page.angle}</p>
           <p className="mt-4">
-            Le marche de la rencontre est sature par des pages qui repètent les memes promesses : plus de matchs, plus vite, plus proche. Cette page prend le probleme autrement. Elle explique ce que l&apos;utilisateur cherche vraiment autour de {topic} : de la confiance, une communaute reelle, des profils verifies, des preferences lisibles et une experience qui ne force pas l&apos;abonnement avant meme d&apos;avoir compris le produit.
+            Le marche de la rencontre est sature par des pages qui repètent les memes promesses : plus de matchs, plus vite, plus proche. Cette page prend le probleme autrement. Elle explique ce que l&apos;utilisateur cherche vraiment autour de {topic} : de la confiance, une communaute reelle, des badge selfie facultatif, des preferences lisibles et une experience qui ne force pas l&apos;abonnement avant meme d&apos;avoir compris le produit.
           </p>
         </div>
         <div>
           <h2 className="font-serif text-3xl text-white">Comment Embir fonctionne</h2>
           <p className="mt-4">
-            Embir part de quatre signaux simples : orientation, preferences, intention et compatibilite. Le but n&apos;est pas de remplacer le jugement humain par un score opaque, mais de donner assez de contexte pour eviter les conversations sans rapport. Les profils verifies, les signalements et la moderation rendent la decouverte plus saine, surtout pendant le lancement ou chaque membre compte pour creer la bonne densite locale.
+            Embir part de quatre signaux simples : orientation, preferences, intention et compatibilite. Le but n&apos;est pas de remplacer le jugement humain par un score opaque, mais de donner assez de contexte pour eviter les conversations sans rapport. Le badge selfie facultatif, le signalement et le blocage sont disponibles ; aucun outil ne garantit la sécurité ni la densité locale.
           </p>
           <p className="mt-4">
-            La plateforme reste gratuite au lancement. Le futur freemium servira a financer l&apos;application mobile, l&apos;infrastructure, la securite, la verification et la moderation. Cette transparence est importante : une app de rencontre ne devrait pas cacher son modele economique derriere des limites artificielles qui arrivent trop tot.
+            La plateforme reste gratuite pour les connexions essentielles. Le futur freemium servira a financer l&apos;application mobile, l&apos;infrastructure, la securite, la verification et la moderation. Cette transparence est importante : une app de rencontre ne devrait pas cacher son modele economique derriere des limites artificielles qui arrivent trop tot.
           </p>
         </div>
         <div>
@@ -331,7 +329,7 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
         <div>
           <h2 className="font-serif text-3xl text-white">Difference avec les apps classiques</h2>
           <p className="mt-4">
-            Les apps classiques optimisent souvent le temps passe dans le flux : swipe infini, distance immediate, options essentielles bloquees, notifications de relance. Embir cherche plutot a reduire le bruit. La difference se voit dans les pages locales, les comparatifs, les guides et les pages produit : chaque contenu doit aider l&apos;utilisateur a comprendre le fonctionnement, le niveau de confiance et le modele gratuit au lancement avant de creer un profil.
+            Les apps classiques optimisent souvent le temps passe dans le flux : swipe infini, distance immediate, options essentielles bloquees, notifications de relance. Embir cherche plutot a reduire le bruit. La difference se voit dans les pages locales, les comparatifs, les guides et les pages produit : chaque contenu doit aider l&apos;utilisateur a comprendre le fonctionnement, le niveau de confiance et le modele gratuit pour les connexions essentielles avant de creer un profil.
           </p>
         </div>
         {page.city && (
@@ -339,23 +337,23 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
             <div>
               <h2 className="font-serif text-3xl text-white">Rencontre a {cityCity}</h2>
               <p className="mt-4">
-                {cityCity} est une ville ou la vie sociale est riche, et les rencontres en ligne y tiennent une place importante. Que vous habitiez au coeur de la ville ou en banlieue, Embir vous permet de rencontrer des personnes qui partagent vos centres d&apos;interet et vos valeurs, sans le bruit des apps classiques. Les profils verifies, les preferences d&apos;orientation et la compatibilite sont au coeur de l&apos;experience.
+                Embir est accessible depuis {cityCity}. La decouverte applique les preferences, les intentions et l&apos;orientation declarees dans les deux sens. Une demande de verification selfie approuvee ajoute un badge visible, sans garantir l&apos;identite complete ni l&apos;absence de risque.
               </p>
               <p className="mt-4">
-                Les habitants de {cityCity} cherchent souvent des relations plus authentiques que ce que proposent les applications traditionnelles. Embir repond a cette attente en mettant l&apos;accent sur la qualite des profils, la transparence des intentions et le respect des preferences de chacun. Pendant la phase de lancement, tout est gratuit : messagerie illimitee, profils verifies, decouverte par compatibilite.
+                La densite reelle depend des profils presents a {cityCity} et des criteres choisis. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.
               </p>
               <p className="mt-4">
-                Rejoindre la communaute fondatrice a {cityCity}, c&apos;est participer a la construction d&apos;une plateforme de rencontre plus saine, des le debut. Les premiers membres aident a definir la culture locale de la communaute et beneficient d&apos;un acces prioritaire aux futures fonctionnalites premium. C&apos;est le moment ideal pour decouvrir Embir et contribuer a son developpement.
+                Les inscriptions sont ouvertes a {cityCity}. Embir ne publie pas de compteur local ni de promesse de densite sans donnees mesurees suffisantes.
               </p>
             </div>
             <div>
               <h2 className="font-serif text-3xl text-white">Ce qui rend Embir different pour {cityCity}</h2>
               <ul className="mt-4 list-disc space-y-2 pl-6">
-                <li><strong>Gratuit au lancement :</strong> pas d&apos;abonnement, pas de paywall cache. Toutes les fonctions essentielles sont accessibles sans frais.</li>
-                <li><strong>Profils verifies :</strong> chaque membre peut verifier son profil par selfie. Le badge verifie cree un environnement de confiance.</li>
+                <li><strong>gratuit pour les connexions essentielles :</strong> pas d&apos;abonnement, pas de paywall cache. Toutes les fonctions essentielles sont accessibles sans frais.</li>
+                <li><strong>Badge selfie facultatif :</strong> une demande approuvee ajoute un signal visible, pas une garantie de securite.</li>
                 <li><strong>Compatibilite avant distance :</strong> les preferences et l&apos;orientation comptent plus que la proximite geographique immediate.</li>
-                <li><strong>Moderation humaine :</strong> chaque signalement est examine par une equipe reelle, pas par un algorithme automatique.</li>
-                <li><strong>Communautaire :</strong> la phase de lancement est l&apos;occasion de rejoindre une communaute fondatrice qui construit la culture de la plateforme.</li>
+                <li><strong>Signalement et blocage :</strong> le signalement est enregistre pour examen et le blocage prend effet immediatement.</li>
+                <li><strong>Communautaire :</strong> l&apos;experience de connexion est l&apos;occasion de rejoindre une communaute fondatrice qui construit la culture de la plateforme.</li>
               </ul>
             </div>
           </>
@@ -376,28 +374,28 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
         <h2 className="font-serif text-3xl text-white">Why this page exists</h2>
         <p className="mt-4">{page.angle}</p>
         <p className="mt-4">
-          Dating search results are crowded with pages that repeat the same promise: more matches, faster, nearby. This page takes a clearer angle around {topic}. It explains what people actually need before joining a new dating platform: trust, real profiles, verified safety signals, readable preferences and a launch model that does not force a subscription before the product has earned attention.
+          This page explains Embir&apos;s current product around {topic}: declared reciprocal preferences, readable intentions, an optional selfie badge, reporting, blocking, and the public core-connection contract.
         </p>
       </div>
       <div>
         <h2 className="font-serif text-3xl text-white">How Embir works</h2>
         <p className="mt-4">
-          Embir starts from four signals: orientation, preferences, intent and compatibility. The goal is not to replace human judgment with an opaque score, but to provide enough context to avoid irrelevant conversations. Verified profiles, reporting and moderation make discovery healthier, especially during launch when every founding member shapes the culture of the platform.
+          Embir starts from orientation, preferences, intent and compatibility. The engine applies declared criteria in both directions without presenting an invented psychological score. Reporting and blocking are available; no tool guarantees safety.
         </p>
         <p className="mt-4">
-          The platform is free at launch. The future freemium model will fund the mobile app, infrastructure, safety, verification and moderation. That transparency matters because a dating app should not hide its business model behind artificial limits that appear before users understand the community.
+          The platform&apos;s core connection features are free. Future optional services may fund the mobile app, infrastructure, safety, verification and moderation. That transparency matters because a dating app should not hide its business model behind artificial limits that appear before users understand the community.
         </p>
       </div>
       <div>
         <h2 className="font-serif text-3xl text-white">Who it is for</h2>
         <p className="mt-4">
-          Embir is for adults who want clearer dating, whether the search is straight, gay, lesbian, bi, trans, queer, serious, open-ended or still being explored. In {place}, the goal is not to inflate profile volume artificially, but to build a founding community where profiles are real, intent is easier to read and safety is visible from the beginning.
+          Embir is for adults across orientations and intentions. In {place}, real availability depends on the profiles currently present and the criteria selected; Embir does not fabricate local density.
         </p>
       </div>
       <div>
         <h2 className="font-serif text-3xl text-white">Difference from classic apps</h2>
         <p className="mt-4">
-          Classic dating apps often optimize time in the feed: endless swiping, distance-first ranking, essential features locked away and constant reactivation prompts. Embir is designed to reduce that noise. The difference appears across local pages, comparison pages, guides and product pages: each page should help a user understand the product, the trust model and the free-at-launch promise before creating a profile.
+          Classic dating apps often optimize time in the feed: endless swiping, distance-first ranking, essential features locked away and constant reactivation prompts. Embir is designed to reduce that noise. The difference appears across local pages, comparison pages, guides and product pages: each page should help a user understand the product, the trust model and the free-core-connection promise before creating a profile.
         </p>
       </div>
       {page.city && (
@@ -405,23 +403,23 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
           <div>
             <h2 className="font-serif text-3xl text-white">Dating in {cityCity}</h2>
             <p className="mt-4">
-              {cityCity} has a vibrant dating scene, but it also comes with the same challenges that dating app users face everywhere: fake profiles, endless swiping, subscription fatigue and conversations that don&apos;t go anywhere. Embir was designed with these specific challenges in mind, offering a platform where trust is built through verified profiles, compatibility signals and human moderation instead of opaque algorithms.
+              Embir is accessible from {cityCity}. Discovery applies declared preferences and intentions in both directions. Optional selfie verification can add a visible badge after approval, but no badge proves full identity or removes every risk.
             </p>
             <p className="mt-4">
-              What makes Embir different in {cityCity} is the focus on real connections over volume. Instead of showing hundreds of nearby profiles to swipe through, Embir surfaces people who match your orientation preferences, relationship intentions and lifestyle compatibility. During the launch phase in {cityCity}, every core feature is free — unlimited messaging, selfie verification, preference filters and safety tools. No paywall, no trial period, no credit card required.
+              Embir uses a short selection instead of an infinite feed. Everything needed to meet someone is free. No credit card required.
             </p>
             <p className="mt-4">
-              The founding community in {cityCity} is growing. Early members who join during the launch phase help shape the local culture of the platform. They also receive priority access to premium features when those arrive. This is a unique opportunity to be part of something built differently — a dating platform that puts community quality and user trust ahead of growth metrics and engagement loops.
+              Membership is open in {cityCity}. Real profile density varies by location and criteria, and Embir does not publish unsupported local counters.
             </p>
           </div>
           <div>
             <h2 className="font-serif text-3xl text-white">Why Embir works in {cityCity}</h2>
             <ul className="mt-4 list-disc space-y-2 pl-6">
-              <li><strong>Free at launch:</strong> no subscription needed, no hidden paywalls. All core features accessible at no cost during the founding phase.</li>
-              <li><strong>Verified profiles:</strong> every member can verify their identity through a selfie check. The verified badge creates a safer environment for everyone.</li>
+              <li><strong>core connection features are free:</strong> no subscription needed, no hidden paywalls. Everything needed to meet someone is free. No credit card required.</li>
+              <li><strong>Optional selfie badge:</strong> an approved request adds a visible signal, not a safety guarantee.</li>
               <li><strong>Compatibility before proximity:</strong> preferences and orientation matter more than how close someone happens to be right now.</li>
-              <li><strong>Human moderation:</strong> every report is reviewed by a real team member, not an automated filter. Context matters.</li>
-              <li><strong>Founding community:</strong> the launch phase is the best moment to join. Early members shape the platform culture and get priority access to future features.</li>
+              <li><strong>Reporting and blocking:</strong> reports are recorded for review and blocking takes effect immediately for the member who uses it.</li>
+              <li><strong>Measured availability:</strong> results depend on profiles actually present around the selected criteria.</li>
             </ul>
           </div>
         </>
@@ -434,16 +432,16 @@ export function SeoCityPage({ page }: { page: ResolvedSeoPage }) {
   const city = page.city ?? "this city";
   const localizedIntro =
     page.locale === "fr"
-      ? `A ${city}, Embir aide les personnes majeures a chercher une rencontre plus claire : rencontre serieuse, rencontre LGBTQ+, rencontre gay, rencontre inclusive, ou simple envie de discuter avec des profils verifies. La plateforme reste gratuite au lancement pour permettre a la communaute fondatrice de se former avant le futur modele freemium.`
-      : `In ${city}, Embir helps adults search for clearer dating: serious dating, LGBTQ dating, gay dating, inclusive dating, or simply better conversations with verified profiles. The platform is free at launch so a founding community can form before the future freemium model.`;
+      ? `A ${city}, Embir aide les personnes majeures a chercher une rencontre plus claire : rencontre serieuse, rencontre LGBTQ+, rencontre gay, rencontre inclusive, ou simple envie de discuter avec des badge selfie facultatif. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.`
+      : `In ${city}, Embir helps adults search for clearer dating: serious dating, LGBTQ dating, gay dating, inclusive dating, or simply better conversations with optional selfie badge. The platform's core connection features are free so a founding community can form with a transparent optional-services model.`;
   return (
     <SeoPageLayout page={page}>
       <section className="mt-12 space-y-5 text-base leading-relaxed text-white/50">
         <p>{localizedIntro}</p>
         <p>
           {page.locale === "fr"
-            ? "Embir combine orientation, preferences, compatibilite, securite et profils verifies afin que la decouverte ne depende pas seulement de la distance ou du volume de swipe. Chaque personne peut exprimer son intention, filtrer ce qui compte vraiment et rejoindre une communaute qui place le respect avant l'acceleration."
-            : "Embir combines orientation, preferences, compatibility, safety and verified profiles so discovery does not depend only on distance or swipe volume. People can express intent, filter what matters, and join a community that values respect before acceleration."}
+            ? "Embir combine orientation, preferences, compatibilite, securite et badge selfie facultatif afin que la decouverte ne depende pas seulement de la distance ou du volume de swipe. Chaque personne peut exprimer son intention, filtrer ce qui compte vraiment et rejoindre une communaute qui place le respect avant l'acceleration."
+            : "Embir combines orientation, preferences, compatibility, safety and optional selfie badge so discovery does not depend only on distance or swipe volume. People can express intent, filter what matters, and join a community that values respect before acceleration."}
         </p>
       </section>
       <section className="mt-12 grid gap-4 md:grid-cols-3">
@@ -486,8 +484,8 @@ export function SeoGuidePage({ page }: { page: ResolvedSeoPage }) {
           <h2 className="font-serif text-3xl text-white">{page.locale === "fr" ? "La methode Embir" : "The Embir method"}</h2>
           <p className="mt-4">
             {page.locale === "fr"
-              ? "Embir place l'orientation, les preferences, la compatibilite, les profils verifies et la securite au coeur du produit. Le lancement est gratuit pour permettre aux premiers membres de tester l'experience essentielle avant l'arrivee des futures options premium."
-              : "Embir puts orientation, preferences, compatibility, verified profiles and safety into the product foundation. The launch is free so early members can test the core experience before premium features arrive."}
+              ? "Embir place l'orientation, les preferences, la compatibilite, les badge selfie facultatif et la securite au coeur du produit. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."
+              : "Embir puts orientation, preferences, compatibility, optional selfie badge and safety into the product foundation. Everything needed to meet someone is free. No credit card required."}
           </p>
         </div>
         <div>
@@ -495,16 +493,16 @@ export function SeoGuidePage({ page }: { page: ResolvedSeoPage }) {
           <ul className="mt-4 list-disc space-y-2 pl-6">
             {(page.locale === "fr"
               ? [
-                  "Gratuit au lancement, avec un futur modele freemium transparent.",
+                  "gratuit pour les connexions essentielles, avec un futur modele freemium transparent.",
                   "Disponible dans le monde entier, avec une experience fiable en francais et en anglais.",
                   "Pense pour toutes les orientations, pas seulement une niche.",
-                  "Centre sur les profils verifies, la compatibilite et des conversations plus sures.",
+                  "Centre sur les badge selfie facultatif, la compatibilite et des conversations plus sures.",
                 ]
               : [
-                  "Free at launch, with a transparent future freemium model.",
+                  "core connection features are free, with a transparent optional-services model.",
                   "Available worldwide, with a reliable English and French experience.",
                   "Designed for every orientation, not only one dating niche.",
-                  "Focused on verified profiles, compatibility and safer conversations.",
+                  "Focused on optional selfie badge, compatibility and conversations with reporting and blocking controls.",
                 ]).map((item) => <li key={item}>{item}</li>)}
           </ul>
         </div>
@@ -519,17 +517,17 @@ export function SeoComparisonPage({ page }: { page: ResolvedSeoPage }) {
       <section className="mt-12 overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02]">
         {(page.locale === "fr"
           ? [
-              ["Prix au lancement", `${page.app ?? "App classique"} limite souvent l'usage gratuit`, "Embir est gratuit au lancement"],
+              ["Accès essentiel", `${page.app ?? "App classique"} limite souvent l'usage gratuit`, "Embir est gratuit pour les connexions essentielles"],
               ["Audience", "Souvent definie par une niche historique", "Pense pour toutes orientations"],
               ["Decouverte", "Swipe ou distance d'abord", "Preferences et compatibilite d'abord"],
-              ["Confiance", "Verification variable", "Profils verifies au centre"],
+              ["Confiance", "Verification variable", "badge selfie facultatif au centre"],
               ["Modele futur", "Upsells opaques", "Freemium transparent pour mobile, securite et moderation"],
             ]
           : [
-              ["Launch price", `${page.app ?? "Legacy app"} often limits free usage`, "Embir is free at launch"],
+              ["Core access", `${page.app ?? "Legacy app"} often limits free usage`, "Embir's core connection features are free"],
               ["Audience", "Often shaped by legacy niches", "Built for every orientation"],
               ["Discovery", "Swipe or distance first", "Preferences and compatibility first"],
-              ["Trust", "Verification varies", "Verified profiles are central"],
+              ["Trust", "Verification varies", "optional selfie badge are central"],
               ["Future model", "Opaque upsells", "Transparent freemium for mobile, safety and moderation"],
             ]).map(([feature, oldApp, embir]) => (
           <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
@@ -548,36 +546,36 @@ export function SeoArticlePage({ page }: { page: ResolvedSeoPage }) {
     <SeoPageLayout page={page}>
       <section className="mt-12 space-y-6 text-base leading-relaxed text-white/50">
         <p className="text-sm uppercase tracking-[0.16em] text-[#d4a574]/70">
-          {page.locale === "fr" ? "Categorie : rencontre moderne · Tags : gratuit au lancement, freemium, compatibilite, profils verifies" : "Category: modern dating · Tags: free at launch, freemium, compatibility, verified profiles"}
+          {page.locale === "fr" ? "Categorie : rencontre moderne · Tags : gratuit pour les connexions essentielles, freemium, compatibilite, badge selfie facultatif" : "Category: modern dating · Tags: core connection features are free, freemium, compatibility, optional selfie badge"}
         </p>
         <p>
           {page.locale === "fr"
             ? "Embir part d'une conviction simple : une personne ne devrait pas payer immediatement pour comprendre qui est compatible, fiable et vraiment interessee. Le contenu editorial sert donc a expliquer le probleme avant de pousser une inscription."
-            : "Embir starts from a simple belief: people should not have to pay immediately just to understand who is compatible, safe and genuinely interested. Editorial content exists to explain the problem before pushing a sign-up."}
+            : "Embir starts from a simple belief: people should not have to pay immediately just to understand who is compatible, aligned with declared preferences. Editorial content exists to explain the problem before pushing a sign-up."}
         </p>
         <p>
           {page.locale === "fr"
-            ? "La plateforme combine orientation, preferences, profils verifies et signaux de compatibilite pour rendre la rencontre moins aleatoire, moins epuisante et plus lisible."
-            : "The platform combines orientation, preferences, verified profiles and compatibility signals so dating feels less random, less exhausting and easier to understand."}
+            ? "La plateforme combine orientation, preferences, badge selfie facultatif et signaux de compatibilite pour rendre la rencontre moins aleatoire, moins epuisante et plus lisible."
+            : "The platform combines orientation, preferences, optional selfie badge and compatibility signals so dating feels less random, less exhausting and easier to understand."}
         </p>
         <p>
           {page.locale === "fr"
             ? "Le futur modele freemium doit financer l'application mobile, la securite, la moderation, la verification des profils et les ameliorations continues sans enfermer la communaute de lancement derriere des paywalls prematurees."
-            : "The future freemium model is designed to fund the mobile app, security, moderation, profile verification and continuous product improvements without making the launch community feel trapped behind early paywalls."}
+            : "the optional-services model is designed to fund the mobile app, security, moderation, profile verification and continuous product improvements without making the launch community feel trapped behind early paywalls."}
         </p>
         <h2 className="font-serif text-3xl text-white">
           {page.locale === "fr" ? `Pourquoi c'est important pour ${page.topic ?? "la rencontre moderne"}` : `Why this matters for ${page.topic ?? "modern dating"}`}
         </h2>
         <p>
           {page.locale === "fr"
-            ? "Les recherches autour des applications de rencontre melangent souvent le prix, la securite, l'orientation, la localisation et la confiance. Embir relie ces questions au lieu de les traiter comme des pages isolees. Une personne qui cherche une application gratuite, une option LGBTQ plus rassurante ou une experience avec profils verifies doit retrouver la meme promesse publique : gratuit au lancement, plus large qu'une seule niche, et transparent sur le futur modele economique."
-            : "Search intent around dating apps is usually split between price, safety, orientation, location and trust. Embir connects those questions instead of treating them as separate landing pages. A person looking for a free dating app, a safer LGBTQ dating option, or a verified profile experience anywhere in the world should find the same public promise: free at launch, broader than a single niche, and transparent about the future business model."}
+            ? "Les recherches autour des applications de rencontre melangent souvent le prix, la securite, l'orientation, la localisation et la confiance. Embir relie ces questions au lieu de les traiter comme des pages isolees. Une personne qui cherche une application gratuite, une option LGBTQ plus rassurante ou une experience avec badge selfie facultatif doit retrouver la meme promesse publique : gratuit pour les connexions essentielles, plus large qu'une seule niche, et transparent sur le futur modele economique."
+            : "Search intent around dating apps is usually split between price, safety, orientation, location and trust. Embir connects those questions instead of treating them as separate landing pages. A person looking for a free dating app, an LGBTQ dating option with safety controls, or a verified profile experience anywhere in the world should find the same public promise: core connection features are free, broader than a single niche, and transparent about the future business model."}
         </p>
         <h3 className="font-serif text-2xl text-white">{page.locale === "fr" ? "Le positionnement produit" : "The product position"}</h3>
         <p>
           {page.locale === "fr"
             ? "La plateforme n'est pas presentee comme un clone de Grindr, Tinder, Bumble ou une autre app historique. Les comparatifs aident a comprendre les differences, mais la direction produit est plus large : onboarding attentif a l'orientation, decouverte par preferences, signaux de compatibilite, controles de securite, culture fondatrice et feuille de route mobile financee par un futur freemium."
-            : "The platform is not presented as a clone of Grindr, Tinder, Bumble or any other legacy app. Comparisons can help users understand the difference, but the product direction is wider: orientation-aware onboarding, preference-led discovery, compatibility signals, safety controls, founder culture, and a mobile app roadmap funded by a future freemium layer."}
+            : "The platform is not presented as a clone of Grindr, Tinder, Bumble or any other legacy app. Comparisons can help users understand the difference, but the product direction is wider: orientation-aware onboarding, preference-led discovery, compatibility signals, safety controls, founder culture, and a mobile app roadmap funded by transparent optional services layer."}
         </p>
         <h3 className="font-serif text-2xl text-white">{page.locale === "fr" ? "Ce que les premiers membres obtiennent" : "What early members get"}</h3>
         <p>

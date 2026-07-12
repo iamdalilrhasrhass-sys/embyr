@@ -1,39 +1,26 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { NextResponse } from "next/server";
+import { requireAdmin } from "@/lib/admin-auth";
+import { runScheduledJob } from "@/lib/job-runner";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-  try {
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+  return NextResponse.json(
+    { error: "Utilisez POST avec une session administrateur authentifiée" },
+    { status: 405, headers: { Allow: "POST" } },
+  );
+}
 
-    const users = await prisma.user.findMany({
-      where: { email: { not: '' } },
-      select: { id: true },
-      take: 50,
-    });
-
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://embir.xyz';
-
-    let sent = 0;
-    for (const user of users) {
-      try {
-        await fetch(`${appUrl}/api/emails/send`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            type: 'weekly-digest',
-            userId: user.id,
-            data: { newMatches: 0, topArticles: [] },
-          }),
-        });
-        sent++;
-      } catch {}
-    }
-
-    return NextResponse.json({ success: true, usersNotified: sent });
-  } catch (error: any) {
-    return NextResponse.json({ error: error?.message }, { status: 500 });
+export async function POST() {
+  const admin = await requireAdmin();
+  if (!admin) {
+    return NextResponse.json(
+      { error: "Accès administrateur requis" },
+      { status: 401 },
+    );
   }
+
+  const result = await runScheduledJob("weekly");
+  const status = result.status === "failed" ? 500 : 200;
+  return NextResponse.json(result, { status });
 }

@@ -8,11 +8,12 @@ import {
   getLocaleFromPathname,
 } from './i18n/locale-detection';
 import { routing } from './i18n/routing';
+import { isTrustedApiMutation } from './lib/request-security';
 
 const intl = createMiddleware(routing);
 
 const NOINDEX_PATTERNS: string[] = [
-  'admin', 'affichage', 'albums', 'ambassadeur', 'ambassadrice',
+  'admin', 'affichage', 'albums', 'ambassadeur', 'ambassadrice', 'connections',
   'apercu-visiteur', 'auth', 'blacklist', 'certification', 'dashboard',
   'decouvrir', 'discover', 'early-access', 'favoris', 'forum',
   'grindr-cost-calculator', 'installer-application', 'invite', 'inviter',
@@ -27,7 +28,7 @@ const PROTECTED_ROUTES = [
   'dashboard', 'onboarding', 'discover', 'members', 'membres',
   'messages', 'profile', 'settings', 'parametres', 'premium',
   'inviter', 'invite', 'favoris', 'favorites', 'albums', 'forum',
-  'verification', 'welcome',
+  'verification', 'welcome', 'connections', 'notifications',
 ];
 
 function matchFirstSegment(pathname: string, patterns: string[]): boolean {
@@ -45,9 +46,7 @@ function matchFirstSegment(pathname: string, patterns: string[]): boolean {
 }
 
 function shouldNoindex(pathname: string): boolean {
-  const fullPath = pathname.replace(/^\//, '');
-  return NOINDEX_PATTERNS.includes(fullPath.split('/')[0]) ||
-         NOINDEX_PATTERNS.includes(fullPath);
+  return matchFirstSegment(pathname, NOINDEX_PATTERNS);
 }
 
 function rememberLocale(response: NextResponse, locale: 'en' | 'fr', source: 'auto' | 'manual' = 'auto') {
@@ -67,9 +66,22 @@ function rememberLocale(response: NextResponse, locale: 'en' | 'fr', source: 'au
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Ne pas intercepter les appels API, assets statiques, etc.
-  if (pathname.startsWith('/api/') || pathname.startsWith('/_next/') || pathname.startsWith('/uploads/') || pathname.startsWith('/brand/')) {
-    return intl(request);
+  if (pathname.startsWith('/api/')) {
+    if (!isTrustedApiMutation(request)) {
+      return new NextResponse(null, {
+        status: 403,
+        headers: {
+          'Cache-Control': 'no-store',
+          'X-Content-Type-Options': 'nosniff',
+        },
+      });
+    }
+    return NextResponse.next();
+  }
+
+  // Ne pas intercepter les assets statiques.
+  if (pathname.startsWith('/_next/') || pathname.startsWith('/uploads/') || pathname.startsWith('/brand/')) {
+    return NextResponse.next();
   }
 
   const detectedLocale = detectLocaleFromRequest({
@@ -108,5 +120,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  matcher: ['/api/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
 };

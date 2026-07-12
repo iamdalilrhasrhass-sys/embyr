@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import { prisma } from "@/lib/prisma";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   const admin = await requireAdmin();
   if (!admin) {
     return NextResponse.json({ error: "Accès administrateur requis" }, { status: 401 });
@@ -12,21 +12,28 @@ export async function GET(req: NextRequest) {
     const [totalUsers, payingUsers, events] = await Promise.all([
       prisma.user.count(),
       prisma.subscription.count({ where: { status: "ACTIVE" } }),
-      prisma.acquisitionEvent.findMany({ orderBy: { createdAt: "desc" }, take: 100 })
+      prisma.acquisitionEvent.findMany({
+        orderBy: { createdAt: "desc" },
+        take: 100,
+        select: { eventType: true },
+      })
     ]);
 
-    const visits = events.filter((e: any) => e.eventType === "visit").length || 1;
-    const registrations = events.filter((e: any) => e.eventType === "register").length;
-    const checkouts = events.filter((e: any) => e.eventType === "checkout").length;
-    const paid = events.filter((e: any) => e.eventType === "paid").length;
+    const visits = events.filter((event) => event.eventType === "visit").length;
+    const registrations = events.filter((event) => event.eventType === "register").length;
+    const checkouts = events.filter((event) => event.eventType === "checkout").length;
+    const paid = events.filter((event) => event.eventType === "paid").length;
 
-    return NextResponse.json({
-      totals: { users: totalUsers, paying: payingUsers },
-      funnel: { visits, registrations, checkouts, paid }
-    });
+    return NextResponse.json(
+      {
+        totals: { users: totalUsers, paying: payingUsers },
+        funnel: { visits, registrations, checkouts, paid },
+      },
+      { headers: { "Cache-Control": "private, no-store" } },
+    );
 
-  } catch (e: any) {
-    console.error("Acquisition error:", e);
+  } catch {
+    console.error("Acquisition metrics query failed");
     return NextResponse.json({ error: "Erreur serveur." }, { status: 500 });
   }
 }

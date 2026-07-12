@@ -7,10 +7,10 @@ export default function CGUPage() {
     <div className="max-w-4xl mx-auto px-4 py-16 prose prose-invert prose-pink">
       <h1>Conditions Générales d'Utilisation (CGU)</h1>
       <p className="text-gray-400">Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}</p>
-      
+
       <h2>1. Présentation de la plateforme</h2>
       <p>Embir est une plateforme numérique premium dédiée à la mise en relation entre adultes consentants. L'accès est strictement réservé aux personnes de plus de 18 ans.</p>
-      
+
       <h2>2. Conditions d'accès</h2>
       <p>L'utilisation de Embir nécessite :</p>
       <ul>

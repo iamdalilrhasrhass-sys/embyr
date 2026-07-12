@@ -1,71 +1,77 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
+import { publicProfileSelect } from "@/lib/profile-contract";
+import { withApiLogging } from "@/lib/api-logger";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+async function handleGet(
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
   const auth = await getCurrentUser();
-
   try {
-    const user = await prisma.user.findUnique({
-      where: { id },
-      include: {
-        profile: true,
+    const user = await prisma.user.findFirst({
+      where: {
+        id,
+        bannedAt: null,
+        deletedAt: null,
+        profile: {
+          is: {
+            publicVisibility: true,
+            visibilityStatus: { not: "HIDDEN" },
+            moderationState: "ACTIVE",
+          },
+        },
+      },
+      select: {
+        id: true,
+        profile: { select: publicProfileSelect },
         media: {
           where: { type: "public_photo", status: "APPROVED" },
           orderBy: { createdAt: "desc" },
-          select: { url: true, id: true },
+          take: 6,
+          select: { id: true, url: true },
         },
       },
     });
+    if (!user?.profile) return NextResponse.json({ error: "Profil introuvable" }, { status: 404 });
 
-    if (!user) return NextResponse.json({ error: "Profil introuvable" }, { status: 404 });
-
-    const profile = user.profile;
-    if (!profile) return NextResponse.json({ error: "Profil incomplet" }, { status: 404 });
-
-    const isBlocked = auth
-      ? !!(await prisma.block.findFirst({
-          where: { blockerId: id, blockedId: auth.id },
-        }))
-      : false;
-
-    if (isBlocked) return NextResponse.json({ error: "Ce profil vous a bloqué" }, { status: 403 });
-
+    if (auth && auth.id !== id) {
+      const blocked = await prisma.block.findFirst({
+        where: { OR: [{ blockerId: auth.id, blockedId: id }, { blockerId: id, blockedId: auth.id }] },
+        select: { id: true },
+      });
+      if (blocked) return NextResponse.json({ error: "Profil introuvable" }, { status: 404 });
+      await prisma.$transaction([
+        prisma.profileVisit.create({ data: { visitorId: auth.id, visitedId: id, hidden: false } }),
+        prisma.analyticsEvent.create({
+          data: {
+            eventId: crypto.randomUUID(),
+            eventName: "profile_opened",
+            eventVersion: 1,
+            userId: auth.id,
+            occurredAt: new Date(),
+            properties: { profileUserId: id },
+          },
+        }),
+      ]);
+    }
     const isFavorited = auth
-      ? !!(await prisma.favorite.findFirst({
-          where: { fromUserId: auth.id, toUserId: id },
-        }))
+      ? Boolean(await prisma.favorite.findFirst({ where: { fromUserId: auth.id, toUserId: id }, select: { id: true } }))
       : false;
-
-    const isOnline = profile.onlineStatus === true;
-    const publicPhotos = user.media.map((m) => m.url);
-
     return NextResponse.json({
       profile: {
+        ...user.profile,
         id: user.id,
-        username: profile.username,
-        displayName: profile.displayName,
-        age: profile.age,
-        city: profile.city,
-        description: profile.description,
-        genderIdentity: profile.genderIdentity,
-        lookingFor: profile.lookingFor,
-        isPremium: profile.isPremium,
-        isVerified: profile.isVerified,
-        isOnline,
         isFavorited,
-        isBlocked,
-        isCertified: profile.isVerified,
-        publicPhotos,
-        lastActive: profile.lastActiveAt,
+        publicPhotos: user.media.map((media) => media.url),
       },
-    });
+    }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) {
     console.error("GET profile error:", error);
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 }
+
+export const GET = withApiLogging(handleGet);

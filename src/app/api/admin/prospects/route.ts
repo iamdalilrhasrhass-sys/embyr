@@ -4,6 +4,22 @@ import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
+const prospectSelect = {
+  id: true,
+  pseudo: true,
+  sourcePlatform: true,
+  profileStyle: true,
+  city: true,
+  country: true,
+  publicUrl: true,
+  potential: true,
+  status: true,
+  internalNotes: true,
+  lastContactedAt: true,
+  createdAt: true,
+  updatedAt: true,
+} as const;
+
 export async function GET() {
   const admin = await requireAdmin();
   if (!admin) {
@@ -11,8 +27,11 @@ export async function GET() {
   }
 
   try {
-    const prospects = await prisma.prospect.findMany({ orderBy: { createdAt: "desc" } });
-    return NextResponse.json(prospects);
+    const prospects = await prisma.prospect.findMany({
+      orderBy: { createdAt: "desc" },
+      select: prospectSelect,
+    });
+    return NextResponse.json(prospects, { headers: { "Cache-Control": "private, no-store" } });
   } catch {
     return NextResponse.json({ error: "Erreur" }, { status: 500 });
   }
@@ -26,7 +45,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    
+
     if (body.action === 'create') {
       const prospect = await prisma.prospect.create({
         data: {
@@ -39,7 +58,8 @@ export async function POST(req: NextRequest) {
           potential: body.potential || 'moyen',
           status: 'a_rechercher',
           internalNotes: body.internalNotes || '',
-        }
+        },
+        select: prospectSelect,
       });
       return NextResponse.json(prospect);
     }
@@ -52,7 +72,8 @@ export async function POST(req: NextRequest) {
           internalNotes: body.internalNotes,
           publicUrl: body.publicUrl,
           lastContactedAt: body.status === 'contacte' ? new Date() : undefined,
-        }
+        },
+        select: prospectSelect,
       });
       return NextResponse.json(updated);
     }

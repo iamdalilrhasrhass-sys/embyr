@@ -4,9 +4,9 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const pillars = [
-  { icon: "•", title: "Vérification Selfie", desc: "Chaque profil peut obtenir le badge Vérifié en photo avec un code unique. Zéro tolérance pour les faux comptes.", color: "from-[#ff1f5a]/20 to-[#ff5e36]/5" },
-  { icon: "•", title: "Premium Par Design", desc: "Une expérience pensée pour les adultes exigeants. Interface sombre, typographie nette, confidentialité absolue.", color: "from-[#ff5e36]/20 to-[#ffa333]/5" },
-  { icon: "•", title: "Modération Humaine", desc: "Des modérateurs réels examinent chaque signalement. Pas d'algorithme opaque — des vraies personnes qui protègent la communauté.", color: "from-[#ff1f5a]/18 to-[#ff5e36]/5" },
+  { icon: "•", title: "Vérification Selfie", desc: "Chaque membre peut demander un badge avec un selfie et un code unique. Un badge approuvé ne garantit pas l'absence de risque.", color: "from-[#ff1f5a]/20 to-[#ff5e36]/5" },
+  { icon: "•", title: "Contrôles de confidentialité", desc: "Interface sombre, paramètres de visibilité et mesure d'audience soumise au consentement.", color: "from-[#ff5e36]/20 to-[#ffa333]/5" },
+  { icon: "•", title: "Blocage et Signalement", desc: "Tu peux bloquer immédiatement un compte et transmettre un signalement pour examen. Aucun outil ne garantit l'absence de risque.", color: "from-[#ff1f5a]/18 to-[#ff5e36]/5" },
   { icon: "⚧️", title: "Communauté Inclusive", desc: "Embir célèbre tous les hommes gay. Gays, bis, queers — vous êtes chez vous ici. Une plateforme pensée pour vous.", color: "from-[#5BCEFA]/20 to-[#F5A9B8]/10" },
 ];
 

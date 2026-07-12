@@ -1,20 +1,42 @@
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
-import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+import { requireAdmin } from '@/lib/admin-auth';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Feedback — Embir Admin' };
+export const metadata = {
+  title: 'Feedback — Embir Admin',
+  robots: { index: false, follow: false },
+};
 
-async function getFeedback(status: string) {
+const statuses = ['new', 'in_progress', 'resolved', 'all'] as const;
+type FeedbackStatus = (typeof statuses)[number];
+
+async function getFeedback(status: FeedbackStatus) {
   return prisma.feedback.findMany({
     where: status !== 'all' ? { status } : {},
     orderBy: { createdAt: 'desc' },
     take: 50,
+    select: {
+      id: true,
+      type: true,
+      message: true,
+      userEmail: true,
+      pageUrl: true,
+      status: true,
+      createdAt: true,
+    },
   });
 }
 
-export default async function AdminFeedback({ searchParams }: { searchParams: { status?: string } }) {
-  const statusFilter = searchParams.status || 'new';
+export default async function AdminFeedback({ searchParams }: { searchParams: Promise<{ status?: string }> }) {
+  const admin = await requireAdmin();
+  if (!admin) redirect('/analytics-dashboard');
+
+  const requestedStatus = (await searchParams).status;
+  const statusFilter: FeedbackStatus = statuses.includes(requestedStatus as FeedbackStatus)
+    ? (requestedStatus as FeedbackStatus)
+    : 'new';
   const items = await getFeedback(statusFilter);
 
   const counts = await Promise.all([

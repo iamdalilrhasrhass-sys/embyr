@@ -1,60 +1,55 @@
 /**
  * SMS Service for embir.xyz
- * Uses Twilio when configured, falls back to console.log in dev
+ * Uses a lazily initialized Twilio client and fails closed in production.
  */
 
-const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
-const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
-const TWILIO_PHONE_NUMBER = process.env.TWILIO_PHONE_NUMBER; // +33...
-const NODE_ENV = process.env.NODE_ENV || "development";
-
-let twilioClient: any = null;
-
-try {
-  if (TWILIO_ACCOUNT_SID && TWILIO_AUTH_TOKEN) {
-    const twilio = require("twilio");
-    twilioClient = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
-  }
-} catch (e) {
-  console.warn("[sms] Twilio init failed:", (e as Error).message);
+interface SmsClient {
+  messages: {
+    create(input: { body: string; from: string; to: string }): Promise<unknown>;
+  };
 }
 
-function generateCode(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString(); // 6 digits
+let twilioClientPromise: Promise<SmsClient | null> | null = null;
+
+async function getTwilioClient(): Promise<SmsClient | null> {
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+  if (!accountSid || !authToken || !process.env.TWILIO_PHONE_NUMBER) return null;
+  twilioClientPromise ??= import("twilio")
+    .then(({ default: createTwilioClient }) => createTwilioClient(accountSid, authToken) as SmsClient)
+    .catch(() => {
+      console.error("[sms] Twilio initialization failed");
+      return null;
+    });
+  return twilioClientPromise;
 }
 
-export async function sendSmsCode(phone: string): Promise<{ success: boolean; code?: string; message: string }> {
-  const code = generateCode();
-
-  if (!twilioClient) {
-    console.log(`[sms] ⚠️ Twilio not configured. Would send code ${code} to ${phone}`);
+export async function sendSmsCode(
+  phone: string,
+  code: string,
+): Promise<{ success: boolean; message: string }> {
+  const client = await getTwilioClient();
+  if (!client) {
+    if (process.env.NODE_ENV === "development") {
+      return { success: true, message: "Mode de développement" };
+    }
     return {
-      success: true,
-      code, // Return code directly in dev so FE can auto-fill
-      message: NODE_ENV === "development"
-        ? `Code de vérification : ${code}`
-        : "SMS non configuré (mode dev)",
+      success: false,
+      message: "Service SMS indisponible",
     };
   }
 
-  // Format phone for Twilio (French numbers)
-  const formattedPhone = phone.startsWith("0") ? `+33${phone.slice(1)}` : phone.startsWith("+") ? phone : `+33${phone}`;
-
   try {
-    const message = await twilioClient.messages.create({
+    const from = process.env.TWILIO_PHONE_NUMBER;
+    if (!from) return { success: false, message: "Service SMS indisponible" };
+    await client.messages.create({
       body: `embir.xyz : ton code de vérification est ${code}. Il expire dans 5 minutes.`,
-      from: TWILIO_PHONE_NUMBER,
-      to: formattedPhone,
+      from,
+      to: phone,
     });
-
-    console.log(`[sms] ✅ Code sent to ${formattedPhone}, sid=${message.sid}`);
     return { success: true, message: "Code envoyé par SMS" };
-  } catch (e: any) {
-    console.error("[sms] Failed to send:", e.message);
+  } catch {
+    console.error("[sms] Delivery failed");
     return { success: false, message: "Erreur d'envoi SMS. Vérifie ton numéro." };
   }
-}
-
-export function verifyCode(inputCode: string, storedCode: string): boolean {
-  return inputCode === storedCode;
 }

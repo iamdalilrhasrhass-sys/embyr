@@ -1,34 +1,55 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { cookies } from "next/headers";
-import { verifyToken } from "@/lib/auth";
-
-
+import { getCurrentUser } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("token")?.value;
-  if (!token) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
-  const payload = verifyToken(token);
-  if (!payload) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
-  const { targetUserId } = await req.json();
-
-  if (!targetUserId || targetUserId === payload.userId) {
+  const auth = await getCurrentUser();
+  if (!auth) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const body = await req.json().catch(() => null) as { targetUserId?: unknown } | null;
+  const targetUserId = body?.targetUserId;
+  if (typeof targetUserId !== "string" || !targetUserId || targetUserId.length > 64) {
+    return NextResponse.json({ error: "invalid_target" }, { status: 400 });
+  }
+  if (targetUserId === auth.id) {
     return NextResponse.json({ ignored: true });
   }
 
   try {
-    // Basic rate limit: 1 view per user per hour? (Simplified here)
+    const [target, blocked] = await Promise.all([
+      prisma.user.findFirst({
+        where: {
+          id: targetUserId,
+          bannedAt: null,
+          deletedAt: null,
+          profile: { is: { publicVisibility: true, visibilityStatus: { not: "HIDDEN" }, moderationState: "ACTIVE" } },
+        },
+        select: { id: true },
+      }),
+      prisma.block.findFirst({
+        where: { OR: [{ blockerId: auth.id, blockedId: targetUserId }, { blockerId: targetUserId, blockedId: auth.id }] },
+        select: { id: true },
+      }),
+    ]);
+    if (!target || blocked) return NextResponse.json({ error: "target_not_available" }, { status: 404 });
+
+    const recent = await prisma.profileVisit.findFirst({
+      where: {
+        visitorId: auth.id,
+        visitedId: targetUserId,
+        createdAt: { gte: new Date(Date.now() - 60 * 60 * 1000) },
+      },
+      select: { id: true },
+    });
+    if (recent) return NextResponse.json({ success: true, duplicate: true });
+
     await prisma.profileVisit.create({
       data: {
-        visitorId: payload.userId,
+        visitorId: auth.id,
         visitedId: targetUserId
       }
     });
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "internal_error" }, { status: 500 });
   }
 }

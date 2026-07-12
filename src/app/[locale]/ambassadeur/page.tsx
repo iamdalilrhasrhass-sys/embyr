@@ -26,11 +26,11 @@ export default function AmbassadeurPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              {title:"Founder Status",desc:"Free lifetime access to all features. No catch.",hl:"Free forever"},
+              {title:"Founder Status",desc:"Help shape the product and its community.",hl:"Everything needed to meet someone is free. No credit card required"},
               {title:"Verified Badge",desc:"Your profile gets priority verification and a founder badge.",hl:"Trusted profile"},
               {title:"Better Visibility",desc:"Your profile appears first in search results.",hl:"Top placement"},
               {title:"Early Access",desc:"Try new features before anyone else.",hl:"Shape the platform"},
-              {title:"Unlimited Messages",desc:"Text, voice, video calls. No limits, no paywalls.",hl:"Full access"},
+              {title:"Reciprocal messaging",desc:"Text messages after a mutual connection, with blocking and reporting tools.",hl:"Core connection"},
               {title:"Priority Support",desc:"Direct access to the team when you need help.",hl:"Fast response"},
             ].map((item, i) => (
               <div key={i} className="p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] h-full">
@@ -54,13 +54,13 @@ export default function AmbassadeurPage() {
             <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="rounded-2xl border border-white/10 bg-white/[0.02] p-10">
               <h2 className="text-2xl font-bold text-white mb-4">Apply</h2>
               <p className="text-white/40 text-sm mb-6">Leave your info and we'll get back to you.</p>
-              <input 
-                type="text" 
-                placeholder="Your name or @username" 
+              <input
+                type="text"
+                placeholder="Your name or @username"
                 className="w-full rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-white text-sm mb-3 placeholder:text-white/25 outline-none focus:border-white/30"
                 required
               />
-              <button 
+              <button
                 type="submit"
                 className="w-full rounded-full bg-white text-black px-5 py-3 text-sm font-medium hover:bg-white/90 transition-colors"
               >

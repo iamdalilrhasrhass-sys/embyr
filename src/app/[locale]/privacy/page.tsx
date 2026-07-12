@@ -45,7 +45,7 @@ export default async function PrivacyPage({ params }: { params: Params }) {
       { title: "13. Contact", body: "Pour toute question relative à cette politique ou pour exercer vos droits : privacy@embir.xyz" },
     ],
     cta_title: "Rejoindre la communauté fondatrice",
-    cta_text: "Crée ton profil gratuitement pendant le lancement. Tes données sont protégées et ne seront jamais revendues.",
+    cta_text: "Crée ton profil gratuitement, sans carte bancaire. Tes données sont protégées et ne seront jamais revendues.",
     cta_button: "Créer mon profil gratuit",
   } : {
     badge: "Privacy",
@@ -68,7 +68,7 @@ export default async function PrivacyPage({ params }: { params: Params }) {
       { title: "13. Contact", body: "For any questions regarding this policy or to exercise your rights: privacy@embir.xyz" },
     ],
     cta_title: "Join the founding community",
-    cta_text: "Create your profile for free during launch. Your data is protected and will never be sold.",
+    cta_text: "Create your profile without a credit card. Your data is protected and will never be sold.",
     cta_button: "Create my free profile",
   };
 

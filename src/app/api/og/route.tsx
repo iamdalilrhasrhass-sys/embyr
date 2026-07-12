@@ -16,12 +16,12 @@ const BG = "#0a0614";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const title = searchParams.get("title") || "Embir — Dating Without Swipe Fatigue";
-  const subtitle = searchParams.get("subtitle") || "Free at launch · Verified profiles · Every orientation";
+  const subtitle = searchParams.get("subtitle") || "core connection features are free · Verified profiles · Every orientation";
   const variant = searchParams.get("variant") || "default";
   const locale = searchParams.get("locale") || "en";
 
   const isFR = locale === "fr";
-  const badge = isFR ? "Gratuit au lancement" : "Free at launch";
+  const badge = isFR ? "gratuit pour les connexions essentielles" : "core connection features are free";
 
   // Variant-specific accent colors
   const accents: Record<string, { primary: string; secondary: string; glow: string }> = {

@@ -1,30 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { verifyToken } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { verifyPhoneVerificationCode } from "@/lib/phone-verification";
+import {
+  clearSensitiveActions,
+  consumeSensitiveAction,
+} from "@/lib/sensitive-action-rate-limit";
 
 export async function POST(req: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get("token")?.value;
-    if (!token) {
+    const auth = await getCurrentUser();
+    if (!auth) {
       return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     }
-
-    const payload = verifyToken(token);
-    if (!payload) {
-      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    const rateLimit = consumeSensitiveAction("sms-verify", auth.id, 8);
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        { error: "Trop de tentatives. Demande un nouveau code." },
+        { status: 429, headers: { "Retry-After": String(rateLimit.retryAfterSeconds) } },
+      );
     }
 
-    const { code } = await req.json();
-    if (!code) {
+    const body = await req.json().catch(() => null) as { code?: unknown } | null;
+    const code = typeof body?.code === "string" ? body.code.trim() : "";
+    if (!/^\d{6}$/.test(code)) {
       return NextResponse.json({ error: "Code requis" }, { status: 400 });
     }
 
     // Find the latest verification code for this user
     const verification = await prisma.smsVerification.findFirst({
       where: {
-        userId: payload.userId,
+        userId: auth.id,
         usedAt: null,
         expiresAt: { gt: new Date() },
       },
@@ -35,33 +41,33 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Aucun code en attente. Demande un nouveau code." }, { status: 400 });
     }
 
-    if (new Date() > verification.expiresAt) {
-      return NextResponse.json({ error: "Code expiré. Demande un nouveau code." }, { status: 400 });
-    }
-
-    if (verification.code !== code) {
+    if (!verifyPhoneVerificationCode({
+      userId: auth.id,
+      phone: verification.phone,
+      code,
+      storedDigest: verification.code,
+    })) {
       return NextResponse.json({ error: "Code incorrect." }, { status: 400 });
     }
 
-    // Mark as used
-    await prisma.smsVerification.update({
-      where: { id: verification.id },
-      data: { usedAt: new Date() },
+    await prisma.$transaction(async (tx) => {
+      const claimed = await tx.smsVerification.updateMany({
+        where: { id: verification.id, usedAt: null, expiresAt: { gt: new Date() } },
+        data: { usedAt: new Date() },
+      });
+      if (claimed.count !== 1) throw new Error("verification_already_consumed");
+      await tx.user.update({
+        where: { id: auth.id },
+        data: { phone: verification.phone, phoneVerified: true },
+      });
+      await tx.notificationPreference.upsert({
+        where: { userId: auth.id },
+        create: { userId: auth.id, smsEnabled: true, inAppEnabled: true },
+        update: {},
+      });
     });
 
-    // Verify phone
-    await prisma.user.update({
-      where: { id: payload.userId },
-      data: { phoneVerified: true },
-    });
-
-    // Create notification preferences (default: SMS on, in-app on)
-    await prisma.notificationPreference.upsert({
-      where: { userId: payload.userId },
-      create: { userId: payload.userId, smsEnabled: true, inAppEnabled: true },
-      update: {},
-    });
-
+    clearSensitiveActions("sms-verify", auth.id);
     return NextResponse.json({ success: true, message: "Téléphone vérifié ✅" });
   } catch (e) {
     console.error("[sms/verify-code] error:", (e as Error).message);

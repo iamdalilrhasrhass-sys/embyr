@@ -14,15 +14,18 @@ interface UniverseData {
   isFounder: boolean;
   genderIdentity: string | null;
   lookingFor: string | null;
-  popularityScore: number;
-  trustScore: number;
-  profileCompletionScore: number;
 }
 
 async function getUniverse(username: string): Promise<UniverseData | null> {
   try {
-    const profile = await prisma.profile.findUnique({
-      where: { username },
+    const profile = await prisma.profile.findFirst({
+      where: {
+        username,
+        publicVisibility: true,
+        visibilityStatus: "PUBLIC",
+        moderationState: "ACTIVE",
+        user: { is: { bannedAt: null, deletedAt: null } },
+      },
       select: {
         username: true,
         displayName: true,
@@ -34,16 +37,10 @@ async function getUniverse(username: string): Promise<UniverseData | null> {
         isFounder: true,
         genderIdentity: true,
         lookingFor: true,
-        popularityScore: true,
-        trustScore: true,
-        profileCompletionScore: true,
-        publicVisibility: true,
       },
     });
 
-    if (!profile || !profile.publicVisibility) return null;
-    const { publicVisibility: _, ...data } = profile;
-    return data as UniverseData;
+    return profile;
   } catch {
     return null;
   }
@@ -67,7 +64,7 @@ export async function generateMetadata({
   const location = [data.city, data.country].filter(Boolean).join(", ");
   const desc =
     data.description ||
-    `${name}'s universe on Embir${location ? ` · ${location}` : ""}. Join the founding community.`;
+    `${name}'s public profile on Embir${location ? ` · ${location}` : ""}.`;
   const ogTitle = `${name}'s Universe — Embir`;
   const ogUrl = `https://embir.xyz/u/${data.username}`;
 
@@ -146,21 +143,6 @@ export default async function UniversePage({
             {location && <span>{location}</span>}
           </div>
 
-          {/* Stats */}
-          <div className="mt-6 flex items-center justify-center gap-8">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">{data.popularityScore}</div>
-              <div className="text-xs uppercase tracking-wider text-white/30">Views</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-[#d4a574]">{data.trustScore}%</div>
-              <div className="text-xs uppercase tracking-wider text-white/30">Trust</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-[#ff5e36]">{data.profileCompletionScore}%</div>
-              <div className="text-xs uppercase tracking-wider text-white/30">Universe</div>
-            </div>
-          </div>
         </div>
 
         {/* Description */}
@@ -231,7 +213,7 @@ export default async function UniversePage({
             Create your own universe
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-white/50">
-            Join Embir's founding community. Free at launch. Verified profiles. Every orientation.
+            Everything needed to meet someone is free. No credit card required.
           </p>
           <Link
             href="/early-access"

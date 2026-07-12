@@ -63,7 +63,7 @@ export const FAST_OPTIONS = [
 ];
 
 export const PREMIUM_FEATURES = [
-  "Messagerie illimitée",
+  "Messagerie entre connexions réciproques",
   "Voir qui a consulté mon profil",
   "Voir qui m'a ajouté en favoris",
   "Recherche en ligne",

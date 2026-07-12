@@ -124,15 +124,22 @@ export function AuroraBubbles({ count = 20, colors = ['#6366F1', '#8B5CF6', '#06
   count?: number;
   colors?: string[];
 }) {
+  const seeded = (seed: number) => {
+    const value = Math.sin((seed + 1) * 12.9898) * 43758.5453;
+    return value - Math.floor(value);
+  };
+  const rounded = (value: number) => Number(value.toFixed(4));
+  const palette = colors.length > 0 ? colors : ['#d4a574'];
   const bubbles = Array.from({ length: count }, (_, i) => ({
     id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: 2 + Math.random() * 4,
-    color: colors[Math.floor(Math.random() * colors.length)],
-    duration: 3 + Math.random() * 4,
-    delay: Math.random() * 3,
-    blur: 80 + Math.random() * 40,
+    x: rounded(seeded(i * 8) * 100),
+    y: rounded(seeded(i * 8 + 1) * 100),
+    size: rounded(2 + seeded(i * 8 + 2) * 4),
+    color: palette[Math.floor(seeded(i * 8 + 3) * palette.length)] ?? palette[0],
+    duration: rounded(3 + seeded(i * 8 + 4) * 4),
+    delay: rounded(seeded(i * 8 + 5) * 3),
+    blur: rounded(80 + seeded(i * 8 + 6) * 40),
+    opacity: rounded(0.3 + seeded(i * 8 + 7) * 0.4),
   }));
 
   return (
@@ -149,7 +156,7 @@ export function AuroraBubbles({ count = 20, colors = ['#6366F1', '#8B5CF6', '#06
             background: `radial-gradient(circle, ${b.color}40, transparent 70%)`,
             filter: `blur(${b.blur}px)`,
             animation: `auroraFloat ${b.duration}s ease-in-out ${b.delay}s infinite alternate`,
-            opacity: 0.3 + Math.random() * 0.4,
+            opacity: b.opacity,
           }}
         />
       ))}

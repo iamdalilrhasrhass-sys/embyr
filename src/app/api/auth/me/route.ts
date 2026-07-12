@@ -1,31 +1,16 @@
-import { cookies, headers } from "next/headers";
 import { prisma } from "@/lib/prisma";
-import { verifyToken } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
+import { withApiLogging } from "@/lib/api-logger";
 
-export async function GET() {
+async function handleGet() {
   try {
-    const cookieStore = await cookies();
-    let token = cookieStore.get("token")?.value;
-
-    if (!token) {
-      try {
-        const headersList = await headers();
-        const auth = headersList.get("authorization");
-        if (auth?.startsWith("Bearer ")) token = auth.slice(7);
-      } catch {}
-    }
-
-    if (!token) {
+    const auth = await getCurrentUser();
+    if (!auth) {
       return Response.json({ authenticated: false }, { status: 401 });
     }
 
-    const payload = verifyToken(token);
-    if (!payload) {
-      return Response.json({ authenticated: false }, { status: 401 });
-    }
-
-    const user = await prisma.user.findUnique({
-      where: { id: payload.userId },
+    const user = await prisma.user.findFirst({
+      where: { id: auth.id, bannedAt: null, deletedAt: null },
       select: {
         id: true,
         email: true,
@@ -48,8 +33,13 @@ export async function GET() {
       return Response.json({ authenticated: false }, { status: 401 });
     }
 
-    return Response.json({ authenticated: true, user });
+    return Response.json(
+      { authenticated: true, user },
+      { headers: { "Cache-Control": "private, no-store" } },
+    );
   } catch {
     return Response.json({ authenticated: false }, { status: 401 });
   }
 }
+
+export const GET = withApiLogging(handleGet);

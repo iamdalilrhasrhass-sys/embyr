@@ -1,51 +1,16 @@
-#!/usr/bin/env npx tsx
-/**
- * Profile Completion Reminder — sends emails to users with incomplete profiles
- * Cron: 0 10 * * * cd /root/embir && npx tsx scripts/profile-reminder.ts
- */
+#!/usr/bin/env node
 
-import { PrismaClient } from '@prisma/client';
-import { PrismaPg } from '@prisma/adapter-pg';
-import { Pool } from 'pg';
+// Compatibility wrapper for the former profile-reminder cron. User lifecycle
+// emails are no longer sent through an unauthenticated HTTP route. The daily
+// runner owns idempotence, aggregate reporting and outbox processing.
+import { closeJobResources, runScheduledJob } from "../src/lib/job-runner.ts";
+import { prisma } from "../src/lib/prisma.ts";
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
-
-async function main() {
-  const twoDaysAgo = new Date();
-  twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
-
-  const users = await prisma.user.findMany({
-    where: {
-      email: { not: null },
-      createdAt: { lte: twoDaysAgo },
-    },
-    select: { id: true, email: true },
-    take: 20,
-  });
-
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://embir.xyz';
-  let sent = 0;
-
-  for (const user of users) {
-    try {
-      await fetch(`${appUrl}/api/emails/send`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'profile-reminder',
-          userId: user.id,
-          data: { completionPercent: 50 },
-        }),
-      });
-      sent++;
-    } catch {}
-  }
-
-  console.log(`[Profile Reminder] Sent ${sent} reminders`);
+try {
+  const result = await runScheduledJob("daily");
+  console.log(JSON.stringify(result));
+  if (result.status === "failed") process.exitCode = 1;
+} finally {
+  await closeJobResources();
   await prisma.$disconnect();
-  process.exit(0);
 }
-
-main();

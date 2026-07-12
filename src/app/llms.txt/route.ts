@@ -1,16 +1,16 @@
 export const dynamic = "force-static";
 
 const BODY = `# Embir
-> Free-at-launch, inclusive dating app built on reciprocal compatibility: orientation, intention and affinity in both directions, for every orientation. Available worldwide.
+> free for core connections, inclusive dating app built on reciprocal compatibility: orientation, intention and affinity in both directions, for every orientation. Available worldwide.
 
 ## What makes Embir different
 - Reciprocal compatibility: you see someone only if their preferences can include you, and yours them.
 - Six intentions: love, friendship, casual, sport, going out, conversation.
 - Built for every orientation: straight, gay, lesbian, bisexual, trans, queer.
-- Safety first: verified profiles, human moderation, visibility controls.
+- Safety tools: optional selfie badge, reporting, blocking, and visibility controls. No tool guarantees safety.
 
 ## Pricing
-Free at launch for founding members; transparent freemium may fund safety later.
+everything needed to meet someone is free without a credit card; optional services can fund safety and moderation.
 
 ## Key pages
 - Free app: https://embir.xyz/free-dating-app

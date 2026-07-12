@@ -3,7 +3,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Embir — Dating Without Swipe Fatigue',
     short_name: 'Embir',
-    description: 'Free-at-launch dating platform for every orientation. Verified profiles, immersive universes, no swipe fatigue.',
+    description: 'Everything needed to meet someone is free. No credit card required. for every orientation. Verified profiles, immersive universes, no swipe fatigue.',
     start_url: '/?source=pwa',
     scope: '/',
     display: 'standalone',
