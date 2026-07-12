@@ -88,3 +88,12 @@ test("package exposes operational commands", async () => {
     assert.doesNotMatch(script, /--experimental-strip-types/);
   }
 });
+
+test("operator metrics exclude connections owned by deleted accounts", async () => {
+  const source = await readFile("src/lib/admin-metrics.ts", "utf8");
+  assert.match(source, /JOIN "User" mu1 ON mu1\.id = m\."user1Id"/);
+  assert.match(source, /JOIN "User" mu2 ON mu2\.id = m\."user2Id"/);
+  assert.match(source, /mu1\."deletedAt" IS NULL AND mu2\."deletedAt" IS NULL/);
+  assert.match(source, /JOIN "User" cu1 ON cu1\.id = c\."user1Id"/);
+  assert.match(source, /JOIN "User" dpu1 ON dpu1\.id = dpm\."user1Id"/);
+});
