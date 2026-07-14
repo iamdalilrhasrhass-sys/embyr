@@ -65,6 +65,14 @@ test("growth reporting excludes demos, deleted accounts, staff and banned accoun
   }
   assert.match(growth, /qualifiedInTargetZones/);
   assert.match(growth, /activationQualified/);
+  assert.match(growth, /emailVerified/);
+  assert.match(growth, /consentSensitiveData/);
+  assert.match(growth, /consent\.type = 'cgu'/);
+  assert.match(growth, /consent\.type = 'privacy'/);
+  assert.match(growth, /AcquisitionEvent/);
+  assert.match(growth, /primaryIntent/);
+  assert.match(growth, /seekingGenders/);
+  assert.match(growth, /LOWER\(TRIM\(duplicate\.email\)\)/);
   assert.match(migration, /demo_vitrine/);
   assert.match(migration, /"visibilityStatus" = 'HIDDEN'/);
   assert.match(migration, /NOT EXISTS[\s\S]*"User"/);

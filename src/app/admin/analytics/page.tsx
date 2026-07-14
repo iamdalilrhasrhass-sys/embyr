@@ -65,7 +65,7 @@ export default async function AdminAnalytics() {
           <Metric label="Inscriptions aujourd’hui" value={metrics.overview.signupsToday} />
           <Metric label="Inscriptions 7 jours" value={metrics.overview.signups7d} />
           <Metric label="Inscriptions 30 jours" value={metrics.overview.signups30d} detail={change(metrics.overview.signupsChange)} />
-          <Metric label="Utilisateurs qualifiés" value={metrics.overview.totalUsers} />
+          <Metric label="Inscriptions humaines" value={metrics.overview.totalUsers} detail="hors démos, QA, staff, bannis et supprimés" />
           <Metric label="Profils complétés" value={metrics.overview.completedProfiles} />
           <Metric label="DAU / WAU / MAU" value={`${metrics.overview.dau} / ${metrics.overview.wau} / ${metrics.overview.mau}`} />
           <Metric
