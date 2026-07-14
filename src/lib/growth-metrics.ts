@@ -134,6 +134,11 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%.test'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%.local'
+          AND LOWER(TRIM(u.email)) !~ '@example\.(com|org|net|invalid)$'
       ), qualified AS (
         SELECT *
         FROM registered account
@@ -243,6 +248,11 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%.test'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%.local'
+          AND LOWER(TRIM(u.email)) !~ '@example\.(com|org|net|invalid)$'
       ), eligible AS (
         SELECT *
         FROM registered account
@@ -297,6 +307,11 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%.test'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%.local'
+          AND LOWER(TRIM(u.email)) !~ '@example\.(com|org|net|invalid)$'
           AND u."createdAt" >= NOW() - INTERVAL '30 days'
       )
       SELECT
