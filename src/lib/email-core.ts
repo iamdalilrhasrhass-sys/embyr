@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 
 export const EMAIL_TEMPLATE_TYPES = [
+  "email-verification",
   "welcome",
   "profile-reminder",
   "weekly-digest",
@@ -71,6 +72,12 @@ export interface AdminSignupEmailData {
   totalUsers: number;
 }
 
+export interface EmailVerificationEmailData {
+  verificationUrl: string;
+  expiresAt: string;
+  locale: "fr" | "en" | "es";
+}
+
 export interface QueuedEmailPayload {
   schemaVersion: 1;
   recipientKind: EmailRecipientKind;
@@ -138,9 +145,39 @@ export function isQueuedEmailPayload(value: unknown): value is QueuedEmailPayloa
     if (candidate.template === "admin-signup") {
       assertAdminSignupEmailData(candidate.data);
     }
+    if (candidate.template === "email-verification") {
+      assertEmailVerificationEmailData(candidate.data);
+    }
     return true;
   } catch {
     return false;
+  }
+}
+
+export function assertEmailVerificationEmailData(
+  value: unknown,
+): asserts value is EmailVerificationEmailData {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error("Invalid email verification payload");
+  }
+  const data = value as Partial<EmailVerificationEmailData>;
+  if (
+    typeof data.verificationUrl !== "string" ||
+    typeof data.expiresAt !== "string" ||
+    (data.locale !== "fr" && data.locale !== "en" && data.locale !== "es")
+  ) {
+    throw new Error("Invalid email verification payload");
+  }
+  assertIsoDate(data.expiresAt, "email verification expiry");
+  const url = new URL(data.verificationUrl);
+  if (
+    url.protocol !== "https:" ||
+    url.hostname !== "embir.xyz" ||
+    url.pathname !== `/${data.locale}/auth/verify-email` ||
+    !url.hash.startsWith("#token=") ||
+    url.search
+  ) {
+    throw new Error("Invalid email verification URL");
   }
 }
 

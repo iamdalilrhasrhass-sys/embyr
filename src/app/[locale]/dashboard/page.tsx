@@ -49,6 +49,7 @@ interface AuthData {
   user?: {
     id?: string;
     bannedAt?: string | null;
+    emailVerified?: boolean;
   };
 }
 
@@ -122,6 +123,8 @@ function DashboardExperience() {
   const [pendingCandidate, setPendingCandidate] = useState<string | null>(null);
   const [feedVersion, setFeedVersion] = useState(0);
   const [toast, setToast] = useState("");
+  const [emailVerified, setEmailVerified] = useState(true);
+  const [verificationSending, setVerificationSending] = useState(false);
   const dashboardTracked = useRef(false);
 
   const loadConnections = useCallback(async () => {
@@ -229,6 +232,7 @@ function DashboardExperience() {
         }
 
         setMyId(authData.user?.id ?? profileData.userId);
+        setEmailVerified(authData.user?.emailVerified !== false);
         setProfile(profileData);
         setStatus("ready");
         void Promise.all([loadSignal(), loadConnections()]);
@@ -428,6 +432,44 @@ function DashboardExperience() {
     }
   }
 
+  async function resendEmailVerification() {
+    setVerificationSending(true);
+    try {
+      const response = await fetch("/api/auth/email/resend", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      if (!response.ok) throw new Error("verification_resend_failed");
+      const payload = (await response.json()) as { alreadyVerified?: boolean };
+      if (payload.alreadyVerified) setEmailVerified(true);
+      setToast(
+        payload.alreadyVerified
+          ? locale === "fr"
+            ? "Ton email est déjà confirmé."
+            : locale === "es"
+              ? "Tu email ya está confirmado."
+              : "Your email is already confirmed."
+          : locale === "fr"
+            ? "Lien envoyé. Vérifie ta boîte de réception."
+            : locale === "es"
+              ? "Enlace enviado. Revisa tu bandeja de entrada."
+              : "Link sent. Check your inbox.",
+      );
+    } catch {
+      setToast(
+        locale === "fr"
+          ? "Impossible d’envoyer le lien pour le moment."
+          : locale === "es"
+            ? "No se puede enviar el enlace en este momento."
+            : "The link cannot be sent right now.",
+      );
+    } finally {
+      setVerificationSending(false);
+    }
+  }
+
   useEffect(() => {
     if (!toast) return;
     const timer = window.setTimeout(() => setToast(""), 3500);
@@ -516,6 +558,54 @@ function DashboardExperience() {
         <div className="my-6 rounded-2xl border border-emerald-400/10 bg-emerald-400/[0.035] px-4 py-3 text-center text-xs font-medium text-emerald-100/70">
           {copy.free}
         </div>
+
+        {!emailVerified ? (
+          <section
+            aria-label={
+              locale === "fr"
+                ? "Validation de l’adresse email"
+                : locale === "es"
+                  ? "Verificación del correo electrónico"
+                  : "Email verification"
+            }
+            className="mb-6 flex flex-col gap-4 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <p className="text-sm font-semibold text-[#f2d7b8]">
+                {locale === "fr"
+                  ? "Confirme ton email pour sécuriser ton compte"
+                  : locale === "es"
+                    ? "Confirma tu email para proteger tu cuenta"
+                    : "Confirm your email to secure your account"}
+              </p>
+              <p className="mt-1 text-xs leading-5 text-white/40">
+                {locale === "fr"
+                  ? "Le lien expire après 24 heures."
+                  : locale === "es"
+                    ? "El enlace caduca después de 24 horas."
+                    : "The link expires after 24 hours."}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => void resendEmailVerification()}
+              disabled={verificationSending}
+              className="min-h-12 shrink-0 rounded-xl bg-[#d4a574] px-5 text-xs font-bold text-[#0a0614] disabled:cursor-wait disabled:opacity-60"
+            >
+              {verificationSending
+                ? locale === "fr"
+                  ? "Envoi…"
+                  : locale === "es"
+                    ? "Enviando…"
+                    : "Sending…"
+                : locale === "fr"
+                  ? "Renvoyer le lien"
+                  : locale === "es"
+                    ? "Reenviar enlace"
+                    : "Resend link"}
+            </button>
+          </section>
+        ) : null}
 
         <nav
           aria-label="Connection OS"

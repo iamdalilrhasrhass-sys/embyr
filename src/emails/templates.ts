@@ -1,7 +1,9 @@
 import {
   assertAdminSignupEmailData,
   assertAggregateReportData,
+  assertEmailVerificationEmailData,
   type AggregateReportData,
+  type EmailVerificationEmailData,
   type QueuedEmailPayload,
 } from "../lib/email-core.ts";
 
@@ -31,6 +33,37 @@ export const welcomeEmail = (userName: string): string =>
     "Bienvenue sur Embir",
     `<p>Bonjour ${escapeHtml(userName)},</p><p>Ton espace est prêt. Complète ton profil et tes préférences pour découvrir des connexions réciproques.</p><p><a href="https://embir.xyz/dashboard/profile" class="cta">Compléter mon profil</a></p><p class="muted">Embir est une communauté mondiale, inclusive et réservée aux adultes.</p>`,
   );
+
+export function emailVerificationEmail(
+  userName: string,
+  data: EmailVerificationEmailData,
+): string {
+  assertEmailVerificationEmailData(data);
+  const content = {
+    fr: {
+      title: "Confirme ton email",
+      intro: `Bonjour ${escapeHtml(userName)}, confirme cette adresse pour sécuriser ton compte et rendre ton profil éligible aux connexions Embir.`,
+      cta: "Confirmer mon adresse",
+      expiry: "Ce lien expire dans 24 heures. Si tu n’as pas créé ce compte, ignore simplement cet email.",
+    },
+    en: {
+      title: "Confirm your email",
+      intro: `Hi ${escapeHtml(userName)}, confirm this address to secure your account and make your profile eligible for Embir connections.`,
+      cta: "Confirm my address",
+      expiry: "This link expires in 24 hours. If you did not create this account, simply ignore this email.",
+    },
+    es: {
+      title: "Confirma tu email",
+      intro: `Hola ${escapeHtml(userName)}, confirma esta dirección para proteger tu cuenta y hacer que tu perfil sea elegible para las conexiones de Embir.`,
+      cta: "Confirmar mi dirección",
+      expiry: "Este enlace caduca en 24 horas. Si no creaste esta cuenta, ignora este email.",
+    },
+  }[data.locale];
+  return emailShell(
+    content.title,
+    `<p>${content.intro}</p><p><a href="${escapeHtml(data.verificationUrl)}" class="cta">${content.cta}</a></p><p class="muted">${content.expiry}</p>`,
+  );
+}
 
 export const profileReminderEmail = (
   userName: string,
@@ -125,6 +158,10 @@ export function renderQueuedEmail(
   payload: QueuedEmailPayload,
   displayName = "toi",
 ): string {
+  if (payload.template === "email-verification") {
+    assertEmailVerificationEmailData(payload.data);
+    return emailVerificationEmail(displayName, payload.data);
+  }
   if (payload.template === "welcome") return welcomeEmail(displayName);
   const templateData = payload.data as Record<string, unknown>;
   if (payload.template === "admin-signup") {

@@ -393,8 +393,10 @@ async function resolveRecipient(
   if (!row.userId) return { kind: "unavailable" };
   const user = await loadActiveUserEmail(row.userId);
   if (!user) return { kind: "unavailable" };
-  if (!user.emailEnabled) return { kind: "disabled" };
+  const isTransactionalVerification = payload.template === "email-verification";
+  if (!isTransactionalVerification && !user.emailEnabled) return { kind: "disabled" };
   if (
+    !isTransactionalVerification &&
     user.quietHoursEnabled &&
     isWithinQuietHours({
       now,
