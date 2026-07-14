@@ -18,19 +18,29 @@ export type ValidRegistrationInput = {
   birthDate: string | null;
 };
 
+export type RegistrationErrorCode =
+  | "email_required"
+  | "email_invalid"
+  | "password_too_short"
+  | "adult_confirmation_required"
+  | "terms_required"
+  | "privacy_required"
+  | "birth_date_invalid"
+  | "minimum_age_required";
+
 export function validateRegistrationInput(
   input: RegistrationInput
 ):
   | { ok: true; value: ValidRegistrationInput }
-  | { ok: false; status: 400; error: string } {
+  | { ok: false; status: 400; error: string; code: RegistrationErrorCode } {
   // Email validation
   if (typeof input.email !== "string" || !input.email.trim()) {
-    return { ok: false, status: 400, error: "Email requis" };
+    return { ok: false, status: 400, error: "Email requis", code: "email_required" };
   }
   const email = input.email.trim().toLowerCase();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return { ok: false, status: 400, error: "Email invalide" };
+    return { ok: false, status: 400, error: "Email invalide", code: "email_invalid" };
   }
 
   // Password validation
@@ -39,6 +49,7 @@ export function validateRegistrationInput(
       ok: false,
       status: 400,
       error: "Mot de passe trop court (8 caractères minimum)",
+      code: "password_too_short",
     };
   }
 
@@ -48,6 +59,7 @@ export function validateRegistrationInput(
       ok: false,
       status: 400,
       error: "Vous devez certifier avoir 18 ans ou plus",
+      code: "adult_confirmation_required",
     };
   }
 
@@ -57,6 +69,7 @@ export function validateRegistrationInput(
       ok: false,
       status: 400,
       error: "Vous devez accepter les CGU",
+      code: "terms_required",
     };
   }
 
@@ -66,6 +79,7 @@ export function validateRegistrationInput(
       ok: false,
       status: 400,
       error: "Vous devez accepter la politique de confidentialité",
+      code: "privacy_required",
     };
   }
 
@@ -78,7 +92,7 @@ export function validateRegistrationInput(
   if (typeof input.birthDate === "string" && input.birthDate.trim()) {
     const parsed = new Date(input.birthDate);
     if (isNaN(parsed.getTime())) {
-      return { ok: false, status: 400, error: "Date de naissance invalide" };
+      return { ok: false, status: 400, error: "Date de naissance invalide", code: "birth_date_invalid" };
     }
     // Check age >= 18
     const today = new Date();
@@ -95,6 +109,7 @@ export function validateRegistrationInput(
         ok: false,
         status: 400,
         error: "Vous devez avoir au moins 18 ans",
+        code: "minimum_age_required",
       };
     }
     birthDate = input.birthDate;

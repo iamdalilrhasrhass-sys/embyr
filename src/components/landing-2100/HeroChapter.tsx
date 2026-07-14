@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import CompatibilityCompass from "./CompatibilityCompass";
 import type { LandingCopy } from "./landing-copy";
 
@@ -17,9 +17,9 @@ export default function HeroChapter({ copy, locale }: HeroChapterProps) {
           <h1>{copy.title}</h1>
           <p className="e21-hero__body">{copy.body}</p>
           <div className="e21-actions">
-            <Link href={discoveryHref} className="e21-button e21-button--primary">
+            <TrackedLink href={discoveryHref} label={copy.primary} location="landing_hero" className="e21-button e21-button--primary">
               {copy.primary}
-            </Link>
+            </TrackedLink>
             <a href="#compatibility" className="e21-button e21-button--secondary">
               {copy.secondary}
             </a>

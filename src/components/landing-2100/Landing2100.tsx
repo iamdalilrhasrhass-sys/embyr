@@ -21,10 +21,10 @@ export default function Landing2100({ locale }: Landing2100Props) {
       <LandingNav copy={copy.nav} locale={locale} />
       <HeroChapter copy={copy.hero} locale={locale} />
       <ReciprocityChapter copy={copy.reciprocity} />
-      <UniverseChapter copy={copy.universe} />
+      <UniverseChapter copy={copy.universe} locale={locale} />
       <IntentionsRail copy={copy.intentions} />
       <JournalIndex copy={copy.journal} />
-      <SeoContinuation copy={copy.seo} finalCopy={copy.final} />
+      <SeoContinuation copy={copy.seo} finalCopy={copy.final} locale={locale} />
     </main>
   );
 }

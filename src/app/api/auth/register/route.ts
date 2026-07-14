@@ -6,6 +6,7 @@ import { validateRegistrationInput } from "@/lib/registration";
 import { enqueueAdminSignupNotification } from "@/lib/email-outbox";
 import { sanitizeOperationalError } from "@/lib/email-core";
 import { withApiLogging } from "@/lib/api-logger";
+import { consumePublicForm } from "@/lib/public-form-rate-limit";
 
 function generateReferralCode(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -29,6 +30,13 @@ function acquisitionValue(value: unknown, fallback: string | null = null): strin
 
 async function handlePost(request: NextRequest) {
   try {
+    const rateLimit = consumePublicForm(request, "auth-register", 8);
+    if (!rateLimit.allowed) {
+      return Response.json(
+        { error: "Trop de tentatives", code: "rate_limited" },
+        { status: 429, headers: { "Retry-After": String(rateLimit.retryAfterSeconds) } },
+      );
+    }
     const body = await request.json() as Record<string, unknown>;
     const validation = validateRegistrationInput({
       email: body.email,
@@ -40,7 +48,7 @@ async function handlePost(request: NextRequest) {
       birthDate: body.birthDate,
     });
     if (!validation.ok) {
-      return Response.json({ error: validation.error }, { status: validation.status });
+      return Response.json({ error: validation.error, code: validation.code }, { status: validation.status });
     }
     const validated = validation.value;
 
@@ -48,7 +56,12 @@ async function handlePost(request: NextRequest) {
       where: { email: validated.email },
       select: { id: true },
     });
-    if (existingUser) return Response.json({ error: "Un compte existe déjà avec cet email" }, { status: 409 });
+    if (existingUser) {
+      return Response.json(
+        { error: "Un compte existe déjà avec cet email", code: "email_already_registered" },
+        { status: 409 },
+      );
+    }
 
     const genderMap: Record<string, GenderIdentity> = {
       female: "FEMME",
@@ -88,7 +101,7 @@ async function handlePost(request: NextRequest) {
 
     const locale = (["fr", "en", "es"] as const).includes(body.locale as "fr" | "en" | "es")
       ? body.locale as "fr" | "en" | "es"
-      : "fr";
+      : "en";
     const headerCountry = request.headers.get("x-vercel-ip-country") || request.headers.get("cf-ipcountry");
     const country = /^[A-Z]{2}$/.test(headerCountry ?? "") ? headerCountry : shortText(body.country, 80);
     const source = acquisitionValue(body.source, "direct") ?? "direct";
@@ -207,7 +220,10 @@ async function handlePost(request: NextRequest) {
     return response;
   } catch (error) {
     console.error("Register error:", sanitizeOperationalError(error));
-    return Response.json({ error: "Erreur lors de l'inscription" }, { status: 500 });
+    return Response.json(
+      { error: "Erreur lors de l'inscription", code: "registration_failed" },
+      { status: 500 },
+    );
   }
 }
 

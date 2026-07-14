@@ -14,7 +14,7 @@ const alternatives = [
     ads: "None",
     messaging: "Unlimited",
     bestFor: "Real connections, no paywalls",
-    verdict: "The only truly free option.",
+    verdict: "A free core-connection option with reciprocal preferences.",
   },
   {
     name: "Scruff",
@@ -82,8 +82,8 @@ export default function GrindrVsPage() {
           </div>
 
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 text-center mb-10">
-            <h2 className="text-2xl font-bold text-white mb-3">Try the only free for core connections option</h2>
-            <p className="text-white/50 mb-6">No ads. Core connections without a credit card. No catch. Just real guys.</p>
+            <h2 className="text-2xl font-bold text-white mb-3">Try a different core-connection experience</h2>
+            <p className="text-white/50 mb-6">No ads. Core connections without a credit card. Reciprocal preferences and clear safety controls.</p>
             <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90">
               Create my free profile
             </Link>
@@ -98,7 +98,7 @@ export default function GrindrVsPage() {
             </p>
             <h3 className="text-white/80 text-lg font-semibold">No paywalls, period</h3>
             <p>If messaging is the core feature, why paywall it? Embir keeps everything free — messages, profiles, discovery, and even reciprocal compatibility.</p>
-            <h3 className="text-white/80 text-lg font-semibold">No ads, no tracking</h3>
+            <h3 className="text-white/80 text-lg font-semibold">No ads, consent-based analytics</h3>
             <p>Most free apps sell your attention to advertisers. Embir doesn&apos;t run ads and doesn&apos;t sell your data.</p>
             <h3 className="text-white/80 text-lg font-semibold">Real profiles, not bots</h3>
             <p>Free apps attract bots. Embir starts with real founding members in Paris — quality over quantity from day one.</p>

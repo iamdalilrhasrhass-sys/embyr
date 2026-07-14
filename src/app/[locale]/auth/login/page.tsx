@@ -9,9 +9,9 @@ import { AuroraBubbles } from "@/components/VibeEffects";
 import { localePath, supportedLocale, type SupportedLocale } from "@/components/connection-os/types";
 
 const copy = {
-  fr: { titleA: "Bon", titleB: "retour", subtitle: "Connecte-toi à ton espace Embir.", email: "Email", password: "Mot de passe", help: "Aide ?", submit: "Se connecter", loading: "Connexion…", fallback: "Identifiants incorrects", new: "Pas encore de compte ?", join: "Créer mon profil" },
-  en: { titleA: "Welcome", titleB: "back", subtitle: "Sign in to your Embir space.", email: "Email", password: "Password", help: "Help?", submit: "Sign in", loading: "Signing in…", fallback: "Incorrect credentials", new: "New to Embir?", join: "Create my profile" },
-  es: { titleA: "Qué bueno", titleB: "verte", subtitle: "Accede a tu espacio Embir.", email: "Email", password: "Contraseña", help: "¿Ayuda?", submit: "Entrar", loading: "Accediendo…", fallback: "Credenciales incorrectas", new: "¿Aún no tienes cuenta?", join: "Crear mi perfil" },
+  fr: { titleA: "Bon", titleB: "retour", subtitle: "Connecte-toi à ton espace Embir.", email: "Email", emailPlaceholder: "vous@exemple.com", password: "Mot de passe", help: "Aide ?", submit: "Se connecter", loading: "Connexion…", fallback: "La connexion a échoué.", required: "Email et mot de passe requis.", invalid: "Email ou mot de passe incorrect.", limited: "Trop de tentatives. Réessaie dans quelques minutes.", new: "Pas encore de compte ?", join: "Créer mon profil" },
+  en: { titleA: "Welcome", titleB: "back", subtitle: "Sign in to your Embir space.", email: "Email", emailPlaceholder: "you@example.com", password: "Password", help: "Help?", submit: "Sign in", loading: "Signing in…", fallback: "We could not sign you in.", required: "Email and password are required.", invalid: "Incorrect email or password.", limited: "Too many attempts. Try again in a few minutes.", new: "New to Embir?", join: "Create my profile" },
+  es: { titleA: "Qué bueno", titleB: "verte", subtitle: "Accede a tu espacio Embir.", email: "Email", emailPlaceholder: "tu@ejemplo.com", password: "Contraseña", help: "¿Ayuda?", submit: "Entrar", loading: "Accediendo…", fallback: "No se pudo iniciar sesión.", required: "Email y contraseña obligatorios.", invalid: "Email o contraseña incorrectos.", limited: "Demasiados intentos. Inténtalo de nuevo en unos minutos.", new: "¿Aún no tienes cuenta?", join: "Crear mi perfil" },
 } satisfies Record<SupportedLocale, Record<string, string>>;
 
 export default function Login() {
@@ -35,10 +35,13 @@ export default function Login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-      const data = await res.json();
+      const data = await res.json() as { code?: string };
 
       if (!res.ok) {
-        throw new Error(data.error || text.fallback);
+        if (data.code === "credentials_required") throw new Error(text.required);
+        if (data.code === "credentials_invalid") throw new Error(text.invalid);
+        if (data.code === "rate_limited") throw new Error(text.limited);
+        throw new Error(text.fallback);
       }
 
       router.push(localePath(locale, "/dashboard"));
@@ -119,7 +122,7 @@ export default function Login() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-[#d4a574]/40 focus:outline-none focus:ring-1 focus:ring-[#d4a574]/30"
-                    placeholder="votre@email.com"
+                    placeholder={text.emailPlaceholder}
                   />
                 </div>
 

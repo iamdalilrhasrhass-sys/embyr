@@ -149,20 +149,20 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     prisma.$queryRaw<BreakdownRow[]>`
       SELECT stage AS label, total FROM (
         VALUES
-          ('landing_viewed', (SELECT COUNT(*) FROM "AnalyticsEvent" WHERE "eventName" IN ('page_view','landing_viewed') AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('landing_viewed', (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent" WHERE "eventName" IN ('page_view','landing_viewed') AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('cta_click', (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent" WHERE "eventName" = 'cta_click' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('signup_started', (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent" WHERE "eventName" = 'signup_started' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
           ('signup_completed', (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL AND "createdAt" >= NOW() - INTERVAL '30 days')),
           ('profile_completed', (SELECT COUNT(*) FROM "Profile" WHERE "onboardingCompletedAt" >= NOW() - INTERVAL '30 days')),
-          ('signal_activated', (SELECT COUNT(*) FROM "AnalyticsEvent" WHERE "eventName" = 'signal_activated' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('reciprocal_connection_created', (SELECT COUNT(*) FROM "Match" m
-            JOIN "User" u1 ON u1.id = m."user1Id" JOIN "User" u2 ON u2.id = m."user2Id"
-            WHERE m."matchedAt" >= NOW() - INTERVAL '30 days' AND u1."deletedAt" IS NULL AND u2."deletedAt" IS NULL)),
-          ('conversation_started', (SELECT COUNT(*) FROM "Conversation" c
-            JOIN "User" u1 ON u1.id = c."user1Id" JOIN "User" u2 ON u2.id = c."user2Id"
-            WHERE c."createdAt" >= NOW() - INTERVAL '30 days' AND u1."deletedAt" IS NULL AND u2."deletedAt" IS NULL)),
-          ('plan_proposed', (SELECT COUNT(*) FROM "DatePlan" dp
-            JOIN "Match" m ON m.id = dp."matchId"
-            JOIN "User" u1 ON u1.id = m."user1Id" JOIN "User" u2 ON u2.id = m."user2Id"
-            WHERE dp."createdAt" >= NOW() - INTERVAL '30 days' AND u1."deletedAt" IS NULL AND u2."deletedAt" IS NULL))
+          ('signal_activated', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'signal_activated' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('feed_viewed', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'feed_viewed' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('contextual_signal_sent', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'contextual_signal_sent' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('reciprocal_connection_created', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'reciprocal_connection_created' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('reveal_completed', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'reveal_completed' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('conversation_started', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'conversation_started' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('message_sent', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'message_sent' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('plan_proposed', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'plan_proposed' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('plan_accepted', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'plan_accepted' AND "occurredAt" >= NOW() - INTERVAL '30 days'))
       ) AS funnel(stage, total)
     `,
     prisma.$queryRaw<BreakdownRow[]>`
@@ -220,10 +220,11 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
       FROM "AnalyticsEvent"
       WHERE "occurredAt" >= NOW() - INTERVAL '30 days'
         AND "eventName" IN (
-          'onboarding_started','onboarding_step_completed','profile_completed','signal_activated',
+          'cta_click','signup_started','signup_completed','onboarding_started','onboarding_step_completed','profile_completed','signal_activated',
           'feed_viewed','profile_exposed','contextual_signal_sent','reciprocal_connection_created',
           'reveal_started','reveal_completed','conversation_started','message_sent','plan_proposed',
-          'plan_accepted','connection_closed','user_blocked','report_submitted'
+          'plan_accepted','connection_closed','user_blocked','report_submitted',
+          'referral_link_copied','referral_share_clicked','ambassador_application_submitted'
         )
       GROUP BY 1 ORDER BY 2 DESC
     `,

@@ -49,3 +49,4 @@ node_modules
 /storage/private/
 /.playwright-cli/
 /output/playwright/
+/artifacts/

@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Profils vérifiés sur les applis de rencontre — pourquoi c'est essentiel",
-  description: "Découvrez l'importance des profils vérifiés sur les applications de rencontre. Comment Embir vérifie chaque membre par selfie pour éliminer les faux profils.",
+  description: "Découvrez le rôle et les limites du badge selfie facultatif sur Embir, ainsi que les autres outils disponibles contre les abus.",
   alternates: { canonical: "https://embir.xyz/blog/profils-verifies-rencontre-guide" },
   openGraph: {
     title: "Profils vérifiés sur les applis de rencontre — pourquoi c'est essentiel",
-    description: "Découvrez l'importance des profils vérifiés sur les applications de rencontre. Comment Embir vérifie chaque membre par selfie pour éliminer les faux profils.",
+    description: "Découvrez le rôle et les limites du badge selfie facultatif sur Embir, ainsi que les autres outils disponibles contre les abus.",
     url: "https://embir.xyz/blog/profils-verifies-rencontre-guide",
     type: "article",
     locale: "fr_FR",
@@ -28,7 +28,7 @@ export default function Page() {
             <span className="text-xs text-white/20">Juin 2026</span>
           </div>
           <h1 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">Pourquoi les profils vérifiés sont la clé des rencontres réussies</h1>
-          <p className="mt-5 text-lg leading-relaxed text-white/45">Découvrez l'importance des profils vérifiés sur les applications de rencontre. Comment Embir vérifie chaque membre par selfie pour éliminer les faux profils.</p>
+          <p className="mt-5 text-lg leading-relaxed text-white/45">Découvrez le rôle et les limites du badge selfie facultatif, ainsi que les autres outils disponibles contre les abus.</p>
           <p className="mt-4 text-xs text-white/15">Par l'Équipe Embir · 6 min de lecture</p>
         </div>
       </header>

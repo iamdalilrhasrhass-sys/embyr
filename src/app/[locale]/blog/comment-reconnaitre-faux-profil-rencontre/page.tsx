@@ -85,7 +85,7 @@ export default function Page() {
             compare la photo de profil avec un selfie pris sur le moment.
           </p>
           <p>
-            Cette approche élimine radicalement les faux profils, les robots et les usurpations d'identité.
+            Cette approche ajoute une barrière concrète contre certains faux profils et certaines usurpations, sans prétendre supprimer tout risque.
             C'est un investissement dans la confiance qui profite à toute la communauté.
           </p>
 

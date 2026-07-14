@@ -2,23 +2,48 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyPassword, signToken } from "@/lib/auth";
 import { withApiLogging } from "@/lib/api-logger";
+import { sanitizeOperationalError } from "@/lib/email-core";
+import { consumePublicForm } from "@/lib/public-form-rate-limit";
 
 async function handlePost(request: NextRequest) {
   try {
-    const { email, password } = await request.json();
+    const rateLimit = consumePublicForm(request, "auth-login", 30);
+    if (!rateLimit.allowed) {
+      return Response.json(
+        { error: "Trop de tentatives", code: "rate_limited" },
+        { status: 429, headers: { "Retry-After": String(rateLimit.retryAfterSeconds) } },
+      );
+    }
+
+    const body: unknown = await request.json();
+    const email = body && typeof body === "object" && "email" in body && typeof body.email === "string"
+      ? body.email.trim().toLowerCase()
+      : "";
+    const password = body && typeof body === "object" && "password" in body && typeof body.password === "string"
+      ? body.password
+      : "";
 
     if (!email || !password) {
-      return Response.json({ error: "Email et mot de passe requis" }, { status: 400 });
+      return Response.json(
+        { error: "Email et mot de passe requis", code: "credentials_required" },
+        { status: 400 },
+      );
     }
 
     const user = await prisma.user.findUnique({ where: { email } });
     if (!user || user.bannedAt || user.deletedAt) {
-      return Response.json({ error: "Email ou mot de passe incorrect" }, { status: 401 });
+      return Response.json(
+        { error: "Email ou mot de passe incorrect", code: "credentials_invalid" },
+        { status: 401 },
+      );
     }
 
     const valid = await verifyPassword(password, user.passwordHash);
     if (!valid) {
-      return Response.json({ error: "Email ou mot de passe incorrect" }, { status: 401 });
+      return Response.json(
+        { error: "Email ou mot de passe incorrect", code: "credentials_invalid" },
+        { status: 401 },
+      );
     }
 
     const token = signToken({ userId: user.id, email: user.email });
@@ -57,8 +82,11 @@ async function handlePost(request: NextRequest) {
 
     return response;
   } catch (error) {
-    console.error("Login error:", error);
-    return Response.json({ error: "Erreur lors de la connexion" }, { status: 500 });
+    console.error("Login error:", sanitizeOperationalError(error));
+    return Response.json(
+      { error: "Erreur lors de la connexion", code: "login_failed" },
+      { status: 500 },
+    );
   }
 }
 

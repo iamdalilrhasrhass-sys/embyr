@@ -55,7 +55,7 @@ export default function CookieConsent() {
       <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-white/55 sm:text-sm">
           {copy.body}{" "}
-          <Link href={privacyHref} className="text-[#d4a574] underline hover:text-[#e8c4a2]">
+          <Link href={privacyHref} className="inline-flex min-h-11 items-center text-[#d4a574] underline hover:text-[#e8c4a2]">
             {copy.privacy}
           </Link>
           . {copy.sold}
@@ -66,7 +66,7 @@ export default function CookieConsent() {
               writeAnalyticsConsent(false);
               setVisible(false);
             }}
-            className="rounded-full border border-white/15 px-4 py-2 text-xs font-medium text-white/60 hover:border-white/30 hover:text-white/80"
+            className="min-h-11 rounded-full border border-white/15 px-4 py-2 text-xs font-medium text-white/60 hover:border-white/30 hover:text-white/80"
           >
             {copy.essential}
           </button>
@@ -75,7 +75,7 @@ export default function CookieConsent() {
               writeAnalyticsConsent(true);
               setVisible(false);
             }}
-            className="rounded-full bg-[#d4a574] px-4 py-2 text-xs font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
+            className="min-h-11 rounded-full bg-[#d4a574] px-4 py-2 text-xs font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
           >
             {copy.accept}
           </button>
