@@ -21,7 +21,7 @@ const forbiddenHomepageText = [
 
 const pageChecks = [
   { label: "home", path: "/", expectH1: true },
-  { label: "register", path: "/auth/register" },
+  { label: "register", path: "/auth/register", expectNoindex: true },
   { label: "us", path: "/en/us/free-dating-app" },
   { label: "uk", path: "/en/uk/free-dating-app" },
   { label: "fr", path: "/fr/gratuit-au-lancement" },
@@ -104,7 +104,13 @@ for (const check of pageChecks) {
 
   assert(result.status === 200, `${label}: HTTP ${result.status}`, failures);
   assert(canonical, `${label}: canonical missing`, failures);
-  assert(!noindex, `${label}: unexpected noindex`, failures);
+  assert(
+    check.expectNoindex ? noindex : !noindex,
+    check.expectNoindex
+      ? `${label}: expected noindex missing`
+      : `${label}: unexpected noindex`,
+    failures,
+  );
   assert(result.ttfbMs <= ttfbLimit, `${label}: TTFB ${result.ttfbMs}ms > ${ttfbLimit}ms`, failures);
   assert(result.totalMs <= totalLimit, `${label}: total ${result.totalMs}ms > ${totalLimit}ms`, failures);
 
