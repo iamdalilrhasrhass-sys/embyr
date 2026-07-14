@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  assertEmailVerificationEmailData,
   assertAdminSignupEmailData,
   assertAggregateReportData,
   hashEmailAddress,
@@ -14,6 +15,7 @@ import {
 } from "../../src/lib/email-local.ts";
 import {
   adminAggregateReportEmail,
+  emailVerificationEmail,
   renderQueuedEmail,
   welcomeEmail,
   weeklyDigestEmail,
@@ -78,6 +80,31 @@ test("queued payload rejects direct recipient PII", () => {
       data: aggregate,
     }),
     false,
+  );
+});
+
+test("email verification payload keeps the token in a short-lived URL fragment", () => {
+  const data = {
+    verificationUrl: "https://embir.xyz/fr/auth/verify-email#token=signed-token",
+    expiresAt: "2026-07-16T00:00:00.000Z",
+    locale: "fr" as const,
+  };
+  assert.doesNotThrow(() => assertEmailVerificationEmailData(data));
+  assert.equal(
+    isQueuedEmailPayload({
+      schemaVersion: 1,
+      recipientKind: "user",
+      template: "email-verification",
+      data,
+    }),
+    true,
+  );
+  const html = emailVerificationEmail("<script>alert(1)</script>", data);
+  assert.doesNotMatch(html, /<script>/);
+  assert.match(html, /verify-email#token=signed-token/);
+  assert.throws(
+    () => assertEmailVerificationEmailData({ ...data, verificationUrl: "https://example.com/#token=x" }),
+    /Invalid email verification URL/,
   );
 });
 

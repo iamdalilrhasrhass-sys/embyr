@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   localePath,
@@ -117,6 +117,7 @@ const copy = {
     finish: "Terminer mon profil",
     saving: "Enregistrement…",
     free: "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.",
+    emailNotice: "Un lien de validation vient d’être envoyé. Tu peux compléter ton profil maintenant, puis confirmer ton email depuis ta boîte de réception.",
     identityTitle: "Commençons par toi",
     identityBody:
       "Ces informations permettent de construire une sélection locale et adulte.",
@@ -181,6 +182,7 @@ const copy = {
     finish: "Complete my profile",
     saving: "Saving…",
     free: "Everything you need to meet someone is free. No credit card required.",
+    emailNotice: "A verification link has just been sent. You can finish your profile now, then confirm your email from your inbox.",
     identityTitle: "Let’s start with you",
     identityBody:
       "This information helps build a local, adults-only selection.",
@@ -243,6 +245,7 @@ const copy = {
     finish: "Completar mi perfil",
     saving: "Guardando…",
     free: "Todo lo necesario para conocer a alguien es gratis. Sin tarjeta bancaria.",
+    emailNotice: "Acabamos de enviar un enlace de verificación. Puedes terminar tu perfil ahora y confirmar tu email desde tu bandeja de entrada.",
     identityTitle: "Empecemos por ti",
     identityBody:
       "Esta información permite crear una selección local y solo para adultos.",
@@ -411,6 +414,7 @@ function arrayValue<T extends string>(current: T[], value: T): T[] {
 
 export default function OnboardingPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const locale = supportedLocale(useLocale());
   const text = copy[locale];
   const stepLabels = text.stepLabels as string[];
@@ -646,6 +650,12 @@ export default function OnboardingPage() {
             {step + 1}/{TOTAL_STEPS}
           </span>
         </header>
+
+        {searchParams.get("email") === "verification-sent" ? (
+          <p className="mb-6 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-4 py-3 text-sm leading-6 text-[#e8c4a2]" role="status">
+            {text.emailNotice as string}
+          </p>
+        ) : null}
 
         <div className="mb-8">
           <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.14em] text-white/30">

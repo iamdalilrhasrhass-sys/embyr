@@ -266,7 +266,7 @@ export default function Register() {
       }
 
       trackSignupCompleted();
-      router.push(localePath(locale, "/onboarding"));
+      router.push(`${localePath(locale, "/onboarding")}?email=verification-sent`);
     } catch {
       trackSignupError("network_error");
       setError(text.errors.network_error);

@@ -3,7 +3,8 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { hashPassword, signToken } from "@/lib/auth";
 import { validateRegistrationInput } from "@/lib/registration";
-import { enqueueAdminSignupNotification } from "@/lib/email-outbox";
+import { enqueueAdminSignupNotification, processEmailOutbox } from "@/lib/email-outbox";
+import { enqueueEmailVerification } from "@/lib/email-verification-delivery";
 import { sanitizeOperationalError } from "@/lib/email-core";
 import { withApiLogging } from "@/lib/api-logger";
 import { consumePublicForm } from "@/lib/public-form-rate-limit";
@@ -173,6 +174,25 @@ async function handlePost(request: NextRequest) {
     });
 
     const totalUsers = await prisma.user.count({ where: { deletedAt: null } });
+    await enqueueEmailVerification({
+      userId: user.id,
+      email: user.email,
+      locale,
+      now,
+    }).catch(async (error) => {
+      const safeError = sanitizeOperationalError(error);
+      console.error("[register] verification email queue unavailable", safeError);
+      await prisma.analyticsEvent.create({
+        data: {
+          eventId: crypto.randomUUID(),
+          eventName: "email_verification_queue_failed",
+          eventVersion: 1,
+          userId: user.id,
+          occurredAt: new Date(),
+          properties: { reason: "queue_failure" },
+        },
+      }).catch(() => undefined);
+    });
     await enqueueAdminSignupNotification({
       occurredAt: now.toISOString(),
       country,
@@ -206,6 +226,9 @@ async function handlePost(request: NextRequest) {
           sanitizeOperationalError(trackingError),
         );
       }
+    });
+    await processEmailOutbox({ limit: 20 }).catch((error) => {
+      console.error("[register] immediate email delivery unavailable", sanitizeOperationalError(error));
     });
 
     const token = signToken({ userId: user.id, email: user.email });
