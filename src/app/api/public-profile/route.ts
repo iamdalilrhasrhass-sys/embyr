@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
     const profile = await prisma.profile.findFirst({
       where: {
         username,
+        profileSource: "user_registration",
         publicVisibility: true,
         visibilityStatus: "PUBLIC",
         moderationState: "ACTIVE",

@@ -270,7 +270,7 @@ export async function getCompatibleCandidates(
   const exposureCutoff = new Date(now.getTime() - 7 * DAY);
 
   const [userProfile, matches, blocks, recentExposures, userSignal] = await Promise.all([
-    prisma.profile.findUnique({ where: { userId }, select: internalCandidateSelect }),
+    prisma.profile.findFirst({ where: { userId, profileSource: "user_registration" }, select: internalCandidateSelect }),
     prisma.match.findMany({
       where: { OR: [{ user1Id: userId }, { user2Id: userId }] },
       select: { user1Id: true, user2Id: true, initiatorId: true, state: true, status: true },
@@ -317,6 +317,7 @@ export async function getCompatibleCandidates(
   const candidates = await prisma.profile.findMany({
     where: {
       userId: { notIn: [...excluded] },
+      profileSource: "user_registration",
       publicVisibility: true,
       visibilityStatus: { not: "HIDDEN" },
       moderationState: "ACTIVE",

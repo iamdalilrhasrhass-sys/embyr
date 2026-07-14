@@ -21,6 +21,7 @@ async function getUniverse(username: string): Promise<UniverseData | null> {
     const profile = await prisma.profile.findFirst({
       where: {
         username,
+        profileSource: "user_registration",
         publicVisibility: true,
         visibilityStatus: "PUBLIC",
         moderationState: "ACTIVE",

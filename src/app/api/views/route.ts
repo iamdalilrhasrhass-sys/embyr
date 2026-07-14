@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
           id: targetUserId,
           bannedAt: null,
           deletedAt: null,
-          profile: { is: { publicVisibility: true, visibilityStatus: { not: "HIDDEN" }, moderationState: "ACTIVE" } },
+          profile: { is: { profileSource: "user_registration", publicVisibility: true, visibilityStatus: { not: "HIDDEN" }, moderationState: "ACTIVE" } },
         },
         select: { id: true },
       }),

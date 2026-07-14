@@ -48,20 +48,32 @@ export async function collectAggregateReport(input: {
   const durationMs = input.periodEnd.getTime() - input.periodStart.getTime();
   const previousStart = new Date(input.periodStart.getTime() - durationMs);
   const rows = await prisma.$queryRaw<AggregateCountRow[]>`
+    WITH eligible_users AS (
+      SELECT u.id, u."createdAt"
+      FROM "User" u
+      JOIN "Profile" p ON p."userId" = u.id
+      WHERE u."deletedAt" IS NULL
+        AND u."bannedAt" IS NULL
+        AND u.role IN ('USER', 'AMBASSADOR')
+        AND u."isAdultConfirmed" = TRUE
+        AND p."profileSource" = 'user_registration'
+    )
     SELECT
-      (SELECT COUNT(*) FROM "User"
+      (SELECT COUNT(*) FROM eligible_users
         WHERE "createdAt" >= ${input.periodStart} AND "createdAt" < ${input.periodEnd}
       ) AS "newUsers",
-      (SELECT COUNT(*) FROM "PresenceSignal"
-        WHERE "activatedAt" < ${input.periodEnd} AND "expiresAt" >= ${input.periodStart}
+      (SELECT COUNT(*) FROM "PresenceSignal" signal JOIN eligible_users u ON u.id = signal."userId"
+        WHERE signal."activatedAt" < ${input.periodEnd} AND signal."expiresAt" >= ${input.periodStart}
       ) AS "activePresenceSignals",
-      (SELECT COUNT(*) FROM "Match"
-        WHERE "status" = 'mutual'
-          AND COALESCE("matchedAt", "createdAt") >= ${input.periodStart}
-          AND COALESCE("matchedAt", "createdAt") < ${input.periodEnd}
+      (SELECT COUNT(*) FROM "Match" match
+        JOIN eligible_users u1 ON u1.id = match."user1Id"
+        JOIN eligible_users u2 ON u2.id = match."user2Id"
+        WHERE match."status" = 'mutual'
+          AND COALESCE(match."matchedAt", match."createdAt") >= ${input.periodStart}
+          AND COALESCE(match."matchedAt", match."createdAt") < ${input.periodEnd}
       ) AS "mutualMatches",
-      (SELECT COUNT(*) FROM "Message"
-        WHERE "createdAt" >= ${input.periodStart} AND "createdAt" < ${input.periodEnd}
+      (SELECT COUNT(*) FROM "Message" message JOIN eligible_users u ON u.id = message."senderId"
+        WHERE message."createdAt" >= ${input.periodStart} AND message."createdAt" < ${input.periodEnd}
       ) AS "messagesSent",
       (SELECT COUNT(*) FROM "UserReport"
         WHERE "createdAt" >= ${input.periodStart} AND "createdAt" < ${input.periodEnd}
@@ -88,34 +100,35 @@ export async function collectAggregateReport(input: {
       ) AS sessions,
       (SELECT COUNT(*) FROM "AnalyticsEvent"
         WHERE "eventName" IN ('page_view','landing_viewed')
+          AND COALESCE("anonymousId", "sessionId", "userId") IS NOT NULL
           AND "occurredAt" >= ${input.periodStart} AND "occurredAt" < ${input.periodEnd}
       ) AS "pageViews",
-      (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL) AS "totalUsers",
-      (SELECT COUNT(*) FROM "Profile" p JOIN "User" u ON u.id = p."userId"
-        WHERE p."onboardingCompletedAt" IS NOT NULL AND u."deletedAt" IS NULL
+      (SELECT COUNT(*) FROM eligible_users) AS "totalUsers",
+      (SELECT COUNT(*) FROM "Profile" p JOIN eligible_users u ON u.id = p."userId"
+        WHERE p."onboardingCompletedAt" IS NOT NULL
       ) AS "completedProfiles",
-      (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent"
-        WHERE "userId" IS NOT NULL AND "occurredAt" >= ${input.periodStart} AND "occurredAt" < ${input.periodEnd}
+      (SELECT COUNT(DISTINCT event."userId") FROM "AnalyticsEvent" event JOIN eligible_users u ON u.id = event."userId"
+        WHERE event."occurredAt" >= ${input.periodStart} AND event."occurredAt" < ${input.periodEnd}
       ) AS "activeUsers",
       (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent"
         WHERE "occurredAt" >= ${previousStart} AND "occurredAt" < ${input.periodStart}
       ) AS "previousVisitors",
-      (SELECT COUNT(*) FROM "User"
+      (SELECT COUNT(*) FROM eligible_users
         WHERE "createdAt" >= ${previousStart} AND "createdAt" < ${input.periodStart}
       ) AS "previousNewUsers",
       (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent"
         WHERE "occurredAt" >= ${new Date(input.periodEnd.getTime() - 7 * 24 * 60 * 60 * 1000)} AND "occurredAt" < ${input.periodEnd}
       ) AS "sevenDayVisitors",
-      (SELECT COUNT(*) FROM "User" WHERE "createdAt" < ${new Date(input.periodEnd.getTime() - 24 * 60 * 60 * 1000)}) AS "retentionEligibleD1",
-      (SELECT COUNT(*) FROM "User" u WHERE u."createdAt" < ${new Date(input.periodEnd.getTime() - 24 * 60 * 60 * 1000)} AND EXISTS (
+      (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" < ${new Date(input.periodEnd.getTime() - 24 * 60 * 60 * 1000)}) AS "retentionEligibleD1",
+      (SELECT COUNT(*) FROM eligible_users u WHERE u."createdAt" < ${new Date(input.periodEnd.getTime() - 24 * 60 * 60 * 1000)} AND EXISTS (
         SELECT 1 FROM "AnalyticsEvent" e WHERE e."userId" = u.id AND e."occurredAt" >= u."createdAt" + INTERVAL '1 day' AND e."occurredAt" < u."createdAt" + INTERVAL '2 days'
       )) AS "retainedD1",
-      (SELECT COUNT(*) FROM "User" WHERE "createdAt" < ${new Date(input.periodEnd.getTime() - 7 * 24 * 60 * 60 * 1000)}) AS "retentionEligibleD7",
-      (SELECT COUNT(*) FROM "User" u WHERE u."createdAt" < ${new Date(input.periodEnd.getTime() - 7 * 24 * 60 * 60 * 1000)} AND EXISTS (
+      (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" < ${new Date(input.periodEnd.getTime() - 7 * 24 * 60 * 60 * 1000)}) AS "retentionEligibleD7",
+      (SELECT COUNT(*) FROM eligible_users u WHERE u."createdAt" < ${new Date(input.periodEnd.getTime() - 7 * 24 * 60 * 60 * 1000)} AND EXISTS (
         SELECT 1 FROM "AnalyticsEvent" e WHERE e."userId" = u.id AND e."occurredAt" >= u."createdAt" + INTERVAL '7 days' AND e."occurredAt" < u."createdAt" + INTERVAL '8 days'
       )) AS "retainedD7",
-      (SELECT COUNT(*) FROM "User" WHERE "createdAt" < ${new Date(input.periodEnd.getTime() - 30 * 24 * 60 * 60 * 1000)}) AS "retentionEligibleD30",
-      (SELECT COUNT(*) FROM "User" u WHERE u."createdAt" < ${new Date(input.periodEnd.getTime() - 30 * 24 * 60 * 60 * 1000)} AND EXISTS (
+      (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" < ${new Date(input.periodEnd.getTime() - 30 * 24 * 60 * 60 * 1000)}) AS "retentionEligibleD30",
+      (SELECT COUNT(*) FROM eligible_users u WHERE u."createdAt" < ${new Date(input.periodEnd.getTime() - 30 * 24 * 60 * 60 * 1000)} AND EXISTS (
         SELECT 1 FROM "AnalyticsEvent" e WHERE e."userId" = u.id AND e."occurredAt" >= u."createdAt" + INTERVAL '30 days' AND e."occurredAt" < u."createdAt" + INTERVAL '31 days'
       )) AS "retainedD30"
   `;
@@ -124,13 +137,15 @@ export async function collectAggregateReport(input: {
 
   const [sourceRows, pageRows, countryRows, languageRows] = await Promise.all([
     prisma.$queryRaw<TopRow[]>`
-      SELECT COALESCE("source", 'direct') AS label, COUNT(*) AS total FROM "AnalyticsEvent"
+      SELECT COALESCE("source", 'direct') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total FROM "AnalyticsEvent"
       WHERE "occurredAt" >= ${input.periodStart} AND "occurredAt" < ${input.periodEnd}
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 5
     `,
     prisma.$queryRaw<TopRow[]>`
-      SELECT COALESCE("page", '/') AS label, COUNT(*) AS total FROM "AnalyticsEvent"
+      SELECT COALESCE("page", '/') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total FROM "AnalyticsEvent"
       WHERE "eventName" IN ('page_view','landing_viewed')
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
         AND "occurredAt" >= ${input.periodStart} AND "occurredAt" < ${input.periodEnd}
       GROUP BY 1 ORDER BY 2 DESC LIMIT 5
     `,
@@ -142,8 +157,9 @@ export async function collectAggregateReport(input: {
       ORDER BY 2 DESC LIMIT 5
     `,
     prisma.$queryRaw<TopRow[]>`
-      SELECT COALESCE("language", 'unknown') AS label, COUNT(*) AS total FROM "AnalyticsEvent"
+      SELECT COALESCE("language", 'unknown') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total FROM "AnalyticsEvent"
       WHERE "occurredAt" >= ${input.periodStart} AND "occurredAt" < ${input.periodEnd}
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 5
     `,
   ]);

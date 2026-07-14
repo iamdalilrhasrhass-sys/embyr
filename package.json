@@ -27,6 +27,8 @@
     "seo:audit": "node scripts/seo-audit.mjs",
     "monitor:live": "node scripts/monitor-embir-live.mjs",
     "qa:performance": "node scripts/qa-embir-performance.mjs",
+    "qa:capacity": "node scripts/qa-growth-capacity.mjs",
+    "qa:growth": "node scripts/qa-growth-2500.mjs",
     "qa:connection-os": "bash scripts/qa-connection-os-e2e.sh"
   },
   "dependencies": {
