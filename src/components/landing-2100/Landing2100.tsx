@@ -7,7 +7,6 @@ import ReciprocityChapter from "./ReciprocityChapter";
 import SeoContinuation from "./SeoContinuation";
 import UniverseChapter from "./UniverseChapter";
 import { landingCopy, type LandingLocale } from "./landing-copy";
-import "./landing-2100.css";
 
 interface Landing2100Props {
   locale: LandingLocale;

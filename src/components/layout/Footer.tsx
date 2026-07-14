@@ -39,7 +39,7 @@ export default async function Footer() {
                   key={key}
                   href={href}
                   prefetch={false}
-                  className="border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
+                  className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
                 >
                   {t(key)}
                 </Link>
@@ -63,7 +63,7 @@ export default async function Footer() {
                   key={key}
                   href={href}
                   prefetch={false}
-                  className="block border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
+                  className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
                 >
                   {t(key)}
                 </Link>

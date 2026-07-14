@@ -52,6 +52,9 @@
 }
 
 .e21-wordmark {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   color: var(--e21-bone);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.9rem, 2.5vw, 2.65rem);
@@ -69,6 +72,9 @@
 }
 
 .e21-nav__links a:not(.e21-button) {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   color: var(--e21-muted);
   transition: color 180ms ease;
 }

@@ -1,4 +1,5 @@
 import Landing2100 from "@/components/landing-2100/Landing2100";
+import "@/components/landing-2100/landing-2100.css";
 
 export const revalidate = 3600;
 
