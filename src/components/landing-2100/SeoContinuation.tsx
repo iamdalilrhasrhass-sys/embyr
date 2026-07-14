@@ -1,9 +1,11 @@
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import type { LandingCopy } from "./landing-copy";
 
 interface SeoContinuationProps {
   copy: LandingCopy["seo"];
   finalCopy: LandingCopy["final"];
+  locale: "fr" | "en";
 }
 
 function LinkColumn({
@@ -18,7 +20,7 @@ function LinkColumn({
       <h2>{title}</h2>
       <div className="e21-seo__links">
         {items.map((item) => (
-          <Link href={item.href} key={`${item.href}-${item.label}`}>
+          <Link href={item.href} key={`${item.href}-${item.label}`} className="inline-flex min-h-11 min-w-11 items-center">
             {item.label}
           </Link>
         ))}
@@ -30,12 +32,14 @@ function LinkColumn({
 export default function SeoContinuation({
   copy,
   finalCopy,
+  locale,
 }: SeoContinuationProps) {
   const emphasizedTitle = finalCopy.title.replace(
     /honnête\.|honest intention\./i,
     "",
   );
   const emphasis = finalCopy.title.slice(emphasizedTitle.length);
+  const registerPath = locale === "fr" ? "/fr/auth/register" : "/auth/register";
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -58,9 +62,9 @@ export default function SeoContinuation({
             <em>{emphasis}</em>
           </h2>
           <div className="e21-actions">
-            <Link href="/auth/register" className="e21-button e21-button--primary">
+            <TrackedLink href={registerPath} label={finalCopy.primary} location="landing_final" className="e21-button e21-button--primary">
               {finalCopy.primary}
-            </Link>
+            </TrackedLink>
             <a href="#discover" className="e21-button e21-button--secondary">
               {finalCopy.secondary}
             </a>

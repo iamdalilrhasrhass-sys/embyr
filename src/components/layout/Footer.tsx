@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import EmbirLogo from "@/components/brand/EmbirLogo";
+import { localePath, supportedLocale } from "@/components/connection-os/types";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
+  const locale = supportedLocale(await getLocale());
 
   return (
     <footer className="relative border-t border-white/[0.1] bg-[#09060c] py-12">
@@ -37,7 +39,7 @@ export default async function Footer() {
               ].map(({ key, href }) => (
                 <Link
                   key={key}
-                  href={href}
+                  href={localePath(locale, href)}
                   prefetch={false}
                   className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
                 >
@@ -61,7 +63,7 @@ export default async function Footer() {
               ].map(({ key, href }) => (
                 <Link
                   key={key}
-                  href={href}
+                  href={localePath(locale, href)}
                   prefetch={false}
                   className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
                 >

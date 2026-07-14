@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import type {
   SignalFormat,
   SupportedLocale,
@@ -82,6 +83,9 @@ const copy = {
     waiting:
       "Ta réponse est scellée. Embir te préviendra quand l’autre personne aura répondu.",
     revealed: "Vos réponses se dévoilent ensemble",
+    resonanceOpen: "Deux réponses. Une ouverture commune.",
+    resonanceSealed: "Ta braise est scellée",
+    resonanceRevealed: "La résonance est ouverte",
     conversation: "Ouvrir la conversation",
     planStep: "02 · Rencontre",
     planTitle: "Transformer l’échange en moment réel",
@@ -133,6 +137,9 @@ const copy = {
     waiting:
       "Your answer is sealed. Embir will notify you when the other person replies.",
     revealed: "Your answers are revealed together",
+    resonanceOpen: "Two answers. One shared opening.",
+    resonanceSealed: "Your ember is sealed",
+    resonanceRevealed: "The resonance is open",
     conversation: "Open conversation",
     planStep: "02 · Meet",
     planTitle: "Turn the exchange into a real moment",
@@ -183,6 +190,9 @@ const copy = {
     waiting:
       "Tu respuesta está sellada. Embir te avisará cuando responda la otra persona.",
     revealed: "Vuestras respuestas se revelan juntas",
+    resonanceOpen: "Dos respuestas. Una apertura compartida.",
+    resonanceSealed: "Tu brasa está sellada",
+    resonanceRevealed: "La resonancia está abierta",
     conversation: "Abrir conversación",
     planStep: "02 · Encuentro",
     planTitle: "Convertir el intercambio en un momento real",
@@ -383,6 +393,44 @@ function conversationHref(
   return `${localePath(locale, "/messages")}?conversation=${encodeURIComponent(conversationId)}`;
 }
 
+function ResonanceSeal({
+  status,
+  label,
+  reduceMotion,
+}: {
+  status: "open" | "sealed" | "revealed";
+  label: string;
+  reduceMotion: boolean | null;
+}) {
+  const active = status === "sealed";
+  return (
+    <div className="my-7 flex flex-col items-center" role="img" aria-label={label}>
+      <div className="relative h-36 w-36" aria-hidden="true">
+        <motion.div
+          className="absolute inset-2 rounded-full border border-[#d4a574]/35"
+          animate={active && !reduceMotion ? { rotate: 360 } : undefined}
+          transition={active ? { duration: 16, ease: "linear", repeat: Infinity } : undefined}
+        />
+        <motion.div
+          className="absolute inset-5 rounded-full border border-dashed border-[#ff5e36]/35"
+          animate={active && !reduceMotion ? { rotate: -360 } : undefined}
+          transition={active ? { duration: 11, ease: "linear", repeat: Infinity } : undefined}
+        />
+        <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full border border-[#e4a187]/60 bg-[#12090b] shadow-[0_0_18px_rgba(228,161,135,0.65)]" />
+        <span className={`absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full border border-[#e4a187]/60 shadow-[0_0_18px_rgba(228,161,135,0.65)] ${status === "open" ? "bg-[#12090b]" : "bg-[#e4a187]"}`} />
+        <motion.span
+          className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5e36]/30 bg-[radial-gradient(circle,rgba(255,94,54,0.46),rgba(197,111,78,0.12)_55%,transparent_72%)] text-xl text-[#f0b29b] shadow-[0_0_45px_rgba(255,94,54,0.2)]"
+          animate={status === "revealed" && !reduceMotion ? { scale: [1, 1.08, 1] } : undefined}
+          transition={status === "revealed" ? { duration: 1.8, ease: "easeInOut" } : undefined}
+        >
+          {status === "revealed" ? "✦" : "●"}
+        </motion.span>
+      </div>
+      <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#d4a574]">{label}</p>
+    </div>
+  );
+}
+
 export function ConnectionJourney({
   locale,
   connectionId,
@@ -391,6 +439,7 @@ export function ConnectionJourney({
   connectionId: string;
 }) {
   const router = useRouter();
+  const reduceMotion = useReducedMotion();
   const text = copy[locale];
   const [connection, setConnection] = useState<Connection | null>(null);
   const [reveal, setReveal] = useState<Reveal | null>(null);
@@ -665,6 +714,11 @@ export function ConnectionJourney({
           <h2 id="reveal-title" className="mt-3 font-serif text-2xl">
             {revealTitle}
           </h2>
+          <ResonanceSeal
+            status={reveal?.bothResponded ? "revealed" : reveal?.responded ? "sealed" : "open"}
+            label={reveal?.bothResponded ? text.resonanceRevealed : reveal?.responded ? text.resonanceSealed : text.resonanceOpen}
+            reduceMotion={reduceMotion}
+          />
           {!reveal && connection.conversationId ? (
             <Link
               href={conversationHref(locale, connection.conversationId)}
@@ -708,15 +762,18 @@ export function ConnectionJourney({
               <p className="text-sm text-white/50">{text.revealed}</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {reveal.responses.map((response) => (
-                  <blockquote
+                  <motion.blockquote
                     key={`${response.isMine ? "mine" : "theirs"}-${response.createdAt}`}
+                    initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45 }}
                     className="rounded-2xl border border-white/[0.08] bg-black/20 p-5 text-sm leading-relaxed text-white/70"
                   >
                     <span className="mb-2 block text-[10px] uppercase tracking-wider text-[#d4a574]">
                       {response.isMine ? text.you : name}
                     </span>
                     {response.content}
-                  </blockquote>
+                  </motion.blockquote>
                 ))}
               </div>
               {connection.conversationId ? (

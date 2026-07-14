@@ -7,15 +7,15 @@ const chromiumPath = process.env.CHROMIUM_PATH || "/snap/bin/chromium";
 const pages = [
   { label: "home", url: `${baseUrl}/` },
   { label: "register", url: `${baseUrl}/auth/register` },
-  { label: "us-product", url: `${baseUrl}/en/us/free-dating-app` },
-  { label: "uk-product", url: `${baseUrl}/en/uk/free-dating-app` },
-  { label: "fr-product", url: `${baseUrl}/fr/gratuit-au-lancement` },
-  { label: "comparison", url: `${baseUrl}/en/comparison/grindr-vs-embir` },
+  { label: "us-product", url: `${baseUrl}/us/free-dating-app` },
+  { label: "uk-product", url: `${baseUrl}/uk/free-dating-app` },
+  { label: "fr-product", url: `${baseUrl}/fr/free-dating-app` },
+  { label: "comparison", url: `${baseUrl}/comparison/grindr-vs-embir` },
   { label: "city-fr", url: `${baseUrl}/fr/rencontre/paris` },
-  { label: "city-us", url: `${baseUrl}/en/us/dating/new-york` },
-  { label: "city-uk", url: `${baseUrl}/en/uk/london` },
-  { label: "guide", url: `${baseUrl}/en/guides/choose-a-dating-platform` },
-  { label: "article", url: `${baseUrl}/en/blog/best-free-gay-dating-apps-2026` },
+  { label: "city-us", url: `${baseUrl}/us/dating/new-york` },
+  { label: "city-uk", url: `${baseUrl}/uk/dating/london` },
+  { label: "guide", url: `${baseUrl}/guides/choose-a-dating-platform` },
+  { label: "article", url: `${baseUrl}/blog/best-free-gay-dating-apps-2026` },
 ];
 
 const viewports = [
@@ -59,8 +59,12 @@ async function runPage(browser, target, viewport) {
     pageErrors.push(sanitizeMessage(error.message));
   });
   page.on("requestfailed", (request) => {
+    const failure = request.failure()?.errorText || "failed";
+    // Next.js cancels speculative route/RSC prefetches when the page settles or
+    // a redirect wins. A failed primary navigation is still caught by goto.
+    if (failure === "net::ERR_ABORTED") return;
     networkErrors.push(
-      sanitizeMessage(`${request.failure()?.errorText || "failed"} ${request.url()}`),
+      sanitizeMessage(`${failure} ${request.url()}`),
     );
   });
 

@@ -77,8 +77,9 @@ export default async function AdminAnalytics() {
         </section>
 
         <section className="mt-9 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-6">
-          <h2 className="text-xl font-semibold">Funnel d’activation · 30 jours</h2>
-          <div className="mt-5 grid gap-3 md:grid-cols-7">
+          <h2 className="text-xl font-semibold">Parcours acquisition → activation → relation · 30 jours</h2>
+          <p className="mt-2 text-xs leading-relaxed text-white/35">Acteurs uniques par étape quand l’identifiant est disponible. Les passages anonyme → compte restent des volumes directionnels, pas une preuve causale.</p>
+          <div className="mt-5 grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(135px,1fr))]">
             {metrics.funnel.map((stage) => (
               <div key={stage.label} className="rounded-xl bg-white/[0.035] p-4">
                 <p className="break-words text-xs text-white/40">{stage.label}</p>

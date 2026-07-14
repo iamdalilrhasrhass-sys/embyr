@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Embir: Free Inclusive Dating App for Every Orientation | Worldwide",
-    "description": "Embir is an inclusive connection app available worldwide. Everything needed to meet someone is free. No credit card required."
+    "description": "Embir is an inclusive connection app. Discovery, reciprocity and messaging are free with no card; any optional services will remain separate."
   },
   "nav": {
     "discover": "Discover",
@@ -22,7 +22,7 @@
   "landing": {
     "badge": "Worldwide · Every orientation",
     "title": "Free Inclusive Dating App for Every Orientation",
-    "subtitle": "Everything needed to meet someone is free. No credit card required. Verified profiles and reciprocal preferences.",
+    "subtitle": "Discovery, reciprocity and messaging are free with no card. Optional selfie badges and reciprocal preferences.",
     "cta_early_access": "Request early access",
     "cta_create": "Create my universe",
     "founder_strip": "Founder access · Welcome to my world · Deep compatibility",
@@ -43,7 +43,7 @@
     "proof_1_title": "Welcome to my world",
     "proof_1_text": "Embir is not a swipe app. Profiles are immersive personal universes where you express your true self through visuals, preferences and lifestyle.",
     "proof_2_title": "No credit card",
-    "proof_2_text": "Everything needed to meet someone is free: profile, selection, reciprocity and messages.",
+    "proof_2_text": "Profiles, selection, reciprocity and messaging are free. Any optional services will stay clearly separate.",
     "proof_3_title": "Built for every orientation",
     "proof_3_text": "Embir is for adults across orientations, identities and dating intentions, with clearer preferences from day one.",
     "proof_4_title": "Deep compatibility",
@@ -54,7 +54,7 @@
     "proof_6_text": "Safety and core connections are not designed as paid frustration levers.",
     "founder_cta_tag": "Founder access",
     "founder_cta_title": "Ready to create your universe?",
-    "founder_cta_text": "Everything needed to meet someone is free. No credit card required. Built for every orientation.",
+    "founder_cta_text": "Core connections are free with no credit card, for every orientation.",
     "founder_cta_button": "Request my early access",
     "why_embir_title": "Why Embir changes the game in 2026",
     "why_embir_1_title": "Optional selfie badge",
@@ -74,7 +74,7 @@
     "how_works_step3_text": "Messaging between reciprocal connections, blocking, and reporting. You control who can contact you.",
     "faq_home_title": "Frequently asked questions",
     "faq_home_q1": "Is Embir really free?",
-    "faq_home_a1": "Yes. Everything needed to meet someone is free. No credit card required: profile, compatible selection, reciprocity and messaging.",
+    "faq_home_a1": "Yes for the core journey: profile, compatible selection, reciprocity and messaging, with no credit card. Optional services may be offered separately.",
     "faq_home_q2": "Is Embir only for one orientation?",
     "faq_home_a2": "No. Embir is built for adults across all orientations: straight, gay, lesbian, bi, trans, queer. Orientation and preferences are configurable at signup without being locked into a box.",
     "faq_home_q3": "How does Embir reduce fake profiles?",
@@ -123,7 +123,7 @@
     "adult": "18+ ONLY",
     "navigation": "Navigation",
     "free_launch": "No credit card",
-    "freemium": "Freemium model",
+    "freemium": "Transparent model",
     "us": "United States",
     "uk": "United Kingdom",
     "ch": "Switzerland",

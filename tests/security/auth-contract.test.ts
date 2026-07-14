@@ -30,3 +30,17 @@ test("both registration interfaces submit server-verifiable consent flags", asyn
     assert.match(source, /acceptPrivacy/);
   }
 });
+
+test("public login and registration attempts are rate limited with stable codes", async () => {
+  const [login, register] = await Promise.all([
+    readFile("src/app/api/auth/login/route.ts", "utf8"),
+    readFile("src/app/api/auth/register/route.ts", "utf8"),
+  ]);
+
+  for (const source of [login, register]) {
+    assert.match(source, /consumePublicForm/);
+    assert.match(source, /code: "rate_limited"/);
+    assert.match(source, /"Retry-After"/);
+  }
+  assert.match(login, /trim\(\)\.toLowerCase\(\)/);
+});

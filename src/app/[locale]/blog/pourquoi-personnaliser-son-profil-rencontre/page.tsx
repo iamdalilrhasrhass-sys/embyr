@@ -27,7 +27,7 @@ export default function Page() {
             <span className="text-white/10">·</span>
             <span className="text-xs text-white/20">Juin 2026</span>
           </div>
-          <h1 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">Pourquoi un profil personnalisé attire 3x plus de matchs</h1>
+          <h1 className="font-serif text-4xl font-light tracking-[-0.02em] text-white sm:text-5xl">Pourquoi un profil personnalisé peut favoriser de meilleurs échanges</h1>
           <p className="mt-5 text-lg leading-relaxed text-white/45">
             Un profil générique = zéro match. Découvrez pourquoi la personnalisation est le facteur numéro 1 de succès sur les applis de rencontre.
           </p>
@@ -85,7 +85,7 @@ export default function Page() {
             compare la photo de profil avec un selfie pris sur le moment.
           </p>
           <p>
-            Cette approche élimine radicalement les faux profils, les robots et les usurpations d'identité.
+            Cette approche ajoute une barrière concrète contre certains faux profils et certaines usurpations, sans prétendre supprimer tout risque.
             C'est un investissement dans la confiance qui profite à toute la communauté.
           </p>
 

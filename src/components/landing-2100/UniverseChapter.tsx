@@ -4,14 +4,16 @@ import type { LandingCopy } from "./landing-copy";
 
 interface UniverseChapterProps {
   copy: LandingCopy["universe"];
+  locale: "fr" | "en";
 }
 
-export default function UniverseChapter({ copy }: UniverseChapterProps) {
+export default function UniverseChapter({ copy, locale }: UniverseChapterProps) {
   return (
     <section id="universe" className="e21-chapter e21-universe">
       <div className="e21-shell">
         <UniverseArtifact
           copy={copy}
+          locale={locale}
           image={
             <Image
               src="/images/landing-2100/maya-universe.webp"

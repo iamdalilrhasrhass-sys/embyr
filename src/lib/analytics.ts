@@ -15,6 +15,13 @@ declare global {
 
 const ANONYMOUS_ID_KEY = 'embir_anonymous_id';
 const SESSION_ID_KEY = 'embir_session_id';
+const ATTRIBUTION_KEY = 'embir_attribution';
+
+export interface AnalyticsAttribution {
+  source?: string;
+  medium?: string;
+  campaign?: string;
+}
 
 function storageId(storage: Storage, key: string): string | undefined {
   try {
@@ -29,13 +36,43 @@ function storageId(storage: Storage, key: string): string | undefined {
   }
 }
 
-function attribution() {
+function currentAttribution(): AnalyticsAttribution {
   const params = new URLSearchParams(window.location.search);
   return {
     source: normalizeAttribution(params.get('utm_source'), 80),
     medium: normalizeAttribution(params.get('utm_medium'), 80),
     campaign: normalizeAttribution(params.get('utm_campaign'), 120),
   };
+}
+
+function hasAttribution(value: AnalyticsAttribution): boolean {
+  return Boolean(value.source || value.medium || value.campaign);
+}
+
+/**
+ * Keeps campaign context during the current journey only after analytics consent.
+ * Without consent, only parameters on the current URL are returned and nothing is stored.
+ */
+export function readAnalyticsAttribution(): AnalyticsAttribution {
+  if (typeof window === 'undefined') return {};
+
+  const current = currentAttribution();
+  if (!readAnalyticsConsent()) return current;
+
+  try {
+    if (hasAttribution(current)) {
+      window.sessionStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(current));
+      return current;
+    }
+    const stored = JSON.parse(window.sessionStorage.getItem(ATTRIBUTION_KEY) || '{}') as AnalyticsAttribution;
+    return {
+      source: normalizeAttribution(stored.source, 80),
+      medium: normalizeAttribution(stored.medium, 80),
+      campaign: normalizeAttribution(stored.campaign, 120),
+    };
+  } catch {
+    return current;
+  }
 }
 
 function normalizeAttribution(value: string | null | undefined, maxLength: number): string | undefined {
@@ -74,7 +111,7 @@ export function trackAnalyticsEvent(
     referrer: document.referrer,
     anonymousId: storageId(window.localStorage, ANONYMOUS_ID_KEY),
     sessionId: storageId(window.sessionStorage, SESSION_ID_KEY),
-    ...attribution(),
+    ...readAnalyticsAttribution(),
     ...(attributionOverride?.campaign
       ? { campaign: normalizeAttribution(attributionOverride.campaign, 120) }
       : {}),
@@ -155,6 +192,28 @@ export function trackSignupError(errorType: string) {
 // ── Pages spécifiques ──
 export function trackInvitePageView() {
   trackAnalyticsEvent('invite_page_view');
+}
+
+export function trackReferralLinkCopied() {
+  trackAnalyticsEvent('referral_link_copied');
+}
+
+export function trackReferralShare(channel: string) {
+  trackAnalyticsEvent('referral_share_clicked', { channel: normalizeCode(channel) });
+}
+
+export function trackAmbassadorApplication(event: 'started' | 'submitted' | 'error', errorType?: string) {
+  if (event === 'started') {
+    trackAnalyticsEvent('ambassador_application_started');
+    return;
+  }
+  if (event === 'submitted') {
+    trackAnalyticsEvent('ambassador_application_submitted');
+    return;
+  }
+  trackAnalyticsEvent('ambassador_application_error', {
+    errorType: normalizeCode(errorType || 'unknown'),
+  });
 }
 
 export function trackCityPageView(city: string, country: string) {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import TrackedLink from "@/components/TrackedLink";
 import type { LandingCopy } from "./landing-copy";
 
 interface LandingNavProps {
@@ -23,21 +23,23 @@ export default function LandingNav({ copy, locale }: LandingNavProps) {
   }, [open]);
 
   const close = () => setOpen(false);
+  const homePath = locale === "fr" ? "/fr" : "/";
+  const registerPath = locale === "fr" ? "/fr/auth/register" : "/auth/register";
 
   return (
     <nav className="e21-nav" aria-label="Embir">
       <div className="e21-shell e21-nav__inner">
-        <Link href="/" className="e21-wordmark" onClick={close}>
+        <TrackedLink href={homePath} label="wordmark" location="landing_nav" className="e21-wordmark" onClick={close}>
           Embir
-        </Link>
+        </TrackedLink>
         <div id="embir-landing-navigation" className="e21-nav__links" data-open={open}>
           <a href="#discover" onClick={close}>{copy.discover}</a>
           <a href="#compatibility" onClick={close}>{copy.compatibility}</a>
           <a href="#safety" className="e21-nav__optional" onClick={close}>{copy.safety}</a>
           <a href="#journal" className="e21-nav__optional" onClick={close}>{copy.journal}</a>
-          <Link href="/auth/register" className="e21-button" onClick={close}>
+          <TrackedLink href={registerPath} label={copy.create} location="landing_nav" className="e21-button" onClick={close}>
             {copy.create}
-          </Link>
+          </TrackedLink>
         </div>
         <div className="e21-nav__language">
           <LanguageSwitcher initialLocale={locale} />

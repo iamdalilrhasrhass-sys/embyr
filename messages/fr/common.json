@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Embir : App de rencontre gratuite et inclusive | Monde entier",
-    "description": "Embir est une app de connexion inclusive, ouverte dans le monde entier. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire."
+    "description": "Embir est une app de connexion inclusive. Découverte, réciprocité et messages sont gratuits, sans carte bancaire ; d’éventuels services facultatifs resteront séparés."
   },
   "nav": {
     "discover": "Découvrir",
@@ -22,7 +22,7 @@
   "landing": {
     "badge": "Monde entier · Toutes orientations",
     "title": "Embir : App de Rencontre Gratuite & Inclusive pour Toutes les Orientations",
-    "subtitle": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Profils vérifiés et préférences réciproques.",
+    "subtitle": "Découverte, réciprocité et messages sont gratuits, sans carte bancaire. Badge selfie facultatif et préférences réciproques.",
     "cta_early_access": "Demander un accès anticipé",
     "cta_create": "Créer mon univers",
     "founder_strip": "Accès fondateur · Bienvenue dans mon univers · Compatibilité profonde",
@@ -43,7 +43,7 @@
     "proof_1_title": "Bienvenue dans mon univers",
     "proof_1_text": "Embir n'est pas une app à swipe. Les profils sont des univers personnels immersifs où tu t'exprimes pleinement via des visuels, préférences et lifestyle.",
     "proof_2_title": "Sans carte bancaire",
-    "proof_2_text": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit : profil, sélection, réciprocité et messages.",
+    "proof_2_text": "Profil, sélection, réciprocité et messages sont gratuits. D’éventuels services facultatifs resteront clairement séparés.",
     "proof_3_title": "Pour toutes les orientations",
     "proof_3_text": "Embir est pour les adultes de toutes orientations, identités et intentions de rencontre, avec des préférences claires dès le premier jour.",
     "proof_4_title": "Compatibilité profonde",
@@ -54,7 +54,7 @@
     "proof_6_text": "La sécurité et les connexions essentielles ne sont pas conçues comme des leviers de frustration payante.",
     "founder_cta_tag": "Accès fondateur",
     "founder_cta_title": "Prêt à créer ton univers ?",
-    "founder_cta_text": "Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Pour toutes les orientations.",
+    "founder_cta_text": "Les connexions essentielles sont gratuites, sans carte bancaire, pour toutes les orientations.",
     "founder_cta_button": "Demander mon accès anticipé",
     "why_embir_title": "Pourquoi Embir change la donne en 2026",
     "why_embir_1_title": "Badge selfie disponible",
@@ -74,7 +74,7 @@
     "how_works_step3_text": "Messagerie entre connexions réciproques, blocage et signalement. Tu contrôles qui peut te contacter.",
     "faq_home_title": "Questions fréquentes",
     "faq_home_q1": "Embir est-il vraiment gratuit ?",
-    "faq_home_a1": "Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire : profil, sélection compatible, réciprocité et messages.",
+    "faq_home_a1": "Oui pour le parcours essentiel : profil, sélection compatible, réciprocité et messages, sans carte bancaire. Des services facultatifs pourront être proposés séparément.",
     "faq_home_q2": "Embir est-il seulement pour une orientation ?",
     "faq_home_a2": "Non. Embir est construit pour les personnes majeures de toutes orientations : hétéro, gay, lesbienne, bi, trans, queer. L'orientation et les préférences sont paramétrables dès l'inscription, sans être enfermé dans une case.",
     "faq_home_q3": "Comment Embir limite les faux profils ?",
@@ -123,7 +123,7 @@
     "adult": "18+ UNIQUEMENT",
     "navigation": "Navigation",
     "free_launch": "Sans carte bancaire",
-    "freemium": "Modèle freemium",
+    "freemium": "Modèle transparent",
     "us": "États-Unis",
     "uk": "Royaume-Uni",
     "ch": "Suisse",

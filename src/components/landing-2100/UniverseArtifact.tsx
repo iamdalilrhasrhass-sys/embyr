@@ -9,18 +9,20 @@ import {
   useState as useReactState,
   useState,
 } from "react";
-import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import type { LandingCopy } from "./landing-copy";
 import { resetUniverseTilt, tiltFromPointerDelta } from "./universe-tilt";
 
 interface UniverseArtifactProps {
   copy: LandingCopy["universe"];
   image: ReactNode;
+  locale: "fr" | "en";
 }
 
 export default function UniverseArtifact({
   copy,
   image,
+  locale,
 }: UniverseArtifactProps) {
   const [activeTab, setActiveTab] = useState(0);
   const [dragging, setDragging] = useReactState(false);
@@ -33,6 +35,7 @@ export default function UniverseArtifact({
     copy.quote,
     copy.descriptor,
   ];
+  const registerPath = locale === "fr" ? "/fr/auth/register" : "/auth/register";
 
   function selectTab(index: number) {
     setActiveTab(index);
@@ -147,12 +150,12 @@ export default function UniverseArtifact({
         </div>
         <blockquote className="e21-universe__quote">“{copy.quote}”</blockquote>
         <div className="e21-universe__actions">
-          <Link href="/auth/register" className="e21-button e21-button--primary">
+          <TrackedLink href={registerPath} label={copy.primary} location="universe_demo" className="e21-button e21-button--primary">
             {copy.primary}
-          </Link>
-          <Link href="/auth/register" className="e21-button e21-button--secondary">
+          </TrackedLink>
+          <TrackedLink href={registerPath} label={copy.secondary} location="universe_demo" className="e21-button e21-button--secondary">
             {copy.secondary}
-          </Link>
+          </TrackedLink>
         </div>
         <p className="e21-universe__notice">{copy.demoNotice}</p>
       </div>
