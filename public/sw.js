@@ -1,7 +1,6 @@
-// Embir Service Worker — PWA offline support
-const CACHE_NAME = 'embir-v1';
+// Embir Service Worker — static assets only; navigations always prefer the network.
+const CACHE_NAME = 'embir-v2';
 const STATIC_ASSETS = [
-  '/',
   '/manifest.webmanifest',
   '/icon-192.png',
   '/icon-512.png',
@@ -26,16 +25,32 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  // Skip non-GET and API requests
-  if (request.method !== 'GET' || request.url.includes('/api/')) return;
+  const url = new URL(request.url);
+
+  if (request.method !== 'GET' || url.origin !== self.location.origin || url.pathname.startsWith('/api/')) {
+    return;
+  }
+
+  if (request.mode === 'navigate') {
+    event.respondWith(fetch(request));
+    return;
+  }
+
+  const isStaticAsset =
+    url.pathname.startsWith('/_next/static/') ||
+    STATIC_ASSETS.includes(url.pathname) ||
+    /\.(?:avif|gif|ico|jpe?g|png|svg|webp|woff2?)$/i.test(url.pathname);
+
+  if (!isStaticAsset) return;
 
   event.respondWith(
     caches.match(request).then((cached) => {
       const fetchPromise = fetch(request)
-        .then((response) => {
-          if (response && response.status === 200) {
+        .then(async (response) => {
+          if (response.ok && response.type === 'basic') {
             const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+            const cache = await caches.open(CACHE_NAME);
+            await cache.put(request, clone);
           }
           return response;
         })

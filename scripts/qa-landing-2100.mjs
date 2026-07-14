@@ -32,13 +32,18 @@ const results = [];
 
 for (const locale of locales) {
   for (const viewport of viewports) {
-    const page = await browser.newPage();
+    const context = await browser.createBrowserContext();
+    const page = await context.newPage();
     await page.setViewport({
       width: viewport.width,
       height: viewport.height,
       deviceScaleFactor: viewport.width <= 390 ? 2 : 1,
       isMobile: viewport.width <= 390,
     });
+    await page.setCookie(
+      { name: "NEXT_LOCALE", value: locale.label, url: baseUrl },
+      { name: "embir_locale_source", value: "manual", url: baseUrl },
+    );
 
     const consoleErrors = [];
     const pageErrors = [];
@@ -73,6 +78,17 @@ for (const locale of locales) {
         overflow: root.scrollWidth > root.clientWidth + 1,
         chapterCount: document.querySelectorAll(".e21-chapter").length,
         footerVisible: Boolean(document.querySelector("footer")),
+        smallTouchTargets: Array.from(
+          document.querySelectorAll(".e21-nav a, .e21-nav button, .e21-actions a, footer a"),
+        )
+          .filter((element) => {
+            const rect = element.getBoundingClientRect();
+            return rect.width > 0 && rect.height > 0 && (rect.width < 44 || rect.height < 44);
+          })
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            return `${element.textContent?.trim() || element.getAttribute("aria-label") || element.tagName} (${Math.round(rect.width)}x${Math.round(rect.height)})`;
+          }),
       };
     }, locale.h1);
 
@@ -149,9 +165,9 @@ for (const locale of locales) {
       artifactDir,
       `${locale.label}-${viewport.label}-viewport.png`,
     );
-    await page.goto(`${baseUrl}${locale.path}`, {
-      waitUntil: "domcontentloaded",
-      timeout: 45_000,
+    await page.evaluate(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      return new Promise((resolve) => requestAnimationFrame(() => resolve(null)));
     });
     await page.screenshot({ path: viewportScreenshotPath, fullPage: false });
 
@@ -163,7 +179,9 @@ for (const locale of locales) {
       ];
       for (const [selector, filename] of chapterScreenshots) {
         const element = await page.$(selector);
-        await element?.screenshot({ path: path.join(artifactDir, filename) });
+        if (element && (await element.isVisible())) {
+          await element.screenshot({ path: path.join(artifactDir, filename) });
+        }
       }
     }
 
@@ -180,6 +198,9 @@ for (const locale of locales) {
     if (initial.overflow) failures.push(`Horizontal overflow ${initial.scrollWidth}/${initial.clientWidth}`);
     if (initial.chapterCount < 4) failures.push(`Only ${initial.chapterCount} chapters`);
     if (!initial.footerVisible) failures.push("Footer missing");
+    if (viewport.width <= 760 && initial.smallTouchTargets.length) {
+      failures.push(`Small touch targets: ${initial.smallTouchTargets.join(", ")}`);
+    }
     if (mobileMenu && mobileMenu.expanded !== "true") failures.push("Mobile menu did not open");
     if (mobileMenu && !mobileMenu.safetyVisible) failures.push("Safety link hidden in mobile menu");
     if (mobileMenu && !mobileMenu.journalVisible) failures.push("Journal link hidden in mobile menu");
@@ -207,7 +228,7 @@ for (const locale of locales) {
       verdict: failures.length === 0 ? "PASS" : "FAIL",
     });
 
-    await page.close();
+    await context.close();
   }
 }
 
