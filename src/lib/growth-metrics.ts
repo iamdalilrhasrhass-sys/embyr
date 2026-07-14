@@ -15,6 +15,8 @@ import {
 type CountValue = bigint | number;
 
 type GrowthTotalsRow = Record<GrowthStageKey, CountValue> & {
+  realRegistrationsGlobal: CountValue;
+  emailVerifiedGlobal: CountValue;
   qualifiedGlobal: CountValue;
   activationQualified: CountValue;
   excludedDemoProfiles: CountValue;
@@ -46,6 +48,8 @@ const count = (value: CountValue | null | undefined) => Number(value ?? 0);
 export interface GrowthMetrics {
   objective: {
     target: number;
+    realRegistrationsGlobal: number;
+    emailVerifiedGlobal: number;
     qualifiedGlobal: number;
     qualifiedInTargetZones: number;
     remaining: number;
@@ -99,9 +103,12 @@ function percentage(numerator: number, denominator: number): number | null {
 export async function getGrowthMetrics(): Promise<GrowthMetrics> {
   const [totalsRows, densityRows, measurementRows] = await Promise.all([
     prisma.$queryRaw<GrowthTotalsRow[]>`
-      WITH eligible AS (
+      WITH registered AS (
         SELECT
           u.id,
+          u.email,
+          u."emailVerified",
+          u."consentSensitiveData",
           p.city,
           p."profileCompletionScore",
           p.description,
@@ -127,8 +134,39 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+      ), qualified AS (
+        SELECT *
+        FROM registered account
+        WHERE account."emailVerified" = TRUE
+          AND account."consentSensitiveData" = TRUE
+          AND NULLIF(TRIM(COALESCE(account.city, '')), '') IS NOT NULL
+          AND account."primaryIntent" IS NOT NULL
+          AND CARDINALITY(account."seekingGenders") > 0
+          AND account."seekingAgeMin" IS NOT NULL
+          AND account."seekingAgeMax" IS NOT NULL
+          AND account."moderationState" = 'ACTIVE'
+          AND EXISTS (
+            SELECT 1 FROM "Consent" consent
+            WHERE consent."userId" = account.id AND consent.type = 'cgu'
+          )
+          AND EXISTS (
+            SELECT 1 FROM "Consent" consent
+            WHERE consent."userId" = account.id AND consent.type = 'privacy'
+          )
+          AND EXISTS (
+            SELECT 1 FROM "AcquisitionEvent" acquisition
+            WHERE acquisition."userId" = account.id
+              AND acquisition."eventType" = 'register'
+              AND NULLIF(TRIM(COALESCE(acquisition.source, '')), '') IS NOT NULL
+          )
+          AND NOT EXISTS (
+            SELECT 1 FROM "User" duplicate
+            WHERE duplicate.id <> account.id
+              AND duplicate."deletedAt" IS NULL
+              AND LOWER(TRIM(duplicate.email)) = LOWER(TRIM(account.email))
+          )
       ), target_eligible AS (
-        SELECT * FROM eligible WHERE zone <> 'outside'
+        SELECT * FROM qualified WHERE zone <> 'outside'
       ), qualified_matches AS (
         SELECT m.*
         FROM "Match" m
@@ -136,7 +174,9 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
         JOIN target_eligible e2 ON e2.id = m."user2Id"
       )
       SELECT
-        (SELECT COUNT(*) FROM eligible) AS "qualifiedGlobal",
+        (SELECT COUNT(*) FROM registered) AS "realRegistrationsGlobal",
+        (SELECT COUNT(*) FROM registered WHERE "emailVerified" = TRUE) AS "emailVerifiedGlobal",
+        (SELECT COUNT(*) FROM qualified) AS "qualifiedGlobal",
         (SELECT COUNT(*) FROM target_eligible) AS "qualifiedInTargetZones",
         (SELECT COUNT(*) FROM target_eligible
           WHERE "profileCompletionScore" >= 70
@@ -177,10 +217,18 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
         (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL) AS "allNonDeletedUsers"
     `,
     prisma.$queryRaw<DensityRow[]>`
-      WITH eligible AS (
+      WITH registered AS (
         SELECT
           u.id,
+          u.email,
+          u."emailVerified",
+          u."consentSensitiveData",
           p."onboardingCompletedAt",
+          p."primaryIntent",
+          p."seekingGenders",
+          p."seekingAgeMin",
+          p."seekingAgeMax",
+          p."moderationState",
           CASE
             WHEN LOWER(COALESCE(p.city, '')) ~ '(lausanne|renens|pully|prilly|ecublens|morges|lutry|crissier|bussigny|epalinges)' THEN 'lausanne'
             WHEN LOWER(COALESCE(p.city, '')) ~ '(vevey|montreux|la tour-de-peilz|blonay|saint-legier|villeneuve|aigle)' THEN 'riviera'
@@ -195,6 +243,37 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+      ), eligible AS (
+        SELECT *
+        FROM registered account
+        WHERE account."emailVerified" = TRUE
+          AND account."consentSensitiveData" = TRUE
+          AND account.zone <> 'outside'
+          AND account."primaryIntent" IS NOT NULL
+          AND CARDINALITY(account."seekingGenders") > 0
+          AND account."seekingAgeMin" IS NOT NULL
+          AND account."seekingAgeMax" IS NOT NULL
+          AND account."moderationState" = 'ACTIVE'
+          AND EXISTS (
+            SELECT 1 FROM "Consent" consent
+            WHERE consent."userId" = account.id AND consent.type = 'cgu'
+          )
+          AND EXISTS (
+            SELECT 1 FROM "Consent" consent
+            WHERE consent."userId" = account.id AND consent.type = 'privacy'
+          )
+          AND EXISTS (
+            SELECT 1 FROM "AcquisitionEvent" acquisition
+            WHERE acquisition."userId" = account.id
+              AND acquisition."eventType" = 'register'
+              AND NULLIF(TRIM(COALESCE(acquisition.source, '')), '') IS NOT NULL
+          )
+          AND NOT EXISTS (
+            SELECT 1 FROM "User" duplicate
+            WHERE duplicate.id <> account.id
+              AND duplicate."deletedAt" IS NULL
+              AND LOWER(TRIM(duplicate.email)) = LOWER(TRIM(account.email))
+          )
       )
       SELECT
         zone,
@@ -264,6 +343,8 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
   return {
     objective: {
       target: GROWTH_TARGET_TOTAL,
+      realRegistrationsGlobal: count(totals?.realRegistrationsGlobal),
+      emailVerifiedGlobal: count(totals?.emailVerifiedGlobal),
       qualifiedGlobal: count(totals?.qualifiedGlobal),
       qualifiedInTargetZones,
       remaining: Math.max(0, GROWTH_TARGET_TOTAL - qualifiedInTargetZones),
@@ -313,7 +394,8 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
       url: buildGrowthCampaignUrl(link),
     })),
     definitions: [
-      "Inscrit qualifié : compte adulte, non supprimé, non banni, rôle membre, profil issu d’une inscription réelle — jamais une démo.",
+      "Inscription humaine : compte adulte, non supprimé, non banni, rôle membre, profil issu d’une inscription réelle — jamais une démo.",
+      "Membre qualifié : inscription humaine, email vérifié, consentements CGU/confidentialité/données sensibles, ville, intention, préférences essentielles, source d’acquisition connue et aucun doublon évident.",
       "Zone cible : Lausanne, Riviera, Genève ou autre pôle romand défini dans le plan de densité.",
       "Activation qualifiée : onboarding et préférences utilisables, signal créé et premières recommandations réellement servies.",
       "Conversation active : connexion qualifiée avec au moins un message pendant les 30 derniers jours.",

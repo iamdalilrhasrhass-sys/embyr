@@ -24,7 +24,7 @@ export function GrowthCommandCenter({ growth }: GrowthCommandCenterProps) {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a574]">Objectif opérationnel vérifiable</p>
             <h2 id="growth-objective" className="mt-3 text-3xl font-semibold sm:text-4xl">2 500 membres réels en Romandie</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/50">
-              Comptage strict : adultes inscrits, profils issus d’une inscription réelle, non bannis et présents dans les zones de densité. Les démos, tests, équipes et comptes supprimés ne comptent jamais.
+              Comptage strict : inscription volontaire, email vérifié, consentements valides, zone, intention, préférences essentielles, source connue et absence de doublon. Les démos, tests, équipes et comptes supprimés ne comptent jamais.
             </p>
           </div>
           <div className="shrink-0 text-left lg:text-right">
@@ -38,13 +38,21 @@ export function GrowthCommandCenter({ growth }: GrowthCommandCenterProps) {
         </div>
         <div className="mt-3 flex flex-wrap justify-between gap-3 text-xs text-white/40">
           <span>{growth.objective.progress}% accompli</span>
-          <span>{growth.objective.qualifiedGlobal} inscriptions qualifiées globales · {growth.objective.activationQualified} activations qualifiées</span>
+          <span>{growth.objective.realRegistrationsGlobal} inscriptions humaines · {growth.objective.emailVerifiedGlobal} emails vérifiés · {growth.objective.qualifiedGlobal} membres qualifiés globalement</span>
         </div>
 
-        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border border-white/[0.06] bg-black/15 p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-white/35">Comptes en base</p>
             <p className="mt-2 font-mono text-2xl">{growth.objective.allNonDeletedUsers}</p>
+          </div>
+          <div className="rounded-2xl border border-white/[0.06] bg-black/15 p-4">
+            <p className="text-xs uppercase tracking-[0.12em] text-white/35">Inscriptions humaines</p>
+            <p className="mt-2 font-mono text-2xl">{growth.objective.realRegistrationsGlobal}</p>
+          </div>
+          <div className="rounded-2xl border border-white/[0.06] bg-black/15 p-4">
+            <p className="text-xs uppercase tracking-[0.12em] text-white/35">Emails vérifiés</p>
+            <p className="mt-2 font-mono text-2xl">{growth.objective.emailVerifiedGlobal}</p>
           </div>
           <div className="rounded-2xl border border-white/[0.06] bg-black/15 p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-white/35">Qualifiés globalement</p>
