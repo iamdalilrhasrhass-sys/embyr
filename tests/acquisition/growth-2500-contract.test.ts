@@ -73,6 +73,10 @@ test("growth reporting excludes demos, deleted accounts, staff and banned accoun
   assert.match(growth, /primaryIntent/);
   assert.match(growth, /seekingGenders/);
   assert.match(growth, /LOWER\(TRIM\(duplicate\.email\)\)/);
+  assert.match(growth, /NOT LIKE '%embir-qa%'/);
+  assert.match(growth, /NOT LIKE '%@test\.%'/);
+  assert.match(growth, /NOT LIKE '%\.local'/);
+  assert.match(growth, /example\\\.\(com\|org\|net\|invalid\)/);
   assert.match(migration, /demo_vitrine/);
   assert.match(migration, /"visibilityStatus" = 'HIDDEN'/);
   assert.match(migration, /NOT EXISTS[\s\S]*"User"/);
