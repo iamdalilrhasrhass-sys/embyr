@@ -92,7 +92,6 @@ export async function GET(req: NextRequest) {
             padding: "70px 80px",
             height: "100%",
             position: "relative",
-            zIndex: 1,
           }}
         >
           {/* Top: Brand + badge */}

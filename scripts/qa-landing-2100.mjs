@@ -246,4 +246,4 @@ for (const result of results) {
 
 const failed = results.filter((result) => result.verdict === "FAIL");
 console.log(`Report: ${reportPath}`);
-if (failed.length) process.exitCode = 1;
+process.exit(failed.length ? 1 : 0);
