@@ -245,7 +245,8 @@ async function performJobWork(
         cleanup.exhaustedLeasesFailed +
         cleanup.emailLogsRedacted +
         cleanup.emailLogsDeleted +
-        cleanup.notificationsDeleted;
+        cleanup.notificationsDeleted +
+        cleanup.orphanAnalyticsAnonymized;
     }
 
     const health = await collectOperationalHealth(now);

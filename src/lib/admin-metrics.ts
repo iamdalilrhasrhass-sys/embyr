@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { getBackupHealth, getMigrationHealth } from "@/lib/deployment-health";
 import type { BackupHealth, MigrationHealth } from "@/lib/deployment-health";
+import { getGrowthMetrics, type GrowthMetrics } from "@/lib/growth-metrics";
 import { comparablePercentage } from "@/lib/metrics";
 
 type CountValue = bigint | number;
@@ -45,6 +46,7 @@ type JobRow = {
 };
 
 export interface AdminMetrics {
+  growth: GrowthMetrics;
   overview: {
     visitorsToday: number;
     visitors7d: number;
@@ -105,13 +107,24 @@ function breakdown(rows: BreakdownRow[]) {
 }
 
 export async function getAdminMetrics(): Promise<AdminMetrics> {
-  const [overviewRows, funnelRows, acquisitionRows, campaignRows, pageRows, countryRows, cityRows, intentionRows, languageRows, deviceRows, productRows, cohortRows, healthRows, emailRows, notificationRows, jobs, backup, migration] = await Promise.all([
+  const [overviewRows, funnelRows, acquisitionRows, campaignRows, pageRows, countryRows, cityRows, intentionRows, languageRows, deviceRows, productRows, cohortRows, healthRows, emailRows, notificationRows, jobs, backup, migration, growth] = await Promise.all([
     prisma.$queryRaw<OverviewRow[]>`
-      WITH events AS (
+      WITH eligible_users AS (
+        SELECT u.id, u."createdAt"
+        FROM "User" u
+        JOIN "Profile" p ON p."userId" = u.id
+        WHERE u."deletedAt" IS NULL
+          AND u."bannedAt" IS NULL
+          AND u.role IN ('USER', 'AMBASSADOR')
+          AND u."isAdultConfirmed" = TRUE
+          AND p."profileSource" = 'user_registration'
+      ), events AS (
         SELECT *, COALESCE("anonymousId", "sessionId", "userId") AS visitor
         FROM "AnalyticsEvent"
       ), traffic AS (
-        SELECT * FROM events WHERE "eventName" IN ('page_view','landing_viewed')
+        SELECT * FROM events WHERE "eventName" IN ('page_view','landing_viewed') AND visitor IS NOT NULL
+      ), eligible_events AS (
+        SELECT e.* FROM events e JOIN eligible_users u ON u.id = e."userId"
       )
       SELECT
         (SELECT COUNT(DISTINCT visitor) FROM traffic WHERE visitor IS NOT NULL AND "occurredAt" >= CURRENT_DATE) AS "visitorsToday",
@@ -120,69 +133,80 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
         (SELECT COUNT(DISTINCT "sessionId") FROM traffic WHERE "sessionId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '30 days') AS "sessions30d",
         (SELECT COUNT(*) FROM traffic WHERE "eventName" IN ('page_view','landing_viewed') AND "occurredAt" >= NOW() - INTERVAL '30 days') AS "pageViews30d",
         (SELECT COUNT(*) FROM traffic WHERE "eventName" IN ('page_view','landing_viewed') AND "occurredAt" >= NOW() - INTERVAL '60 days' AND "occurredAt" < NOW() - INTERVAL '30 days') AS "pageViewsPrevious30d",
-        (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL AND "createdAt" >= CURRENT_DATE) AS "signupsToday",
-        (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL AND "createdAt" >= NOW() - INTERVAL '7 days') AS "signups7d",
-        (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL AND "createdAt" >= NOW() - INTERVAL '30 days') AS "signups30d",
-        (SELECT COUNT(*) FROM "User" WHERE "createdAt" >= NOW() - INTERVAL '60 days' AND "createdAt" < NOW() - INTERVAL '30 days') AS "signupsPrevious30d",
-        (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL) AS "totalUsers",
-        (SELECT COUNT(*) FROM "Profile" p JOIN "User" u ON u.id = p."userId" WHERE u."deletedAt" IS NULL AND p."onboardingCompletedAt" IS NOT NULL) AS "completedProfiles",
-        (SELECT COUNT(DISTINCT "userId") FROM events WHERE "userId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '1 day') AS dau,
-        (SELECT COUNT(DISTINCT "userId") FROM events WHERE "userId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '7 days') AS wau,
-        (SELECT COUNT(DISTINCT "userId") FROM events WHERE "userId" IS NOT NULL AND "occurredAt" >= NOW() - INTERVAL '30 days') AS mau,
+        (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" >= CURRENT_DATE) AS "signupsToday",
+        (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" >= NOW() - INTERVAL '7 days') AS "signups7d",
+        (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" >= NOW() - INTERVAL '30 days') AS "signups30d",
+        (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" >= NOW() - INTERVAL '60 days' AND "createdAt" < NOW() - INTERVAL '30 days') AS "signupsPrevious30d",
+        (SELECT COUNT(*) FROM eligible_users) AS "totalUsers",
+        (SELECT COUNT(*) FROM "Profile" p JOIN eligible_users u ON u.id = p."userId" WHERE p."onboardingCompletedAt" IS NOT NULL) AS "completedProfiles",
+        (SELECT COUNT(DISTINCT "userId") FROM eligible_events WHERE "occurredAt" >= NOW() - INTERVAL '1 day') AS dau,
+        (SELECT COUNT(DISTINCT "userId") FROM eligible_events WHERE "occurredAt" >= NOW() - INTERVAL '7 days') AS wau,
+        (SELECT COUNT(DISTINCT "userId") FROM eligible_events WHERE "occurredAt" >= NOW() - INTERVAL '30 days') AS mau,
         (SELECT COUNT(*) FROM "Match" m
-          JOIN "User" mu1 ON mu1.id = m."user1Id"
-          JOIN "User" mu2 ON mu2.id = m."user2Id"
-          WHERE m."status" = 'mutual' AND mu1."deletedAt" IS NULL AND mu2."deletedAt" IS NULL
+          JOIN eligible_users mu1 ON mu1.id = m."user1Id"
+          JOIN eligible_users mu2 ON mu2.id = m."user2Id"
+          WHERE m."status" = 'mutual'
         ) AS "reciprocalConnections",
         (SELECT COUNT(*) FROM "Conversation" c
-          JOIN "User" cu1 ON cu1.id = c."user1Id"
-          JOIN "User" cu2 ON cu2.id = c."user2Id"
-          WHERE cu1."deletedAt" IS NULL AND cu2."deletedAt" IS NULL
+          JOIN eligible_users cu1 ON cu1.id = c."user1Id"
+          JOIN eligible_users cu2 ON cu2.id = c."user2Id"
         ) AS "conversationsStarted",
         (SELECT COUNT(*) FROM "DatePlan" dp
           JOIN "Match" dpm ON dpm.id = dp."matchId"
-          JOIN "User" dpu1 ON dpu1.id = dpm."user1Id"
-          JOIN "User" dpu2 ON dpu2.id = dpm."user2Id"
-          WHERE dpu1."deletedAt" IS NULL AND dpu2."deletedAt" IS NULL
+          JOIN eligible_users dpu1 ON dpu1.id = dpm."user1Id"
+          JOIN eligible_users dpu2 ON dpu2.id = dpm."user2Id"
         ) AS "plansProposed"
     `,
     prisma.$queryRaw<BreakdownRow[]>`
+      WITH eligible_users AS (
+        SELECT u.id, u."createdAt"
+        FROM "User" u
+        JOIN "Profile" p ON p."userId" = u.id
+        WHERE u."deletedAt" IS NULL
+          AND u."bannedAt" IS NULL
+          AND u.role IN ('USER', 'AMBASSADOR')
+          AND u."isAdultConfirmed" = TRUE
+          AND p."profileSource" = 'user_registration'
+      )
       SELECT stage AS label, total FROM (
         VALUES
           ('landing_viewed', (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent" WHERE "eventName" IN ('page_view','landing_viewed') AND "occurredAt" >= NOW() - INTERVAL '30 days')),
           ('cta_click', (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent" WHERE "eventName" = 'cta_click' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
           ('signup_started', (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent" WHERE "eventName" = 'signup_started' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('signup_completed', (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL AND "createdAt" >= NOW() - INTERVAL '30 days')),
-          ('profile_completed', (SELECT COUNT(*) FROM "Profile" WHERE "onboardingCompletedAt" >= NOW() - INTERVAL '30 days')),
-          ('signal_activated', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'signal_activated' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('feed_viewed', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'feed_viewed' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('contextual_signal_sent', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'contextual_signal_sent' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('reciprocal_connection_created', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'reciprocal_connection_created' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('reveal_completed', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'reveal_completed' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('conversation_started', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'conversation_started' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('message_sent', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'message_sent' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('plan_proposed', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'plan_proposed' AND "occurredAt" >= NOW() - INTERVAL '30 days')),
-          ('plan_accepted', (SELECT COUNT(DISTINCT "userId") FROM "AnalyticsEvent" WHERE "eventName" = 'plan_accepted' AND "occurredAt" >= NOW() - INTERVAL '30 days'))
+          ('signup_completed', (SELECT COUNT(*) FROM eligible_users WHERE "createdAt" >= NOW() - INTERVAL '30 days')),
+          ('profile_completed', (SELECT COUNT(*) FROM "Profile" p JOIN eligible_users u ON u.id = p."userId" WHERE p."onboardingCompletedAt" >= NOW() - INTERVAL '30 days')),
+          ('signal_activated', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'signal_activated' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('feed_viewed', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'feed_viewed' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('contextual_signal_sent', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'contextual_signal_sent' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('reciprocal_connection_created', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'reciprocal_connection_created' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('reveal_completed', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'reveal_completed' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('conversation_started', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'conversation_started' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('message_sent', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'message_sent' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('plan_proposed', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'plan_proposed' AND e."occurredAt" >= NOW() - INTERVAL '30 days')),
+          ('plan_accepted', (SELECT COUNT(DISTINCT e."userId") FROM "AnalyticsEvent" e JOIN eligible_users u ON u.id = e."userId" WHERE e."eventName" = 'plan_accepted' AND e."occurredAt" >= NOW() - INTERVAL '30 days'))
       ) AS funnel(stage, total)
     `,
     prisma.$queryRaw<BreakdownRow[]>`
-      SELECT COALESCE("source", 'direct') AS label, COUNT(*) AS total
+      SELECT COALESCE("source", 'direct') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total
       FROM "AnalyticsEvent"
       WHERE "occurredAt" >= NOW() - INTERVAL '30 days'
         AND "eventName" IN ('page_view','landing_viewed','signup_completed')
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 12
     `,
     prisma.$queryRaw<BreakdownRow[]>`
-      SELECT "campaign" AS label, COUNT(*) AS total
+      SELECT "campaign" AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total
       FROM "AnalyticsEvent"
       WHERE "occurredAt" >= NOW() - INTERVAL '30 days' AND "campaign" IS NOT NULL
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 12
     `,
     prisma.$queryRaw<BreakdownRow[]>`
-      SELECT COALESCE("page", '/') AS label, COUNT(*) AS total
+      SELECT COALESCE("page", '/') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total
       FROM "AnalyticsEvent"
       WHERE "occurredAt" >= NOW() - INTERVAL '30 days'
         AND "eventName" IN ('page_view','landing_viewed')
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 12
     `,
     prisma.$queryRaw<BreakdownRow[]>`
@@ -202,21 +226,24 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     prisma.$queryRaw<BreakdownRow[]>`
       SELECT p."primaryIntent"::text AS label, COUNT(*) AS total
       FROM "Profile" p JOIN "User" u ON u.id = p."userId"
-      WHERE p."primaryIntent" IS NOT NULL AND u."deletedAt" IS NULL
+      WHERE p."primaryIntent" IS NOT NULL AND u."deletedAt" IS NULL AND u."bannedAt" IS NULL
+        AND u."isAdultConfirmed" = TRUE AND p."profileSource" = 'user_registration'
       GROUP BY 1 HAVING COUNT(*) >= 10 ORDER BY 2 DESC
     `,
     prisma.$queryRaw<BreakdownRow[]>`
-      SELECT COALESCE("language", 'unknown') AS label, COUNT(*) AS total
+      SELECT COALESCE("language", 'unknown') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total
       FROM "AnalyticsEvent" WHERE "occurredAt" >= NOW() - INTERVAL '30 days'
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 12
     `,
     prisma.$queryRaw<BreakdownRow[]>`
-      SELECT COALESCE("deviceCategory", 'unknown') AS label, COUNT(*) AS total
+      SELECT COALESCE("deviceCategory", 'unknown') AS label, COUNT(DISTINCT COALESCE("userId", "anonymousId", "sessionId")) AS total
       FROM "AnalyticsEvent" WHERE "occurredAt" >= NOW() - INTERVAL '30 days'
+        AND COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL
       GROUP BY 1 ORDER BY 2 DESC LIMIT 8
     `,
     prisma.$queryRaw<BreakdownRow[]>`
-      SELECT "eventName" AS label, COUNT(*) AS total
+      SELECT "eventName" AS label, COUNT(DISTINCT "userId") AS total
       FROM "AnalyticsEvent"
       WHERE "occurredAt" >= NOW() - INTERVAL '30 days'
         AND "eventName" IN (
@@ -248,7 +275,12 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
           AND e."occurredAt" < u."createdAt" + INTERVAL '31 days'
         )) AS d30
       FROM "User" u
-      WHERE u."createdAt" >= NOW() - INTERVAL '90 days' AND u."deletedAt" IS NULL
+      JOIN "Profile" p ON p."userId" = u.id
+      WHERE u."createdAt" >= NOW() - INTERVAL '90 days'
+        AND u."deletedAt" IS NULL AND u."bannedAt" IS NULL
+        AND u.role IN ('USER', 'AMBASSADOR')
+        AND u."isAdultConfirmed" = TRUE
+        AND p."profileSource" = 'user_registration'
       GROUP BY 1 ORDER BY 1 DESC LIMIT 13
     `,
     prisma.$queryRaw<Array<{ apiErrors24h: CountValue }>>`
@@ -271,6 +303,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     `,
     getBackupHealth(),
     getMigrationHealth(),
+    getGrowthMetrics(),
   ]);
 
   const overview = overviewRows[0];
@@ -283,6 +316,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
   }));
 
   return {
+    growth,
     overview: {
       visitorsToday: count(overview?.visitorsToday),
       visitors7d: count(overview?.visitors7d),

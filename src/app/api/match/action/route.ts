@@ -110,10 +110,11 @@ async function runAction(
     // Interactive transactions use one PostgreSQL connection. Keep queries
     // sequential to avoid overlapping client.query calls on that connection.
     const lookupTime = new Date();
-    const actorProfile = await tx.profile.findUnique({ where: { userId: actorId }, select: internalCandidateSelect });
+    const actorProfile = await tx.profile.findFirst({ where: { userId: actorId, profileSource: "user_registration" }, select: internalCandidateSelect });
     const targetProfile = await tx.profile.findFirst({
       where: {
         userId: targetUserId,
+        profileSource: "user_registration",
         user: { is: { bannedAt: null, deletedAt: null } },
       },
       select: internalCandidateSelect,

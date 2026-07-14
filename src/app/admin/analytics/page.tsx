@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { GrowthCommandCenter } from "@/components/admin/GrowthCommandCenter";
 import { requireAdmin } from "@/lib/admin-auth";
 import { getAdminMetrics } from "@/lib/admin-metrics";
 
@@ -44,14 +45,16 @@ export default async function AdminAnalytics() {
         <header className="flex flex-wrap items-end justify-between gap-5">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-[#d4a574]">Embir · pilotage first-party</p>
-            <h1 className="mt-2 text-4xl font-semibold">Cockpit opérateur</h1>
-            <p className="mt-2 text-sm text-white/40">Trafic, activation, Connection OS, cohortes et santé technique.</p>
+            <h1 className="mt-2 text-4xl font-semibold">Command Center 2 500</h1>
+            <p className="mt-2 text-sm text-white/40">Densité, acquisition, activation, Connection OS, qualité des données et santé technique.</p>
           </div>
           <nav className="flex gap-2 text-sm">
             <Link href="/admin/feedback" className="rounded-xl bg-white/[0.06] px-4 py-2 hover:bg-white/[0.10]">Feedback</Link>
             <Link href="/fr/admin" className="rounded-xl bg-white/[0.06] px-4 py-2 hover:bg-white/[0.10]">Modération</Link>
           </nav>
         </header>
+
+        <GrowthCommandCenter growth={metrics.growth} />
 
         <section className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Metric label="Visiteurs aujourd’hui" value={metrics.overview.visitorsToday} />
@@ -62,7 +65,7 @@ export default async function AdminAnalytics() {
           <Metric label="Inscriptions aujourd’hui" value={metrics.overview.signupsToday} />
           <Metric label="Inscriptions 7 jours" value={metrics.overview.signups7d} />
           <Metric label="Inscriptions 30 jours" value={metrics.overview.signups30d} detail={change(metrics.overview.signupsChange)} />
-          <Metric label="Utilisateurs" value={metrics.overview.totalUsers} />
+          <Metric label="Utilisateurs qualifiés" value={metrics.overview.totalUsers} />
           <Metric label="Profils complétés" value={metrics.overview.completedProfiles} />
           <Metric label="DAU / WAU / MAU" value={`${metrics.overview.dau} / ${metrics.overview.wau} / ${metrics.overview.mau}`} />
           <Metric

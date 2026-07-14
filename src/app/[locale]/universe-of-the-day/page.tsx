@@ -47,6 +47,7 @@ export default async function UniverseOfTheDayPage() {
     // (verified profiles preferred but not required — at launch most are unverified)
     const profiles = await prisma.profile.findMany({
       where: {
+        profileSource: "user_registration",
         publicVisibility: true,
         visibilityStatus: "PUBLIC",
         moderationState: "ACTIVE",

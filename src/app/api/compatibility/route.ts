@@ -13,10 +13,11 @@ export async function GET(request: NextRequest) {
 
   const now = new Date();
   const [viewer, target, blocked, viewerSignal] = await Promise.all([
-    prisma.profile.findUnique({ where: { userId: auth.id }, select: internalCandidateSelect }),
+    prisma.profile.findFirst({ where: { userId: auth.id, profileSource: "user_registration" }, select: internalCandidateSelect }),
     prisma.profile.findFirst({
       where: {
         username,
+        profileSource: "user_registration",
         user: { is: { bannedAt: null, deletedAt: null } },
       },
       select: internalCandidateSelect,

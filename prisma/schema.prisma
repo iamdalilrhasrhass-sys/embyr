@@ -255,6 +255,8 @@ model User {
   connectionOutcomes        ConnectionOutcome[]
   notifications             Notification[]
   nightEnrollments          NightEnrollment[]
+
+  @@index([deletedAt, bannedAt, createdAt])
 }
 
 model Profile {
@@ -327,6 +329,9 @@ model Profile {
   user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   media      Media[]
   ambassador Ambassador?
+
+  @@index([profileSource, onboardingCompletedAt])
+  @@index([city])
 }
 
 model Media {
@@ -890,6 +895,7 @@ model AnalyticsEvent {
   @@index([language])
   @@index([userId, eventName, occurredAt])
   @@index([sessionId, occurredAt])
+  @@index([source, campaign, occurredAt])
 }
 
 model Feedback {

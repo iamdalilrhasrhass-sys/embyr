@@ -89,11 +89,14 @@ test("package exposes operational commands", async () => {
   }
 });
 
-test("operator metrics exclude connections owned by deleted accounts", async () => {
+test("operator metrics count only qualified real members", async () => {
   const source = await readFile("src/lib/admin-metrics.ts", "utf8");
-  assert.match(source, /JOIN "User" mu1 ON mu1\.id = m\."user1Id"/);
-  assert.match(source, /JOIN "User" mu2 ON mu2\.id = m\."user2Id"/);
-  assert.match(source, /mu1\."deletedAt" IS NULL AND mu2\."deletedAt" IS NULL/);
-  assert.match(source, /JOIN "User" cu1 ON cu1\.id = c\."user1Id"/);
-  assert.match(source, /JOIN "User" dpu1 ON dpu1\.id = dpm\."user1Id"/);
+  assert.match(source, /WITH eligible_users AS/);
+  assert.match(source, /u\."deletedAt" IS NULL/);
+  assert.match(source, /u\."bannedAt" IS NULL/);
+  assert.match(source, /p\."profileSource" = 'user_registration'/);
+  assert.match(source, /JOIN eligible_users mu1 ON mu1\.id = m\."user1Id"/);
+  assert.match(source, /JOIN eligible_users mu2 ON mu2\.id = m\."user2Id"/);
+  assert.match(source, /JOIN eligible_users cu1 ON cu1\.id = c\."user1Id"/);
+  assert.match(source, /JOIN eligible_users dpu1 ON dpu1\.id = dpm\."user1Id"/);
 });

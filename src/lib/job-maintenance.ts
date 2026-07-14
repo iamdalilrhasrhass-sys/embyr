@@ -61,6 +61,7 @@ export interface CleanupResult {
   emailLogsRedacted: number;
   emailLogsDeleted: number;
   notificationsDeleted: number;
+  orphanAnalyticsAnonymized: number;
 }
 
 export interface OperationalHealthResult {
@@ -246,7 +247,7 @@ export async function retainRawAnalytics(now: Date): Promise<RetentionResult> {
   };
 }
 
-async function cleanupEmailOutbox(now: Date): Promise<Omit<CleanupResult, "notificationsDeleted">> {
+async function cleanupEmailOutbox(now: Date): Promise<Omit<CleanupResult, "notificationsDeleted" | "orphanAnalyticsAnonymized">> {
   const exhaustedLeasesFailed = await prisma.$executeRaw`
     UPDATE "EmailLog"
     SET
@@ -330,12 +331,24 @@ async function cleanupNotifications(now: Date): Promise<number> {
   return safeCount(rows[0]?.count ?? 0);
 }
 
+async function anonymizeOrphanAnalytics(): Promise<number> {
+  return prisma.$executeRaw`
+    UPDATE "AnalyticsEvent" event
+    SET "userId" = NULL
+    WHERE event."userId" IS NOT NULL
+      AND NOT EXISTS (
+        SELECT 1 FROM "User" account WHERE account.id = event."userId"
+      )
+  `;
+}
+
 export async function cleanupOperationalData(now: Date): Promise<CleanupResult> {
-  const [email, notificationsDeleted] = await Promise.all([
+  const [email, notificationsDeleted, orphanAnalyticsAnonymized] = await Promise.all([
     cleanupEmailOutbox(now),
     cleanupNotifications(now),
+    anonymizeOrphanAnalytics(),
   ]);
-  return { ...email, notificationsDeleted };
+  return { ...email, notificationsDeleted, orphanAnalyticsAnonymized };
 }
 
 export function detectAggregateAnomalies(report: AggregateReportData): string[] {
@@ -406,7 +419,13 @@ export async function collectOperationalHealth(
             END >= 500
           )
       ) AS "apiErrors24h",
-      (SELECT COUNT(*) FROM "User" WHERE "deletedAt" IS NULL) AS "activeUsers",
+      (SELECT COUNT(*)
+        FROM "User" u JOIN "Profile" p ON p."userId" = u.id
+        WHERE u."deletedAt" IS NULL AND u."bannedAt" IS NULL
+          AND u.role IN ('USER', 'AMBASSADOR')
+          AND u."isAdultConfirmed" = TRUE
+          AND p."profileSource" = 'user_registration'
+      ) AS "activeUsers",
       (SELECT MAX("occurredAt") FROM "AnalyticsEvent") AS "latestAnalyticsAt",
       (SELECT COUNT(*) FROM (
         SELECT date_trunc('day', event."occurredAt")

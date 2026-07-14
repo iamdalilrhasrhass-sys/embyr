@@ -18,6 +18,7 @@ async function handleGet(
         deletedAt: null,
         profile: {
           is: {
+            profileSource: "user_registration",
             publicVisibility: true,
             visibilityStatus: { not: "HIDDEN" },
             moderationState: "ACTIVE",

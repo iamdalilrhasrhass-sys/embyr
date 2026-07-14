@@ -19,10 +19,14 @@ export async function GET(request: NextRequest) {
     const genderIdentity = seekingToGenderIdentity(query.seeking);
     const profiles = await prisma.profile.findMany({
       where: {
+        profileSource: "user_registration",
         publicVisibility: true,
+        visibilityStatus: "PUBLIC",
+        moderationState: "ACTIVE",
         user: {
           deletedAt: null,
           bannedAt: null,
+          isAdultConfirmed: true,
         },
         ...(query.city ? { city: { contains: query.city, mode: "insensitive" } } : {}),
         ...(query.intent ? { intentions: { has: query.intent } } : {}),
@@ -54,4 +58,3 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-
