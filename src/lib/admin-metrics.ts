@@ -118,6 +118,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
       ), events AS (
         SELECT *, COALESCE("anonymousId", "sessionId", "userId") AS visitor
         FROM "AnalyticsEvent"
@@ -167,6 +168,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
       )
       SELECT stage AS label, total FROM (
         VALUES
@@ -228,6 +230,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
       FROM "Profile" p JOIN "User" u ON u.id = p."userId"
       WHERE p."primaryIntent" IS NOT NULL AND u."deletedAt" IS NULL AND u."bannedAt" IS NULL
         AND u."isAdultConfirmed" = TRUE AND p."profileSource" = 'user_registration'
+        AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
       GROUP BY 1 HAVING COUNT(*) >= 10 ORDER BY 2 DESC
     `,
     prisma.$queryRaw<BreakdownRow[]>`
@@ -281,6 +284,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
         AND u.role IN ('USER', 'AMBASSADOR')
         AND u."isAdultConfirmed" = TRUE
         AND p."profileSource" = 'user_registration'
+        AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
       GROUP BY 1 ORDER BY 1 DESC LIMIT 13
     `,
     prisma.$queryRaw<Array<{ apiErrors24h: CountValue }>>`
@@ -290,7 +294,7 @@ export async function getAdminMetrics(): Promise<AdminMetrics> {
     `,
     prisma.$queryRaw<Array<{ failed: CountValue; pending: CountValue }>>`
       SELECT
-        COUNT(*) FILTER (WHERE status = 'failed') AS failed,
+        COUNT(*) FILTER (WHERE status IN ('failed','bounced','complained')) AS failed,
         COUNT(*) FILTER (WHERE status IN ('pending','retry','processing')) AS pending
       FROM "EmailLog"
     `,

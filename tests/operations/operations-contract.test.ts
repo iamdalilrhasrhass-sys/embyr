@@ -35,6 +35,12 @@ test("scheduled jobs use JobRun idempotence and PostgreSQL advisory locks", asyn
   assert.match(source, /"JobRun"/);
   assert.match(source, /partialFailures/);
   assert.match(source, /"metadata" = CAST/);
+  assert.match(source, /reconcileRecentEmailDeliveryEvents/);
+  const work = source.slice(source.indexOf("async function performJobWork"));
+  assert.ok(
+    work.indexOf("const deliveryReconciliation") <
+      work.indexOf("const verificationReminders"),
+  );
 });
 
 test("maintenance records expirations and elapsed confirmed plans idempotently", async () => {
@@ -74,6 +80,14 @@ test("cleanup is bounded and email preferences defer or skip delivery safely", a
   assert.match(outbox, /quietHoursEnabled/);
   assert.match(outbox, /deferForQuietHours/);
   assert.match(outbox, /user_email_preference_disabled/);
+});
+
+test("verification reminders require confirmed delivery and exclude first-party accounts", async () => {
+  const source = await readFile("src/lib/email-verification-delivery.ts", "utf8");
+  assert.match(source, /providerLastEvent/);
+  assert.match(source, /delivered.*opened.*clicked/s);
+  assert.match(source, /NOT LIKE '%@embir\.xyz'/);
+  assert.doesNotMatch(source, /u\."consentSensitiveData" = TRUE/);
 });
 
 test("package exposes operational commands", async () => {

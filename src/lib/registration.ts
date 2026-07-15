@@ -1,3 +1,5 @@
+import { isFirstPartyEmailAddress } from "./email-address-policy.ts";
+
 export type RegistrationInput = {
   email?: unknown;
   password?: unknown;
@@ -21,6 +23,7 @@ export type ValidRegistrationInput = {
 export type RegistrationErrorCode =
   | "email_required"
   | "email_invalid"
+  | "email_domain_reserved"
   | "password_too_short"
   | "adult_confirmation_required"
   | "terms_required"
@@ -41,6 +44,14 @@ export function validateRegistrationInput(
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return { ok: false, status: 400, error: "Email invalide", code: "email_invalid" };
+  }
+  if (isFirstPartyEmailAddress(email)) {
+    return {
+      ok: false,
+      status: 400,
+      error: "Cette adresse est réservée à l'équipe Embir",
+      code: "email_domain_reserved",
+    };
   }
 
   // Password validation

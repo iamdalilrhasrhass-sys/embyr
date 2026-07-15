@@ -136,6 +136,7 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
           AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
           AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
           AND LOWER(TRIM(u.email)) NOT LIKE '%.test'
@@ -250,6 +251,7 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
           AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
           AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
           AND LOWER(TRIM(u.email)) NOT LIKE '%.test'
@@ -312,6 +314,7 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
           AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
           AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
           AND LOWER(TRIM(u.email)) NOT LIKE '%.test'

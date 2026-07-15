@@ -57,6 +57,7 @@ export async function collectAggregateReport(input: {
         AND u.role IN ('USER', 'AMBASSADOR')
         AND u."isAdultConfirmed" = TRUE
         AND p."profileSource" = 'user_registration'
+        AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
     )
     SELECT
       (SELECT COUNT(*) FROM eligible_users
@@ -89,7 +90,7 @@ export async function collectAggregateReport(input: {
           AND "createdAt" < ${input.periodEnd}
       ) AS "emailsPending",
       (SELECT COUNT(*) FROM "EmailLog"
-        WHERE "status" = 'failed'
+        WHERE "status" IN ('failed', 'bounced', 'complained')
           AND "updatedAt" >= ${input.periodStart} AND "updatedAt" < ${input.periodEnd}
       ) AS "emailsFailed",
       (SELECT COUNT(DISTINCT COALESCE("anonymousId", "sessionId", "userId")) FROM "AnalyticsEvent"

@@ -266,7 +266,7 @@ async function cleanupEmailOutbox(now: Date): Promise<Omit<CleanupResult, "notif
       SELECT ctid
       FROM "EmailLog"
       WHERE "updatedAt" < ${new Date(now.getTime() - 30 * DAY_MS)}
-        AND "status" IN ('sent', 'failed', 'skipped')
+        AND "status" IN ('sent', 'failed', 'skipped', 'bounced', 'complained')
         AND ("recipientHash" IS NOT NULL OR "payload" <> CAST('{"redacted":true}' AS jsonb))
       ORDER BY "updatedAt" ASC
       LIMIT ${MAX_CLEANUP_ROWS}
@@ -276,7 +276,7 @@ async function cleanupEmailOutbox(now: Date): Promise<Omit<CleanupResult, "notif
         "recipientHash" = NULL,
         "payload" = CAST('{"redacted":true}' AS jsonb),
         "providerMessageId" = NULL,
-        "error" = CASE WHEN email."status" = 'failed' THEN email."error" ELSE NULL END,
+        "error" = CASE WHEN email."status" IN ('failed', 'bounced', 'complained') THEN email."error" ELSE NULL END,
         "updatedAt" = ${now}
       FROM candidates
       WHERE email.ctid = candidates.ctid
@@ -291,7 +291,7 @@ async function cleanupEmailOutbox(now: Date): Promise<Omit<CleanupResult, "notif
       FROM "EmailLog"
       WHERE
         ("status" IN ('sent', 'skipped') AND "createdAt" < ${new Date(now.getTime() - 180 * DAY_MS)})
-        OR ("status" = 'failed' AND "createdAt" < ${new Date(now.getTime() - 365 * DAY_MS)})
+        OR ("status" IN ('failed', 'bounced', 'complained') AND "createdAt" < ${new Date(now.getTime() - 365 * DAY_MS)})
       ORDER BY "createdAt" ASC
       LIMIT ${MAX_CLEANUP_ROWS}
     ), deleted AS (
@@ -425,6 +425,7 @@ export async function collectOperationalHealth(
           AND u.role IN ('USER', 'AMBASSADOR')
           AND u."isAdultConfirmed" = TRUE
           AND p."profileSource" = 'user_registration'
+          AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
       ) AS "activeUsers",
       (SELECT MAX("occurredAt") FROM "AnalyticsEvent") AS "latestAnalyticsAt",
       (SELECT COUNT(*) FROM (

@@ -49,15 +49,17 @@ test("the Lausanne landing is local, honest, measured and conversion-ready", asy
   assert.doesNotMatch(source, /déjà des milliers|garanti|100 % de vrais profils/i);
 });
 
-test("growth reporting excludes demos, deleted accounts, staff and banned accounts", async () => {
-  const [growth, admin, aggregate, migration] = await Promise.all([
+test("growth reporting excludes demos, first-party accounts, deleted accounts, staff and banned accounts", async () => {
+  const [growth, admin, aggregate, migration, firstPartyMigration] = await Promise.all([
     readFile("src/lib/growth-metrics.ts", "utf8"),
     readFile("src/lib/admin-metrics.ts", "utf8"),
     readFile("src/lib/aggregate-reports.ts", "utf8"),
     readFile("prisma/migrations/20260715000000_growth_2500_truth/migration.sql", "utf8"),
+    readFile("prisma/migrations/20260715030000_reclassify_first_party_legacy_accounts/migration.sql", "utf8"),
   ]);
   for (const source of [growth, admin, aggregate]) {
     assert.match(source, /profileSource/);
+    assert.match(source, /NOT LIKE '%@embir\.xyz'/);
     assert.match(source, /user_registration/);
     assert.match(source, /deletedAt/);
     assert.match(source, /bannedAt/);
@@ -80,6 +82,10 @@ test("growth reporting excludes demos, deleted accounts, staff and banned accoun
   assert.match(migration, /demo_vitrine/);
   assert.match(migration, /"visibilityStatus" = 'HIDDEN'/);
   assert.match(migration, /NOT EXISTS[\s\S]*"User"/);
+  assert.match(firstPartyMigration, /internal_legacy/);
+  assert.match(firstPartyMigration, /@embir\.xyz/);
+  assert.match(firstPartyMigration, /"publicVisibility" = FALSE/);
+  assert.match(firstPartyMigration, /"visibilityStatus" = 'HIDDEN'/);
 });
 
 test("public discovery never serves legacy showcase profiles", async () => {
