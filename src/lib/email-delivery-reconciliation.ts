@@ -157,6 +157,7 @@ export async function reconcileRecentEmailDeliveryEvents(options: {
     SELECT "id", "providerMessageId"
     FROM "EmailLog"
     WHERE "status" = 'sent'
+      AND "type" = 'email-verification'
       AND "sentAt" IS NOT NULL
       AND "providerMessageId" IS NOT NULL
       AND "providerMessageId" <> ''
@@ -195,7 +196,8 @@ export async function reconcileRecentEmailDeliveryEvents(options: {
         }
         result.checked++;
         recordEvent(result, event);
-        result.updated += await persistProviderEvent(row.id, event, now);
+        const updated = await persistProviderEvent(row.id, event, now);
+        result.updated += updated;
       } catch {
         result.apiErrors++;
       }
