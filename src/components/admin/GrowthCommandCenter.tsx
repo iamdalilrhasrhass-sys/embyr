@@ -85,13 +85,14 @@ export function GrowthCommandCenter({ growth }: GrowthCommandCenterProps) {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] opacity-70">Qualité des données</p>
             <h3 className="mt-2 text-xl font-semibold">{measurementCopy}</h3>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed opacity-70">
-              La nouvelle base commence au {new Date(growth.measurement.baselineAt).toLocaleString("fr-CH")}. Un statut « prêt » exige au moins 50 événements récents, 90 % d’acteurs identifiables, 90 % d’identifiants d’idempotence et aucun utilisateur orphelin.
+              La nouvelle base commence au {new Date(growth.measurement.baselineAt).toLocaleString("fr-CH")}. Un statut « prêt » exige au moins 50 événements de parcours récents, 90 % d’acteurs identifiables, 90 % d’identifiants d’idempotence et aucun utilisateur orphelin. Les requêtes API techniques sont suivies séparément et ne faussent pas cette qualité.
             </p>
           </div>
           <span className="w-fit rounded-full border border-current/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]">{growth.measurement.state}</span>
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div><p className="text-xs opacity-55">Événements nouvelle base</p><p className="mt-1 font-mono text-xl">{growth.measurement.postBaselineEvents}</p></div>
+          <div><p className="text-xs opacity-55">Événements techniques séparés</p><p className="mt-1 font-mono text-xl">{growth.measurement.excludedOperationalEvents}</p></div>
           <div><p className="text-xs opacity-55">Couverture acteurs</p><p className="mt-1 font-mono text-xl">{growth.measurement.actorCoverage}%</p></div>
           <div><p className="text-xs opacity-55">Couverture idempotence</p><p className="mt-1 font-mono text-xl">{growth.measurement.idempotencyCoverage}%</p></div>
           <div><p className="text-xs opacity-55">Attribution inscriptions</p><p className="mt-1 font-mono text-xl">{growth.measurement.signupAttributionCoverage === null ? "—" : `${growth.measurement.signupAttributionCoverage}%`}</p></div>

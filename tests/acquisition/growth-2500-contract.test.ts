@@ -102,3 +102,17 @@ test("public discovery never serves legacy showcase profiles", async () => {
     assert.match(source, /profileSource:\s*"user_registration"/, file);
   }
 });
+
+test("growth measurement separates operational API telemetry from user-journey quality", async () => {
+  const [growth, commandCenter] = await Promise.all([
+    readFile("src/lib/growth-metrics.ts", "utf8"),
+    readFile("src/components/admin/GrowthCommandCenter.tsx", "utf8"),
+  ]);
+
+  assert.match(growth, /measurement_events AS/);
+  assert.match(growth, /WHERE "eventName" <> 'api_request'/);
+  assert.match(growth, /"excludedOperationalEvents"/);
+  assert.match(growth, /MAX\("occurredAt"\) FROM measurement_events/);
+  assert.match(commandCenter, /Événements techniques séparés/);
+  assert.match(commandCenter, /requêtes API techniques sont suivies séparément/);
+});

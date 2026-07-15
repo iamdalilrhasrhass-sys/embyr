@@ -33,6 +33,7 @@ type DensityRow = {
 
 type MeasurementRow = {
   postBaselineEvents: CountValue;
+  excludedOperationalEvents: CountValue;
   identifiablePostBaselineEvents: CountValue;
   idempotentPostBaselineEvents: CountValue;
   orphanPostBaselineEvents: CountValue;
@@ -81,6 +82,7 @@ export interface GrowthMetrics {
     state: "ready" | "calibrating" | "blocked";
     baselineAt: string;
     postBaselineEvents: number;
+    excludedOperationalEvents: number;
     actorCoverage: number;
     idempotencyCoverage: number;
     orphanPostBaselineEvents: number;
@@ -298,6 +300,9 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
       WITH post_baseline AS (
         SELECT * FROM "AnalyticsEvent"
         WHERE "occurredAt" >= ${new Date(GROWTH_MEASUREMENT_BASELINE_AT)}
+      ), measurement_events AS (
+        SELECT * FROM post_baseline
+        WHERE "eventName" <> 'api_request'
       ), eligible_signups AS (
         SELECT u.id
         FROM "User" u
@@ -315,11 +320,12 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           AND u."createdAt" >= NOW() - INTERVAL '30 days'
       )
       SELECT
-        (SELECT COUNT(*) FROM post_baseline) AS "postBaselineEvents",
-        (SELECT COUNT(*) FROM post_baseline WHERE COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL) AS "identifiablePostBaselineEvents",
-        (SELECT COUNT(*) FROM post_baseline WHERE "eventId" IS NOT NULL) AS "idempotentPostBaselineEvents",
-        (SELECT COUNT(*) FROM post_baseline e LEFT JOIN "User" u ON u.id = e."userId" WHERE e."userId" IS NOT NULL AND u.id IS NULL) AS "orphanPostBaselineEvents",
-        (SELECT COUNT(*) FROM "AnalyticsEvent" WHERE COALESCE("userId", "anonymousId", "sessionId") IS NULL) AS "legacyUnidentifiableEvents",
+        (SELECT COUNT(*) FROM measurement_events) AS "postBaselineEvents",
+        (SELECT COUNT(*) FROM post_baseline WHERE "eventName" = 'api_request') AS "excludedOperationalEvents",
+        (SELECT COUNT(*) FROM measurement_events WHERE COALESCE("userId", "anonymousId", "sessionId") IS NOT NULL) AS "identifiablePostBaselineEvents",
+        (SELECT COUNT(*) FROM measurement_events WHERE "eventId" IS NOT NULL) AS "idempotentPostBaselineEvents",
+        (SELECT COUNT(*) FROM measurement_events e LEFT JOIN "User" u ON u.id = e."userId" WHERE e."userId" IS NOT NULL AND u.id IS NULL) AS "orphanPostBaselineEvents",
+        (SELECT COUNT(*) FROM "AnalyticsEvent" WHERE "eventName" <> 'api_request' AND COALESCE("userId", "anonymousId", "sessionId") IS NULL) AS "legacyUnidentifiableEvents",
         (SELECT COUNT(*) FROM (
           SELECT LOWER(TRIM(email))
           FROM "User"
@@ -332,7 +338,7 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
           JOIN "AnalyticsEvent" a ON a."userId" = e.id AND a."eventName" = 'signup_completed'
           WHERE COALESCE(a.source, a.medium, a.campaign) IS NOT NULL
         ) AS "attributedSignups30d",
-        (SELECT MAX("occurredAt") FROM "AnalyticsEvent") AS "latestEventAt"
+        (SELECT MAX("occurredAt") FROM measurement_events) AS "latestEventAt"
     `,
   ]);
 
@@ -393,6 +399,7 @@ export async function getGrowthMetrics(): Promise<GrowthMetrics> {
       state: measurementState,
       baselineAt: GROWTH_MEASUREMENT_BASELINE_AT,
       postBaselineEvents,
+      excludedOperationalEvents: count(measurement?.excludedOperationalEvents),
       actorCoverage,
       idempotencyCoverage,
       orphanPostBaselineEvents,
