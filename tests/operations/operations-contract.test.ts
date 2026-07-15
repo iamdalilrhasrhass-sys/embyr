@@ -84,10 +84,13 @@ test("cleanup is bounded and email preferences defer or skip delivery safely", a
 
 test("verification reminders require confirmed delivery and exclude first-party accounts", async () => {
   const source = await readFile("src/lib/email-verification-delivery.ts", "utf8");
+  const reconciliation = await readFile("src/lib/email-delivery-reconciliation.ts", "utf8");
   assert.match(source, /providerLastEvent/);
   assert.match(source, /delivered.*opened.*clicked/s);
   assert.match(source, /NOT LIKE '%@embir\.xyz'/);
   assert.doesNotMatch(source, /u\."consentSensitiveData" = TRUE/);
+  assert.match(reconciliation, /"type" = 'email-verification'/);
+  assert.match(reconciliation, /const updated = await persistProviderEvent/);
 });
 
 test("package exposes operational commands", async () => {
