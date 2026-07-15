@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "prisma generate && NODE_OPTIONS=--max-old-space-size=6144 next build --webpack",
     "start": "next start",
-    "lint": "npm run lint:seo",
+    "lint": "npm run lint:seo && npm run lint:email",
     "lint:seo": "eslint src/seo src/components/seo-pages.tsx src/components/seo/SchemaOrg.tsx src/components/layout/Navbar.tsx src/components/layout/Footer.tsx src/app/sitemap.ts 'src/app/[locale]/layout.tsx' 'src/app/[locale]/page.tsx' 'src/app/[locale]/auth/register/page.tsx' 'src/app/[locale]/france/[slug]/page.tsx' 'src/app/[locale]/usa/[slug]/page.tsx' 'src/app/[locale]/us/page.tsx' 'src/app/[locale]/us/[slug]/page.tsx' 'src/app/[locale]/us/dating/[slug]/page.tsx' 'src/app/[locale]/uk/page.tsx' 'src/app/[locale]/uk/[slug]/page.tsx' 'src/app/[locale]/uk/dating/[slug]/page.tsx' 'src/app/[locale]/guides/[slug]/page.tsx' 'src/app/[locale]/comparisons/[slug]/page.tsx' 'src/app/[locale]/comparaison/[slug]/page.tsx' 'src/app/[locale]/comparison/[slug]/page.tsx' 'src/app/[locale]/product/[slug]/page.tsx' 'src/app/[locale]/freemium/[slug]/page.tsx' 'src/app/[locale]/blog/[slug]/page.tsx' 'src/app/[locale]/rencontre/[slug]/page.tsx' 'src/app/[locale]/[slug]/page.tsx'",
+    "lint:email": "eslint src/emails/templates.ts src/lib/email-core.ts src/lib/email-local.ts src/lib/email-outbox.ts src/lib/admin-signup-metrics.ts src/app/api/auth/register/route.ts scripts/render-email-previews.ts scripts/qa-email-previews.mjs scripts/send-admin-email-test.ts tests/operations/email-core.test.ts tests/operations/email-rendering.test.ts tests/operations/operations-contract.test.ts",
     "typecheck": "tsc --noEmit",
     "test": "npm run test:landing && npm run test:ui && npm run test:security && npm run test:acquisition && npm run test:seo-policy && npm run test:operations && npm run test:product",
     "test:landing": "tsx --test tests/landing-2100/*.test.ts",
@@ -31,6 +32,9 @@
     "qa:capacity": "node scripts/qa-growth-capacity.mjs",
     "qa:growth": "node scripts/qa-growth-2500.mjs",
     "qa:email-verification": "node scripts/qa-email-verification.mjs",
+    "email:previews": "node --import tsx scripts/render-email-previews.ts",
+    "qa:email-previews": "npm run email:previews && node scripts/qa-email-previews.mjs",
+    "email:test:admin": "node --env-file=.env --import tsx scripts/send-admin-email-test.ts",
     "qa:connection-os": "bash scripts/qa-connection-os-e2e.sh"
   },
   "dependencies": {

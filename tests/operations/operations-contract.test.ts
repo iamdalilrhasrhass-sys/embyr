@@ -23,8 +23,24 @@ test("outbox uses database idempotence and leases", async () => {
   assert.match(source, /FOR UPDATE SKIP LOCKED/);
   assert.match(source, /recipientHash/);
   assert.match(smtp, /function getTransporter/);
+  assert.match(smtp, /text: input\.text/);
   assert.doesNotMatch(smtp, /SMTP_(?:HOST|FROM|USER|PASS)\s*\|\|/);
   assert.doesNotMatch(smtp, /noreply@embir\.xyz/);
+});
+
+test("admin signup notifications exclude synthetic identities and use real metrics", async () => {
+  const metrics = await readFile("src/lib/admin-signup-metrics.ts", "utf8");
+  const register = await readFile("src/app/api/auth/register/route.ts", "utf8");
+  assert.match(metrics, /p\."profileSource" = 'user_registration'/);
+  assert.match(metrics, /NOT LIKE '%@embir\.xyz'/);
+  assert.match(metrics, /!~ '@example\\\.\(com\|org\|net\|invalid\)\$'/);
+  assert.match(metrics, /\^\(qa\|test\|internal\)/);
+  assert.match(metrics, /AS "qualifiedMembers"/);
+  assert.match(metrics, /AS "growth24h"/);
+  assert.match(register, /collectAdminSignupMetrics/);
+  assert.match(register, /if \(metrics\.isRealSignup\)/);
+  assert.match(register, /adminSignupDedupeKey\(user\.id\)/);
+  assert.doesNotMatch(register, /prisma\.user\.count/);
 });
 
 test("scheduled jobs use JobRun idempotence and PostgreSQL advisory locks", async () => {

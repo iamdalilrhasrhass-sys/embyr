@@ -23,6 +23,7 @@ export interface SendEmailInput {
   to: string;
   subject: string;
   html: string;
+  text: string;
   dedupeKey: string;
 }
 
@@ -119,6 +120,9 @@ function deterministicMessageId(dedupeKey: string, from: string): string {
 }
 
 export async function sendEmail(input: SendEmailInput): Promise<SendEmailResult> {
+  if (!input.html.trim() || !input.text.trim()) {
+    throw new Error("Email delivery requires both HTML and plain-text content");
+  }
   const provider = readEmailProviderConfig();
   if (provider.provider === "resend") {
     const response = await fetch("https://api.resend.com/emails", {
@@ -133,6 +137,7 @@ export async function sendEmail(input: SendEmailInput): Promise<SendEmailResult>
         to: [input.to],
         subject: input.subject,
         html: input.html,
+        text: input.text,
       }),
       signal: AbortSignal.timeout(20_000),
     });
@@ -150,6 +155,7 @@ export async function sendEmail(input: SendEmailInput): Promise<SendEmailResult>
     to: input.to,
     subject: input.subject,
     html: input.html,
+    text: input.text,
     messageId: deterministicMessageId(input.dedupeKey, config.from),
   });
   return {
