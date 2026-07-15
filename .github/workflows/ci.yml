@@ -31,4 +31,14 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run qa:email-previews
       - run: npm run build
+      - name: Upload email preview evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: email-previews-${{ github.run_id }}
+          path: artifacts/email-previews
+          if-no-files-found: ignore
+          retention-days: 14

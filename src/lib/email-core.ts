@@ -70,6 +70,10 @@ export interface AdminSignupEmailData {
   campaign: string | null;
   onboardingStatus: "started" | "completed";
   totalUsers: number;
+  /** Optional for backward compatibility with notifications queued before schema v1.1. */
+  qualifiedMembers?: number;
+  /** Number of real external registrations created during the preceding 24 hours. */
+  growth24h?: number;
 }
 
 export interface EmailVerificationEmailData {
@@ -91,6 +95,21 @@ export function normalizeEmailAddress(email: string): string {
 
 export function hashEmailAddress(email: string): string {
   return createHash("sha256").update(normalizeEmailAddress(email)).digest("hex");
+}
+
+export function adminSignupDedupeKey(userId: string): string {
+  const normalized = userId.trim();
+  if (!/^[a-z0-9_-]{8,100}$/i.test(normalized)) {
+    throw new Error("Invalid user id for admin signup deduplication");
+  }
+  return `admin-signup:${normalized}`;
+}
+
+export function adminSignupSubject(totalUsers: number): string {
+  if (!Number.isSafeInteger(totalUsers) || totalUsers < 0) {
+    throw new Error("Invalid admin signup total");
+  }
+  return `Nouvelle inscription Embir — ${totalUsers} utilisateurs au total`;
 }
 
 export function retryDelayMs(attempt: number): number {
@@ -217,6 +236,11 @@ export function assertAdminSignupEmailData(
   }
   assertIsoDate(data.occurredAt, "admin signup timestamp");
   assertShortText(data.country, "admin signup country", 80, true);
+  if (data.country !== null) {
+    if (typeof data.country !== "string" || !/^[A-Z]{2}$/.test(data.country)) {
+      throw new Error("Invalid admin signup general zone");
+    }
+  }
   assertShortText(data.language, "admin signup language", 16);
   assertShortText(data.source, "admin signup source", 80, true);
   assertShortText(data.campaign, "admin signup campaign", 120, true);
@@ -232,6 +256,17 @@ export function assertAdminSignupEmailData(
     data.totalUsers < 0
   ) {
     throw new Error("Invalid admin signup total");
+  }
+  for (const [field, value] of [
+    ["qualified members", data.qualifiedMembers],
+    ["24-hour growth", data.growth24h],
+  ] as const) {
+    if (
+      value !== undefined &&
+      (typeof value !== "number" || !Number.isSafeInteger(value) || value < 0)
+    ) {
+      throw new Error(`Invalid admin signup ${field}`);
+    }
   }
 }
 

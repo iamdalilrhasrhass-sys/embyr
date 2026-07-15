@@ -99,9 +99,10 @@ test("email verification payload keeps the token in a short-lived URL fragment",
     }),
     true,
   );
-  const html = emailVerificationEmail("<script>alert(1)</script>", data);
-  assert.doesNotMatch(html, /<script>/);
-  assert.match(html, /verify-email#token=signed-token/);
+  const rendered = emailVerificationEmail("<script>alert(1)</script>", data);
+  assert.doesNotMatch(rendered.html, /<script>/);
+  assert.match(rendered.html, /verify-email#token=signed-token/);
+  assert.match(rendered.text, /verify-email#token=signed-token/);
   assert.throws(
     () => assertEmailVerificationEmailData({ ...data, verificationUrl: "https://example.com/#token=x" }),
     /Invalid email verification URL/,
@@ -111,22 +112,22 @@ test("email verification payload keeps the token in a short-lived URL fragment",
 test("admin signup payload is aggregate-only, bounded and escaped", () => {
   const signup = {
     occurredAt: "2026-07-11T12:30:00.000Z",
-    country: "<CH>",
+    country: "CH",
     language: "fr",
-    source: "direct",
+    source: "<direct>",
     campaign: null,
     onboardingStatus: "started" as const,
     totalUsers: 24,
   };
   assert.doesNotThrow(() => assertAdminSignupEmailData(signup));
-  const html = renderQueuedEmail({
+  const rendered = renderQueuedEmail({
     schemaVersion: 1,
     recipientKind: "admin_signup",
     template: "admin-signup",
     data: signup,
   });
-  assert.doesNotMatch(html, /<CH>/);
-  assert.match(html, /&lt;CH&gt;/);
+  assert.doesNotMatch(rendered.html, /<direct>/);
+  assert.match(rendered.html, /&lt;direct&gt;/);
   assert.throws(
     () => assertAdminSignupEmailData({ ...signup, totalUsers: -1 }),
     /Invalid admin signup total/,
@@ -200,6 +201,8 @@ test("Resend delivery uses provider idempotency without requiring SMTP", async (
     const body = JSON.parse(String(init?.body));
     assert.deepEqual(body.to, ["owner@example.com"]);
     assert.equal(body.from, "Embir Ops <ops@example.com>");
+    assert.equal(body.html, "<p>Test</p>");
+    assert.equal(body.text, "Test");
     return new Response(JSON.stringify({ id: "provider-message-1" }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -211,6 +214,7 @@ test("Resend delivery uses provider idempotency without requiring SMTP", async (
       to: "owner@example.com",
       subject: "Embir test",
       html: "<p>Test</p>",
+      text: "Test",
       dedupeKey: "admin-report:test-20260712",
     });
     assert.equal(result.providerMessageId, "provider-message-1");
@@ -225,19 +229,22 @@ test("Resend delivery uses provider idempotency without requiring SMTP", async (
 
 test("templates escape user-controlled HTML and aggregate reports contain no PII", () => {
   const welcome = welcomeEmail('<img src=x onerror="alert(1)">');
-  assert.doesNotMatch(welcome, /<img src=x/);
+  assert.doesNotMatch(welcome.html, /<img src=x/);
   const report = adminAggregateReportEmail(aggregate);
-  assert.match(report, /Rapport Embir daily/);
-  assert.doesNotMatch(report, /@|userId|message content/i);
+  assert.match(report.html, /Rapport quotidien Embir/);
+  assert.doesNotMatch(
+    report.html,
+    /[\w.+-]+@[\w.-]+\.[a-z]{2,}|userId|message content/i,
+  );
   assert.doesNotThrow(() => assertAggregateReportData(aggregate));
 });
 
 test("digest templates reject non-Embir links", () => {
-  const html = weeklyDigestEmail("toi", 1, [
+  const rendered = weeklyDigestEmail("toi", 1, [
     { title: "Unsafe", url: "javascript:alert(1)" },
     { title: "External", url: "https://example.com/article" },
     { title: "Safe", url: "https://embir.xyz/fr/blog/article" },
   ]);
-  assert.doesNotMatch(html, /javascript:|example\.com/);
-  assert.match(html, /embir\.xyz\/fr\/blog\/article/);
+  assert.doesNotMatch(rendered.html, /javascript:|example\.com/);
+  assert.match(rendered.html, /embir\.xyz\/fr\/blog\/article/);
 });

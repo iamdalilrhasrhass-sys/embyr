@@ -1,6 +1,10 @@
 import { randomUUID } from "node:crypto";
-import { renderQueuedEmail } from "../emails/templates.ts";
 import {
+  formatZurichDateTime,
+  renderQueuedEmail,
+} from "../emails/templates.ts";
+import {
+  adminSignupSubject,
   hashEmailAddress,
   isQueuedEmailPayload,
   retryDelayMs,
@@ -198,11 +202,13 @@ export async function enqueueAdminAggregateReport(
   dedupeKey: string,
 ): Promise<EnqueueEmailResult> {
   const recipient = getRequiredAdminReportEmail();
+  const cadence = report.cadence === "daily" ? "quotidien" : "hebdomadaire";
+  const localDate = formatZurichDateTime(report.periodStart).split(" à ")[0];
   return enqueueRecord({
     userId: null,
     recipientEmail: recipient,
     type: "admin-aggregate",
-    subject: `Rapport Embir ${report.cadence} — ${report.periodStart.slice(0, 10)}`,
+    subject: `Rapport ${cadence} Embir — ${localDate}`,
     payload: {
       schemaVersion: 1,
       recipientKind: "admin_report",
@@ -221,14 +227,17 @@ export async function enqueueAdminSignupNotification(input: {
   campaign: string | null;
   onboardingStatus: "started" | "completed";
   totalUsers: number;
+  qualifiedMembers: number;
+  growth24h: number;
   dedupeKey: string;
 }): Promise<EnqueueEmailResult> {
   const recipient = getRequiredAdminReportEmail();
+  const totalUsers = Math.max(0, Math.floor(input.totalUsers));
   return enqueueRecord({
     userId: null,
     recipientEmail: recipient,
     type: "admin-signup",
-    subject: `[Embir] Nouvelle inscription — Total : ${Math.max(0, Math.floor(input.totalUsers))}`,
+    subject: adminSignupSubject(totalUsers),
     payload: {
       schemaVersion: 1,
       recipientKind: "admin_signup",
@@ -240,7 +249,9 @@ export async function enqueueAdminSignupNotification(input: {
         source: input.source,
         campaign: input.campaign,
         onboardingStatus: input.onboardingStatus,
-        totalUsers: Math.max(0, Math.floor(input.totalUsers)),
+        totalUsers,
+        qualifiedMembers: Math.max(0, Math.floor(input.qualifiedMembers)),
+        growth24h: Math.max(0, Math.floor(input.growth24h)),
       },
     },
     dedupeKey: input.dedupeKey,
@@ -514,11 +525,12 @@ export async function processEmailOutbox(options: {
       }
 
       assertSubject(row.subject);
-      const html = renderQueuedEmail(row.payload, recipient.displayName);
+      const rendered = renderQueuedEmail(row.payload, recipient.displayName);
       const sendResult = await sendEmail({
         to: recipient.email,
         subject: row.subject,
-        html,
+        html: rendered.html,
+        text: rendered.text,
         dedupeKey: row.dedupeKey,
       });
       await markSent(row.id, sendResult.providerMessageId);

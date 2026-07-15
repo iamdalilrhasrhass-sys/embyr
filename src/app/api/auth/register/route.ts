@@ -5,7 +5,8 @@ import { hashPassword, signToken } from "@/lib/auth";
 import { validateRegistrationInput } from "@/lib/registration";
 import { enqueueAdminSignupNotification, processEmailOutbox } from "@/lib/email-outbox";
 import { enqueueEmailVerification } from "@/lib/email-verification-delivery";
-import { sanitizeOperationalError } from "@/lib/email-core";
+import { adminSignupDedupeKey, sanitizeOperationalError } from "@/lib/email-core";
+import { collectAdminSignupMetrics } from "@/lib/admin-signup-metrics";
 import { withApiLogging } from "@/lib/api-logger";
 import { consumePublicForm } from "@/lib/public-form-rate-limit";
 
@@ -105,6 +106,9 @@ async function handlePost(request: NextRequest) {
       : "en";
     const headerCountry = request.headers.get("x-vercel-ip-country") || request.headers.get("cf-ipcountry");
     const country = /^[A-Z]{2}$/.test(headerCountry ?? "") ? headerCountry : shortText(body.country, 80);
+    const notificationCountry = /^[A-Za-z]{2}$/.test(country ?? "")
+      ? country!.toUpperCase()
+      : null;
     const source = acquisitionValue(body.source, "direct") ?? "direct";
     const medium = acquisitionValue(body.medium);
     const campaign = acquisitionValue(body.campaign);
@@ -173,7 +177,6 @@ async function handlePost(request: NextRequest) {
       return created;
     });
 
-    const totalUsers = await prisma.user.count({ where: { deletedAt: null } });
     await enqueueEmailVerification({
       userId: user.id,
       email: user.email,
@@ -193,16 +196,34 @@ async function handlePost(request: NextRequest) {
         },
       }).catch(() => undefined);
     });
-    await enqueueAdminSignupNotification({
-      occurredAt: now.toISOString(),
-      country,
-      language: locale,
-      source,
-      campaign,
-      onboardingStatus: "started",
-      totalUsers,
-      dedupeKey: `admin-signup:${user.id}`,
-    }).catch(async (error) => {
+    try {
+      const metrics = await collectAdminSignupMetrics({ userId: user.id, now });
+      if (metrics.isRealSignup) {
+        await enqueueAdminSignupNotification({
+          occurredAt: now.toISOString(),
+          country: notificationCountry,
+          language: locale,
+          source,
+          campaign,
+          onboardingStatus: "started",
+          totalUsers: metrics.totalUsers,
+          qualifiedMembers: metrics.qualifiedMembers,
+          growth24h: metrics.growth24h,
+          dedupeKey: adminSignupDedupeKey(user.id),
+        });
+      } else {
+        await prisma.analyticsEvent.create({
+          data: {
+            eventId: crypto.randomUUID(),
+            eventName: "admin_signup_email_suppressed",
+            eventVersion: 1,
+            userId: user.id,
+            occurredAt: new Date(),
+            properties: { reason: "synthetic_or_internal_identity" },
+          },
+        }).catch(() => undefined);
+      }
+    } catch (error) {
       const safeError = sanitizeOperationalError(error);
       console.error("[register] admin email queue unavailable", safeError);
       try {
@@ -226,7 +247,7 @@ async function handlePost(request: NextRequest) {
           sanitizeOperationalError(trackingError),
         );
       }
-    });
+    }
     await processEmailOutbox({ limit: 20 }).catch((error) => {
       console.error("[register] immediate email delivery unavailable", sanitizeOperationalError(error));
     });
