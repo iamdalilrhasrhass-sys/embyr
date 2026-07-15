@@ -83,6 +83,8 @@ export const seoEntries: SeoEntry[] = [
   { path: "/en/uk", category: "uk" as const, locale: "en" as const, priority: 0.94 },
   { path: "/en/switzerland", category: "switzerland" as const, locale: "en" as const, priority: 0.92 },
   { path: "/fr/suisse", category: "switzerland" as const, locale: "fr" as const, priority: 0.91 },
+  { path: "/en/lausanne", category: "switzerland" as const, locale: "en" as const, priority: 0.96 },
+  { path: "/fr/lausanne", category: "switzerland" as const, locale: "fr" as const, priority: 0.97 },
   ...marketSeoPages.map((page) => ({
     path: page.market === "usa" ? `/en/us/${page.slug}` : `/en/uk/${page.slug}`,
     category: page.market === "usa" ? "usa" as const : "uk" as const,

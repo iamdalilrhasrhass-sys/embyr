@@ -46,7 +46,16 @@ test("the Lausanne landing is local, honest, measured and conversion-ready", asy
   assert.match(source, /TrackedLink/);
   assert.match(source, /FAQPage/);
   assert.match(source, /Sans carte bancaire/);
+  assert.match(source, /Une communauté romande, ville par ville/);
+  assert.match(source, /\/fr\/suisse\/geneve/);
+  assert.match(source, /robots:\s*\{\s*index:\s*true,\s*follow:\s*true\s*\}/);
   assert.doesNotMatch(source, /déjà des milliers|garanti|100 % de vrais profils/i);
+});
+
+test("the two Lausanne campaign routes are discoverable in the sitemap", async () => {
+  const source = await readFile("src/seo/sitemap-data.ts", "utf8");
+  assert.match(source, /path:\s*"\/en\/lausanne"/);
+  assert.match(source, /path:\s*"\/fr\/lausanne"/);
 });
 
 test("growth reporting excludes demos, first-party accounts, deleted accounts, staff and banned accounts", async () => {
