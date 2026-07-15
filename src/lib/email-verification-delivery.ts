@@ -124,13 +124,14 @@ export async function enqueueDueEmailVerificationReminders(
        AND initial.status = 'sent'
        AND initial."sentAt" IS NOT NULL
        AND initial."dedupeKey" LIKE 'email-verification:%'
+       AND initial.payload->>'providerLastEvent' IN ('delivered', 'opened', 'clicked')
       WHERE u."emailVerified" = FALSE
         AND u."deletedAt" IS NULL
         AND u."bannedAt" IS NULL
         AND u.role IN ('USER', 'AMBASSADOR')
         AND u."isAdultConfirmed" = TRUE
-        AND u."consentSensitiveData" = TRUE
         AND p."profileSource" = 'user_registration'
+        AND LOWER(TRIM(u.email)) NOT LIKE '%@embir.xyz'
         AND LOWER(TRIM(u.email)) NOT LIKE '%embir-qa%'
         AND LOWER(TRIM(u.email)) NOT LIKE '%@test.%'
         AND LOWER(TRIM(u.email)) NOT LIKE '%.test'

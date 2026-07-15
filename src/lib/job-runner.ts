@@ -9,6 +9,7 @@ import {
   processEmailOutbox,
   type ProcessOutboxResult,
 } from "./email-outbox.ts";
+import { reconcileRecentEmailDeliveryEvents } from "./email-delivery-reconciliation.ts";
 import { enqueueDueEmailVerificationReminders } from "./email-verification-delivery.ts";
 import { closeSmtpTransport } from "./email-local.ts";
 import { sanitizeOperationalError } from "./email-core.ts";
@@ -216,6 +217,20 @@ async function performJobWork(
 
   if (cadence === "daily" || cadence === "weekly") {
     if (cadence === "daily") {
+      const deliveryReconciliation = await reconcileRecentEmailDeliveryEvents({
+        now,
+        limit: 250,
+      });
+      metadata.emailDeliveryReconciliation = deliveryReconciliation;
+      processedCount += deliveryReconciliation.updated;
+      if (deliveryReconciliation.configurationError) {
+        partialFailures.push("email delivery reconciliation is not configured");
+      }
+      if (deliveryReconciliation.apiErrors > 0) {
+        partialFailures.push(
+          `email delivery reconciliation failed for ${deliveryReconciliation.apiErrors} message(s)`,
+        );
+      }
       const verificationReminders = await enqueueDueEmailVerificationReminders(now);
       metadata.emailVerificationReminders = verificationReminders;
       processedCount += verificationReminders.queued;
