@@ -49,6 +49,7 @@ export default async function AdminAnalytics() {
             <p className="mt-2 text-sm text-white/40">Densité, acquisition, activation, Connection OS, qualité des données et santé technique.</p>
           </div>
           <nav className="flex gap-2 text-sm">
+            <Link href="/admin/partnerships" className="rounded-xl bg-white/[0.06] px-4 py-2 hover:bg-white/[0.10]">Partenariats</Link>
             <Link href="/admin/feedback" className="rounded-xl bg-white/[0.06] px-4 py-2 hover:bg-white/[0.10]">Feedback</Link>
             <Link href="/fr/admin" className="rounded-xl bg-white/[0.06] px-4 py-2 hover:bg-white/[0.10]">Modération</Link>
           </nav>

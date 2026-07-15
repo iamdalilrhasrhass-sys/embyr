@@ -55,6 +55,7 @@ test("all admin dashboards use the shared server-side authorization gate", async
     "src/app/[locale]/admin/layout.tsx",
     "src/app/admin/analytics/page.tsx",
     "src/app/admin/feedback/page.tsx",
+    "src/app/admin/partnerships/page.tsx",
   ];
 
   for (const dashboard of dashboards) {
@@ -74,6 +75,28 @@ test("the admin cockpit is reachable through the localized application tree", as
   assert.match(layout, /requireAdmin/);
   assert.match(analytics, /robots:\s*\{\s*index:\s*false/);
   assert.match(feedback, /robots:\s*\{\s*index:\s*false/);
+});
+
+test("partnership CRM requires public contact provenance and permission state", async () => {
+  const [schema, migration, route, page] = await Promise.all([
+    readFile("prisma/schema.prisma", "utf8"),
+    readFile("prisma/migrations/20260715020000_permission_first_partner_crm/migration.sql", "utf8"),
+    readFile("src/app/api/admin/prospects/route.ts", "utf8"),
+    readFile("src/app/admin/partnerships/page.tsx", "utf8"),
+  ]);
+  for (const source of [schema, migration, route]) {
+    assert.match(source, /publicContact/);
+    assert.match(source, /contactSourceUrl/);
+    assert.match(source, /permissionStatus/);
+    assert.match(source, /optedOutAt/);
+  }
+  assert.match(route, /requireAdmin/);
+  assert.match(route, /permission_requested/);
+  assert.match(route, /permission_granted/);
+  assert.match(route, /requirePublicProvenance/);
+  assert.match(route, /L’historique d’autorisation doit être conservé/);
+  assert.match(page, /Contacts professionnels publics uniquement/);
+  assert.match(page, /requireAdmin/);
 });
 
 test("admin user and report APIs return explicit DTO selections", async () => {

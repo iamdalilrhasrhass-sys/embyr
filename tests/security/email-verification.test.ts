@@ -8,6 +8,10 @@ import {
   emailMatchesVerificationPayload,
   verifyEmailVerificationToken,
 } from "../../src/lib/email-verification.ts";
+import {
+  EMAIL_VERIFICATION_REMINDER_DELAYS_MS,
+  nextEmailVerificationReminderStage,
+} from "../../src/lib/email-verification-delivery.ts";
 
 const previousSecret = process.env.JWT_SECRET;
 process.env.JWT_SECRET = "email-verification-test-secret-32-characters-minimum";
@@ -64,4 +68,26 @@ test("verification never places a token in an HTTP URL and only verifies once", 
   assert.match(resendRoute, /getCurrentUser/);
   assert.match(registerRoute, /enqueueEmailVerification/);
   assert.match(registerRoute, /processEmailOutbox/);
+});
+
+test("verification reminders are capped at two deterministic stages", () => {
+  const firstSentAt = new Date("2026-07-15T08:00:00.000Z");
+  assert.equal(EMAIL_VERIFICATION_REMINDER_DELAYS_MS[1], 48 * 60 * 60 * 1_000);
+  assert.equal(EMAIL_VERIFICATION_REMINDER_DELAYS_MS[2], 7 * 24 * 60 * 60 * 1_000);
+  assert.equal(nextEmailVerificationReminderStage({
+    now: new Date("2026-07-17T07:59:59.000Z"), firstSentAt,
+    reminder1SentAt: null, reminder1Exists: false, reminder2Exists: false,
+  }), null);
+  assert.equal(nextEmailVerificationReminderStage({
+    now: new Date("2026-07-17T08:00:00.000Z"), firstSentAt,
+    reminder1SentAt: null, reminder1Exists: false, reminder2Exists: false,
+  }), 1);
+  assert.equal(nextEmailVerificationReminderStage({
+    now: new Date("2026-07-22T08:00:00.000Z"), firstSentAt,
+    reminder1SentAt: new Date("2026-07-17T08:00:00.000Z"), reminder1Exists: true, reminder2Exists: false,
+  }), 2);
+  assert.equal(nextEmailVerificationReminderStage({
+    now: new Date("2026-07-30T08:00:00.000Z"), firstSentAt,
+    reminder1SentAt: new Date("2026-07-17T08:00:00.000Z"), reminder1Exists: true, reminder2Exists: true,
+  }), null);
 });
