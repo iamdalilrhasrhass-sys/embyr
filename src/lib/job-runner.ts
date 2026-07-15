@@ -9,6 +9,7 @@ import {
   processEmailOutbox,
   type ProcessOutboxResult,
 } from "./email-outbox.ts";
+import { enqueueDueEmailVerificationReminders } from "./email-verification-delivery.ts";
 import { closeSmtpTransport } from "./email-local.ts";
 import { sanitizeOperationalError } from "./email-core.ts";
 import {
@@ -214,6 +215,11 @@ async function performJobWork(
   const partialFailures: string[] = [];
 
   if (cadence === "daily" || cadence === "weekly") {
+    if (cadence === "daily") {
+      const verificationReminders = await enqueueDueEmailVerificationReminders(now);
+      metadata.emailVerificationReminders = verificationReminders;
+      processedCount += verificationReminders.queued;
+    }
     const aggregate = await collectAggregateReport({
       cadence,
       periodStart: window.reportStart,

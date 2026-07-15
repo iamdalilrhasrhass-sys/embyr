@@ -778,19 +778,33 @@ model StripeEvent {
 }
 
 model Prospect {
-  id              String    @id @default(cuid())
-  pseudo          String
-  sourcePlatform  String
-  profileStyle    String?
-  city            String?
-  country         String?
-  publicUrl       String?
-  potential       String    @default("moyen")
-  status          String    @default("a_rechercher")
-  internalNotes   String?
-  lastContactedAt DateTime?
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  id                    String    @id @default(cuid())
+  pseudo                String
+  sourcePlatform        String
+  organizationType      String?
+  profileStyle          String?
+  city                  String?
+  country               String?
+  publicUrl             String?
+  publicContact         String?
+  contactChannel        String?
+  contactSourceUrl      String?
+  potential             String    @default("moyen")
+  status                String    @default("a_rechercher")
+  permissionStatus      String    @default("not_requested")
+  permissionRequestedAt DateTime?
+  permissionGrantedAt   DateTime?
+  optedOutAt            DateTime?
+  nextFollowUpAt        DateTime?
+  campaign              String?
+  utmSource             String?
+  internalNotes         String?
+  lastContactedAt       DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([permissionStatus, nextFollowUpAt])
+  @@index([city, status])
 }
 
 model Match {
