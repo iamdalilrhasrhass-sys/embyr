@@ -34,6 +34,18 @@ const content = {
       ["Gratuit utile", "Inscription, compatibilité, réciprocité et messagerie entre connexions restent accessibles sans carte bancaire."],
       ["Honnêteté", "Aucun match, disponibilité locale ou résultat n’est inventé. D’éventuels services optionnels futurs seraient annoncés clairement."],
     ],
+    regionTitle: "Une communauté romande, ville par ville",
+    regionBody: "Embir concentre d’abord sa croissance là où une communauté locale peut devenir réellement utile. Explore les pages de ta ville ou de ta région avant de rejoindre le lancement.",
+    regionLinks: [
+      ["Genève", "/fr/suisse/geneve"],
+      ["Montreux", "/fr/suisse/montreux"],
+      ["Vevey", "/fr/suisse/vevey"],
+      ["Nyon", "/fr/suisse/nyon"],
+      ["Yverdon-les-Bains", "/fr/suisse/yverdon-les-bains"],
+      ["Fribourg", "/fr/suisse/fribourg"],
+      ["Neuchâtel", "/fr/suisse/neuchatel"],
+      ["Sion", "/fr/suisse/sion"],
+    ],
     faqTitle: "Questions avant de rejoindre",
     faq: [
       ["Y a-t-il déjà beaucoup de membres à Lausanne ?", "Le lancement local est en cours. Embir préfère montrer une disponibilité réelle — quitte à afficher un état vide — plutôt qu’un faux volume."],
@@ -74,6 +86,18 @@ const content = {
       ["Control", "Blocking, reporting, notification preferences and quiet hours remain accessible."],
       ["Useful free core", "Signup, compatibility, mutual connections and messaging stay available without a payment card."],
       ["Honesty", "No match, local availability or result is invented. Any future optional service would be announced clearly."],
+    ],
+    regionTitle: "A French-speaking Swiss community, city by city",
+    regionBody: "Embir is concentrating growth where a local community can become genuinely useful. Explore your city or region before joining the launch.",
+    regionLinks: [
+      ["Geneva", "/switzerland/geneva"],
+      ["Montreux", "/switzerland/montreux"],
+      ["Vevey", "/switzerland/vevey"],
+      ["Nyon", "/switzerland/nyon"],
+      ["Yverdon-les-Bains", "/switzerland/yverdon-les-bains"],
+      ["Fribourg", "/switzerland/fribourg"],
+      ["Neuchâtel", "/switzerland/neuchatel"],
+      ["Sion", "/switzerland/sion"],
     ],
     faqTitle: "Before you join",
     faq: [
@@ -124,6 +148,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       }],
     },
     twitter: { card: "summary_large_image", title: copy.title, description: copy.description },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -141,11 +166,23 @@ export default async function LausannePage({ params }: { params: Params }) {
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   };
+  const regionSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: copy.regionTitle,
+    itemListElement: copy.regionLinks.map(([name, path], index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name,
+      url: `https://embir.xyz${path}`,
+    })),
+  };
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#06030f] text-white">
       <PageTypeTracker type="city" city="Lausanne" country="CH" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(regionSchema) }} />
 
       <nav aria-label="Navigation Lausanne" className="relative z-20 mx-auto flex min-h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link href={prefix || "/"} className="inline-flex min-h-11 items-center font-serif text-xl tracking-[0.08em] text-white">{copy.home}</Link>
@@ -226,6 +263,25 @@ export default async function LausannePage({ params }: { params: Params }) {
       </section>
 
       <section className="px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a574]">Romandie</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <h2 className="font-serif text-4xl font-light sm:text-6xl">{copy.regionTitle}</h2>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/48">{copy.regionBody}</p>
+            </div>
+            <nav aria-label={copy.regionTitle} className="grid gap-3 sm:grid-cols-2">
+              {copy.regionLinks.map(([label, href]) => (
+                <Link key={href} href={href} className="inline-flex min-h-14 items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 text-sm font-semibold text-white/65 transition hover:border-[#d4a574]/35 hover:text-white">
+                  {label}<span aria-hidden="true" className="text-[#d4a574]">→</span>
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/[0.06] px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-4xl font-light sm:text-6xl">{copy.faqTitle}</h2>
           <div className="mt-12 space-y-3">
