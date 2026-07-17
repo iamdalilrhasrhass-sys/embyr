@@ -48,6 +48,18 @@ test("keeps the hero semantic and lightweight", async () => {
   assert.doesNotMatch(`${hero}${nav}${compass}`, /three|@react-three|badge|pill/i);
 });
 
+test("keeps sign-in available next to registration in both locales", async () => {
+  const [nav, copy] = await Promise.all([
+    readFile("src/components/landing-2100/LandingNav.tsx", "utf8"),
+    readFile("src/components/landing-2100/landing-copy.ts", "utf8"),
+  ]);
+
+  assert.match(nav, /const loginPath = locale === "fr" \? "\/fr\/auth\/login" : "\/auth\/login"/);
+  assert.match(nav, /href=\{loginPath\}/);
+  assert.match(copy, /login: "Se connecter"/);
+  assert.match(copy, /login: "Log in"/);
+});
+
 test("uses semantic controls for the reciprocity demonstration", async () => {
   const [chapter, instrument] = await Promise.all([
     readFile("src/components/landing-2100/ReciprocityChapter.tsx", "utf8"),
