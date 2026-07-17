@@ -21,6 +21,7 @@ export interface LandingCopy {
     compatibility: string;
     safety: string;
     journal: string;
+    login: string;
     create: string;
     open: string;
     close: string;
@@ -92,6 +93,7 @@ const fr: LandingCopy = {
     compatibility: "Compatibilité",
     safety: "Sécurité",
     journal: "Le journal",
+    login: "Se connecter",
     create: "Créer mon univers",
     open: "Ouvrir le menu",
     close: "Fermer le menu",
@@ -222,6 +224,7 @@ const en: LandingCopy = {
     compatibility: "Compatibility",
     safety: "Safety",
     journal: "Journal",
+    login: "Log in",
     create: "Create my universe",
     open: "Open menu",
     close: "Close menu",

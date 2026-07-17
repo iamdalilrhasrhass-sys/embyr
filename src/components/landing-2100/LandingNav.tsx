@@ -24,6 +24,7 @@ export default function LandingNav({ copy, locale }: LandingNavProps) {
 
   const close = () => setOpen(false);
   const homePath = locale === "fr" ? "/fr" : "/";
+  const loginPath = locale === "fr" ? "/fr/auth/login" : "/auth/login";
   const registerPath = locale === "fr" ? "/fr/auth/register" : "/auth/register";
 
   return (
@@ -37,6 +38,9 @@ export default function LandingNav({ copy, locale }: LandingNavProps) {
           <a href="#compatibility" onClick={close}>{copy.compatibility}</a>
           <a href="#safety" className="e21-nav__optional" onClick={close}>{copy.safety}</a>
           <a href="#journal" className="e21-nav__optional" onClick={close}>{copy.journal}</a>
+          <TrackedLink href={loginPath} label={copy.login} location="landing_nav" onClick={close}>
+            {copy.login}
+          </TrackedLink>
           <TrackedLink href={registerPath} label={copy.create} location="landing_nav" className="e21-button" onClick={close}>
             {copy.create}
           </TrackedLink>
