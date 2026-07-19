@@ -17,8 +17,8 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    rgba(212, 165, 116, 0.03) 40%,
-    rgba(255, 94, 54, 0.05) 60%,
+    rgba(216,139,167,0.03) 40%,
+    rgba(191,111,141,0.05) 60%,
     transparent 100%
   );
 }
@@ -31,7 +31,7 @@
   width: 60%;
   max-width: 600px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.4), rgba(255, 94, 54, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(216,139,167,0.4), rgba(191,111,141,0.3), transparent);
 }
 
 /* ── HERO CINEMATIC TEXT ── */
@@ -41,8 +41,8 @@
   letter-spacing: -0.05em;
   line-height: 0.95;
   text-shadow:
-    0 0 120px rgba(212, 165, 116, 0.2),
-    0 0 240px rgba(255, 94, 54, 0.1),
+    0 0 120px rgba(216,139,167,0.2),
+    0 0 240px rgba(191,111,141,0.1),
     0 1px 2px rgba(0, 0, 0, 0.8);
 }
 .emb-hero-gradient {
@@ -50,15 +50,15 @@
     135deg,
     #ffffff 0%,
     #f5f0e8 20%,
-    #d4a574 45%,
-    #ff5e36 65%,
-    #ffa333 85%,
+    var(--embir-rose-500) 45%,
+    var(--embir-rose-600) 65%,
+    var(--embir-blush-300) 85%,
     #ffffff 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 40px rgba(255, 94, 54, 0.35)) drop-shadow(0 0 80px rgba(212, 165, 116, 0.2));
+  filter: drop-shadow(0 0 40px rgba(191,111,141,0.35)) drop-shadow(0 0 80px rgba(216,139,167,0.2));
   animation: embGradientShift 8s ease-in-out infinite;
   background-size: 200% 200%;
 }
@@ -79,7 +79,7 @@
 .emb-hero-orb-1 {
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(255, 31, 90, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(216,139,167,0.25) 0%, transparent 70%);
   top: -20%;
   left: -15%;
   animation-delay: 0s;
@@ -87,7 +87,7 @@
 .emb-hero-orb-2 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255, 94, 54, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(191,111,141,0.2) 0%, transparent 70%);
   top: 40%;
   right: -10%;
   animation-delay: -4s;
@@ -95,7 +95,7 @@
 .emb-hero-orb-3 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(216,139,167,0.15) 0%, transparent 70%);
   bottom: -30%;
   left: 30%;
   animation-delay: -8s;
@@ -110,7 +110,7 @@
 .emb-card-premium {
   position: relative;
   background:
-    radial-gradient(ellipse at 30% 0%, rgba(212, 165, 116, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 0%, rgba(216,139,167,0.06) 0%, transparent 50%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
@@ -122,7 +122,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(216,139,167,0.08) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.6s;
 }
@@ -130,11 +130,11 @@
   opacity: 1;
 }
 .emb-card-premium:hover {
-  border-color: rgba(212, 165, 116, 0.2);
+  border-color: rgba(216,139,167,0.2);
   transform: translateY(-4px);
   box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(212, 165, 116, 0.08),
+    0 0 40px rgba(216,139,167,0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 .emb-card-premium::after {
@@ -144,7 +144,7 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(216,139,167,0.3), transparent);
   opacity: 0;
   transition: opacity 0.6s;
 }
@@ -159,7 +159,7 @@
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(212, 165, 116, 0.5);
+  color: rgba(216,139,167,0.5);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -170,14 +170,14 @@
   content: "";
   width: 2rem;
   height: 1px;
-  background: rgba(212, 165, 116, 0.25);
+  background: rgba(216,139,167,0.25);
 }
 .emb-section-title {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  text-shadow: 0 0 60px rgba(212, 165, 116, 0.08);
+  text-shadow: 0 0 60px rgba(216,139,167,0.08);
 }
 
 /* ── COMPARISON TABLE PREMIUM ── */
@@ -192,7 +192,7 @@
   right: 0;
   top: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.15), rgba(255, 94, 54, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(216,139,167,0.15), rgba(191,111,141,0.1), transparent);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -200,10 +200,10 @@
   opacity: 1;
 }
 .emb-table-row:hover {
-  background: rgba(212, 165, 116, 0.03);
+  background: rgba(216,139,167,0.03);
 }
 .emb-check-glow {
-  text-shadow: 0 0 12px rgba(212, 165, 116, 0.4);
+  text-shadow: 0 0 12px rgba(216,139,167,0.4);
 }
 
 /* ── FOUNDER CTA ULTRA-PREMIUM ── */
@@ -211,10 +211,10 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 30% 0%, rgba(212, 165, 116, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 100%, rgba(255, 94, 54, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 0%, rgba(216,139,167,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 100%, rgba(191,111,141,0.05) 0%, transparent 60%),
     linear-gradient(180deg, rgba(20, 12, 8, 0.9) 0%, rgba(10, 6, 20, 0.95) 100%);
-  border: 1px solid rgba(212, 165, 116, 0.12);
+  border: 1px solid rgba(216,139,167,0.12);
 }
 .emb-founder-cta::before {
   content: "";
@@ -235,7 +235,7 @@
   content: "";
   position: absolute;
   inset: -60px;
-  background: radial-gradient(ellipse at 50% 40%, rgba(212, 165, 116, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 40%, rgba(216,139,167,0.12) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
   animation: embPhoneGlow 4s ease-in-out infinite;
@@ -249,11 +249,11 @@
 .emb-stat-value {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 300;
-  background: linear-gradient(180deg, #ffffff 0%, #d4a574 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--embir-rose-500) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 30px rgba(212, 165, 116, 0.2);
+  text-shadow: 0 0 30px rgba(216,139,167,0.2);
 }
 .emb-stat-label {
   font-family: "Inter", system-ui, sans-serif;
@@ -288,7 +288,7 @@
 .emb-accent-line {
   width: 3rem;
   height: 1px;
-  background: linear-gradient(90deg, rgba(212, 165, 116, 0.6), transparent);
+  background: linear-gradient(90deg, rgba(216,139,167,0.6), transparent);
   margin: 1.5rem 0;
 }
 

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && NODE_OPTIONS=--max-old-space-size=6144 next build --webpack",
+    "brand:assets": "node scripts/generate-brand-assets.mjs",
     "start": "next start",
     "lint": "npm run lint:seo && npm run lint:email",
     "lint:seo": "eslint src/seo src/components/seo-pages.tsx src/components/seo/SchemaOrg.tsx src/components/layout/Navbar.tsx src/components/layout/Footer.tsx src/app/sitemap.ts 'src/app/[locale]/layout.tsx' 'src/app/[locale]/page.tsx' 'src/app/[locale]/auth/register/page.tsx' 'src/app/[locale]/france/[slug]/page.tsx' 'src/app/[locale]/usa/[slug]/page.tsx' 'src/app/[locale]/us/page.tsx' 'src/app/[locale]/us/[slug]/page.tsx' 'src/app/[locale]/us/dating/[slug]/page.tsx' 'src/app/[locale]/uk/page.tsx' 'src/app/[locale]/uk/[slug]/page.tsx' 'src/app/[locale]/uk/dating/[slug]/page.tsx' 'src/app/[locale]/guides/[slug]/page.tsx' 'src/app/[locale]/comparisons/[slug]/page.tsx' 'src/app/[locale]/comparaison/[slug]/page.tsx' 'src/app/[locale]/comparison/[slug]/page.tsx' 'src/app/[locale]/product/[slug]/page.tsx' 'src/app/[locale]/freemium/[slug]/page.tsx' 'src/app/[locale]/blog/[slug]/page.tsx' 'src/app/[locale]/rencontre/[slug]/page.tsx' 'src/app/[locale]/[slug]/page.tsx'",
@@ -24,6 +25,7 @@
     "feature-flag:evaluate": "node --env-file=.env --import tsx scripts/evaluate-feature-flag.ts",
     "backup:production": "node --env-file=.env --import tsx scripts/backup-production.ts",
     "qa:landing": "node scripts/qa-landing-2100.mjs",
+    "qa:brand": "node scripts/qa-brand-os.mjs",
     "qa:v7": "node scripts/qa-v7-consolidation.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "seo:indexnow": "node --import tsx scripts/submit-indexnow.ts",
@@ -69,6 +71,7 @@
     "eslint-config-next": "16.2.10",
     "playwright": "^1.61.1",
     "prisma": "^7.8.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

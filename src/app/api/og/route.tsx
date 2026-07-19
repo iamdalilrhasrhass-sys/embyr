@@ -1,12 +1,18 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
+import {
+  EMBIR_MARK_PATHS,
+  EMBIR_MARK_STROKE_WIDTH,
+} from "@/components/brand/EmbirMark";
 
 export const runtime = "edge";
 
-const GOLD = "#d4a574";
-const EMBER = "#ff5e36";
-const ROSE = "#ff1f5a";
-const BG = "#0a0614";
+const ROSE = "#d88ba7";
+const ROSE_DEEP = "#bf6f8d";
+const BLUSH = "#f4c7d5";
+const PLUM = "#4b1f3d";
+const BG = "#09060c";
+const BONE = "#f2ede4";
 
 /**
  * Dynamic OG Image generator for Embir.
@@ -15,21 +21,34 @@ const BG = "#0a0614";
  */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const title = searchParams.get("title") || "Embir — Dating Without Swipe Fatigue";
-  const subtitle = searchParams.get("subtitle") || "core connection features are free · Verified profiles · Every orientation";
   const variant = searchParams.get("variant") || "default";
   const locale = searchParams.get("locale") || "en";
 
   const isFR = locale === "fr";
-  const badge = isFR ? "gratuit pour les connexions essentielles" : "core connection features are free";
+  const isES = locale === "es";
+  const title = searchParams.get("title") || (isFR
+    ? "Embir — Des intentions partagées"
+    : isES
+      ? "Embir — Intenciones compartidas"
+      : "Embir — Shared intentions");
+  const subtitle = searchParams.get("subtitle") || (isFR
+    ? "Des connexions réciproques · Profils vérifiés · Toutes orientations"
+    : isES
+      ? "Conexiones recíprocas · Perfiles verificados · Todas las orientaciones"
+      : "Reciprocal connections · Verified profiles · Every orientation");
+  const badge = isFR
+    ? "connexions essentielles gratuites"
+    : isES
+      ? "conexiones esenciales gratis"
+      : "core connections are free";
 
-  // Variant-specific accent colors
+  // Variant-specific accents stay inside the canonical Brand OS palette.
   const accents: Record<string, { primary: string; secondary: string; glow: string }> = {
-    default: { primary: GOLD, secondary: EMBER, glow: ROSE },
-    market: { primary: GOLD, secondary: EMBER, glow: ROSE },
-    city: { primary: EMBER, secondary: GOLD, glow: ROSE },
-    product: { primary: GOLD, secondary: ROSE, glow: EMBER },
-    referral: { primary: ROSE, secondary: GOLD, glow: EMBER },
+    default: { primary: ROSE, secondary: BLUSH, glow: PLUM },
+    market: { primary: ROSE, secondary: BLUSH, glow: PLUM },
+    city: { primary: ROSE_DEEP, secondary: ROSE, glow: PLUM },
+    product: { primary: BLUSH, secondary: ROSE, glow: PLUM },
+    referral: { primary: ROSE, secondary: BLUSH, glow: ROSE_DEEP },
   };
   const accent = accents[variant] || accents.default;
 
@@ -97,24 +116,25 @@ export async function GET(req: NextRequest) {
           {/* Top: Brand + badge */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-              {/* Logo mark — stylized flame */}
-              <div
-                style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "16px",
-                  background: `linear-gradient(135deg, ${accent.primary}, ${accent.secondary})`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "32px",
-                  fontWeight: 900,
-                  color: BG,
-                }}
+              <svg
+                width="62"
+                height="62"
+                viewBox="0 0 96 96"
+                fill="none"
+                aria-hidden="true"
               >
-                E
-              </div>
-              <div style={{ display: "flex", fontSize: "32px", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.02em" }}>
+                {EMBIR_MARK_PATHS.map((path) => (
+                  <path
+                    key={path}
+                    d={path}
+                    stroke={BLUSH}
+                    strokeWidth={EMBIR_MARK_STROKE_WIDTH}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                ))}
+              </svg>
+              <div style={{ display: "flex", fontSize: "38px", fontWeight: 700, color: BONE, letterSpacing: "-0.04em", fontFamily: "Georgia, serif" }}>
                 Embir
               </div>
             </div>
@@ -141,7 +161,7 @@ export async function GET(req: NextRequest) {
                 display: "flex",
                 fontSize: "64px",
                 fontWeight: 800,
-                color: "#ffffff",
+                color: BONE,
                 lineHeight: 1.05,
                 letterSpacing: "-0.03em",
               }}
@@ -153,7 +173,7 @@ export async function GET(req: NextRequest) {
                 display: "flex",
                 fontSize: "28px",
                 fontWeight: 400,
-                color: "#ffffff99",
+                color: "rgba(242, 237, 228, 0.64)",
                 lineHeight: 1.3,
                 maxWidth: "800px",
               }}
@@ -165,9 +185,9 @@ export async function GET(req: NextRequest) {
           {/* Bottom: Feature pills */}
           <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
             {[
-              isFR ? "Profils vérifiés" : "Verified profiles",
-              isFR ? "Toutes orientations" : "Every orientation",
-              isFR ? "Sans swipe fatigue" : "No swipe fatigue",
+              isFR ? "Profils vérifiés" : isES ? "Perfiles verificados" : "Verified profiles",
+              isFR ? "Toutes orientations" : isES ? "Todas las orientaciones" : "Every orientation",
+              isFR ? "Sans swipe fatigue" : isES ? "Sin fatiga de swipe" : "No swipe fatigue",
             ].map((pill) => (
               <div
                 key={pill}
@@ -179,7 +199,7 @@ export async function GET(req: NextRequest) {
                   border: "1px solid #ffffff15",
                   fontSize: "18px",
                   fontWeight: 500,
-                  color: "#ffffffcc",
+                  color: "rgba(242, 237, 228, 0.82)",
                 }}
               >
                 {pill}

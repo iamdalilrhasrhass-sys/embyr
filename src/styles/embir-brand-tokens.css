@@ -1,0 +1,181 @@
+/* Embir Brand OS 1.0 — canonical visual tokens and compatibility aliases. */
+:root,
+[data-site="embir"] {
+  --embir-void-950: #09060c;
+  --embir-void-900: #100a12;
+  --embir-plum-900: #2a1328;
+  --embir-plum-800: #35172f;
+  --embir-plum-700: #4b1f3d;
+  --embir-rose-600: #bf6f8d;
+  --embir-rose-500: #d88ba7;
+  --embir-rose-400: #e7a8bc;
+  --embir-blush-300: #f4c7d5;
+  --embir-blush-200: #f8dbe4;
+  --embir-blush-100: #fcebf0;
+  --embir-bone-100: #f2ede4;
+  --embir-ivory-50: #fff8fa;
+  --embir-muted-on-dark: rgba(242, 237, 228, 0.64);
+  --embir-faint-on-dark: rgba(242, 237, 228, 0.38);
+  --embir-line-on-dark: rgba(242, 237, 228, 0.14);
+  --embir-success: #58a987;
+  --embir-warning: #d8a35d;
+  --embir-danger: #df6576;
+  --embir-info: #7c94c8;
+  --embir-focus: #f4c7d5;
+
+  --embir-font-display: "Iowan Old Style", Baskerville, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --embir-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --embir-font-mono: "SFMono-Regular", "SF Mono", "JetBrains Mono", "Fira Code", monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: clamp(1.05rem, 1.3vw, 1.2rem);
+  --text-xl: clamp(1.4rem, 2vw, 1.85rem);
+  --text-2xl: clamp(2rem, 3.4vw, 3.2rem);
+  --text-3xl: clamp(3rem, 5vw, 5rem);
+  --text-hero: clamp(3.8rem, 7.2vw, 8rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-pill: 999px;
+  --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.34);
+  --shadow-brand: 0 18px 60px rgba(216, 139, 167, 0.18);
+  --shadow-focus: 0 0 0 4px rgba(244, 199, 213, 0.2);
+
+  /* Compatibility layer: remove only after every legacy consumer is migrated. */
+  --eb-bg-base: var(--embir-void-950);
+  --eb-bg-elev-1: var(--embir-void-900);
+  --eb-bg-elev-2: var(--embir-plum-900);
+  --eb-bg-elev-3: var(--embir-plum-800);
+  --eb-bg-overlay: rgba(9, 6, 12, 0.78);
+  --eb-accent: var(--embir-rose-500);
+  --eb-accent-hover: var(--embir-blush-300);
+  --eb-accent-deep: var(--embir-rose-600);
+  --eb-accent-glow: rgba(216, 139, 167, 0.26);
+  --eb-copper: var(--embir-rose-600);
+  --eb-gold-dark: var(--embir-rose-500);
+  --eb-steel: var(--embir-info);
+  --eb-text-primary: var(--embir-bone-100);
+  --eb-text-secondary: var(--embir-muted-on-dark);
+  --eb-text-muted: var(--embir-faint-on-dark);
+  --eb-border-soft: rgba(242, 237, 228, 0.07);
+  --eb-border-strong: rgba(216, 139, 167, 0.24);
+  --eb-danger: var(--embir-danger);
+  --eb-success: var(--embir-success);
+  --eb-warning: var(--embir-warning);
+  --eb-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --eb-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.46);
+  --eb-shadow-lg: var(--shadow-card);
+  --eb-shadow-glow: var(--shadow-brand);
+  --eb-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --eb-radius-card: var(--radius-md);
+  --eb-radius-btn: var(--radius-sm);
+  --eb-radius-input: var(--radius-sm);
+  --eb-radius-badge: 0.5rem;
+  --eb-font-display: var(--embir-font-display);
+  --eb-font-body: var(--embir-font-sans);
+  --eb-font-mono: var(--embir-font-mono);
+
+  --color-premium-dark: var(--embir-void-950);
+  --color-premium-white: var(--embir-bone-100);
+  --color-premium-gray: var(--embir-muted-on-dark);
+  --color-premium-rose: var(--embir-rose-500);
+  --color-premium-purple: var(--embir-plum-700);
+  --embir-spark: var(--embir-rose-500);
+  --embir-ember: var(--embir-rose-600);
+  --embir-amber: var(--embir-blush-300);
+}
+
+[data-site="embir"] body {
+  background: var(--embir-void-950);
+  color: var(--embir-bone-100);
+  font-family: var(--embir-font-sans);
+}
+
+[data-site="embir"] h1,
+[data-site="embir"] h2,
+[data-site="embir"] h3 {
+  font-family: var(--embir-font-display);
+  letter-spacing: -0.025em;
+}
+
+.embir-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  max-width: 100%;
+}
+
+.embir-logo--lockup { gap: 0.55em; }
+.embir-logo--stacked { flex-direction: column; gap: 0.18em; text-align: center; }
+.embir-logo__copy { display: inline-flex; min-width: 0; flex-direction: column; line-height: 1; }
+.embir-logo__wordmark {
+  font-family: var(--embir-font-display);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+.embir-logo__tagline {
+  margin-top: 0.42em;
+  max-width: 29rem;
+  font-family: var(--embir-font-sans);
+  font-size: max(0.6875rem, 0.27em);
+  font-weight: 560;
+  line-height: 1.25;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+
+.embir-mark--ambient { animation: embir-mark-breathe 7s ease-in-out infinite; }
+@keyframes embir-mark-breathe {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(216, 139, 167, 0)); }
+  50% { filter: drop-shadow(0 0 12px rgba(216, 139, 167, 0.22)); }
+}
+
+.embir-brand-backdrop {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(216, 139, 167, 0.11), transparent 31rem),
+    radial-gradient(circle at 82% 12%, rgba(75, 31, 61, 0.25), transparent 36rem),
+    linear-gradient(180deg, #0b070d 0%, var(--embir-void-950) 72%, #0d080c 100%);
+}
+
+.embir-reciprocity-seal {
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--embir-rose-500) 14%, transparent),
+    transparent 68%
+  );
+}
+
+.embir-focus-ring:focus-visible {
+  outline: 2px solid var(--embir-focus);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-focus);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .embir-mark--ambient { animation: none; }
+}
+
+@media (max-width: 390px) {
+  .embir-logo__tagline { display: none; }
+}
+
+@media (max-width: 359px) {
+  .embir-logo--nav-compact .embir-logo__copy { display: none; }
+}

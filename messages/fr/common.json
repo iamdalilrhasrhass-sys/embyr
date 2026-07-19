@@ -3,6 +3,9 @@
     "title": "Embir : App de rencontre gratuite et inclusive | Monde entier",
     "description": "Embir est une app de connexion inclusive. Découverte, réciprocité et messages sont gratuits, sans carte bancaire ; d’éventuels services facultatifs resteront séparés."
   },
+  "brand": {
+    "tagline": "Des intentions partagées. Des connexions réciproques."
+  },
   "nav": {
     "discover": "Découvrir",
     "creators": "Créateurs",

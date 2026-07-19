@@ -1,10 +1,14 @@
 // Embir Service Worker — static assets only; navigations always prefer the network.
-const CACHE_NAME = 'embir-v2';
+const CACHE_NAME = 'embir-brand-os-v1';
 const STATIC_ASSETS = [
   '/manifest.webmanifest',
   '/icon-192.png',
   '/icon-512.png',
+  '/icon-maskable-512.png',
+  '/apple-touch-icon.png',
   '/brand/embir-mark.svg',
+  '/brand/embir-mark-mono.svg',
+  '/brand/embir-email-logo.png',
 ];
 
 self.addEventListener('install', (event) => {
