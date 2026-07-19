@@ -54,7 +54,7 @@
 .mobile-drawer {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 94, 54, 0.15) transparent;
+  scrollbar-color: rgba(191,111,141,0.15) transparent;
 }
 
 /* ═══════════════════════════════════════════
@@ -288,7 +288,6 @@
     animation-duration: 80s !important;
   }
 
-  [data-site="embir"] .emb-diamond,
   [data-site="embir"] .emb-chain,
   [data-site="embir"] .emb-bolt {
     display: none !important;
@@ -306,7 +305,7 @@
     background: rgba(10, 6, 20, 0.92);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-top: 1px solid rgba(212, 165, 116, 0.12);
+    border-top: 1px solid rgba(216,139,167,0.12);
     animation: slideUpMobile 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
     justify-content: center;
     align-items: center;
@@ -324,18 +323,18 @@
     width: 100%;
     padding: 14px 24px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #ff1f5a, #ff5e36);
+    background: linear-gradient(135deg, var(--embir-rose-500), var(--embir-rose-600));
     color: #fff;
     font-weight: 700;
     font-size: 0.875rem;
     text-decoration: none;
-    box-shadow: 0 8px 32px rgba(255, 31, 90, 0.3);
+    box-shadow: 0 8px 32px rgba(216,139,167,0.3);
     transition: all 0.3s;
   }
 
   .mobile-cta-primary:active {
     transform: scale(0.97);
-    box-shadow: 0 4px 16px rgba(255, 31, 90, 0.2);
+    box-shadow: 0 4px 16px rgba(216,139,167,0.2);
   }
 
   /* ── 20000X LANDING: Reduce particles on mobile ── */

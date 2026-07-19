@@ -31,7 +31,7 @@ export default function NotificationBell() {
   return (
     <Link
       href="/notifications"
-      className="relative p-2 text-white/60 hover:text-white transition-colors"
+      className="relative flex h-11 w-11 items-center justify-center rounded-xl text-white/60 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-embir-blush"
       aria-label={unread > 0 ? `Notifications, ${unread} non lues` : 'Notifications'}
     >
       <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

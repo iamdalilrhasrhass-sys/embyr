@@ -1,7 +1,7 @@
 .discovery {
   min-height: 100svh;
   padding: 8rem 1rem 5rem;
-  color: var(--e21-bone, #f2ede4);
+  color: var(--embir-bone-100);
 }
 
 .discovery__shell {
@@ -18,7 +18,7 @@
 
 .discovery h1 {
   max-width: 11ch;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--embir-font-display);
   font-size: clamp(3rem, 7vw, 6.6rem);
   font-weight: 400;
   line-height: 0.92;
@@ -93,9 +93,9 @@
 .discovery__option[aria-pressed="true"],
 .discovery__submit,
 .discovery__unlock {
-  border-color: rgba(240, 109, 85, 0.62);
-  background: #f06d55;
-  color: #100a12;
+  border-color: rgba(216, 139, 167, 0.62);
+  background: var(--embir-rose-500);
+  color: var(--embir-void-900);
   font-weight: 700;
 }
 
@@ -111,7 +111,7 @@
   width: 100%;
   border: 1px solid rgba(242, 237, 228, 0.13);
   background: rgba(255, 255, 255, 0.035);
-  color: #f2ede4;
+  color: var(--embir-bone-100);
   padding: 0 0.9rem;
   font: inherit;
 }
@@ -121,7 +121,7 @@
 }
 
 .discovery__results h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--embir-font-display);
   font-size: clamp(2rem, 4vw, 3.8rem);
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -148,7 +148,7 @@
   padding: 1rem;
   border: 1px solid rgba(242, 237, 228, 0.11);
   background:
-    radial-gradient(circle at calc(var(--seed) * 1%) 12%, rgba(240, 109, 85, 0.42), transparent 32%),
+    radial-gradient(circle at calc(var(--seed) * 1%) 12%, rgba(216, 139, 167, 0.42), transparent 32%),
     radial-gradient(circle at 12% 80%, rgba(168, 111, 80, 0.3), transparent 36%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
 }
@@ -220,4 +220,3 @@
     grid-template-columns: 1fr;
   }
 }
-

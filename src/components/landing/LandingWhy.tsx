@@ -4,9 +4,9 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const pillars = [
-  { icon: "•", title: "Vérification Selfie", desc: "Chaque membre peut demander un badge avec un selfie et un code unique. Un badge approuvé ne garantit pas l'absence de risque.", color: "from-[#ff1f5a]/20 to-[#ff5e36]/5" },
-  { icon: "•", title: "Contrôles de confidentialité", desc: "Interface sombre, paramètres de visibilité et mesure d'audience soumise au consentement.", color: "from-[#ff5e36]/20 to-[#ffa333]/5" },
-  { icon: "•", title: "Blocage et Signalement", desc: "Tu peux bloquer immédiatement un compte et transmettre un signalement pour examen. Aucun outil ne garantit l'absence de risque.", color: "from-[#ff1f5a]/18 to-[#ff5e36]/5" },
+  { icon: "•", title: "Vérification Selfie", desc: "Chaque membre peut demander un badge avec un selfie et un code unique. Un badge approuvé ne garantit pas l'absence de risque.", color: "from-embir-rose-deep/20 to-embir-rose/5" },
+  { icon: "•", title: "Contrôles de confidentialité", desc: "Interface sombre, paramètres de visibilité et mesure d'audience soumise au consentement.", color: "from-embir-rose/20 to-embir-blush/5" },
+  { icon: "•", title: "Blocage et Signalement", desc: "Tu peux bloquer immédiatement un compte et transmettre un signalement pour examen. Aucun outil ne garantit l'absence de risque.", color: "from-embir-rose-deep/18 to-embir-rose/5" },
   { icon: "⚧️", title: "Communauté Inclusive", desc: "Embir célèbre tous les hommes gay. Gays, bis, queers — vous êtes chez vous ici. Une plateforme pensée pour vous.", color: "from-[#5BCEFA]/20 to-[#F5A9B8]/10" },
 ];
 
@@ -48,7 +48,7 @@ function PillarCard({ icon, title, desc, color, index }: any) {
           className={`absolute -inset-[1px] rounded-3xl opacity-0 blur-sm -z-10 ${
             isTrans
               ? "bg-gradient-to-r from-[#5BCEFA]/40 via-white/20 to-[#F5A9B8]/30"
-              : "bg-gradient-to-r from-[#ff1f5a]/30 via-[#ff5e36]/20 to-[#ffa333]/20"
+              : "bg-gradient-to-r from-embir-rose-deep/30 via-embir-rose/20 to-embir-blush/20"
           }`}
         />
 
@@ -74,7 +74,7 @@ function PillarCard({ icon, title, desc, color, index }: any) {
             className={`h-px mt-6 ${
               isTrans
                 ? "bg-gradient-to-r from-[#5BCEFA]/60 via-white/40 to-[#F5A9B8]/50"
-                : "bg-gradient-to-r from-[#ff1f5a]/50 via-[#ff5e36]/35 to-transparent"
+                : "bg-gradient-to-r from-embir-rose-deep/50 via-embir-rose/35 to-transparent"
             }`}
           />
         </div>
@@ -89,7 +89,7 @@ export default function LandingWhy() {
 
   return (
     <section ref={ref} className="py-32 px-4 max-w-6xl mx-auto relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#ff5e36]/[0.04] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-embir-rose/[0.04] rounded-full blur-[150px] pointer-events-none" />
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -99,7 +99,7 @@ export default function LandingWhy() {
         style={{ fontFamily: "Arial, sans-serif" }}
       >
         Pourquoi{" "}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333]">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-embir-rose-deep via-embir-rose to-embir-blush">
           embir.xyz
         </span>
         {" "}?

@@ -226,7 +226,7 @@ export default function EmbirLandingExperience({ locale }: Props) {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <Link href={locale === "en" ? "/" : `/${locale}`} className="emb-nav-logo">
-          embir<span className="emb-dot">.</span>
+          Embir
         </Link>
         <div className="emb-nav-links">
           {navItems.map((item) => (
@@ -583,7 +583,7 @@ function RichFooter({ c }: { c: ReturnType<typeof getCopy> }) {
         <div className="emb-footer-top">
           <div className="emb-footer-brand">
             <div className="emb-footer-logo">
-              embir<span className="emb-dot">.</span>
+              Embir
             </div>
             <p className="emb-footer-tagline">{c.footer_tagline}</p>
             <div className="emb-footer-socials">

@@ -95,10 +95,10 @@ export default async function UniverseOfTheDayPage() {
   const today = new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
 
   return (
-    <div className="min-h-screen px-4 py-12 sm:px-6 bg-[#0a0614]">
+    <div className="min-h-screen px-4 py-12 sm:px-6 bg-embir-void">
       <div className="mx-auto max-w-2xl">
         <div className="text-center mb-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#d4a574]/60 mb-2">{today}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-embir-rose/60 mb-2">{today}</p>
           <h1 className="text-4xl sm:text-5xl font-light text-white mb-3">
             Universe of the Day
           </h1>
@@ -110,14 +110,14 @@ export default async function UniverseOfTheDayPage() {
         {profile ? (
           <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-8 sm:p-10">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#d4a574] to-[#ff5e36] flex items-center justify-center text-2xl font-black text-[#0a0614]">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-embir-rose to-embir-rose-deep flex items-center justify-center text-2xl font-black text-embir-void">
                 {profile.displayName?.[0] || profile.username[0]}
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-white">{profile.displayName || profile.username}</h2>
                 <div className="flex items-center gap-2 mt-1">
-                  {profile.isVerified && <span className="text-xs px-2 py-0.5 rounded-full bg-[#d4a574]/15 text-[#d4a574] font-semibold">Verified</span>}
-                  {profile.isFounder && <span className="text-xs px-2 py-0.5 rounded-full bg-[#ff5e36]/15 text-[#ff5e36] font-semibold">Founder</span>}
+                  {profile.isVerified && <span className="text-xs px-2 py-0.5 rounded-full bg-embir-rose/15 text-embir-rose font-semibold">Verified</span>}
+                  {profile.isFounder && <span className="text-xs px-2 py-0.5 rounded-full bg-embir-rose-deep/15 text-embir-rose-deep font-semibold">Founder</span>}
                   {profile.age && <span className="text-sm text-white/40">{profile.age} y/o</span>}
                   {profile.city && <span className="text-sm text-white/40">{profile.city}</span>}
                 </div>
@@ -131,7 +131,7 @@ export default async function UniverseOfTheDayPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={`/u/${profile.username}`}
-                className="flex-1 px-6 py-3 rounded-full bg-[#d4a574] text-[#0a0614] font-bold text-center hover:bg-[#e8c4a2] transition"
+                className="flex-1 px-6 py-3 rounded-full bg-embir-rose text-embir-void font-bold text-center hover:bg-embir-blush transition"
               >
                 Explore this universe
               </Link>
@@ -150,7 +150,7 @@ export default async function UniverseOfTheDayPage() {
             </p>
             <Link
               href="/auth/register"
-              className="inline-block px-8 py-3 rounded-full bg-[#d4a574] text-[#0a0614] font-bold hover:bg-[#e8c4a2] transition"
+              className="inline-block px-8 py-3 rounded-full bg-embir-rose text-embir-void font-bold hover:bg-embir-blush transition"
             >
               Be the first to create your universe
             </Link>

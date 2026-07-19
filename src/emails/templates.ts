@@ -9,6 +9,7 @@ import {
 } from "../lib/email-core.ts";
 
 const ADMIN_COCKPIT_URL = "https://embir.xyz/admin/analytics";
+const EMAIL_LOGO_URL = "https://embir.xyz/brand/embir-email-logo.png";
 const ZURICH_TIME_ZONE = "Europe/Zurich";
 
 export interface RenderedEmail {
@@ -55,28 +56,28 @@ export function formatZurichDateTime(value: string | Date): string {
 }
 
 function paragraph(content: string, muted = false): string {
-  return `<p style="Margin:0 0 16px 0;color:${muted ? "#cfc4c8" : "#f8f3f1"};font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:${muted ? "13px" : "16px"};line-height:${muted ? "20px" : "24px"};">${content}</p>`;
+  return `<p style="Margin:0 0 16px 0;color:${muted ? "#f8dbe4" : "#f2ede4"};font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:${muted ? "13px" : "16px"};line-height:${muted ? "20px" : "24px"};">${content}</p>`;
 }
 
 function heading(content: string): string {
-  return `<h2 style="Margin:24px 0 10px 0;color:#f8f3f1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:18px;line-height:24px;font-weight:700;">${escapeHtml(content)}</h2>`;
+  return `<h2 style="Margin:24px 0 10px 0;color:#f2ede4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:18px;line-height:24px;font-weight:700;">${escapeHtml(content)}</h2>`;
 }
 
 function cta(url: string, label: string): string {
-  return `<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse:separate;Margin:20px 0 18px 0;"><tr><td bgcolor="#ff8a72" style="background-color:#ff8a72;border:1px solid #ff8a72;border-radius:8px;text-align:center;"><a class="embir-cta" href="${escapeHtml(url)}" style="display:inline-block;padding:13px 20px;color:#241013!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;line-height:20px;font-weight:700;text-decoration:none;">${escapeHtml(label)}</a></td></tr></table>`;
+  return `<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse:separate;Margin:20px 0 18px 0;"><tr><td bgcolor="#f4c7d5" style="background-color:#f4c7d5;border:1px solid #f4c7d5;border-radius:8px;text-align:center;"><a class="embir-cta" href="${escapeHtml(url)}" style="display:inline-block;padding:13px 20px;color:#09060c!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;line-height:20px;font-weight:700;text-decoration:none;">${escapeHtml(label)}</a></td></tr></table>`;
 }
 
 function detailsTable(rows: Array<[string, string]>): string {
-  return `<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#242023" style="width:100%;border-collapse:collapse;background-color:#242023;border:1px solid #4a4145;border-radius:8px;">${rows
+  return `<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#2a1328" style="width:100%;border-collapse:collapse;background-color:#2a1328;border:1px solid #4b1f3d;border-radius:8px;">${rows
     .map(
       ([label, value], index) =>
-        `<tr><td width="43%" valign="top" style="width:43%;padding:10px 12px;color:#cfc4c8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;line-height:18px;${index ? "border-top:1px solid #4a4145;" : ""}">${escapeHtml(label)}</td><td valign="top" style="padding:10px 12px;color:#f8f3f1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;line-height:18px;font-weight:600;word-break:break-word;${index ? "border-top:1px solid #4a4145;" : ""}">${escapeHtml(value)}</td></tr>`,
+        `<tr><td width="43%" valign="top" style="width:43%;padding:10px 12px;color:#f8dbe4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:13px;line-height:18px;${index ? "border-top:1px solid #4b1f3d;" : ""}">${escapeHtml(label)}</td><td valign="top" style="padding:10px 12px;color:#f2ede4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;line-height:18px;font-weight:600;word-break:break-word;${index ? "border-top:1px solid #4b1f3d;" : ""}">${escapeHtml(value)}</td></tr>`,
     )
     .join("")}</table>`;
 }
 
 function bulletList(rows: string[]): string {
-  return `<ul style="Margin:0 0 16px 0;padding:0 0 0 22px;color:#f8f3f1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;line-height:23px;">${rows
+  return `<ul style="Margin:0 0 16px 0;padding:0 0 0 22px;color:#f2ede4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;line-height:23px;">${rows
     .map((row) => `<li style="Margin:0 0 6px 0;">${escapeHtml(row)}</li>`)
     .join("")}</ul>`;
 }
@@ -90,6 +91,11 @@ function emailShell(input: {
 }): RenderedEmail {
   const title = escapeHtml(input.title);
   const preheader = escapeHtml(input.preheader);
+  const footer = {
+    fr: "Des intentions partagées. Des connexions réciproques.",
+    en: "Shared intentions. Reciprocal connections.",
+    es: "Intenciones compartidas. Conexiones recíprocas.",
+  }[input.lang ?? "fr"];
   const html = `<!doctype html>
 <html lang="${input.lang ?? "fr"}">
 <head>
@@ -103,17 +109,17 @@ function emailShell(input: {
 @media only screen and (max-width:430px){.embir-outer{padding:12px!important}.embir-content{padding:20px!important}.embir-header{padding:18px 20px!important}.embir-cta{display:block!important}}
 </style>
 </head>
-<body bgcolor="#0e0c0f" style="Margin:0!important;padding:0!important;width:100%!important;background-color:#0e0c0f!important;color:#f8f3f1!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
-<div style="display:none!important;max-height:0;max-width:0;overflow:hidden;color:#0e0c0f;">${preheader}&#847;&nbsp;&#847;&nbsp;&#847;&nbsp;</div>
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#0e0c0f" style="width:100%;border-collapse:collapse;background-color:#0e0c0f!important;">
+<body bgcolor="#09060c" style="Margin:0!important;padding:0!important;width:100%!important;background-color:#09060c!important;color:#f2ede4!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+<div style="display:none!important;max-height:0;max-width:0;overflow:hidden;color:#09060c;">${preheader}&#847;&nbsp;&#847;&nbsp;&#847;&nbsp;</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#09060c" style="width:100%;border-collapse:collapse;background-color:#09060c!important;">
 <tr><td class="embir-outer" align="center" style="padding:20px 12px;">
-<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#1a1719" style="width:100%;max-width:600px;border-collapse:separate;background-color:#1a1719!important;border:1px solid #4a4145;border-radius:10px;overflow:hidden;">
-<tr><td class="embir-header" bgcolor="#8f3048" style="padding:20px 26px;background-color:#8f3048!important;border-bottom:1px solid #a94a60;">
-<p style="Margin:0 0 4px 0;color:#fff7f4!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:12px;line-height:16px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;">EMBIR</p>
-<h1 style="Margin:0;color:#fff7f4!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:25px;line-height:31px;font-weight:750;">${title}</h1>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#100a12" style="width:100%;max-width:600px;border-collapse:separate;background-color:#100a12!important;border:1px solid #4b1f3d;border-radius:10px;overflow:hidden;">
+<tr><td class="embir-header" bgcolor="#2a1328" style="padding:20px 26px;background-color:#2a1328!important;border-bottom:1px solid #4b1f3d;">
+<a href="https://embir.xyz" style="display:inline-block;text-decoration:none;"><img src="${EMAIL_LOGO_URL}" width="240" height="72" alt="Embir" style="display:block;width:240px;max-width:100%;height:auto;border:0;color:#f2ede4;font-family:Georgia,serif;font-size:28px;font-weight:700;"></a>
+<h1 style="Margin:12px 0 0 0;color:#fff8fa!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:25px;line-height:31px;font-weight:750;">${title}</h1>
 </td></tr>
-<tr><td class="embir-content" bgcolor="#1a1719" style="padding:24px 26px;background-color:#1a1719!important;color:#f8f3f1!important;">${input.content}</td></tr>
-<tr><td bgcolor="#141114" style="padding:14px 26px;background-color:#141114!important;border-top:1px solid #4a4145;color:#cfc4c8!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:12px;line-height:18px;">Embir · Des connexions qui vont dans les deux sens.</td></tr>
+<tr><td class="embir-content" bgcolor="#100a12" style="padding:24px 26px;background-color:#100a12!important;color:#f2ede4!important;">${input.content}</td></tr>
+<tr><td bgcolor="#09060c" style="padding:14px 26px;background-color:#09060c!important;border-top:1px solid #4b1f3d;color:#e7a8bc!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:12px;line-height:18px;">Embir · ${footer}</td></tr>
 </table>
 </td></tr>
 </table>
@@ -177,7 +183,7 @@ export const profileReminderEmail = (
   return emailShell({
     title: "Ton profil Embir t’attend",
     preheader: `Ton profil est complété à ${safePercent} %.`,
-    content: `${paragraph(`Bonjour ${escapeHtml(userName)},`)}${paragraph(`Ton profil est complété à <strong style="color:#fff7f4;">${safePercent} %</strong>.`)}${cta("https://embir.xyz/dashboard/profile", "Continuer mon profil")}`,
+    content: `${paragraph(`Bonjour ${escapeHtml(userName)},`)}${paragraph(`Ton profil est complété à <strong style="color:#fff8fa;">${safePercent} %</strong>.`)}${cta("https://embir.xyz/dashboard/profile", "Continuer mon profil")}`,
     text: `Bonjour ${userName},\n\nTon profil est complété à ${safePercent} %.\n\nContinuer mon profil : https://embir.xyz/dashboard/profile`,
   });
 };
@@ -199,10 +205,10 @@ export const weeklyDigestEmail = (
     }
   });
   const articleHtml = safeArticles.length
-    ? `<ul style="Margin:0 0 16px 0;padding:0 0 0 22px;color:#f8f3f1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;line-height:23px;">${safeArticles
+    ? `<ul style="Margin:0 0 16px 0;padding:0 0 0 22px;color:#f2ede4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:15px;line-height:23px;">${safeArticles
         .map(
           (article) =>
-            `<li style="Margin:0 0 7px 0;"><a href="${escapeHtml(article.url)}" style="color:#ffb09f!important;text-decoration:underline;">${escapeHtml(article.title)}</a></li>`,
+            `<li style="Margin:0 0 7px 0;"><a href="${escapeHtml(article.url)}" style="color:#e7a8bc!important;text-decoration:underline;">${escapeHtml(article.title)}</a></li>`,
         )
         .join("")}</ul>`
     : "";
@@ -213,7 +219,7 @@ export const weeklyDigestEmail = (
   return emailShell({
     title: "Ton récapitulatif Embir",
     preheader: `${matches} nouvelle(s) connexion(s) cette semaine.`,
-    content: `${paragraph(`Bonjour ${escapeHtml(userName)},`)}${paragraph(`<strong style="color:#fff7f4;">${matches}</strong> nouvelle(s) connexion(s) cette semaine.`)}${articleHtml}${cta("https://embir.xyz/dashboard", "Ouvrir Embir")}`,
+    content: `${paragraph(`Bonjour ${escapeHtml(userName)},`)}${paragraph(`<strong style="color:#fff8fa;">${matches}</strong> nouvelle(s) connexion(s) cette semaine.`)}${articleHtml}${cta("https://embir.xyz/dashboard", "Ouvrir Embir")}`,
     text: `Bonjour ${userName},\n\n${matches} nouvelle(s) connexion(s) cette semaine.${articleText ? `\n\n${articleText}` : ""}\n\nOuvrir Embir : https://embir.xyz/dashboard`,
   });
 };
@@ -281,7 +287,7 @@ export function adminAggregateReportEmail(report: AggregateReportData): Rendered
     reportTextList("Trois priorités", report.priorities),
   ];
   const period = `${formatZurichDateTime(report.periodStart)} → ${formatZurichDateTime(report.periodEnd)}`;
-  const extraHtml = `${report.visitToSignupRate !== undefined ? paragraph(`<strong style="color:#fff7f4;">Conversion visite → inscription :</strong> ${report.visitToSignupRate} %`) : ""}${report.retentionD1 !== undefined ? paragraph(`<strong style="color:#fff7f4;">Rétention :</strong> D1 ${report.retentionD1} % · D7 ${report.retentionD7 ?? 0} % · D30 ${report.retentionD30 ?? 0} %`) : ""}`;
+  const extraHtml = `${report.visitToSignupRate !== undefined ? paragraph(`<strong style="color:#fff8fa;">Conversion visite → inscription :</strong> ${report.visitToSignupRate} %`) : ""}${report.retentionD1 !== undefined ? paragraph(`<strong style="color:#fff8fa;">Rétention :</strong> D1 ${report.retentionD1} % · D7 ${report.retentionD7 ?? 0} % · D30 ${report.retentionD30 ?? 0} %`) : ""}`;
   const extraText = `${report.visitToSignupRate !== undefined ? `\nConversion visite → inscription : ${report.visitToSignupRate} %` : ""}${report.retentionD1 !== undefined ? `\nRétention : D1 ${report.retentionD1} % · D7 ${report.retentionD7 ?? 0} % · D30 ${report.retentionD30 ?? 0} %` : ""}`;
   return emailShell({
     title: `Rapport ${cadence} Embir`,

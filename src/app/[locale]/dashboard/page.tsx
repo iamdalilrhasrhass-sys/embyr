@@ -485,7 +485,7 @@ function DashboardExperience() {
               aria-hidden="true"
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
-              className="mx-auto h-9 w-9 rounded-full border-2 border-[#ff5e36]/20 border-t-[#ff5e36]"
+              className="mx-auto h-9 w-9 rounded-full border-2 border-embir-rose/20 border-t-embir-rose"
             />
           ) : (
             <span aria-hidden="true" className="text-3xl">
@@ -497,7 +497,7 @@ function DashboardExperience() {
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="mt-6 rounded-xl bg-[#d4a574] px-6 py-3 text-sm font-bold text-[#0a0614]"
+              className="mt-6 rounded-xl bg-embir-rose px-6 py-3 text-sm font-bold text-embir-void"
             >
               {copy.retry}
             </button>
@@ -517,17 +517,17 @@ function DashboardExperience() {
     <main className="relative min-h-screen overflow-hidden bg-[#06020c] text-white">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-48 -top-48 h-[34rem] w-[34rem] rounded-full bg-[#ff5e36]/[0.08] blur-[120px]"
+        className="pointer-events-none absolute -right-48 -top-48 h-[34rem] w-[34rem] rounded-full bg-embir-rose/[0.08] blur-[120px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-48 -left-48 h-[32rem] w-[32rem] rounded-full bg-[#d4a574]/[0.06] blur-[120px]"
+        className="pointer-events-none absolute -bottom-48 -left-48 h-[32rem] w-[32rem] rounded-full bg-embir-rose/[0.06] blur-[120px]"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <header className="flex flex-col gap-5 border-b border-white/[0.06] pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#ff8a5c]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-embir-rose-soft">
               {copy.eyebrow}
             </p>
             <h1 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-5xl">
@@ -549,7 +549,7 @@ function DashboardExperience() {
           <Link
             href={localePath(locale, "/dashboard/profile")}
             onClick={() => trackAnalyticsEvent("dashboard_to_profile")}
-            className="inline-flex self-start rounded-xl border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-5 py-3 text-xs font-semibold text-[#e6c29c] transition hover:bg-[#d4a574]/10 sm:self-auto"
+            className="inline-flex self-start rounded-xl border border-embir-rose/20 bg-embir-rose/[0.06] px-5 py-3 text-xs font-semibold text-embir-blush transition hover:bg-embir-rose/10 sm:self-auto"
           >
             {copy.profile}
           </Link>
@@ -568,7 +568,7 @@ function DashboardExperience() {
                   ? "Verificación del correo electrónico"
                   : "Email verification"
             }
-            className="mb-6 flex flex-col gap-4 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between"
+            className="mb-6 flex flex-col gap-4 rounded-2xl border border-embir-rose/20 bg-embir-rose/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
               <p className="text-sm font-semibold text-[#f2d7b8]">
@@ -590,7 +590,7 @@ function DashboardExperience() {
               type="button"
               onClick={() => void resendEmailVerification()}
               disabled={verificationSending}
-              className="min-h-12 shrink-0 rounded-xl bg-[#d4a574] px-5 text-xs font-bold text-[#0a0614] disabled:cursor-wait disabled:opacity-60"
+              className="min-h-12 shrink-0 rounded-xl bg-embir-rose px-5 text-xs font-bold text-embir-void disabled:cursor-wait disabled:opacity-60"
             >
               {verificationSending
                 ? locale === "fr"
@@ -617,7 +617,7 @@ function DashboardExperience() {
               href={`#connection-step-${index + 1}`}
               className="border-r border-white/[0.06] px-2 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-white/40 transition last:border-r-0 hover:bg-white/[0.025] hover:text-white sm:text-xs"
             >
-              <span className="mr-1 text-[#d4a574]">0{index + 1}</span> {step}
+              <span className="mr-1 text-embir-rose">0{index + 1}</span> {step}
             </a>
           ))}
         </nav>
@@ -668,7 +668,7 @@ function DashboardExperience() {
           {feedError ? (
             <div
               role="alert"
-              className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-[#ff1f5a]/20 bg-[#ff1f5a]/[0.06] px-4 py-3 text-sm text-[#ff9ab0]"
+              className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-embir-rose-deep/20 bg-embir-rose-deep/[0.06] px-4 py-3 text-sm text-embir-rose-soft"
             >
               <span>{feedError}</span>
               <button
@@ -682,8 +682,8 @@ function DashboardExperience() {
           ) : null}
 
           {!signal && !signalLoading ? (
-            <div className="mt-6 rounded-2xl border border-dashed border-[#ff5e36]/20 bg-[#ff5e36]/[0.025] p-8 text-center">
-              <span aria-hidden="true" className="text-3xl text-[#ff8a5c]">
+            <div className="mt-6 rounded-2xl border border-dashed border-embir-rose/20 bg-embir-rose/[0.025] p-8 text-center">
+              <span aria-hidden="true" className="text-3xl text-embir-rose-soft">
                 ✦
               </span>
               <h3 className="mt-3 font-serif text-xl">{copy.noSignalTitle}</h3>
@@ -714,7 +714,7 @@ function DashboardExperience() {
             </div>
           ) : signal ? (
             <div className="mt-6 rounded-2xl border border-dashed border-white/[0.09] p-8 text-center">
-              <span aria-hidden="true" className="text-3xl text-[#d4a574]">
+              <span aria-hidden="true" className="text-3xl text-embir-rose">
                 ◇
               </span>
               <h3 className="mt-3 font-serif text-xl">
@@ -724,7 +724,7 @@ function DashboardExperience() {
                 {copy.sparkEmptyBody}
               </p>
               {lowDensity ? (
-                <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-[#d4a574]/65">
+                <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-embir-rose/65">
                   {copy.densityLow}
                 </p>
               ) : null}
@@ -738,7 +738,7 @@ function DashboardExperience() {
                 <button
                   type="button"
                   onClick={() => void copyInviteLink()}
-                  className="rounded-xl bg-[#d4a574] px-5 py-3 text-xs font-bold text-[#0a0614]"
+                  className="rounded-xl bg-embir-rose px-5 py-3 text-xs font-bold text-embir-void"
                 >
                   {copy.invite}
                 </button>
@@ -765,7 +765,7 @@ function DashboardExperience() {
             initial={{ opacity: 0, y: 20, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
-            className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-2xl border border-[#d4a574]/25 bg-[#0a0614]/95 px-5 py-3 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+            className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-2xl border border-embir-rose/25 bg-embir-void/95 px-5 py-3 text-sm font-semibold text-white shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl"
           >
             {toast}
           </motion.div>

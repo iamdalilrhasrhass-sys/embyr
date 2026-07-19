@@ -111,11 +111,11 @@ export default function EmailVerificationClient({ locale }: { locale: string }) 
   const body = state === "success" ? text.successBody : state === "loading" ? "" : text.invalidBody;
 
   return (
-    <main className="min-h-screen bg-[#06030f] px-5 py-20 text-white">
+    <main className="min-h-screen bg-embir-raised px-5 py-20 text-white">
       <section className="mx-auto flex min-h-[70vh] max-w-xl items-center">
-        <div className="w-full rounded-3xl border border-white/[0.08] bg-[radial-gradient(circle_at_top,rgba(255,94,54,0.12),transparent_45%),rgba(255,255,255,0.025)] p-7 text-center sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a574]">{text.eyebrow}</p>
-          <div className="mx-auto mt-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#d4a574]/25 bg-[#d4a574]/[0.08] text-2xl" aria-hidden="true">
+        <div className="w-full rounded-3xl border border-white/[0.08] bg-[radial-gradient(circle_at_top,rgba(216,139,167,0.12),transparent_45%),rgba(255,255,255,0.025)] p-7 text-center sm:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-embir-rose">{text.eyebrow}</p>
+          <div className="mx-auto mt-7 flex h-16 w-16 items-center justify-center rounded-full border border-embir-rose/25 bg-embir-rose/[0.08] text-2xl" aria-hidden="true">
             {state === "loading" ? "…" : state === "success" ? "✓" : "!"}
           </div>
           <h1 className="mt-7 font-serif text-4xl leading-tight">{title}</h1>
@@ -123,7 +123,7 @@ export default function EmailVerificationClient({ locale }: { locale: string }) 
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             {state === "success" ? (
-              <Link href={`/${safeLocale}/onboarding`} className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#ff5e36] to-[#d4a574] px-6 text-sm font-semibold text-[#13080d]">
+              <Link href={`/${safeLocale}/onboarding`} className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-embir-rose to-embir-rose px-6 text-sm font-semibold text-embir-void">
                 {text.continue}
               </Link>
             ) : state !== "loading" ? (
@@ -131,7 +131,7 @@ export default function EmailVerificationClient({ locale }: { locale: string }) 
                 <Link href={`/${safeLocale}/auth/login`} className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 px-6 text-sm text-white/70">
                   {text.login}
                 </Link>
-                <button type="button" onClick={resend} disabled={resending} className="min-h-12 rounded-full bg-[#d4a574] px-6 text-sm font-semibold text-[#13080d] disabled:opacity-50">
+                <button type="button" onClick={resend} disabled={resending} className="min-h-12 rounded-full bg-embir-rose px-6 text-sm font-semibold text-embir-void disabled:opacity-50">
                   {resending ? text.sending : text.resend}
                 </button>
               </>

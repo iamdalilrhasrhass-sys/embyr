@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function EarlyAccessPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-[#0a0614]">
+    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-embir-void">
       <div className="emb-liquid-mesh" />
       <div className="emb-hero-orb emb-hero-orb-1" />
       <div className="emb-hero-orb emb-hero-orb-2" />
@@ -20,7 +20,7 @@ export default function EarlyAccessPage() {
 
       <ScrollReveal direction="up" className="w-full max-w-lg z-10 py-12">
         <div className="emb-glass-extreme w-full p-8 md:p-10 rounded-[2.5rem] shadow-[0_0_80px_rgba(0,0,0,0.6)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-[#d4a574]/10 rounded-full blur-[60px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-48 bg-embir-rose/10 rounded-full blur-[60px] pointer-events-none" />
 
           <div className="mb-8 flex justify-center relative z-10">
             <EmbirLogo size="md" />
@@ -29,7 +29,7 @@ export default function EarlyAccessPage() {
           <div className="relative z-10">
             <div className="mb-8 text-center">
               <h1 className="text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
-                Rejoins l'accès <span className="text-[#d4a574] italic">fondateur</span>.
+                Rejoins l'accès <span className="text-embir-rose italic">fondateur</span>.
               </h1>
               <p className="text-white/50 text-sm leading-relaxed max-w-sm mx-auto">
                 Crée ton univers avant tout le monde. Indique tes préférences pour être invité(e) quand des profils compatibles rejoignent ta zone.

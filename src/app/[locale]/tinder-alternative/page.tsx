@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Comparison</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Comparison</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">A Tinder alternative for people tired of endless swiping</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Tinder made dating apps mainstream. But for many, the swipe-tap-repeat cycle has become more draining than exciting. Embir takes a different approach: fewer random matches, more compatible connections.
@@ -45,12 +45,12 @@ export default function Page() {
               <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
                 <div className="text-white/60">{feature}</div>
                 <div className="text-center text-white/30">{tinder}</div>
-                <div className="text-center font-semibold text-[#d4a574]">{embir}</div>
+                <div className="text-center font-semibold text-embir-rose">{embir}</div>
               </div>
             ))}
           </div>
 
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">The swipe fatigue problem</h2>
             <p className="mt-4">Swiping was fun when it was new. But after hundreds of left swipes, dozens of matches that never message, and conversations that fizzle after &quot;hey,&quot; the experience loses its appeal. Tinder optimizes for volume — more profiles, more swipes, more time in the app. Embir optimizes for compatibility — fewer but better connections, with more context before you even say hello.</p>
           </div>
@@ -92,10 +92,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Ready for fewer swipes and better connections?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your free profile and experience dating where compatibility matters more than volume.</p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -109,7 +109,7 @@ export default function Page() {
               ["/safety", "Safety tools"],
               ["/about", "About Embir"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

@@ -232,11 +232,11 @@ export function SignalPanel({
   return (
     <section
       aria-labelledby="signal-title"
-      className="rounded-[2rem] border border-[#ff5e36]/20 bg-[#ff5e36]/[0.035] p-5 sm:p-7 shadow-[0_24px_80px_rgba(0,0,0,0.22)]"
+      className="rounded-[2rem] border border-embir-rose/20 bg-embir-rose/[0.035] p-5 sm:p-7 shadow-[0_24px_80px_rgba(0,0,0,0.22)]"
     >
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-2xl">
-          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#ff8a5c]">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-embir-rose-soft">
             {copy.step}
           </p>
           <h2
@@ -255,7 +255,7 @@ export function SignalPanel({
       </div>
 
       {signal && !editing ? (
-        <div className="rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/[0.06] p-5">
+        <div className="rounded-2xl border border-embir-rose/20 bg-embir-rose/[0.06] p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <div className="flex items-center gap-2">
@@ -292,7 +292,7 @@ export function SignalPanel({
                 type="button"
                 onClick={() => void onDelete()}
                 disabled={saving}
-                className="rounded-xl border border-[#ff1f5a]/20 px-4 py-2.5 text-xs font-semibold text-[#ff7895] transition hover:bg-[#ff1f5a]/10 disabled:opacity-40"
+                className="rounded-xl border border-embir-rose-deep/20 px-4 py-2.5 text-xs font-semibold text-embir-rose-soft transition hover:bg-embir-rose-deep/10 disabled:opacity-40"
               >
                 {copy.deactivate}
               </button>
@@ -314,7 +314,7 @@ export function SignalPanel({
                   onClick={() =>
                     setDraft((current) => ({ ...current, intent }))
                   }
-                  className={`rounded-full border px-4 py-2.5 text-xs font-semibold transition ${draft.intent === intent ? "border-[#d4a574] bg-[#d4a574] text-[#0a0614]" : "border-white/[0.08] text-white/55 hover:border-[#d4a574]/30 hover:text-white"}`}
+                  className={`rounded-full border px-4 py-2.5 text-xs font-semibold transition ${draft.intent === intent ? "border-embir-rose bg-embir-rose text-embir-void" : "border-white/[0.08] text-white/55 hover:border-embir-rose/30 hover:text-white"}`}
                 >
                   {optionLabels[locale][intent]}
                 </button>
@@ -338,7 +338,7 @@ export function SignalPanel({
                       socialEnergy: energy,
                     }))
                   }
-                  className={`rounded-xl border px-3 py-3 text-xs font-semibold transition ${draft.socialEnergy === energy ? "border-[#ff5e36]/50 bg-[#ff5e36]/12 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                  className={`rounded-xl border px-3 py-3 text-xs font-semibold transition ${draft.socialEnergy === energy ? "border-embir-rose/50 bg-embir-rose/12 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                 >
                   {optionLabels[locale][energy]}
                 </button>
@@ -357,7 +357,7 @@ export function SignalPanel({
                   type="button"
                   aria-pressed={draft.formats.includes(format)}
                   onClick={() => toggleFormat(format)}
-                  className={`rounded-full border px-4 py-2 text-xs transition ${draft.formats.includes(format) ? "border-[#ff5e36]/50 bg-[#ff5e36]/10 text-[#ffb08d]" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                  className={`rounded-full border px-4 py-2 text-xs transition ${draft.formats.includes(format) ? "border-embir-rose/50 bg-embir-rose/10 text-embir-blush" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                 >
                   {optionLabels[locale][format] ?? format}
                 </button>
@@ -378,7 +378,7 @@ export function SignalPanel({
                   }))
                 }
                 placeholder={copy.availabilityPlaceholder}
-                className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm font-normal normal-case tracking-normal text-white placeholder:text-white/20 focus:border-[#d4a574]/40 focus:outline-none"
+                className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm font-normal normal-case tracking-normal text-white placeholder:text-white/20 focus:border-embir-rose/40 focus:outline-none"
               />
             </label>
             <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/35">
@@ -393,13 +393,13 @@ export function SignalPanel({
                   }))
                 }
                 placeholder={copy.areaPlaceholder}
-                className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm font-normal normal-case tracking-normal text-white placeholder:text-white/20 focus:border-[#d4a574]/40 focus:outline-none"
+                className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm font-normal normal-case tracking-normal text-white placeholder:text-white/20 focus:border-embir-rose/40 focus:outline-none"
               />
             </label>
           </div>
 
           {(validationError || error) && (
-            <p role="alert" className="text-sm text-[#ff7895]">
+            <p role="alert" className="text-sm text-embir-rose-soft">
               {validationError || error}
             </p>
           )}
@@ -421,7 +421,7 @@ export function SignalPanel({
             <button
               type="submit"
               disabled={saving}
-              className="rounded-xl bg-gradient-to-r from-[#ff5e36] to-[#d4a574] px-6 py-3 text-sm font-bold text-[#10050a] shadow-[0_16px_40px_rgba(255,94,54,0.18)] transition hover:brightness-110 disabled:cursor-wait disabled:opacity-50"
+              className="rounded-xl bg-gradient-to-r from-embir-rose-deep to-embir-blush px-6 py-3 text-sm font-bold text-embir-void shadow-[var(--shadow-brand)] transition hover:brightness-110 disabled:cursor-wait disabled:opacity-50"
             >
               {saving ? "…" : signal ? copy.update : copy.activate}
             </button>

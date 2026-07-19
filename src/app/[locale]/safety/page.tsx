@@ -27,7 +27,7 @@ export default async function SafetyPage({ params }: { params: Params }) {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">{isFr ? "Sécurité" : "Safety"}</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">{isFr ? "Sécurité" : "Safety"}</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">
           {isFr ? "Sécurité et confiance" : "Safety & Trust"}
         </h1>
@@ -109,7 +109,7 @@ export default async function SafetyPage({ params }: { params: Params }) {
           </div>
 
           {/* Minor Protection */}
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">{isFr ? "🔞 Protection des mineurs" : "🔞 Minor Protection"}</h2>
             <p className="mt-4">{isFr ? "Embir est réservé aux personnes de 18 ans et plus et demande une déclaration d'âge à l'inscription. Cette déclaration n'est pas une preuve d'identité : signalez tout compte qui pourrait appartenir à un mineur." : "Embir is for adults aged 18 and over and asks for an age declaration at sign-up. That declaration is not proof of identity: report any account that may belong to a minor."}</p>
           </div>
@@ -121,12 +121,12 @@ export default async function SafetyPage({ params }: { params: Params }) {
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">{isFr ? "Rejoindre une communauté plus sûre" : "Join a safer community"}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
             {isFr ? "Crée ton profil et demande le badge vérifié si tu le souhaites. Aucun système ne remplace ta vigilance." : "Create your profile and request the verified badge if you choose. No system replaces your judgment."}
           </p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">{isFr ? "Créer mon profil gratuit" : "Create my free profile"}</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">{isFr ? "Créer mon profil gratuit" : "Create my free profile"}</Link>
         </section>
       </article>
     </main>

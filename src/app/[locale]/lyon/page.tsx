@@ -37,14 +37,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Lyon · France</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Lyon · France</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Rencontres à Lyon, avec des profils vérifiés et une vraie compatibilité</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Lyon est la troisième ville de France, mais son marché des rencontres reste étonnamment mal servi. Entre la Presqu&apos;île élégante, la Croix-Rousse bohème, et le Vieux Lyon touristique, les Lyonnais cherchent des connexions authentiques — mais se heurtent souvent aux mêmes profils recyclés et aux mêmes conversations qui ne mènent nulle part. Embir arrive à Lyon avec une approche différente : moins de faux profils, des intentions plus claires, et une compatibilité qui va au-delà de la proximité.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Pourquoi Lyon</h2>
             <p className="mt-4">Lyon est une ville de contrastes — gastronomie et street food, quartiers historiques et pôles tech, étudiants et cadres. La densité est réelle, mais elle ne garantit pas des rencontres de qualité. Les applications grand public traitent Lyon comme une extension de Paris, sans tenir compte de sa culture locale : plus discrète, plus exigeante, plus attachée à l&apos;authenticité.</p>
             <p className="mt-3">Nous construisons la communauté lyonnaise quartier par quartier — en commençant par un noyau de membres fondateurs qui valorisent la vérification, les intentions claires et la compatibilité. Pas de chiffres gonflés. Pas de faux comptes. Juste de vrais Lyonnais qui construisent une vraie communauté locale.</p>
@@ -67,7 +67,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">gratuit pour les connexions essentielles — sans étiquette lyonnaise</h2>
             <p className="mt-4">Lyon n&apos;est pas bon marché, mais Embir est gratuit pour les connexions essentielles. Créez votre profil, définissez vos préférences, parcourez les personnes compatibles, envoyez des messages — tout cela sans payer. Des services facultatifs peuvent financer l’application mobile, la sécurité et la modération, sans bloquer le chemin vers une rencontre.</p>
           </div>
@@ -110,10 +110,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Rejoignez la communauté fondatrice de Lyon</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Soyez parmi les premiers membres lyonnais. Profil vérifié. Vraie compatibilité. Les connexions essentielles sont gratuites. Aidez à construire une culture de la rencontre dont Lyon mérite.</p>
-          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
+          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Créer mon profil gratuit</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -129,7 +129,7 @@ export default function Page() {
               ["/free-dating-app", "App gratuite"],
               ["/tinder-alternative", "Alternative Tinder"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

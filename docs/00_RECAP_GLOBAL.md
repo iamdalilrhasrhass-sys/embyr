@@ -74,9 +74,10 @@
 - Ambassadors (apply, status)
 
 ## Design System
-- **Palette :** Braise (#FF5A1F), Cuivre (#B87333), Or sombre (#C9A227), Charbon (#0A0B0E)
-- **Typos :** Fraunces (display), Geist (body), Geist Mono (code)
-- **Tokens :** `/src/styles/embir-tokens.css` (12 variables)
+- **Palette :** Void (#09060C), Aubergine (#211426), Plum (#3A213F), Rose (#F36B8A), Blush (#F6C1CF), Bone (#FFF7F2)
+- **Typos :** Cormorant Garamond (display), Geist (body), Geist Mono (code)
+- **Tokens :** `/src/styles/embir-brand-tokens.css` (source canonique Brand OS 1.0)
+- **Logo :** deux boucles entrelacées, généré depuis `/src/components/brand/embir-mark.json`
 - **Composants :** `/src/components/embyr/` (Card, Button, Input, Avatar, Badge, Card3DTilt, EmberGlow, ScrollReveal)
 - **Scope :** `[data-site="embyr"]` — isolation totale de Femynia
 

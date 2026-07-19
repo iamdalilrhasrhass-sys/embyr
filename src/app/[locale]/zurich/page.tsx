@@ -37,14 +37,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Zurich · Switzerland</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Zurich · Switzerland</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Zurich dating, with verified profiles and real compatibility</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Zurich is Switzerland&apos;s largest city and its most intense dating market — fast-paced, professional, multilingual, and surprisingly difficult to navigate. The density is there: bankers in Seefeld, creatives in Kreis 4, students near the ETH. But Swiss dating culture values discretion, and most dating apps don&apos;t respect that. Embir starts here with a different approach: verified profiles, compatibility signals, and privacy controls that align with how Zurich actually dates.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why Zurich</h2>
             <p className="mt-4">Zurich has Switzerland&apos;s highest concentration of dating app users, but the experience is inconsistent. German is the dominant language, but the city is deeply international — English is common, and French speakers form a significant minority. Dating apps that treat Zurich like a German-only market miss the multilingual reality. And Swiss privacy expectations mean many people are hesitant to broadcast their profile to everyone nearby.</p>
             <p className="mt-3">We&apos;re building Zurich neighbourhood by neighbourhood — Kreis 4 for the creative crowd, Seefeld for professionals, Niederdorf for the nightlife scene, and across the lake to communities in Wollishofen and beyond. Founding members who value verification, privacy, and compatibility over the swipe grind. No invented safety promise. People in Zurich building a real community.</p>
@@ -67,7 +67,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">Core connections without a Zurich price tag</h2>
             <p className="mt-4">Zurich is one of the most expensive cities in the world. Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
@@ -110,10 +110,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the Zurich founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Zurich members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture Zurich deserves — private, intentional, and real.</p>
-          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -129,7 +129,7 @@ export default function Page() {
               ["/free-dating-app", "Free dating app"],
               ["/safety", "Safety tools"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

@@ -78,7 +78,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
         {/* HERO */}
         <section className="mx-auto max-w-5xl py-12 text-center lg:py-20">
-          <p className="inline-flex rounded-full border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a574]">
+          <p className="inline-flex rounded-full border border-embir-rose/20 bg-embir-rose/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-embir-rose">
             {isFr ? "Comparatif" : "Comparison"} · {c.competitor} vs Embir
           </p>
           <h1 className="mt-8 font-serif text-5xl font-light tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl">
@@ -91,7 +91,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             <Link
               href="/auth/register"
               prefetch={false}
-              className="inline-flex items-center justify-center rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
+              className="inline-flex items-center justify-center rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition hover:bg-embir-blush"
             >
               {isFr ? "Essayer Embir gratuitement" : "Try Embir free"}
             </Link>
@@ -107,11 +107,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white">Embir</span>
-                <span className="mt-1 block text-xs font-semibold text-[#d4a574]">gratuit pour les connexions essentielles</span>
+                <span className="mt-1 block text-xs font-semibold text-embir-rose">gratuit pour les connexions essentielles</span>
               </div>
               <div className="border-l border-white/[0.07] p-5 text-center">
                 <span className="font-serif text-xl text-white/70">{c.competitor}</span>
-                <span className="mt-1 block text-xs font-semibold text-[#ff5e36]">{isFr ? "Payant" : "Paid"}</span>
+                <span className="mt-1 block text-xs font-semibold text-embir-rose-deep">{isFr ? "Payant" : "Paid"}</span>
               </div>
             </div>
             {[
@@ -126,7 +126,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-3 border-b border-white/[0.05] last:border-0">
                 <div className="p-4 text-sm text-white/60">{row.label}</div>
-                <div className="border-l border-white/[0.05] p-4 text-center text-sm font-semibold text-[#d4a574]">
+                <div className="border-l border-white/[0.05] p-4 text-center text-sm font-semibold text-embir-rose">
                   {row.embir}
                 </div>
                 <div className="border-l border-white/[0.05] p-4 text-center text-sm text-white/40">
@@ -141,20 +141,20 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="mx-auto max-w-5xl py-12">
           <div className="grid gap-6 md:grid-cols-2">
             {/* Embir */}
-            <div className="rounded-3xl border border-[#d4a574]/20 bg-[#d4a574]/[0.03] p-8">
+            <div className="rounded-3xl border border-embir-rose/20 bg-embir-rose/[0.03] p-8">
               <h2 className="font-serif text-2xl font-light text-white">
                 Embir
-                <span className="ml-2 rounded-full bg-[#d4a574]/10 px-2 py-0.5 text-xs font-semibold text-[#d4a574]">
+                <span className="ml-2 rounded-full bg-embir-rose/10 px-2 py-0.5 text-xs font-semibold text-embir-rose">
                   {isFr ? "Gratuit" : "Free"}
                 </span>
               </h2>
               <div className="mt-6 space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#d4a574]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-embir-rose">
                   {isFr ? "Avantages" : "Pros"}
                 </p>
                 {c.embirPros.map((pro, i) => (
                   <div key={"embir-pro-" + i} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-[#d4a574]">Oui</span>
+                    <span className="mt-0.5 text-embir-rose">Oui</span>
                     <span className="text-sm text-white/60">{pro}</span>
                   </div>
                 ))}
@@ -176,7 +176,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             <div className="rounded-3xl border border-white/[0.07] bg-white/[0.02] p-8">
               <h2 className="font-serif text-2xl font-light text-white/70">
                 {c.competitor}
-                <span className="ml-2 rounded-full bg-[#ff5e36]/10 px-2 py-0.5 text-xs font-semibold text-[#ff5e36]">
+                <span className="ml-2 rounded-full bg-embir-rose-deep/10 px-2 py-0.5 text-xs font-semibold text-embir-rose-deep">
                   {isFr ? "Payant" : "Paid"}
                 </span>
               </h2>
@@ -192,12 +192,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 ))}
               </div>
               <div className="mt-6 space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#ff5e36]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-embir-rose-deep">
                   {isFr ? "Inconvenients" : "Cons"}
                 </p>
                 {c.competitorCons.map((con, i) => (
                   <div key={"comp-con-" + i} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-[#ff5e36]">Non</span>
+                    <span className="mt-0.5 text-embir-rose-deep">Non</span>
                     <span className="text-sm text-white/50">{con}</span>
                   </div>
                 ))}
@@ -216,7 +216,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-base font-semibold text-white/80">
                   {item[0]}
-                  <span className="ml-4 text-lg text-[#d4a574] transition-transform group-open:rotate-45">+</span>
+                  <span className="ml-4 text-lg text-embir-rose transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 text-sm leading-relaxed text-white/48">{item[1]}</p>
               </details>
@@ -235,7 +235,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           <Link
             href="/auth/register"
             prefetch={false}
-            className="mt-8 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
+            className="mt-8 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition hover:bg-embir-blush"
           >
             {isFr ? "Creer mon profil gratuit" : "Create my free profile"}
           </Link>

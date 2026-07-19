@@ -4,7 +4,8 @@ import { readFile } from "node:fs/promises";
 const source = await readFile("public/sw.js", "utf8");
 const registrationSource = await readFile("src/components/ServiceWorkerRegister.tsx", "utf8");
 
-assert.match(source, /CACHE_NAME\s*=\s*['"]embir-v2['"]/);
+assert.match(source, /CACHE_NAME\s*=\s*['"]embir-brand-os-v1['"]/);
+assert.match(source, /\/icon-maskable-512\.png/, "the maskable Brand OS icon must be precached");
 assert.doesNotMatch(
   source,
   /STATIC_ASSETS\s*=\s*\[[\s\S]*?['"]\/['"]/,

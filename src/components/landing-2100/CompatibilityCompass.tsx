@@ -198,9 +198,9 @@ export default function CompatibilityCompass({
         <desc>{help}</desc>
         <defs>
           <radialGradient id={`${gradientId}-glass`} cx="45%" cy="38%" r="70%">
-            <stop offset="0%" stopColor="#f2ede4" stopOpacity="0.15" />
-            <stop offset="55%" stopColor="#a86f50" stopOpacity="0.05" />
-            <stop offset="100%" stopColor="#09060c" stopOpacity="0.7" />
+            <stop offset="0%" stopColor="var(--embir-bone-100)" stopOpacity="0.15" />
+            <stop offset="55%" stopColor="var(--embir-plum-700)" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="var(--embir-void-950)" stopOpacity="0.7" />
           </radialGradient>
           <linearGradient
             id={`${gradientId}-warm`}
@@ -209,8 +209,8 @@ export default function CompatibilityCompass({
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#f1d6b6" />
-            <stop offset="100%" stopColor="#f06d55" />
+            <stop offset="0%" stopColor="var(--embir-blush-300)" />
+            <stop offset="100%" stopColor="var(--embir-rose-500)" />
           </linearGradient>
           <filter
             id={`${gradientId}-glow`}
@@ -233,7 +233,7 @@ export default function CompatibilityCompass({
           cy="320"
           r="236"
           fill={`url(#${gradientId}-glass)`}
-          stroke="#f2ede4"
+          stroke="var(--embir-bone-100)"
           strokeOpacity="0.32"
         />
         <circle
@@ -241,7 +241,7 @@ export default function CompatibilityCompass({
           cy="320"
           r="190"
           fill="none"
-          stroke="#f2ede4"
+          stroke="var(--embir-bone-100)"
           strokeOpacity="0.08"
           strokeDasharray="2 12"
         />
@@ -250,12 +250,12 @@ export default function CompatibilityCompass({
           cy="320"
           r="145"
           fill="none"
-          stroke="#f2ede4"
+          stroke="var(--embir-bone-100)"
           strokeOpacity="0.07"
         />
         <path
           d="M 84 320 H 556 M 320 84 V 556"
-          stroke="#f2ede4"
+          stroke="var(--embir-bone-100)"
           strokeOpacity="0.08"
         />
 
@@ -269,7 +269,7 @@ export default function CompatibilityCompass({
             cy="320"
             r="218"
             fill="none"
-            stroke="#a86f50"
+            stroke="var(--embir-plum-700)"
             strokeOpacity="0.42"
           />
 
@@ -283,7 +283,7 @@ export default function CompatibilityCompass({
               className="e21-compass__petal"
               d={path}
               fill="none"
-              stroke={index > 1 ? "#f06d55" : "#f1d6b6"}
+              stroke={index > 1 ? "var(--embir-rose-500)" : "var(--embir-blush-300)"}
               strokeOpacity={index % 2 === 0 ? 0.9 : 0.65}
               strokeWidth={index % 2 === 0 ? 2.4 : 1.5}
               filter={`url(#${gradientId}-glow)`}
@@ -300,7 +300,7 @@ export default function CompatibilityCompass({
             fill={`url(#${gradientId}-warm)`}
             filter={`url(#${gradientId}-glow)`}
           />
-          <circle cx="320" cy="320" r="4" fill="#f2ede4" />
+          <circle cx="320" cy="320" r="4" fill="var(--embir-bone-100)" />
 
           {/* Direction indicator */}
           <circle
@@ -308,8 +308,8 @@ export default function CompatibilityCompass({
             cx="320"
             cy="320"
             r="9"
-            fill="#f06d55"
-            stroke="#f2ede4"
+            fill="var(--embir-rose-500)"
+            stroke="var(--embir-bone-100)"
             strokeWidth="2"
           />
         </g>
@@ -318,13 +318,13 @@ export default function CompatibilityCompass({
         <path
           d="M 138 555 Q 320 620 502 555"
           fill="none"
-          stroke="#a86f50"
+          stroke="var(--embir-plum-700)"
           strokeOpacity="0.66"
         />
         <path
           ref={needleRef}
           d="M 320 598 L 320 598"
-          stroke="#f06d55"
+          stroke="var(--embir-rose-500)"
           strokeWidth="4"
           strokeLinecap="round"
         />

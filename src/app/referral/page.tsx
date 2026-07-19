@@ -52,25 +52,25 @@ export default function ReferralPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#06030F] text-white flex items-center justify-center">
-        <div className="animate-pulse text-[#d4a574]">Loading your referral hub…</div>
+      <div className="flex min-h-screen items-center justify-center bg-embir-void text-white">
+        <div className="animate-pulse text-embir-rose">Loading your referral hub…</div>
       </div>
     );
   }
 
   if (error || !data?.referralCode) {
     return (
-      <div className="min-h-screen bg-[#06030F] text-white p-6 md:p-12 flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-embir-void p-6 text-white md:p-12">
         <div className="max-w-md text-center">
           <div className="text-5xl mb-6">🔐</div>
           <h1 className="text-2xl font-bold mb-3 text-white">Log in to access your referral hub</h1>
           <p className="text-white/50 mb-8">Your unique referral code is tied to your Embir account.</p>
-          <a href="/auth/login" className="inline-block px-8 py-3 bg-[#d4a574] text-[#0a0614] rounded-full font-bold hover:bg-[#ff5e36] transition-colors">
+          <a href="/auth/login" className="inline-block rounded-full bg-embir-rose px-8 py-3 font-bold text-embir-void transition-colors hover:bg-embir-blush">
             Log in to Embir
           </a>
           <p className="mt-4 text-sm text-white/30">
             No account yet?{" "}
-            <a href="/auth/register" className="text-[#d4a574] underline">
+            <a href="/auth/register" className="text-embir-rose underline">
               Create one free
             </a>
           </p>
@@ -80,13 +80,13 @@ export default function ReferralPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#06030F] text-white p-6 md:p-12">
+    <div className="min-h-screen bg-embir-void p-6 text-white md:p-12">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#d4a574]/70 mb-3">Referral Hub</p>
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-embir-rose/70">Referral Hub</p>
           <h1 className="text-4xl md:text-5xl font-serif font-light tracking-tight text-white mb-4">
-            Build the <span className="text-[#d4a574]">founding community</span> together
+            Build the <span className="text-embir-rose">founding community</span> together
           </h1>
           <p className="text-white/50 max-w-xl mx-auto">
             Invite people you genuinely trust. A denser, compatible local community makes every reciprocal connection more useful.
@@ -97,9 +97,9 @@ export default function ReferralPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8 rounded-2xl border border-[#ff5e36]/20 bg-gradient-to-r from-[#ff5e36]/10 via-[#d4a574]/5 to-[#ff1f5a]/10 p-6"
+          className="mb-8 rounded-2xl border border-embir-rose-deep/20 bg-gradient-to-r from-embir-rose-deep/10 via-embir-rose/5 to-embir-plum-soft/10 p-6"
         >
-          <p className="text-sm font-semibold text-[#e3bc94]">Quality before volume</p>
+          <p className="text-sm font-semibold text-embir-blush">Quality before volume</p>
           <p className="mt-2 text-sm leading-relaxed text-white/50">Share your link selectively. Embir never invents member counts, fake activity or artificial scarcity.</p>
         </motion.div>
 
@@ -115,7 +115,7 @@ export default function ReferralPage() {
             />
             <button
               onClick={copyLink}
-              className="px-6 py-3 bg-[#d4a574] text-[#0a0614] rounded-lg text-sm font-bold hover:bg-[#ff5e36] transition-colors whitespace-nowrap"
+              className="whitespace-nowrap rounded-lg bg-embir-rose px-6 py-3 text-sm font-bold text-embir-void transition-colors hover:bg-embir-blush"
             >
               {copied ? "✓ Copied" : "Copy"}
             </button>
@@ -165,15 +165,15 @@ export default function ReferralPage() {
           <h2 className="text-xl font-serif text-white mb-4">How invitations work</h2>
           <div className="space-y-4 text-sm text-white/55">
             <div className="flex gap-3">
-              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#d4a574]/10 text-[#d4a574] flex items-center justify-center font-bold text-xs">1</span>
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-embir-rose/10 text-xs font-bold text-embir-rose">1</span>
               <p>Share your unique referral link with people you trust — friends, community members, anyone who'd benefit from a better dating experience.</p>
             </div>
             <div className="flex gap-3">
-              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#d4a574]/10 text-[#d4a574] flex items-center justify-center font-bold text-xs">2</span>
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-embir-rose/10 text-xs font-bold text-embir-rose">2</span>
               <p>When they sign up via your link, they're automatically tracked as your referral. No codes to remember, no extra steps.</p>
             </div>
             <div className="flex gap-3">
-              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#d4a574]/10 text-[#d4a574] flex items-center justify-center font-bold text-xs">3</span>
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-embir-rose/10 text-xs font-bold text-embir-rose">3</span>
               <p>Your dashboard shows the exact number of completed referrals. Invitations never create paid privileges, safety shortcuts or priority over other compatible members.</p>
             </div>
           </div>

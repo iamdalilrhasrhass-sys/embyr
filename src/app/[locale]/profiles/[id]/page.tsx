@@ -6,11 +6,11 @@ import AppShell from "@/components/layout/AppShell";
 import PremiumBlurImage from "@/components/ui/PremiumBlurImage";
 import { usePremium } from "@/hooks/usePremium";
 function generateUserGradient(userId: string) {
-  if (!userId) return "linear-gradient(135deg, #0a0614, #120b1f)";
+  if (!userId) return "linear-gradient(135deg, var(--embir-void-950), var(--embir-plum-900))";
   const hash = Array.from(userId).reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const hue1 = hash % 360;
   const hue2 = (hue1 + 60) % 360;
-  return `linear-gradient(135deg, hsl(${hue1}, 60%, 15%), hsl(${hue2}, 40%, 10%), #0a0614)`;
+  return `linear-gradient(135deg, hsl(${hue1}, 60%, 15%), hsl(${hue2}, 40%, 10%), var(--embir-void-950))`;
 }
 
 export default function MembreDetailPage() {
@@ -53,7 +53,7 @@ export default function MembreDetailPage() {
 
   return (
     <AppShell>
-      <main className="min-h-screen text-white pt-20 pb-24 relative overflow-hidden" style={{ background: "#0a0614" }}>
+      <main className="relative min-h-screen overflow-hidden bg-embir-void pb-24 pt-20 text-white">
         {/* Immersive User Universe Background */}
         <div className="absolute inset-0 opacity-40 transition-all duration-1000" style={{ background: userGradient }} />
         <div className="fixed inset-0 noise-overlay pointer-events-none opacity-50" />
@@ -66,8 +66,8 @@ export default function MembreDetailPage() {
 
           {loading ? (
             <div className="flex flex-col items-center justify-center py-32 space-y-4">
-              <div className="w-12 h-12 rounded-full border-2 border-[#d4a574]/20 border-t-[#d4a574] animate-spin" />
-              <p className="text-[#d4a574]/60 text-sm uppercase tracking-widest">Loading universe...</p>
+              <div className="w-12 h-12 rounded-full border-2 border-embir-rose/20 border-t-embir-rose animate-spin" />
+              <p className="text-embir-rose/60 text-sm uppercase tracking-widest">Loading universe...</p>
             </div>
           ) : profile ? (
             <div className="space-y-8">
@@ -79,7 +79,7 @@ export default function MembreDetailPage() {
                     <PremiumBlurImage
                         src={profile.avatar || photos[0]}
                         alt={profile.displayName || profile.username}
-                        className="w-32 h-32 rounded-full border-4 border-[#0a0614] object-cover shadow-2xl relative z-10"
+                        className="w-32 h-32 rounded-full border-4 border-embir-void object-cover shadow-2xl relative z-10"
                     />
                   </div>
                 </div>
@@ -87,13 +87,13 @@ export default function MembreDetailPage() {
                   <h1 className="text-4xl font-serif font-light text-white tracking-tight">
                     {profile.username || profile.displayName || "Membre"}
                   </h1>
-                  <p className="text-sm font-medium text-[#d4a574] uppercase tracking-widest">
+                  <p className="text-sm font-medium text-embir-rose uppercase tracking-widest">
                     {[profile.age && `${profile.age} ans`, profile.city].filter(Boolean).join(" · ")}
                   </p>
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   {profile.isPremium && (
-                    <span className="text-[10px] px-3 py-1 rounded-full bg-[#d4a574]/10 text-[#d4a574] border border-[#d4a574]/20 uppercase tracking-wider font-semibold">
+                    <span className="text-[10px] px-3 py-1 rounded-full bg-embir-rose/10 text-embir-rose border border-embir-rose/20 uppercase tracking-wider font-semibold">
                        Founder
                     </span>
                   )}
@@ -126,7 +126,7 @@ export default function MembreDetailPage() {
               )}
 
               {/* Personal Universe Box */}
-              <div className="rounded-[2rem] p-8 border border-white/[0.08] bg-[#0a0614]/60 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+              <div className="rounded-[2rem] p-8 border border-white/[0.08] bg-embir-void/60 backdrop-blur-xl shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <span className="font-serif text-8xl">"</span>
                 </div>
@@ -142,14 +142,14 @@ export default function MembreDetailPage() {
                 {isPremium ? (
                   <button
                     onClick={() => router.push(`/messages?to=${id}`)}
-                    className="flex-1 py-4 rounded-full text-sm font-bold text-[#0a0614] bg-[#d4a574] hover:bg-[#e8c4a2] transition-colors"
+                    className="flex-1 py-4 rounded-full text-sm font-bold text-embir-void bg-embir-rose hover:bg-embir-blush transition-colors"
                   >
                     Send message
                   </button>
                 ) : (
                   <Link
                     href="/premium"
-                    className="flex-1 py-4 rounded-full text-sm font-bold text-white text-center bg-gradient-to-r from-[#ff1f5a] to-[#ff5e36] shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
+                    className="flex-1 py-4 rounded-full text-sm font-bold text-embir-void text-center bg-gradient-to-r from-embir-rose-deep to-embir-rose shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
                   >
                     Unlock photos
                   </Link>
@@ -158,9 +158,9 @@ export default function MembreDetailPage() {
                   onClick={toggleFav}
                   className="w-14 rounded-full flex items-center justify-center text-xl transition-all"
                   style={{
-                    background: profile.isFavorited ? "rgba(212,165,116,0.15)" : "rgba(255,255,255,0.04)",
-                    border: profile.isFavorited ? "1px solid rgba(212,165,116,0.3)" : "1px solid rgba(255,255,255,0.1)",
-                    color: profile.isFavorited ? "#d4a574" : "rgba(255,255,255,0.6)"
+                    background: profile.isFavorited ? "rgba(216,139,167,0.15)" : "rgba(255,255,255,0.04)",
+                    border: profile.isFavorited ? "1px solid rgba(216,139,167,0.3)" : "1px solid rgba(255,255,255,0.1)",
+                    color: profile.isFavorited ? "var(--embir-rose-500)" : "rgba(255,255,255,0.6)"
                   }}
                 >
                   {profile.isFavorited ? "★" : "☆"}
@@ -171,7 +171,7 @@ export default function MembreDetailPage() {
               {!isPremium && (
                 <div className="text-center pt-2">
                   <Link href="/premium" className="text-xs text-white/40 hover:text-white/70 transition-colors">
-                    Photos are blurred. <span className="text-[#d4a574]">Become a Founder</span> to unlock.
+                    Photos are blurred. <span className="text-embir-rose">Become a Founder</span> to unlock.
                   </Link>
                 </div>
               )}

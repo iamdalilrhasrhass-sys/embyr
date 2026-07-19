@@ -48,5 +48,5 @@ node_modules
 .worktrees/
 /storage/private/
 /.playwright-cli/
-/output/playwright/
+/output/
 /artifacts/

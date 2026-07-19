@@ -120,7 +120,12 @@ export function Stagger({ children, className = '', delay = 0.1 }: {
 }
 
 // ─── Floating Aurora Bubbles ─────────────────
-export function AuroraBubbles({ count = 20, colors = ['#6366F1', '#8B5CF6', '#06B6D4', '#A78BFA'] }: {
+export function AuroraBubbles({ count = 20, colors = [
+  'var(--embir-rose-600)',
+  'var(--embir-rose-500)',
+  'var(--embir-rose-400)',
+  'var(--embir-plum-700)',
+] }: {
   count?: number;
   colors?: string[];
 }) {
@@ -129,7 +134,7 @@ export function AuroraBubbles({ count = 20, colors = ['#6366F1', '#8B5CF6', '#06
     return value - Math.floor(value);
   };
   const rounded = (value: number) => Number(value.toFixed(4));
-  const palette = colors.length > 0 ? colors : ['#d4a574'];
+  const palette = colors.length > 0 ? colors : ['var(--embir-rose-500)'];
   const bubbles = Array.from({ length: count }, (_, i) => ({
     id: i,
     x: rounded(seeded(i * 8) * 100),
@@ -153,7 +158,7 @@ export function AuroraBubbles({ count = 20, colors = ['#6366F1', '#8B5CF6', '#06
             top: `${b.y}%`,
             width: `${b.size}px`,
             height: `${b.size}px`,
-            background: `radial-gradient(circle, ${b.color}40, transparent 70%)`,
+            background: `radial-gradient(circle, color-mix(in srgb, ${b.color} 28%, transparent), transparent 70%)`,
             filter: `blur(${b.blur}px)`,
             animation: `auroraFloat ${b.duration}s ease-in-out ${b.delay}s infinite alternate`,
             opacity: b.opacity,

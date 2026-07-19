@@ -87,6 +87,14 @@ function hasNoindex(html) {
   return /noindex/i.test(html);
 }
 
+function getH1Text(html) {
+  const match = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
+  return match?.[1]
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function assert(condition, message, failures) {
   if (!condition) failures.push(message);
 }
@@ -116,7 +124,7 @@ for (const check of pageChecks) {
 
   if (check.expectH1) {
     assert(
-      result.body.includes("Free Inclusive Dating App for Every Orientation"),
+      getH1Text(result.body) === "Meet the people who are looking for you too.",
       "HOME: missing exact H1",
       failures,
     );

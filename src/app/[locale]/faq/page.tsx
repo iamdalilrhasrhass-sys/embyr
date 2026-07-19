@@ -68,17 +68,14 @@ const faqGraph = {
 
 export default function FaqPage() {
   return (
-    <main
-      className="min-h-screen px-4 pb-20 pt-28 sm:px-6 lg:px-8"
-      style={{ background: "#0a0614", color: "rgba(255,255,255,0.9)" }}
-    >
+    <main className="min-h-screen bg-embir-void px-4 pb-20 pt-28 text-embir-bone sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqGraph) }}
       />
 
       <div className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/75">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/75">
           Frequently asked questions
         </p>
         <h1 className="mt-4 font-serif text-5xl font-light tracking-[-0.03em] text-white sm:text-6xl">
@@ -93,7 +90,7 @@ export default function FaqPage() {
           {faqItems.map((item, i) => (
             <details
               key={i}
-              className="group rounded-3xl border border-white/[0.07] bg-white/[0.025] transition hover:border-[#d4a574]/20"
+              className="group rounded-3xl border border-white/[0.07] bg-white/[0.025] transition hover:border-embir-rose/20"
             >
               <summary className="cursor-pointer p-7 text-lg font-semibold text-white/85 list-none [&::-webkit-details-marker]:hidden">
                 {item.q}
@@ -105,10 +102,10 @@ export default function FaqPage() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <div className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <p className="text-white/60">
             Did not find your answer?{" "}
-            <a href="mailto:contact@embir.xyz" className="text-[#d4a574] underline underline-offset-2">
+            <a href="mailto:contact@embir.xyz" className="text-embir-rose underline underline-offset-2">
               contact@embir.xyz
             </a>
           </p>

@@ -210,16 +210,16 @@ export default async function Page({
 
         <section className="mx-auto max-w-4xl py-12 text-center lg:py-16">
           <nav className="mb-6 text-xs text-white/30">
-            <Link href={localizedPath(locale, "/")} className="hover:text-[#d4a574]">
+            <Link href={localizedPath(locale, "/")} className="hover:text-embir-rose">
               Embir
             </Link>{" "}
             /{" "}
-            <Link href={intentHubPath} className="hover:text-[#d4a574]">
+            <Link href={intentHubPath} className="hover:text-embir-rose">
               {intentLabel}
             </Link>{" "}
             / <span className="text-white/50">{cityName}</span>
           </nav>
-          <p className="inline-flex rounded-full border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a574]">
+          <p className="inline-flex rounded-full border border-embir-rose/20 bg-embir-rose/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-embir-rose">
             {isFr ? `${ct.name} · pilote français` : `${ct.nameEn} · launch pilot`}
           </p>
           {!isIndexable && (
@@ -237,14 +237,14 @@ export default async function Page({
             <Link
               href={primaryHref}
               prefetch={false}
-              className="inline-flex items-center justify-center rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
+              className="inline-flex items-center justify-center rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition hover:bg-embir-blush"
             >
               {isFr ? "Découvrir des aperçus" : "Explore previews"}
             </Link>
             <Link
               href={intentHubPath}
               prefetch={false}
-              className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white/75 transition hover:border-[#d4a574]/35"
+              className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white/75 transition hover:border-embir-rose/35"
             >
               {isFr ? `Voir l’intention ${int.label.toLowerCase()}` : `See ${int.labelEn.toLowerCase()} intent`}
             </Link>
@@ -263,7 +263,7 @@ export default async function Page({
         </section>
 
         <section className="mx-auto max-w-4xl py-8">
-          <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-[#d4a574]">
+          <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-embir-rose">
             {isFr ? `Autres intentions à ${ct.name}` : `Other intentions in ${ct.nameEn}`}
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -272,7 +272,7 @@ export default async function Page({
                 key={otherIntent.slug}
                 href={localizedPath(locale, `/rencontre/${otherIntent.slug}/${ct.slug}`)}
                 prefetch={false}
-                className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm text-white/65 transition hover:border-[#d4a574]/35 hover:text-white"
+                className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm text-white/65 transition hover:border-embir-rose/35 hover:text-white"
               >
                 {isFr ? otherIntent.label : otherIntent.labelEn} {cityName}
               </Link>
@@ -282,7 +282,7 @@ export default async function Page({
 
         {nearbyCities.length > 0 && (
           <section className="mx-auto max-w-4xl py-8">
-            <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-[#d4a574]">
+            <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-embir-rose">
               {isFr ? "Villes pilotes proches" : "Other pilot cities"}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -291,7 +291,7 @@ export default async function Page({
                   key={nearbyCity.slug}
                   href={localizedPath(locale, `/rencontre/${int.slug}/${nearbyCity.slug}`)}
                   prefetch={false}
-                  className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm text-white/65 transition hover:border-[#d4a574]/35 hover:text-white"
+                  className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm text-white/65 transition hover:border-embir-rose/35 hover:text-white"
                 >
                   {isFr ? `${int.label} ${nearbyCity.name}` : `${int.labelEn} ${nearbyCity.nameEn}`}
                 </Link>
@@ -309,7 +309,7 @@ export default async function Page({
               <details key={item.q} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-base font-semibold text-white/80">
                   {item.q}
-                  <span className="ml-4 text-lg text-[#d4a574] transition-transform group-open:rotate-45">+</span>
+                  <span className="ml-4 text-lg text-embir-rose transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 text-sm leading-relaxed text-white/48">{item.a}</p>
               </details>
@@ -329,7 +329,7 @@ export default async function Page({
           <Link
             href={primaryHref}
             prefetch={false}
-            className="mt-8 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
+            className="mt-8 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition hover:bg-embir-blush"
           >
             {isFr ? "Lancer Découvrir" : "Start discovery"}
           </Link>

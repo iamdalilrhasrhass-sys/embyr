@@ -187,27 +187,29 @@ test("email shell declares dark-mode support and keeps critical layout styles in
   assert.match(html, /width:100%;max-width:600px/);
   assert.match(
     html,
-    /<body bgcolor="#0e0c0f" style="[^"]*background-color:#0e0c0f!important;[^"]*color:#f8f3f1!important;/,
+    /<body bgcolor="#09060c" style="[^"]*background-color:#09060c!important;[^"]*color:#f2ede4!important;/,
   );
   assert.match(
     html,
-    /<td class="embir-content" bgcolor="#1a1719" style="[^"]*background-color:#1a1719!important;[^"]*color:#f8f3f1!important;">/,
+    /<td class="embir-content" bgcolor="#100a12" style="[^"]*background-color:#100a12!important;[^"]*color:#f2ede4!important;">/,
   );
   assert.match(
     html,
-    /<td bgcolor="#ff8a72" style="[^"]*background-color:#ff8a72;[^"]*"><a[^>]+color:#241013!important;/,
+    /<td bgcolor="#f4c7d5" style="[^"]*background-color:#f4c7d5;[^"]*"><a[^>]+color:#09060c!important;/,
+  );
+  assert.match(
+    html,
+    /<img src="https:\/\/embir\.xyz\/brand\/embir-email-logo\.png"[^>]+alt="Embir"/,
   );
 });
 
 test("email palette has no gradient, transparency, or light text on a light surface", () => {
   const { html } = adminSignupEmail(completeSignup);
   const allowedBackgrounds = new Set([
-    "#0e0c0f",
-    "#141114",
-    "#1a1719",
-    "#242023",
-    "#8f3048",
-    "#ff8a72",
+    "#09060c",
+    "#100a12",
+    "#2a1328",
+    "#f4c7d5",
   ]);
   const backgrounds = [
     ...html.matchAll(/bgcolor="(#[0-9a-f]{6})"/gi),
@@ -222,7 +224,7 @@ test("email palette has no gradient, transparency, or light text on a light surf
   assert.doesNotMatch(html, /(?:opacity\s*:|\btransparent\b)/i);
   assert.match(
     html,
-    /bgcolor="#ff8a72"[^>]*>[\s\S]*?<a[^>]*color:#241013!important;[^>]*>Voir le cockpit Embir<\/a>/i,
+    /bgcolor="#f4c7d5"[^>]*>[\s\S]*?<a[^>]*color:#09060c!important;[^>]*>Voir le cockpit Embir<\/a>/i,
   );
   assert.doesNotMatch(
     html,

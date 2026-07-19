@@ -37,14 +37,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Manchester · United Kingdom</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Manchester · United Kingdom</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Manchester dating, with verified profiles and real compatibility</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Manchester has one of the most vibrant social scenes in the UK — a city of students, creatives, tech workers, and a legendary music culture. But dating here has its own frustrations: most apps feel built for London, the same small pool of profiles cycles endlessly, and the city&apos;s famous friendliness doesn&apos;t always translate into genuine romantic connections. Embir brings verified profiles and real compatibility matching to Manchester&apos;s unique dating landscape.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why Manchester</h2>
             <p className="mt-4">Manchester is the UK&apos;s second city in everything but official status — and its dating scene punches above its weight. The Northern Quarter attracts creatives and independents. Didsbury and Chorlton draw young professionals and families. The universities inject thousands of new faces every September. But Manchester is also a city where everyone seems to know everyone — which makes dating app fatigue feel especially personal when the same profiles keep appearing.</p>
             <p className="mt-3">We&apos;re building Manchester neighbourhood by neighbourhood — starting with a core of founding members who value verification, clear intentions, and compatibility over the swipe grind. Real Mancunians building a real local community, with none of the inflated numbers you see on other platforms.</p>
@@ -67,7 +67,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">Core connections without another Manchester subscription</h2>
             <p className="mt-4">Manchester living costs have soared, but Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
@@ -110,10 +110,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the Manchester founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Manchester members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture that Manchester can be proud of — from the Northern Quarter to the suburbs.</p>
-          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -129,7 +129,7 @@ export default function Page() {
               ["/free-dating-app", "Free dating app"],
               ["/grindr-alternative", "Grindr alternative"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

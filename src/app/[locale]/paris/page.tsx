@@ -24,14 +24,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Paris · France</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Paris · France</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Paris dating, with verified profiles and real compatibility</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Paris has one of the densest dating scenes in Europe — and one of the most frustrating. Millions of profiles, endless swiping, and a culture where dating apps often feel more like games than tools for genuine connection. Embir starts here with a different approach: fewer fake profiles, clearer intentions, and compatibility that goes beyond proximity.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why Paris first</h2>
             <p className="mt-4">Paris is Embir&apos;s launch city. The density, diversity, and dating culture make it the ideal place to build a founding community. Paris has everything — students, professionals, artists, international residents, LGBTQ+ communities across the Marais and beyond. But with that density comes noise: fake profiles, ghosting, and matches that never turn into conversations.</p>
             <p className="mt-3">We&apos;re building Paris city by neighborhood — starting with a core of founding members who value verification, clear intentions, and compatibility over the swipe grind. No fake counters. No inflated numbers. Just real people building a real local community.</p>
@@ -54,7 +54,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">Core connections without a Parisian price tag</h2>
             <p className="mt-4">Paris isn&apos;t cheap, but Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
@@ -98,10 +98,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the Paris founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first Paris members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture Paris deserves.</p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -117,7 +117,7 @@ export default function Page() {
               ["/tinder-alternative", "Tinder alternative"],
               ["/free-dating-app", "Free dating app"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

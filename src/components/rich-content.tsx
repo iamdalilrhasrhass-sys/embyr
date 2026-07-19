@@ -129,7 +129,7 @@ function ComparisonTable({ rows }: { rows: ComparisonTableRow[] }) {
               <th className="p-4 font-semibold text-white/50">
                 {isFr ? "Concurrent" : "Competitor"}
               </th>
-              <th className="p-4 font-semibold text-[#d4a574]">Embir</th>
+              <th className="p-4 font-semibold text-embir-rose">Embir</th>
               <th className="p-4 font-semibold text-white/70 text-center">
                 {isFr ? "Gagnant" : "Winner"}
               </th>
@@ -145,12 +145,12 @@ function ComparisonTable({ rows }: { rows: ComparisonTableRow[] }) {
               >
                 <td className="p-4 font-medium text-white/70">{row.criteria}</td>
                 <td className="p-4 text-white/45">{row.competitor}</td>
-                <td className="p-4 text-[#d4a574]/90 font-medium">{row.embir}</td>
+                <td className="p-4 text-embir-rose/90 font-medium">{row.embir}</td>
                 <td className="p-4 text-center">
                   <span
                     className={`inline-block rounded-full px-3 py-1 text-xs font-bold ${
                       row.winner === "embir"
-                        ? "bg-[#d4a574]/15 text-[#d4a574]"
+                        ? "bg-embir-rose/15 text-embir-rose"
                         : row.winner === "tie"
                           ? "bg-white/[0.06] text-white/50"
                           : "bg-white/[0.04] text-white/40"
@@ -190,7 +190,7 @@ function ContentSection({
               key={i}
               className="flex items-start gap-3 text-sm text-white/58"
             >
-              <span className="mt-1 text-[#d4a574]">✦</span>
+              <span className="mt-1 text-embir-rose">✦</span>
               {item}
             </li>
           ))}
@@ -220,7 +220,7 @@ function RichFAQ({
           >
             <summary className="cursor-pointer flex items-center justify-between text-sm font-semibold text-white/80 list-none">
               {item.q}
-              <span className="ml-4 text-[#d4a574] text-lg group-open:rotate-45 transition-transform">
+              <span className="ml-4 text-embir-rose text-lg group-open:rotate-45 transition-transform">
                 +
               </span>
             </summary>
@@ -234,7 +234,7 @@ function RichFAQ({
 
 function CTAFooter({ text, isFr }: { text: string; isFr: boolean }) {
   return (
-    <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+    <section className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
       <h2 className="font-serif text-3xl text-white">{text}</h2>
       <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
         {isFr
@@ -244,7 +244,7 @@ function CTAFooter({ text, isFr }: { text: string; isFr: boolean }) {
       <Link
         href="/auth/register"
         prefetch={false}
-        className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2] transition"
+        className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush transition"
       >
         {isFr ? "Créer mon profil gratuit" : "Create my free profile"}
       </Link>
@@ -281,7 +281,7 @@ function RelatedComparisons({ locale }: { locale: "en" | "fr" }) {
             key={link.href}
             href={link.href}
             prefetch={false}
-            className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]"
+            className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose"
           >
             {link.label}
           </Link>
@@ -336,7 +336,7 @@ export async function RichComparisonContent({ page }: { page: ResolvedSeoPage })
       </section>
 
       {/* Verdict */}
-      <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.03] p-8">
+      <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.03] p-8">
         <h2 className="font-serif text-3xl text-white">
           {isFr ? "Le verdict" : "The verdict"}
         </h2>

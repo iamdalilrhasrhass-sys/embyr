@@ -42,7 +42,7 @@ export class ConnectionDashboardErrorBoundary extends Component<
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="mt-6 rounded-xl bg-[#d4a574] px-6 py-3 text-sm font-bold text-[#0a0614]"
+              className="mt-6 rounded-xl bg-embir-rose px-6 py-3 text-sm font-bold text-embir-void"
             >
               Recharger
             </button>

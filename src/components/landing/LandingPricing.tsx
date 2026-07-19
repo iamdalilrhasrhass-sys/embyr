@@ -10,7 +10,7 @@ export default function LandingPricing() {
 
   return (
     <section ref={ref} className="py-32 px-4 max-w-5xl mx-auto relative">
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[400px] bg-[#d4a574]/[0.03] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[400px] bg-embir-rose/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -20,7 +20,7 @@ export default function LandingPricing() {
       >
         Tout ce qu’il faut pour rencontrer quelqu’un est gratuit.
         <br />
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#e8c4a2] via-[#d4a574] to-[#f0d0b0]">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-embir-blush via-embir-rose to-[#f0d0b0]">
           Sans carte bancaire.
         </span>
       </motion.h2>
@@ -58,14 +58,14 @@ export default function LandingPricing() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="mt-16 p-10 rounded-3xl border border-[#d4a574]/10 bg-gradient-to-r from-[#d4a574]/[0.03] to-[#0a0614] backdrop-blur-2xl text-center relative overflow-hidden"
+        className="mt-16 p-10 rounded-3xl border border-embir-rose/10 bg-gradient-to-r from-embir-rose/[0.03] to-embir-void backdrop-blur-2xl text-center relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#d4a574]/[0.04] rounded-full blur-[80px]" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-embir-rose/[0.04] rounded-full blur-[80px]" />
         <div className="relative z-10">
           <motion.div
             animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="inline-flex px-4 py-1.5 rounded-full bg-[#d4a574]/10 border border-[#d4a574]/10 text-[#d4a574]/80 text-xs font-medium tracking-wide mb-6 uppercase"
+            className="inline-flex px-4 py-1.5 rounded-full bg-embir-rose/10 border border-embir-rose/10 text-embir-rose/80 text-xs font-medium tracking-wide mb-6 uppercase"
           >
             ✦ CONTRAT D’ACCÈS CLAIR ✦
           </motion.div>
@@ -75,7 +75,7 @@ export default function LandingPricing() {
             Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Les éventuels services supplémentaires restent facultatifs.
           </p>
 
-          <Link href="/auth/register" className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-[#d4a574] text-[#0a0614] font-medium text-lg hover:shadow-[0_0_40px_rgba(212,165,116,0.4)] transition-all duration-500 hover:scale-105">
+          <Link href="/auth/register" className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-embir-rose text-embir-void font-medium text-lg hover:shadow-[0_0_40px_rgba(212,165,116,0.4)] transition-all duration-500 hover:scale-105">
             Créer mon profil
             <span className="text-xl">→</span>
           </Link>

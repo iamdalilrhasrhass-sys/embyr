@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import EmbirAvatar from "@/components/embir/EmbirAvatar";
 import EmbirBadge from "@/components/embir/EmbirBadge";
@@ -59,18 +59,43 @@ const NAV_SECTIONS = [
 ];
 
 export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const drawerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const focusTimer = window.requestAnimationFrame(() => {
+      drawerRef.current?.querySelector<HTMLElement>("button, a[href]")?.focus();
+    });
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      onClose();
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      window.cancelAnimationFrame(focusTimer);
+      window.removeEventListener("keydown", closeOnEscape);
+      previousFocus?.focus();
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
   return (
     <>
       {/* Backdrop */}
-      <div className="fixed inset-0 z-40 bg-[var(--eb-bg-overlay)] backdrop-blur-md" onClick={onClose} />
+      <button type="button" aria-label="Fermer la navigation" className="fixed inset-0 z-40 bg-[var(--eb-bg-overlay)] backdrop-blur-md" onClick={onClose} />
       {/* Drawer */}
       <nav
+        ref={drawerRef}
+        aria-label="Navigation du compte"
+        tabIndex={-1}
         className="mobile-drawer fixed top-0 left-0 z-50 w-[min(85vw,360px)] bg-[var(--eb-bg-elev-1)] border-r border-[var(--eb-border-soft)] flex flex-col"
         style={{ animation: "slideIn 0.28s cubic-bezier(0.32, 0.72, 0, 1)" }}
       >
         {/* Header */}
         <div className="p-5 flex flex-col items-center border-b border-[var(--eb-border-soft)]">
+          <button type="button" onClick={onClose} className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-xl text-[var(--eb-text-secondary)] hover:bg-[var(--eb-bg-elev-2)]" aria-label="Fermer la navigation">✕</button>
           <EmbirAvatar name="Membre" size={96} isPremium />
           <EmbirLogo size="sm" className="mt-4" />
           <EmbirBadge variant="online">En ligne</EmbirBadge>
@@ -87,9 +112,9 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
                     key={ii}
                     href={item.href}
                     onClick={onClose}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-[10px] text-sm transition-all hover:bg-[var(--eb-bg-elev-2)] ${item.label === "Premium bientôt" ? "text-[var(--eb-accent)] font-medium" : "text-[var(--eb-text-secondary)]"}`}
+                    className={`flex min-h-11 items-center gap-3 rounded-[10px] px-3 py-2.5 text-sm transition-all hover:bg-[var(--eb-bg-elev-2)] ${item.label === "Premium bientôt" ? "text-[var(--eb-accent)] font-medium" : "text-[var(--eb-text-secondary)]"}`}
                   >
-                    <span className="text-base w-5 text-center text-[#ff5e36]">{item.icon}</span>
+                    <span className="text-base w-5 text-center text-embir-rose">{item.icon}</span>
                     <span>{item.label}</span>
                     {item.label === "Premium bientôt" && <span className="ml-auto text-[10px] bg-[var(--eb-accent)]/20 text-[var(--eb-accent)] px-2 py-0.5 rounded-full font-medium">BIENTÔT</span>}
                   </Link>
@@ -101,7 +126,7 @@ export default function SideDrawer({ isOpen, onClose }: { isOpen: boolean; onClo
 
         {/* Footer */}
         <div className="p-4 border-t border-[var(--eb-border-soft)]">
-          <Link href="/auth/logout" className="flex items-center justify-center gap-2 w-full py-2.5 rounded-[10px] text-sm text-[var(--eb-text-muted)] hover:bg-[var(--eb-bg-elev-2)] transition-colors">
+          <Link href="/auth/logout" className="flex min-h-11 w-full items-center justify-center gap-2 rounded-[10px] py-2.5 text-sm text-[var(--eb-text-muted)] transition-colors hover:bg-[var(--eb-bg-elev-2)]">
             Déconnexion
           </Link>
         </div>

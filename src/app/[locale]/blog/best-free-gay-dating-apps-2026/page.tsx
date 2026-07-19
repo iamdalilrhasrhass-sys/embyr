@@ -44,7 +44,7 @@ export default function Page() {
 
           <h1 className="text-3xl md:text-5xl font-black mb-8 text-white leading-tight">
             The Best Free Gay Dating Apps in 2026:<br />
-            <span className="text-[#d4a574]">Actually Free, Actually Good.</span>
+            <span className="text-embir-rose">Actually Free, Actually Good.</span>
           </h1>
 
           <div className="prose prose-invert max-w-none text-white/55 leading-relaxed space-y-8">
@@ -63,16 +63,16 @@ export default function Page() {
               <li><strong className="text-white/60">Freemium</strong> — You can download the app and create a profile for free, but messaging, seeing who liked you, or even basic filtering requires a subscription. Examples: Grindr XTRA, Tinder Gold, Scruff Pro.</li>
               <li><strong className="text-white/60">Limited free tier</strong> — You get a handful of free swipes or messages per day, then you&apos;re cut off until tomorrow or asked to pay. Examples: Tinder, Hinge.</li>
               <li><strong className="text-white/60">Ad-supported free</strong> — The app is technically free, but you&apos;re bombarded with full-screen ads. The product is you, and the customer is the advertiser. Examples: Grindr free tier.</li>
-              <li><strong className="text-[#d4a574]">Actually free</strong> — No subscription tiers, no limited swipes, no ads. The app is free because the company believes dating shouldn&apos;t be paywalled. Embir is one of the very few in this category.</li>
+              <li><strong className="text-embir-rose">Actually free</strong> — No subscription tiers, no limited swipes, no ads. The app is free because the company believes dating shouldn&apos;t be paywalled. Embir is one of the very few in this category.</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">The best gay dating apps in 2026 — ranked honestly</h2>
 
-            <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — Best overall, truly free</h3>
+            <h3 className="text-xl font-bold text-embir-rose mt-8 mb-2">1. Embir — Best overall, truly free</h3>
             <p><strong>Price:</strong> Free (no premium tier). <strong>Ads:</strong> None. <strong>Verification:</strong> optional selfie check.</p>
             <p>Embir is the newest entry on this list and the most honest about what free means. Everything needed to meet someone is free. No credit card required. Discovery uses declared reciprocal preferences. The optional selfie verification means you won&apos;t find bots or catfish here. Available worldwide on the web, with public pages in English and French and actively building communities wherever founding members join.</p>
 <p><strong>Best for:</strong> Men who want a free, verified experience and don&apos;t mind being part of a newer, growing community. <strong>Honest note:</strong> Embir is in core connection experience — our community is smaller than Grindr and Tinder, but selfie verification is available to every profile and the app is free for core connections. If you want maximum user count today, Grindr wins on volume. If you want verified profiles, zero ads, and no paywalls, Embir delivers.</p>
-            <p><Link href="/auth/register" prefetch={false} className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
+            <p><Link href="/auth/register" prefetch={false} className="text-embir-rose hover:text-embir-blush underline underline-offset-4">Try Embir free →</Link></p>
 
             <h3 className="text-xl font-bold text-white/80 mt-8 mb-2">2. Grindr — Biggest userbase, most expensive</h3>
             <p><strong>Price:</strong> Freemium (XTRA from $19.99/mo, Unlimited from $39.99/mo). <strong>Ads:</strong> Heavy on free tier.</p>
@@ -109,10 +109,10 @@ export default function Page() {
             <p>The best free gay dating app in 2026 depends on what you value. For maximum reach: Grindr. For community: Scruff. For a free for core connections experience with optional selfie verification and smarter matching: Embir. What&apos;s no longer acceptable: paying $20-40/month to message people while fighting bots. The bar has been raised.</p>
           </div>
 
-          <div className="mt-12 p-8 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/5 text-center">
+          <div className="mt-12 p-8 rounded-2xl border border-embir-rose/20 bg-embir-rose/5 text-center">
             <p className="text-white/80 text-lg mb-2">Ready for a dating app that&apos;s <strong className="text-white">actually free?</strong></p>
             <p className="text-white/40 text-sm mb-6">Verified profiles, reciprocal compatibility, messaging between reciprocal connections — no credit card.</p>
-            <Link href="/auth/register?source=blog-best-free-apps-2026" prefetch={false} className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-3.5 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">Create my free profile on Embir</Link>
+            <Link href="/auth/register?source=blog-best-free-apps-2026" prefetch={false} className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-8 py-3.5 text-sm font-bold text-embir-void transition-all hover:bg-embir-blush hover:shadow-[0_0_40px_rgba(216,139,167,0.3)]">Create my free profile on Embir</Link>
           </div>
 
           <div className="mt-12 space-y-4">
@@ -123,7 +123,7 @@ export default function Page() {
               { q: "Why do most apps charge if they advertise as free?", a: "Most use a freemium model: download is free, but core features require a subscription. This is their revenue model. Embir's core connection features are free, with founding members receiving priority access and product benefits." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-                <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>
+                <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>
                 <p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p>
               </details>
             ))}
@@ -132,13 +132,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-white/[0.04] text-center">
             <p className="text-xs text-white/20 mb-3">Related articles</p>
             <div className="flex flex-wrap justify-center gap-3 text-sm">
-              <Link href="/blog/best-grindr-alternatives-2026" prefetch={false} className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Best Grindr Alternatives 2026</Link>
+              <Link href="/blog/best-grindr-alternatives-2026" prefetch={false} className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Best Grindr Alternatives 2026</Link>
               <span className="text-white/10">·</span>
-              <Link href="/gay-dating-app-usa" prefetch={false} className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Free Gay Dating App USA</Link>
+              <Link href="/gay-dating-app-usa" prefetch={false} className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Free Gay Dating App USA</Link>
               <span className="text-white/10">·</span>
-              <Link href="/grindr-vs-alternatives" prefetch={false} className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Grindr vs Alternatives</Link>
+              <Link href="/grindr-vs-alternatives" prefetch={false} className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Grindr vs Alternatives</Link>
               <span className="text-white/10">·</span>
-              <Link href="/" prefetch={false} className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Embir Home</Link>
+              <Link href="/" prefetch={false} className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Embir Home</Link>
             </div>
           </div>
         </div>

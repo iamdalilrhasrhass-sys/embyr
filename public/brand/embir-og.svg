@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="rose" cx="0" cy="0" r="1" gradientTransform="translate(202 62) rotate(39) scale(650 460)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4b1f3d" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#09060c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#09060c"/>
+  <rect width="1200" height="630" fill="url(#rose)"/>
+  <g transform="translate(92 148) scale(3.35)" fill="none">
+    <path d="M48.8 72.5C41.2 81.5 27.2 79.4 19.4 68.8C11.8 58.5 12.6 43.8 20.7 34.3C27.9 25.8 39.6 25.1 46.5 33.4C52.7 40.9 52.8 51.5 47.9 60.5C45.9 64.2 43.3 67.5 40.2 70.2" stroke="#f4c7d5" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47.1 72.5C55.6 81.4 69.7 79.1 77.4 68C84.6 57.7 83.4 43.1 75 34C67.5 25.9 55.8 25.6 49.1 34.3C43.2 41.9 43.5 52.2 48.4 61C50.6 64.9 53.4 68 56.3 70.2" stroke="#f4c7d5" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="450" y="290" fill="#f2ede4" font-family="Georgia,serif" font-size="128" letter-spacing="-7">Embir</text>
+  <text x="456" y="360" fill="#e7a8bc" font-family="Arial,sans-serif" font-size="30">Shared intentions. Reciprocal connections.</text>
+  <path d="M456 404H1056" stroke="#f2ede4" stroke-opacity=".14"/>
+  <text x="456" y="452" fill="#f2ede4" fill-opacity=".64" font-family="Arial,sans-serif" font-size="24">A safer, inclusive way to meet — in both directions.</text>
+</svg>
