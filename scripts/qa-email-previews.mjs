@@ -8,6 +8,10 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const previewDirectory = path.join(projectRoot, "artifacts", "email-previews");
 const screenshotDirectory = path.join(previewDirectory, "screenshots");
 const reportPath = path.join(previewDirectory, "report.json");
+const emailLogoUrl = "https://embir.xyz/brand/embir-email-logo.png";
+const emailLogo = await readFile(
+  path.join(projectRoot, "public", "brand", "embir-email-logo.png"),
+);
 const widths = [320, 375, 390, 430];
 const colorSchemes = ["light", "dark"];
 const engines = [
@@ -246,11 +250,22 @@ for (const [engineName, browserType] of engines) {
           timezoneId: "Europe/Zurich",
           deviceScaleFactor: 1,
         });
-        await context.route(/^https?:\/\//, (route) => route.abort("blockedbyclient"));
+        await context.route(/^https?:\/\//, (route) => {
+          if (route.request().url() === emailLogoUrl) {
+            return route.fulfill({
+              status: 200,
+              contentType: "image/png",
+              body: emailLogo,
+            });
+          }
+          return route.abort("blockedbyclient");
+        });
         const page = await context.newPage();
         let externalRequests = [];
         page.on("request", (request) => {
-          if (/^https?:\/\//.test(request.url())) externalRequests.push(request.url());
+          if (/^https?:\/\//.test(request.url()) && request.url() !== emailLogoUrl) {
+            externalRequests.push(request.url());
+          }
         });
         for (const fixture of fixtureFiles) {
           const staticIssues = staticFixtureIssues(fixture);
