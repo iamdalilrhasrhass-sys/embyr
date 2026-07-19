@@ -38,7 +38,7 @@ export default function Page() {
 
           <h1 className="text-3xl md:text-5xl font-black mb-8 text-white leading-tight">
             The Best Gay Dating Apps in the USA in 2026:<br />
-            <span className="text-[#d4a574]">From NYC to LA, Here&apos;s What Actually Works.</span>
+            <span className="text-embir-rose">From NYC to LA, Here&apos;s What Actually Works.</span>
           </h1>
 
           <div className="prose prose-invert max-w-none text-white/55 leading-relaxed space-y-8">
@@ -60,11 +60,11 @@ export default function Page() {
 
             <h2 className="text-2xl font-bold text-white mt-12 mb-4">Top 5 gay dating apps in the USA — ranked</h2>
 
-            <h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — Best free app, best verification</h3>
+            <h3 className="text-xl font-bold text-embir-rose mt-8 mb-2">1. Embir — Best free app, best verification</h3>
             <p><strong>Price:</strong> Free (no premium tier). <strong>Verification:</strong> Mandatory. <strong>Best in:</strong> New York, Los Angeles, Miami.</p>
             <p>Embir is the newest major player and the most fundamentally different. Core connections are free — no $20-40/month subscription, no credit card for core connections, no ads. Selfie verification is available and approved profiles display a visible badge; no system can eliminate every risk. Compatibility-based discovery helps you find genuinely compatible people and suggests compatible people. Active in New York, LA, Miami, Chicago, and growing across the US.</p>
             <p><strong>Best for:</strong> Gay men who want quality over quantity and refuse to pay monthly fees.</p>
-            <p><Link href="/auth/register" className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Try Embir free →</Link></p>
+            <p><Link href="/auth/register" className="text-embir-rose hover:text-embir-blush underline underline-offset-4">Try Embir free →</Link></p>
 
             <h3 className="text-xl font-bold text-white/80 mt-8 mb-2">2. Grindr — Largest network, highest cost</h3>
             <p><strong>Price:</strong> Freemium ($19.99-39.99/mo). <strong>Verification:</strong> Optional.</p>
@@ -100,10 +100,10 @@ export default function Page() {
             <p>The best gay dating app in the USA depends on what you value. For the biggest pool: Grindr (if you can stomach the price and ads). For community: Scruff. For a free for core connections, verified experience with smarter matching: Embir. The era of paying $30/month to message bots is ending. American men have better options now — and they&apos;re taking them.</p>
           </div>
 
-          <div className="mt-12 p-8 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/5 text-center">
+          <div className="mt-12 p-8 rounded-2xl border border-embir-rose/20 bg-embir-rose/5 text-center">
             <p className="text-white/80 text-lg mb-2">Ready for a <strong className="text-white">better American dating app?</strong></p>
             <p className="text-white/40 text-sm mb-6">Free, verified, and built for real connections. No credit card.</p>
-            <Link href="/auth/register?source=blog-usa-apps" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-3.5 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">Create my free profile</Link>
+            <Link href="/auth/register?source=blog-usa-apps" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-8 py-3.5 text-sm font-bold text-embir-void transition-all hover:bg-embir-blush hover:shadow-[0_0_40px_rgba(216,139,167,0.3)]">Create my free profile</Link>
           </div>
 
           <div className="mt-12 space-y-4">
@@ -114,7 +114,7 @@ export default function Page() {
               { q: "Is there a good Grindr alternative that&apos;s actually free?", a: "Yes — Embir. It&apos;s free, verified, ad-free, and uses declared reciprocal preferences rather than only showing the nearest profiles." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-                <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>
+                <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>
                 <p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p>
               </details>
             ))}
@@ -123,13 +123,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-white/[0.04] text-center">
             <p className="text-xs text-white/20 mb-3">Related</p>
             <div className="flex flex-wrap justify-center gap-3 text-sm">
-              <Link href="/gay-dating-app-usa" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Gay Dating App USA</Link>
+              <Link href="/gay-dating-app-usa" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Gay Dating App USA</Link>
               <span className="text-white/10">·</span>
-              <Link href="/new-york" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Gay Dating New York</Link>
+              <Link href="/new-york" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Gay Dating New York</Link>
               <span className="text-white/10">·</span>
-              <Link href="/blog/best-grindr-alternatives-2026" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Best Grindr Alternatives</Link>
+              <Link href="/blog/best-grindr-alternatives-2026" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Best Grindr Alternatives</Link>
               <span className="text-white/10">·</span>
-              <Link href="/" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Embir Home</Link>
+              <Link href="/" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Embir Home</Link>
             </div>
           </div>
         </div>

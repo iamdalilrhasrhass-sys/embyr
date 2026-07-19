@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { localePath, supportedLocale } from "@/components/connection-os/types";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 import { trackAmbassadorApplication } from "@/lib/analytics";
 
 const copy = {
@@ -135,7 +136,7 @@ const copy = {
   },
 };
 
-const inputClass = "min-h-12 w-full rounded-xl border border-white/12 bg-white/[0.035] px-4 text-base text-white placeholder:text-white/25 focus:border-[#c56f4e]/60 focus:outline-none focus:ring-2 focus:ring-[#c56f4e]/20";
+const inputClass = "min-h-12 w-full rounded-xl border border-white/12 bg-white/[0.035] px-4 text-base text-white placeholder:text-white/25 focus:border-embir-rose/60 focus:outline-none focus:ring-2 focus:ring-embir-rose/20";
 
 export default function AmbassadeurPage() {
   const params = useParams<{ locale?: string }>();
@@ -197,12 +198,12 @@ export default function AmbassadeurPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#0a0614] text-white">
+    <main className="min-h-screen overflow-hidden bg-embir-void text-white">
       <section className="relative border-b border-white/10 px-4 pb-20 pt-28 sm:pt-36">
-        <div className="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(197,111,78,0.18),transparent_68%)]" aria-hidden="true" />
+        <div className="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(216,139,167,0.18),transparent_68%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-5xl">
-          <Link href={localePath(locale, "/")} className="mb-12 inline-flex min-h-11 items-center font-serif text-2xl text-white hover:text-[#e4a187]">Embir</Link>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#c56f4e]">{text.eyebrow}</p>
+          <Link href={localePath(locale, "/")} aria-label="Embir — Accueil" className="mb-12 inline-flex min-h-11 items-center text-white hover:text-embir-blush"><EmbirLogo variant="lockup" tone="mono" size="sm" decorative /></Link>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose">{text.eyebrow}</p>
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.04em] sm:text-7xl">{text.title}</h1>
           <p className="mt-8 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">{text.intro}</p>
         </div>
@@ -214,21 +215,21 @@ export default function AmbassadeurPage() {
           <div className="mt-10 grid border-l border-t border-white/10 sm:grid-cols-2">
             {text.benefits.map(([title, description], index) => (
               <article key={title} className="min-h-48 border-b border-r border-white/10 p-6 sm:p-8">
-                <p className="font-mono text-xs text-[#c56f4e]">0{index + 1}</p>
+                <p className="font-mono text-xs text-embir-rose">0{index + 1}</p>
                 <h3 className="mt-6 font-serif text-2xl">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-white/50">{description}</p>
               </article>
             ))}
           </div>
-          <p className="mt-8 border-l-2 border-[#c56f4e] pl-5 text-sm leading-6 text-[#e4a187]/80">{text.guardrail}</p>
+          <p className="mt-8 border-l-2 border-embir-rose pl-5 text-sm leading-6 text-embir-blush/80">{text.guardrail}</p>
         </div>
       </section>
 
       <section className="px-4 py-20">
         <div className="mx-auto max-w-2xl">
           {submitted ? (
-            <div role="status" className="border-y border-[#c56f4e]/30 py-14 text-center">
-              <p className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c56f4e]/40 bg-[#c56f4e]/10 text-2xl text-[#e4a187]" aria-hidden="true">✦</p>
+            <div role="status" className="border-y border-embir-rose/30 py-14 text-center">
+              <p className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-embir-rose/40 bg-embir-rose/10 text-2xl text-embir-blush" aria-hidden="true">✦</p>
               <h2 className="font-serif text-4xl">{text.successTitle}</h2>
               <p className="mx-auto mt-4 max-w-lg leading-7 text-white/50">{text.successText}</p>
               <Link href={localePath(locale, "/")} className="mt-8 inline-flex min-h-11 items-center rounded-full border border-white/15 px-6 text-sm font-semibold hover:border-white/30">{text.back}</Link>
@@ -246,7 +247,7 @@ export default function AmbassadeurPage() {
                 <label className="text-sm text-white/60">{text.age}<input name="age" required type="number" min={18} max={120} inputMode="numeric" className={`${inputClass} mt-2`} /></label>
                 <label className="text-sm text-white/60">{text.city}<input name="city" maxLength={100} autoComplete="address-level2" className={`${inputClass} mt-2`} /></label>
                 <label className="text-sm text-white/60">{text.country}<input name="country" maxLength={100} autoComplete="country-name" className={`${inputClass} mt-2`} /></label>
-                <label className="text-sm text-white/60">{text.platform}<select name="platform" className={`${inputClass} mt-2`} defaultValue=""><option value="" className="bg-[#130b0d]">—</option><option className="bg-[#130b0d]">Instagram</option><option className="bg-[#130b0d]">TikTok</option><option className="bg-[#130b0d]">YouTube</option><option className="bg-[#130b0d]">Reddit</option><option className="bg-[#130b0d]">Community</option><option className="bg-[#130b0d]">Other</option></select></label>
+                <label className="text-sm text-white/60">{text.platform}<select name="platform" className={`${inputClass} mt-2`} defaultValue=""><option value="" className="bg-embir-void">—</option><option className="bg-embir-void">Instagram</option><option className="bg-embir-void">TikTok</option><option className="bg-embir-void">YouTube</option><option className="bg-embir-void">Reddit</option><option className="bg-embir-void">Community</option><option className="bg-embir-void">Other</option></select></label>
                 <label className="text-sm text-white/60 sm:col-span-2">{text.publicUrl} <span className="text-white/30">({text.optional})</span><input name="publicUrl" type="url" maxLength={300} inputMode="url" placeholder="https://" className={`${inputClass} mt-2`} /></label>
                 <label className="text-sm text-white/60 sm:col-span-2">{text.followers} <span className="text-white/30">({text.optional})</span><input name="followers" type="number" min={0} max={1000000000} inputMode="numeric" className={`${inputClass} mt-2`} /></label>
                 <label className="text-sm text-white/60 sm:col-span-2">{text.motivation}<textarea name="motivation" required minLength={20} maxLength={2000} rows={6} className={`${inputClass} mt-2 py-3`} /></label>
@@ -254,12 +255,12 @@ export default function AmbassadeurPage() {
 
               <fieldset className="mt-7 space-y-2">
                 <legend className="sr-only">Consent</legend>
-                <label className="flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm leading-6 text-white/55"><input name="consentAge" type="checkbox" required className="mt-1 !h-5 !w-5 shrink-0 accent-[#c56f4e]" />{text.ageConsent}</label>
-                <label className="flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm leading-6 text-white/55"><input name="consentContact" type="checkbox" required className="mt-1 !h-5 !w-5 shrink-0 accent-[#c56f4e]" />{text.contactConsent}</label>
-                <label className="flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm leading-6 text-white/55"><input name="consentImage" type="checkbox" className="mt-1 !h-5 !w-5 shrink-0 accent-[#c56f4e]" />{text.imageConsent}</label>
+                <label className="flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm leading-6 text-white/55"><input name="consentAge" type="checkbox" required className="mt-1 !h-5 !w-5 shrink-0 accent-embir-rose" />{text.ageConsent}</label>
+                <label className="flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm leading-6 text-white/55"><input name="consentContact" type="checkbox" required className="mt-1 !h-5 !w-5 shrink-0 accent-embir-rose" />{text.contactConsent}</label>
+                <label className="flex min-h-11 cursor-pointer items-start gap-3 py-2 text-sm leading-6 text-white/55"><input name="consentImage" type="checkbox" className="mt-1 !h-5 !w-5 shrink-0 accent-embir-rose" />{text.imageConsent}</label>
               </fieldset>
 
-              <button type="submit" disabled={submitting} className="mt-8 min-h-12 w-full rounded-full bg-[#c56f4e] px-6 font-semibold text-[#130b0d] transition-colors hover:bg-[#e4a187] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+              <button type="submit" disabled={submitting} className="mt-8 min-h-12 w-full rounded-full bg-embir-rose px-6 font-semibold text-embir-void transition-colors hover:bg-embir-blush disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
                 {submitting ? text.submitting : text.submit}
               </button>
             </form>

@@ -37,14 +37,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">London · United Kingdom</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">London · United Kingdom</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">London dating, with verified profiles and real compatibility</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           London has one of the most intense dating scenes in the world — over nine million people, countless neighbourhoods, and a pace that makes even seasoned daters feel overwhelmed. The apps haven&apos;t kept up: recycled profiles, fake accounts, and subscription fees that climb past £25 a month. Embir starts here with a different approach — fewer fakes, clearer intentions, and compatibility that goes deeper than a postcode match.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why London</h2>
             <p className="mt-4">London is one of Embir&apos;s core launch cities. The density, diversity, and dating culture make it an essential market. From Soho&apos;s LGBTQ+ hub to Shoreditch creatives, from Clapham&apos;s young professionals to Hampstead&apos;s established crowd — London has every dating archetype. But density creates noise: ghosting is common, conversations stall, and many profiles haven&apos;t been active in months.</p>
             <p className="mt-3">We&apos;re building London neighbourhood by neighbourhood — starting with a core of founding members who value verification, clear intentions, and compatibility over the swipe grind. No inflated member counts. No fake activity. Just real Londoners building a real local community.</p>
@@ -67,7 +67,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">Core connections without a London price tag</h2>
             <p className="mt-4">London is expensive enough without another subscription. Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
@@ -110,10 +110,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the London founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first London members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture London deserves — from Soho to Stratford.</p>
-          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -129,7 +129,7 @@ export default function Page() {
               ["/verified-dating-app", "Verified dating"],
               ["/free-dating-app", "Free dating app"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

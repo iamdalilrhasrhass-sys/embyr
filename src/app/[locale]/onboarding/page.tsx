@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import EmbirLogo from "@/components/brand/EmbirLogo";
 import {
   localePath,
   supportedLocale,
@@ -610,13 +611,13 @@ export default function OnboardingPage() {
 
   if (loading) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-[#0a0614] text-white">
+      <main className="flex min-h-screen items-center justify-center bg-embir-void text-white">
         <div className="text-center">
           <motion.div
             aria-hidden="true"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
-            className="mx-auto h-9 w-9 rounded-full border-2 border-[#d4a574]/20 border-t-[#d4a574]"
+            className="mx-auto h-9 w-9 rounded-full border-2 border-embir-rose/20 border-t-embir-rose"
           />
           <p className="mt-4 text-sm text-white/40">{text.loading as string}</p>
         </div>
@@ -629,10 +630,10 @@ export default function OnboardingPage() {
     `${count} ${text.selected as string}${count > 1 && locale === "fr" ? "s" : ""}`;
 
   return (
-    <main className="min-h-screen bg-[#0a0614] px-4 py-8 text-white sm:px-6">
+    <main className="min-h-screen bg-embir-void px-4 py-8 text-white sm:px-6">
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed -right-40 -top-40 h-96 w-96 rounded-full bg-[#ff5e36]/[0.07] blur-[100px]"
+        className="pointer-events-none fixed -right-40 -top-40 h-96 w-96 rounded-full bg-embir-rose/[0.07] blur-[100px]"
       />
       <div className="relative mx-auto max-w-2xl">
         <header className="mb-8 flex items-center justify-between gap-4">
@@ -641,10 +642,7 @@ export default function OnboardingPage() {
             className="inline-flex items-center gap-2"
             aria-label="Embir"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#d4a574] to-[#ff5e36] text-lg font-black text-[#0a0614]">
-              E
-            </span>
-            <span className="text-xl font-bold">Embir</span>
+            <EmbirLogo size="sm" />
           </Link>
           <span className="text-xs text-white/30">
             {step + 1}/{TOTAL_STEPS}
@@ -652,7 +650,7 @@ export default function OnboardingPage() {
         </header>
 
         {searchParams.get("email") === "verification-sent" ? (
-          <p className="mb-6 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/[0.06] px-4 py-3 text-sm leading-6 text-[#e8c4a2]" role="status">
+          <p className="mb-6 rounded-2xl border border-embir-rose/20 bg-embir-rose/[0.06] px-4 py-3 text-sm leading-6 text-embir-blush" role="status">
             {text.emailNotice as string}
           </p>
         ) : null}
@@ -672,7 +670,7 @@ export default function OnboardingPage() {
           >
             <motion.div
               animate={{ width: `${progress}%` }}
-              className="h-full rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#d4a574]"
+              className="h-full rounded-full bg-gradient-to-r from-embir-rose-deep via-embir-rose to-embir-rose"
             />
           </div>
           <div className="mt-3 hidden grid-cols-8 gap-1 sm:grid">
@@ -683,7 +681,7 @@ export default function OnboardingPage() {
                 onClick={() => index < step && setStep(index)}
                 disabled={index >= step}
                 aria-current={index === step ? "step" : undefined}
-                className={`truncate text-center text-[9px] ${index <= step ? "text-[#d4a574]" : "text-white/15"}`}
+                className={`truncate text-center text-[9px] ${index <= step ? "text-embir-rose" : "text-white/15"}`}
               >
                 {label}
               </button>
@@ -722,7 +720,7 @@ export default function OnboardingPage() {
                             username: event.target.value,
                           }))
                         }
-                        className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case tracking-normal focus:border-[#d4a574]/40 focus:outline-none"
+                        className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case tracking-normal focus:border-embir-rose/40 focus:outline-none"
                       />
                     </label>
                     <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/35">
@@ -739,7 +737,7 @@ export default function OnboardingPage() {
                             age: event.target.value,
                           }))
                         }
-                        className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case tracking-normal focus:border-[#d4a574]/40 focus:outline-none"
+                        className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case tracking-normal focus:border-embir-rose/40 focus:outline-none"
                       />
                     </label>
                   </div>
@@ -754,7 +752,7 @@ export default function OnboardingPage() {
                           city: event.target.value,
                         }))
                       }
-                      className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case tracking-normal focus:border-[#d4a574]/40 focus:outline-none"
+                      className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case tracking-normal focus:border-embir-rose/40 focus:outline-none"
                     />
                   </label>
                 </div>
@@ -780,7 +778,7 @@ export default function OnboardingPage() {
                             genderIdentity: gender,
                           }))
                         }
-                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.genderIdentity === gender ? "border-[#d4a574] bg-[#d4a574]/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.genderIdentity === gender ? "border-embir-rose bg-embir-rose/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                       >
                         {optionLabels[locale][gender]}
                       </button>
@@ -806,13 +804,13 @@ export default function OnboardingPage() {
                         onClick={() =>
                           setForm((current) => ({ ...current, orientation }))
                         }
-                        className={`rounded-xl border px-3 py-3 text-sm font-semibold transition ${form.orientation === orientation ? "border-[#ff5e36] bg-[#ff5e36]/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                        className={`rounded-xl border px-3 py-3 text-sm font-semibold transition ${form.orientation === orientation ? "border-embir-rose bg-embir-rose/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                       >
                         {optionLabels[locale][orientation]}
                       </button>
                     ))}
                   </div>
-                  <label className="mt-6 flex cursor-pointer gap-3 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/[0.05] p-4">
+                  <label className="mt-6 flex cursor-pointer gap-3 rounded-2xl border border-embir-rose/20 bg-embir-rose/[0.05] p-4">
                     <input
                       type="checkbox"
                       checked={form.consentSensitiveData}
@@ -822,7 +820,7 @@ export default function OnboardingPage() {
                           consentSensitiveData: event.target.checked,
                         }))
                       }
-                      className="mt-1 h-4 w-4 accent-[#d4a574]"
+                      className="mt-1 h-4 w-4 accent-embir-rose"
                     />
                     <span>
                       <strong className="block text-sm text-white">
@@ -835,7 +833,7 @@ export default function OnboardingPage() {
                         href={localePath(locale, "/privacy")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-2 inline-block text-xs font-semibold text-[#d4a574] underline-offset-4 hover:underline"
+                        className="mt-2 inline-block text-xs font-semibold text-embir-rose underline-offset-4 hover:underline"
                       >
                         {text.privacy as string}
                       </Link>
@@ -855,7 +853,7 @@ export default function OnboardingPage() {
                         {text.seekingBody as string}
                       </p>
                     </div>
-                    <span className="shrink-0 text-xs text-[#ff8a5c]">
+                    <span className="shrink-0 text-xs text-embir-rose-soft">
                       {selectedLabel(form.seekingGenders.length)}
                     </span>
                   </div>
@@ -874,7 +872,7 @@ export default function OnboardingPage() {
                             ),
                           }))
                         }
-                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.seekingGenders.includes(gender) ? "border-[#ff5e36] bg-[#ff5e36]/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.seekingGenders.includes(gender) ? "border-embir-rose bg-embir-rose/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                       >
                         {optionLabels[locale][gender]}
                       </button>
@@ -914,7 +912,7 @@ export default function OnboardingPage() {
                             };
                           })
                         }
-                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.acceptedIntents.includes(intent) ? "border-[#ff5e36] bg-[#ff5e36]/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.acceptedIntents.includes(intent) ? "border-embir-rose bg-embir-rose/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                       >
                         {optionLabels[locale][intent]}
                       </button>
@@ -922,7 +920,7 @@ export default function OnboardingPage() {
                   </div>
                   {form.acceptedIntents.length > 0 ? (
                     <fieldset className="mt-6 rounded-2xl border border-white/[0.07] bg-black/15 p-4">
-                      <legend className="px-2 text-xs font-bold uppercase tracking-[0.14em] text-[#d4a574]">
+                      <legend className="px-2 text-xs font-bold uppercase tracking-[0.14em] text-embir-rose">
                         {text.primary as string}
                       </legend>
                       <p className="mb-3 text-xs text-white/35">
@@ -940,7 +938,7 @@ export default function OnboardingPage() {
                                 primaryIntent: intent,
                               }))
                             }
-                            className={`rounded-full border px-4 py-2 text-xs font-semibold ${form.primaryIntent === intent ? "border-[#d4a574] bg-[#d4a574] text-[#0a0614]" : "border-white/[0.08] text-white/45"}`}
+                            className={`rounded-full border px-4 py-2 text-xs font-semibold ${form.primaryIntent === intent ? "border-embir-rose bg-embir-rose text-embir-void" : "border-white/[0.08] text-white/45"}`}
                           >
                             {optionLabels[locale][intent]}
                           </button>
@@ -974,7 +972,7 @@ export default function OnboardingPage() {
                             ),
                           }))
                         }
-                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.activities.includes(activity) ? "border-[#d4a574]/50 bg-[#d4a574]/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
+                        className={`rounded-xl border px-3 py-4 text-sm font-semibold transition ${form.activities.includes(activity) ? "border-embir-rose/50 bg-embir-rose/10 text-white" : "border-white/[0.08] text-white/45 hover:text-white"}`}
                       >
                         {optionLabels[locale][activity]}
                       </button>
@@ -1009,7 +1007,7 @@ export default function OnboardingPage() {
                               seekingAgeMin: Number(event.target.value),
                             }))
                           }
-                          className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base text-white focus:border-[#d4a574]/40 focus:outline-none"
+                          className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base text-white focus:border-embir-rose/40 focus:outline-none"
                         />
                       </label>
                       <label className="text-xs text-white/35">
@@ -1025,7 +1023,7 @@ export default function OnboardingPage() {
                               seekingAgeMax: Number(event.target.value),
                             }))
                           }
-                          className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base text-white focus:border-[#d4a574]/40 focus:outline-none"
+                          className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base text-white focus:border-embir-rose/40 focus:outline-none"
                         />
                       </label>
                     </div>
@@ -1033,7 +1031,7 @@ export default function OnboardingPage() {
                   <label className="mt-7 block text-xs font-bold uppercase tracking-[0.14em] text-white/35">
                     <span className="flex justify-between">
                       <span>{text.radius as string}</span>
-                      <strong className="text-[#d4a574]">
+                      <strong className="text-embir-rose">
                         {form.seekingRadiusKm} km
                       </strong>
                     </span>
@@ -1049,7 +1047,7 @@ export default function OnboardingPage() {
                           seekingRadiusKm: Number(event.target.value),
                         }))
                       }
-                      className="mt-4 w-full accent-[#d4a574]"
+                      className="mt-4 w-full accent-embir-rose"
                     />
                     <span className="mt-2 block text-xs font-normal normal-case tracking-normal text-white/30">
                       {text.radiusHint as string}
@@ -1079,7 +1077,7 @@ export default function OnboardingPage() {
                       maxLength={1000}
                       rows={7}
                       placeholder={text.descriptionPlaceholder as string}
-                      className="mt-2 w-full resize-none rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case leading-relaxed tracking-normal text-white placeholder:text-white/20 focus:border-[#d4a574]/40 focus:outline-none"
+                      className="mt-2 w-full resize-none rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-base font-normal normal-case leading-relaxed tracking-normal text-white placeholder:text-white/20 focus:border-embir-rose/40 focus:outline-none"
                     />
                     <span className="mt-1 flex justify-between text-[10px] font-normal normal-case tracking-normal text-white/25">
                       <span>{text.descriptionHint as string}</span>
@@ -1102,7 +1100,7 @@ export default function OnboardingPage() {
               role="alert"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="mt-5 rounded-xl border border-[#ff1f5a]/20 bg-[#ff1f5a]/[0.07] p-3 text-sm text-[#ff9ab0]"
+              className="mt-5 rounded-xl border border-embir-rose-deep/20 bg-embir-rose-deep/[0.07] p-3 text-sm text-embir-rose-soft"
             >
               {error}
             </motion.p>
@@ -1125,7 +1123,7 @@ export default function OnboardingPage() {
               type="button"
               onClick={() => void saveCurrentStep()}
               disabled={!canProceed() || saving}
-              className="rounded-xl bg-gradient-to-r from-[#ff5e36] to-[#d4a574] px-6 py-3 text-sm font-bold text-[#10050a] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-25"
+              className="rounded-xl bg-gradient-to-r from-embir-rose to-embir-rose px-6 py-3 text-sm font-bold text-embir-void transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-25"
             >
               {saving
                 ? (text.saving as string)

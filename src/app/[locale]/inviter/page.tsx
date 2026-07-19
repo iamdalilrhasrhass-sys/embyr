@@ -114,10 +114,10 @@ export default function InviterPage() {
 
   return (
     <AppShell>
-      <main className="min-h-screen bg-[#0a0614] pb-24 pt-24 text-white">
+      <main className="min-h-screen bg-embir-void pb-24 pt-24 text-white">
         <div className="noise-overlay pointer-events-none fixed inset-0" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#c56f4e]">Member to member</p>
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-embir-rose">Member to member</p>
           <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">{text.title}</h1>
           <p className="mb-9 mt-4 max-w-xl leading-relaxed text-white/50">{text.subtitle}</p>
 
@@ -126,10 +126,10 @@ export default function InviterPage() {
           )}
 
           {!loading && referralCode && (
-            <section className="mb-6 grid grid-cols-2 overflow-hidden rounded-2xl border border-[#c56f4e]/25 bg-[#c56f4e]/[0.06]">
-              <div className="border-r border-[#c56f4e]/20 p-5">
+            <section className="mb-6 grid grid-cols-2 overflow-hidden rounded-2xl border border-embir-rose/25 bg-embir-rose/[0.06]">
+              <div className="border-r border-embir-rose/20 p-5">
                 <h2 className="text-xs uppercase tracking-wider text-white/45">{text.code}</h2>
-                <p className="mt-2 break-all font-mono text-xl font-bold text-[#e4a187]">{referralCode}</p>
+                <p className="mt-2 break-all font-mono text-xl font-bold text-embir-blush">{referralCode}</p>
               </div>
               <div className="p-5 text-right">
                 <p className="text-xs uppercase tracking-wider text-white/45">{text.referrals}</p>
@@ -145,8 +145,8 @@ export default function InviterPage() {
           {referralCode && (
             <section className="mb-6 rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-6">
               <h2 className="text-lg font-semibold">{text.link}</h2>
-              <p className="my-4 overflow-x-auto rounded-xl border border-white/10 bg-black/20 p-4 font-mono text-xs leading-relaxed text-[#e4a187]">{referralLink}</p>
-              <button type="button" onClick={() => copyValue(referralLink, "link")} className="min-h-11 rounded-full bg-[#c56f4e] px-5 text-sm font-semibold text-[#130b0d] hover:bg-[#e4a187] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+              <p className="my-4 overflow-x-auto rounded-xl border border-white/10 bg-black/20 p-4 font-mono text-xs leading-relaxed text-embir-blush">{referralLink}</p>
+              <button type="button" onClick={() => copyValue(referralLink, "link")} className="min-h-11 rounded-full bg-embir-rose px-5 text-sm font-semibold text-embir-void hover:bg-embir-blush focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
                 {copied === "link" ? text.copied : text.copyLink}
               </button>
             </section>
@@ -178,7 +178,7 @@ export default function InviterPage() {
             </div>
           </section>
 
-          <p className="rounded-2xl border border-[#c56f4e]/15 bg-[#c56f4e]/[0.04] p-5 text-xs leading-relaxed text-[#e4a187]/80">{text.note}</p>
+          <p className="rounded-2xl border border-embir-rose/15 bg-embir-rose/[0.04] p-5 text-xs leading-relaxed text-embir-blush/80">{text.note}</p>
         </div>
       </main>
     </AppShell>

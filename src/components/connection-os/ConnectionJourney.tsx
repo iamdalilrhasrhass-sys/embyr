@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { EmbirMark } from "@/components/brand/EmbirMark";
+import { EmbirReciprocityMotion } from "@/components/brand/EmbirReciprocityMotion";
 import type {
   SignalFormat,
   SupportedLocale,
@@ -405,28 +407,19 @@ function ResonanceSeal({
   const active = status === "sealed";
   return (
     <div className="my-7 flex flex-col items-center" role="img" aria-label={label}>
-      <div className="relative h-36 w-36" aria-hidden="true">
-        <motion.div
-          className="absolute inset-2 rounded-full border border-[#d4a574]/35"
-          animate={active && !reduceMotion ? { rotate: 360 } : undefined}
-          transition={active ? { duration: 16, ease: "linear", repeat: Infinity } : undefined}
-        />
-        <motion.div
-          className="absolute inset-5 rounded-full border border-dashed border-[#ff5e36]/35"
-          animate={active && !reduceMotion ? { rotate: -360 } : undefined}
-          transition={active ? { duration: 11, ease: "linear", repeat: Infinity } : undefined}
-        />
-        <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full border border-[#e4a187]/60 bg-[#12090b] shadow-[0_0_18px_rgba(228,161,135,0.65)]" />
-        <span className={`absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full border border-[#e4a187]/60 shadow-[0_0_18px_rgba(228,161,135,0.65)] ${status === "open" ? "bg-[#12090b]" : "bg-[#e4a187]"}`} />
-        <motion.span
-          className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#ff5e36]/30 bg-[radial-gradient(circle,rgba(255,94,54,0.46),rgba(197,111,78,0.12)_55%,transparent_72%)] text-xl text-[#f0b29b] shadow-[0_0_45px_rgba(255,94,54,0.2)]"
-          animate={status === "revealed" && !reduceMotion ? { scale: [1, 1.08, 1] } : undefined}
-          transition={status === "revealed" ? { duration: 1.8, ease: "easeInOut" } : undefined}
-        >
-          {status === "revealed" ? "✦" : "●"}
-        </motion.span>
-      </div>
-      <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#d4a574]">{label}</p>
+      <motion.div
+        aria-hidden="true"
+        className="embir-reciprocity-seal flex h-36 w-36 items-center justify-center rounded-full text-[var(--embir-blush-300)]"
+        animate={active && !reduceMotion ? { opacity: [0.64, 1, 0.64], scale: [0.98, 1.02, 0.98] } : undefined}
+        transition={active ? { duration: 2.8, ease: "easeInOut", repeat: Infinity } : undefined}
+      >
+        {status === "revealed" ? (
+          <EmbirReciprocityMotion size={128} label={label} decorative />
+        ) : (
+          <EmbirMark size={112} decorative style={{ opacity: status === "open" ? 0.42 : 0.82 }} />
+        )}
+      </motion.div>
+      <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--embir-rose-400)]">{label}</p>
     </div>
   );
 }
@@ -652,7 +645,7 @@ export function ConnectionJourney({
     return (
       <main
         aria-busy="true"
-        className="min-h-screen bg-[#07050b] px-5 py-20 text-center text-white/45"
+        className="min-h-screen bg-embir-void px-5 py-20 text-center text-white/45"
       >
         <p role="status">{text.loading}</p>
       </main>
@@ -661,7 +654,7 @@ export function ConnectionJourney({
 
   if (!connection) {
     return (
-      <main className="min-h-screen bg-[#07050b] px-5 py-20 text-center text-white">
+      <main className="min-h-screen bg-embir-void px-5 py-20 text-center text-white">
         <p role="alert">{error || text.unavailable}</p>
         <button
           type="button"
@@ -675,7 +668,7 @@ export function ConnectionJourney({
   }
 
   return (
-    <main className="min-h-screen bg-[#07050b] px-4 py-8 text-white sm:px-6 sm:py-12">
+    <main className="min-h-screen bg-embir-void px-4 py-8 text-white sm:px-6 sm:py-12">
       <div className="mx-auto max-w-4xl">
         <Link
           href={localePath(locale, "/dashboard")}
@@ -683,8 +676,8 @@ export function ConnectionJourney({
         >
           ← {text.back}
         </Link>
-        <header className="mt-8 rounded-[2rem] border border-[#d4a574]/15 bg-gradient-to-br from-[#d4a574]/[0.08] to-[#ff5e36]/[0.03] p-6 sm:p-9">
-          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#d4a574]">
+        <header className="mt-8 rounded-[2rem] border border-embir-rose/15 bg-gradient-to-br from-embir-rose/[0.08] to-embir-rose/[0.03] p-6 sm:p-9">
+          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-embir-rose">
             {text.eyebrow}
           </p>
           <h1 className="mt-3 font-serif text-4xl sm:text-5xl">{name}</h1>
@@ -708,7 +701,7 @@ export function ConnectionJourney({
           aria-labelledby="reveal-title"
           className="mt-6 rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-6 sm:p-8"
         >
-          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#d4a574]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-embir-rose">
             {text.revealStep}
           </p>
           <h2 id="reveal-title" className="mt-3 font-serif text-2xl">
@@ -722,13 +715,13 @@ export function ConnectionJourney({
           {!reveal && connection.conversationId ? (
             <Link
               href={conversationHref(locale, connection.conversationId)}
-              className="mt-5 inline-flex min-h-12 items-center rounded-xl bg-[#d4a574] px-5 font-semibold text-[#160c08]"
+              className="mt-5 inline-flex min-h-12 items-center rounded-xl bg-embir-rose px-5 font-semibold text-embir-void"
             >
               {text.conversation}
             </Link>
           ) : !reveal?.bothResponded ? (
             reveal?.responded ? (
-              <p className="mt-5 rounded-2xl border border-[#d4a574]/15 bg-[#d4a574]/[0.05] p-5 text-sm text-white/55">
+              <p className="mt-5 rounded-2xl border border-embir-rose/15 bg-embir-rose/[0.05] p-5 text-sm text-white/55">
                 {text.waiting}
               </p>
             ) : (
@@ -745,13 +738,13 @@ export function ConnectionJourney({
                   onChange={(event) => setAnswer(event.target.value)}
                   maxLength={500}
                   placeholder={text.placeholder}
-                  className="min-h-32 w-full rounded-2xl border border-white/10 bg-black/25 p-4 text-white outline-none focus:border-[#d4a574]/50"
+                  className="min-h-32 w-full rounded-2xl border border-white/10 bg-black/25 p-4 text-white outline-none focus:border-embir-rose/50"
                 />
                 <button
                   type="submit"
                   disabled={isBusy || answer.trim().length < 2}
                   aria-busy={busy === "reveal"}
-                  className="mt-3 min-h-12 rounded-xl bg-[#d4a574] px-5 font-semibold text-[#160c08] disabled:opacity-40"
+                  className="mt-3 min-h-12 rounded-xl bg-embir-rose px-5 font-semibold text-embir-void disabled:opacity-40"
                 >
                   {text.send}
                 </button>
@@ -769,7 +762,7 @@ export function ConnectionJourney({
                     transition={{ duration: 0.45 }}
                     className="rounded-2xl border border-white/[0.08] bg-black/20 p-5 text-sm leading-relaxed text-white/70"
                   >
-                    <span className="mb-2 block text-[10px] uppercase tracking-wider text-[#d4a574]">
+                    <span className="mb-2 block text-[10px] uppercase tracking-wider text-embir-rose">
                       {response.isMine ? text.you : name}
                     </span>
                     {response.content}
@@ -779,7 +772,7 @@ export function ConnectionJourney({
               {connection.conversationId ? (
                 <Link
                   href={conversationHref(locale, connection.conversationId)}
-                  className="mt-4 inline-flex min-h-12 items-center rounded-xl bg-[#d4a574] px-5 font-semibold text-[#160c08]"
+                  className="mt-4 inline-flex min-h-12 items-center rounded-xl bg-embir-rose px-5 font-semibold text-embir-void"
                 >
                   {text.conversation}
                 </Link>
@@ -793,7 +786,7 @@ export function ConnectionJourney({
             aria-labelledby="plan-title"
             className="mt-6 rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-6 sm:p-8"
           >
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#d4a574]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-embir-rose">
               {text.planStep}
             </p>
             <h2 id="plan-title" className="mt-3 font-serif text-2xl">
@@ -846,7 +839,7 @@ export function ConnectionJourney({
               <button
                 type="submit"
                 disabled={isBusy}
-                className="min-h-12 rounded-xl border border-[#d4a574]/30 bg-[#d4a574]/10 px-5 font-semibold text-[#e3bc94] disabled:opacity-40 sm:col-span-2"
+                className="min-h-12 rounded-xl border border-embir-rose/30 bg-embir-rose/10 px-5 font-semibold text-embir-blush disabled:opacity-40 sm:col-span-2"
               >
                 {text.propose}
               </button>
@@ -893,7 +886,7 @@ export function ConnectionJourney({
                             onClick={() =>
                               void updatePlan(plan.id, "accept")
                             }
-                            className="min-h-11 rounded-xl bg-[#d4a574] px-4 text-sm font-semibold text-[#160c08] disabled:opacity-40"
+                            className="min-h-11 rounded-xl bg-embir-rose px-4 text-sm font-semibold text-embir-void disabled:opacity-40"
                           >
                             {text.accept}
                           </button>
@@ -903,7 +896,7 @@ export function ConnectionJourney({
                             type="button"
                             disabled={isBusy}
                             onClick={() => startReschedule(plan)}
-                            className="min-h-11 rounded-xl border border-[#d4a574]/20 px-4 text-sm text-[#e3bc94] disabled:opacity-40"
+                            className="min-h-11 rounded-xl border border-embir-rose/20 px-4 text-sm text-embir-blush disabled:opacity-40"
                           >
                             {text.reschedule}
                           </button>
@@ -944,7 +937,7 @@ export function ConnectionJourney({
                         onSubmit={(event) =>
                           void submitReschedule(event, plan.id)
                         }
-                        className="mt-4 rounded-xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-4"
+                        className="mt-4 rounded-xl border border-embir-rose/15 bg-embir-rose/[0.04] p-4"
                       >
                         <label
                           htmlFor={`reschedule-${plan.id}`}
@@ -967,7 +960,7 @@ export function ConnectionJourney({
                           <button
                             type="submit"
                             disabled={isBusy}
-                            className="min-h-11 rounded-xl bg-[#d4a574] px-4 text-sm font-semibold text-[#160c08] disabled:opacity-40"
+                            className="min-h-11 rounded-xl bg-embir-rose px-4 text-sm font-semibold text-embir-void disabled:opacity-40"
                           >
                             {text.confirmReschedule}
                           </button>
@@ -993,7 +986,7 @@ export function ConnectionJourney({
           aria-labelledby="outcome-title"
           className="mt-6 rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-6 sm:p-8"
         >
-          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#d4a574]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-embir-rose">
             {text.afterStep}
           </p>
           <h2 id="outcome-title" className="mt-3 font-serif text-2xl">
@@ -1013,7 +1006,7 @@ export function ConnectionJourney({
                     onClick={() => setOutcome(item)}
                     className={`min-h-12 rounded-xl border px-3 text-sm disabled:opacity-40 ${
                       outcome === item
-                        ? "border-[#d4a574]/50 bg-[#d4a574]/10 text-[#e3bc94]"
+                        ? "border-embir-rose/50 bg-embir-rose/10 text-embir-blush"
                         : "border-white/[0.08] text-white/45"
                     }`}
                   >
@@ -1031,7 +1024,7 @@ export function ConnectionJourney({
               onChange={(event) => setNote(event.target.value)}
               maxLength={500}
               placeholder={text.note}
-              className="mt-3 min-h-24 w-full rounded-2xl border border-white/10 bg-black/25 p-4 text-white outline-none focus:border-[#d4a574]/50"
+              className="mt-3 min-h-24 w-full rounded-2xl border border-white/10 bg-black/25 p-4 text-white outline-none focus:border-embir-rose/50"
             />
             <button
               type="submit"

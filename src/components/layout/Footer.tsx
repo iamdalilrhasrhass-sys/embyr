@@ -5,24 +5,25 @@ import { localePath, supportedLocale } from "@/components/connection-os/types";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
+  const brand = await getTranslations("brand");
   const locale = supportedLocale(await getLocale());
 
   return (
-    <footer className="relative border-t border-white/[0.1] bg-[#09060c] py-12">
+    <footer className="relative border-t border-white/[0.1] bg-embir-void py-12">
       <div className="mx-auto max-w-[92rem] px-4">
         <div className="grid gap-10 border-b border-white/[0.1] pb-10 md:grid-cols-[1.1fr_1fr_1fr]">
           <div>
-            <EmbirLogo size="md" />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
+            <EmbirLogo size="md" tagline={brand("tagline")} />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-[var(--embir-muted-on-dark)]">
               {t("tagline")}
             </p>
-            <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[#c56f4e]">
+            <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-embir-rose">
               {t("adult")}
             </p>
           </div>
 
           <div>
-            <h3 className="mb-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-[#c56f4e]">
+            <h3 className="mb-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-embir-rose">
               {t("navigation")}
             </h3>
             <div className="grid grid-cols-2 border-t border-white/[0.1]">
@@ -41,7 +42,7 @@ export default async function Footer() {
                   key={key}
                   href={localePath(locale, href)}
                   prefetch={false}
-                  className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
+                  className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-[var(--embir-muted-on-dark)] transition-colors hover:text-white/80"
                 >
                   {t(key)}
                 </Link>
@@ -50,7 +51,7 @@ export default async function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-[#c56f4e]">
+            <h3 className="mb-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-embir-rose">
               {t("legal")}
             </h3>
             <div className="border-t border-white/[0.1]">
@@ -65,7 +66,7 @@ export default async function Footer() {
                   key={key}
                   href={localePath(locale, href)}
                   prefetch={false}
-                  className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-white/40 transition-colors hover:text-white/80"
+                  className="flex min-h-11 items-center border-b border-white/[0.1] py-2.5 text-sm text-[var(--embir-muted-on-dark)] transition-colors hover:text-white/80"
                 >
                   {t(key)}
                 </Link>
@@ -75,10 +76,10 @@ export default async function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 pt-6 sm:flex-row">
-          <p className="text-xs text-white/25">
+          <p className="text-xs text-[var(--embir-muted-on-dark)]">
             &copy; {new Date().getFullYear()} Embir. {t("rights")}
           </p>
-          <p className="text-xs text-white/20">
+          <p className="text-xs text-[var(--embir-muted-on-dark)]">
             {t("regions")}
           </p>
         </div>

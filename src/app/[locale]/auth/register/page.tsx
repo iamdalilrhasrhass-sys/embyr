@@ -276,7 +276,7 @@ export default function Register() {
   };
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0614] px-4">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-embir-void px-4">
       <div className="emb-liquid-mesh" aria-hidden="true" />
       <div className="emb-hero-orb emb-hero-orb-1" aria-hidden="true" />
       <div className="emb-hero-orb emb-hero-orb-2" aria-hidden="true" />
@@ -291,7 +291,7 @@ export default function Register() {
           </div>
 
           {isParisFounder && (
-            <p className="relative z-10 mb-5 rounded-2xl border border-[#ff5e36]/25 bg-[#ff5e36]/10 px-4 py-3 text-center text-sm font-semibold text-[#ffa333]">
+            <p className="relative z-10 mb-5 rounded-2xl border border-embir-rose/25 bg-embir-rose/10 px-4 py-3 text-center text-sm font-semibold text-embir-blush">
               {text.founderBadge}
             </p>
           )}
@@ -331,7 +331,7 @@ export default function Register() {
 
           <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
             <div className="group">
-              <label htmlFor="register-email" className="mb-2 block text-xs font-bold uppercase tracking-[0.08em] text-white/50 transition-colors group-focus-within:text-[#d4a574]">
+              <label htmlFor="register-email" className="mb-2 block text-xs font-bold uppercase tracking-[0.08em] text-white/50 transition-colors group-focus-within:text-embir-rose">
                 {text.email}
               </label>
               <input
@@ -347,13 +347,13 @@ export default function Register() {
                   signupStartedFired.current = true;
                   trackSignupStarted("email_focus");
                 }}
-                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-base text-white shadow-inner transition-all placeholder:text-white/25 focus:border-[#d4a574]/50 focus:outline-none focus:ring-2 focus:ring-[#d4a574]/20"
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-base text-white shadow-inner transition-all placeholder:text-white/25 focus:border-embir-rose/50 focus:outline-none focus:ring-2 focus:ring-embir-rose/20"
                 placeholder={text.emailPlaceholder}
               />
             </div>
 
             <div className="group">
-              <label htmlFor="register-password" className="mb-2 block text-xs font-bold uppercase tracking-[0.08em] text-white/50 transition-colors group-focus-within:text-[#d4a574]">
+              <label htmlFor="register-password" className="mb-2 block text-xs font-bold uppercase tracking-[0.08em] text-white/50 transition-colors group-focus-within:text-embir-rose">
                 {text.password}
               </label>
               <div className="relative">
@@ -365,13 +365,13 @@ export default function Register() {
                   minLength={8}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.04] py-4 pl-5 pr-16 text-base text-white shadow-inner transition-all placeholder:text-white/25 focus:border-[#d4a574]/50 focus:outline-none focus:ring-2 focus:ring-[#d4a574]/20"
+                  className="w-full rounded-2xl border border-white/10 bg-white/[0.04] py-4 pl-5 pr-16 text-base text-white shadow-inner transition-all placeholder:text-white/25 focus:border-embir-rose/50 focus:outline-none focus:ring-2 focus:ring-embir-rose/20"
                   placeholder="••••••••"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((value) => !value)}
-                  className="absolute inset-y-0 right-1 flex min-h-11 min-w-11 items-center justify-center rounded-xl text-xs font-bold text-[#d4a574] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a574]"
+                  className="absolute inset-y-0 right-1 flex min-h-11 min-w-11 items-center justify-center rounded-xl text-xs font-bold text-embir-rose hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-embir-rose"
                   aria-label={showPassword ? text.hidePassword : text.showPassword}
                 >
                   {showPassword ? "—" : "◉"}
@@ -381,7 +381,7 @@ export default function Register() {
             </div>
 
             <div className="group">
-              <label htmlFor="register-referral" className="mb-2 block text-xs font-bold uppercase tracking-[0.08em] text-white/50 transition-colors group-focus-within:text-[#d4a574]">
+              <label htmlFor="register-referral" className="mb-2 block text-xs font-bold uppercase tracking-[0.08em] text-white/50 transition-colors group-focus-within:text-embir-rose">
                 {text.referral} <span className="font-normal normal-case tracking-normal text-white/30">({text.optional})</span>
               </label>
               <input
@@ -392,7 +392,7 @@ export default function Register() {
                   setReferralCode(event.target.value.toUpperCase());
                   setCodeValid(null);
                 }}
-                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-base uppercase tracking-widest text-white shadow-inner transition-all placeholder:normal-case placeholder:tracking-normal placeholder:text-white/25 focus:border-[#d4a574]/50 focus:outline-none focus:ring-2 focus:ring-[#d4a574]/20"
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-base uppercase tracking-widest text-white shadow-inner transition-all placeholder:normal-case placeholder:tracking-normal placeholder:text-white/25 focus:border-embir-rose/50 focus:outline-none focus:ring-2 focus:ring-embir-rose/20"
                 placeholder="EMB-XXXXXX"
                 maxLength={10}
                 spellCheck={false}
@@ -407,7 +407,7 @@ export default function Register() {
                   type="checkbox"
                   checked={isAdult}
                   onChange={(event) => setIsAdult(event.target.checked)}
-                  className="mt-0.5 !h-5 !w-5 shrink-0 accent-[#d4a574]"
+                  className="mt-0.5 !h-5 !w-5 shrink-0 accent-embir-rose"
                 />
                 <span>{text.adultConsent}</span>
               </label>
@@ -416,15 +416,15 @@ export default function Register() {
                   type="checkbox"
                   checked={acceptTerms}
                   onChange={(event) => setAcceptTerms(event.target.checked)}
-                  className="mt-0.5 !h-5 !w-5 shrink-0 accent-[#d4a574]"
+                  className="mt-0.5 !h-5 !w-5 shrink-0 accent-embir-rose"
                 />
                 <span>
                   {text.termsBefore}{" "}
-                  <Link href={localePath(locale, "/legal/cgu")} prefetch={false} className="inline-flex min-h-11 items-center font-bold text-[#d4a574] hover:text-[#ffa333]">
+                  <Link href={localePath(locale, "/legal/cgu")} prefetch={false} className="inline-flex min-h-11 items-center font-bold text-embir-rose hover:text-embir-blush">
                     {text.terms}
                   </Link>{" "}
                   {text.termsAnd}{" "}
-                  <Link href={localePath(locale, "/legal/confidentialite")} prefetch={false} className="inline-flex min-h-11 items-center font-bold text-[#d4a574] hover:text-[#ffa333]">
+                  <Link href={localePath(locale, "/legal/confidentialite")} prefetch={false} className="inline-flex min-h-11 items-center font-bold text-embir-rose hover:text-embir-blush">
                     {text.privacy}
                   </Link>.
                 </span>
@@ -434,7 +434,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="emb-cta-mega relative z-10 mt-3 w-full rounded-2xl bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] py-4 text-base font-bold text-white shadow-[0_0_40px_rgba(255,31,90,0.25)] transition-all disabled:cursor-not-allowed disabled:opacity-50"
+              className="emb-cta-mega relative z-10 mt-3 w-full rounded-2xl bg-gradient-to-r from-embir-rose-deep via-embir-rose to-embir-blush py-4 text-base font-bold text-embir-void shadow-[var(--shadow-brand)] transition-all disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? text.submitting : isParisFounder ? text.founderSubmit : text.submit}
             </button>
@@ -442,13 +442,13 @@ export default function Register() {
 
           <p className="relative z-10 mt-7 text-center text-sm font-medium text-white/40">
             {text.existing}{" "}
-            <Link href={localePath(locale, "/auth/login")} prefetch={false} className="inline-flex min-h-11 items-center font-bold text-[#d4a574] hover:text-[#ffa333]">
+            <Link href={localePath(locale, "/auth/login")} prefetch={false} className="inline-flex min-h-11 items-center font-bold text-embir-rose hover:text-embir-blush">
               {text.login}
             </Link>
           </p>
           <p className="relative z-10 mt-4 text-center text-xs text-white/30">
             {text.parisQuestion}{" "}
-            <Link href={localePath(locale, "/paris")} prefetch={false} className="inline-flex min-h-11 items-center text-[#ffa333]/80 hover:text-[#ffa333]">
+            <Link href={localePath(locale, "/paris")} prefetch={false} className="inline-flex min-h-11 items-center text-embir-blush/80 hover:text-embir-blush">
               {text.parisBack}
             </Link>
           </p>

@@ -53,7 +53,7 @@ export default async function SupportPage({ params }: { params: Params }) {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">{isFr ? "Aide" : "Help"}</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">{isFr ? "Aide" : "Help"}</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">{isFr ? "Support et contact" : "Support & Contact"}</h1>
         <p className="mt-6 text-base leading-relaxed text-white/55">
           {isFr ? "Une question, un problème, une suggestion ? L'équipe Embir est là pour vous aider." : "A question, a problem, a suggestion? The Embir team is here to help."}
@@ -64,7 +64,7 @@ export default async function SupportPage({ params }: { params: Params }) {
             <div key={c.email} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h2 className="font-serif text-xl text-white">{c.title}</h2>
               <p className="mt-2 text-sm text-white/45">{c.desc}</p>
-              <a href={`mailto:${c.email}`} className="mt-3 inline-block text-sm font-medium text-[#d4a574] hover:text-[#e8c4a2]">{c.email}</a>
+              <a href={`mailto:${c.email}`} className="mt-3 inline-block text-sm font-medium text-embir-rose hover:text-embir-blush">{c.email}</a>
             </div>
           ))}
         </section>
@@ -81,19 +81,19 @@ export default async function SupportPage({ params }: { params: Params }) {
           </div>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+        <section className="mt-12 rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
           <h2 className="font-serif text-2xl text-white">{isFr ? "⚠️ Urgence ou danger immédiat" : "⚠️ Emergency or immediate danger"}</h2>
           <p className="mt-3 text-sm text-white/55">
             {isFr ? "Embir n'est pas un service d'urgence. Si vous êtes en danger immédiat, contactez les services d'urgence de votre pays (112 en Europe, 911 aux États-Unis, 999 au Royaume-Uni)." : "Embir is not an emergency service. If you are in immediate danger, contact your local emergency services (112 in Europe, 911 in the US, 999 in the UK)."}
           </p>
         </section>
 
-        <section className="mt-10 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-10 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">{isFr ? "Rejoindre Embir" : "Join Embir"}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
             {isFr ? "Crée ton profil gratuitement et découvre une nouvelle façon de rencontrer." : "Create your profile for free and discover a new way to meet people."}
           </p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">{isFr ? "Créer mon profil gratuit" : "Create my free profile"}</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">{isFr ? "Créer mon profil gratuit" : "Create my free profile"}</Link>
         </section>
       </article>
     </main>

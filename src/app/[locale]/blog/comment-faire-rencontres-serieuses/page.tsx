@@ -22,7 +22,7 @@ export default function Page() {
       <header className="px-4 pt-32 pb-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/[0.04] bg-white/[0.02] px-4 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574]/60" />
+            <span className="h-1.5 w-1.5 rounded-full bg-embir-rose/60" />
             <span className="text-xs font-bold uppercase tracking-[0.12em] text-white/25">Blog Embir</span>
             <span className="text-white/10">·</span>
             <span className="text-xs text-white/20">Juin 2026</span>
@@ -115,7 +115,7 @@ export default function Page() {
         </div>
       </section>
       <section className="px-4 py-16 text-center border-t border-white/[0.04]">
-        <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
+        <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-10 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Créer mon profil gratuit</Link>
         <p className="mt-3 text-xs text-white/20">Rejoignez Embir · gratuit pour les connexions essentielles · 18+</p>
       </section>
     </article>

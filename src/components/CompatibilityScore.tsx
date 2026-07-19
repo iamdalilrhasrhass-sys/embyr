@@ -40,7 +40,7 @@ export default function CompatibilityScore({
       <ul className="mt-5 space-y-2">
         {data.reasons.map((reason) => (
           <li key={reason} className="flex items-start gap-2 text-sm text-white/65">
-            <span aria-hidden="true" className="text-[#d4a574]">✦</span>
+            <span aria-hidden="true" className="text-embir-rose">✦</span>
             <span>{reason}</span>
           </li>
         ))}

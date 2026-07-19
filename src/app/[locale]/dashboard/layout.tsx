@@ -16,11 +16,7 @@ export default function DashboardLayout({
 
       {/* Top Navigation */}
       <nav
-        className="sticky top-0 z-50 border-b backdrop-blur-2xl"
-        style={{
-          background: "rgba(10,3,0,0.85)",
-          borderColor: "rgba(255,107,53,0.08)",
-        }}
+        className="sticky top-0 z-50 border-b border-white/[0.08] bg-embir-void/85 backdrop-blur-2xl"
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <a
@@ -53,10 +49,11 @@ export default function DashboardLayout({
           <div className="flex items-center gap-3">
             <a
               href="/dashboard/profile"
-              className="w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-xs hover:border-[var(--color-premium-rose)]/30 transition-all"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.06] text-xs transition-all hover:border-[var(--color-premium-rose)]/30"
               title="Mon compte"
+              aria-label="Mon compte"
             >
-              <span className="h-2 w-2 rounded-full bg-[#ff5e36] shadow-[0_0_12px_rgba(255,94,54,0.7)]" />
+              <span className="h-2 w-2 rounded-full bg-embir-rose shadow-[var(--shadow-brand)]" />
             </a>
             <LogoutButton />
           </div>
@@ -73,7 +70,7 @@ export default function DashboardLayout({
             <a
               key={link.href}
               href={link.href}
-              className="flex-shrink-0 px-3 py-2.5 text-[10px] font-medium text-white/50 hover:text-white transition-colors"
+              className="flex min-h-11 flex-shrink-0 items-center px-3 py-2.5 text-[10px] font-medium text-white/50 transition-colors hover:text-white"
             >
               {link.label}
             </a>

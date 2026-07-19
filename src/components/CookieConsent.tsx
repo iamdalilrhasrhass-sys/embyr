@@ -51,11 +51,11 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[9999] border-t border-white/[0.08] bg-[#0a0614]/95 px-4 py-4 backdrop-blur-xl sm:px-6">
+    <div className="fixed bottom-0 left-0 right-0 z-[9999] border-t border-white/[0.08] bg-embir-void/95 px-4 py-4 backdrop-blur-xl sm:px-6">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-white/55 sm:text-sm">
           {copy.body}{" "}
-          <Link href={privacyHref} className="inline-flex min-h-11 items-center text-[#d4a574] underline hover:text-[#e8c4a2]">
+          <Link href={privacyHref} className="inline-flex min-h-11 items-center text-embir-rose underline hover:text-embir-blush">
             {copy.privacy}
           </Link>
           . {copy.sold}
@@ -75,7 +75,7 @@ export default function CookieConsent() {
               writeAnalyticsConsent(true);
               setVisible(false);
             }}
-            className="min-h-11 rounded-full bg-[#d4a574] px-4 py-2 text-xs font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
+            className="min-h-11 rounded-full bg-embir-rose px-4 py-2 text-xs font-bold text-embir-void hover:bg-embir-blush"
           >
             {copy.accept}
           </button>

@@ -315,9 +315,9 @@ export function SparkCard({
   }
 
   return (
-    <article className="rounded-[1.75rem] border border-white/[0.08] bg-white/[0.025] p-5 backdrop-blur-sm transition hover:border-[#d4a574]/25 sm:p-6">
+    <article className="rounded-[1.75rem] border border-white/[0.08] bg-white/[0.025] p-5 backdrop-blur-sm transition hover:border-embir-rose/25 sm:p-6">
       <div className="flex items-start gap-4">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff1f5a]/25 via-[#ff5e36]/20 to-[#d4a574]/25 font-serif text-2xl text-white/85">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-embir-rose-deep/25 via-embir-rose/20 to-embir-rose/25 font-serif text-2xl text-white/85">
           {initial}
         </div>
         <div className="min-w-0 flex-1">
@@ -344,7 +344,7 @@ export function SparkCard({
               {intents.slice(0, 3).map((intent) => (
                 <span
                   key={intent}
-                  className="rounded-full bg-[#ff5e36]/10 px-2 py-1 text-[10px] text-[#ff9f79]"
+                  className="rounded-full bg-embir-rose/10 px-2 py-1 text-[10px] text-embir-rose-soft"
                 >
                   {intentLabels[locale][intent] ??
                     intent.toLowerCase().replaceAll("_", " ")}
@@ -363,7 +363,7 @@ export function SparkCard({
           {(reasons.length > 0 ? reasons : [text.fallbackReason]).map(
             (reason) => (
               <li key={reason} className="flex gap-2">
-                <span aria-hidden="true" className="text-[#d4a574]">
+                <span aria-hidden="true" className="text-embir-rose">
                   ✓
                 </span>
                 <span>{reason}</span>
@@ -390,7 +390,7 @@ export function SparkCard({
                 type="button"
                 aria-pressed={selected}
                 onClick={() => setSelectedTarget(target)}
-                className={`rounded-xl border px-3 py-2 text-left text-xs transition ${selected ? "border-[#d4a574]/50 bg-[#d4a574]/10 text-[#edc59c]" : "border-white/[0.08] text-white/45 hover:border-white/15 hover:text-white"}`}
+                className={`rounded-xl border px-3 py-2 text-left text-xs transition ${selected ? "border-embir-rose/50 bg-embir-rose/10 text-embir-blush" : "border-white/[0.08] text-white/45 hover:border-white/15 hover:text-white"}`}
               >
                 <span className="block">{target.label}</span>
                 {target.preview ? (
@@ -412,7 +412,7 @@ export function SparkCard({
           maxLength={180}
           rows={3}
           placeholder={text.placeholder}
-          className="mt-2 w-full resize-none rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm font-normal text-white placeholder:text-white/20 focus:border-[#d4a574]/40 focus:outline-none"
+          className="mt-2 w-full resize-none rounded-xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm font-normal text-white placeholder:text-white/20 focus:border-embir-rose/40 focus:outline-none"
         />
         <span className="mt-1 flex justify-between text-[10px] font-normal text-white/25">
           <span>{text.hint}</span>
@@ -421,7 +421,7 @@ export function SparkCard({
       </label>
 
       {error ? (
-        <p role="alert" className="mt-3 text-xs text-[#ff7895]">
+        <p role="alert" className="mt-3 text-xs text-embir-rose-soft">
           {error}
         </p>
       ) : null}
@@ -431,7 +431,7 @@ export function SparkCard({
           type="button"
           onClick={() => void sendSpark()}
           disabled={pending}
-          className="col-span-2 rounded-xl bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#d4a574] px-4 py-3 text-xs font-bold text-[#12050a] transition hover:brightness-110 disabled:cursor-wait disabled:opacity-45 sm:col-span-1"
+          className="col-span-2 rounded-xl bg-gradient-to-r from-embir-rose-deep via-embir-rose to-embir-rose px-4 py-3 text-xs font-bold text-embir-void transition hover:brightness-110 disabled:cursor-wait disabled:opacity-45 sm:col-span-1"
         >
           {pending ? "…" : text.send}
         </button>

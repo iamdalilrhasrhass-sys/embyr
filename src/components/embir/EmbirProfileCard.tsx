@@ -16,7 +16,9 @@ export default function EmbirProfileCard({
           {photoUrl ? (
             <img src={photoUrl} alt={name} className="w-full h-full object-cover" loading="lazy" />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-4xl opacity-10">E</div>
+            <div className="w-full h-full flex items-center justify-center text-4xl opacity-10" aria-hidden="true">
+              {name.slice(0, 1).toUpperCase()}
+            </div>
           )}
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
@@ -26,7 +28,7 @@ export default function EmbirProfileCard({
           )}
           {/* Badges */}
           {isPremium && (
-            <div className="absolute top-3 right-3 px-2 py-1 rounded-[var(--eb-radius-badge)] text-[10px] font-medium bg-[var(--eb-copper)] text-white">Premium</div>
+            <div className="absolute top-3 right-3 px-2 py-1 rounded-[var(--eb-radius-badge)] text-[10px] font-medium bg-[var(--eb-copper)] text-[var(--embir-void-950)]">Premium</div>
           )}
           {/* Info */}
           <div className="absolute bottom-0 left-0 right-0 p-3">

@@ -7,28 +7,26 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import AuthModal from "@/components/auth/AuthModal";
 import { useTranslations } from "next-intl";
 
-/* ── Embir 2100 design tokens ──
-   --void: #09060c   --bone: #f2ede4   --ember: #d4a574
-   --coral: #f06d55  --hairline: rgba(242,237,228,0.14)  --focus: #ffd2b8 */
+/* Brand OS tokens are referenced here because hover state is applied inline. */
 
 const T = {
-  void: "#09060c",
-  bone: "#f2ede4",
-  bone55: "rgba(242,237,228,0.55)",
-  bone60: "rgba(242,237,228,0.60)",
-  ember: "#d4a574",
-  emberHover: "#e8c4a2",
-  coral: "#f06d55",
-  copper: "#c56f4e",
-  hairline: "rgba(242,237,228,0.14)",
-  hairlineHover: "rgba(242,237,228,0.20)",
-  focus: "#ffd2b8",
+  void: "var(--embir-void-950)",
+  bone: "var(--embir-bone-100)",
+  bone55: "var(--embir-muted-on-dark)",
+  bone60: "var(--embir-muted-on-dark)",
+  ember: "var(--embir-rose-500)",
+  emberHover: "var(--embir-blush-300)",
+  coral: "var(--embir-rose-500)",
+  copper: "var(--embir-blush-300)",
+  hairline: "var(--embir-line-on-dark)",
+  hairlineHover: "color-mix(in srgb, var(--embir-bone-100) 20%, transparent)",
+  focus: "var(--embir-focus)",
   overlay: "rgba(0,0,0,0.6)",
-  navBg: "#09060cf2",
+  navBg: "color-mix(in srgb, var(--embir-void-950) 95%, transparent)",
 } as const;
 
 const focusRing =
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffd2b8] focus-visible:rounded-sm";
+  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-embir-blush focus-visible:rounded-sm";
 
 export default function Navbar({ showLogo }: { showLogo?: boolean }) {
   const t = useTranslations("nav");
@@ -84,11 +82,11 @@ export default function Navbar({ showLogo }: { showLogo?: boolean }) {
             <div className="flex items-center space-x-4">
               {showLogo ? (
                 <Link href="/" prefetch={false} className={`shrink-0 ${focusRing}`}>
-                  <EmbirLogo size="md" showTagline />
+                  <EmbirLogo size="md" className="embir-logo--nav-compact" />
                 </Link>
               ) : (
                 <div className="shrink-0">
-                  <EmbirLogo size="md" showTagline />
+                  <EmbirLogo size="md" className="embir-logo--nav-compact" />
                 </div>
               )}
             </div>
@@ -152,7 +150,7 @@ export default function Navbar({ showLogo }: { showLogo?: boolean }) {
               </button>
               <button
                 onClick={() => openAuth("register")}
-                className={`text-xs font-bold px-3 py-2 min-h-[44px] min-w-[44px] rounded-full shadow-[0_0_12px_rgba(240,109,85,0.3)] transition-all hover:scale-105 ${focusRing}`}
+                className={`text-xs font-bold px-3 py-2 min-h-[44px] min-w-[44px] rounded-full shadow-[var(--shadow-brand)] transition-all hover:scale-105 ${focusRing}`}
                 style={{
                   color: T.bone,
                   background: `linear-gradient(135deg, ${T.coral}, ${T.copper})`,

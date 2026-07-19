@@ -43,6 +43,7 @@ export default function LanguageSwitcher({ initialLocale = "en" }: LanguageSwitc
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<LanguageOption>(findLanguage(initialLocale));
   const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const activePath = pathname || window.location.pathname;
@@ -55,9 +56,19 @@ export default function LanguageSwitcher({ initialLocale = "en" }: LanguageSwitc
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
+    const closeOnEscape = (e: KeyboardEvent) => {
+      if (e.key !== "Escape" || !open) return;
+      e.preventDefault();
+      setOpen(false);
+      buttonRef.current?.focus();
+    };
     document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
 
   const switchLocale = (code: PublicLocale) => {
     setCookie(LOCALE_COOKIE, code);
@@ -78,10 +89,11 @@ export default function LanguageSwitcher({ initialLocale = "en" }: LanguageSwitc
   return (
     <div ref={ref} className="relative inline-block">
       <button
+        ref={buttonRef}
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-white/50 hover:text-white/80 hover:bg-white/[0.04] transition-all border border-transparent hover:border-white/[0.06] whitespace-nowrap"
-        aria-label="Changer de langue"
+        className="flex min-h-11 min-w-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-transparent px-2.5 py-1.5 text-xs font-medium text-white/50 transition-all hover:border-white/[0.06] hover:bg-white/[0.04] hover:text-white/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-embir-blush"
+        aria-label={`${current.code === "fr" ? "Changer de langue" : "Change language"} — ${current.code.toUpperCase()}`}
         aria-haspopup="menu"
         aria-expanded={open}
       >
@@ -94,7 +106,7 @@ export default function LanguageSwitcher({ initialLocale = "en" }: LanguageSwitc
 
       {open && (
         <div
-          className="absolute right-0 mt-2 w-56 max-h-80 overflow-y-auto rounded-2xl border border-white/[0.06] bg-[#0a0614]/95 backdrop-blur-2xl shadow-2xl z-[100] p-2 scrollbar-thin"
+          className="absolute right-0 mt-2 w-56 max-h-80 overflow-y-auto rounded-2xl border border-white/[0.06] bg-embir-void/95 backdrop-blur-2xl shadow-2xl z-[100] p-2 scrollbar-thin"
           role="menu"
         >
           {LANGUAGES.map((lang) => (
@@ -102,9 +114,9 @@ export default function LanguageSwitcher({ initialLocale = "en" }: LanguageSwitc
               key={lang.code}
               type="button"
               onClick={() => switchLocale(lang.code)}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all text-left ${
+              className={`flex min-h-11 w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition-all ${
                 lang.code === current.code
-                  ? "bg-[#d4a574]/10 text-[#d4a574]"
+                  ? "bg-embir-rose/10 text-embir-rose"
                   : "text-white/50 hover:text-white/80 hover:bg-white/[0.03]"
               }`}
               role="menuitemradio"

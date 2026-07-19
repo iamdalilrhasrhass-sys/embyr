@@ -46,17 +46,17 @@ export default function ReciprocityInstrument({
           <desc id={`${prefix}-description`}>{copy.demoNotice}</desc>
           <defs>
             <linearGradient id={`${prefix}-left`} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f06d55" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#f0b083" stopOpacity="0.72" />
+              <stop offset="0%" stopColor="var(--embir-rose-500)" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="var(--embir-rose-400)" stopOpacity="0.72" />
             </linearGradient>
             <linearGradient id={`${prefix}-right`} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f2d6b8" stopOpacity="0.78" />
-              <stop offset="100%" stopColor="#f2ede4" stopOpacity="0.54" />
+              <stop offset="0%" stopColor="var(--embir-blush-300)" stopOpacity="0.78" />
+              <stop offset="100%" stopColor="var(--embir-bone-100)" stopOpacity="0.54" />
             </linearGradient>
             <radialGradient id={`${prefix}-core`}>
-              <stop offset="0%" stopColor="#fff8e9" />
-              <stop offset="45%" stopColor="#f06d55" stopOpacity="0.86" />
-              <stop offset="100%" stopColor="#c56f4e" stopOpacity="0" />
+              <stop offset="0%" stopColor="var(--embir-ivory-50)" />
+              <stop offset="45%" stopColor="var(--embir-rose-500)" stopOpacity="0.86" />
+              <stop offset="100%" stopColor="var(--embir-rose-600)" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -67,7 +67,7 @@ export default function ReciprocityInstrument({
               cy="260"
               r={70 + index * 48}
               fill="none"
-              stroke="#f2ede4"
+              stroke="var(--embir-bone-100)"
               strokeOpacity={0.04 + index * 0.015}
               strokeDasharray={index % 2 === 0 ? "3 12" : undefined}
             />
@@ -92,8 +92,8 @@ export default function ReciprocityInstrument({
             </g>
           ))}
 
-          <circle cx="42" cy="260" r="10" fill="#09060c" stroke="#f06d55" strokeWidth="3" />
-          <circle cx="958" cy="260" r="10" fill="#09060c" stroke="#f2ede4" strokeWidth="3" />
+          <circle cx="42" cy="260" r="10" fill="var(--embir-void-950)" stroke="var(--embir-rose-500)" strokeWidth="3" />
+          <circle cx="958" cy="260" r="10" fill="var(--embir-void-950)" stroke="var(--embir-bone-100)" strokeWidth="3" />
           <circle
             cx="500"
             cy="260"
@@ -101,7 +101,7 @@ export default function ReciprocityInstrument({
             fill={`url(#${prefix}-core)`}
             opacity={0.66 + strength * 0.34}
           />
-          <circle cx="500" cy="260" r="7" fill="#fff8e9" />
+          <circle cx="500" cy="260" r="7" fill="var(--embir-ivory-50)" />
         </svg>
         <span className="e21-reciprocity__outcome e21-reciprocity__outcome--left">
           {copy.outbound}

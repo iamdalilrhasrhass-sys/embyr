@@ -121,7 +121,7 @@ export default async function UniversePage({
         {/* Header */}
         <div className="text-center">
           {/* Avatar placeholder with initials */}
-          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-[#d4a574] via-[#ff5e36] to-[#ff1f5a] text-3xl font-black text-[#0a0614]">
+          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-embir-rose via-embir-rose-deep to-embir-rose text-3xl font-black text-embir-void">
             {name.charAt(0).toUpperCase()}
           </div>
 
@@ -129,12 +129,12 @@ export default async function UniversePage({
           <div className="flex items-center justify-center gap-3">
             <h1 className="font-serif text-4xl font-light text-white sm:text-5xl">{name}</h1>
             {data.isVerified && (
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#d4a574]/20 text-sm text-[#d4a574]" title="Verified">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-embir-rose/20 text-sm text-embir-rose" title="Verified">
                 ✓
               </span>
             )}
             {data.isFounder && (
-              <span className="rounded-full border border-[#ff5e36]/30 bg-[#ff5e36]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#ff5e36]">
+              <span className="rounded-full border border-embir-rose-deep/30 bg-embir-rose-deep/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-embir-rose-deep">
                 Founder
               </span>
             )}
@@ -180,7 +180,7 @@ export default async function UniversePage({
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Discover ${name}'s universe on Embir`)}&url=${encodeURIComponent(shareUrl)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-[#d4a574]/30 hover:text-[#d4a574]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-embir-rose/30 hover:text-embir-rose"
             >
               𝕏
             </a>
@@ -188,7 +188,7 @@ export default async function UniversePage({
               href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`Discover ${name}'s universe on Embir`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-[#d4a574]/30 hover:text-[#d4a574]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-embir-rose/30 hover:text-embir-rose"
             >
               ✈
             </a>
@@ -196,7 +196,7 @@ export default async function UniversePage({
               href={`https://wa.me/?text=${encodeURIComponent(`Discover ${name}'s universe on Embir: ${shareUrl}`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-[#d4a574]/30 hover:text-[#d4a574]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-embir-rose/30 hover:text-embir-rose"
             >
               W
             </a>
@@ -204,7 +204,7 @@ export default async function UniversePage({
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-[#d4a574]/30 hover:text-[#d4a574]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:border-embir-rose/30 hover:text-embir-rose"
             >
               f
             </a>
@@ -212,7 +212,7 @@ export default async function UniversePage({
         </div>
 
         {/* CTA */}
-        <div className="mt-12 rounded-2xl border border-[#d4a574]/20 bg-gradient-to-r from-[#d4a574]/[0.08] via-[#ff5e36]/[0.04] to-[#ff1f5a]/[0.08] p-8 text-center">
+        <div className="mt-12 rounded-2xl border border-embir-rose/20 bg-gradient-to-r from-embir-rose/[0.08] via-embir-rose-deep/[0.04] to-embir-rose/[0.08] p-8 text-center">
           <h2 className="font-serif text-2xl font-light text-white">
             Create your own universe
           </h2>
@@ -222,7 +222,7 @@ export default async function UniversePage({
           <Link
             href="/early-access"
             prefetch={false}
-            className="mt-6 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition hover:bg-[#e8c4a2]"
+            className="mt-6 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition hover:bg-embir-blush"
           >
             Join Embir
           </Link>

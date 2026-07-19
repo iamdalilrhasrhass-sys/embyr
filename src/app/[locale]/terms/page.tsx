@@ -31,7 +31,7 @@ export default async function TermsPage({ params }: { params: Params }) {
     return (
       <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
         <article className="mx-auto max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Légal</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Légal</p>
           <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Conditions générales d&apos;utilisation</h1>
           <p className="mt-4 text-sm text-white/35">Dernière mise à jour : 17 juin 2026</p>
 
@@ -99,12 +99,12 @@ export default async function TermsPage({ params }: { params: Params }) {
 
             <div>
               <h2 className="font-serif text-2xl text-white">11. Données personnelles</h2>
-              <p className="mt-3">Le traitement de vos données personnelles est détaillé dans notre <Link href="/privacy" className="text-[#d4a574] underline hover:text-[#e8c4a2]">politique de confidentialité</Link>. En utilisant Embir, vous acceptez cette politique.</p>
+              <p className="mt-3">Le traitement de vos données personnelles est détaillé dans notre <Link href="/privacy" className="text-embir-rose underline hover:text-embir-blush">politique de confidentialité</Link>. En utilisant Embir, vous acceptez cette politique.</p>
             </div>
 
             <div>
               <h2 className="font-serif text-2xl text-white">12. Contact</h2>
-              <p className="mt-3">Pour toute question relative aux présentes conditions : <a href="mailto:support@embir.xyz" className="text-[#d4a574] underline hover:text-[#e8c4a2]">support@embir.xyz</a></p>
+              <p className="mt-3">Pour toute question relative aux présentes conditions : <a href="mailto:support@embir.xyz" className="text-embir-rose underline hover:text-embir-blush">support@embir.xyz</a></p>
             </div>
 
             <div>
@@ -113,10 +113,10 @@ export default async function TermsPage({ params }: { params: Params }) {
             </div>
           </section>
 
-          <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+          <section className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
             <h2 className="font-serif text-3xl text-white">Rejoindre la communauté fondatrice</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Crée ton profil gratuitement, sans carte bancaire et aide Embir à construire une plateforme plus saine pour toutes les orientations.</p>
-            <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
+            <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Créer mon profil gratuit</Link>
           </section>
         </article>
       </main>
@@ -126,7 +126,7 @@ export default async function TermsPage({ params }: { params: Params }) {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Legal</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Legal</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Terms of Service</h1>
         <p className="mt-4 text-sm text-white/35">Last updated: June 17, 2026</p>
 
@@ -194,12 +194,12 @@ export default async function TermsPage({ params }: { params: Params }) {
 
           <div>
             <h2 className="font-serif text-2xl text-white">11. Personal data</h2>
-            <p className="mt-3">The processing of your personal data is detailed in our <Link href="/privacy" className="text-[#d4a574] underline hover:text-[#e8c4a2]">privacy policy</Link>. By using Embir, you accept this policy.</p>
+            <p className="mt-3">The processing of your personal data is detailed in our <Link href="/privacy" className="text-embir-rose underline hover:text-embir-blush">privacy policy</Link>. By using Embir, you accept this policy.</p>
           </div>
 
           <div>
             <h2 className="font-serif text-2xl text-white">12. Contact</h2>
-            <p className="mt-3">For any questions regarding these terms: <a href="mailto:support@embir.xyz" className="text-[#d4a574] underline hover:text-[#e8c4a2]">support@embir.xyz</a></p>
+            <p className="mt-3">For any questions regarding these terms: <a href="mailto:support@embir.xyz" className="text-embir-rose underline hover:text-embir-blush">support@embir.xyz</a></p>
           </div>
 
           <div>
@@ -208,10 +208,10 @@ export default async function TermsPage({ params }: { params: Params }) {
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your profile without a credit card and help Embir build a healthier platform for every orientation.</p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
       </article>
     </main>

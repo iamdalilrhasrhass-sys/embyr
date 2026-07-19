@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata, Viewport } from "next";
 import "../globals.css";
-import "@/styles/embir-tokens.css";
+import "@/styles/embir-brand-tokens.css";
 import "@/styles/mobile.css";
 import "@/styles/embir-20000x.css";
 import "@/styles/embir-supernova.css";
@@ -39,7 +39,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#06030F",
+  themeColor: "#09060c",
 };
 
 export default async function LocaleLayout({
@@ -60,7 +60,7 @@ export default async function LocaleLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body className="antialiased relative" style={{ background: "#0a0614", color: "rgba(255,255,255,0.9)", fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <body className="antialiased relative">
           <NextIntlClientProvider messages={messages}>
             <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
               <div className="emb-aurora-bg" />

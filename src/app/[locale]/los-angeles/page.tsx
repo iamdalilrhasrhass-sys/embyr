@@ -37,14 +37,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Los Angeles · United States</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Los Angeles · United States</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Los Angeles dating, with verified profiles and real compatibility</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Los Angeles dating is notorious — a sprawling metropolis where geography is destiny, where &quot;I&apos;m on the Westside&quot; might as well be a breakup text, and where dating apps often feel like a casting call rather than a path to genuine connection. In a city of four million people spread across 500 square miles, proximity alone is a terrible matchmaker. Embir starts here with a different approach: verified profiles, compatibility signals that matter, and a founding community built for connection over convenience.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why Los Angeles</h2>
             <p className="mt-4">LA is one of Embir&apos;s first US launch cities — and for good reason. The city&apos;s geography makes dating uniquely challenging. Someone in Silver Lake and someone in Santa Monica might be 25 miles apart with an hour of traffic between them. The entertainment industry shapes dating culture in ways no other city experiences. And yet, LA is full of people genuinely looking for connection — they just need better tools to find it.</p>
             <p className="mt-3">We&apos;re building LA neighbourhood by neighbourhood — West Hollywood, Silver Lake, DTLA, Santa Monica, Echo Park, Culver City — starting with a core of founding members who value verification, clear intentions, and compatibility over the endless swipe. No system can guarantee the absence of fake profiles. No inflated numbers. Just real Angelenos building a real local community.</p>
@@ -67,7 +67,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">Core connections without an LA premium</h2>
             <p className="mt-4">LA is expensive enough without another dating app subscription. Embir&apos;s core connection features are free. Create your profile, set your preferences, browse compatible people and message reciprocal connections without a credit card. Optional services are clearly separated from core connections.</p>
           </div>
@@ -110,10 +110,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the LA founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Be among the first LA members. Verified profile. Real compatibility. Core connection features are free. Help build a dating culture that Los Angeles deserves — from the Westside to the Eastside.</p>
-          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register?utm_source=seo&utm_medium=organic&utm_campaign=city_landing" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -129,7 +129,7 @@ export default function Page() {
               ["/free-dating-app", "Free dating app"],
               ["/tinder-alternative", "Tinder alternative"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

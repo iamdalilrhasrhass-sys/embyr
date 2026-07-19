@@ -10,11 +10,11 @@ export default function PremiumPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="mb-4 inline-flex rounded-full border border-[#ff5e36]/25 bg-[#ff5e36]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#ffa333]">
+            <div className="mb-4 inline-flex rounded-full border border-embir-rose-deep/25 bg-embir-rose-deep/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-embir-blush">
                Fondateurs d&apos;abord
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4"
-              style={{ background: "linear-gradient(135deg, #FFFFFF 55%, #ff5e36 78%, #ffa333 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              style={{ background: "linear-gradient(135deg, #FFFFFF 55%, var(--embir-rose-600) 78%, var(--embir-blush-300) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               gratuit pour les connexions essentielles
             </h1>
             <p className="text-white/50 max-w-xl mx-auto text-lg">
@@ -34,7 +34,7 @@ export default function PremiumPage() {
                   fonctions essentielles gratuitement pendant l'expérience de connexion.
                 </p>
                 <Link href="/paris" className="inline-block mt-4 px-6 py-2.5 rounded-xl text-sm font-semibold text-white"
-                  style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
+                  style={{ background: "linear-gradient(135deg, var(--embir-rose-500), var(--embir-rose-600))" }}>
                   Rejoindre les fondateurs Paris
                 </Link>
               </div>

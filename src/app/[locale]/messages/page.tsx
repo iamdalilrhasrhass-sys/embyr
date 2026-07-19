@@ -322,7 +322,7 @@ function MessagesInner() {
         <p className="mt-4 text-white/60">{error}</p>
         <Link
           href={localePath(locale, "/auth/login")}
-          className="mt-6 rounded-full bg-gradient-to-r from-[#ff5e36] to-[#d4a574] px-6 py-3 font-bold text-[#0a0614]"
+          className="mt-6 rounded-full bg-gradient-to-r from-embir-rose to-embir-rose px-6 py-3 font-bold text-embir-void"
         >
           {textCopy.signIn}
         </Link>
@@ -344,7 +344,7 @@ function MessagesInner() {
           </div>
           {conversations.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-white/[0.08] px-4 py-10 text-center">
-              <span aria-hidden="true" className="text-3xl text-[#d4a574]">
+              <span aria-hidden="true" className="text-3xl text-embir-rose">
                 ◇
               </span>
               <p className="mt-3 text-sm text-white/50">{textCopy.empty}</p>
@@ -353,7 +353,7 @@ function MessagesInner() {
               </p>
               <Link
                 href={localePath(locale, "/dashboard")}
-                className="mt-5 inline-block text-xs font-semibold text-[#d4a574]"
+                className="mt-5 inline-block text-xs font-semibold text-embir-rose"
               >
                 {textCopy.discover} →
               </Link>
@@ -367,7 +367,7 @@ function MessagesInner() {
                   type="button"
                   onClick={() => setActiveConversationId(conversation.id)}
                   aria-pressed={activeConversationId === conversation.id}
-                  className={`mb-1 w-full rounded-xl p-3 text-left transition ${activeConversationId === conversation.id ? "border border-[#d4a574]/20 bg-[#d4a574]/10" : "border border-transparent hover:bg-white/[0.03]"}`}
+                  className={`mb-1 w-full rounded-xl p-3 text-left transition ${activeConversationId === conversation.id ? "border border-embir-rose/20 bg-embir-rose/10" : "border border-transparent hover:bg-white/[0.03]"}`}
                 >
                   <span className="block text-sm font-semibold">
                     {participantName(conversation, myId)}
@@ -431,7 +431,7 @@ function MessagesInner() {
                       className={`flex ${mine ? "justify-end" : "justify-start"}`}
                     >
                       <div
-                        className={`max-w-[82%] rounded-2xl border px-4 py-2.5 text-sm sm:max-w-md ${mine ? "border-[#ff5e36]/20 bg-gradient-to-r from-[#ff1f5a]/15 to-[#ff5e36]/10" : "border-white/[0.06] bg-white/[0.045]"}`}
+                        className={`max-w-[82%] rounded-2xl border px-4 py-2.5 text-sm sm:max-w-md ${mine ? "border-embir-rose/20 bg-gradient-to-r from-embir-rose-deep/15 to-embir-rose/10" : "border-white/[0.06] bg-white/[0.045]"}`}
                       >
                         <p className="whitespace-pre-wrap break-words">
                           {content}
@@ -441,7 +441,7 @@ function MessagesInner() {
                             type="button"
                             onClick={() => void translateMessage(message.id)}
                             disabled={translating.has(message.id)}
-                            className="mt-2 text-[10px] font-semibold text-[#d4a574] disabled:opacity-40"
+                            className="mt-2 text-[10px] font-semibold text-embir-rose disabled:opacity-40"
                           >
                             {translating.has(message.id)
                               ? textCopy.translating
@@ -476,7 +476,7 @@ function MessagesInner() {
               {error ? (
                 <p
                   role="alert"
-                  className="border-t border-[#ff1f5a]/10 bg-[#ff1f5a]/[0.04] px-4 py-2 text-xs text-[#ff9ab0]"
+                  className="border-t border-embir-rose-deep/10 bg-embir-rose-deep/[0.04] px-4 py-2 text-xs text-embir-rose-soft"
                 >
                   {error}
                 </p>
@@ -495,12 +495,12 @@ function MessagesInner() {
                   rows={1}
                   maxLength={2000}
                   placeholder={textCopy.placeholder}
-                  className="min-h-11 flex-1 resize-none rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-base text-white placeholder:text-white/25 focus:border-[#d4a574]/40 focus:outline-none"
+                  className="min-h-11 flex-1 resize-none rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-base text-white placeholder:text-white/25 focus:border-embir-rose/40 focus:outline-none"
                 />
                 <button
                   type="submit"
                   disabled={!text.trim() || sending || !myId}
-                  className="min-h-11 shrink-0 rounded-xl bg-gradient-to-r from-[#ff5e36] to-[#d4a574] px-5 py-3 text-sm font-bold text-[#0a0614] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-30"
+                  className="min-h-11 shrink-0 rounded-xl bg-gradient-to-r from-embir-rose to-embir-rose px-5 py-3 text-sm font-bold text-embir-void transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   {sending ? "…" : textCopy.send}
                 </button>

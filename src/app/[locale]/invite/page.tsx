@@ -24,16 +24,16 @@ export default function InvitePage() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Founding Community</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Founding Community</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">
-          Invite people you trust. Build a <span className="text-[#d4a574]">better dating community</span> together.
+          Invite people you trust. Build a <span className="text-embir-rose">better dating community</span> together.
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           The best dating communities aren't built by algorithms. They're built by people inviting people they know and trust. During Embir's core connection experience, every invitation matters — you're not just adding users, you're shaping the culture.
         </p>
 
         <section className="mt-12 space-y-8 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why invite people to Embir?</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {[
@@ -76,7 +76,7 @@ export default function InvitePage() {
                 },
               ].map(({ step, title, text }) => (
                 <div key={step} className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#d4a574]/30 bg-[#d4a574]/10 text-sm font-bold text-[#d4a574]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-embir-rose/30 bg-embir-rose/10 text-sm font-bold text-embir-rose">
                     {step}
                   </div>
                   <div>
@@ -88,7 +88,7 @@ export default function InvitePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">What invitations are NOT</h2>
             <ul className="mt-4 list-disc space-y-2 pl-6 text-sm text-white/45">
               <li><strong className="text-white/65">Not a referral program.</strong> There are no points, no rewards, no leaderboards. Invitations are about community quality, not quantity.</li>
@@ -118,14 +118,14 @@ export default function InvitePage() {
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Start by creating your profile</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">
             Join Embir first. Get verified. Then invite the people you'd actually want to meet — or the friends you'd trust to build a better dating culture.
           </p>
           <Link
             href="/auth/register?utm_source=invite_page&utm_medium=organic&utm_campaign=founding_community"
-            className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
+            className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush"
           >
             Create my free profile
           </Link>
@@ -144,7 +144,7 @@ export default function InvitePage() {
               ["/london", "Embir in London"],
               ["/new-york", "Embir in New York"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">
                 {label}
               </Link>
             ))}

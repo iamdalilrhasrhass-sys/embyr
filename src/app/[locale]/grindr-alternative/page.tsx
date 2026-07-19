@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Comparison</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Comparison</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">A Grindr alternative for when you want more than proximity</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Grindr changed gay dating forever. But for many, the constant stream of nearby profiles, the pressure to meet instantly, and the limited focus on compatibility have become exhausting. Embir offers a different rhythm — still for gay and bi men, but also for everyone else.
@@ -45,12 +45,12 @@ export default function Page() {
               <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
                 <div className="text-white/60">{feature}</div>
                 <div className="text-center text-white/30">{grindr}</div>
-                <div className="text-center font-semibold text-[#d4a574]">{embir}</div>
+                <div className="text-center font-semibold text-embir-rose">{embir}</div>
               </div>
             ))}
           </div>
 
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Why people look for Grindr alternatives</h2>
             <p className="mt-4">We&apos;ve heard the same things from people exploring options: &quot;It&apos;s too focused on hookups,&quot; &quot;I want more than a torso pic,&quot; &quot;The free version is too limited,&quot; &quot;I want to know if we&apos;re actually compatible before meeting.&quot;</p>
             <p className="mt-3">These aren&apos;t criticisms of Grindr — they&apos;re signals that different people want different things from dating apps. Embir doesn&apos;t try to be a better Grindr. It tries to be a different kind of space: one where compatibility, safety and verified identity carry more weight than distance alone.</p>
@@ -91,10 +91,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Try a different approach</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your free verified profile and experience dating where compatibility comes before distance.</p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -108,7 +108,7 @@ export default function Page() {
               ["/safety", "Safety tools"],
               ["/about", "About Embir"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

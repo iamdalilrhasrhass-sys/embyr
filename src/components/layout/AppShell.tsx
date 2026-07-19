@@ -13,9 +13,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <SideDrawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top bar desktop */}
-        <div className="hidden md:flex sticky top-0 z-40 items-center justify-between px-6 py-4 border-b border-white/8 bg-[#070409]/88 backdrop-blur-2xl">
+        <div className="sticky top-0 z-40 hidden items-center justify-between border-b border-white/8 bg-embir-void/90 px-6 py-4 backdrop-blur-2xl md:flex">
           <Link href="/dashboard" className="shrink-0">
-            <EmbirLogo size="sm" showTagline />
+            <EmbirLogo size="sm" />
           </Link>
           <div className="flex items-center gap-1">
             {[
@@ -36,9 +36,13 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Top bar mobile */}
-        <div className="md:hidden flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "rgba(255,107,53,0.06)", background: "rgba(10,3,5,0.95)" }}>
-          <button onClick={() => setDrawerOpen(!drawerOpen)} className="w-10 h-10 flex items-center justify-center rounded-lg text-white"
-            style={{ background: "rgba(255,107,53,0.1)" }}>☰</button>
+        <div className="flex items-center justify-between border-b border-white/[0.06] bg-embir-void/95 px-4 py-3 md:hidden">
+          <button
+            onClick={() => setDrawerOpen(!drawerOpen)}
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-embir-rose/10 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-embir-blush"
+            aria-label="Ouvrir la navigation"
+            aria-expanded={drawerOpen}
+          >☰</button>
           <EmbirLogo size="sm" />
           <div className="w-10" />
         </div>

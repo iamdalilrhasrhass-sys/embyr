@@ -44,9 +44,9 @@ export default function InstallPrompt() {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-md">
-      <div className="rounded-2xl border border-[#d4a574]/30 bg-[#0a0614]/95 backdrop-blur-xl p-4 shadow-2xl">
+      <div className="rounded-2xl border border-embir-rose/30 bg-embir-void/95 backdrop-blur-xl p-4 shadow-2xl">
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#d4a574] to-[#ff5e36] flex items-center justify-center text-[#0a0614] font-black flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-embir-rose to-embir-rose-deep flex items-center justify-center text-embir-void font-black flex-shrink-0">
             E
           </div>
           <div className="flex-1">
@@ -59,7 +59,7 @@ export default function InstallPrompt() {
         </div>
         <button
           onClick={handleInstall}
-          className="mt-3 w-full px-4 py-2.5 rounded-xl bg-[#d4a574] text-[#0a0614] font-bold text-sm hover:bg-[#e8c4a2] transition"
+          className="mt-3 w-full px-4 py-2.5 rounded-xl bg-embir-rose text-embir-void font-bold text-sm hover:bg-embir-blush transition"
         >
           Install now
         </button>

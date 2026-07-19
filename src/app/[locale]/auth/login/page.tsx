@@ -53,7 +53,7 @@ export default function Login() {
   };
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0614] px-4">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-embir-void px-4">
 
       {/* ── Liquid gradient mesh ── */}
       <div className="emb-liquid-mesh" />
@@ -67,7 +67,7 @@ export default function Login() {
       <div className="emb-hero-orb emb-hero-orb-3 emb-breath" style={{ animationDelay: "-6s" }} />
 
       {/* ── Aurora floating bubbles ── */}
-      <AuroraBubbles count={25} colors={["#ffa333", "#ff5e36", "#ff1f5a", "#d4a574", "#c4956a"]} />
+      <AuroraBubbles count={25} />
 
       {/* ── ScrollReveal entrance ── */}
       <ScrollReveal direction="up" className="relative z-10 w-full max-w-md">
@@ -111,7 +111,7 @@ export default function Login() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Email input */}
                 <div className="group">
-                  <label htmlFor="login-email" className="mb-2 block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
+                  <label htmlFor="login-email" className="mb-2 block text-sm font-bold text-white/40 transition-colors group-focus-within:text-embir-rose">
                     {text.email}
                   </label>
                   <input
@@ -121,7 +121,7 @@ export default function Login() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-[#d4a574]/40 focus:outline-none focus:ring-1 focus:ring-[#d4a574]/30"
+                    className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-embir-rose/40 focus:outline-none focus:ring-1 focus:ring-embir-rose/30"
                     placeholder={text.emailPlaceholder}
                   />
                 </div>
@@ -129,12 +129,12 @@ export default function Login() {
                 {/* Password input */}
                 <div className="group">
                   <div className="mb-2 flex justify-between">
-                    <label htmlFor="login-password" className="block text-sm font-bold text-white/40 transition-colors group-focus-within:text-[#d4a574]">
+                    <label htmlFor="login-password" className="block text-sm font-bold text-white/40 transition-colors group-focus-within:text-embir-rose">
                       {text.password}
                     </label>
                     <Link
                       href={localePath(locale, "/support")}
-                      className="text-xs text-[#d4a574] transition-colors hover:text-white"
+                      className="text-xs text-embir-rose transition-colors hover:text-white"
                     >
                       {text.help}
                     </Link>
@@ -146,7 +146,7 @@ export default function Login() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-[#d4a574]/40 focus:outline-none focus:ring-1 focus:ring-[#d4a574]/30"
+                    className="w-full rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 text-white shadow-inner backdrop-blur-xl transition-all placeholder:text-white/15 focus:border-embir-rose/40 focus:outline-none focus:ring-1 focus:ring-embir-rose/30"
                     placeholder="••••••••"
                   />
                 </div>
@@ -155,7 +155,7 @@ export default function Login() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="emb-cta-mega group relative mt-4 inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#ff1f5a] via-[#ff5e36] to-[#ffa333] px-10 py-4 text-base font-bold text-white shadow-[0_25px_70px_rgba(255,31,90,0.35)] transition-all duration-500 disabled:opacity-50"
+                  className="emb-cta-mega group relative mt-4 inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-embir-rose-deep via-embir-rose to-embir-blush px-10 py-4 text-base font-bold text-embir-void shadow-[var(--shadow-brand)] transition-all duration-500 disabled:opacity-50"
                 >
                   <span className="relative z-10">
                     {loading ? text.loading : text.submit}
@@ -171,7 +171,7 @@ export default function Login() {
                 {text.new}{" "}
                 <Link
                   href={localePath(locale, "/auth/register")}
-                  className="ml-1 font-bold text-[#d4a574] transition-colors hover:text-white"
+                  className="ml-1 font-bold text-embir-rose transition-colors hover:text-white"
                 >
                   {text.join}
                 </Link>

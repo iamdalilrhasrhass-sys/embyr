@@ -31,9 +31,9 @@ export default async function Page({ params }: { params: Params }) {
         <article className="mx-auto max-w-5xl">
           {/* Breadcrumb */}
           <nav className="mb-8 flex flex-wrap gap-2 text-xs text-white/35" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-[#d4a574]">Accueil</Link>
+            <Link href="/" className="hover:text-embir-rose">Accueil</Link>
             <span>/</span>
-            <Link href="/fr/comparaison/alternative-tinder" className="hover:text-[#d4a574]">
+            <Link href="/fr/comparaison/alternative-tinder" className="hover:text-embir-rose">
               Comparatifs
             </Link>
             <span>/</span>
@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: Params }) {
           </nav>
 
           {/* Header */}
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">
             COMPARATIF · gratuit pour les connexions essentielles
           </p>
           <h1 className="mt-5 max-w-4xl font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">

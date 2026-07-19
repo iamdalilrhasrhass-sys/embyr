@@ -30,11 +30,11 @@ export default async function AnalyticsDashboard({
               autoComplete="current-password"
               aria-label="Admin password"
               placeholder="Enter admin password"
-              className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-[#d4a574]/50 focus:outline-none"
+              className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-embir-rose/50 focus:outline-none"
             />
             <button
               type="submit"
-              className="w-full rounded-xl bg-[#d4a574] py-3 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]"
+              className="w-full rounded-xl bg-embir-rose py-3 text-sm font-bold text-embir-void hover:bg-embir-blush"
             >
               Access Dashboard
             </button>
@@ -75,7 +75,7 @@ export default async function AnalyticsDashboard({
             ["Signup Rate", `${conversionRate}%`],
           ].map(([label, value]) => (
             <div key={label} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 text-center">
-              <p className="text-3xl font-bold text-[#d4a574]">{value}</p>
+              <p className="text-3xl font-bold text-embir-rose">{value}</p>
               <p className="mt-1 text-xs text-white/45">{label}</p>
             </div>
           ))}
@@ -88,7 +88,7 @@ export default async function AnalyticsDashboard({
               {eventsByType.map((event) => (
                 <div key={event.eventName} className="flex justify-between text-sm">
                   <span className="text-white/60">{event.eventName}</span>
-                  <span className="font-mono text-[#d4a574]">{event._count.eventName}</span>
+                  <span className="font-mono text-embir-rose">{event._count.eventName}</span>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ export default async function AnalyticsDashboard({
               {dailyStats.map((day) => (
                 <div key={day.date.toString()} className="flex justify-between text-sm">
                   <span className="text-white/60">{new Date(day.date).toLocaleDateString("en-GB")}</span>
-                  <span className="font-mono text-[#d4a574]">{day.events} events · {day.visitors} visitors</span>
+                  <span className="font-mono text-embir-rose">{day.events} events · {day.visitors} visitors</span>
                 </div>
               ))}
             </div>
@@ -112,20 +112,20 @@ export default async function AnalyticsDashboard({
             {topPages.map((page) => (
               <div key={page.page || "unknown"} className="flex justify-between text-sm">
                 <span className="text-white/60 truncate max-w-md">{page.page}</span>
-                <span className="font-mono text-[#d4a574]">{page._count.page}</span>
+                <span className="font-mono text-embir-rose">{page._count.page}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-8 rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-6">
+        <div className="mt-8 rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-6">
           <h2 className="font-serif text-xl text-white">Funnel</h2>
           <div className="mt-3 flex items-center gap-3 text-sm">
             <span className="text-white/60">{pageViews} views</span>
             <span className="text-white/20">→</span>
             <span className="text-white/60">{signupViews} signup page</span>
             <span className="text-white/20">→</span>
-            <span className="text-[#d4a574] font-bold">{signups} conversions</span>
+            <span className="text-embir-rose font-bold">{signups} conversions</span>
             <span className="text-white/35">({conversionRate}%)</span>
           </div>
         </div>

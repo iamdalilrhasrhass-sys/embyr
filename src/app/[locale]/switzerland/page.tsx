@@ -24,14 +24,14 @@ export default function Page() {
   return (
     <main className="emb-page min-h-screen px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       <article className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">Switzerland</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">Switzerland</p>
         <h1 className="mt-5 font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">Swiss dating, where privacy and compatibility meet</h1>
         <p className="mt-6 text-lg leading-relaxed text-white/50">
           Switzerland is unlike any other dating market. Four languages, dense cities connected by short train rides, a culture that values discretion, and a large community of cross-border workers and international residents. Embir is building its Swiss community across Geneva, Lausanne, Zurich, Basel, and Bern.
         </p>
 
         <section className="mt-12 space-y-5 text-base leading-relaxed text-white/55">
-          <div className="rounded-2xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-7">
+          <div className="rounded-2xl border border-embir-rose/10 bg-embir-rose/[0.02] p-7">
             <h2 className="font-serif text-2xl text-white">Multilingual by necessity</h2>
             <p className="mt-4">Switzerland speaks German, French, Italian, and Romansh — but dating happens in all of them. A profile in Geneva might be written in French while someone in Zurich writes in German. Embir supports both French and English at launch, with the flexibility to handle multilingual encounters. The platform doesn&apos;t force you into one linguistic bubble — your profile, your language.</p>
           </div>
@@ -53,7 +53,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#ff5e36]/10 bg-[#ff5e36]/[0.03] p-7">
+          <div className="rounded-2xl border border-embir-rose-deep/10 bg-embir-rose-deep/[0.03] p-7">
             <h2 className="font-serif text-2xl text-white">Privacy and discretion — the Swiss way</h2>
             <p className="mt-4">Swiss dating culture values discretion. People often prefer to control who sees their profile before broadcasting it to everyone nearby. Embir&apos;s orientation-based visibility controls and preference filters align with this cultural expectation: you decide who sees you, and your profile is only visible to compatible people. Add verified profiles to reduce fake accounts, and you get a platform that respects Swiss expectations around privacy and trust.</p>
           </div>
@@ -81,10 +81,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+        <section className="mt-12 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
           <h2 className="font-serif text-3xl text-white">Join the Swiss founding community</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/45">Create your free verified profile. Help build a Swiss dating platform that respects your language, your privacy, and your time.</p>
-          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Create my free profile</Link>
+          <Link href="/auth/register" className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Create my free profile</Link>
         </section>
 
         <section className="mt-10 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
@@ -98,7 +98,7 @@ export default function Page() {
               ["/free-dating-app", "Free dating app"],
               ["/safety", "Safety tools"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">{label}</Link>
+              <Link key={href} href={href} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">{label}</Link>
             ))}
           </div>
         </section>

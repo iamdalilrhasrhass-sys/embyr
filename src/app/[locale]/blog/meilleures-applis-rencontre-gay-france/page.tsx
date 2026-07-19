@@ -18,7 +18,7 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 <article className="py-24 px-4 sm:px-6"><div className="emb-container max-w-3xl">
 <nav className="text-white/30 text-sm mb-8"><Link href="/" className="hover:text-white/50">Embir</Link><span className="mx-2">/</span><Link href="/blog" className="hover:text-white/50">Blog</Link><span className="mx-2">/</span><span>Meilleures applis de rencontre gay en France</span></nav>
 
-<h1 className="text-3xl md:text-5xl font-black mb-8 text-white leading-tight">Les meilleures applications de rencontre gay en France en 2026 :<br/><span className="text-[#d4a574]">le comparatif honnête.</span></h1>
+<h1 className="text-3xl md:text-5xl font-black mb-8 text-white leading-tight">Les meilleures applications de rencontre gay en France en 2026 :<br/><span className="text-embir-rose">le comparatif honnête.</span></h1>
 
 <div className="prose prose-invert max-w-none text-white/55 leading-relaxed space-y-8">
 
@@ -29,16 +29,16 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 <ul className="list-disc pl-6 space-y-2 text-white/45">
 <li><strong className="text-white/60">Freemium</strong> — L'application est téléchargeable gratuitement, mais la messagerie, les filtres ou la visibilité des profils nécessitent un abonnement. Exemples : Grindr XTRA, Tinder Gold, Scruff Pro.</li>
 <li><strong className="text-white/60">Gratuit avec pub</strong> — L'appli est techniquement gratuite, mais vous subissez des publicités plein écran toutes les 30 secondes. Le produit, c'est vous. Le client, c'est l'annonceur.</li>
-<li><strong className="text-[#d4a574]">Sans carte bancaire</strong> — Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.</li>
+<li><strong className="text-embir-rose">Sans carte bancaire</strong> — Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire.</li>
 </ul>
 
 <h2 className="text-2xl font-bold text-white mt-12 mb-4">Les 5 meilleures applis de rencontre gay en France</h2>
 
-<h3 className="text-xl font-bold text-[#d4a574] mt-8 mb-2">1. Embir — La meilleure alternative gratuite</h3>
+<h3 className="text-xl font-bold text-embir-rose mt-8 mb-2">1. Embir — La meilleure alternative gratuite</h3>
 <p><strong>Prix :</strong> Gratuit (sans offre premium). <strong>Pub :</strong> Aucune. <strong>Vérification :</strong> Selfie obligatoire.</p>
 <p>Embir est la nouvelle application de rencontre gay pensée pour les hommes qui cherchent des connexions authentiques. Gratuite, sans publicité, avec vérification selfie facultative avec badge visible et un matching par IA qui va au-delà de la simple proximité géographique. Disponible sur le web avec une expérience publique en français et en anglais, avec des inscriptions ouvertes à Paris, Lyon, Marseille et dans toute la France.</p>
 <p><strong>Idéal pour :</strong> Les hommes qui veulent des vraies rencontres sans payer un abonnement mensuel. <strong>Point faible :</strong> Application récente — la communauté grandit vite mais reste plus petite que Grindr.</p>
-<p><Link href="/auth/register" className="text-[#d4a574] hover:text-[#e8c4a2] underline underline-offset-4">Essayer Embir gratuitement →</Link></p>
+<p><Link href="/auth/register" className="text-embir-rose hover:text-embir-blush underline underline-offset-4">Essayer Embir gratuitement →</Link></p>
 
 <h3 className="text-xl font-bold text-white/80 mt-8 mb-2">2. Grindr — La plus connue, la plus chère</h3>
 <p><strong>Prix :</strong> Freemium (XTRA à 19,99€/mois, Unlimited à 39,99€/mois). <strong>Pub :</strong> Très présentes en version gratuite.</p>
@@ -75,16 +75,16 @@ export default function Page() { return (<main className="emb-page min-h-screen"
 <p>La meilleure application de rencontre gay en France dépend de ce que vous cherchez. Pour le volume : Grindr. Pour la communauté : Scruff. Pour une expérience vraiment gratuite avec profils vérifiés et matching intelligent : Embir. Ce qui n'est plus acceptable en 2026 : payer 20€ par mois pour envoyer des messages à travers un mur de pubs en esquivant les bots. La barre a monté.</p>
 </div>
 
-<div className="mt-12 p-8 rounded-2xl border border-[#d4a574]/20 bg-[#d4a574]/5 text-center">
+<div className="mt-12 p-8 rounded-2xl border border-embir-rose/20 bg-embir-rose/5 text-center">
 <p className="text-white/80 text-lg mb-2">Prêt à essayer une appli <strong className="text-white">vraiment gratuite ?</strong></p>
 <p className="text-white/40 text-sm mb-6">Profils vérifiés, compatibilité réciproque, Messagerie entre connexions réciproques — sans carte bancaire.</p>
-<Link href="/auth/register?source=blog-fr-comparatif" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-3.5 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">Créer mon profil gratuit</Link></div>
+<Link href="/auth/register?source=blog-fr-comparatif" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-8 py-3.5 text-sm font-bold text-embir-void transition-all hover:bg-embir-blush hover:shadow-[0_0_40px_rgba(216,139,167,0.3)]">Créer mon profil gratuit</Link></div>
 
 <div className="mt-12 space-y-4"><h2 className="text-2xl font-bold text-white mb-4">Questions fréquentes</h2>
-{[{q:"Quelle est la meilleure appli de rencontre gay gratuite en France ?",a:"Le meilleur choix dépend de vos attentes. Embir propose gratuitement les connexions essentielles, sans pub, avec préférences réciproques et badge selfie facultatif."},{q:"Est-ce qu'il existe une alternative française à Grindr ?",a:"Oui. Embir propose une approche pour toutes les orientations, avec des connexions essentielles gratuites sans carte bancaire."},{q:"Pourquoi les applis de rencontre gay sont-elles si chères ?",a:"Beaucoup d’applications utilisent un modèle freemium. Embir sépare clairement les connexions essentielles gratuites d’éventuels services facultatifs."}].map((faq,i)=>(<details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary><p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p></details>))}</div>
+{[{q:"Quelle est la meilleure appli de rencontre gay gratuite en France ?",a:"Le meilleur choix dépend de vos attentes. Embir propose gratuitement les connexions essentielles, sans pub, avec préférences réciproques et badge selfie facultatif."},{q:"Est-ce qu'il existe une alternative française à Grindr ?",a:"Oui. Embir propose une approche pour toutes les orientations, avec des connexions essentielles gratuites sans carte bancaire."},{q:"Pourquoi les applis de rencontre gay sont-elles si chères ?",a:"Beaucoup d’applications utilisent un modèle freemium. Embir sépare clairement les connexions essentielles gratuites d’éventuels services facultatifs."}].map((faq,i)=>(<details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]"><summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary><p className="px-6 pb-4 text-sm text-white/45 leading-relaxed">{faq.a}</p></details>))}</div>
 
 <div className="mt-12 pt-8 border-t border-white/[0.04] text-center"><p className="text-xs text-white/20 mb-3">Articles liés</p><div className="flex flex-wrap justify-center gap-3 text-sm">
-<Link href="/application-rencontre-gay" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">App de rencontre gay gratuite</Link><span className="text-white/10">·</span>
-<Link href="/paris" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Rencontre gay Paris</Link><span className="text-white/10">·</span>
-<Link href="/grindr-vs-alternatives" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Grindr vs alternatives</Link><span className="text-white/10">·</span>
-<Link href="/" className="text-white/35 hover:text-[#d4a574] transition-colors underline underline-offset-4">Accueil Embir</Link></div></div></div></article></main>);}
+<Link href="/application-rencontre-gay" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">App de rencontre gay gratuite</Link><span className="text-white/10">·</span>
+<Link href="/paris" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Rencontre gay Paris</Link><span className="text-white/10">·</span>
+<Link href="/grindr-vs-alternatives" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Grindr vs alternatives</Link><span className="text-white/10">·</span>
+<Link href="/" className="text-white/35 hover:text-embir-rose transition-colors underline underline-offset-4">Accueil Embir</Link></div></div></div></article></main>);}

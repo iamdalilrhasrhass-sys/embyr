@@ -123,11 +123,11 @@ function internalLinks(locale: "en" | "fr") {
 export function Breadcrumbs({ items }: { items: { href: string; label: string }[] }) {
   return (
     <nav className="mb-8 flex flex-wrap gap-2 text-xs text-white/35" aria-label="Breadcrumb">
-      <Link href="/" prefetch={false} className="hover:text-[#d4a574]">Home</Link>
+      <Link href="/" prefetch={false} className="hover:text-embir-rose">Home</Link>
       {items.map((item) => (
         <span key={item.href} className="flex items-center gap-2">
           <span>/</span>
-          <Link href={item.href} prefetch={false} className="hover:text-[#d4a574]">{item.label}</Link>
+          <Link href={item.href} prefetch={false} className="hover:text-embir-rose">{item.label}</Link>
         </span>
       ))}
     </nav>
@@ -195,7 +195,7 @@ export function InternalLinksBlock({ locale }: { locale: "en" | "fr" }) {
       <h2 className="font-serif text-2xl text-white">Explore Embir</h2>
       <div className="mt-5 flex flex-wrap gap-3">
         {internalLinks(locale).map((link) => (
-          <Link key={link.href} href={link.href} prefetch={false} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-[#d4a574]/30 hover:text-[#d4a574]">
+          <Link key={link.href} href={link.href} prefetch={false} className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/60 hover:border-embir-rose/30 hover:text-embir-rose">
             {link.label}
           </Link>
         ))}
@@ -206,7 +206,7 @@ export function InternalLinksBlock({ locale }: { locale: "en" | "fr" }) {
 
 export function CTASection({ locale }: { locale: "en" | "fr" }) {
   return (
-    <section className="mt-16 rounded-3xl border border-[#d4a574]/15 bg-[#d4a574]/[0.04] p-8 text-center">
+    <section className="mt-16 rounded-3xl border border-embir-rose/15 bg-embir-rose/[0.04] p-8 text-center">
       <h2 className="font-serif text-3xl text-white">
         {locale === "fr" ? "Rejoindre la communaute fondatrice" : "Join the founding community"}
       </h2>
@@ -215,7 +215,7 @@ export function CTASection({ locale }: { locale: "en" | "fr" }) {
           ? "Cree ton profil gratuitement, sans carte bancaire et aide Embir a construire une plateforme plus saine pour toutes orientations."
           : "Create your profile without a credit card and help Embir build a healthier platform for every orientation."}
       </p>
-      <Link href="/auth/register" prefetch={false} className="mt-7 inline-flex rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">
+      <Link href="/auth/register" prefetch={false} className="mt-7 inline-flex rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">
         {locale === "fr" ? "Creer mon profil gratuit" : "Create my free profile"}
       </Link>
     </section>
@@ -246,7 +246,7 @@ export function FreemiumExplainer({ locale }: { locale: "en" | "fr" }) {
 export function FoundingCommunityBlock({ locale }: { locale: "en" | "fr" }) {
   return (
     <section className="mt-12 rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8">
-      <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#d4a574]/70">
+      <p className="font-mono text-xs uppercase tracking-[0.18em] text-embir-rose/70">
         {locale === "fr" ? "Communaute fondatrice" : "Founding community"}
       </p>
       <h2 className="mt-3 font-serif text-3xl text-white">
@@ -268,7 +268,7 @@ export function SeoPageLayout({ page, children }: { page: ResolvedSeoPage; child
       <JsonLd page={page} />
       <article className="mx-auto max-w-5xl">
         <Breadcrumbs items={breadcrumbs} />
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#d4a574]/70">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-embir-rose/70">
           {page.market ? page.market.toUpperCase() : sectionLabel(page).toUpperCase()} · {page.locale === "fr" ? "gratuit pour les connexions essentielles" : "core connection features are free"}
         </p>
         <h1 className="mt-5 max-w-4xl font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-6xl">
@@ -365,7 +365,7 @@ function EditorialSections({ page }: { page: ResolvedSeoPage }) {
   return (
     <section className="mt-12 space-y-10 text-base leading-relaxed text-white/52">
       {page.content && (
-        <div className="rounded-3xl border border-[#d4a574]/10 bg-[#d4a574]/[0.02] p-8">
+        <div className="rounded-3xl border border-embir-rose/10 bg-embir-rose/[0.02] p-8">
           <h2 className="font-serif text-3xl text-white">A word from the team</h2>
           <p className="mt-4 italic text-white/70">{page.content}</p>
         </div>
@@ -533,7 +533,7 @@ export function SeoComparisonPage({ page }: { page: ResolvedSeoPage }) {
           <div key={feature} className="grid grid-cols-3 border-b border-white/[0.04] px-5 py-4 text-sm last:border-b-0">
             <div className="text-white/60">{feature}</div>
             <div className="text-center text-white/30">{oldApp}</div>
-            <div className="text-center font-semibold text-[#d4a574]">{embir}</div>
+            <div className="text-center font-semibold text-embir-rose">{embir}</div>
           </div>
         ))}
       </section>
@@ -545,7 +545,7 @@ export function SeoArticlePage({ page }: { page: ResolvedSeoPage }) {
   return (
     <SeoPageLayout page={page}>
       <section className="mt-12 space-y-6 text-base leading-relaxed text-white/50">
-        <p className="text-sm uppercase tracking-[0.16em] text-[#d4a574]/70">
+        <p className="text-sm uppercase tracking-[0.16em] text-embir-rose/70">
           {page.locale === "fr" ? "Categorie : rencontre moderne · Tags : gratuit pour les connexions essentielles, freemium, compatibilite, badge selfie facultatif" : "Category: modern dating · Tags: core connection features are free, freemium, compatibility, optional selfie badge"}
         </p>
         <p>

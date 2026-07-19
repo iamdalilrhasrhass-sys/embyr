@@ -25,14 +25,14 @@ export default function Page() {
     <main className="emb-page min-h-screen">
       <section className="px-4 pt-32 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d4a574]/20 bg-[#d4a574]/5 px-4 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574]" />
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#d4a574]/80">Sérieux</span>
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-embir-rose/20 bg-embir-rose/5 px-4 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-embir-rose" />
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-embir-rose/80">Sérieux</span>
           </div>
           <h1 className="font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-5xl">Une application de rencontre pensée pour ceux qui cherchent des relations sérieuses.</h1>
           <p className="mt-6 text-lg leading-relaxed text-white/50">Embir est une application de rencontre sérieuse conçue pour favoriser les connexions authentiques. Profils vérifiés, matching par compatibilité, sans publicité. Les connexions essentielles sont gratuites.</p>
           <div className="mt-8 flex gap-4">
-            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
+            <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition-all hover:bg-embir-blush">Créer mon profil gratuit</Link>
             <Link href="/" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 hover:border-white/20">Accueil</Link>
           </div>
         </div>
@@ -65,26 +65,26 @@ export default function Page() {
           <h2 className="font-serif text-3xl text-white mb-8">Questions fréquentes</h2>
           <div className="space-y-4">
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il vraiment gratuit ?</summary>
+              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose list-none [&::-webkit-details-marker]:hidden">Embir est-il vraiment gratuit ?</summary>
               <p className="px-6 pb-4 text-sm text-white/45">Oui. Tout ce qu’il faut pour rencontrer quelqu’un est gratuit. Sans carte bancaire. Les membres fondateurs contribuent aux choix produit.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Comment les profils sont-ils vérifiés ?</summary>
+              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose list-none [&::-webkit-details-marker]:hidden">Comment les profils sont-ils vérifiés ?</summary>
               <p className="px-6 pb-4 text-sm text-white/45">La vérification par selfie est facultative : un membre envoie une photo avec un code unique. Si la demande est approuvée, un badge visible apparaît sur son profil.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Dans quelles villes Embir est-il disponible ?</summary>
+              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose list-none [&::-webkit-details-marker]:hidden">Dans quelles villes Embir est-il disponible ?</summary>
               <p className="px-6 pb-4 text-sm text-white/45">Embir est ouvert dans le monde entier sur le web. Les premières communautés se densifient ville par ville, afin de garder des échanges locaux réels tout en accueillant les membres fondateurs partout.</p>
             </details>
             <details className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-[#d4a574] list-none [&::-webkit-details-marker]:hidden">Embir est-il une alternative à Grindr ?</summary>
+              <summary className="cursor-pointer px-6 py-4 text-sm font-semibold text-white/80 group-open:text-embir-rose list-none [&::-webkit-details-marker]:hidden">Embir est-il une alternative à Grindr ?</summary>
               <p className="px-6 pb-4 text-sm text-white/45">Oui. Contrairement à Grindr, Embir n'a pas de publicité, vérifie chaque profil, et propose un matching par IA au lieu d'un simple tri par distance.</p>
             </details>
           </div>
         </div>
       </section>
       <section className="px-4 pb-16 text-center">
-        <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] hover:bg-[#e8c4a2]">Créer mon profil gratuit</Link>
+        <Link href="/auth/register" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-10 py-4 text-sm font-bold text-embir-void hover:bg-embir-blush">Créer mon profil gratuit</Link>
         <p className="mt-4 text-xs text-white/20">18+ uniquement. Les connexions essentielles sont gratuites. Sans engagement.</p>
       </section>
     </main>

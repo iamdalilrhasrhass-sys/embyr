@@ -53,7 +53,7 @@ export default function MembresPage() {
           {/* Header */}
           <div className="mb-6">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-1" style={{
-              background: "linear-gradient(135deg, #E2E8F0 55%, #ff5e36 82%, #ffa333 100%)",
+              background: "linear-gradient(135deg, #E2E8F0 55%, var(--embir-rose-600) 82%, var(--embir-blush-300) 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             }}>
               Membres
@@ -65,14 +65,14 @@ export default function MembresPage() {
 
           {/* Bannière accès gratuit */}
           {!isPremium && !loading && (
-            <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-[#ff5e36]/15 bg-[#ff5e36]/[0.035] backdrop-blur-sm">
+            <div className="block mb-5 px-4 py-2.5 rounded-xl text-sm border border-embir-rose-deep/15 bg-embir-rose-deep/[0.035] backdrop-blur-sm">
               <span className="text-white/50">
                 Accès gratuit pour les connexions essentielles.{" "}
-                <span className="text-[#ffa333]/90">
+                <span className="text-embir-blush/90">
                   Invite des vrais profils Paris / IDF pour densifier la communauté.
                 </span>
               </span>
-              <Link href="/paris" className="ml-2 text-[#ffa333] underline underline-offset-4 hover:text-white">
+              <Link href="/paris" className="ml-2 text-embir-blush underline underline-offset-4 hover:text-white">
                 Voir la campagne
               </Link>
             </div>
@@ -113,7 +113,7 @@ export default function MembresPage() {
             <button
               onClick={fetchProfiles}
               className="px-4 py-2 rounded-xl text-xs font-medium text-white"
-              style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}
+              style={{ background: "linear-gradient(135deg, var(--embir-rose-500), var(--embir-rose-600))" }}
             >
               Appliquer
             </button>
@@ -129,7 +129,7 @@ export default function MembresPage() {
             <div className="text-center py-20">
               <p className="text-white/40 mb-4">{error}</p>
               <button onClick={fetchProfiles} className="px-5 py-2.5 rounded-xl text-sm font-medium text-white"
-                style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
+                style={{ background: "linear-gradient(135deg, var(--embir-rose-500), var(--embir-rose-600))" }}>
                 Réessayer
               </button>
             </div>
@@ -147,7 +147,7 @@ export default function MembresPage() {
             </div>
           ) : profiles.length === 0 ? (
             <div className="text-center py-20 space-y-6">
-              <div className="mx-auto h-10 w-10 rounded-full bg-gradient-to-tr from-[#ff1f5a] to-[#ff5e36] opacity-80 shadow-[0_0_30px_rgba(255,94,54,0.28)]" />
+              <div className="mx-auto h-10 w-10 rounded-full bg-gradient-to-tr from-embir-rose to-embir-rose-deep opacity-80 shadow-[0_0_30px_rgba(191,111,141,0.28)]" />
               <h2 className="text-xl font-bold text-white/70">Les premiers membres arrivent</h2>
               <p className="text-white/40 max-w-md mx-auto">
                 {hasFilters
@@ -159,13 +159,13 @@ export default function MembresPage() {
                 {!hasFilters && (
                   <Link href="/dashboard/profile"
                     className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white"
-                    style={{ background: "linear-gradient(135deg, #ff1f5a, #ff5e36)" }}>
+                    style={{ background: "linear-gradient(135deg, var(--embir-rose-500), var(--embir-rose-600))" }}>
                     Compléter mon profil
                   </Link>
                 )}
                 {!hasFilters && (
                   <Link href="/paris"
-                    className="px-5 py-2.5 rounded-xl text-sm font-semibold border border-[#ff5e36]/20 text-[#ffa333] hover:bg-[#ff5e36]/10 transition-colors">
+                    className="px-5 py-2.5 rounded-xl text-sm font-semibold border border-embir-rose-deep/20 text-embir-blush hover:bg-embir-rose-deep/10 transition-colors">
                     Inviter les fondateurs
                   </Link>
                 )}
@@ -186,7 +186,7 @@ export default function MembresPage() {
                   <Link
                     key={p.id || p.userId}
                     href={`/membres/${p.id || p.userId}`}
-                    className="group rounded-2xl overflow-hidden border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm hover:border-[#ff5e36]/25 hover:bg-[#ff5e36]/[0.025] transition-all duration-300"
+                    className="group rounded-2xl overflow-hidden border border-white/[0.04] bg-white/[0.01] backdrop-blur-sm hover:border-embir-rose-deep/25 hover:bg-embir-rose-deep/[0.025] transition-all duration-300"
                   >
                     {/* Photo */}
                     <div className="aspect-[3/4] relative overflow-hidden">
@@ -197,7 +197,7 @@ export default function MembresPage() {
                       />
                       {isNew && (
                         <div className="absolute top-2 left-2 z-10">
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-[#ff5e36]/15 text-[#ffa333] border border-[#ff5e36]/20">
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-embir-rose-deep/15 text-embir-blush border border-embir-rose-deep/20">
                             Nouveau
                           </span>
                         </div>
@@ -210,7 +210,7 @@ export default function MembresPage() {
                       )}
                       {p.id && p.id === myId && (
                         <div className="absolute top-2 left-2 z-10">
-                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-[#ff5e36]/15 text-[#ffa333] border border-[#ff5e36]/20">
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-embir-rose-deep/15 text-embir-blush border border-embir-rose-deep/20">
                             Mon profil
                           </span>
                         </div>
@@ -224,10 +224,10 @@ export default function MembresPage() {
                           {p.username || p.displayName || "Membre"}
                         </h3>
                         {p.isVerified && (
-                          <span className="h-2 w-2 rounded-full bg-[#ff5e36] shadow-[0_0_10px_rgba(255,94,54,0.75)]" title="Vérifié" />
+                          <span className="h-2 w-2 rounded-full bg-embir-rose-deep shadow-[0_0_10px_rgba(191,111,141,0.75)]" title="Vérifié" />
                         )}
                         {p.isPremium && (
-                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#ff5e36]/10 text-[#ffa333] border border-[#ff5e36]/15">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-embir-rose-deep/10 text-embir-blush border border-embir-rose-deep/15">
                             Premium
                           </span>
                         )}

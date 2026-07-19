@@ -20,15 +20,15 @@ export default function Page() {
     <main className="emb-page min-h-screen">
       <PageTypeTracker type="city" city="New York" country="US" />
       <section className="relative px-4 pt-32 pb-20 sm:px-6 lg:px-8">
-        <div className="absolute inset-x-0 top-0 h-[400px] bg-[radial-gradient(circle_at_50%_0%,rgba(212,165,116,0.12),transparent_60%)]" />
+        <div className="absolute inset-x-0 top-0 h-[400px] bg-[radial-gradient(circle_at_50%_0%,rgba(216,139,167,0.12),transparent_60%)]" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d4a574]/20 bg-[#d4a574]/5 px-4 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574]" />
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#d4a574]/80">New York City</span>
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-embir-rose/20 bg-embir-rose/5 px-4 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-embir-rose" />
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-embir-rose/80">New York City</span>
           </div>
           <h1 className="font-serif text-4xl font-light tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
             Eight million people.<br />
-            <span className="text-[#d4a574]">Why is it so hard to meet one?</span>
+            <span className="text-embir-rose">Why is it so hard to meet one?</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/50">
             New York is the densest city in America, and yet gay dating here can feel lonelier than
@@ -37,7 +37,7 @@ export default function Page() {
             than your GPS coordinates.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/auth/register?source=new-york" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-8 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
+            <Link href="/auth/register?source=new-york" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-8 py-4 text-sm font-bold text-embir-void transition-all hover:bg-embir-blush hover:shadow-[0_0_40px_rgba(216,139,167,0.3)]">
               Create my free profile
             </Link>
             <Link href="/membres" className="inline-flex items-center rounded-full border border-white/10 px-8 py-4 text-sm font-semibold text-white/70 transition-all hover:border-white/20 hover:bg-white/[0.04] hover:text-white">
@@ -71,7 +71,7 @@ export default function Page() {
             <h3 className="text-lg font-bold text-white mb-4">NYC neighborhoods covered</h3>
             <div className="grid grid-cols-2 gap-3 text-sm text-white/45">
               {["Hell's Kitchen", "Chelsea", "West Village", "East Village", "Williamsburg", "Bushwick", "Astoria", "Jackson Heights", "Harlem", "Park Slope", "Greenwich Village", "Lower East Side"].map((n) => (
-                <div key={n} className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[#d4a574]/40" />{n}</div>
+                <div key={n} className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-embir-rose/40" />{n}</div>
               ))}
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function Page() {
               { q: "How does verification work for New Yorkers?", a: "Quick selfie check. Our system matches your live selfie to your profile photo — no personal data stored, no third-party verification services. Takes under a minute." },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-                <summary className="cursor-pointer px-6 py-5 text-sm font-semibold text-white/80 group-open:text-[#d4a574] transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>
+                <summary className="cursor-pointer px-6 py-5 text-sm font-semibold text-white/80 group-open:text-embir-rose transition-colors list-none [&::-webkit-details-marker]:hidden">{faq.q}</summary>
                 <p className="px-6 pb-5 text-sm text-white/45 leading-relaxed">{faq.a}</p>
               </details>
             ))}
@@ -120,7 +120,7 @@ export default function Page() {
       </section>
 
       <section className="px-4 pb-20 sm:px-6 lg:px-8 text-center">
-        <Link href="/auth/register?source=new-york" className="inline-flex items-center gap-2 rounded-full bg-[#d4a574] px-10 py-4 text-sm font-bold text-[#0a0614] transition-all hover:bg-[#e8c4a2] hover:shadow-[0_0_40px_rgba(212,165,116,0.3)]">
+        <Link href="/auth/register?source=new-york" className="inline-flex items-center gap-2 rounded-full bg-embir-rose px-10 py-4 text-sm font-bold text-embir-void transition-all hover:bg-embir-blush hover:shadow-[0_0_40px_rgba(216,139,167,0.3)]">
           Create my free NYC profile
         </Link>
         <p className="mt-4 text-xs text-white/20">18+ only. Core connection features are free. No credit card.</p>
